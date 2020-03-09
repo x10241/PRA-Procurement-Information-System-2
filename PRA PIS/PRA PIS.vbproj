@@ -1,0 +1,813 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{40C56607-E544-4AB1-8168-AB89B2B097CF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>PRA_PIS.My.MyApplication</StartupObject>
+    <RootNamespace>PRA_PIS</RootNamespace>
+    <AssemblyName>PRA PIS</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>PRA PIS.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>PRA PIS.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DocumentationFile>PRA PIS.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DocumentationFile>PRA PIS.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>PRAicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Control.Draggable, Version=1.0.5049.269, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Control.Draggable.1.0.5049.269\lib\net35-Client\Control.Draggable.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="kodakscansdk, Version=1.0.4.0, Culture=neutral, PublicKeyToken=a7b68401fafc10e9, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\kodakscansdk.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialSkin.0.2.1\lib\MaterialSkin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Microsoft.VisualBasic.PowerPacks.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp, Version=1.50.5147.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\PdfSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.Charting, Version=1.50.5147.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\PdfSharp.Charting.dll</HintPath>
+    </Reference>
+    <Reference Include="Seagull.BarTender.Print, Version=11.1.5.1, Culture=neutral, PublicKeyToken=109ff779a1b4cbc7, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\Assemblies\Seagull.BarTender.Print.dll</HintPath>
+    </Reference>
+    <Reference Include="Seagull.Services.PrintScheduler, Version=11.1.5.1, Culture=neutral, PublicKeyToken=109ff779a1b4cbc7, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\Assemblies\Seagull.Services.PrintScheduler.dll</HintPath>
+    </Reference>
+    <Reference Include="Seagull.Services.PrintScheduler.Contracts, Version=11.1.5.1, Culture=neutral, PublicKeyToken=109ff779a1b4cbc7, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\Assemblies\Seagull.Services.PrintScheduler.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="ThoughtWorks.QRCode, Version=1.0.4778.30637, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\ThoughtWorks.QRCode.dll</HintPath>
+    </Reference>
+    <Reference Include="TWAIN, Version=2.3.2.0, Culture=neutral, PublicKeyToken=bb17e614a98b1a8a, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\TWAIN.dll</HintPath>
+    </Reference>
+    <Reference Include="TWAINCSToolkit, Version=2.3.2.0, Culture=neutral, PublicKeyToken=315f739341387272, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\TWAINCSToolkit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CLS_CLASS_1.vb" />
+    <Compile Include="CUSTOMCONTROLS\ErrorLogger.vb" />
+    <Compile Include="CUSTOMCONTROLS\EventLogger.vb" />
+    <Compile Include="CUSTOMCONTROLS\ExtendControl.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CUSTOMCONTROLS\MyCheckBox.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CUSTOMCONTROLS\MyRadioButton.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CUSTOMCONTROLS\NotificationManager.vb" />
+    <Compile Include="CUSTOMCONTROLS\TextBoxExtensions.vb" />
+    <Compile Include="CUSTOMCONTROLS\Toggle.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CUSTOMCONTROLS\WaterMarkMaskedTextBox.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CUSTOMCONTROLS\WaterMarkTextBox.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DATASETS\DS_CUSTOM.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_CUSTOM.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DATASETS\DS_PROPERTYDB.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_PROPERTYDB.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DATASETS\DS_PROPERTYDB.vb">
+      <DependentUpon>DS_PROPERTYDB.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DATASETS\DS_STOREDPROC.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_STOREDPROC.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DATASETS\DS_STOREDPROC.vb">
+      <DependentUpon>DS_STOREDPROC.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DATASETS\DS_TABLES.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_TABLES.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DATASETS\DS_TABLES.vb">
+      <DependentUpon>DS_TABLES.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DATASETS\DS_VIEWS.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_VIEWS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="INVENTORY\FRM_ASSIGN.Designer.vb">
+      <DependentUpon>FRM_ASSIGN.vb</DependentUpon>
+    </Compile>
+    <Compile Include="INVENTORY\FRM_ASSIGN.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INVENTORY\FRM_ASSIGN_ITEMS.Designer.vb">
+      <DependentUpon>FRM_ASSIGN_ITEMS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="INVENTORY\FRM_ASSIGN_ITEMS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INVENTORY\FRM_EMPLOYEE_LIST.Designer.vb">
+      <DependentUpon>FRM_EMPLOYEE_LIST.vb</DependentUpon>
+    </Compile>
+    <Compile Include="INVENTORY\FRM_EMPLOYEE_LIST.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INVENTORY\FRM_INVENTORY_ENCODING.Designer.vb">
+      <DependentUpon>FRM_INVENTORY_ENCODING.vb</DependentUpon>
+    </Compile>
+    <Compile Include="INVENTORY\FRM_INVENTORY_ENCODING.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INVENTORY\FRM_INVENTORY_PRINT_PREVIEW.Designer.vb">
+      <DependentUpon>FRM_INVENTORY_PRINT_PREVIEW.vb</DependentUpon>
+    </Compile>
+    <Compile Include="INVENTORY\FRM_INVENTORY_PRINT_PREVIEW.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INVENTORY\FRM_LOCATION_LIST.Designer.vb">
+      <DependentUpon>FRM_LOCATION_LIST.vb</DependentUpon>
+    </Compile>
+    <Compile Include="INVENTORY\FRM_LOCATION_LIST.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INVENTORY\FRM_PREVIEW.Designer.vb">
+      <DependentUpon>FRM_PREVIEW.vb</DependentUpon>
+    </Compile>
+    <Compile Include="INVENTORY\FRM_PREVIEW.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INVENTORY\FRM_SETTINGS_SELECTION.Designer.vb">
+      <DependentUpon>FRM_SETTINGS_SELECTION.vb</DependentUpon>
+    </Compile>
+    <Compile Include="INVENTORY\FRM_SETTINGS_SELECTION.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INVENTORY\FRM_SETTINGS.Designer.vb">
+      <DependentUpon>FRM_SETTINGS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="INVENTORY\FRM_SETTINGS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INVENTORY\FRM_STICKER_TAG.Designer.vb">
+      <DependentUpon>FRM_STICKER_TAG.vb</DependentUpon>
+    </Compile>
+    <Compile Include="INVENTORY\FRM_STICKER_TAG.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INVENTORY\RPT_INVENTORY_REPORT.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPT_INVENTORY_REPORT.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="INVENTORY\RPT_ITEMS_ASSIGN.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPT_ITEMS_ASSIGN.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="INVENTORY\RPT_ITEMS_IN_LOCATION.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPT_ITEMS_IN_LOCATION.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="INVENTORY\RPT_STICKER_TAG3x2.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPT_STICKER_TAG3x2.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="INVENTORY\RPT_STICKER_TAG4x3.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPT_STICKER_TAG4x3.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="POPUP_MODULE\FRM_ADDITIONAL_CATEGORIZATION.Designer.vb">
+      <DependentUpon>FRM_ADDITIONAL_CATEGORIZATION.vb</DependentUpon>
+    </Compile>
+    <Compile Include="POPUP_MODULE\FRM_ADDITIONAL_CATEGORIZATION.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POPUP_MODULE\FRM_DATAENTRY.designer.vb">
+      <DependentUpon>FRM_DATAENTRY.vb</DependentUpon>
+    </Compile>
+    <Compile Include="POPUP_MODULE\FRM_DATAENTRY.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POPUP_MODULE\FRM_DGV_ENCODING.Designer.vb">
+      <DependentUpon>FRM_DGV_ENCODING.vb</DependentUpon>
+    </Compile>
+    <Compile Include="POPUP_MODULE\FRM_DGV_ENCODING.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INVENTORY\FRM_LOCATION.Designer.vb">
+      <DependentUpon>FRM_LOCATION.vb</DependentUpon>
+    </Compile>
+    <Compile Include="INVENTORY\FRM_LOCATION.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POPUP_MODULE\FRM_PRACCEPT.Designer.vb">
+      <DependentUpon>FRM_PRACCEPT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="POPUP_MODULE\FRM_PRACCEPT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POPUP_MODULE\FRM_PRCANCELED.Designer.vb">
+      <DependentUpon>FRM_PRCANCELED.vb</DependentUpon>
+    </Compile>
+    <Compile Include="POPUP_MODULE\FRM_PRCANCELED.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POPUP_MODULE\FRM_PRREVISION.Designer.vb">
+      <DependentUpon>FRM_PRREVISION.vb</DependentUpon>
+    </Compile>
+    <Compile Include="POPUP_MODULE\FRM_PRREVISION.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POPUP_MODULE\FRM_SELECTION.Designer.vb">
+      <DependentUpon>FRM_SELECTION.vb</DependentUpon>
+    </Compile>
+    <Compile Include="POPUP_MODULE\FRM_SELECTION.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POPUP_MODULE\FRM_UPDATE_PR_STATUS.designer.vb">
+      <DependentUpon>FRM_UPDATE_PR_STATUS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="POPUP_MODULE\FRM_UPDATE_PR_STATUS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PURCHASE REQUEST\FRM_ABSTRACT_OF_QUOTATION.Designer.vb">
+      <DependentUpon>FRM_ABSTRACT_OF_QUOTATION.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PURCHASE REQUEST\FRM_ABSTRACT_OF_QUOTATION.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PURCHASE REQUEST\FRM_ATTACHMENT.Designer.vb">
+      <DependentUpon>FRM_ATTACHMENT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PURCHASE REQUEST\FRM_ATTACHMENT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GLOBAL_MODULE\MD_GLOBALMOD.vb" />
+    <Compile Include="GLOBAL_MODULE\MD_GLOBALVAR.vb" />
+    <Compile Include="PURCHASE REQUEST\FRM_CHECK_PR.Designer.vb">
+      <DependentUpon>FRM_CHECK_PR.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PURCHASE REQUEST\FRM_CHECK_PR.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PURCHASE REQUEST\FRM_PR.Designer.vb">
+      <DependentUpon>FRM_PR.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PURCHASE REQUEST\FRM_PR.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PURCHASE REQUEST\FRM_PURCHASE_ORDER.Designer.vb">
+      <DependentUpon>FRM_PURCHASE_ORDER.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PURCHASE REQUEST\FRM_PURCHASE_ORDER.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PURCHASE REQUEST\FRM_PURCHASE_REQUEST_PRINTPREVIEW.Designer.vb">
+      <DependentUpon>FRM_PURCHASE_REQUEST_PRINTPREVIEW.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PURCHASE REQUEST\FRM_PURCHASE_REQUEST_PRINTPREVIEW.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PURCHASE REQUEST\FRM_SEARCHPRLIST.Designer.vb">
+      <DependentUpon>FRM_SEARCHPRLIST.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PURCHASE REQUEST\FRM_SEARCHPRLIST.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PURCHASE REQUEST\FRM_SIGNATORYLIST.Designer.vb">
+      <DependentUpon>FRM_SIGNATORYLIST.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PURCHASE REQUEST\FRM_SIGNATORYLIST.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PURCHASE REQUEST\RPT_ABSTRACT_OF_QUOTATION.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPT_ABSTRACT_OF_QUOTATION.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PURCHASE REQUEST\RPT_AOQ.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPT_AOQ.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PURCHASE REQUEST\RPT_NOA.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPT_NOA.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PURCHASE REQUEST\RPT_PURCHASE_ORDER.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPT_PURCHASE_ORDER.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PURCHASE REQUEST\RPT_PURCHASE_REQUEST_SATELLITE.vb">
+      <DependentUpon>RPT_PURCHASE_REQUEST_SATELLITE.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="PURCHASE REQUEST\RPT_PURCHASE_REQUEST.vb">
+      <DependentUpon>RPT_PURCHASE_REQUEST.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="PURCHASE REQUEST\RPT_PURCHASE_REQUEST_PREVIEW_SATELLITE.vb">
+      <DependentUpon>RPT_PURCHASE_REQUEST_PREVIEW_SATELLITE.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="PURCHASE REQUEST\RPT_PURCHASE_REQUEST_PREVIEW.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPT_PURCHASE_REQUEST_PREVIEW.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MDI_Mainform.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDI_Mainform.Designer.vb">
+      <DependentUpon>MDI_Mainform.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="V2_VAN\LOGIN_PAGE\FRM_LOGIN.Designer.vb">
+      <DependentUpon>FRM_LOGIN.vb</DependentUpon>
+    </Compile>
+    <Compile Include="V2_VAN\LOGIN_PAGE\FRM_LOGIN.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="INVENTORY\FRM_ASSIGN.resx">
+      <DependentUpon>FRM_ASSIGN.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INVENTORY\FRM_ASSIGN_ITEMS.resx">
+      <DependentUpon>FRM_ASSIGN_ITEMS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INVENTORY\FRM_EMPLOYEE_LIST.resx">
+      <DependentUpon>FRM_EMPLOYEE_LIST.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INVENTORY\FRM_INVENTORY_ENCODING.resx">
+      <DependentUpon>FRM_INVENTORY_ENCODING.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INVENTORY\FRM_INVENTORY_PRINT_PREVIEW.resx">
+      <DependentUpon>FRM_INVENTORY_PRINT_PREVIEW.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INVENTORY\FRM_LOCATION_LIST.resx">
+      <DependentUpon>FRM_LOCATION_LIST.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INVENTORY\FRM_PREVIEW.resx">
+      <DependentUpon>FRM_PREVIEW.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INVENTORY\FRM_SETTINGS_SELECTION.resx">
+      <DependentUpon>FRM_SETTINGS_SELECTION.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INVENTORY\FRM_SETTINGS.resx">
+      <DependentUpon>FRM_SETTINGS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INVENTORY\FRM_STICKER_TAG.resx">
+      <DependentUpon>FRM_STICKER_TAG.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INVENTORY\RPT_INVENTORY_REPORT.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPT_INVENTORY_REPORT.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INVENTORY\RPT_ITEMS_ASSIGN.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPT_ITEMS_ASSIGN.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INVENTORY\RPT_ITEMS_IN_LOCATION.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPT_ITEMS_IN_LOCATION.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INVENTORY\RPT_STICKER_TAG3x2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPT_STICKER_TAG3x2.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INVENTORY\RPT_STICKER_TAG4x3.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPT_STICKER_TAG4x3.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POPUP_MODULE\FRM_ADDITIONAL_CATEGORIZATION.resx">
+      <DependentUpon>FRM_ADDITIONAL_CATEGORIZATION.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POPUP_MODULE\FRM_DATAENTRY.resx">
+      <DependentUpon>FRM_DATAENTRY.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POPUP_MODULE\FRM_DGV_ENCODING.resx">
+      <DependentUpon>FRM_DGV_ENCODING.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INVENTORY\FRM_LOCATION.resx">
+      <DependentUpon>FRM_LOCATION.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POPUP_MODULE\FRM_PRACCEPT.resx">
+      <DependentUpon>FRM_PRACCEPT.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POPUP_MODULE\FRM_PRCANCELED.resx">
+      <DependentUpon>FRM_PRCANCELED.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POPUP_MODULE\FRM_PRREVISION.resx">
+      <DependentUpon>FRM_PRREVISION.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POPUP_MODULE\FRM_SELECTION.resx">
+      <DependentUpon>FRM_SELECTION.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POPUP_MODULE\FRM_UPDATE_PR_STATUS.resx">
+      <DependentUpon>FRM_UPDATE_PR_STATUS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PURCHASE REQUEST\FRM_ABSTRACT_OF_QUOTATION.resx">
+      <DependentUpon>FRM_ABSTRACT_OF_QUOTATION.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PURCHASE REQUEST\FRM_ATTACHMENT.resx">
+      <DependentUpon>FRM_ATTACHMENT.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PURCHASE REQUEST\FRM_CHECK_PR.resx">
+      <DependentUpon>FRM_CHECK_PR.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PURCHASE REQUEST\FRM_PR.resx">
+      <DependentUpon>FRM_PR.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PURCHASE REQUEST\FRM_PURCHASE_ORDER.resx">
+      <DependentUpon>FRM_PURCHASE_ORDER.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PURCHASE REQUEST\FRM_PURCHASE_REQUEST_PRINTPREVIEW.resx">
+      <DependentUpon>FRM_PURCHASE_REQUEST_PRINTPREVIEW.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PURCHASE REQUEST\FRM_SEARCHPRLIST.resx">
+      <DependentUpon>FRM_SEARCHPRLIST.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PURCHASE REQUEST\FRM_SIGNATORYLIST.resx">
+      <DependentUpon>FRM_SIGNATORYLIST.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PURCHASE REQUEST\RPT_ABSTRACT_OF_QUOTATION.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPT_ABSTRACT_OF_QUOTATION.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PURCHASE REQUEST\RPT_AOQ.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPT_AOQ.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PURCHASE REQUEST\RPT_NOA.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPT_NOA.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PURCHASE REQUEST\RPT_PURCHASE_ORDER.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPT_PURCHASE_ORDER.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PURCHASE REQUEST\RPT_PURCHASE_REQUEST_SATELLITE.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPT_PURCHASE_REQUEST_SATELLITE.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PURCHASE REQUEST\RPT_PURCHASE_REQUEST.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPT_PURCHASE_REQUEST.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PURCHASE REQUEST\RPT_PURCHASE_REQUEST_PREVIEW_SATELLITE.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPT_PURCHASE_REQUEST_PREVIEW_SATELLITE.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PURCHASE REQUEST\RPT_PURCHASE_REQUEST_PREVIEW.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPT_PURCHASE_REQUEST_PREVIEW.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDI_Mainform.resx">
+      <DependentUpon>MDI_Mainform.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="V2_VAN\LOGIN_PAGE\FRM_LOGIN.resx">
+      <DependentUpon>FRM_LOGIN.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DATASETS\DS_CUSTOM.xsc">
+      <DependentUpon>DS_CUSTOM.xsd</DependentUpon>
+    </None>
+    <None Include="DATASETS\DS_CUSTOM.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_CUSTOM.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DATASETS\DS_CUSTOM.xss">
+      <DependentUpon>DS_CUSTOM.xsd</DependentUpon>
+    </None>
+    <None Include="DATASETS\DS_PROPERTYDB.xsc">
+      <DependentUpon>DS_PROPERTYDB.xsd</DependentUpon>
+    </None>
+    <None Include="DATASETS\DS_PROPERTYDB.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_PROPERTYDB.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DATASETS\DS_PROPERTYDB.xss">
+      <DependentUpon>DS_PROPERTYDB.xsd</DependentUpon>
+    </None>
+    <None Include="DATASETS\DS_STOREDPROC.xsc">
+      <DependentUpon>DS_STOREDPROC.xsd</DependentUpon>
+    </None>
+    <None Include="DATASETS\DS_STOREDPROC.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_STOREDPROC.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DATASETS\DS_STOREDPROC.xss">
+      <DependentUpon>DS_STOREDPROC.xsd</DependentUpon>
+    </None>
+    <None Include="DATASETS\DS_TABLES.xsc">
+      <DependentUpon>DS_TABLES.xsd</DependentUpon>
+    </None>
+    <None Include="DATASETS\DS_TABLES.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_TABLES.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DATASETS\DS_TABLES.xss">
+      <DependentUpon>DS_TABLES.xsd</DependentUpon>
+    </None>
+    <None Include="DATASETS\DS_VIEWS.xsc">
+      <DependentUpon>DS_VIEWS.xsd</DependentUpon>
+    </None>
+    <None Include="DATASETS\DS_VIEWS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_VIEWS.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DATASETS\DS_VIEWS.xss">
+      <DependentUpon>DS_VIEWS.xsd</DependentUpon>
+    </None>
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Resources\PRA LOGO WHITE BG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PRAicon.ico" />
+    <None Include="Resources\outline_transfer_within_a_station_black_18dp.png" />
+    <None Include="Resources\outline_insert_drive_file_black_18dp.png" />
+    <None Include="Resources\outline_local_shipping_black_18dp.png" />
+    <None Include="Resources\outline_book_black_18dp.png" />
+    <None Include="Resources\icons8-site-quality-warranty-36.png" />
+    <None Include="Resources\outline_insert_comment_black_18dp.png" />
+    <None Include="Resources\outline_assignment_black_18dp.png" />
+    <None Include="Resources\outline_assignment_turned_in_black_18dp.png" />
+    <None Include="Resources\outline_event_note_black_18dp.png" />
+    <None Include="Resources\outline_insert_comment_black_24dp.png" />
+    <None Include="Resources\outline_list_alt_black_18dp.png" />
+    <Content Include="CUSTOMCONTROLS\Resources\btnCancelHoverIn.png" />
+    <Content Include="CUSTOMCONTROLS\Resources\btnCancelHoverOut.png" />
+    <Content Include="CUSTOMCONTROLS\Resources\btnSaveHoverIn.png" />
+    <Content Include="CUSTOMCONTROLS\Resources\btnSaveHoverOut.png" />
+    <Content Include="CUSTOMCONTROLS\Resources\delete.png" />
+    <Content Include="CUSTOMCONTROLS\Resources\IMAGE.png" />
+    <Content Include="CUSTOMCONTROLS\Resources\logo.png" />
+    <Content Include="CUSTOMCONTROLS\Resources\MARKETERS IMAGE.png" />
+    <Content Include="CUSTOMCONTROLS\Resources\PRA LOGO WHITE BG.png" />
+    <Content Include="CUSTOMCONTROLS\Resources\PROCESS 11.png" />
+    <None Include="Resources\outline_double_arrow_black_18dp.png" />
+    <None Include="Resources\outline_arrow_forward_black_18dp.png" />
+    <None Include="Resources\outline_my_location_black_18dp.png" />
+    <None Include="Resources\outline_person_add_black_18dp.png" />
+    <None Include="Resources\NoRecordFound.jpg" />
+    <None Include="Resources\updating1.gif" />
+    <None Include="Resources\outline_scanner_black_18dp.png" />
+    <None Include="Resources\img000001.tif" />
+    <None Include="Resources\SCAN DOCUMENT.PNG" />
+    <None Include="Resources\outline_subdirectory_arrow_right_black_18dp.png" />
+    <None Include="Resources\outline_notifications_black_18dp.png" />
+    <None Include="Resources\baseline_notifications_black_18dp1.png" />
+    <None Include="Resources\baseline_notifications_black_18dp - Copy1.png" />
+    <None Include="Resources\baseline_notifications_black_18dp - Copy2.png" />
+    <None Include="Resources\baseline_notifications_black_18dp notif2.png" />
+    <None Include="Resources\baseline_notifications_black_18dp notif1.png" />
+    <None Include="Resources\baseline_notifications_black_18dp notif.png" />
+    <None Include="Resources\baseline_notifications_black_18dp - Copy.png" />
+    <None Include="Resources\baseline_notifications_black_18dp.png" />
+    <None Include="Resources\outline_playlist_add_check_black_18dp.png" />
+    <None Include="Resources\updating.gif" />
+    <None Include="Resources\outline_add_box_black_18dp.png" />
+    <None Include="Resources\outline_search_black_18dp.png" />
+    <None Include="Resources\outline_edit_black_18dp.png" />
+    <None Include="Resources\outline_post_add_black_18dp.png" />
+    <None Include="Resources\outline_refresh_black_18dp.png" />
+    <None Include="Resources\outline_check_black_18dp.png" />
+    <None Include="Resources\outline_print_black_18dp.png" />
+    <None Include="Resources\outline_cancel_black_18dp.png" />
+    <None Include="Resources\outline_save_black_18dp.png" />
+    <None Include="Resources\baseline_save_black_18dp.png" />
+    <None Include="Resources\outline_edit_black_24dp.png" />
+    <None Include="Resources\outline_post_add_black_24dp.png" />
+    <None Include="Resources\outline_search_black_24dp.png" />
+    <None Include="Resources\outline_attachment_black_18dp.png" />
+    <None Include="Resources\outline_folder_shared_white_24dp.png" />
+    <None Include="Resources\outline_assignment_white_24dp.png" />
+    <None Include="Resources\outline_build_white_24dp.png" />
+    <None Include="Resources\outline_home_work_white_24dp.png" />
+    <None Include="Resources\round_folder_shared_black_18dp.png" />
+    <None Include="Resources\Yes_Wrong_Circle.svg_.png" />
+    <None Include="Resources\Yes_Check_Circle.svg_.png" />
+    <None Include="Resources\close-icon.png" />
+    <None Include="Resources\close-icon-white.png" />
+    <None Include="Resources\Minimized_Left_white.png" />
+    <None Include="Resources\Minimized_Left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>

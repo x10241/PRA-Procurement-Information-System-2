@@ -1,0 +1,47 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="PRADEV" Type="System.String" Scope="User">
+      <Value Profile="(Default)">VON, VAN, MARK AND GENO</Value>
+    </Setting>
+    <Setting Name="FILEPATH" Type="System.String" Scope="User">
+      <Value Profile="(Default)">\\192.168.1.8\Update Server\PIS PROGRAM\</Value>
+    </Setting>
+    <Setting Name="RIMSEXEBACKUPPATH" Type="System.String" Scope="User">
+      <Value Profile="(Default)">\\192.168.1.8\Update Server\RIMS PROGRAM\RIMSEXEBACKUP\RIMS.exe</Value>
+    </Setting>
+    <Setting Name="PRAMasterDBConnString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=192.168.1.8\SQLPRA1;Initial Catalog=PRAMASTERDATABASE;Persist Security Info=True;User ID=sa;Password=pr@@dm1n2017507
+&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=192.168.1.8\SQLPRA1;Initial Catalog=PRAMASTERDATABASE;Persist Security Info=True;User ID=sa;Password=pr@@dm1n2017507
+</Value>
+    </Setting>
+    <Setting Name="APPVER" Type="System.String" Scope="User">
+      <Value Profile="(Default)">( V.01-2019 )
+PROCUREMENT INFORMATION SYSTEM (PIS)</Value>
+    </Setting>
+    <Setting Name="PRA_PROPERTYDBConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=192.168.1.8\SQLPRA1;Initial Catalog=PRA_PROPERTYDB;Persist Security Info=True;User ID=sa;Password=pr@@dm1n2017507&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=192.168.1.8\SQLPRA1;Initial Catalog=PRA_PROPERTYDB;Persist Security Info=True;User ID=sa;Password=pr@@dm1n2017507</Value>
+    </Setting>
+    <Setting Name="PIS_DIR" Type="System.String" Scope="User">
+      <Value Profile="(Default)">\\192.168.1.8\PRA Programs\PIS SCANNED FILES\</Value>
+    </Setting>
+    <Setting Name="PRA_BMSDBConnectionString" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Data Source=192.168.1.8\SQLPRA1;Initial Catalog=PRA_BMSDB;Persist Security Info=True;User ID=sa;Password=pr@@dm1n2017507
+</Value>
+    </Setting>
+    <Setting Name="PIS_FILENAME_PR" Type="System.String" Scope="User">
+      <Value Profile="(Default)">TOR (PIS) - PR</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
