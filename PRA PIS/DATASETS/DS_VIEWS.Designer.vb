@@ -29,6 +29,8 @@ Partial Public Class DS_VIEWS
     
     Private tableV1VW_USERACCESSSUB As V1VW_USERACCESSSUBDataTable
     
+    Private tableVWM4_ITEMS_CATEGORY_SUB_CATEGORY As VWM4_ITEMS_CATEGORY_SUB_CATEGORYDataTable
+    
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -64,6 +66,9 @@ Partial Public Class DS_VIEWS
             If (Not (ds.Tables("V1VW_USERACCESSSUB")) Is Nothing) Then
                 MyBase.Tables.Add(New V1VW_USERACCESSSUBDataTable(ds.Tables("V1VW_USERACCESSSUB")))
             End If
+            If (Not (ds.Tables("VWM4_ITEMS_CATEGORY_SUB_CATEGORY")) Is Nothing) Then
+                MyBase.Tables.Add(New VWM4_ITEMS_CATEGORY_SUB_CATEGORYDataTable(ds.Tables("VWM4_ITEMS_CATEGORY_SUB_CATEGORY")))
+            End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
             Me.Namespace = ds.Namespace
@@ -98,6 +103,16 @@ Partial Public Class DS_VIEWS
     Public ReadOnly Property V1VW_USERACCESSSUB() As V1VW_USERACCESSSUBDataTable
         Get
             Return Me.tableV1VW_USERACCESSSUB
+        End Get
+    End Property
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+     Global.System.ComponentModel.Browsable(false),  _
+     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
+    Public ReadOnly Property VWM4_ITEMS_CATEGORY_SUB_CATEGORY() As VWM4_ITEMS_CATEGORY_SUB_CATEGORYDataTable
+        Get
+            Return Me.tableVWM4_ITEMS_CATEGORY_SUB_CATEGORY
         End Get
     End Property
     
@@ -174,6 +189,9 @@ Partial Public Class DS_VIEWS
             If (Not (ds.Tables("V1VW_USERACCESSSUB")) Is Nothing) Then
                 MyBase.Tables.Add(New V1VW_USERACCESSSUBDataTable(ds.Tables("V1VW_USERACCESSSUB")))
             End If
+            If (Not (ds.Tables("VWM4_ITEMS_CATEGORY_SUB_CATEGORY")) Is Nothing) Then
+                MyBase.Tables.Add(New VWM4_ITEMS_CATEGORY_SUB_CATEGORYDataTable(ds.Tables("VWM4_ITEMS_CATEGORY_SUB_CATEGORY")))
+            End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
             Me.Namespace = ds.Namespace
@@ -218,6 +236,12 @@ Partial Public Class DS_VIEWS
                 Me.tableV1VW_USERACCESSSUB.InitVars
             End If
         End If
+        Me.tableVWM4_ITEMS_CATEGORY_SUB_CATEGORY = CType(MyBase.Tables("VWM4_ITEMS_CATEGORY_SUB_CATEGORY"),VWM4_ITEMS_CATEGORY_SUB_CATEGORYDataTable)
+        If (initTable = true) Then
+            If (Not (Me.tableVWM4_ITEMS_CATEGORY_SUB_CATEGORY) Is Nothing) Then
+                Me.tableVWM4_ITEMS_CATEGORY_SUB_CATEGORY.InitVars
+            End If
+        End If
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -232,6 +256,8 @@ Partial Public Class DS_VIEWS
         MyBase.Tables.Add(Me.tableV1VW_USERACCESSMAIN)
         Me.tableV1VW_USERACCESSSUB = New V1VW_USERACCESSSUBDataTable()
         MyBase.Tables.Add(Me.tableV1VW_USERACCESSSUB)
+        Me.tableVWM4_ITEMS_CATEGORY_SUB_CATEGORY = New VWM4_ITEMS_CATEGORY_SUB_CATEGORYDataTable()
+        MyBase.Tables.Add(Me.tableVWM4_ITEMS_CATEGORY_SUB_CATEGORY)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -243,6 +269,12 @@ Partial Public Class DS_VIEWS
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
     Private Function ShouldSerializeV1VW_USERACCESSSUB() As Boolean
+        Return false
+    End Function
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+    Private Function ShouldSerializeVWM4_ITEMS_CATEGORY_SUB_CATEGORY() As Boolean
         Return false
     End Function
     
@@ -309,6 +341,9 @@ Partial Public Class DS_VIEWS
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
     Public Delegate Sub V1VW_USERACCESSSUBRowChangeEventHandler(ByVal sender As Object, ByVal e As V1VW_USERACCESSSUBRowChangeEvent)
+    
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+    Public Delegate Sub VWM4_ITEMS_CATEGORY_SUB_CATEGORYRowChangeEventHandler(ByVal sender As Object, ByVal e As VWM4_ITEMS_CATEGORY_SUB_CATEGORYRowChangeEvent)
     
     '''<summary>
     '''Represents the strongly named DataTable class.
@@ -990,6 +1025,419 @@ Partial Public Class DS_VIEWS
     End Class
     
     '''<summary>
+    '''Represents the strongly named DataTable class.
+    '''</summary>
+    <Global.System.Serializable(),  _
+     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
+    Partial Public Class VWM4_ITEMS_CATEGORY_SUB_CATEGORYDataTable
+        Inherits Global.System.Data.TypedTableBase(Of VWM4_ITEMS_CATEGORY_SUB_CATEGORYRow)
+        
+        Private columnSC_NO As Global.System.Data.DataColumn
+        
+        Private columnCAT_CODE As Global.System.Data.DataColumn
+        
+        Private columnSC_SUBCATEGORY_NAME As Global.System.Data.DataColumn
+        
+        Private columnSC_STATUS As Global.System.Data.DataColumn
+        
+        Private columnHRIS_EMPNO As Global.System.Data.DataColumn
+        
+        Private columnSC_CREATED_DATE As Global.System.Data.DataColumn
+        
+        Private columnSC_UPDATED_DATE As Global.System.Data.DataColumn
+        
+        Private columnCAT_NAME As Global.System.Data.DataColumn
+        
+        Private columnCAT_STATUS As Global.System.Data.DataColumn
+        
+        Private columnCAT_CREATED_DATE As Global.System.Data.DataColumn
+        
+        Private columnCAT_UPDATED_DATE As Global.System.Data.DataColumn
+        
+        Private columnINV_CODE As Global.System.Data.DataColumn
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.TableName = "VWM4_ITEMS_CATEGORY_SUB_CATEGORY"
+            Me.BeginInit
+            Me.InitClass
+            Me.EndInit
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub New(ByVal table As Global.System.Data.DataTable)
+            MyBase.New
+            Me.TableName = table.TableName
+            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
+                Me.CaseSensitive = table.CaseSensitive
+            End If
+            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
+                Me.Locale = table.Locale
+            End If
+            If (table.Namespace <> table.DataSet.Namespace) Then
+                Me.Namespace = table.Namespace
+            End If
+            Me.Prefix = table.Prefix
+            Me.MinimumCapacity = table.MinimumCapacity
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
+            MyBase.New(info, context)
+            Me.InitVars
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property SC_NOColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnSC_NO
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property CAT_CODEColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCAT_CODE
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property SC_SUBCATEGORY_NAMEColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnSC_SUBCATEGORY_NAME
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property SC_STATUSColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnSC_STATUS
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property HRIS_EMPNOColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnHRIS_EMPNO
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property SC_CREATED_DATEColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnSC_CREATED_DATE
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property SC_UPDATED_DATEColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnSC_UPDATED_DATE
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property CAT_NAMEColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCAT_NAME
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property CAT_STATUSColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCAT_STATUS
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property CAT_CREATED_DATEColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCAT_CREATED_DATE
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property CAT_UPDATED_DATEColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCAT_UPDATED_DATE
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property INV_CODEColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnINV_CODE
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Browsable(false)>  _
+        Public ReadOnly Property Count() As Integer
+            Get
+                Return Me.Rows.Count
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Default ReadOnly Property Item(ByVal index As Integer) As VWM4_ITEMS_CATEGORY_SUB_CATEGORYRow
+            Get
+                Return CType(Me.Rows(index),VWM4_ITEMS_CATEGORY_SUB_CATEGORYRow)
+            End Get
+        End Property
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event VWM4_ITEMS_CATEGORY_SUB_CATEGORYRowChanging As VWM4_ITEMS_CATEGORY_SUB_CATEGORYRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event VWM4_ITEMS_CATEGORY_SUB_CATEGORYRowChanged As VWM4_ITEMS_CATEGORY_SUB_CATEGORYRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event VWM4_ITEMS_CATEGORY_SUB_CATEGORYRowDeleting As VWM4_ITEMS_CATEGORY_SUB_CATEGORYRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event VWM4_ITEMS_CATEGORY_SUB_CATEGORYRowDeleted As VWM4_ITEMS_CATEGORY_SUB_CATEGORYRowChangeEventHandler
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overloads Sub AddVWM4_ITEMS_CATEGORY_SUB_CATEGORYRow(ByVal row As VWM4_ITEMS_CATEGORY_SUB_CATEGORYRow)
+            Me.Rows.Add(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overloads Function AddVWM4_ITEMS_CATEGORY_SUB_CATEGORYRow(ByVal SC_NO As String, ByVal CAT_CODE As String, ByVal SC_SUBCATEGORY_NAME As String, ByVal SC_STATUS As Integer, ByVal HRIS_EMPNO As String, ByVal SC_CREATED_DATE As Date, ByVal SC_UPDATED_DATE As Date, ByVal CAT_NAME As String, ByVal CAT_STATUS As Integer, ByVal CAT_CREATED_DATE As Date, ByVal CAT_UPDATED_DATE As Date, ByVal INV_CODE As String) As VWM4_ITEMS_CATEGORY_SUB_CATEGORYRow
+            Dim rowVWM4_ITEMS_CATEGORY_SUB_CATEGORYRow As VWM4_ITEMS_CATEGORY_SUB_CATEGORYRow = CType(Me.NewRow,VWM4_ITEMS_CATEGORY_SUB_CATEGORYRow)
+            Dim columnValuesArray() As Object = New Object() {SC_NO, CAT_CODE, SC_SUBCATEGORY_NAME, SC_STATUS, HRIS_EMPNO, SC_CREATED_DATE, SC_UPDATED_DATE, CAT_NAME, CAT_STATUS, CAT_CREATED_DATE, CAT_UPDATED_DATE, INV_CODE}
+            rowVWM4_ITEMS_CATEGORY_SUB_CATEGORYRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowVWM4_ITEMS_CATEGORY_SUB_CATEGORYRow)
+            Return rowVWM4_ITEMS_CATEGORY_SUB_CATEGORYRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function FindBySC_NO(ByVal SC_NO As String) As VWM4_ITEMS_CATEGORY_SUB_CATEGORYRow
+            Return CType(Me.Rows.Find(New Object() {SC_NO}),VWM4_ITEMS_CATEGORY_SUB_CATEGORYRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overrides Function Clone() As Global.System.Data.DataTable
+            Dim cln As VWM4_ITEMS_CATEGORY_SUB_CATEGORYDataTable = CType(MyBase.Clone,VWM4_ITEMS_CATEGORY_SUB_CATEGORYDataTable)
+            cln.InitVars
+            Return cln
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
+            Return New VWM4_ITEMS_CATEGORY_SUB_CATEGORYDataTable()
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub InitVars()
+            Me.columnSC_NO = MyBase.Columns("SC_NO")
+            Me.columnCAT_CODE = MyBase.Columns("CAT_CODE")
+            Me.columnSC_SUBCATEGORY_NAME = MyBase.Columns("SC_SUBCATEGORY_NAME")
+            Me.columnSC_STATUS = MyBase.Columns("SC_STATUS")
+            Me.columnHRIS_EMPNO = MyBase.Columns("HRIS_EMPNO")
+            Me.columnSC_CREATED_DATE = MyBase.Columns("SC_CREATED_DATE")
+            Me.columnSC_UPDATED_DATE = MyBase.Columns("SC_UPDATED_DATE")
+            Me.columnCAT_NAME = MyBase.Columns("CAT_NAME")
+            Me.columnCAT_STATUS = MyBase.Columns("CAT_STATUS")
+            Me.columnCAT_CREATED_DATE = MyBase.Columns("CAT_CREATED_DATE")
+            Me.columnCAT_UPDATED_DATE = MyBase.Columns("CAT_UPDATED_DATE")
+            Me.columnINV_CODE = MyBase.Columns("INV_CODE")
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitClass()
+            Me.columnSC_NO = New Global.System.Data.DataColumn("SC_NO", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnSC_NO)
+            Me.columnCAT_CODE = New Global.System.Data.DataColumn("CAT_CODE", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCAT_CODE)
+            Me.columnSC_SUBCATEGORY_NAME = New Global.System.Data.DataColumn("SC_SUBCATEGORY_NAME", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnSC_SUBCATEGORY_NAME)
+            Me.columnSC_STATUS = New Global.System.Data.DataColumn("SC_STATUS", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnSC_STATUS)
+            Me.columnHRIS_EMPNO = New Global.System.Data.DataColumn("HRIS_EMPNO", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnHRIS_EMPNO)
+            Me.columnSC_CREATED_DATE = New Global.System.Data.DataColumn("SC_CREATED_DATE", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnSC_CREATED_DATE)
+            Me.columnSC_UPDATED_DATE = New Global.System.Data.DataColumn("SC_UPDATED_DATE", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnSC_UPDATED_DATE)
+            Me.columnCAT_NAME = New Global.System.Data.DataColumn("CAT_NAME", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCAT_NAME)
+            Me.columnCAT_STATUS = New Global.System.Data.DataColumn("CAT_STATUS", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCAT_STATUS)
+            Me.columnCAT_CREATED_DATE = New Global.System.Data.DataColumn("CAT_CREATED_DATE", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCAT_CREATED_DATE)
+            Me.columnCAT_UPDATED_DATE = New Global.System.Data.DataColumn("CAT_UPDATED_DATE", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCAT_UPDATED_DATE)
+            Me.columnINV_CODE = New Global.System.Data.DataColumn("INV_CODE", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnINV_CODE)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnSC_NO}, true))
+            Me.columnSC_NO.AllowDBNull = false
+            Me.columnSC_NO.Unique = true
+            Me.columnSC_NO.MaxLength = 50
+            Me.columnCAT_CODE.MaxLength = 50
+            Me.columnSC_SUBCATEGORY_NAME.MaxLength = 100
+            Me.columnHRIS_EMPNO.MaxLength = 20
+            Me.columnSC_CREATED_DATE.AllowDBNull = false
+            Me.columnCAT_NAME.MaxLength = 2147483647
+            Me.columnCAT_CREATED_DATE.AllowDBNull = false
+            Me.columnINV_CODE.AllowDBNull = false
+            Me.columnINV_CODE.MaxLength = 50
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function NewVWM4_ITEMS_CATEGORY_SUB_CATEGORYRow() As VWM4_ITEMS_CATEGORY_SUB_CATEGORYRow
+            Return CType(Me.NewRow,VWM4_ITEMS_CATEGORY_SUB_CATEGORYRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
+            Return New VWM4_ITEMS_CATEGORY_SUB_CATEGORYRow(builder)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function GetRowType() As Global.System.Type
+            Return GetType(VWM4_ITEMS_CATEGORY_SUB_CATEGORYRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanged(e)
+            If (Not (Me.VWM4_ITEMS_CATEGORY_SUB_CATEGORYRowChangedEvent) Is Nothing) Then
+                RaiseEvent VWM4_ITEMS_CATEGORY_SUB_CATEGORYRowChanged(Me, New VWM4_ITEMS_CATEGORY_SUB_CATEGORYRowChangeEvent(CType(e.Row,VWM4_ITEMS_CATEGORY_SUB_CATEGORYRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanging(e)
+            If (Not (Me.VWM4_ITEMS_CATEGORY_SUB_CATEGORYRowChangingEvent) Is Nothing) Then
+                RaiseEvent VWM4_ITEMS_CATEGORY_SUB_CATEGORYRowChanging(Me, New VWM4_ITEMS_CATEGORY_SUB_CATEGORYRowChangeEvent(CType(e.Row,VWM4_ITEMS_CATEGORY_SUB_CATEGORYRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleted(e)
+            If (Not (Me.VWM4_ITEMS_CATEGORY_SUB_CATEGORYRowDeletedEvent) Is Nothing) Then
+                RaiseEvent VWM4_ITEMS_CATEGORY_SUB_CATEGORYRowDeleted(Me, New VWM4_ITEMS_CATEGORY_SUB_CATEGORYRowChangeEvent(CType(e.Row,VWM4_ITEMS_CATEGORY_SUB_CATEGORYRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleting(e)
+            If (Not (Me.VWM4_ITEMS_CATEGORY_SUB_CATEGORYRowDeletingEvent) Is Nothing) Then
+                RaiseEvent VWM4_ITEMS_CATEGORY_SUB_CATEGORYRowDeleting(Me, New VWM4_ITEMS_CATEGORY_SUB_CATEGORYRowChangeEvent(CType(e.Row,VWM4_ITEMS_CATEGORY_SUB_CATEGORYRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub RemoveVWM4_ITEMS_CATEGORY_SUB_CATEGORYRow(ByVal row As VWM4_ITEMS_CATEGORY_SUB_CATEGORYRow)
+            Me.Rows.Remove(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
+            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
+            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
+            Dim ds As DS_VIEWS = New DS_VIEWS()
+            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
+            any1.MinOccurs = New Decimal(0)
+            any1.MaxOccurs = Decimal.MaxValue
+            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any1)
+            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
+            any2.MinOccurs = New Decimal(1)
+            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any2)
+            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute1.Name = "namespace"
+            attribute1.FixedValue = ds.Namespace
+            type.Attributes.Add(attribute1)
+            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute2.Name = "tableTypeName"
+            attribute2.FixedValue = "VWM4_ITEMS_CATEGORY_SUB_CATEGORYDataTable"
+            type.Attributes.Add(attribute2)
+            type.Particle = sequence
+            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
+            If xs.Contains(dsSchema.TargetNamespace) Then
+                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Try 
+                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
+                    dsSchema.Write(s1)
+                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
+                    Do While schemas.MoveNext
+                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
+                        s2.SetLength(0)
+                        schema.Write(s2)
+                        If (s1.Length = s2.Length) Then
+                            s1.Position = 0
+                            s2.Position = 0
+                            
+                            Do While ((s1.Position <> s1.Length)  _
+                                        AndAlso (s1.ReadByte = s2.ReadByte))
+                                
+                                
+                            Loop
+                            If (s1.Position = s1.Length) Then
+                                Return type
+                            End If
+                        End If
+                        
+                    Loop
+                Finally
+                    If (Not (s1) Is Nothing) Then
+                        s1.Close
+                    End If
+                    If (Not (s2) Is Nothing) Then
+                        s2.Close
+                    End If
+                End Try
+            End If
+            xs.Add(dsSchema)
+            Return type
+        End Function
+    End Class
+    
+    '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
     Partial Public Class V1VW_USERACCESSMAINRow
@@ -1213,6 +1661,290 @@ Partial Public Class DS_VIEWS
     End Class
     
     '''<summary>
+    '''Represents strongly named DataRow class.
+    '''</summary>
+    Partial Public Class VWM4_ITEMS_CATEGORY_SUB_CATEGORYRow
+        Inherits Global.System.Data.DataRow
+        
+        Private tableVWM4_ITEMS_CATEGORY_SUB_CATEGORY As VWM4_ITEMS_CATEGORY_SUB_CATEGORYDataTable
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
+            MyBase.New(rb)
+            Me.tableVWM4_ITEMS_CATEGORY_SUB_CATEGORY = CType(Me.Table,VWM4_ITEMS_CATEGORY_SUB_CATEGORYDataTable)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property SC_NO() As String
+            Get
+                Return CType(Me(Me.tableVWM4_ITEMS_CATEGORY_SUB_CATEGORY.SC_NOColumn),String)
+            End Get
+            Set
+                Me(Me.tableVWM4_ITEMS_CATEGORY_SUB_CATEGORY.SC_NOColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property CAT_CODE() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableVWM4_ITEMS_CATEGORY_SUB_CATEGORY.CAT_CODEColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'CAT_CODE' in table 'VWM4_ITEMS_CATEGORY_SUB_CATEGORY' is DB"& _ 
+                            "Null.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableVWM4_ITEMS_CATEGORY_SUB_CATEGORY.CAT_CODEColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property SC_SUBCATEGORY_NAME() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableVWM4_ITEMS_CATEGORY_SUB_CATEGORY.SC_SUBCATEGORY_NAMEColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'SC_SUBCATEGORY_NAME' in table 'VWM4_ITEMS_CATEGORY_SUB_CATE"& _ 
+                            "GORY' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableVWM4_ITEMS_CATEGORY_SUB_CATEGORY.SC_SUBCATEGORY_NAMEColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property SC_STATUS() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tableVWM4_ITEMS_CATEGORY_SUB_CATEGORY.SC_STATUSColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'SC_STATUS' in table 'VWM4_ITEMS_CATEGORY_SUB_CATEGORY' is D"& _ 
+                            "BNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableVWM4_ITEMS_CATEGORY_SUB_CATEGORY.SC_STATUSColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property HRIS_EMPNO() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableVWM4_ITEMS_CATEGORY_SUB_CATEGORY.HRIS_EMPNOColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'HRIS_EMPNO' in table 'VWM4_ITEMS_CATEGORY_SUB_CATEGORY' is "& _ 
+                            "DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableVWM4_ITEMS_CATEGORY_SUB_CATEGORY.HRIS_EMPNOColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property SC_CREATED_DATE() As Date
+            Get
+                Return CType(Me(Me.tableVWM4_ITEMS_CATEGORY_SUB_CATEGORY.SC_CREATED_DATEColumn),Date)
+            End Get
+            Set
+                Me(Me.tableVWM4_ITEMS_CATEGORY_SUB_CATEGORY.SC_CREATED_DATEColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property SC_UPDATED_DATE() As Date
+            Get
+                Try 
+                    Return CType(Me(Me.tableVWM4_ITEMS_CATEGORY_SUB_CATEGORY.SC_UPDATED_DATEColumn),Date)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'SC_UPDATED_DATE' in table 'VWM4_ITEMS_CATEGORY_SUB_CATEGORY"& _ 
+                            "' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableVWM4_ITEMS_CATEGORY_SUB_CATEGORY.SC_UPDATED_DATEColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property CAT_NAME() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableVWM4_ITEMS_CATEGORY_SUB_CATEGORY.CAT_NAMEColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'CAT_NAME' in table 'VWM4_ITEMS_CATEGORY_SUB_CATEGORY' is DB"& _ 
+                            "Null.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableVWM4_ITEMS_CATEGORY_SUB_CATEGORY.CAT_NAMEColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property CAT_STATUS() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tableVWM4_ITEMS_CATEGORY_SUB_CATEGORY.CAT_STATUSColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'CAT_STATUS' in table 'VWM4_ITEMS_CATEGORY_SUB_CATEGORY' is "& _ 
+                            "DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableVWM4_ITEMS_CATEGORY_SUB_CATEGORY.CAT_STATUSColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property CAT_CREATED_DATE() As Date
+            Get
+                Return CType(Me(Me.tableVWM4_ITEMS_CATEGORY_SUB_CATEGORY.CAT_CREATED_DATEColumn),Date)
+            End Get
+            Set
+                Me(Me.tableVWM4_ITEMS_CATEGORY_SUB_CATEGORY.CAT_CREATED_DATEColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property CAT_UPDATED_DATE() As Date
+            Get
+                Try 
+                    Return CType(Me(Me.tableVWM4_ITEMS_CATEGORY_SUB_CATEGORY.CAT_UPDATED_DATEColumn),Date)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'CAT_UPDATED_DATE' in table 'VWM4_ITEMS_CATEGORY_SUB_CATEGOR"& _ 
+                            "Y' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableVWM4_ITEMS_CATEGORY_SUB_CATEGORY.CAT_UPDATED_DATEColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property INV_CODE() As String
+            Get
+                Return CType(Me(Me.tableVWM4_ITEMS_CATEGORY_SUB_CATEGORY.INV_CODEColumn),String)
+            End Get
+            Set
+                Me(Me.tableVWM4_ITEMS_CATEGORY_SUB_CATEGORY.INV_CODEColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsCAT_CODENull() As Boolean
+            Return Me.IsNull(Me.tableVWM4_ITEMS_CATEGORY_SUB_CATEGORY.CAT_CODEColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetCAT_CODENull()
+            Me(Me.tableVWM4_ITEMS_CATEGORY_SUB_CATEGORY.CAT_CODEColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsSC_SUBCATEGORY_NAMENull() As Boolean
+            Return Me.IsNull(Me.tableVWM4_ITEMS_CATEGORY_SUB_CATEGORY.SC_SUBCATEGORY_NAMEColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetSC_SUBCATEGORY_NAMENull()
+            Me(Me.tableVWM4_ITEMS_CATEGORY_SUB_CATEGORY.SC_SUBCATEGORY_NAMEColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsSC_STATUSNull() As Boolean
+            Return Me.IsNull(Me.tableVWM4_ITEMS_CATEGORY_SUB_CATEGORY.SC_STATUSColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetSC_STATUSNull()
+            Me(Me.tableVWM4_ITEMS_CATEGORY_SUB_CATEGORY.SC_STATUSColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsHRIS_EMPNONull() As Boolean
+            Return Me.IsNull(Me.tableVWM4_ITEMS_CATEGORY_SUB_CATEGORY.HRIS_EMPNOColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetHRIS_EMPNONull()
+            Me(Me.tableVWM4_ITEMS_CATEGORY_SUB_CATEGORY.HRIS_EMPNOColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsSC_UPDATED_DATENull() As Boolean
+            Return Me.IsNull(Me.tableVWM4_ITEMS_CATEGORY_SUB_CATEGORY.SC_UPDATED_DATEColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetSC_UPDATED_DATENull()
+            Me(Me.tableVWM4_ITEMS_CATEGORY_SUB_CATEGORY.SC_UPDATED_DATEColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsCAT_NAMENull() As Boolean
+            Return Me.IsNull(Me.tableVWM4_ITEMS_CATEGORY_SUB_CATEGORY.CAT_NAMEColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetCAT_NAMENull()
+            Me(Me.tableVWM4_ITEMS_CATEGORY_SUB_CATEGORY.CAT_NAMEColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsCAT_STATUSNull() As Boolean
+            Return Me.IsNull(Me.tableVWM4_ITEMS_CATEGORY_SUB_CATEGORY.CAT_STATUSColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetCAT_STATUSNull()
+            Me(Me.tableVWM4_ITEMS_CATEGORY_SUB_CATEGORY.CAT_STATUSColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsCAT_UPDATED_DATENull() As Boolean
+            Return Me.IsNull(Me.tableVWM4_ITEMS_CATEGORY_SUB_CATEGORY.CAT_UPDATED_DATEColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetCAT_UPDATED_DATENull()
+            Me(Me.tableVWM4_ITEMS_CATEGORY_SUB_CATEGORY.CAT_UPDATED_DATEColumn) = Global.System.Convert.DBNull
+        End Sub
+    End Class
+    
+    '''<summary>
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
@@ -1270,6 +2002,42 @@ Partial Public Class DS_VIEWS
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public ReadOnly Property Row() As V1VW_USERACCESSSUBRow
+            Get
+                Return Me.eventRow
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
+            Get
+                Return Me.eventAction
+            End Get
+        End Property
+    End Class
+    
+    '''<summary>
+    '''Row event argument class
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+    Public Class VWM4_ITEMS_CATEGORY_SUB_CATEGORYRowChangeEvent
+        Inherits Global.System.EventArgs
+        
+        Private eventRow As VWM4_ITEMS_CATEGORY_SUB_CATEGORYRow
+        
+        Private eventAction As Global.System.Data.DataRowAction
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub New(ByVal row As VWM4_ITEMS_CATEGORY_SUB_CATEGORYRow, ByVal action As Global.System.Data.DataRowAction)
+            MyBase.New
+            Me.eventRow = row
+            Me.eventAction = action
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property Row() As VWM4_ITEMS_CATEGORY_SUB_CATEGORYRow
             Get
                 Return Me.eventRow
             End Get
@@ -1752,6 +2520,206 @@ Namespace DS_VIEWSTableAdapters
             Else
                 Return CType(returnValue,Object)
             End If
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the connection and commands used to retrieve and save data.
+    '''</summary>
+    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     Global.System.ComponentModel.ToolboxItem(true),  _
+     Global.System.ComponentModel.DataObjectAttribute(true),  _
+     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+    Partial Public Class VWM4_ITEMS_CATEGORY_SUB_CATEGORYTableAdapter
+        Inherits Global.System.ComponentModel.Component
+        
+        Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
+        
+        Private _connection As Global.System.Data.SqlClient.SqlConnection
+        
+        Private _transaction As Global.System.Data.SqlClient.SqlTransaction
+        
+        Private _commandCollection() As Global.System.Data.SqlClient.SqlCommand
+        
+        Private _clearBeforeFill As Boolean
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.ClearBeforeFill = true
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Friend ReadOnly Property Adapter() As Global.System.Data.SqlClient.SqlDataAdapter
+            Get
+                If (Me._adapter Is Nothing) Then
+                    Me.InitAdapter
+                End If
+                Return Me._adapter
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Property Connection() As Global.System.Data.SqlClient.SqlConnection
+            Get
+                If (Me._connection Is Nothing) Then
+                    Me.InitConnection
+                End If
+                Return Me._connection
+            End Get
+            Set
+                Me._connection = value
+                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
+                    Me.Adapter.InsertCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
+                    Me.Adapter.DeleteCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
+                    Me.Adapter.UpdateCommand.Connection = value
+                End If
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
+                        CType(Me.CommandCollection(i),Global.System.Data.SqlClient.SqlCommand).Connection = value
+                    End If
+                    i = (i + 1)
+                Loop
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Property Transaction() As Global.System.Data.SqlClient.SqlTransaction
+            Get
+                Return Me._transaction
+            End Get
+            Set
+                Me._transaction = value
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    Me.CommandCollection(i).Transaction = Me._transaction
+                    i = (i + 1)
+                Loop
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
+                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
+                    Me.Adapter.InsertCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
+                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
+                End If
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected ReadOnly Property CommandCollection() As Global.System.Data.SqlClient.SqlCommand()
+            Get
+                If (Me._commandCollection Is Nothing) Then
+                    Me.InitCommandCollection
+                End If
+                Return Me._commandCollection
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property ClearBeforeFill() As Boolean
+            Get
+                Return Me._clearBeforeFill
+            End Get
+            Set
+                Me._clearBeforeFill = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitAdapter()
+            Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
+            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
+            tableMapping.SourceTable = "Table"
+            tableMapping.DataSetTable = "VWM4_ITEMS_CATEGORY_SUB_CATEGORY"
+            tableMapping.ColumnMappings.Add("SC_NO", "SC_NO")
+            tableMapping.ColumnMappings.Add("CAT_CODE", "CAT_CODE")
+            tableMapping.ColumnMappings.Add("SC_SUBCATEGORY_NAME", "SC_SUBCATEGORY_NAME")
+            tableMapping.ColumnMappings.Add("SC_STATUS", "SC_STATUS")
+            tableMapping.ColumnMappings.Add("HRIS_EMPNO", "HRIS_EMPNO")
+            tableMapping.ColumnMappings.Add("SC_CREATED_DATE", "SC_CREATED_DATE")
+            tableMapping.ColumnMappings.Add("SC_UPDATED_DATE", "SC_UPDATED_DATE")
+            tableMapping.ColumnMappings.Add("CAT_NAME", "CAT_NAME")
+            tableMapping.ColumnMappings.Add("CAT_STATUS", "CAT_STATUS")
+            tableMapping.ColumnMappings.Add("CAT_CREATED_DATE", "CAT_CREATED_DATE")
+            tableMapping.ColumnMappings.Add("CAT_UPDATED_DATE", "CAT_UPDATED_DATE")
+            tableMapping.ColumnMappings.Add("INV_CODE", "INV_CODE")
+            Me._adapter.TableMappings.Add(tableMapping)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitConnection()
+            Me._connection = New Global.System.Data.SqlClient.SqlConnection()
+            Me._connection.ConnectionString = Global.PRA_PIS.My.MySettings.Default.PRA_PROPERTYDBConnectionString
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitCommandCollection()
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
+            Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(0).Connection = Me.Connection
+            Me._commandCollection(0).CommandText = "SELECT        VWM4_ITEMS_CATEGORY_SUB_CATEGORY.*"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            VWM4_ITEMS_CATE"& _ 
+                "GORY_SUB_CATEGORY"
+            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(1).Connection = Me.Connection
+            Me._commandCollection(1).CommandText = "SELECT        SC_NO, CAT_CODE, SC_SUBCATEGORY_NAME, SC_STATUS, HRIS_EMPNO, SC_CRE"& _ 
+                "ATED_DATE, SC_UPDATED_DATE, CAT_NAME, CAT_STATUS, CAT_CREATED_DATE, CAT_UPDATED_"& _ 
+                "DATE, INV_CODE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            VWM4_ITEMS_CATEGORY_SUB_CATEGORY"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        ("& _ 
+                "INV_CODE = @INV_CODE)"
+            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@INV_CODE", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "INV_CODE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
+        Public Overloads Overridable Function Fill(ByVal dataTable As DS_VIEWS.VWM4_ITEMS_CATEGORY_SUB_CATEGORYDataTable) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillByINV_CODE(ByVal dataTable As DS_VIEWS.VWM4_ITEMS_CATEGORY_SUB_CATEGORYDataTable, ByVal INV_CODE As String) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            If (INV_CODE Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("INV_CODE")
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(INV_CODE,String)
+            End If
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
         End Function
     End Class
     

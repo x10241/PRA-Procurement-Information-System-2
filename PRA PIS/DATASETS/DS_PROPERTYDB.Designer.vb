@@ -79,8 +79,6 @@ Partial Public Class DS_PROPERTYDB
     
     Private tabletblM4_SUB_CATEGORY1 As tblM4_SUB_CATEGORY1DataTable
     
-    Private tableSPM4_INVENTORY_REPORT As SPM4_INVENTORY_REPORTDataTable
-    
     Private tableSPM4_PROPERTY_NO As SPM4_PROPERTY_NODataTable
     
     Private tabletblM4_PURCHASEREQUEST_CATEGORY As tblM4_PURCHASEREQUEST_CATEGORYDataTable
@@ -129,6 +127,10 @@ Partial Public Class DS_PROPERTYDB
     
     Private tabletblM4_INVENTORY_ITEMS_PROPERTY As tblM4_INVENTORY_ITEMS_PROPERTYDataTable
     
+    Private tabletblM4_INVENTORY_ITEMS2 As tblM4_INVENTORY_ITEMS2DataTable
+    
+    Private tabletblM4_INVENTORY_TYPE As tblM4_INVENTORY_TYPEDataTable
+    
     Private tablePR_PARTICULARS_PREVIEW As PR_PARTICULARS_PREVIEWDataTable
     
     Private tableItemsDataGridView As ItemsDataGridViewDataTable
@@ -164,6 +166,8 @@ Partial Public Class DS_PROPERTYDB
     Private relationFK_tblM4_INVENTORY_ITEMS_tblM4_INVENTORY_ITEMS As Global.System.Data.DataRelation
     
     Private relationFK_tblM4_SUB_CATEGORY_tblM4_CATEGORY As Global.System.Data.DataRelation
+    
+    Private relationFK_tblM4_INVENTORY_ITEMS_tblM4_INVENTORY_TYPE As Global.System.Data.DataRelation
     
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
@@ -275,9 +279,6 @@ Partial Public Class DS_PROPERTYDB
             If (Not (ds.Tables("tblM4_SUB_CATEGORY1")) Is Nothing) Then
                 MyBase.Tables.Add(New tblM4_SUB_CATEGORY1DataTable(ds.Tables("tblM4_SUB_CATEGORY1")))
             End If
-            If (Not (ds.Tables("SPM4_INVENTORY_REPORT")) Is Nothing) Then
-                MyBase.Tables.Add(New SPM4_INVENTORY_REPORTDataTable(ds.Tables("SPM4_INVENTORY_REPORT")))
-            End If
             If (Not (ds.Tables("SPM4_PROPERTY_NO")) Is Nothing) Then
                 MyBase.Tables.Add(New SPM4_PROPERTY_NODataTable(ds.Tables("SPM4_PROPERTY_NO")))
             End If
@@ -349,6 +350,12 @@ Partial Public Class DS_PROPERTYDB
             End If
             If (Not (ds.Tables("tblM4_INVENTORY_ITEMS_PROPERTY")) Is Nothing) Then
                 MyBase.Tables.Add(New tblM4_INVENTORY_ITEMS_PROPERTYDataTable(ds.Tables("tblM4_INVENTORY_ITEMS_PROPERTY")))
+            End If
+            If (Not (ds.Tables("tblM4_INVENTORY_ITEMS2")) Is Nothing) Then
+                MyBase.Tables.Add(New tblM4_INVENTORY_ITEMS2DataTable(ds.Tables("tblM4_INVENTORY_ITEMS2")))
+            End If
+            If (Not (ds.Tables("tblM4_INVENTORY_TYPE")) Is Nothing) Then
+                MyBase.Tables.Add(New tblM4_INVENTORY_TYPEDataTable(ds.Tables("tblM4_INVENTORY_TYPE")))
             End If
             If (Not (ds.Tables("PR_PARTICULARS_PREVIEW")) Is Nothing) Then
                 MyBase.Tables.Add(New PR_PARTICULARS_PREVIEWDataTable(ds.Tables("PR_PARTICULARS_PREVIEW")))
@@ -647,16 +654,6 @@ Partial Public Class DS_PROPERTYDB
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property SPM4_INVENTORY_REPORT() As SPM4_INVENTORY_REPORTDataTable
-        Get
-            Return Me.tableSPM4_INVENTORY_REPORT
-        End Get
-    End Property
-    
-    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-     Global.System.ComponentModel.Browsable(false),  _
-     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
     Public ReadOnly Property SPM4_PROPERTY_NO() As SPM4_PROPERTY_NODataTable
         Get
             Return Me.tableSPM4_PROPERTY_NO
@@ -897,6 +894,26 @@ Partial Public Class DS_PROPERTYDB
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
+    Public ReadOnly Property tblM4_INVENTORY_ITEMS2() As tblM4_INVENTORY_ITEMS2DataTable
+        Get
+            Return Me.tabletblM4_INVENTORY_ITEMS2
+        End Get
+    End Property
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+     Global.System.ComponentModel.Browsable(false),  _
+     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
+    Public ReadOnly Property tblM4_INVENTORY_TYPE() As tblM4_INVENTORY_TYPEDataTable
+        Get
+            Return Me.tabletblM4_INVENTORY_TYPE
+        End Get
+    End Property
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+     Global.System.ComponentModel.Browsable(false),  _
+     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
     Public ReadOnly Property PR_PARTICULARS_PREVIEW() As PR_PARTICULARS_PREVIEWDataTable
         Get
             Return Me.tablePR_PARTICULARS_PREVIEW
@@ -1061,9 +1078,6 @@ Partial Public Class DS_PROPERTYDB
             If (Not (ds.Tables("tblM4_SUB_CATEGORY1")) Is Nothing) Then
                 MyBase.Tables.Add(New tblM4_SUB_CATEGORY1DataTable(ds.Tables("tblM4_SUB_CATEGORY1")))
             End If
-            If (Not (ds.Tables("SPM4_INVENTORY_REPORT")) Is Nothing) Then
-                MyBase.Tables.Add(New SPM4_INVENTORY_REPORTDataTable(ds.Tables("SPM4_INVENTORY_REPORT")))
-            End If
             If (Not (ds.Tables("SPM4_PROPERTY_NO")) Is Nothing) Then
                 MyBase.Tables.Add(New SPM4_PROPERTY_NODataTable(ds.Tables("SPM4_PROPERTY_NO")))
             End If
@@ -1135,6 +1149,12 @@ Partial Public Class DS_PROPERTYDB
             End If
             If (Not (ds.Tables("tblM4_INVENTORY_ITEMS_PROPERTY")) Is Nothing) Then
                 MyBase.Tables.Add(New tblM4_INVENTORY_ITEMS_PROPERTYDataTable(ds.Tables("tblM4_INVENTORY_ITEMS_PROPERTY")))
+            End If
+            If (Not (ds.Tables("tblM4_INVENTORY_ITEMS2")) Is Nothing) Then
+                MyBase.Tables.Add(New tblM4_INVENTORY_ITEMS2DataTable(ds.Tables("tblM4_INVENTORY_ITEMS2")))
+            End If
+            If (Not (ds.Tables("tblM4_INVENTORY_TYPE")) Is Nothing) Then
+                MyBase.Tables.Add(New tblM4_INVENTORY_TYPEDataTable(ds.Tables("tblM4_INVENTORY_TYPE")))
             End If
             If (Not (ds.Tables("PR_PARTICULARS_PREVIEW")) Is Nothing) Then
                 MyBase.Tables.Add(New PR_PARTICULARS_PREVIEWDataTable(ds.Tables("PR_PARTICULARS_PREVIEW")))
@@ -1336,12 +1356,6 @@ Partial Public Class DS_PROPERTYDB
                 Me.tabletblM4_SUB_CATEGORY1.InitVars
             End If
         End If
-        Me.tableSPM4_INVENTORY_REPORT = CType(MyBase.Tables("SPM4_INVENTORY_REPORT"),SPM4_INVENTORY_REPORTDataTable)
-        If (initTable = true) Then
-            If (Not (Me.tableSPM4_INVENTORY_REPORT) Is Nothing) Then
-                Me.tableSPM4_INVENTORY_REPORT.InitVars
-            End If
-        End If
         Me.tableSPM4_PROPERTY_NO = CType(MyBase.Tables("SPM4_PROPERTY_NO"),SPM4_PROPERTY_NODataTable)
         If (initTable = true) Then
             If (Not (Me.tableSPM4_PROPERTY_NO) Is Nothing) Then
@@ -1486,6 +1500,18 @@ Partial Public Class DS_PROPERTYDB
                 Me.tabletblM4_INVENTORY_ITEMS_PROPERTY.InitVars
             End If
         End If
+        Me.tabletblM4_INVENTORY_ITEMS2 = CType(MyBase.Tables("tblM4_INVENTORY_ITEMS2"),tblM4_INVENTORY_ITEMS2DataTable)
+        If (initTable = true) Then
+            If (Not (Me.tabletblM4_INVENTORY_ITEMS2) Is Nothing) Then
+                Me.tabletblM4_INVENTORY_ITEMS2.InitVars
+            End If
+        End If
+        Me.tabletblM4_INVENTORY_TYPE = CType(MyBase.Tables("tblM4_INVENTORY_TYPE"),tblM4_INVENTORY_TYPEDataTable)
+        If (initTable = true) Then
+            If (Not (Me.tabletblM4_INVENTORY_TYPE) Is Nothing) Then
+                Me.tabletblM4_INVENTORY_TYPE.InitVars
+            End If
+        End If
         Me.tablePR_PARTICULARS_PREVIEW = CType(MyBase.Tables("PR_PARTICULARS_PREVIEW"),PR_PARTICULARS_PREVIEWDataTable)
         If (initTable = true) Then
             If (Not (Me.tablePR_PARTICULARS_PREVIEW) Is Nothing) Then
@@ -1514,6 +1540,7 @@ Partial Public Class DS_PROPERTYDB
         Me.relationFK_tblM4_ITEMS_tblM4_ITEMBRAND = Me.Relations("FK_tblM4_ITEMS_tblM4_ITEMBRAND")
         Me.relationFK_tblM4_INVENTORY_ITEMS_tblM4_INVENTORY_ITEMS = Me.Relations("FK_tblM4_INVENTORY_ITEMS_tblM4_INVENTORY_ITEMS")
         Me.relationFK_tblM4_SUB_CATEGORY_tblM4_CATEGORY = Me.Relations("FK_tblM4_SUB_CATEGORY_tblM4_CATEGORY")
+        Me.relationFK_tblM4_INVENTORY_ITEMS_tblM4_INVENTORY_TYPE = Me.Relations("FK_tblM4_INVENTORY_ITEMS_tblM4_INVENTORY_TYPE")
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1578,8 +1605,6 @@ Partial Public Class DS_PROPERTYDB
         MyBase.Tables.Add(Me.tabletblM4_ITEMBRAND1)
         Me.tabletblM4_SUB_CATEGORY1 = New tblM4_SUB_CATEGORY1DataTable()
         MyBase.Tables.Add(Me.tabletblM4_SUB_CATEGORY1)
-        Me.tableSPM4_INVENTORY_REPORT = New SPM4_INVENTORY_REPORTDataTable()
-        MyBase.Tables.Add(Me.tableSPM4_INVENTORY_REPORT)
         Me.tableSPM4_PROPERTY_NO = New SPM4_PROPERTY_NODataTable()
         MyBase.Tables.Add(Me.tableSPM4_PROPERTY_NO)
         Me.tabletblM4_PURCHASEREQUEST_CATEGORY = New tblM4_PURCHASEREQUEST_CATEGORYDataTable()
@@ -1628,6 +1653,10 @@ Partial Public Class DS_PROPERTYDB
         MyBase.Tables.Add(Me.tabletblM4_INVENTORY_ACQUISITION_VALUE)
         Me.tabletblM4_INVENTORY_ITEMS_PROPERTY = New tblM4_INVENTORY_ITEMS_PROPERTYDataTable()
         MyBase.Tables.Add(Me.tabletblM4_INVENTORY_ITEMS_PROPERTY)
+        Me.tabletblM4_INVENTORY_ITEMS2 = New tblM4_INVENTORY_ITEMS2DataTable()
+        MyBase.Tables.Add(Me.tabletblM4_INVENTORY_ITEMS2)
+        Me.tabletblM4_INVENTORY_TYPE = New tblM4_INVENTORY_TYPEDataTable()
+        MyBase.Tables.Add(Me.tabletblM4_INVENTORY_TYPE)
         Me.tablePR_PARTICULARS_PREVIEW = New PR_PARTICULARS_PREVIEWDataTable()
         MyBase.Tables.Add(Me.tablePR_PARTICULARS_PREVIEW)
         Me.tableItemsDataGridView = New ItemsDataGridViewDataTable()
@@ -1664,6 +1693,8 @@ Partial Public Class DS_PROPERTYDB
         Me.Relations.Add(Me.relationFK_tblM4_INVENTORY_ITEMS_tblM4_INVENTORY_ITEMS)
         Me.relationFK_tblM4_SUB_CATEGORY_tblM4_CATEGORY = New Global.System.Data.DataRelation("FK_tblM4_SUB_CATEGORY_tblM4_CATEGORY", New Global.System.Data.DataColumn() {Me.tabletblM4_INVENTORY_CATEGORY.CAT_CODEColumn}, New Global.System.Data.DataColumn() {Me.tabletblM4_INVENTORY_SUB_CATEGORY.CAT_CODEColumn}, false)
         Me.Relations.Add(Me.relationFK_tblM4_SUB_CATEGORY_tblM4_CATEGORY)
+        Me.relationFK_tblM4_INVENTORY_ITEMS_tblM4_INVENTORY_TYPE = New Global.System.Data.DataRelation("FK_tblM4_INVENTORY_ITEMS_tblM4_INVENTORY_TYPE", New Global.System.Data.DataColumn() {Me.tabletblM4_INVENTORY_TYPE.INV_CODEColumn}, New Global.System.Data.DataColumn() {Me.tabletblM4_INVENTORY_ITEMS.INV_CODEColumn}, false)
+        Me.Relations.Add(Me.relationFK_tblM4_INVENTORY_ITEMS_tblM4_INVENTORY_TYPE)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1830,12 +1861,6 @@ Partial Public Class DS_PROPERTYDB
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Private Function ShouldSerializeSPM4_INVENTORY_REPORT() As Boolean
-        Return false
-    End Function
-    
-    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
     Private Function ShouldSerializeSPM4_PROPERTY_NO() As Boolean
         Return false
     End Function
@@ -1975,6 +2000,18 @@ Partial Public Class DS_PROPERTYDB
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
     Private Function ShouldSerializetblM4_INVENTORY_ITEMS_PROPERTY() As Boolean
+        Return false
+    End Function
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+    Private Function ShouldSerializetblM4_INVENTORY_ITEMS2() As Boolean
+        Return false
+    End Function
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+    Private Function ShouldSerializetblM4_INVENTORY_TYPE() As Boolean
         Return false
     End Function
     
@@ -2130,9 +2167,6 @@ Partial Public Class DS_PROPERTYDB
     Public Delegate Sub tblM4_SUB_CATEGORY1RowChangeEventHandler(ByVal sender As Object, ByVal e As tblM4_SUB_CATEGORY1RowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Public Delegate Sub SPM4_INVENTORY_REPORTRowChangeEventHandler(ByVal sender As Object, ByVal e As SPM4_INVENTORY_REPORTRowChangeEvent)
-    
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
     Public Delegate Sub SPM4_PROPERTY_NORowChangeEventHandler(ByVal sender As Object, ByVal e As SPM4_PROPERTY_NORowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
@@ -2203,6 +2237,12 @@ Partial Public Class DS_PROPERTYDB
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
     Public Delegate Sub tblM4_INVENTORY_ITEMS_PROPERTYRowChangeEventHandler(ByVal sender As Object, ByVal e As tblM4_INVENTORY_ITEMS_PROPERTYRowChangeEvent)
+    
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+    Public Delegate Sub tblM4_INVENTORY_ITEMS2RowChangeEventHandler(ByVal sender As Object, ByVal e As tblM4_INVENTORY_ITEMS2RowChangeEvent)
+    
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+    Public Delegate Sub tblM4_INVENTORY_TYPERowChangeEventHandler(ByVal sender As Object, ByVal e As tblM4_INVENTORY_TYPERowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
     Public Delegate Sub PR_PARTICULARS_PREVIEWRowChangeEventHandler(ByVal sender As Object, ByVal e As PR_PARTICULARS_PREVIEWRowChangeEvent)
@@ -12703,414 +12743,6 @@ Partial Public Class DS_PROPERTYDB
     '''</summary>
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class SPM4_INVENTORY_REPORTDataTable
-        Inherits Global.System.Data.TypedTableBase(Of SPM4_INVENTORY_REPORTRow)
-        
-        Private columnCategory As Global.System.Data.DataColumn
-        
-        Private columnSub_Category As Global.System.Data.DataColumn
-        
-        Private _columnBrand_Provider As Global.System.Data.DataColumn
-        
-        Private columnItem_Description As Global.System.Data.DataColumn
-        
-        Private columnUnit_Type As Global.System.Data.DataColumn
-        
-        Private columnUnit_Cost As Global.System.Data.DataColumn
-        
-        Private columnTotal_Cost As Global.System.Data.DataColumn
-        
-        Private columnQuantity As Global.System.Data.DataColumn
-        
-        Private columnDate_Encoded As Global.System.Data.DataColumn
-        
-        Private columnProperty_No_ As Global.System.Data.DataColumn
-        
-        Private columnSerial_No_ As Global.System.Data.DataColumn
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub New()
-            MyBase.New
-            Me.TableName = "SPM4_INVENTORY_REPORT"
-            Me.BeginInit
-            Me.InitClass
-            Me.EndInit
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Friend Sub New(ByVal table As Global.System.Data.DataTable)
-            MyBase.New
-            Me.TableName = table.TableName
-            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
-                Me.CaseSensitive = table.CaseSensitive
-            End If
-            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
-                Me.Locale = table.Locale
-            End If
-            If (table.Namespace <> table.DataSet.Namespace) Then
-                Me.Namespace = table.Namespace
-            End If
-            Me.Prefix = table.Prefix
-            Me.MinimumCapacity = table.MinimumCapacity
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
-            MyBase.New(info, context)
-            Me.InitVars
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property CategoryColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnCategory
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property Sub_CategoryColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnSub_Category
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property _Brand_ProviderColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me._columnBrand_Provider
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property Item_DescriptionColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnItem_Description
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property Unit_TypeColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnUnit_Type
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property Unit_CostColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnUnit_Cost
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property Total_CostColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnTotal_Cost
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property QuantityColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnQuantity
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property Date_EncodedColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnDate_Encoded
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property Property_No_Column() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnProperty_No_
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property Serial_No_Column() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnSerial_No_
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Browsable(false)>  _
-        Public ReadOnly Property Count() As Integer
-            Get
-                Return Me.Rows.Count
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As SPM4_INVENTORY_REPORTRow
-            Get
-                Return CType(Me.Rows(index),SPM4_INVENTORY_REPORTRow)
-            End Get
-        End Property
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event SPM4_INVENTORY_REPORTRowChanging As SPM4_INVENTORY_REPORTRowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event SPM4_INVENTORY_REPORTRowChanged As SPM4_INVENTORY_REPORTRowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event SPM4_INVENTORY_REPORTRowDeleting As SPM4_INVENTORY_REPORTRowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event SPM4_INVENTORY_REPORTRowDeleted As SPM4_INVENTORY_REPORTRowChangeEventHandler
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Sub AddSPM4_INVENTORY_REPORTRow(ByVal row As SPM4_INVENTORY_REPORTRow)
-            Me.Rows.Add(row)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Function AddSPM4_INVENTORY_REPORTRow(ByVal Category As String, ByVal Sub_Category As String, ByVal _Brand_Provider As String, ByVal Item_Description As String, ByVal Unit_Type As String, ByVal Unit_Cost As Decimal, ByVal Total_Cost As Decimal, ByVal Quantity As Integer, ByVal Date_Encoded As Date, ByVal Property_No_ As String, ByVal Serial_No_ As String) As SPM4_INVENTORY_REPORTRow
-            Dim rowSPM4_INVENTORY_REPORTRow As SPM4_INVENTORY_REPORTRow = CType(Me.NewRow,SPM4_INVENTORY_REPORTRow)
-            Dim columnValuesArray() As Object = New Object() {Category, Sub_Category, _Brand_Provider, Item_Description, Unit_Type, Unit_Cost, Total_Cost, Quantity, Date_Encoded, Property_No_, Serial_No_}
-            rowSPM4_INVENTORY_REPORTRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowSPM4_INVENTORY_REPORTRow)
-            Return rowSPM4_INVENTORY_REPORTRow
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function FindByProperty_No_(ByVal Property_No_ As String) As SPM4_INVENTORY_REPORTRow
-            Return CType(Me.Rows.Find(New Object() {Property_No_}),SPM4_INVENTORY_REPORTRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As SPM4_INVENTORY_REPORTDataTable = CType(MyBase.Clone,SPM4_INVENTORY_REPORTDataTable)
-            cln.InitVars
-            Return cln
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New SPM4_INVENTORY_REPORTDataTable()
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Friend Sub InitVars()
-            Me.columnCategory = MyBase.Columns("Category")
-            Me.columnSub_Category = MyBase.Columns("Sub Category")
-            Me._columnBrand_Provider = MyBase.Columns("Brand/Provider")
-            Me.columnItem_Description = MyBase.Columns("Item Description")
-            Me.columnUnit_Type = MyBase.Columns("Unit Type")
-            Me.columnUnit_Cost = MyBase.Columns("Unit Cost")
-            Me.columnTotal_Cost = MyBase.Columns("Total Cost")
-            Me.columnQuantity = MyBase.Columns("Quantity")
-            Me.columnDate_Encoded = MyBase.Columns("Date Encoded")
-            Me.columnProperty_No_ = MyBase.Columns("Property No_")
-            Me.columnSerial_No_ = MyBase.Columns("Serial No_")
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Sub InitClass()
-            Me.columnCategory = New Global.System.Data.DataColumn("Category", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnCategory)
-            Me.columnSub_Category = New Global.System.Data.DataColumn("Sub Category", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnSub_Category)
-            Me._columnBrand_Provider = New Global.System.Data.DataColumn("Brand/Provider", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            Me._columnBrand_Provider.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnBrand_Provider")
-            Me._columnBrand_Provider.ExtendedProperties.Add("Generator_UserColumnName", "Brand/Provider")
-            MyBase.Columns.Add(Me._columnBrand_Provider)
-            Me.columnItem_Description = New Global.System.Data.DataColumn("Item Description", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnItem_Description)
-            Me.columnUnit_Type = New Global.System.Data.DataColumn("Unit Type", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnUnit_Type)
-            Me.columnUnit_Cost = New Global.System.Data.DataColumn("Unit Cost", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnUnit_Cost)
-            Me.columnTotal_Cost = New Global.System.Data.DataColumn("Total Cost", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnTotal_Cost)
-            Me.columnQuantity = New Global.System.Data.DataColumn("Quantity", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnQuantity)
-            Me.columnDate_Encoded = New Global.System.Data.DataColumn("Date Encoded", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnDate_Encoded)
-            Me.columnProperty_No_ = New Global.System.Data.DataColumn("Property No_", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnProperty_No_)
-            Me.columnSerial_No_ = New Global.System.Data.DataColumn("Serial No_", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnSerial_No_)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnProperty_No_}, true))
-            Me.columnCategory.MaxLength = 2147483647
-            Me.columnSub_Category.MaxLength = 100
-            Me._columnBrand_Provider.MaxLength = 100
-            Me.columnItem_Description.AllowDBNull = false
-            Me.columnItem_Description.MaxLength = 100
-            Me.columnUnit_Type.AllowDBNull = false
-            Me.columnUnit_Type.MaxLength = 10
-            Me.columnUnit_Cost.AllowDBNull = false
-            Me.columnTotal_Cost.AllowDBNull = false
-            Me.columnQuantity.AllowDBNull = false
-            Me.columnDate_Encoded.AllowDBNull = false
-            Me.columnProperty_No_.AllowDBNull = false
-            Me.columnProperty_No_.Unique = true
-            Me.columnProperty_No_.Caption = "Property No."
-            Me.columnProperty_No_.MaxLength = 50
-            Me.columnSerial_No_.Caption = "Serial No."
-            Me.columnSerial_No_.MaxLength = 40
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function NewSPM4_INVENTORY_REPORTRow() As SPM4_INVENTORY_REPORTRow
-            Return CType(Me.NewRow,SPM4_INVENTORY_REPORTRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New SPM4_INVENTORY_REPORTRow(builder)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(SPM4_INVENTORY_REPORTRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowChanged(e)
-            If (Not (Me.SPM4_INVENTORY_REPORTRowChangedEvent) Is Nothing) Then
-                RaiseEvent SPM4_INVENTORY_REPORTRowChanged(Me, New SPM4_INVENTORY_REPORTRowChangeEvent(CType(e.Row,SPM4_INVENTORY_REPORTRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowChanging(e)
-            If (Not (Me.SPM4_INVENTORY_REPORTRowChangingEvent) Is Nothing) Then
-                RaiseEvent SPM4_INVENTORY_REPORTRowChanging(Me, New SPM4_INVENTORY_REPORTRowChangeEvent(CType(e.Row,SPM4_INVENTORY_REPORTRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowDeleted(e)
-            If (Not (Me.SPM4_INVENTORY_REPORTRowDeletedEvent) Is Nothing) Then
-                RaiseEvent SPM4_INVENTORY_REPORTRowDeleted(Me, New SPM4_INVENTORY_REPORTRowChangeEvent(CType(e.Row,SPM4_INVENTORY_REPORTRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowDeleting(e)
-            If (Not (Me.SPM4_INVENTORY_REPORTRowDeletingEvent) Is Nothing) Then
-                RaiseEvent SPM4_INVENTORY_REPORTRowDeleting(Me, New SPM4_INVENTORY_REPORTRowChangeEvent(CType(e.Row,SPM4_INVENTORY_REPORTRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub RemoveSPM4_INVENTORY_REPORTRow(ByVal row As SPM4_INVENTORY_REPORTRow)
-            Me.Rows.Remove(row)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
-            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
-            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As DS_PROPERTYDB = New DS_PROPERTYDB()
-            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
-            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
-            any1.MinOccurs = New Decimal(0)
-            any1.MaxOccurs = Decimal.MaxValue
-            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
-            sequence.Items.Add(any1)
-            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
-            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
-            any2.MinOccurs = New Decimal(1)
-            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
-            sequence.Items.Add(any2)
-            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
-            attribute1.Name = "namespace"
-            attribute1.FixedValue = ds.Namespace
-            type.Attributes.Add(attribute1)
-            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
-            attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "SPM4_INVENTORY_REPORTDataTable"
-            type.Attributes.Add(attribute2)
-            type.Particle = sequence
-            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
-            If xs.Contains(dsSchema.TargetNamespace) Then
-                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
-                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
-                Try 
-                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
-                    dsSchema.Write(s1)
-                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
-                    Do While schemas.MoveNext
-                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
-                        s2.SetLength(0)
-                        schema.Write(s2)
-                        If (s1.Length = s2.Length) Then
-                            s1.Position = 0
-                            s2.Position = 0
-                            
-                            Do While ((s1.Position <> s1.Length)  _
-                                        AndAlso (s1.ReadByte = s2.ReadByte))
-                                
-                                
-                            Loop
-                            If (s1.Position = s1.Length) Then
-                                Return type
-                            End If
-                        End If
-                        
-                    Loop
-                Finally
-                    If (Not (s1) Is Nothing) Then
-                        s1.Close
-                    End If
-                    If (Not (s2) Is Nothing) Then
-                        s2.Close
-                    End If
-                End Try
-            End If
-            xs.Add(dsSchema)
-            Return type
-        End Function
-    End Class
-    
-    '''<summary>
-    '''Represents the strongly named DataTable class.
-    '''</summary>
-    <Global.System.Serializable(),  _
-     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
     Partial Public Class SPM4_PROPERTY_NODataTable
         Inherits Global.System.Data.TypedTableBase(Of SPM4_PROPERTY_NORow)
         
@@ -17069,6 +16701,8 @@ Partial Public Class DS_PROPERTYDB
         
         Private columnCAT_UPDATED_DATE As Global.System.Data.DataColumn
         
+        Private columnINV_CODE As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub New()
@@ -17153,6 +16787,14 @@ Partial Public Class DS_PROPERTYDB
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property INV_CODEColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnINV_CODE
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -17189,9 +16831,9 @@ Partial Public Class DS_PROPERTYDB
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Function AddtblM4_INVENTORY_CATEGORYRow(ByVal CAT_CODE As String, ByVal CAT_NAME As String, ByVal CAT_STATUS As Integer, ByVal HRIS_EMPNO As String, ByVal CAT_CREATED_DATE As Date, ByVal CAT_UPDATED_DATE As Date) As tblM4_INVENTORY_CATEGORYRow
+        Public Overloads Function AddtblM4_INVENTORY_CATEGORYRow(ByVal CAT_CODE As String, ByVal CAT_NAME As String, ByVal CAT_STATUS As Integer, ByVal HRIS_EMPNO As String, ByVal CAT_CREATED_DATE As Date, ByVal CAT_UPDATED_DATE As Date, ByVal INV_CODE As String) As tblM4_INVENTORY_CATEGORYRow
             Dim rowtblM4_INVENTORY_CATEGORYRow As tblM4_INVENTORY_CATEGORYRow = CType(Me.NewRow,tblM4_INVENTORY_CATEGORYRow)
-            Dim columnValuesArray() As Object = New Object() {CAT_CODE, CAT_NAME, CAT_STATUS, HRIS_EMPNO, CAT_CREATED_DATE, CAT_UPDATED_DATE}
+            Dim columnValuesArray() As Object = New Object() {CAT_CODE, CAT_NAME, CAT_STATUS, HRIS_EMPNO, CAT_CREATED_DATE, CAT_UPDATED_DATE, INV_CODE}
             rowtblM4_INVENTORY_CATEGORYRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowtblM4_INVENTORY_CATEGORYRow)
             Return rowtblM4_INVENTORY_CATEGORYRow
@@ -17226,6 +16868,7 @@ Partial Public Class DS_PROPERTYDB
             Me.columnHRIS_EMPNO = MyBase.Columns("HRIS_EMPNO")
             Me.columnCAT_CREATED_DATE = MyBase.Columns("CAT_CREATED_DATE")
             Me.columnCAT_UPDATED_DATE = MyBase.Columns("CAT_UPDATED_DATE")
+            Me.columnINV_CODE = MyBase.Columns("INV_CODE")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -17243,6 +16886,8 @@ Partial Public Class DS_PROPERTYDB
             MyBase.Columns.Add(Me.columnCAT_CREATED_DATE)
             Me.columnCAT_UPDATED_DATE = New Global.System.Data.DataColumn("CAT_UPDATED_DATE", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnCAT_UPDATED_DATE)
+            Me.columnINV_CODE = New Global.System.Data.DataColumn("INV_CODE", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnINV_CODE)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnCAT_CODE}, true))
             Me.columnCAT_CODE.AllowDBNull = false
             Me.columnCAT_CODE.Unique = true
@@ -17250,6 +16895,8 @@ Partial Public Class DS_PROPERTYDB
             Me.columnCAT_NAME.MaxLength = 2147483647
             Me.columnHRIS_EMPNO.MaxLength = 20
             Me.columnCAT_CREATED_DATE.AllowDBNull = false
+            Me.columnINV_CODE.AllowDBNull = false
+            Me.columnINV_CODE.MaxLength = 50
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -17399,6 +17046,8 @@ Partial Public Class DS_PROPERTYDB
         
         Private columnITBR_STATUS As Global.System.Data.DataColumn
         
+        Private columnINV_CODE As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub New()
@@ -17483,6 +17132,14 @@ Partial Public Class DS_PROPERTYDB
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property INV_CODEColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnINV_CODE
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -17519,9 +17176,9 @@ Partial Public Class DS_PROPERTYDB
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Function AddtblM4_INVENTORY_ITEMBRANDRow(ByVal ITBR_NO As String, ByVal ITBR_NAME As String, ByVal ITBR_CREATED_DATE As Date, ByVal ITBR_UPDATED_DATE As Date, ByVal HRIS_EMPNO As String, ByVal ITBR_STATUS As Integer) As tblM4_INVENTORY_ITEMBRANDRow
+        Public Overloads Function AddtblM4_INVENTORY_ITEMBRANDRow(ByVal ITBR_NO As String, ByVal ITBR_NAME As String, ByVal ITBR_CREATED_DATE As Date, ByVal ITBR_UPDATED_DATE As Date, ByVal HRIS_EMPNO As String, ByVal ITBR_STATUS As Integer, ByVal INV_CODE As String) As tblM4_INVENTORY_ITEMBRANDRow
             Dim rowtblM4_INVENTORY_ITEMBRANDRow As tblM4_INVENTORY_ITEMBRANDRow = CType(Me.NewRow,tblM4_INVENTORY_ITEMBRANDRow)
-            Dim columnValuesArray() As Object = New Object() {ITBR_NO, ITBR_NAME, ITBR_CREATED_DATE, ITBR_UPDATED_DATE, HRIS_EMPNO, ITBR_STATUS}
+            Dim columnValuesArray() As Object = New Object() {ITBR_NO, ITBR_NAME, ITBR_CREATED_DATE, ITBR_UPDATED_DATE, HRIS_EMPNO, ITBR_STATUS, INV_CODE}
             rowtblM4_INVENTORY_ITEMBRANDRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowtblM4_INVENTORY_ITEMBRANDRow)
             Return rowtblM4_INVENTORY_ITEMBRANDRow
@@ -17556,6 +17213,7 @@ Partial Public Class DS_PROPERTYDB
             Me.columnITBR_UPDATED_DATE = MyBase.Columns("ITBR_UPDATED_DATE")
             Me.columnHRIS_EMPNO = MyBase.Columns("HRIS_EMPNO")
             Me.columnITBR_STATUS = MyBase.Columns("ITBR_STATUS")
+            Me.columnINV_CODE = MyBase.Columns("INV_CODE")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -17573,6 +17231,8 @@ Partial Public Class DS_PROPERTYDB
             MyBase.Columns.Add(Me.columnHRIS_EMPNO)
             Me.columnITBR_STATUS = New Global.System.Data.DataColumn("ITBR_STATUS", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnITBR_STATUS)
+            Me.columnINV_CODE = New Global.System.Data.DataColumn("INV_CODE", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnINV_CODE)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnITBR_NO}, true))
             Me.columnITBR_NO.AllowDBNull = false
             Me.columnITBR_NO.Unique = true
@@ -17580,6 +17240,8 @@ Partial Public Class DS_PROPERTYDB
             Me.columnITBR_NAME.MaxLength = 100
             Me.columnITBR_CREATED_DATE.AllowDBNull = false
             Me.columnHRIS_EMPNO.MaxLength = 20
+            Me.columnINV_CODE.AllowDBNull = false
+            Me.columnINV_CODE.MaxLength = 50
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -17741,6 +17403,8 @@ Partial Public Class DS_PROPERTYDB
         
         Private columnITEM_UPDATED_DATE As Global.System.Data.DataColumn
         
+        Private columnINV_CODE As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub New()
@@ -17873,6 +17537,14 @@ Partial Public Class DS_PROPERTYDB
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property INV_CODEColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnINV_CODE
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -17909,14 +17581,17 @@ Partial Public Class DS_PROPERTYDB
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Function AddtblM4_INVENTORY_ITEMSRow(ByVal ITEM_CODE As String, ByVal parenttblM4_INVENTORY_SUB_CATEGORYRowByFK_tblM4_INVENTORY_ITEMS_tblM4_INVENTORY_ITEMS As tblM4_INVENTORY_SUB_CATEGORYRow, ByVal parenttblM4_INVENTORY_ITEMBRANDRowByFK_tblM4_ITEMS_tblM4_ITEMBRAND As tblM4_INVENTORY_ITEMBRANDRow, ByVal ITEM_SERIAL_NO As String, ByVal ITEM_DESCRIPTION As String, ByVal ITEM_UNIT As String, ByVal ITEM_UNIT_COST As Decimal, ByVal ITEM_TOTAL_COST As Decimal, ByVal ITEM_QUANTITY As Integer, ByVal ITEM_DATE_AQUISITION As Date, ByVal ITEM_CREATED_DATE As Date, ByVal ITEM_UPDATED_DATE As Date) As tblM4_INVENTORY_ITEMSRow
+        Public Overloads Function AddtblM4_INVENTORY_ITEMSRow(ByVal ITEM_CODE As String, ByVal parenttblM4_INVENTORY_SUB_CATEGORYRowByFK_tblM4_INVENTORY_ITEMS_tblM4_INVENTORY_ITEMS As tblM4_INVENTORY_SUB_CATEGORYRow, ByVal parenttblM4_INVENTORY_ITEMBRANDRowByFK_tblM4_ITEMS_tblM4_ITEMBRAND As tblM4_INVENTORY_ITEMBRANDRow, ByVal ITEM_SERIAL_NO As String, ByVal ITEM_DESCRIPTION As String, ByVal ITEM_UNIT As String, ByVal ITEM_UNIT_COST As Decimal, ByVal ITEM_TOTAL_COST As Decimal, ByVal ITEM_QUANTITY As Integer, ByVal ITEM_DATE_AQUISITION As Date, ByVal ITEM_CREATED_DATE As Date, ByVal ITEM_UPDATED_DATE As Date, ByVal parenttblM4_INVENTORY_TYPERowByFK_tblM4_INVENTORY_ITEMS_tblM4_INVENTORY_TYPE As tblM4_INVENTORY_TYPERow) As tblM4_INVENTORY_ITEMSRow
             Dim rowtblM4_INVENTORY_ITEMSRow As tblM4_INVENTORY_ITEMSRow = CType(Me.NewRow,tblM4_INVENTORY_ITEMSRow)
-            Dim columnValuesArray() As Object = New Object() {ITEM_CODE, Nothing, Nothing, ITEM_SERIAL_NO, ITEM_DESCRIPTION, ITEM_UNIT, ITEM_UNIT_COST, ITEM_TOTAL_COST, ITEM_QUANTITY, ITEM_DATE_AQUISITION, ITEM_CREATED_DATE, ITEM_UPDATED_DATE}
+            Dim columnValuesArray() As Object = New Object() {ITEM_CODE, Nothing, Nothing, ITEM_SERIAL_NO, ITEM_DESCRIPTION, ITEM_UNIT, ITEM_UNIT_COST, ITEM_TOTAL_COST, ITEM_QUANTITY, ITEM_DATE_AQUISITION, ITEM_CREATED_DATE, ITEM_UPDATED_DATE, Nothing}
             If (Not (parenttblM4_INVENTORY_SUB_CATEGORYRowByFK_tblM4_INVENTORY_ITEMS_tblM4_INVENTORY_ITEMS) Is Nothing) Then
                 columnValuesArray(1) = parenttblM4_INVENTORY_SUB_CATEGORYRowByFK_tblM4_INVENTORY_ITEMS_tblM4_INVENTORY_ITEMS(0)
             End If
             If (Not (parenttblM4_INVENTORY_ITEMBRANDRowByFK_tblM4_ITEMS_tblM4_ITEMBRAND) Is Nothing) Then
                 columnValuesArray(2) = parenttblM4_INVENTORY_ITEMBRANDRowByFK_tblM4_ITEMS_tblM4_ITEMBRAND(0)
+            End If
+            If (Not (parenttblM4_INVENTORY_TYPERowByFK_tblM4_INVENTORY_ITEMS_tblM4_INVENTORY_TYPE) Is Nothing) Then
+                columnValuesArray(12) = parenttblM4_INVENTORY_TYPERowByFK_tblM4_INVENTORY_ITEMS_tblM4_INVENTORY_TYPE(0)
             End If
             rowtblM4_INVENTORY_ITEMSRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowtblM4_INVENTORY_ITEMSRow)
@@ -17958,6 +17633,7 @@ Partial Public Class DS_PROPERTYDB
             Me.columnITEM_DATE_AQUISITION = MyBase.Columns("ITEM_DATE_AQUISITION")
             Me.columnITEM_CREATED_DATE = MyBase.Columns("ITEM_CREATED_DATE")
             Me.columnITEM_UPDATED_DATE = MyBase.Columns("ITEM_UPDATED_DATE")
+            Me.columnINV_CODE = MyBase.Columns("INV_CODE")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -17987,6 +17663,8 @@ Partial Public Class DS_PROPERTYDB
             MyBase.Columns.Add(Me.columnITEM_CREATED_DATE)
             Me.columnITEM_UPDATED_DATE = New Global.System.Data.DataColumn("ITEM_UPDATED_DATE", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnITEM_UPDATED_DATE)
+            Me.columnINV_CODE = New Global.System.Data.DataColumn("INV_CODE", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnINV_CODE)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnITEM_CODE}, true))
             Me.columnITEM_CODE.AllowDBNull = false
             Me.columnITEM_CODE.Unique = true
@@ -18005,6 +17683,8 @@ Partial Public Class DS_PROPERTYDB
             Me.columnITEM_QUANTITY.AllowDBNull = false
             Me.columnITEM_DATE_AQUISITION.AllowDBNull = false
             Me.columnITEM_CREATED_DATE.AllowDBNull = false
+            Me.columnINV_CODE.AllowDBNull = false
+            Me.columnINV_CODE.MaxLength = 50
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -21066,6 +20746,563 @@ Partial Public Class DS_PROPERTYDB
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
             attribute2.FixedValue = "tblM4_INVENTORY_ITEMS_PROPERTYDataTable"
+            type.Attributes.Add(attribute2)
+            type.Particle = sequence
+            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
+            If xs.Contains(dsSchema.TargetNamespace) Then
+                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Try 
+                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
+                    dsSchema.Write(s1)
+                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
+                    Do While schemas.MoveNext
+                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
+                        s2.SetLength(0)
+                        schema.Write(s2)
+                        If (s1.Length = s2.Length) Then
+                            s1.Position = 0
+                            s2.Position = 0
+                            
+                            Do While ((s1.Position <> s1.Length)  _
+                                        AndAlso (s1.ReadByte = s2.ReadByte))
+                                
+                                
+                            Loop
+                            If (s1.Position = s1.Length) Then
+                                Return type
+                            End If
+                        End If
+                        
+                    Loop
+                Finally
+                    If (Not (s1) Is Nothing) Then
+                        s1.Close
+                    End If
+                    If (Not (s2) Is Nothing) Then
+                        s2.Close
+                    End If
+                End Try
+            End If
+            xs.Add(dsSchema)
+            Return type
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the strongly named DataTable class.
+    '''</summary>
+    <Global.System.Serializable(),  _
+     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
+    Partial Public Class tblM4_INVENTORY_ITEMS2DataTable
+        Inherits Global.System.Data.TypedTableBase(Of tblM4_INVENTORY_ITEMS2Row)
+        
+        Private columnITEM_DESCRIPTION As Global.System.Data.DataColumn
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.TableName = "tblM4_INVENTORY_ITEMS2"
+            Me.BeginInit
+            Me.InitClass
+            Me.EndInit
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub New(ByVal table As Global.System.Data.DataTable)
+            MyBase.New
+            Me.TableName = table.TableName
+            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
+                Me.CaseSensitive = table.CaseSensitive
+            End If
+            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
+                Me.Locale = table.Locale
+            End If
+            If (table.Namespace <> table.DataSet.Namespace) Then
+                Me.Namespace = table.Namespace
+            End If
+            Me.Prefix = table.Prefix
+            Me.MinimumCapacity = table.MinimumCapacity
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
+            MyBase.New(info, context)
+            Me.InitVars
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property ITEM_DESCRIPTIONColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnITEM_DESCRIPTION
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Browsable(false)>  _
+        Public ReadOnly Property Count() As Integer
+            Get
+                Return Me.Rows.Count
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Default ReadOnly Property Item(ByVal index As Integer) As tblM4_INVENTORY_ITEMS2Row
+            Get
+                Return CType(Me.Rows(index),tblM4_INVENTORY_ITEMS2Row)
+            End Get
+        End Property
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event tblM4_INVENTORY_ITEMS2RowChanging As tblM4_INVENTORY_ITEMS2RowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event tblM4_INVENTORY_ITEMS2RowChanged As tblM4_INVENTORY_ITEMS2RowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event tblM4_INVENTORY_ITEMS2RowDeleting As tblM4_INVENTORY_ITEMS2RowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event tblM4_INVENTORY_ITEMS2RowDeleted As tblM4_INVENTORY_ITEMS2RowChangeEventHandler
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overloads Sub AddtblM4_INVENTORY_ITEMS2Row(ByVal row As tblM4_INVENTORY_ITEMS2Row)
+            Me.Rows.Add(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overloads Function AddtblM4_INVENTORY_ITEMS2Row(ByVal ITEM_DESCRIPTION As String) As tblM4_INVENTORY_ITEMS2Row
+            Dim rowtblM4_INVENTORY_ITEMS2Row As tblM4_INVENTORY_ITEMS2Row = CType(Me.NewRow,tblM4_INVENTORY_ITEMS2Row)
+            Dim columnValuesArray() As Object = New Object() {ITEM_DESCRIPTION}
+            rowtblM4_INVENTORY_ITEMS2Row.ItemArray = columnValuesArray
+            Me.Rows.Add(rowtblM4_INVENTORY_ITEMS2Row)
+            Return rowtblM4_INVENTORY_ITEMS2Row
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overrides Function Clone() As Global.System.Data.DataTable
+            Dim cln As tblM4_INVENTORY_ITEMS2DataTable = CType(MyBase.Clone,tblM4_INVENTORY_ITEMS2DataTable)
+            cln.InitVars
+            Return cln
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
+            Return New tblM4_INVENTORY_ITEMS2DataTable()
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub InitVars()
+            Me.columnITEM_DESCRIPTION = MyBase.Columns("ITEM_DESCRIPTION")
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitClass()
+            Me.columnITEM_DESCRIPTION = New Global.System.Data.DataColumn("ITEM_DESCRIPTION", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnITEM_DESCRIPTION)
+            Me.columnITEM_DESCRIPTION.AllowDBNull = false
+            Me.columnITEM_DESCRIPTION.MaxLength = 100
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function NewtblM4_INVENTORY_ITEMS2Row() As tblM4_INVENTORY_ITEMS2Row
+            Return CType(Me.NewRow,tblM4_INVENTORY_ITEMS2Row)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
+            Return New tblM4_INVENTORY_ITEMS2Row(builder)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function GetRowType() As Global.System.Type
+            Return GetType(tblM4_INVENTORY_ITEMS2Row)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanged(e)
+            If (Not (Me.tblM4_INVENTORY_ITEMS2RowChangedEvent) Is Nothing) Then
+                RaiseEvent tblM4_INVENTORY_ITEMS2RowChanged(Me, New tblM4_INVENTORY_ITEMS2RowChangeEvent(CType(e.Row,tblM4_INVENTORY_ITEMS2Row), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanging(e)
+            If (Not (Me.tblM4_INVENTORY_ITEMS2RowChangingEvent) Is Nothing) Then
+                RaiseEvent tblM4_INVENTORY_ITEMS2RowChanging(Me, New tblM4_INVENTORY_ITEMS2RowChangeEvent(CType(e.Row,tblM4_INVENTORY_ITEMS2Row), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleted(e)
+            If (Not (Me.tblM4_INVENTORY_ITEMS2RowDeletedEvent) Is Nothing) Then
+                RaiseEvent tblM4_INVENTORY_ITEMS2RowDeleted(Me, New tblM4_INVENTORY_ITEMS2RowChangeEvent(CType(e.Row,tblM4_INVENTORY_ITEMS2Row), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleting(e)
+            If (Not (Me.tblM4_INVENTORY_ITEMS2RowDeletingEvent) Is Nothing) Then
+                RaiseEvent tblM4_INVENTORY_ITEMS2RowDeleting(Me, New tblM4_INVENTORY_ITEMS2RowChangeEvent(CType(e.Row,tblM4_INVENTORY_ITEMS2Row), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub RemovetblM4_INVENTORY_ITEMS2Row(ByVal row As tblM4_INVENTORY_ITEMS2Row)
+            Me.Rows.Remove(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
+            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
+            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
+            Dim ds As DS_PROPERTYDB = New DS_PROPERTYDB()
+            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
+            any1.MinOccurs = New Decimal(0)
+            any1.MaxOccurs = Decimal.MaxValue
+            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any1)
+            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
+            any2.MinOccurs = New Decimal(1)
+            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any2)
+            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute1.Name = "namespace"
+            attribute1.FixedValue = ds.Namespace
+            type.Attributes.Add(attribute1)
+            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute2.Name = "tableTypeName"
+            attribute2.FixedValue = "tblM4_INVENTORY_ITEMS2DataTable"
+            type.Attributes.Add(attribute2)
+            type.Particle = sequence
+            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
+            If xs.Contains(dsSchema.TargetNamespace) Then
+                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Try 
+                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
+                    dsSchema.Write(s1)
+                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
+                    Do While schemas.MoveNext
+                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
+                        s2.SetLength(0)
+                        schema.Write(s2)
+                        If (s1.Length = s2.Length) Then
+                            s1.Position = 0
+                            s2.Position = 0
+                            
+                            Do While ((s1.Position <> s1.Length)  _
+                                        AndAlso (s1.ReadByte = s2.ReadByte))
+                                
+                                
+                            Loop
+                            If (s1.Position = s1.Length) Then
+                                Return type
+                            End If
+                        End If
+                        
+                    Loop
+                Finally
+                    If (Not (s1) Is Nothing) Then
+                        s1.Close
+                    End If
+                    If (Not (s2) Is Nothing) Then
+                        s2.Close
+                    End If
+                End Try
+            End If
+            xs.Add(dsSchema)
+            Return type
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the strongly named DataTable class.
+    '''</summary>
+    <Global.System.Serializable(),  _
+     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
+    Partial Public Class tblM4_INVENTORY_TYPEDataTable
+        Inherits Global.System.Data.TypedTableBase(Of tblM4_INVENTORY_TYPERow)
+        
+        Private columnINV_CODE As Global.System.Data.DataColumn
+        
+        Private columnINV_DESC As Global.System.Data.DataColumn
+        
+        Private columnINV_STATUS As Global.System.Data.DataColumn
+        
+        Private columnDATE_CREATED As Global.System.Data.DataColumn
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.TableName = "tblM4_INVENTORY_TYPE"
+            Me.BeginInit
+            Me.InitClass
+            Me.EndInit
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub New(ByVal table As Global.System.Data.DataTable)
+            MyBase.New
+            Me.TableName = table.TableName
+            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
+                Me.CaseSensitive = table.CaseSensitive
+            End If
+            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
+                Me.Locale = table.Locale
+            End If
+            If (table.Namespace <> table.DataSet.Namespace) Then
+                Me.Namespace = table.Namespace
+            End If
+            Me.Prefix = table.Prefix
+            Me.MinimumCapacity = table.MinimumCapacity
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
+            MyBase.New(info, context)
+            Me.InitVars
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property INV_CODEColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnINV_CODE
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property INV_DESCColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnINV_DESC
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property INV_STATUSColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnINV_STATUS
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property DATE_CREATEDColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnDATE_CREATED
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Browsable(false)>  _
+        Public ReadOnly Property Count() As Integer
+            Get
+                Return Me.Rows.Count
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Default ReadOnly Property Item(ByVal index As Integer) As tblM4_INVENTORY_TYPERow
+            Get
+                Return CType(Me.Rows(index),tblM4_INVENTORY_TYPERow)
+            End Get
+        End Property
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event tblM4_INVENTORY_TYPERowChanging As tblM4_INVENTORY_TYPERowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event tblM4_INVENTORY_TYPERowChanged As tblM4_INVENTORY_TYPERowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event tblM4_INVENTORY_TYPERowDeleting As tblM4_INVENTORY_TYPERowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event tblM4_INVENTORY_TYPERowDeleted As tblM4_INVENTORY_TYPERowChangeEventHandler
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overloads Sub AddtblM4_INVENTORY_TYPERow(ByVal row As tblM4_INVENTORY_TYPERow)
+            Me.Rows.Add(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overloads Function AddtblM4_INVENTORY_TYPERow(ByVal INV_CODE As String, ByVal INV_DESC As String, ByVal INV_STATUS As Boolean, ByVal DATE_CREATED As Date) As tblM4_INVENTORY_TYPERow
+            Dim rowtblM4_INVENTORY_TYPERow As tblM4_INVENTORY_TYPERow = CType(Me.NewRow,tblM4_INVENTORY_TYPERow)
+            Dim columnValuesArray() As Object = New Object() {INV_CODE, INV_DESC, INV_STATUS, DATE_CREATED}
+            rowtblM4_INVENTORY_TYPERow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowtblM4_INVENTORY_TYPERow)
+            Return rowtblM4_INVENTORY_TYPERow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function FindByINV_CODE(ByVal INV_CODE As String) As tblM4_INVENTORY_TYPERow
+            Return CType(Me.Rows.Find(New Object() {INV_CODE}),tblM4_INVENTORY_TYPERow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overrides Function Clone() As Global.System.Data.DataTable
+            Dim cln As tblM4_INVENTORY_TYPEDataTable = CType(MyBase.Clone,tblM4_INVENTORY_TYPEDataTable)
+            cln.InitVars
+            Return cln
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
+            Return New tblM4_INVENTORY_TYPEDataTable()
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub InitVars()
+            Me.columnINV_CODE = MyBase.Columns("INV_CODE")
+            Me.columnINV_DESC = MyBase.Columns("INV_DESC")
+            Me.columnINV_STATUS = MyBase.Columns("INV_STATUS")
+            Me.columnDATE_CREATED = MyBase.Columns("DATE_CREATED")
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitClass()
+            Me.columnINV_CODE = New Global.System.Data.DataColumn("INV_CODE", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnINV_CODE)
+            Me.columnINV_DESC = New Global.System.Data.DataColumn("INV_DESC", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnINV_DESC)
+            Me.columnINV_STATUS = New Global.System.Data.DataColumn("INV_STATUS", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnINV_STATUS)
+            Me.columnDATE_CREATED = New Global.System.Data.DataColumn("DATE_CREATED", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnDATE_CREATED)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnINV_CODE}, true))
+            Me.columnINV_CODE.AllowDBNull = false
+            Me.columnINV_CODE.Unique = true
+            Me.columnINV_CODE.MaxLength = 50
+            Me.columnINV_DESC.MaxLength = 100
+            Me.columnDATE_CREATED.AllowDBNull = false
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function NewtblM4_INVENTORY_TYPERow() As tblM4_INVENTORY_TYPERow
+            Return CType(Me.NewRow,tblM4_INVENTORY_TYPERow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
+            Return New tblM4_INVENTORY_TYPERow(builder)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function GetRowType() As Global.System.Type
+            Return GetType(tblM4_INVENTORY_TYPERow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanged(e)
+            If (Not (Me.tblM4_INVENTORY_TYPERowChangedEvent) Is Nothing) Then
+                RaiseEvent tblM4_INVENTORY_TYPERowChanged(Me, New tblM4_INVENTORY_TYPERowChangeEvent(CType(e.Row,tblM4_INVENTORY_TYPERow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanging(e)
+            If (Not (Me.tblM4_INVENTORY_TYPERowChangingEvent) Is Nothing) Then
+                RaiseEvent tblM4_INVENTORY_TYPERowChanging(Me, New tblM4_INVENTORY_TYPERowChangeEvent(CType(e.Row,tblM4_INVENTORY_TYPERow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleted(e)
+            If (Not (Me.tblM4_INVENTORY_TYPERowDeletedEvent) Is Nothing) Then
+                RaiseEvent tblM4_INVENTORY_TYPERowDeleted(Me, New tblM4_INVENTORY_TYPERowChangeEvent(CType(e.Row,tblM4_INVENTORY_TYPERow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleting(e)
+            If (Not (Me.tblM4_INVENTORY_TYPERowDeletingEvent) Is Nothing) Then
+                RaiseEvent tblM4_INVENTORY_TYPERowDeleting(Me, New tblM4_INVENTORY_TYPERowChangeEvent(CType(e.Row,tblM4_INVENTORY_TYPERow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub RemovetblM4_INVENTORY_TYPERow(ByVal row As tblM4_INVENTORY_TYPERow)
+            Me.Rows.Remove(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
+            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
+            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
+            Dim ds As DS_PROPERTYDB = New DS_PROPERTYDB()
+            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
+            any1.MinOccurs = New Decimal(0)
+            any1.MaxOccurs = Decimal.MaxValue
+            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any1)
+            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
+            any2.MinOccurs = New Decimal(1)
+            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any2)
+            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute1.Name = "namespace"
+            attribute1.FixedValue = ds.Namespace
+            type.Attributes.Add(attribute1)
+            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute2.Name = "tableTypeName"
+            attribute2.FixedValue = "tblM4_INVENTORY_TYPEDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -29128,208 +29365,6 @@ Partial Public Class DS_PROPERTYDB
     '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
-    Partial Public Class SPM4_INVENTORY_REPORTRow
-        Inherits Global.System.Data.DataRow
-        
-        Private tableSPM4_INVENTORY_REPORT As SPM4_INVENTORY_REPORTDataTable
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
-            MyBase.New(rb)
-            Me.tableSPM4_INVENTORY_REPORT = CType(Me.Table,SPM4_INVENTORY_REPORTDataTable)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property Category() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tableSPM4_INVENTORY_REPORT.CategoryColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Category' in table 'SPM4_INVENTORY_REPORT' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableSPM4_INVENTORY_REPORT.CategoryColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property Sub_Category() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tableSPM4_INVENTORY_REPORT.Sub_CategoryColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Sub Category' in table 'SPM4_INVENTORY_REPORT' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableSPM4_INVENTORY_REPORT.Sub_CategoryColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property _Brand_Provider() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tableSPM4_INVENTORY_REPORT._Brand_ProviderColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Brand/Provider' in table 'SPM4_INVENTORY_REPORT' is DBNull."& _ 
-                            "", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableSPM4_INVENTORY_REPORT._Brand_ProviderColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property Item_Description() As String
-            Get
-                Return CType(Me(Me.tableSPM4_INVENTORY_REPORT.Item_DescriptionColumn),String)
-            End Get
-            Set
-                Me(Me.tableSPM4_INVENTORY_REPORT.Item_DescriptionColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property Unit_Type() As String
-            Get
-                Return CType(Me(Me.tableSPM4_INVENTORY_REPORT.Unit_TypeColumn),String)
-            End Get
-            Set
-                Me(Me.tableSPM4_INVENTORY_REPORT.Unit_TypeColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property Unit_Cost() As Decimal
-            Get
-                Return CType(Me(Me.tableSPM4_INVENTORY_REPORT.Unit_CostColumn),Decimal)
-            End Get
-            Set
-                Me(Me.tableSPM4_INVENTORY_REPORT.Unit_CostColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property Total_Cost() As Decimal
-            Get
-                Return CType(Me(Me.tableSPM4_INVENTORY_REPORT.Total_CostColumn),Decimal)
-            End Get
-            Set
-                Me(Me.tableSPM4_INVENTORY_REPORT.Total_CostColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property Quantity() As Integer
-            Get
-                Return CType(Me(Me.tableSPM4_INVENTORY_REPORT.QuantityColumn),Integer)
-            End Get
-            Set
-                Me(Me.tableSPM4_INVENTORY_REPORT.QuantityColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property Date_Encoded() As Date
-            Get
-                Return CType(Me(Me.tableSPM4_INVENTORY_REPORT.Date_EncodedColumn),Date)
-            End Get
-            Set
-                Me(Me.tableSPM4_INVENTORY_REPORT.Date_EncodedColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property Property_No_() As String
-            Get
-                Return CType(Me(Me.tableSPM4_INVENTORY_REPORT.Property_No_Column),String)
-            End Get
-            Set
-                Me(Me.tableSPM4_INVENTORY_REPORT.Property_No_Column) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property Serial_No_() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tableSPM4_INVENTORY_REPORT.Serial_No_Column),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Serial No_' in table 'SPM4_INVENTORY_REPORT' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableSPM4_INVENTORY_REPORT.Serial_No_Column) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function IsCategoryNull() As Boolean
-            Return Me.IsNull(Me.tableSPM4_INVENTORY_REPORT.CategoryColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub SetCategoryNull()
-            Me(Me.tableSPM4_INVENTORY_REPORT.CategoryColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function IsSub_CategoryNull() As Boolean
-            Return Me.IsNull(Me.tableSPM4_INVENTORY_REPORT.Sub_CategoryColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub SetSub_CategoryNull()
-            Me(Me.tableSPM4_INVENTORY_REPORT.Sub_CategoryColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function Is_Brand_ProviderNull() As Boolean
-            Return Me.IsNull(Me.tableSPM4_INVENTORY_REPORT._Brand_ProviderColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub Set_Brand_ProviderNull()
-            Me(Me.tableSPM4_INVENTORY_REPORT._Brand_ProviderColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function IsSerial_No_Null() As Boolean
-            Return Me.IsNull(Me.tableSPM4_INVENTORY_REPORT.Serial_No_Column)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub SetSerial_No_Null()
-            Me(Me.tableSPM4_INVENTORY_REPORT.Serial_No_Column) = Global.System.Convert.DBNull
-        End Sub
-    End Class
-    
-    '''<summary>
-    '''Represents strongly named DataRow class.
-    '''</summary>
     Partial Public Class SPM4_PROPERTY_NORow
         Inherits Global.System.Data.DataRow
         
@@ -30894,6 +30929,17 @@ Partial Public Class DS_PROPERTYDB
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property INV_CODE() As String
+            Get
+                Return CType(Me(Me.tabletblM4_INVENTORY_CATEGORY.INV_CODEColumn),String)
+            End Get
+            Set
+                Me(Me.tabletblM4_INVENTORY_CATEGORY.INV_CODEColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Function IsCAT_NAMENull() As Boolean
             Return Me.IsNull(Me.tabletblM4_INVENTORY_CATEGORY.CAT_NAMEColumn)
         End Function
@@ -31048,6 +31094,17 @@ Partial Public Class DS_PROPERTYDB
             End Get
             Set
                 Me(Me.tabletblM4_INVENTORY_ITEMBRAND.ITBR_STATUSColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property INV_CODE() As String
+            Get
+                Return CType(Me(Me.tabletblM4_INVENTORY_ITEMBRAND.INV_CODEColumn),String)
+            End Get
+            Set
+                Me(Me.tabletblM4_INVENTORY_ITEMBRAND.INV_CODEColumn) = value
             End Set
         End Property
         
@@ -31269,6 +31326,17 @@ Partial Public Class DS_PROPERTYDB
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property INV_CODE() As String
+            Get
+                Return CType(Me(Me.tabletblM4_INVENTORY_ITEMS.INV_CODEColumn),String)
+            End Get
+            Set
+                Me(Me.tabletblM4_INVENTORY_ITEMS.INV_CODEColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Property tblM4_INVENTORY_ITEMBRANDRow() As tblM4_INVENTORY_ITEMBRANDRow
             Get
                 Return CType(Me.GetParentRow(Me.Table.ParentRelations("FK_tblM4_ITEMS_tblM4_ITEMBRAND")),tblM4_INVENTORY_ITEMBRANDRow)
@@ -31286,6 +31354,17 @@ Partial Public Class DS_PROPERTYDB
             End Get
             Set
                 Me.SetParentRow(value, Me.Table.ParentRelations("FK_tblM4_INVENTORY_ITEMS_tblM4_INVENTORY_ITEMS"))
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property tblM4_INVENTORY_TYPERow() As tblM4_INVENTORY_TYPERow
+            Get
+                Return CType(Me.GetParentRow(Me.Table.ParentRelations("FK_tblM4_INVENTORY_ITEMS_tblM4_INVENTORY_TYPE")),tblM4_INVENTORY_TYPERow)
+            End Get
+            Set
+                Me.SetParentRow(value, Me.Table.ParentRelations("FK_tblM4_INVENTORY_ITEMS_tblM4_INVENTORY_TYPE"))
             End Set
         End Property
         
@@ -32504,6 +32583,135 @@ Partial Public Class DS_PROPERTYDB
         Public Sub SetPROP_CREATED_DATENull()
             Me(Me.tabletblM4_INVENTORY_ITEMS_PROPERTY.PROP_CREATED_DATEColumn) = Global.System.Convert.DBNull
         End Sub
+    End Class
+    
+    '''<summary>
+    '''Represents strongly named DataRow class.
+    '''</summary>
+    Partial Public Class tblM4_INVENTORY_ITEMS2Row
+        Inherits Global.System.Data.DataRow
+        
+        Private tabletblM4_INVENTORY_ITEMS2 As tblM4_INVENTORY_ITEMS2DataTable
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
+            MyBase.New(rb)
+            Me.tabletblM4_INVENTORY_ITEMS2 = CType(Me.Table,tblM4_INVENTORY_ITEMS2DataTable)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property ITEM_DESCRIPTION() As String
+            Get
+                Return CType(Me(Me.tabletblM4_INVENTORY_ITEMS2.ITEM_DESCRIPTIONColumn),String)
+            End Get
+            Set
+                Me(Me.tabletblM4_INVENTORY_ITEMS2.ITEM_DESCRIPTIONColumn) = value
+            End Set
+        End Property
+    End Class
+    
+    '''<summary>
+    '''Represents strongly named DataRow class.
+    '''</summary>
+    Partial Public Class tblM4_INVENTORY_TYPERow
+        Inherits Global.System.Data.DataRow
+        
+        Private tabletblM4_INVENTORY_TYPE As tblM4_INVENTORY_TYPEDataTable
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
+            MyBase.New(rb)
+            Me.tabletblM4_INVENTORY_TYPE = CType(Me.Table,tblM4_INVENTORY_TYPEDataTable)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property INV_CODE() As String
+            Get
+                Return CType(Me(Me.tabletblM4_INVENTORY_TYPE.INV_CODEColumn),String)
+            End Get
+            Set
+                Me(Me.tabletblM4_INVENTORY_TYPE.INV_CODEColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property INV_DESC() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tabletblM4_INVENTORY_TYPE.INV_DESCColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'INV_DESC' in table 'tblM4_INVENTORY_TYPE' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tabletblM4_INVENTORY_TYPE.INV_DESCColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property INV_STATUS() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tabletblM4_INVENTORY_TYPE.INV_STATUSColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'INV_STATUS' in table 'tblM4_INVENTORY_TYPE' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tabletblM4_INVENTORY_TYPE.INV_STATUSColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property DATE_CREATED() As Date
+            Get
+                Return CType(Me(Me.tabletblM4_INVENTORY_TYPE.DATE_CREATEDColumn),Date)
+            End Get
+            Set
+                Me(Me.tabletblM4_INVENTORY_TYPE.DATE_CREATEDColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsINV_DESCNull() As Boolean
+            Return Me.IsNull(Me.tabletblM4_INVENTORY_TYPE.INV_DESCColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetINV_DESCNull()
+            Me(Me.tabletblM4_INVENTORY_TYPE.INV_DESCColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsINV_STATUSNull() As Boolean
+            Return Me.IsNull(Me.tabletblM4_INVENTORY_TYPE.INV_STATUSColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetINV_STATUSNull()
+            Me(Me.tabletblM4_INVENTORY_TYPE.INV_STATUSColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function GettblM4_INVENTORY_ITEMSRows() As tblM4_INVENTORY_ITEMSRow()
+            If (Me.Table.ChildRelations("FK_tblM4_INVENTORY_ITEMS_tblM4_INVENTORY_TYPE") Is Nothing) Then
+                Return New tblM4_INVENTORY_ITEMSRow(-1) {}
+            Else
+                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("FK_tblM4_INVENTORY_ITEMS_tblM4_INVENTORY_TYPE")),tblM4_INVENTORY_ITEMSRow())
+            End If
+        End Function
     End Class
     
     '''<summary>
@@ -34284,42 +34492,6 @@ Partial Public Class DS_PROPERTYDB
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Public Class SPM4_INVENTORY_REPORTRowChangeEvent
-        Inherits Global.System.EventArgs
-        
-        Private eventRow As SPM4_INVENTORY_REPORTRow
-        
-        Private eventAction As Global.System.Data.DataRowAction
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub New(ByVal row As SPM4_INVENTORY_REPORTRow, ByVal action As Global.System.Data.DataRowAction)
-            MyBase.New
-            Me.eventRow = row
-            Me.eventAction = action
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property Row() As SPM4_INVENTORY_REPORTRow
-            Get
-                Return Me.eventRow
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
-            Get
-                Return Me.eventAction
-            End Get
-        End Property
-    End Class
-    
-    '''<summary>
-    '''Row event argument class
-    '''</summary>
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
     Public Class SPM4_PROPERTY_NORowChangeEvent
         Inherits Global.System.EventArgs
         
@@ -35166,6 +35338,78 @@ Partial Public Class DS_PROPERTYDB
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public ReadOnly Property Row() As tblM4_INVENTORY_ITEMS_PROPERTYRow
+            Get
+                Return Me.eventRow
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
+            Get
+                Return Me.eventAction
+            End Get
+        End Property
+    End Class
+    
+    '''<summary>
+    '''Row event argument class
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+    Public Class tblM4_INVENTORY_ITEMS2RowChangeEvent
+        Inherits Global.System.EventArgs
+        
+        Private eventRow As tblM4_INVENTORY_ITEMS2Row
+        
+        Private eventAction As Global.System.Data.DataRowAction
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub New(ByVal row As tblM4_INVENTORY_ITEMS2Row, ByVal action As Global.System.Data.DataRowAction)
+            MyBase.New
+            Me.eventRow = row
+            Me.eventAction = action
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property Row() As tblM4_INVENTORY_ITEMS2Row
+            Get
+                Return Me.eventRow
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
+            Get
+                Return Me.eventAction
+            End Get
+        End Property
+    End Class
+    
+    '''<summary>
+    '''Row event argument class
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+    Public Class tblM4_INVENTORY_TYPERowChangeEvent
+        Inherits Global.System.EventArgs
+        
+        Private eventRow As tblM4_INVENTORY_TYPERow
+        
+        Private eventAction As Global.System.Data.DataRowAction
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub New(ByVal row As tblM4_INVENTORY_TYPERow, ByVal action As Global.System.Data.DataRowAction)
+            MyBase.New
+            Me.eventRow = row
+            Me.eventAction = action
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property Row() As tblM4_INVENTORY_TYPERow
             Get
                 Return Me.eventRow
             End Get
@@ -42721,7 +42965,7 @@ Namespace DS_PROPERTYDBTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(7) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(8) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT        PR_DATEREQUESTED, PR_APPCODE, PR_PURPOSE, PR_STATUS, PR_REQUESTEDBY"& _ 
@@ -42777,17 +43021,30 @@ Namespace DS_PROPERTYDBTableAdapters
             Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PR_PRNO", Global.System.Data.SqlDbType.NVarChar, 20, Global.System.Data.ParameterDirection.Input, 0, 0, "PR_PRNO", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(5) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(5).Connection = Me.Connection
-            Me._commandCollection(5).CommandText = "SELECT        CREATED_DATE, PR_APPCODE, PR_APPROVEDBY, PR_APPROVEDBYPOSITION, PR_"& _ 
+            Me._commandCollection(5).CommandText = "SELECT        PR_DATEREQUESTED, PR_APPCODE, PR_PURPOSE, PR_STATUS, PR_REQUESTEDBY"& _ 
+                ", PR_REQUESTEDBYPOSITION, PR_APPROVEDBY, PR_APPROVEDBYPOSITION, PR_CERTIFIEDBY, "& _ 
+                "PR_CERTIFIEDBYPOSITION, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         PR_NOTEDBY, PR_NOTEDBYPOSITIO"& _ 
+                "N, PR_SUBMITTEDBY, PR_DEPARTMENT, PR_DIVISION, CREATED_DATE, PR_PRNO, PR_UPDATED"& _ 
+                "BY, PR_ISDOLLAR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            tblM4_PURCHASEREQUEST"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (PR_PURPOSE"& _ 
+                " LIKE '%' + @SEARCH + '%') AND (PR_SUBMITTEDBY = @PR_SUBMITTEDBY) AND (PR_STATUS"& _ 
+                " = 4) OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (PR_PRNO LIKE '%' + @SEARCH + '%') AND (PR_SU"& _ 
+                "BMITTEDBY = @PR_SUBMITTEDBY) AND (PR_STATUS = 4)"
+            Me._commandCollection(5).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SEARCH", Global.System.Data.SqlDbType.NVarChar, 300, Global.System.Data.ParameterDirection.Input, 0, 0, "PR_PURPOSE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PR_SUBMITTEDBY", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "PR_SUBMITTEDBY", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(6) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(6).Connection = Me.Connection
+            Me._commandCollection(6).CommandText = "SELECT        CREATED_DATE, PR_APPCODE, PR_APPROVEDBY, PR_APPROVEDBYPOSITION, PR_"& _ 
                 "CERTIFIEDBY, PR_CERTIFIEDBYPOSITION, PR_DATEREQUESTED, PR_DEPARTMENT, PR_DIVISIO"& _ 
                 "N, PR_ISDOLLAR, PR_NOTEDBY, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         PR_NOTEDBYPOSITION, PR_PR"& _ 
                 "NO, PR_PURPOSE, PR_REQUESTEDBY, PR_REQUESTEDBYPOSITION, PR_STATUS, PR_SUBMITTEDB"& _ 
                 "Y, PR_UPDATEDBY"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            tblM4_PURCHASEREQUEST"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (PR_SUBMITT"& _ 
                 "EDBY = @PR_SUBMITTEDBY)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY PR_DATEREQUESTED DESC"
-            Me._commandCollection(5).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PR_SUBMITTEDBY", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "PR_SUBMITTEDBY", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(6) = New Global.System.Data.SqlClient.SqlCommand()
-            Me._commandCollection(6).Connection = Me.Connection
-            Me._commandCollection(6).CommandText = "INSERT INTO tblM4_PURCHASEREQUEST"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (PR_PRNO, PR_DATEREQU"& _ 
+            Me._commandCollection(6).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PR_SUBMITTEDBY", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "PR_SUBMITTEDBY", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(7) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(7).Connection = Me.Connection
+            Me._commandCollection(7).CommandText = "INSERT INTO tblM4_PURCHASEREQUEST"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (PR_PRNO, PR_DATEREQU"& _ 
                 "ESTED, PR_APPCODE, PR_PURPOSE, PR_STATUS, PR_REQUESTEDBY, PR_REQUESTEDBYPOSITION"& _ 
                 ", PR_APPROVEDBY, PR_APPROVEDBYPOSITION, PR_CERTIFIEDBY, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                      "& _ 
                 "   PR_CERTIFIEDBYPOSITION, PR_NOTEDBY, PR_NOTEDBYPOSITION, PR_SUBMITTEDBY, PR_DE"& _ 
@@ -42796,32 +43053,32 @@ Namespace DS_PROPERTYDBTableAdapters
                 "PROVEDBY,@PR_APPROVEDBYPOSITION,@PR_CERTIFIEDBY,@PR_CERTIFIEDBYPOSITION,@PR_NOTE"& _ 
                 "DBY,@PR_NOTEDBYPOSITION,@PR_SUBMITTEDBY,@PR_DEPARTMENT,@PR_DIVISION,@PR_ISDOLLAR"& _ 
                 ");      "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)
-            Me._commandCollection(6).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PR_PRNO", Global.System.Data.SqlDbType.NVarChar, 20, Global.System.Data.ParameterDirection.Input, 0, 0, "PR_PRNO", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PR_DATEREQUESTED", Global.System.Data.SqlDbType.[Date], 3, Global.System.Data.ParameterDirection.Input, 0, 0, "PR_DATEREQUESTED", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PR_APPCODE", Global.System.Data.SqlDbType.NVarChar, 20, Global.System.Data.ParameterDirection.Input, 0, 0, "PR_APPCODE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PR_PURPOSE", Global.System.Data.SqlDbType.NVarChar, 300, Global.System.Data.ParameterDirection.Input, 0, 0, "PR_PURPOSE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PR_STATUS", Global.System.Data.SqlDbType.[Char], 1, Global.System.Data.ParameterDirection.Input, 0, 0, "PR_STATUS", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PR_REQUESTEDBY", Global.System.Data.SqlDbType.NVarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, "PR_REQUESTEDBY", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PR_REQUESTEDBYPOSITION", Global.System.Data.SqlDbType.NVarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, "PR_REQUESTEDBYPOSITION", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PR_APPROVEDBY", Global.System.Data.SqlDbType.NVarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, "PR_APPROVEDBY", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PR_APPROVEDBYPOSITION", Global.System.Data.SqlDbType.NVarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, "PR_APPROVEDBYPOSITION", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PR_CERTIFIEDBY", Global.System.Data.SqlDbType.NVarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, "PR_CERTIFIEDBY", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PR_CERTIFIEDBYPOSITION", Global.System.Data.SqlDbType.NVarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, "PR_CERTIFIEDBYPOSITION", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PR_NOTEDBY", Global.System.Data.SqlDbType.NVarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, "PR_NOTEDBY", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PR_NOTEDBYPOSITION", Global.System.Data.SqlDbType.NVarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, "PR_NOTEDBYPOSITION", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PR_SUBMITTEDBY", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "PR_SUBMITTEDBY", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PR_DEPARTMENT", Global.System.Data.SqlDbType.NVarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, "PR_DEPARTMENT", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PR_DIVISION", Global.System.Data.SqlDbType.NVarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, "PR_DIVISION", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PR_ISDOLLAR", Global.System.Data.SqlDbType.Bit, 1, Global.System.Data.ParameterDirection.Input, 0, 0, "PR_ISDOLLAR", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(7) = New Global.System.Data.SqlClient.SqlCommand()
-            Me._commandCollection(7).Connection = Me.Connection
-            Me._commandCollection(7).CommandText = "UPDATE       tblM4_PURCHASEREQUEST"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SET                PR_STATUS = @PR_STATUS, PR"& _ 
-                "_UPDATEDBY = @PR_UPDATEDBY"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (PR_PRNO = @PR_PRNO);   "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)
             Me._commandCollection(7).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(7).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PR_PRNO", Global.System.Data.SqlDbType.NVarChar, 20, Global.System.Data.ParameterDirection.Input, 0, 0, "PR_PRNO", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(7).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PR_DATEREQUESTED", Global.System.Data.SqlDbType.[Date], 3, Global.System.Data.ParameterDirection.Input, 0, 0, "PR_DATEREQUESTED", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(7).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PR_APPCODE", Global.System.Data.SqlDbType.NVarChar, 20, Global.System.Data.ParameterDirection.Input, 0, 0, "PR_APPCODE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(7).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PR_PURPOSE", Global.System.Data.SqlDbType.NVarChar, 300, Global.System.Data.ParameterDirection.Input, 0, 0, "PR_PURPOSE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(7).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PR_STATUS", Global.System.Data.SqlDbType.[Char], 1, Global.System.Data.ParameterDirection.Input, 0, 0, "PR_STATUS", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(7).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PR_UPDATEDBY", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "PR_UPDATEDBY", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(7).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PR_PRNO", Global.System.Data.SqlDbType.NVarChar, 20, Global.System.Data.ParameterDirection.Input, 0, 0, "PR_PRNO", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._commandCollection(7).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PR_REQUESTEDBY", Global.System.Data.SqlDbType.NVarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, "PR_REQUESTEDBY", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(7).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PR_REQUESTEDBYPOSITION", Global.System.Data.SqlDbType.NVarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, "PR_REQUESTEDBYPOSITION", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(7).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PR_APPROVEDBY", Global.System.Data.SqlDbType.NVarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, "PR_APPROVEDBY", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(7).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PR_APPROVEDBYPOSITION", Global.System.Data.SqlDbType.NVarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, "PR_APPROVEDBYPOSITION", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(7).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PR_CERTIFIEDBY", Global.System.Data.SqlDbType.NVarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, "PR_CERTIFIEDBY", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(7).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PR_CERTIFIEDBYPOSITION", Global.System.Data.SqlDbType.NVarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, "PR_CERTIFIEDBYPOSITION", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(7).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PR_NOTEDBY", Global.System.Data.SqlDbType.NVarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, "PR_NOTEDBY", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(7).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PR_NOTEDBYPOSITION", Global.System.Data.SqlDbType.NVarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, "PR_NOTEDBYPOSITION", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(7).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PR_SUBMITTEDBY", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "PR_SUBMITTEDBY", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(7).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PR_DEPARTMENT", Global.System.Data.SqlDbType.NVarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, "PR_DEPARTMENT", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(7).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PR_DIVISION", Global.System.Data.SqlDbType.NVarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, "PR_DIVISION", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(7).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PR_ISDOLLAR", Global.System.Data.SqlDbType.Bit, 1, Global.System.Data.ParameterDirection.Input, 0, 0, "PR_ISDOLLAR", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(8) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(8).Connection = Me.Connection
+            Me._commandCollection(8).CommandText = "UPDATE       tblM4_PURCHASEREQUEST"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SET                PR_STATUS = @PR_STATUS, PR"& _ 
+                "_UPDATEDBY = @PR_UPDATEDBY"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (PR_PRNO = @PR_PRNO);   "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)
+            Me._commandCollection(8).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(8).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PR_STATUS", Global.System.Data.SqlDbType.[Char], 1, Global.System.Data.ParameterDirection.Input, 0, 0, "PR_STATUS", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(8).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PR_UPDATEDBY", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "PR_UPDATEDBY", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(8).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PR_PRNO", Global.System.Data.SqlDbType.NVarChar, 20, Global.System.Data.ParameterDirection.Input, 0, 0, "PR_PRNO", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -43028,8 +43285,31 @@ Namespace DS_PROPERTYDBTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
-        Public Overloads Overridable Function FillBySubmittedUser(ByVal dataTable As DS_PROPERTYDB.tblM4_PURCHASEREQUESTDataTable, ByVal PR_SUBMITTEDBY As String) As Integer
+        Public Overloads Overridable Function FillBySUBMITTEDBY_PR_NO(ByVal dataTable As DS_PROPERTYDB.tblM4_PURCHASEREQUESTDataTable, ByVal SEARCH As String, ByVal PR_SUBMITTEDBY As String) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(5)
+            If (SEARCH Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(SEARCH,String)
+            End If
+            If (PR_SUBMITTEDBY Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(PR_SUBMITTEDBY,String)
+            End If
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillBySubmittedUser(ByVal dataTable As DS_PROPERTYDB.tblM4_PURCHASEREQUESTDataTable, ByVal PR_SUBMITTEDBY As String) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(6)
             If (PR_SUBMITTEDBY Is Nothing) Then
                 Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
@@ -43047,7 +43327,7 @@ Namespace DS_PROPERTYDBTableAdapters
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
         Public Overloads Overridable Function GetDataBySubmittedUser(ByVal PR_SUBMITTEDBY As String) As DS_PROPERTYDB.tblM4_PURCHASEREQUESTDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(5)
+            Me.Adapter.SelectCommand = Me.CommandCollection(6)
             If (PR_SUBMITTEDBY Is Nothing) Then
                 Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
@@ -43108,7 +43388,7 @@ Namespace DS_PROPERTYDBTableAdapters
                     ByVal PR_DEPARTMENT As String,  _
                     ByVal PR_DIVISION As String,  _
                     ByVal PR_ISDOLLAR As Boolean) As Integer
-            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(6)
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(7)
             If (PR_PRNO Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("PR_PRNO")
             Else
@@ -43211,7 +43491,7 @@ Namespace DS_PROPERTYDBTableAdapters
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, false)>  _
         Public Overloads Overridable Function UQ_UPDATEPRSTATUS(ByVal PR_STATUS As String, ByVal PR_UPDATEDBY As String, ByVal PR_PRNO As String) As Integer
-            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(7)
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(8)
             If (PR_STATUS Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("PR_STATUS")
             Else
@@ -46118,245 +46398,6 @@ Namespace DS_PROPERTYDBTableAdapters
         Public Overloads Overridable Function GetData() As DS_PROPERTYDB.tblM4_SUB_CATEGORY1DataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             Dim dataTable As DS_PROPERTYDB.tblM4_SUB_CATEGORY1DataTable = New DS_PROPERTYDB.tblM4_SUB_CATEGORY1DataTable()
-            Me.Adapter.Fill(dataTable)
-            Return dataTable
-        End Function
-    End Class
-    
-    '''<summary>
-    '''Represents the connection and commands used to retrieve and save data.
-    '''</summary>
-    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
-     Global.System.ComponentModel.ToolboxItem(true),  _
-     Global.System.ComponentModel.DataObjectAttribute(true),  _
-     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
-     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-    Partial Public Class SPM4_INVENTORY_REPORTTableAdapter
-        Inherits Global.System.ComponentModel.Component
-        
-        Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
-        
-        Private _connection As Global.System.Data.SqlClient.SqlConnection
-        
-        Private _transaction As Global.System.Data.SqlClient.SqlTransaction
-        
-        Private _commandCollection() As Global.System.Data.SqlClient.SqlCommand
-        
-        Private _clearBeforeFill As Boolean
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub New()
-            MyBase.New
-            Me.ClearBeforeFill = true
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Friend ReadOnly Property Adapter() As Global.System.Data.SqlClient.SqlDataAdapter
-            Get
-                If (Me._adapter Is Nothing) Then
-                    Me.InitAdapter
-                End If
-                Return Me._adapter
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Friend Property Connection() As Global.System.Data.SqlClient.SqlConnection
-            Get
-                If (Me._connection Is Nothing) Then
-                    Me.InitConnection
-                End If
-                Return Me._connection
-            End Get
-            Set
-                Me._connection = value
-                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
-                    Me.Adapter.InsertCommand.Connection = value
-                End If
-                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
-                    Me.Adapter.DeleteCommand.Connection = value
-                End If
-                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
-                    Me.Adapter.UpdateCommand.Connection = value
-                End If
-                Dim i As Integer = 0
-                Do While (i < Me.CommandCollection.Length)
-                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
-                        CType(Me.CommandCollection(i),Global.System.Data.SqlClient.SqlCommand).Connection = value
-                    End If
-                    i = (i + 1)
-                Loop
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Friend Property Transaction() As Global.System.Data.SqlClient.SqlTransaction
-            Get
-                Return Me._transaction
-            End Get
-            Set
-                Me._transaction = value
-                Dim i As Integer = 0
-                Do While (i < Me.CommandCollection.Length)
-                    Me.CommandCollection(i).Transaction = Me._transaction
-                    i = (i + 1)
-                Loop
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
-                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
-                End If
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
-                    Me.Adapter.InsertCommand.Transaction = Me._transaction
-                End If
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
-                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
-                End If
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected ReadOnly Property CommandCollection() As Global.System.Data.SqlClient.SqlCommand()
-            Get
-                If (Me._commandCollection Is Nothing) Then
-                    Me.InitCommandCollection
-                End If
-                Return Me._commandCollection
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property ClearBeforeFill() As Boolean
-            Get
-                Return Me._clearBeforeFill
-            End Get
-            Set
-                Me._clearBeforeFill = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Sub InitAdapter()
-            Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
-            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
-            tableMapping.SourceTable = "Table"
-            tableMapping.DataSetTable = "SPM4_INVENTORY_REPORT"
-            tableMapping.ColumnMappings.Add("Category", "Category")
-            tableMapping.ColumnMappings.Add("Sub Category", "Sub Category")
-            tableMapping.ColumnMappings.Add("Brand/Provider", "Brand/Provider")
-            tableMapping.ColumnMappings.Add("Item Description", "Item Description")
-            tableMapping.ColumnMappings.Add("Unit Type", "Unit Type")
-            tableMapping.ColumnMappings.Add("Unit Cost", "Unit Cost")
-            tableMapping.ColumnMappings.Add("Total Cost", "Total Cost")
-            tableMapping.ColumnMappings.Add("Quantity", "Quantity")
-            tableMapping.ColumnMappings.Add("Date Encoded", "Date Encoded")
-            tableMapping.ColumnMappings.Add("Property No.", "Property No_")
-            tableMapping.ColumnMappings.Add("Serial No.", "Serial No_")
-            Me._adapter.TableMappings.Add(tableMapping)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Sub InitConnection()
-            Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.PRA_PIS.My.MySettings.Default.PRA_PROPERTYDBConnectionString
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
-            Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
-            Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "dbo.SPM4_INVENTORY_REPORT"
-            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.StoredProcedure
-            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CAT_NAME", Global.System.Data.SqlDbType.NVarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SC_SUBCATEGORY_NAME", Global.System.Data.SqlDbType.NVarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ITBR_NAME", Global.System.Data.SqlDbType.NVarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DATEFROM", Global.System.Data.SqlDbType.NVarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DATETO", Global.System.Data.SqlDbType.NVarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As DS_PROPERTYDB.SPM4_INVENTORY_REPORTDataTable, ByVal CAT_NAME As String, ByVal SC_SUBCATEGORY_NAME As String, ByVal ITBR_NAME As String, ByVal DATEFROM As String, ByVal DATETO As String) As Integer
-            Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            If (CAT_NAME Is Nothing) Then
-                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.SelectCommand.Parameters(1).Value = CType(CAT_NAME,String)
-            End If
-            If (SC_SUBCATEGORY_NAME Is Nothing) Then
-                Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.SelectCommand.Parameters(2).Value = CType(SC_SUBCATEGORY_NAME,String)
-            End If
-            If (ITBR_NAME Is Nothing) Then
-                Me.Adapter.SelectCommand.Parameters(3).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.SelectCommand.Parameters(3).Value = CType(ITBR_NAME,String)
-            End If
-            If (DATEFROM Is Nothing) Then
-                Me.Adapter.SelectCommand.Parameters(4).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.SelectCommand.Parameters(4).Value = CType(DATEFROM,String)
-            End If
-            If (DATETO Is Nothing) Then
-                Me.Adapter.SelectCommand.Parameters(5).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.SelectCommand.Parameters(5).Value = CType(DATETO,String)
-            End If
-            If (Me.ClearBeforeFill = true) Then
-                dataTable.Clear
-            End If
-            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
-            Return returnValue
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData(ByVal CAT_NAME As String, ByVal SC_SUBCATEGORY_NAME As String, ByVal ITBR_NAME As String, ByVal DATEFROM As String, ByVal DATETO As String) As DS_PROPERTYDB.SPM4_INVENTORY_REPORTDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            If (CAT_NAME Is Nothing) Then
-                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.SelectCommand.Parameters(1).Value = CType(CAT_NAME,String)
-            End If
-            If (SC_SUBCATEGORY_NAME Is Nothing) Then
-                Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.SelectCommand.Parameters(2).Value = CType(SC_SUBCATEGORY_NAME,String)
-            End If
-            If (ITBR_NAME Is Nothing) Then
-                Me.Adapter.SelectCommand.Parameters(3).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.SelectCommand.Parameters(3).Value = CType(ITBR_NAME,String)
-            End If
-            If (DATEFROM Is Nothing) Then
-                Me.Adapter.SelectCommand.Parameters(4).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.SelectCommand.Parameters(4).Value = CType(DATEFROM,String)
-            End If
-            If (DATETO Is Nothing) Then
-                Me.Adapter.SelectCommand.Parameters(5).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.SelectCommand.Parameters(5).Value = CType(DATETO,String)
-            End If
-            Dim dataTable As DS_PROPERTYDB.SPM4_INVENTORY_REPORTDataTable = New DS_PROPERTYDB.SPM4_INVENTORY_REPORTDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -50654,40 +50695,30 @@ Namespace DS_PROPERTYDBTableAdapters
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.StoredProcedure
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@search", Global.System.Data.SqlDbType.NVarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SUPPLYTYPE", Global.System.Data.SqlDbType.NVarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As DS_PROPERTYDB.SPM4_INVENTORYDGVLISTDataTable, ByVal search As String) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As DS_PROPERTYDB.SPM4_INVENTORYDGVLISTDataTable, ByVal search As String, ByVal SUPPLYTYPE As String) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (search Is Nothing) Then
                 Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.SelectCommand.Parameters(1).Value = CType(search,String)
+            End If
+            If (SUPPLYTYPE Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(2).Value = CType(SUPPLYTYPE,String)
             End If
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
             End If
             Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
             Return returnValue
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData(ByVal search As String) As DS_PROPERTYDB.SPM4_INVENTORYDGVLISTDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            If (search Is Nothing) Then
-                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.SelectCommand.Parameters(1).Value = CType(search,String)
-            End If
-            Dim dataTable As DS_PROPERTYDB.SPM4_INVENTORYDGVLISTDataTable = New DS_PROPERTYDB.SPM4_INVENTORYDGVLISTDataTable()
-            Me.Adapter.Fill(dataTable)
-            Return dataTable
         End Function
     End Class
     
@@ -50824,6 +50855,7 @@ Namespace DS_PROPERTYDBTableAdapters
             tableMapping.ColumnMappings.Add("HRIS_EMPNO", "HRIS_EMPNO")
             tableMapping.ColumnMappings.Add("CAT_CREATED_DATE", "CAT_CREATED_DATE")
             tableMapping.ColumnMappings.Add("CAT_UPDATED_DATE", "CAT_UPDATED_DATE")
+            tableMapping.ColumnMappings.Add("INV_CODE", "INV_CODE")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
@@ -50832,7 +50864,8 @@ Namespace DS_PROPERTYDBTableAdapters
                 "al_CAT_STATUS)) AND ((@IsNull_HRIS_EMPNO = 1 AND [HRIS_EMPNO] IS NULL) OR ([HRIS"& _ 
                 "_EMPNO] = @Original_HRIS_EMPNO)) AND ([CAT_CREATED_DATE] = @Original_CAT_CREATED"& _ 
                 "_DATE) AND ((@IsNull_CAT_UPDATED_DATE = 1 AND [CAT_UPDATED_DATE] IS NULL) OR ([C"& _ 
-                "AT_UPDATED_DATE] = @Original_CAT_UPDATED_DATE)))"
+                "AT_UPDATED_DATE] = @Original_CAT_UPDATED_DATE)) AND ([INV_CODE] = @Original_INV_"& _ 
+                "CODE))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CAT_CODE", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CAT_CODE", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_CAT_STATUS", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CAT_STATUS", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
@@ -50842,13 +50875,15 @@ Namespace DS_PROPERTYDBTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CAT_CREATED_DATE", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CAT_CREATED_DATE", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_CAT_UPDATED_DATE", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CAT_UPDATED_DATE", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CAT_UPDATED_DATE", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CAT_UPDATED_DATE", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_INV_CODE", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "INV_CODE", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
             Me._adapter.InsertCommand.CommandText = "INSERT INTO [tblM4_INVENTORY_CATEGORY] ([CAT_CODE], [CAT_NAME], [CAT_STATUS], [HR"& _ 
-                "IS_EMPNO], [CAT_CREATED_DATE], [CAT_UPDATED_DATE]) VALUES (@CAT_CODE, @CAT_NAME,"& _ 
-                " @CAT_STATUS, @HRIS_EMPNO, @CAT_CREATED_DATE, @CAT_UPDATED_DATE);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT CAT_CO"& _ 
-                "DE, CAT_NAME, CAT_STATUS, HRIS_EMPNO, CAT_CREATED_DATE, CAT_UPDATED_DATE FROM tb"& _ 
-                "lM4_INVENTORY_CATEGORY WHERE (CAT_CODE = @CAT_CODE) ORDER BY CAT_NAME"
+                "IS_EMPNO], [CAT_CREATED_DATE], [CAT_UPDATED_DATE], [INV_CODE]) VALUES (@CAT_CODE"& _ 
+                ", @CAT_NAME, @CAT_STATUS, @HRIS_EMPNO, @CAT_CREATED_DATE, @CAT_UPDATED_DATE, @IN"& _ 
+                "V_CODE);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT CAT_CODE, CAT_NAME, CAT_STATUS, HRIS_EMPNO, CAT_CREATED_DATE, C"& _ 
+                "AT_UPDATED_DATE, INV_CODE FROM tblM4_INVENTORY_CATEGORY WHERE (CAT_CODE = @CAT_C"& _ 
+                "ODE) ORDER BY CAT_NAME"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CAT_CODE", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CAT_CODE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CAT_NAME", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CAT_NAME", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -50856,18 +50891,20 @@ Namespace DS_PROPERTYDBTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@HRIS_EMPNO", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "HRIS_EMPNO", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CAT_CREATED_DATE", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CAT_CREATED_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CAT_UPDATED_DATE", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CAT_UPDATED_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@INV_CODE", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "INV_CODE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
             Me._adapter.UpdateCommand.CommandText = "UPDATE [tblM4_INVENTORY_CATEGORY] SET [CAT_CODE] = @CAT_CODE, [CAT_NAME] = @CAT_N"& _ 
                 "AME, [CAT_STATUS] = @CAT_STATUS, [HRIS_EMPNO] = @HRIS_EMPNO, [CAT_CREATED_DATE] "& _ 
-                "= @CAT_CREATED_DATE, [CAT_UPDATED_DATE] = @CAT_UPDATED_DATE WHERE (([CAT_CODE] ="& _ 
-                " @Original_CAT_CODE) AND ((@IsNull_CAT_STATUS = 1 AND [CAT_STATUS] IS NULL) OR ("& _ 
-                "[CAT_STATUS] = @Original_CAT_STATUS)) AND ((@IsNull_HRIS_EMPNO = 1 AND [HRIS_EMP"& _ 
-                "NO] IS NULL) OR ([HRIS_EMPNO] = @Original_HRIS_EMPNO)) AND ([CAT_CREATED_DATE] ="& _ 
-                " @Original_CAT_CREATED_DATE) AND ((@IsNull_CAT_UPDATED_DATE = 1 AND [CAT_UPDATED"& _ 
-                "_DATE] IS NULL) OR ([CAT_UPDATED_DATE] = @Original_CAT_UPDATED_DATE)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT "& _ 
-                "CAT_CODE, CAT_NAME, CAT_STATUS, HRIS_EMPNO, CAT_CREATED_DATE, CAT_UPDATED_DATE F"& _ 
-                "ROM tblM4_INVENTORY_CATEGORY WHERE (CAT_CODE = @CAT_CODE) ORDER BY CAT_NAME"
+                "= @CAT_CREATED_DATE, [CAT_UPDATED_DATE] = @CAT_UPDATED_DATE, [INV_CODE] = @INV_C"& _ 
+                "ODE WHERE (([CAT_CODE] = @Original_CAT_CODE) AND ((@IsNull_CAT_STATUS = 1 AND [C"& _ 
+                "AT_STATUS] IS NULL) OR ([CAT_STATUS] = @Original_CAT_STATUS)) AND ((@IsNull_HRIS"& _ 
+                "_EMPNO = 1 AND [HRIS_EMPNO] IS NULL) OR ([HRIS_EMPNO] = @Original_HRIS_EMPNO)) A"& _ 
+                "ND ([CAT_CREATED_DATE] = @Original_CAT_CREATED_DATE) AND ((@IsNull_CAT_UPDATED_D"& _ 
+                "ATE = 1 AND [CAT_UPDATED_DATE] IS NULL) OR ([CAT_UPDATED_DATE] = @Original_CAT_U"& _ 
+                "PDATED_DATE)) AND ([INV_CODE] = @Original_INV_CODE));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT CAT_CODE, CAT_NAME"& _ 
+                ", CAT_STATUS, HRIS_EMPNO, CAT_CREATED_DATE, CAT_UPDATED_DATE, INV_CODE FROM tblM"& _ 
+                "4_INVENTORY_CATEGORY WHERE (CAT_CODE = @CAT_CODE) ORDER BY CAT_NAME"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CAT_CODE", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CAT_CODE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CAT_NAME", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CAT_NAME", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -50875,6 +50912,7 @@ Namespace DS_PROPERTYDBTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@HRIS_EMPNO", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "HRIS_EMPNO", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CAT_CREATED_DATE", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CAT_CREATED_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CAT_UPDATED_DATE", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CAT_UPDATED_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@INV_CODE", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "INV_CODE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CAT_CODE", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CAT_CODE", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_CAT_STATUS", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CAT_STATUS", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CAT_STATUS", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CAT_STATUS", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
@@ -50883,6 +50921,7 @@ Namespace DS_PROPERTYDBTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CAT_CREATED_DATE", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CAT_CREATED_DATE", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_CAT_UPDATED_DATE", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CAT_UPDATED_DATE", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CAT_UPDATED_DATE", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CAT_UPDATED_DATE", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_INV_CODE", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "INV_CODE", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -50895,17 +50934,18 @@ Namespace DS_PROPERTYDBTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(4) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(5) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT        CAT_CODE, CAT_NAME, CAT_STATUS, HRIS_EMPNO, CAT_CREATED_DATE, CAT_U"& _ 
-                "PDATED_DATE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            tblM4_INVENTORY_CATEGORY"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (CAT_STATUS "& _ 
-                "= 1)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY CAT_NAME"
+                "PDATED_DATE, INV_CODE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            tblM4_INVENTORY_CATEGORY"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (C"& _ 
+                "AT_STATUS = 1)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY CAT_NAME"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
             Me._commandCollection(1).CommandText = "SELECT CAT_CODE, CAT_CREATED_DATE, CAT_NAME, CAT_STATUS, CAT_UPDATED_DATE, HRIS_E"& _ 
-                "MPNO FROM tblM4_INVENTORY_CATEGORY WHERE (CAT_STATUS = 1) ORDER BY CAT_NAME"
+                "MPNO, INV_CODE FROM tblM4_INVENTORY_CATEGORY WHERE (CAT_STATUS = 1) ORDER BY CAT"& _ 
+                "_NAME"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(2).Connection = Me.Connection
@@ -50916,23 +50956,32 @@ Namespace DS_PROPERTYDBTableAdapters
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CATNAME", Global.System.Data.SqlDbType.NVarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "Category Name", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(3) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(3).Connection = Me.Connection
-            Me._commandCollection(3).CommandText = "INSERT INTO [tblM4_INVENTORY_CATEGORY] ([CAT_CODE], [CAT_NAME], [CAT_STATUS], [HR"& _ 
-                "IS_EMPNO]) VALUES (@CAT_CODE, @CAT_NAME, @CAT_STATUS, @HRIS_EMPNO);"
+            Me._commandCollection(3).CommandText = "SELECT        CAT_CODE, CAT_NAME, CAT_STATUS, HRIS_EMPNO, CAT_CREATED_DATE, CAT_U"& _ 
+                "PDATED_DATE, INV_CODE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            tblM4_INVENTORY_CATEGORY"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (C"& _ 
+                "AT_STATUS = 1) AND (INV_CODE = @INV_CODE)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY CAT_NAME"
             Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CAT_CODE", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "CAT_CODE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CAT_NAME", Global.System.Data.SqlDbType.NVarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "CAT_NAME", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CAT_STATUS", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "CAT_STATUS", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@HRIS_EMPNO", Global.System.Data.SqlDbType.NVarChar, 20, Global.System.Data.ParameterDirection.Input, 0, 0, "HRIS_EMPNO", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@INV_CODE", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "INV_CODE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(4) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(4).Connection = Me.Connection
-            Me._commandCollection(4).CommandText = "UPDATE       tblM4_INVENTORY_CATEGORY"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SET               CAT_NAME = @CAT_NAME, CA"& _ 
-                "T_STATUS = @CAT_STATUS, HRIS_EMPNO = @HRIS_EMPNO"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (CAT_CODE = @Orig"& _ 
-                "inal_CAT_CODE); "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)
+            Me._commandCollection(4).CommandText = "INSERT INTO tblM4_INVENTORY_CATEGORY"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (CAT_CODE, CAT_NAM"& _ 
+                "E, CAT_STATUS, HRIS_EMPNO, INV_CODE)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"VALUES        (@CAT_CODE,@CAT_NAME,@CAT_ST"& _ 
+                "ATUS,@HRIS_EMPNO, @INV_CODE)"
             Me._commandCollection(4).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CAT_CODE", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "CAT_CODE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CAT_NAME", Global.System.Data.SqlDbType.NVarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "CAT_NAME", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CAT_STATUS", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "CAT_STATUS", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@HRIS_EMPNO", Global.System.Data.SqlDbType.NVarChar, 20, Global.System.Data.ParameterDirection.Input, 0, 0, "HRIS_EMPNO", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CAT_CODE", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "CAT_CODE", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@INV_CODE", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "INV_CODE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(5) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(5).Connection = Me.Connection
+            Me._commandCollection(5).CommandText = "UPDATE       tblM4_INVENTORY_CATEGORY"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SET               CAT_NAME = @CAT_NAME, CA"& _ 
+                "T_STATUS = @CAT_STATUS, HRIS_EMPNO = @HRIS_EMPNO"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (CAT_CODE = @Orig"& _ 
+                "inal_CAT_CODE); "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)
+            Me._commandCollection(5).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CAT_NAME", Global.System.Data.SqlDbType.NVarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "CAT_NAME", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CAT_STATUS", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "CAT_STATUS", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@HRIS_EMPNO", Global.System.Data.SqlDbType.NVarChar, 20, Global.System.Data.ParameterDirection.Input, 0, 0, "HRIS_EMPNO", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CAT_CODE", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "CAT_CODE", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -50946,17 +50995,6 @@ Namespace DS_PROPERTYDBTableAdapters
             End If
             Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
             Return returnValue
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As DS_PROPERTYDB.tblM4_INVENTORY_CATEGORYDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As DS_PROPERTYDB.tblM4_INVENTORY_CATEGORYDataTable = New DS_PROPERTYDB.tblM4_INVENTORY_CATEGORYDataTable()
-            Me.Adapter.Fill(dataTable)
-            Return dataTable
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -50981,6 +51019,24 @@ Namespace DS_PROPERTYDBTableAdapters
             Dim dataTable As DS_PROPERTYDB.tblM4_INVENTORY_CATEGORYDataTable = New DS_PROPERTYDB.tblM4_INVENTORY_CATEGORYDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillByINV_CODE(ByVal dataTable As DS_PROPERTYDB.tblM4_INVENTORY_CATEGORYDataTable, ByVal INV_CODE As String) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(3)
+            If (INV_CODE Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("INV_CODE")
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(INV_CODE,String)
+            End If
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -51015,7 +51071,7 @@ Namespace DS_PROPERTYDBTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_CAT_CODE As String, ByVal Original_CAT_STATUS As Global.System.Nullable(Of Integer), ByVal Original_HRIS_EMPNO As String, ByVal Original_CAT_CREATED_DATE As Date, ByVal Original_CAT_UPDATED_DATE As Global.System.Nullable(Of Date)) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_CAT_CODE As String, ByVal Original_CAT_STATUS As Global.System.Nullable(Of Integer), ByVal Original_HRIS_EMPNO As String, ByVal Original_CAT_CREATED_DATE As Date, ByVal Original_CAT_UPDATED_DATE As Global.System.Nullable(Of Date), ByVal Original_INV_CODE As String) As Integer
             If (Original_CAT_CODE Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_CAT_CODE")
             Else
@@ -51043,6 +51099,11 @@ Namespace DS_PROPERTYDBTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(6).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(7).Value = Global.System.DBNull.Value
             End If
+            If (Original_INV_CODE Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_INV_CODE")
+            Else
+                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_INV_CODE,String)
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -51062,7 +51123,7 @@ Namespace DS_PROPERTYDBTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal CAT_CODE As String, ByVal CAT_NAME As String, ByVal CAT_STATUS As Global.System.Nullable(Of Integer), ByVal HRIS_EMPNO As String, ByVal CAT_CREATED_DATE As Date, ByVal CAT_UPDATED_DATE As Global.System.Nullable(Of Date)) As Integer
+        Public Overloads Overridable Function Insert(ByVal CAT_CODE As String, ByVal CAT_NAME As String, ByVal CAT_STATUS As Global.System.Nullable(Of Integer), ByVal HRIS_EMPNO As String, ByVal CAT_CREATED_DATE As Date, ByVal CAT_UPDATED_DATE As Global.System.Nullable(Of Date), ByVal INV_CODE As String) As Integer
             If (CAT_CODE Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("CAT_CODE")
             Else
@@ -51089,6 +51150,11 @@ Namespace DS_PROPERTYDBTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(5).Value = Global.System.DBNull.Value
             End If
+            If (INV_CODE Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("INV_CODE")
+            Else
+                Me.Adapter.InsertCommand.Parameters(6).Value = CType(INV_CODE,String)
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -51108,7 +51174,7 @@ Namespace DS_PROPERTYDBTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal CAT_CODE As String, ByVal CAT_NAME As String, ByVal CAT_STATUS As Global.System.Nullable(Of Integer), ByVal HRIS_EMPNO As String, ByVal CAT_CREATED_DATE As Date, ByVal CAT_UPDATED_DATE As Global.System.Nullable(Of Date), ByVal Original_CAT_CODE As String, ByVal Original_CAT_STATUS As Global.System.Nullable(Of Integer), ByVal Original_HRIS_EMPNO As String, ByVal Original_CAT_CREATED_DATE As Date, ByVal Original_CAT_UPDATED_DATE As Global.System.Nullable(Of Date)) As Integer
+        Public Overloads Overridable Function Update(ByVal CAT_CODE As String, ByVal CAT_NAME As String, ByVal CAT_STATUS As Global.System.Nullable(Of Integer), ByVal HRIS_EMPNO As String, ByVal CAT_CREATED_DATE As Date, ByVal CAT_UPDATED_DATE As Global.System.Nullable(Of Date), ByVal INV_CODE As String, ByVal Original_CAT_CODE As String, ByVal Original_CAT_STATUS As Global.System.Nullable(Of Integer), ByVal Original_HRIS_EMPNO As String, ByVal Original_CAT_CREATED_DATE As Date, ByVal Original_CAT_UPDATED_DATE As Global.System.Nullable(Of Date), ByVal Original_INV_CODE As String) As Integer
             If (CAT_CODE Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("CAT_CODE")
             Else
@@ -51135,32 +51201,42 @@ Namespace DS_PROPERTYDBTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
             End If
+            If (INV_CODE Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("INV_CODE")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(INV_CODE,String)
+            End If
             If (Original_CAT_CODE Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_CAT_CODE")
             Else
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_CAT_CODE,String)
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_CAT_CODE,String)
             End If
             If (Original_CAT_STATUS.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_CAT_STATUS.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_CAT_STATUS.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
             End If
             If (Original_HRIS_EMPNO Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(11).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_HRIS_EMPNO,String)
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_HRIS_EMPNO,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_CAT_CREATED_DATE,Date)
+            Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_CAT_CREATED_DATE,Date)
             If (Original_CAT_UPDATED_DATE.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_CAT_UPDATED_DATE.Value,Date)
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_CAT_UPDATED_DATE.Value,Date)
             Else
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(13).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = Global.System.DBNull.Value
+            End If
+            If (Original_INV_CODE Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_INV_CODE")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_INV_CODE,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -51181,8 +51257,8 @@ Namespace DS_PROPERTYDBTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal CAT_NAME As String, ByVal CAT_STATUS As Global.System.Nullable(Of Integer), ByVal HRIS_EMPNO As String, ByVal CAT_CREATED_DATE As Date, ByVal CAT_UPDATED_DATE As Global.System.Nullable(Of Date), ByVal Original_CAT_CODE As String, ByVal Original_CAT_STATUS As Global.System.Nullable(Of Integer), ByVal Original_HRIS_EMPNO As String, ByVal Original_CAT_CREATED_DATE As Date, ByVal Original_CAT_UPDATED_DATE As Global.System.Nullable(Of Date)) As Integer
-            Return Me.Update(Original_CAT_CODE, CAT_NAME, CAT_STATUS, HRIS_EMPNO, CAT_CREATED_DATE, CAT_UPDATED_DATE, Original_CAT_CODE, Original_CAT_STATUS, Original_HRIS_EMPNO, Original_CAT_CREATED_DATE, Original_CAT_UPDATED_DATE)
+        Public Overloads Overridable Function Update(ByVal CAT_NAME As String, ByVal CAT_STATUS As Global.System.Nullable(Of Integer), ByVal HRIS_EMPNO As String, ByVal CAT_CREATED_DATE As Date, ByVal CAT_UPDATED_DATE As Global.System.Nullable(Of Date), ByVal INV_CODE As String, ByVal Original_CAT_CODE As String, ByVal Original_CAT_STATUS As Global.System.Nullable(Of Integer), ByVal Original_HRIS_EMPNO As String, ByVal Original_CAT_CREATED_DATE As Date, ByVal Original_CAT_UPDATED_DATE As Global.System.Nullable(Of Date), ByVal Original_INV_CODE As String) As Integer
+            Return Me.Update(Original_CAT_CODE, CAT_NAME, CAT_STATUS, HRIS_EMPNO, CAT_CREATED_DATE, CAT_UPDATED_DATE, INV_CODE, Original_CAT_CODE, Original_CAT_STATUS, Original_HRIS_EMPNO, Original_CAT_CREATED_DATE, Original_CAT_UPDATED_DATE, Original_INV_CODE)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -51220,8 +51296,8 @@ Namespace DS_PROPERTYDBTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, false)>  _
-        Public Overloads Overridable Function IQ_INVENTORY_CATEGORY(ByVal CAT_CODE As String, ByVal CAT_NAME As String, ByVal CAT_STATUS As Global.System.Nullable(Of Integer), ByVal HRIS_EMPNO As String) As Integer
-            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(3)
+        Public Overloads Overridable Function IQ_INVENTORY_CATEGORY(ByVal CAT_CODE As String, ByVal CAT_NAME As String, ByVal CAT_STATUS As Global.System.Nullable(Of Integer), ByVal HRIS_EMPNO As String, ByVal INV_CODE As String) As Integer
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(4)
             If (CAT_CODE Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("CAT_CODE")
             Else
@@ -51241,6 +51317,11 @@ Namespace DS_PROPERTYDBTableAdapters
                 command.Parameters(3).Value = Global.System.DBNull.Value
             Else
                 command.Parameters(3).Value = CType(HRIS_EMPNO,String)
+            End If
+            If (INV_CODE Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("INV_CODE")
+            Else
+                command.Parameters(4).Value = CType(INV_CODE,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
             If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -51263,7 +51344,7 @@ Namespace DS_PROPERTYDBTableAdapters
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, false)>  _
         Public Overloads Overridable Function UQ_INVENTORY_CATEGORY(ByVal CAT_NAME As String, ByVal CAT_STATUS As Global.System.Nullable(Of Integer), ByVal HRIS_EMPNO As String, ByVal Original_CAT_CODE As String) As Integer
-            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(4)
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(5)
             If (CAT_NAME Is Nothing) Then
                 command.Parameters(0).Value = Global.System.DBNull.Value
             Else
@@ -51434,6 +51515,7 @@ Namespace DS_PROPERTYDBTableAdapters
             tableMapping.ColumnMappings.Add("ITBR_UPDATED_DATE", "ITBR_UPDATED_DATE")
             tableMapping.ColumnMappings.Add("HRIS_EMPNO", "HRIS_EMPNO")
             tableMapping.ColumnMappings.Add("ITBR_STATUS", "ITBR_STATUS")
+            tableMapping.ColumnMappings.Add("INV_CODE", "INV_CODE")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
@@ -51443,7 +51525,8 @@ Namespace DS_PROPERTYDBTableAdapters
                 "_ITBR_UPDATED_DATE = 1 AND [ITBR_UPDATED_DATE] IS NULL) OR ([ITBR_UPDATED_DATE] "& _ 
                 "= @Original_ITBR_UPDATED_DATE)) AND ((@IsNull_HRIS_EMPNO = 1 AND [HRIS_EMPNO] IS"& _ 
                 " NULL) OR ([HRIS_EMPNO] = @Original_HRIS_EMPNO)) AND ((@IsNull_ITBR_STATUS = 1 A"& _ 
-                "ND [ITBR_STATUS] IS NULL) OR ([ITBR_STATUS] = @Original_ITBR_STATUS)))"
+                "ND [ITBR_STATUS] IS NULL) OR ([ITBR_STATUS] = @Original_ITBR_STATUS)) AND ([INV_"& _ 
+                "CODE] = @Original_INV_CODE))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ITBR_NO", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ITBR_NO", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ITBR_NAME", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ITBR_NAME", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
@@ -51455,13 +51538,15 @@ Namespace DS_PROPERTYDBTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_HRIS_EMPNO", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "HRIS_EMPNO", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ITBR_STATUS", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ITBR_STATUS", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ITBR_STATUS", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ITBR_STATUS", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_INV_CODE", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "INV_CODE", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
             Me._adapter.InsertCommand.CommandText = "INSERT INTO [tblM4_INVENTORY_ITEMBRAND] ([ITBR_NO], [ITBR_NAME], [ITBR_CREATED_DA"& _ 
-                "TE], [ITBR_UPDATED_DATE], [HRIS_EMPNO], [ITBR_STATUS]) VALUES (@ITBR_NO, @ITBR_N"& _ 
-                "AME, @ITBR_CREATED_DATE, @ITBR_UPDATED_DATE, @HRIS_EMPNO, @ITBR_STATUS);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT"& _ 
-                " ITBR_NO, ITBR_NAME, ITBR_CREATED_DATE, ITBR_UPDATED_DATE, HRIS_EMPNO, ITBR_STAT"& _ 
-                "US FROM tblM4_INVENTORY_ITEMBRAND WHERE (ITBR_NO = @ITBR_NO) ORDER BY ITBR_NAME"
+                "TE], [ITBR_UPDATED_DATE], [HRIS_EMPNO], [ITBR_STATUS], [INV_CODE]) VALUES (@ITBR"& _ 
+                "_NO, @ITBR_NAME, @ITBR_CREATED_DATE, @ITBR_UPDATED_DATE, @HRIS_EMPNO, @ITBR_STAT"& _ 
+                "US, @INV_CODE);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT ITBR_NO, ITBR_NAME, ITBR_CREATED_DATE, ITBR_UPDATED_DATE"& _ 
+                ", HRIS_EMPNO, ITBR_STATUS, INV_CODE FROM tblM4_INVENTORY_ITEMBRAND WHERE (ITBR_N"& _ 
+                "O = @ITBR_NO) ORDER BY ITBR_NAME"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ITBR_NO", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ITBR_NO", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ITBR_NAME", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ITBR_NAME", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -51469,20 +51554,22 @@ Namespace DS_PROPERTYDBTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ITBR_UPDATED_DATE", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ITBR_UPDATED_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@HRIS_EMPNO", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "HRIS_EMPNO", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ITBR_STATUS", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ITBR_STATUS", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@INV_CODE", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "INV_CODE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
             Me._adapter.UpdateCommand.CommandText = "UPDATE [tblM4_INVENTORY_ITEMBRAND] SET [ITBR_NO] = @ITBR_NO, [ITBR_NAME] = @ITBR_"& _ 
                 "NAME, [ITBR_CREATED_DATE] = @ITBR_CREATED_DATE, [ITBR_UPDATED_DATE] = @ITBR_UPDA"& _ 
-                "TED_DATE, [HRIS_EMPNO] = @HRIS_EMPNO, [ITBR_STATUS] = @ITBR_STATUS WHERE (([ITBR"& _ 
-                "_NO] = @Original_ITBR_NO) AND ((@IsNull_ITBR_NAME = 1 AND [ITBR_NAME] IS NULL) O"& _ 
-                "R ([ITBR_NAME] = @Original_ITBR_NAME)) AND ([ITBR_CREATED_DATE] = @Original_ITBR"& _ 
-                "_CREATED_DATE) AND ((@IsNull_ITBR_UPDATED_DATE = 1 AND [ITBR_UPDATED_DATE] IS NU"& _ 
-                "LL) OR ([ITBR_UPDATED_DATE] = @Original_ITBR_UPDATED_DATE)) AND ((@IsNull_HRIS_E"& _ 
-                "MPNO = 1 AND [HRIS_EMPNO] IS NULL) OR ([HRIS_EMPNO] = @Original_HRIS_EMPNO)) AND"& _ 
-                " ((@IsNull_ITBR_STATUS = 1 AND [ITBR_STATUS] IS NULL) OR ([ITBR_STATUS] = @Origi"& _ 
-                "nal_ITBR_STATUS)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT ITBR_NO, ITBR_NAME, ITBR_CREATED_DATE, ITBR_UPDATED_"& _ 
-                "DATE, HRIS_EMPNO, ITBR_STATUS FROM tblM4_INVENTORY_ITEMBRAND WHERE (ITBR_NO = @I"& _ 
-                "TBR_NO) ORDER BY ITBR_NAME"
+                "TED_DATE, [HRIS_EMPNO] = @HRIS_EMPNO, [ITBR_STATUS] = @ITBR_STATUS, [INV_CODE] ="& _ 
+                " @INV_CODE WHERE (([ITBR_NO] = @Original_ITBR_NO) AND ((@IsNull_ITBR_NAME = 1 AN"& _ 
+                "D [ITBR_NAME] IS NULL) OR ([ITBR_NAME] = @Original_ITBR_NAME)) AND ([ITBR_CREATE"& _ 
+                "D_DATE] = @Original_ITBR_CREATED_DATE) AND ((@IsNull_ITBR_UPDATED_DATE = 1 AND ["& _ 
+                "ITBR_UPDATED_DATE] IS NULL) OR ([ITBR_UPDATED_DATE] = @Original_ITBR_UPDATED_DAT"& _ 
+                "E)) AND ((@IsNull_HRIS_EMPNO = 1 AND [HRIS_EMPNO] IS NULL) OR ([HRIS_EMPNO] = @O"& _ 
+                "riginal_HRIS_EMPNO)) AND ((@IsNull_ITBR_STATUS = 1 AND [ITBR_STATUS] IS NULL) OR"& _ 
+                " ([ITBR_STATUS] = @Original_ITBR_STATUS)) AND ([INV_CODE] = @Original_INV_CODE))"& _ 
+                ";"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT ITBR_NO, ITBR_NAME, ITBR_CREATED_DATE, ITBR_UPDATED_DATE, HRIS_EMPNO, "& _ 
+                "ITBR_STATUS, INV_CODE FROM tblM4_INVENTORY_ITEMBRAND WHERE (ITBR_NO = @ITBR_NO) "& _ 
+                "ORDER BY ITBR_NAME"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ITBR_NO", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ITBR_NO", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ITBR_NAME", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ITBR_NAME", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -51490,6 +51577,7 @@ Namespace DS_PROPERTYDBTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ITBR_UPDATED_DATE", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ITBR_UPDATED_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@HRIS_EMPNO", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "HRIS_EMPNO", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ITBR_STATUS", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ITBR_STATUS", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@INV_CODE", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "INV_CODE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ITBR_NO", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ITBR_NO", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ITBR_NAME", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ITBR_NAME", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ITBR_NAME", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ITBR_NAME", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
@@ -51500,6 +51588,7 @@ Namespace DS_PROPERTYDBTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_HRIS_EMPNO", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "HRIS_EMPNO", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ITBR_STATUS", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ITBR_STATUS", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ITBR_STATUS", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ITBR_STATUS", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_INV_CODE", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "INV_CODE", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -51512,32 +51601,40 @@ Namespace DS_PROPERTYDBTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(2) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(3) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT        ITBR_NO, ITBR_NAME, ITBR_CREATED_DATE, ITBR_UPDATED_DATE, HRIS_EMPN"& _ 
-                "O, ITBR_STATUS"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            tblM4_INVENTORY_ITEMBRAND"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY ITBR_NAME"
+                "O, ITBR_STATUS, INV_CODE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            tblM4_INVENTORY_ITEMBRAND"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY IT"& _ 
+                "BR_NAME"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "INSERT INTO tblM4_INVENTORY_ITEMBRAND"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (ITBR_NO, ITBR_NA"& _ 
-                "ME, HRIS_EMPNO, ITBR_STATUS)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"VALUES        (@ITBR_NO,@ITBR_NAME,@HRIS_EMPNO,@IT"& _ 
-                "BR_STATUS)"
+            Me._commandCollection(1).CommandText = "SELECT HRIS_EMPNO, INV_CODE, ITBR_CREATED_DATE, ITBR_NAME, ITBR_NO, ITBR_STATUS, "& _ 
+                "ITBR_UPDATED_DATE FROM tblM4_INVENTORY_ITEMBRAND WHERE (INV_CODE = @INV_CODE)"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ITBR_NO", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "ITBR_NO", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ITBR_NAME", Global.System.Data.SqlDbType.NVarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, "ITBR_NAME", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@HRIS_EMPNO", Global.System.Data.SqlDbType.NVarChar, 20, Global.System.Data.ParameterDirection.Input, 0, 0, "HRIS_EMPNO", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ITBR_STATUS", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "ITBR_STATUS", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@INV_CODE", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "INV_CODE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(2).Connection = Me.Connection
-            Me._commandCollection(2).CommandText = "UPDATE       tblM4_INVENTORY_ITEMBRAND"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SET                 ITBR_NAME = @ITBR_NAM"& _ 
-                "E, HRIS_EMPNO = @HRIS_EMPNO, ITBR_STATUS = @ITBR_STATUS"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (ITBR_NO ="& _ 
-                " @Original_ITBR_NO)"
+            Me._commandCollection(2).CommandText = "INSERT INTO tblM4_INVENTORY_ITEMBRAND"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (ITBR_NO, ITBR_NA"& _ 
+                "ME, HRIS_EMPNO, ITBR_STATUS, INV_CODE)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"VALUES        (@ITBR_NO,@ITBR_NAME,@HRIS"& _ 
+                "_EMPNO,@ITBR_STATUS,@INV_CODE)"
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ITBR_NO", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "ITBR_NO", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ITBR_NAME", Global.System.Data.SqlDbType.NVarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, "ITBR_NAME", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@HRIS_EMPNO", Global.System.Data.SqlDbType.NVarChar, 20, Global.System.Data.ParameterDirection.Input, 0, 0, "HRIS_EMPNO", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ITBR_STATUS", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "ITBR_STATUS", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ITBR_NO", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "ITBR_NO", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@INV_CODE", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "INV_CODE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(3).Connection = Me.Connection
+            Me._commandCollection(3).CommandText = "UPDATE       tblM4_INVENTORY_ITEMBRAND"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SET                 ITBR_NAME = @ITBR_NAM"& _ 
+                "E, HRIS_EMPNO = @HRIS_EMPNO, ITBR_STATUS = @ITBR_STATUS"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (ITBR_NO ="& _ 
+                " @Original_ITBR_NO)"
+            Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ITBR_NAME", Global.System.Data.SqlDbType.NVarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, "ITBR_NAME", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@HRIS_EMPNO", Global.System.Data.SqlDbType.NVarChar, 20, Global.System.Data.ParameterDirection.Input, 0, 0, "HRIS_EMPNO", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ITBR_STATUS", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "ITBR_STATUS", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ITBR_NO", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "ITBR_NO", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -51556,12 +51653,19 @@ Namespace DS_PROPERTYDBTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As DS_PROPERTYDB.tblM4_INVENTORY_ITEMBRANDDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As DS_PROPERTYDB.tblM4_INVENTORY_ITEMBRANDDataTable = New DS_PROPERTYDB.tblM4_INVENTORY_ITEMBRANDDataTable()
-            Me.Adapter.Fill(dataTable)
-            Return dataTable
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillByINVCODE(ByVal dataTable As DS_PROPERTYDB.tblM4_INVENTORY_ITEMBRANDDataTable, ByVal INV_CODE As String) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            If (INV_CODE Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("INV_CODE")
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(INV_CODE,String)
+            End If
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -51596,7 +51700,7 @@ Namespace DS_PROPERTYDBTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_ITBR_NO As String, ByVal Original_ITBR_NAME As String, ByVal Original_ITBR_CREATED_DATE As Date, ByVal Original_ITBR_UPDATED_DATE As Global.System.Nullable(Of Date), ByVal Original_HRIS_EMPNO As String, ByVal Original_ITBR_STATUS As Global.System.Nullable(Of Integer)) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_ITBR_NO As String, ByVal Original_ITBR_NAME As String, ByVal Original_ITBR_CREATED_DATE As Date, ByVal Original_ITBR_UPDATED_DATE As Global.System.Nullable(Of Date), ByVal Original_HRIS_EMPNO As String, ByVal Original_ITBR_STATUS As Global.System.Nullable(Of Integer), ByVal Original_INV_CODE As String) As Integer
             If (Original_ITBR_NO Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_ITBR_NO")
             Else
@@ -51631,6 +51735,11 @@ Namespace DS_PROPERTYDBTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(8).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(9).Value = Global.System.DBNull.Value
             End If
+            If (Original_INV_CODE Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_INV_CODE")
+            Else
+                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_INV_CODE,String)
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -51650,7 +51759,7 @@ Namespace DS_PROPERTYDBTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal ITBR_NO As String, ByVal ITBR_NAME As String, ByVal ITBR_CREATED_DATE As Date, ByVal ITBR_UPDATED_DATE As Global.System.Nullable(Of Date), ByVal HRIS_EMPNO As String, ByVal ITBR_STATUS As Global.System.Nullable(Of Integer)) As Integer
+        Public Overloads Overridable Function Insert(ByVal ITBR_NO As String, ByVal ITBR_NAME As String, ByVal ITBR_CREATED_DATE As Date, ByVal ITBR_UPDATED_DATE As Global.System.Nullable(Of Date), ByVal HRIS_EMPNO As String, ByVal ITBR_STATUS As Global.System.Nullable(Of Integer), ByVal INV_CODE As String) As Integer
             If (ITBR_NO Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("ITBR_NO")
             Else
@@ -51677,6 +51786,11 @@ Namespace DS_PROPERTYDBTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(5).Value = Global.System.DBNull.Value
             End If
+            If (INV_CODE Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("INV_CODE")
+            Else
+                Me.Adapter.InsertCommand.Parameters(6).Value = CType(INV_CODE,String)
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -51696,7 +51810,7 @@ Namespace DS_PROPERTYDBTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal ITBR_NO As String, ByVal ITBR_NAME As String, ByVal ITBR_CREATED_DATE As Date, ByVal ITBR_UPDATED_DATE As Global.System.Nullable(Of Date), ByVal HRIS_EMPNO As String, ByVal ITBR_STATUS As Global.System.Nullable(Of Integer), ByVal Original_ITBR_NO As String, ByVal Original_ITBR_NAME As String, ByVal Original_ITBR_CREATED_DATE As Date, ByVal Original_ITBR_UPDATED_DATE As Global.System.Nullable(Of Date), ByVal Original_HRIS_EMPNO As String, ByVal Original_ITBR_STATUS As Global.System.Nullable(Of Integer)) As Integer
+        Public Overloads Overridable Function Update(ByVal ITBR_NO As String, ByVal ITBR_NAME As String, ByVal ITBR_CREATED_DATE As Date, ByVal ITBR_UPDATED_DATE As Global.System.Nullable(Of Date), ByVal HRIS_EMPNO As String, ByVal ITBR_STATUS As Global.System.Nullable(Of Integer), ByVal INV_CODE As String, ByVal Original_ITBR_NO As String, ByVal Original_ITBR_NAME As String, ByVal Original_ITBR_CREATED_DATE As Date, ByVal Original_ITBR_UPDATED_DATE As Global.System.Nullable(Of Date), ByVal Original_HRIS_EMPNO As String, ByVal Original_ITBR_STATUS As Global.System.Nullable(Of Integer), ByVal Original_INV_CODE As String) As Integer
             If (ITBR_NO Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("ITBR_NO")
             Else
@@ -51723,39 +51837,49 @@ Namespace DS_PROPERTYDBTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
             End If
+            If (INV_CODE Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("INV_CODE")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(INV_CODE,String)
+            End If
             If (Original_ITBR_NO Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_ITBR_NO")
             Else
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_ITBR_NO,String)
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_ITBR_NO,String)
             End If
             If (Original_ITBR_NAME Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_ITBR_NAME,String)
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_ITBR_NAME,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_ITBR_CREATED_DATE,Date)
+            Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_ITBR_CREATED_DATE,Date)
             If (Original_ITBR_UPDATED_DATE.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_ITBR_UPDATED_DATE.Value,Date)
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_ITBR_UPDATED_DATE.Value,Date)
             Else
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(11).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = Global.System.DBNull.Value
             End If
             If (Original_HRIS_EMPNO Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(13).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_HRIS_EMPNO,String)
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_HRIS_EMPNO,String)
             End If
             If (Original_ITBR_STATUS.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_ITBR_STATUS.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Original_ITBR_STATUS.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(15).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(16).Value = Global.System.DBNull.Value
+            End If
+            If (Original_INV_CODE Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_INV_CODE")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(Original_INV_CODE,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -51776,16 +51900,16 @@ Namespace DS_PROPERTYDBTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal ITBR_NAME As String, ByVal ITBR_CREATED_DATE As Date, ByVal ITBR_UPDATED_DATE As Global.System.Nullable(Of Date), ByVal HRIS_EMPNO As String, ByVal ITBR_STATUS As Global.System.Nullable(Of Integer), ByVal Original_ITBR_NO As String, ByVal Original_ITBR_NAME As String, ByVal Original_ITBR_CREATED_DATE As Date, ByVal Original_ITBR_UPDATED_DATE As Global.System.Nullable(Of Date), ByVal Original_HRIS_EMPNO As String, ByVal Original_ITBR_STATUS As Global.System.Nullable(Of Integer)) As Integer
-            Return Me.Update(Original_ITBR_NO, ITBR_NAME, ITBR_CREATED_DATE, ITBR_UPDATED_DATE, HRIS_EMPNO, ITBR_STATUS, Original_ITBR_NO, Original_ITBR_NAME, Original_ITBR_CREATED_DATE, Original_ITBR_UPDATED_DATE, Original_HRIS_EMPNO, Original_ITBR_STATUS)
+        Public Overloads Overridable Function Update(ByVal ITBR_NAME As String, ByVal ITBR_CREATED_DATE As Date, ByVal ITBR_UPDATED_DATE As Global.System.Nullable(Of Date), ByVal HRIS_EMPNO As String, ByVal ITBR_STATUS As Global.System.Nullable(Of Integer), ByVal INV_CODE As String, ByVal Original_ITBR_NO As String, ByVal Original_ITBR_NAME As String, ByVal Original_ITBR_CREATED_DATE As Date, ByVal Original_ITBR_UPDATED_DATE As Global.System.Nullable(Of Date), ByVal Original_HRIS_EMPNO As String, ByVal Original_ITBR_STATUS As Global.System.Nullable(Of Integer), ByVal Original_INV_CODE As String) As Integer
+            Return Me.Update(Original_ITBR_NO, ITBR_NAME, ITBR_CREATED_DATE, ITBR_UPDATED_DATE, HRIS_EMPNO, ITBR_STATUS, INV_CODE, Original_ITBR_NO, Original_ITBR_NAME, Original_ITBR_CREATED_DATE, Original_ITBR_UPDATED_DATE, Original_HRIS_EMPNO, Original_ITBR_STATUS, Original_INV_CODE)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, false)>  _
-        Public Overloads Overridable Function IQ_INVENTORY_ITEMS_BRAND(ByVal ITBR_NO As String, ByVal ITBR_NAME As String, ByVal HRIS_EMPNO As String, ByVal ITBR_STATUS As Global.System.Nullable(Of Integer)) As Integer
-            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(1)
+        Public Overloads Overridable Function IQ_INVENTORY_ITEMS_BRAND(ByVal ITBR_NO As String, ByVal ITBR_NAME As String, ByVal HRIS_EMPNO As String, ByVal ITBR_STATUS As Global.System.Nullable(Of Integer), ByVal INV_CODE As String) As Integer
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(2)
             If (ITBR_NO Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("ITBR_NO")
             Else
@@ -51805,6 +51929,11 @@ Namespace DS_PROPERTYDBTableAdapters
                 command.Parameters(3).Value = CType(ITBR_STATUS.Value,Integer)
             Else
                 command.Parameters(3).Value = Global.System.DBNull.Value
+            End If
+            If (INV_CODE Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("INV_CODE")
+            Else
+                command.Parameters(4).Value = CType(INV_CODE,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
             If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -51827,7 +51956,7 @@ Namespace DS_PROPERTYDBTableAdapters
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, false)>  _
         Public Overloads Overridable Function UQ_INVENTORY_ITEMS_BRAND(ByVal ITBR_NAME As String, ByVal HRIS_EMPNO As String, ByVal ITBR_STATUS As Global.System.Nullable(Of Integer), ByVal Original_ITBR_NO As String) As Integer
-            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(2)
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(3)
             If (ITBR_NAME Is Nothing) Then
                 command.Parameters(0).Value = Global.System.DBNull.Value
             Else
@@ -52004,6 +52133,7 @@ Namespace DS_PROPERTYDBTableAdapters
             tableMapping.ColumnMappings.Add("ITEM_DATE_AQUISITION", "ITEM_DATE_AQUISITION")
             tableMapping.ColumnMappings.Add("ITEM_CREATED_DATE", "ITEM_CREATED_DATE")
             tableMapping.ColumnMappings.Add("ITEM_UPDATED_DATE", "ITEM_UPDATED_DATE")
+            tableMapping.ColumnMappings.Add("INV_CODE", "INV_CODE")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
@@ -52016,7 +52146,7 @@ Namespace DS_PROPERTYDBTableAdapters
                 "riginal_ITEM_QUANTITY) AND ([ITEM_DATE_AQUISITION] = @Original_ITEM_DATE_AQUISIT"& _ 
                 "ION) AND ([ITEM_CREATED_DATE] = @Original_ITEM_CREATED_DATE) AND ((@IsNull_ITEM_"& _ 
                 "UPDATED_DATE = 1 AND [ITEM_UPDATED_DATE] IS NULL) OR ([ITEM_UPDATED_DATE] = @Ori"& _ 
-                "ginal_ITEM_UPDATED_DATE)))"
+                "ginal_ITEM_UPDATED_DATE)) AND ([INV_CODE] = @Original_INV_CODE))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ITEM_CODE", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ITEM_CODE", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_SC_NO", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "SC_NO", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
@@ -52032,17 +52162,18 @@ Namespace DS_PROPERTYDBTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ITEM_CREATED_DATE", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ITEM_CREATED_DATE", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ITEM_UPDATED_DATE", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ITEM_UPDATED_DATE", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ITEM_UPDATED_DATE", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ITEM_UPDATED_DATE", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_INV_CODE", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "INV_CODE", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
             Me._adapter.InsertCommand.CommandText = "INSERT INTO [tblM4_INVENTORY_ITEMS] ([ITEM_CODE], [SC_NO], [ITBR_NO], [ITEM_SERIA"& _ 
                 "L_NO], [ITEM_DESCRIPTION], [ITEM_UNIT], [ITEM_UNIT_COST], [ITEM_TOTAL_COST], [IT"& _ 
-                "EM_QUANTITY], [ITEM_DATE_AQUISITION], [ITEM_CREATED_DATE], [ITEM_UPDATED_DATE]) "& _ 
-                "VALUES (@ITEM_CODE, @SC_NO, @ITBR_NO, @ITEM_SERIAL_NO, @ITEM_DESCRIPTION, @ITEM_"& _ 
-                "UNIT, @ITEM_UNIT_COST, @ITEM_TOTAL_COST, @ITEM_QUANTITY, @ITEM_DATE_AQUISITION, "& _ 
-                "@ITEM_CREATED_DATE, @ITEM_UPDATED_DATE);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT ITEM_CODE, SC_NO, ITBR_NO, ITEM"& _ 
-                "_SERIAL_NO, ITEM_DESCRIPTION, ITEM_UNIT, ITEM_UNIT_COST, ITEM_TOTAL_COST, ITEM_Q"& _ 
-                "UANTITY, ITEM_DATE_AQUISITION, ITEM_CREATED_DATE, ITEM_UPDATED_DATE FROM tblM4_I"& _ 
-                "NVENTORY_ITEMS WHERE (ITEM_CODE = @ITEM_CODE)"
+                "EM_QUANTITY], [ITEM_DATE_AQUISITION], [ITEM_CREATED_DATE], [ITEM_UPDATED_DATE], "& _ 
+                "[INV_CODE]) VALUES (@ITEM_CODE, @SC_NO, @ITBR_NO, @ITEM_SERIAL_NO, @ITEM_DESCRIP"& _ 
+                "TION, @ITEM_UNIT, @ITEM_UNIT_COST, @ITEM_TOTAL_COST, @ITEM_QUANTITY, @ITEM_DATE_"& _ 
+                "AQUISITION, @ITEM_CREATED_DATE, @ITEM_UPDATED_DATE, @INV_CODE);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT ITEM_COD"& _ 
+                "E, SC_NO, ITBR_NO, ITEM_SERIAL_NO, ITEM_DESCRIPTION, ITEM_UNIT, ITEM_UNIT_COST, "& _ 
+                "ITEM_TOTAL_COST, ITEM_QUANTITY, ITEM_DATE_AQUISITION, ITEM_CREATED_DATE, ITEM_UP"& _ 
+                "DATED_DATE, INV_CODE FROM tblM4_INVENTORY_ITEMS WHERE (ITEM_CODE = @ITEM_CODE)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ITEM_CODE", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ITEM_CODE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SC_NO", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "SC_NO", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -52056,6 +52187,7 @@ Namespace DS_PROPERTYDBTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ITEM_DATE_AQUISITION", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ITEM_DATE_AQUISITION", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ITEM_CREATED_DATE", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ITEM_CREATED_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ITEM_UPDATED_DATE", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ITEM_UPDATED_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@INV_CODE", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "INV_CODE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
             Me._adapter.UpdateCommand.CommandText = "UPDATE [tblM4_INVENTORY_ITEMS] SET [ITEM_CODE] = @ITEM_CODE, [SC_NO] = @SC_NO, [I"& _ 
@@ -52063,19 +52195,20 @@ Namespace DS_PROPERTYDBTableAdapters
                 "EM_DESCRIPTION, [ITEM_UNIT] = @ITEM_UNIT, [ITEM_UNIT_COST] = @ITEM_UNIT_COST, [I"& _ 
                 "TEM_TOTAL_COST] = @ITEM_TOTAL_COST, [ITEM_QUANTITY] = @ITEM_QUANTITY, [ITEM_DATE"& _ 
                 "_AQUISITION] = @ITEM_DATE_AQUISITION, [ITEM_CREATED_DATE] = @ITEM_CREATED_DATE, "& _ 
-                "[ITEM_UPDATED_DATE] = @ITEM_UPDATED_DATE WHERE (([ITEM_CODE] = @Original_ITEM_CO"& _ 
-                "DE) AND ([SC_NO] = @Original_SC_NO) AND ([ITBR_NO] = @Original_ITBR_NO) AND ((@I"& _ 
-                "sNull_ITEM_SERIAL_NO = 1 AND [ITEM_SERIAL_NO] IS NULL) OR ([ITEM_SERIAL_NO] = @O"& _ 
-                "riginal_ITEM_SERIAL_NO)) AND ([ITEM_DESCRIPTION] = @Original_ITEM_DESCRIPTION) A"& _ 
-                "ND ([ITEM_UNIT] = @Original_ITEM_UNIT) AND ([ITEM_UNIT_COST] = @Original_ITEM_UN"& _ 
-                "IT_COST) AND ([ITEM_TOTAL_COST] = @Original_ITEM_TOTAL_COST) AND ([ITEM_QUANTITY"& _ 
-                "] = @Original_ITEM_QUANTITY) AND ([ITEM_DATE_AQUISITION] = @Original_ITEM_DATE_A"& _ 
-                "QUISITION) AND ([ITEM_CREATED_DATE] = @Original_ITEM_CREATED_DATE) AND ((@IsNull"& _ 
-                "_ITEM_UPDATED_DATE = 1 AND [ITEM_UPDATED_DATE] IS NULL) OR ([ITEM_UPDATED_DATE] "& _ 
-                "= @Original_ITEM_UPDATED_DATE)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT ITEM_CODE, SC_NO, ITBR_NO, ITEM_SERIAL"& _ 
-                "_NO, ITEM_DESCRIPTION, ITEM_UNIT, ITEM_UNIT_COST, ITEM_TOTAL_COST, ITEM_QUANTITY"& _ 
-                ", ITEM_DATE_AQUISITION, ITEM_CREATED_DATE, ITEM_UPDATED_DATE FROM tblM4_INVENTOR"& _ 
-                "Y_ITEMS WHERE (ITEM_CODE = @ITEM_CODE)"
+                "[ITEM_UPDATED_DATE] = @ITEM_UPDATED_DATE, [INV_CODE] = @INV_CODE WHERE (([ITEM_C"& _ 
+                "ODE] = @Original_ITEM_CODE) AND ([SC_NO] = @Original_SC_NO) AND ([ITBR_NO] = @Or"& _ 
+                "iginal_ITBR_NO) AND ((@IsNull_ITEM_SERIAL_NO = 1 AND [ITEM_SERIAL_NO] IS NULL) O"& _ 
+                "R ([ITEM_SERIAL_NO] = @Original_ITEM_SERIAL_NO)) AND ([ITEM_DESCRIPTION] = @Orig"& _ 
+                "inal_ITEM_DESCRIPTION) AND ([ITEM_UNIT] = @Original_ITEM_UNIT) AND ([ITEM_UNIT_C"& _ 
+                "OST] = @Original_ITEM_UNIT_COST) AND ([ITEM_TOTAL_COST] = @Original_ITEM_TOTAL_C"& _ 
+                "OST) AND ([ITEM_QUANTITY] = @Original_ITEM_QUANTITY) AND ([ITEM_DATE_AQUISITION]"& _ 
+                " = @Original_ITEM_DATE_AQUISITION) AND ([ITEM_CREATED_DATE] = @Original_ITEM_CRE"& _ 
+                "ATED_DATE) AND ((@IsNull_ITEM_UPDATED_DATE = 1 AND [ITEM_UPDATED_DATE] IS NULL) "& _ 
+                "OR ([ITEM_UPDATED_DATE] = @Original_ITEM_UPDATED_DATE)) AND ([INV_CODE] = @Origi"& _ 
+                "nal_INV_CODE));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT ITEM_CODE, SC_NO, ITBR_NO, ITEM_SERIAL_NO, ITEM_DESCRIPT"& _ 
+                "ION, ITEM_UNIT, ITEM_UNIT_COST, ITEM_TOTAL_COST, ITEM_QUANTITY, ITEM_DATE_AQUISI"& _ 
+                "TION, ITEM_CREATED_DATE, ITEM_UPDATED_DATE, INV_CODE FROM tblM4_INVENTORY_ITEMS "& _ 
+                "WHERE (ITEM_CODE = @ITEM_CODE)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ITEM_CODE", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ITEM_CODE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SC_NO", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "SC_NO", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -52089,6 +52222,7 @@ Namespace DS_PROPERTYDBTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ITEM_DATE_AQUISITION", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ITEM_DATE_AQUISITION", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ITEM_CREATED_DATE", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ITEM_CREATED_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ITEM_UPDATED_DATE", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ITEM_UPDATED_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@INV_CODE", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "INV_CODE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ITEM_CODE", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ITEM_CODE", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_SC_NO", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "SC_NO", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ITBR_NO", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ITBR_NO", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
@@ -52103,6 +52237,7 @@ Namespace DS_PROPERTYDBTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ITEM_CREATED_DATE", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ITEM_CREATED_DATE", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ITEM_UPDATED_DATE", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ITEM_UPDATED_DATE", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ITEM_UPDATED_DATE", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ITEM_UPDATED_DATE", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_INV_CODE", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "INV_CODE", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -52128,19 +52263,19 @@ Namespace DS_PROPERTYDBTableAdapters
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@item_code", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "ITEM_CODE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(2).Connection = Me.Connection
-            Me._commandCollection(2).CommandText = "SELECT        ITEM_CODE, SC_NO, ITBR_NO, ITEM_SERIAL_NO, ITEM_DESCRIPTION, ITEM_U"& _ 
-                "NIT, ITEM_UNIT_COST, ITEM_TOTAL_COST, ITEM_QUANTITY, ITEM_DATE_AQUISITION, ITEM_"& _ 
-                "CREATED_DATE, ITEM_UPDATED_DATE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            tblM4_INVENTORY_ITEMS"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE   "& _ 
-                "     (ITEM_CODE = @item_code)"
+            Me._commandCollection(2).CommandText = "SELECT INV_CODE, ITBR_NO, ITEM_CODE, ITEM_CREATED_DATE, ITEM_DATE_AQUISITION, ITE"& _ 
+                "M_DESCRIPTION, ITEM_QUANTITY, ITEM_SERIAL_NO, ITEM_TOTAL_COST, ITEM_UNIT, ITEM_U"& _ 
+                "NIT_COST, ITEM_UPDATED_DATE, SC_NO FROM tblM4_INVENTORY_ITEMS WHERE (ITEM_CODE ="& _ 
+                " @item_code)"
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@item_code", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "ITEM_CODE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(3) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(3).Connection = Me.Connection
             Me._commandCollection(3).CommandText = "INSERT INTO tblM4_INVENTORY_ITEMS"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (ITEM_CODE, SC_NO, IT"& _ 
                 "BR_NO, ITEM_SERIAL_NO, ITEM_DESCRIPTION, ITEM_UNIT, ITEM_UNIT_COST, ITEM_TOTAL_C"& _ 
-                "OST, ITEM_QUANTITY, ITEM_DATE_AQUISITION)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"VALUES        (@ITEM_CODE,@SC_NO,@ITB"& _ 
-                "R_NO,@ITEM_SERIAL_NO,@ITEM_DESCRIPTION,@ITEM_UNIT,@ITEM_UNIT_COST,@ITEM_TOTAL_CO"& _ 
-                "ST,@ITEM_QUANTITY,@ITEM_DATE_AQUISITION)"
+                "OST, ITEM_QUANTITY, ITEM_DATE_AQUISITION, INV_CODE)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"VALUES        (@ITEM_CODE,@"& _ 
+                "SC_NO,@ITBR_NO,@ITEM_SERIAL_NO,@ITEM_DESCRIPTION,@ITEM_UNIT,@ITEM_UNIT_COST,@ITE"& _ 
+                "M_TOTAL_COST,@ITEM_QUANTITY,@ITEM_DATE_AQUISITION,@INV_CODE)"
             Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ITEM_CODE", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "ITEM_CODE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SC_NO", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "SC_NO", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -52152,14 +52287,15 @@ Namespace DS_PROPERTYDBTableAdapters
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ITEM_TOTAL_COST", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 13, 2, "ITEM_TOTAL_COST", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ITEM_QUANTITY", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "ITEM_QUANTITY", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ITEM_DATE_AQUISITION", Global.System.Data.SqlDbType.[Date], 3, Global.System.Data.ParameterDirection.Input, 0, 0, "ITEM_DATE_AQUISITION", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@INV_CODE", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "INV_CODE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(4) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(4).Connection = Me.Connection
             Me._commandCollection(4).CommandText = "UPDATE       tblM4_INVENTORY_ITEMS"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SET                SC_NO = @SC_NO, ITBR_NO = "& _ 
                 "@ITBR_NO, ITEM_SERIAL_NO = @ITEM_SERIAL_NO, ITEM_DESCRIPTION = @ITEM_DESCRIPTION"& _ 
                 ", ITEM_UNIT = @ITEM_UNIT, ITEM_UNIT_COST = @ITEM_UNIT_COST, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                  "& _ 
                 "       ITEM_TOTAL_COST = @ITEM_TOTAL_COST, ITEM_QUANTITY = @ITEM_QUANTITY, ITEM_"& _ 
-                "DATE_AQUISITION = @ITEM_DATE_AQUISITION"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (ITEM_CODE = @Original_ITE"& _ 
-                "M_CODE); "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)
+                "DATE_AQUISITION = @ITEM_DATE_AQUISITION, INV_CODE = @INV_CODE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (ITE"& _ 
+                "M_CODE = @Original_ITEM_CODE);  "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)
             Me._commandCollection(4).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SC_NO", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "SC_NO", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ITBR_NO", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "ITBR_NO", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -52170,6 +52306,7 @@ Namespace DS_PROPERTYDBTableAdapters
             Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ITEM_TOTAL_COST", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 13, 2, "ITEM_TOTAL_COST", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ITEM_QUANTITY", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "ITEM_QUANTITY", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ITEM_DATE_AQUISITION", Global.System.Data.SqlDbType.[Date], 3, Global.System.Data.ParameterDirection.Input, 0, 0, "ITEM_DATE_AQUISITION", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@INV_CODE", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "INV_CODE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ITEM_CODE", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "ITEM_CODE", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
         End Sub
         
@@ -52184,17 +52321,6 @@ Namespace DS_PROPERTYDBTableAdapters
             End If
             Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
             Return returnValue
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As DS_PROPERTYDB.tblM4_INVENTORY_ITEMSDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As DS_PROPERTYDB.tblM4_INVENTORY_ITEMSDataTable = New DS_PROPERTYDB.tblM4_INVENTORY_ITEMSDataTable()
-            Me.Adapter.Fill(dataTable)
-            Return dataTable
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -52247,7 +52373,7 @@ Namespace DS_PROPERTYDBTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_ITEM_CODE As String, ByVal Original_SC_NO As String, ByVal Original_ITBR_NO As String, ByVal Original_ITEM_SERIAL_NO As String, ByVal Original_ITEM_DESCRIPTION As String, ByVal Original_ITEM_UNIT As String, ByVal Original_ITEM_UNIT_COST As Decimal, ByVal Original_ITEM_TOTAL_COST As Decimal, ByVal Original_ITEM_QUANTITY As Integer, ByVal Original_ITEM_DATE_AQUISITION As Date, ByVal Original_ITEM_CREATED_DATE As Date, ByVal Original_ITEM_UPDATED_DATE As Global.System.Nullable(Of Date)) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_ITEM_CODE As String, ByVal Original_SC_NO As String, ByVal Original_ITBR_NO As String, ByVal Original_ITEM_SERIAL_NO As String, ByVal Original_ITEM_DESCRIPTION As String, ByVal Original_ITEM_UNIT As String, ByVal Original_ITEM_UNIT_COST As Decimal, ByVal Original_ITEM_TOTAL_COST As Decimal, ByVal Original_ITEM_QUANTITY As Integer, ByVal Original_ITEM_DATE_AQUISITION As Date, ByVal Original_ITEM_CREATED_DATE As Date, ByVal Original_ITEM_UPDATED_DATE As Global.System.Nullable(Of Date), ByVal Original_INV_CODE As String) As Integer
             If (Original_ITEM_CODE Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_ITEM_CODE")
             Else
@@ -52292,6 +52418,11 @@ Namespace DS_PROPERTYDBTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(12).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(13).Value = Global.System.DBNull.Value
             End If
+            If (Original_INV_CODE Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_INV_CODE")
+            Else
+                Me.Adapter.DeleteCommand.Parameters(14).Value = CType(Original_INV_CODE,String)
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -52311,7 +52442,7 @@ Namespace DS_PROPERTYDBTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal ITEM_CODE As String, ByVal SC_NO As String, ByVal ITBR_NO As String, ByVal ITEM_SERIAL_NO As String, ByVal ITEM_DESCRIPTION As String, ByVal ITEM_UNIT As String, ByVal ITEM_UNIT_COST As Decimal, ByVal ITEM_TOTAL_COST As Decimal, ByVal ITEM_QUANTITY As Integer, ByVal ITEM_DATE_AQUISITION As Date, ByVal ITEM_CREATED_DATE As Date, ByVal ITEM_UPDATED_DATE As Global.System.Nullable(Of Date)) As Integer
+        Public Overloads Overridable Function Insert(ByVal ITEM_CODE As String, ByVal SC_NO As String, ByVal ITBR_NO As String, ByVal ITEM_SERIAL_NO As String, ByVal ITEM_DESCRIPTION As String, ByVal ITEM_UNIT As String, ByVal ITEM_UNIT_COST As Decimal, ByVal ITEM_TOTAL_COST As Decimal, ByVal ITEM_QUANTITY As Integer, ByVal ITEM_DATE_AQUISITION As Date, ByVal ITEM_CREATED_DATE As Date, ByVal ITEM_UPDATED_DATE As Global.System.Nullable(Of Date), ByVal INV_CODE As String) As Integer
             If (ITEM_CODE Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("ITEM_CODE")
             Else
@@ -52352,6 +52483,11 @@ Namespace DS_PROPERTYDBTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(11).Value = Global.System.DBNull.Value
             End If
+            If (INV_CODE Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("INV_CODE")
+            Else
+                Me.Adapter.InsertCommand.Parameters(12).Value = CType(INV_CODE,String)
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -52384,6 +52520,7 @@ Namespace DS_PROPERTYDBTableAdapters
                     ByVal ITEM_DATE_AQUISITION As Date,  _
                     ByVal ITEM_CREATED_DATE As Date,  _
                     ByVal ITEM_UPDATED_DATE As Global.System.Nullable(Of Date),  _
+                    ByVal INV_CODE As String,  _
                     ByVal Original_ITEM_CODE As String,  _
                     ByVal Original_SC_NO As String,  _
                     ByVal Original_ITBR_NO As String,  _
@@ -52395,7 +52532,8 @@ Namespace DS_PROPERTYDBTableAdapters
                     ByVal Original_ITEM_QUANTITY As Integer,  _
                     ByVal Original_ITEM_DATE_AQUISITION As Date,  _
                     ByVal Original_ITEM_CREATED_DATE As Date,  _
-                    ByVal Original_ITEM_UPDATED_DATE As Global.System.Nullable(Of Date)) As Integer
+                    ByVal Original_ITEM_UPDATED_DATE As Global.System.Nullable(Of Date),  _
+                    ByVal Original_INV_CODE As String) As Integer
             If (ITEM_CODE Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("ITEM_CODE")
             Else
@@ -52436,49 +52574,59 @@ Namespace DS_PROPERTYDBTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(11).Value = Global.System.DBNull.Value
             End If
+            If (INV_CODE Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("INV_CODE")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(INV_CODE,String)
+            End If
             If (Original_ITEM_CODE Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_ITEM_CODE")
             Else
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_ITEM_CODE,String)
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_ITEM_CODE,String)
             End If
             If (Original_SC_NO Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_SC_NO")
             Else
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_SC_NO,String)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_SC_NO,String)
             End If
             If (Original_ITBR_NO Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_ITBR_NO")
             Else
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_ITBR_NO,String)
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_ITBR_NO,String)
             End If
             If (Original_ITEM_SERIAL_NO Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(16).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(17).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Original_ITEM_SERIAL_NO,String)
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(Original_ITEM_SERIAL_NO,String)
             End If
             If (Original_ITEM_DESCRIPTION Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_ITEM_DESCRIPTION")
             Else
-                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(Original_ITEM_DESCRIPTION,String)
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(Original_ITEM_DESCRIPTION,String)
             End If
             If (Original_ITEM_UNIT Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_ITEM_UNIT")
             Else
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(Original_ITEM_UNIT,String)
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(Original_ITEM_UNIT,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(19).Value = CType(Original_ITEM_UNIT_COST,Decimal)
-            Me.Adapter.UpdateCommand.Parameters(20).Value = CType(Original_ITEM_TOTAL_COST,Decimal)
-            Me.Adapter.UpdateCommand.Parameters(21).Value = CType(Original_ITEM_QUANTITY,Integer)
-            Me.Adapter.UpdateCommand.Parameters(22).Value = CType(Original_ITEM_DATE_AQUISITION,Date)
-            Me.Adapter.UpdateCommand.Parameters(23).Value = CType(Original_ITEM_CREATED_DATE,Date)
+            Me.Adapter.UpdateCommand.Parameters(20).Value = CType(Original_ITEM_UNIT_COST,Decimal)
+            Me.Adapter.UpdateCommand.Parameters(21).Value = CType(Original_ITEM_TOTAL_COST,Decimal)
+            Me.Adapter.UpdateCommand.Parameters(22).Value = CType(Original_ITEM_QUANTITY,Integer)
+            Me.Adapter.UpdateCommand.Parameters(23).Value = CType(Original_ITEM_DATE_AQUISITION,Date)
+            Me.Adapter.UpdateCommand.Parameters(24).Value = CType(Original_ITEM_CREATED_DATE,Date)
             If (Original_ITEM_UPDATED_DATE.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(Original_ITEM_UPDATED_DATE.Value,Date)
+                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(26).Value = CType(Original_ITEM_UPDATED_DATE.Value,Date)
             Else
-                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(25).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(26).Value = Global.System.DBNull.Value
+            End If
+            If (Original_INV_CODE Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_INV_CODE")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(27).Value = CType(Original_INV_CODE,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -52511,6 +52659,7 @@ Namespace DS_PROPERTYDBTableAdapters
                     ByVal ITEM_DATE_AQUISITION As Date,  _
                     ByVal ITEM_CREATED_DATE As Date,  _
                     ByVal ITEM_UPDATED_DATE As Global.System.Nullable(Of Date),  _
+                    ByVal INV_CODE As String,  _
                     ByVal Original_ITEM_CODE As String,  _
                     ByVal Original_SC_NO As String,  _
                     ByVal Original_ITBR_NO As String,  _
@@ -52522,8 +52671,9 @@ Namespace DS_PROPERTYDBTableAdapters
                     ByVal Original_ITEM_QUANTITY As Integer,  _
                     ByVal Original_ITEM_DATE_AQUISITION As Date,  _
                     ByVal Original_ITEM_CREATED_DATE As Date,  _
-                    ByVal Original_ITEM_UPDATED_DATE As Global.System.Nullable(Of Date)) As Integer
-            Return Me.Update(Original_ITEM_CODE, SC_NO, ITBR_NO, ITEM_SERIAL_NO, ITEM_DESCRIPTION, ITEM_UNIT, ITEM_UNIT_COST, ITEM_TOTAL_COST, ITEM_QUANTITY, ITEM_DATE_AQUISITION, ITEM_CREATED_DATE, ITEM_UPDATED_DATE, Original_ITEM_CODE, Original_SC_NO, Original_ITBR_NO, Original_ITEM_SERIAL_NO, Original_ITEM_DESCRIPTION, Original_ITEM_UNIT, Original_ITEM_UNIT_COST, Original_ITEM_TOTAL_COST, Original_ITEM_QUANTITY, Original_ITEM_DATE_AQUISITION, Original_ITEM_CREATED_DATE, Original_ITEM_UPDATED_DATE)
+                    ByVal Original_ITEM_UPDATED_DATE As Global.System.Nullable(Of Date),  _
+                    ByVal Original_INV_CODE As String) As Integer
+            Return Me.Update(Original_ITEM_CODE, SC_NO, ITBR_NO, ITEM_SERIAL_NO, ITEM_DESCRIPTION, ITEM_UNIT, ITEM_UNIT_COST, ITEM_TOTAL_COST, ITEM_QUANTITY, ITEM_DATE_AQUISITION, ITEM_CREATED_DATE, ITEM_UPDATED_DATE, INV_CODE, Original_ITEM_CODE, Original_SC_NO, Original_ITBR_NO, Original_ITEM_SERIAL_NO, Original_ITEM_DESCRIPTION, Original_ITEM_UNIT, Original_ITEM_UNIT_COST, Original_ITEM_TOTAL_COST, Original_ITEM_QUANTITY, Original_ITEM_DATE_AQUISITION, Original_ITEM_CREATED_DATE, Original_ITEM_UPDATED_DATE, Original_INV_CODE)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -52561,7 +52711,7 @@ Namespace DS_PROPERTYDBTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, false)>  _
-        Public Overloads Overridable Function IQ_INVENTORY_ITEMS(ByVal ITEM_CODE As String, ByVal SC_NO As String, ByVal ITBR_NO As String, ByVal ITEM_SERIAL_NO As String, ByVal ITEM_DESCRIPTION As String, ByVal ITEM_UNIT As String, ByVal ITEM_UNIT_COST As Decimal, ByVal ITEM_TOTAL_COST As Decimal, ByVal ITEM_QUANTITY As Integer, ByVal ITEM_DATE_AQUISITION As String) As Integer
+        Public Overloads Overridable Function IQ_INVENTORY_ITEMS(ByVal ITEM_CODE As String, ByVal SC_NO As String, ByVal ITBR_NO As String, ByVal ITEM_SERIAL_NO As String, ByVal ITEM_DESCRIPTION As String, ByVal ITEM_UNIT As String, ByVal ITEM_UNIT_COST As Decimal, ByVal ITEM_TOTAL_COST As Decimal, ByVal ITEM_QUANTITY As Integer, ByVal ITEM_DATE_AQUISITION As String, ByVal INV_CODE As String) As Integer
             Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(3)
             If (ITEM_CODE Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("ITEM_CODE")
@@ -52601,6 +52751,11 @@ Namespace DS_PROPERTYDBTableAdapters
             Else
                 command.Parameters(9).Value = CType(ITEM_DATE_AQUISITION,String)
             End If
+            If (INV_CODE Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("INV_CODE")
+            Else
+                command.Parameters(10).Value = CType(INV_CODE,String)
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
             If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -52621,7 +52776,7 @@ Namespace DS_PROPERTYDBTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, false)>  _
-        Public Overloads Overridable Function UQ_INVENTORY_ITEMS(ByVal SC_NO As String, ByVal ITBR_NO As String, ByVal ITEM_SERIAL_NO As String, ByVal ITEM_DESCRIPTION As String, ByVal ITEM_UNIT As String, ByVal ITEM_UNIT_COST As Decimal, ByVal ITEM_TOTAL_COST As Decimal, ByVal ITEM_QUANTITY As Integer, ByVal ITEM_DATE_AQUISITION As String, ByVal Original_ITEM_CODE As String) As Integer
+        Public Overloads Overridable Function UQ_INVENTORY_ITEMS(ByVal SC_NO As String, ByVal ITBR_NO As String, ByVal ITEM_SERIAL_NO As String, ByVal ITEM_DESCRIPTION As String, ByVal ITEM_UNIT As String, ByVal ITEM_UNIT_COST As Decimal, ByVal ITEM_TOTAL_COST As Decimal, ByVal ITEM_QUANTITY As Integer, ByVal ITEM_DATE_AQUISITION As String, ByVal INV_CODE As String, ByVal Original_ITEM_CODE As String) As Integer
             Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(4)
             If (SC_NO Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("SC_NO")
@@ -52656,10 +52811,15 @@ Namespace DS_PROPERTYDBTableAdapters
             Else
                 command.Parameters(8).Value = CType(ITEM_DATE_AQUISITION,String)
             End If
+            If (INV_CODE Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("INV_CODE")
+            Else
+                command.Parameters(9).Value = CType(INV_CODE,String)
+            End If
             If (Original_ITEM_CODE Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_ITEM_CODE")
             Else
-                command.Parameters(9).Value = CType(Original_ITEM_CODE,String)
+                command.Parameters(10).Value = CType(Original_ITEM_CODE,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
             If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -56525,6 +56685,565 @@ Namespace DS_PROPERTYDBTableAdapters
     End Class
     
     '''<summary>
+    '''Represents the connection and commands used to retrieve and save data.
+    '''</summary>
+    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     Global.System.ComponentModel.ToolboxItem(true),  _
+     Global.System.ComponentModel.DataObjectAttribute(true),  _
+     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+    Partial Public Class tblM4_INVENTORY_ITEMS2TableAdapter
+        Inherits Global.System.ComponentModel.Component
+        
+        Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
+        
+        Private _connection As Global.System.Data.SqlClient.SqlConnection
+        
+        Private _transaction As Global.System.Data.SqlClient.SqlTransaction
+        
+        Private _commandCollection() As Global.System.Data.SqlClient.SqlCommand
+        
+        Private _clearBeforeFill As Boolean
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.ClearBeforeFill = true
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Friend ReadOnly Property Adapter() As Global.System.Data.SqlClient.SqlDataAdapter
+            Get
+                If (Me._adapter Is Nothing) Then
+                    Me.InitAdapter
+                End If
+                Return Me._adapter
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Property Connection() As Global.System.Data.SqlClient.SqlConnection
+            Get
+                If (Me._connection Is Nothing) Then
+                    Me.InitConnection
+                End If
+                Return Me._connection
+            End Get
+            Set
+                Me._connection = value
+                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
+                    Me.Adapter.InsertCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
+                    Me.Adapter.DeleteCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
+                    Me.Adapter.UpdateCommand.Connection = value
+                End If
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
+                        CType(Me.CommandCollection(i),Global.System.Data.SqlClient.SqlCommand).Connection = value
+                    End If
+                    i = (i + 1)
+                Loop
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Property Transaction() As Global.System.Data.SqlClient.SqlTransaction
+            Get
+                Return Me._transaction
+            End Get
+            Set
+                Me._transaction = value
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    Me.CommandCollection(i).Transaction = Me._transaction
+                    i = (i + 1)
+                Loop
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
+                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
+                    Me.Adapter.InsertCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
+                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
+                End If
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected ReadOnly Property CommandCollection() As Global.System.Data.SqlClient.SqlCommand()
+            Get
+                If (Me._commandCollection Is Nothing) Then
+                    Me.InitCommandCollection
+                End If
+                Return Me._commandCollection
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property ClearBeforeFill() As Boolean
+            Get
+                Return Me._clearBeforeFill
+            End Get
+            Set
+                Me._clearBeforeFill = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitAdapter()
+            Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
+            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
+            tableMapping.SourceTable = "Table"
+            tableMapping.DataSetTable = "tblM4_INVENTORY_ITEMS2"
+            tableMapping.ColumnMappings.Add("ITEM_DESCRIPTION", "ITEM_DESCRIPTION")
+            Me._adapter.TableMappings.Add(tableMapping)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitConnection()
+            Me._connection = New Global.System.Data.SqlClient.SqlConnection()
+            Me._connection.ConnectionString = Global.PRA_PIS.My.MySettings.Default.PRA_PROPERTYDBConnectionString
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitCommandCollection()
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(0).Connection = Me.Connection
+            Me._commandCollection(0).CommandText = "SELECT        ITEM_DESCRIPTION"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            tblM4_INVENTORY_ITEMS"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"GROUP BY I"& _ 
+                "TEM_DESCRIPTION"
+            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
+        Public Overloads Overridable Function Fill(ByVal dataTable As DS_PROPERTYDB.tblM4_INVENTORY_ITEMS2DataTable) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the connection and commands used to retrieve and save data.
+    '''</summary>
+    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     Global.System.ComponentModel.ToolboxItem(true),  _
+     Global.System.ComponentModel.DataObjectAttribute(true),  _
+     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+    Partial Public Class tblM4_INVENTORY_TYPETableAdapter
+        Inherits Global.System.ComponentModel.Component
+        
+        Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
+        
+        Private _connection As Global.System.Data.SqlClient.SqlConnection
+        
+        Private _transaction As Global.System.Data.SqlClient.SqlTransaction
+        
+        Private _commandCollection() As Global.System.Data.SqlClient.SqlCommand
+        
+        Private _clearBeforeFill As Boolean
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.ClearBeforeFill = true
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Friend ReadOnly Property Adapter() As Global.System.Data.SqlClient.SqlDataAdapter
+            Get
+                If (Me._adapter Is Nothing) Then
+                    Me.InitAdapter
+                End If
+                Return Me._adapter
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Property Connection() As Global.System.Data.SqlClient.SqlConnection
+            Get
+                If (Me._connection Is Nothing) Then
+                    Me.InitConnection
+                End If
+                Return Me._connection
+            End Get
+            Set
+                Me._connection = value
+                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
+                    Me.Adapter.InsertCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
+                    Me.Adapter.DeleteCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
+                    Me.Adapter.UpdateCommand.Connection = value
+                End If
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
+                        CType(Me.CommandCollection(i),Global.System.Data.SqlClient.SqlCommand).Connection = value
+                    End If
+                    i = (i + 1)
+                Loop
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Property Transaction() As Global.System.Data.SqlClient.SqlTransaction
+            Get
+                Return Me._transaction
+            End Get
+            Set
+                Me._transaction = value
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    Me.CommandCollection(i).Transaction = Me._transaction
+                    i = (i + 1)
+                Loop
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
+                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
+                    Me.Adapter.InsertCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
+                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
+                End If
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected ReadOnly Property CommandCollection() As Global.System.Data.SqlClient.SqlCommand()
+            Get
+                If (Me._commandCollection Is Nothing) Then
+                    Me.InitCommandCollection
+                End If
+                Return Me._commandCollection
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property ClearBeforeFill() As Boolean
+            Get
+                Return Me._clearBeforeFill
+            End Get
+            Set
+                Me._clearBeforeFill = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitAdapter()
+            Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
+            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
+            tableMapping.SourceTable = "Table"
+            tableMapping.DataSetTable = "tblM4_INVENTORY_TYPE"
+            tableMapping.ColumnMappings.Add("INV_CODE", "INV_CODE")
+            tableMapping.ColumnMappings.Add("INV_DESC", "INV_DESC")
+            tableMapping.ColumnMappings.Add("INV_STATUS", "INV_STATUS")
+            tableMapping.ColumnMappings.Add("DATE_CREATED", "DATE_CREATED")
+            Me._adapter.TableMappings.Add(tableMapping)
+            Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
+            Me._adapter.DeleteCommand.Connection = Me.Connection
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [tblM4_INVENTORY_TYPE] WHERE (([INV_CODE] = @Original_INV_CODE) AND ("& _ 
+                "(@IsNull_INV_DESC = 1 AND [INV_DESC] IS NULL) OR ([INV_DESC] = @Original_INV_DES"& _ 
+                "C)) AND ((@IsNull_INV_STATUS = 1 AND [INV_STATUS] IS NULL) OR ([INV_STATUS] = @O"& _ 
+                "riginal_INV_STATUS)) AND ([DATE_CREATED] = @Original_DATE_CREATED))"
+            Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_INV_CODE", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "INV_CODE", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_INV_DESC", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "INV_DESC", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_INV_DESC", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "INV_DESC", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_INV_STATUS", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "INV_STATUS", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_INV_STATUS", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "INV_STATUS", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_DATE_CREATED", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DATE_CREATED", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
+            Me._adapter.InsertCommand.Connection = Me.Connection
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [tblM4_INVENTORY_TYPE] ([INV_CODE], [INV_DESC], [INV_STATUS], [DATE_C"& _ 
+                "REATED]) VALUES (@INV_CODE, @INV_DESC, @INV_STATUS, @DATE_CREATED);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT INV_"& _ 
+                "CODE, INV_DESC, INV_STATUS, DATE_CREATED FROM tblM4_INVENTORY_TYPE WHERE (INV_CO"& _ 
+                "DE = @INV_CODE)"
+            Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@INV_CODE", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "INV_CODE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@INV_DESC", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "INV_DESC", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@INV_STATUS", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "INV_STATUS", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DATE_CREATED", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DATE_CREATED", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
+            Me._adapter.UpdateCommand.Connection = Me.Connection
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [tblM4_INVENTORY_TYPE] SET [INV_CODE] = @INV_CODE, [INV_DESC] = @INV_DESC,"& _ 
+                " [INV_STATUS] = @INV_STATUS, [DATE_CREATED] = @DATE_CREATED WHERE (([INV_CODE] ="& _ 
+                " @Original_INV_CODE) AND ((@IsNull_INV_DESC = 1 AND [INV_DESC] IS NULL) OR ([INV"& _ 
+                "_DESC] = @Original_INV_DESC)) AND ((@IsNull_INV_STATUS = 1 AND [INV_STATUS] IS N"& _ 
+                "ULL) OR ([INV_STATUS] = @Original_INV_STATUS)) AND ([DATE_CREATED] = @Original_D"& _ 
+                "ATE_CREATED));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT INV_CODE, INV_DESC, INV_STATUS, DATE_CREATED FROM tblM4_I"& _ 
+                "NVENTORY_TYPE WHERE (INV_CODE = @INV_CODE)"
+            Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@INV_CODE", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "INV_CODE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@INV_DESC", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "INV_DESC", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@INV_STATUS", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "INV_STATUS", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DATE_CREATED", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DATE_CREATED", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_INV_CODE", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "INV_CODE", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_INV_DESC", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "INV_DESC", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_INV_DESC", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "INV_DESC", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_INV_STATUS", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "INV_STATUS", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_INV_STATUS", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "INV_STATUS", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_DATE_CREATED", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DATE_CREATED", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitConnection()
+            Me._connection = New Global.System.Data.SqlClient.SqlConnection()
+            Me._connection.ConnectionString = Global.PRA_PIS.My.MySettings.Default.PRA_PROPERTYDBConnectionString
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitCommandCollection()
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
+            Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(0).Connection = Me.Connection
+            Me._commandCollection(0).CommandText = "SELECT        INV_CODE, INV_DESC, INV_STATUS, DATE_CREATED"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            tblM4"& _ 
+                "_INVENTORY_TYPE"
+            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(1).Connection = Me.Connection
+            Me._commandCollection(1).CommandText = "SELECT        INV_CODE, INV_DESC, INV_STATUS, DATE_CREATED"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            tblM4"& _ 
+                "_INVENTORY_TYPE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (INV_DESC <> 'IT Equipment')"
+            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
+        Public Overloads Overridable Function Fill(ByVal dataTable As DS_PROPERTYDB.tblM4_INVENTORY_TYPEDataTable) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillBY_NOT_ITQUIPMENT(ByVal dataTable As DS_PROPERTYDB.tblM4_INVENTORY_TYPEDataTable) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataTable As DS_PROPERTYDB.tblM4_INVENTORY_TYPEDataTable) As Integer
+            Return Me.Adapter.Update(dataTable)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataSet As DS_PROPERTYDB) As Integer
+            Return Me.Adapter.Update(dataSet, "tblM4_INVENTORY_TYPE")
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRow As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(New Global.System.Data.DataRow() {dataRow})
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRows() As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(dataRows)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
+        Public Overloads Overridable Function Delete(ByVal Original_INV_CODE As String, ByVal Original_INV_DESC As String, ByVal Original_INV_STATUS As Global.System.Nullable(Of Boolean), ByVal Original_DATE_CREATED As Date) As Integer
+            If (Original_INV_CODE Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_INV_CODE")
+            Else
+                Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_INV_CODE,String)
+            End If
+            If (Original_INV_DESC Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_INV_DESC,String)
+            End If
+            If (Original_INV_STATUS.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_INV_STATUS.Value,Boolean)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(4).Value = Global.System.DBNull.Value
+            End If
+            Me.Adapter.DeleteCommand.Parameters(5).Value = CType(Original_DATE_CREATED,Date)
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
+            If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.DeleteCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.DeleteCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.DeleteCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
+        Public Overloads Overridable Function Insert(ByVal INV_CODE As String, ByVal INV_DESC As String, ByVal INV_STATUS As Global.System.Nullable(Of Boolean), ByVal DATE_CREATED As Date) As Integer
+            If (INV_CODE Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("INV_CODE")
+            Else
+                Me.Adapter.InsertCommand.Parameters(0).Value = CType(INV_CODE,String)
+            End If
+            If (INV_DESC Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(1).Value = CType(INV_DESC,String)
+            End If
+            If (INV_STATUS.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(2).Value = CType(INV_STATUS.Value,Boolean)
+            Else
+                Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
+            End If
+            Me.Adapter.InsertCommand.Parameters(3).Value = CType(DATE_CREATED,Date)
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
+            If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.InsertCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.InsertCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.InsertCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
+        Public Overloads Overridable Function Update(ByVal INV_CODE As String, ByVal INV_DESC As String, ByVal INV_STATUS As Global.System.Nullable(Of Boolean), ByVal DATE_CREATED As Date, ByVal Original_INV_CODE As String, ByVal Original_INV_DESC As String, ByVal Original_INV_STATUS As Global.System.Nullable(Of Boolean), ByVal Original_DATE_CREATED As Date) As Integer
+            If (INV_CODE Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("INV_CODE")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(INV_CODE,String)
+            End If
+            If (INV_DESC Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(INV_DESC,String)
+            End If
+            If (INV_STATUS.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(INV_STATUS.Value,Boolean)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
+            End If
+            Me.Adapter.UpdateCommand.Parameters(3).Value = CType(DATE_CREATED,Date)
+            If (Original_INV_CODE Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_INV_CODE")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Original_INV_CODE,String)
+            End If
+            If (Original_INV_DESC Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_INV_DESC,String)
+            End If
+            If (Original_INV_STATUS.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_INV_STATUS.Value,Boolean)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
+            End If
+            Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_DATE_CREATED,Date)
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
+            If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.UpdateCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.UpdateCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.UpdateCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
+        Public Overloads Overridable Function Update(ByVal INV_DESC As String, ByVal INV_STATUS As Global.System.Nullable(Of Boolean), ByVal DATE_CREATED As Date, ByVal Original_INV_CODE As String, ByVal Original_INV_DESC As String, ByVal Original_INV_STATUS As Global.System.Nullable(Of Boolean), ByVal Original_DATE_CREATED As Date) As Integer
+            Return Me.Update(Original_INV_CODE, INV_DESC, INV_STATUS, DATE_CREATED, Original_INV_CODE, Original_INV_DESC, Original_INV_STATUS, Original_DATE_CREATED)
+        End Function
+    End Class
+    
+    '''<summary>
     '''TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     '''</summary>
     <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
@@ -56606,6 +57325,8 @@ Namespace DS_PROPERTYDBTableAdapters
         Private _tblM4_INVENTORY_ACQUISITION_VALUETableAdapter As tblM4_INVENTORY_ACQUISITION_VALUETableAdapter
         
         Private _tblM4_INVENTORY_ITEMS_PROPERTYTableAdapter As tblM4_INVENTORY_ITEMS_PROPERTYTableAdapter
+        
+        Private _tblM4_INVENTORY_TYPETableAdapter As tblM4_INVENTORY_TYPETableAdapter
         
         Private _backupDataSetBeforeUpdate As Boolean
         
@@ -57113,6 +57834,20 @@ Namespace DS_PROPERTYDBTableAdapters
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
+            "a", "System.Drawing.Design.UITypeEditor")>  _
+        Public Property tblM4_INVENTORY_TYPETableAdapter() As tblM4_INVENTORY_TYPETableAdapter
+            Get
+                Return Me._tblM4_INVENTORY_TYPETableAdapter
+            End Get
+            Set
+                Me._tblM4_INVENTORY_TYPETableAdapter = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Property BackupDataSetBeforeUpdate() As Boolean
             Get
@@ -57271,6 +58006,10 @@ Namespace DS_PROPERTYDBTableAdapters
                             AndAlso (Not (Me._tblM4_INVENTORY_ITEMS_PROPERTYTableAdapter.Connection) Is Nothing)) Then
                     Return Me._tblM4_INVENTORY_ITEMS_PROPERTYTableAdapter.Connection
                 End If
+                If ((Not (Me._tblM4_INVENTORY_TYPETableAdapter) Is Nothing)  _
+                            AndAlso (Not (Me._tblM4_INVENTORY_TYPETableAdapter.Connection) Is Nothing)) Then
+                    Return Me._tblM4_INVENTORY_TYPETableAdapter.Connection
+                End If
                 Return Nothing
             End Get
             Set
@@ -57389,6 +58128,9 @@ Namespace DS_PROPERTYDBTableAdapters
                 If (Not (Me._tblM4_INVENTORY_ITEMS_PROPERTYTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
+                If (Not (Me._tblM4_INVENTORY_TYPETableAdapter) Is Nothing) Then
+                    count = (count + 1)
+                End If
                 Return count
             End Get
         End Property
@@ -57418,12 +58160,30 @@ Namespace DS_PROPERTYDBTableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
+            If (Not (Me._tblM4_INVENTORY_SUB_CATEGORYTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.tblM4_INVENTORY_SUB_CATEGORY.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._tblM4_INVENTORY_SUB_CATEGORYTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
             If (Not (Me._tblM4_INVENTORY_ITEMBRANDTableAdapter) Is Nothing) Then
                 Dim updatedRows() As Global.System.Data.DataRow = dataSet.tblM4_INVENTORY_ITEMBRAND.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
                     result = (result + Me._tblM4_INVENTORY_ITEMBRANDTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._tblM4_PURCHASEREQUEST_CATEGORYTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.tblM4_PURCHASEREQUEST_CATEGORY.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._tblM4_PURCHASEREQUEST_CATEGORYTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -57454,30 +58214,21 @@ Namespace DS_PROPERTYDBTableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
+            If (Not (Me._tblM4_INVENTORY_TYPETableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.tblM4_INVENTORY_TYPE.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._tblM4_INVENTORY_TYPETableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
             If (Not (Me._tBLG3_REG_BUSTableAdapter) Is Nothing) Then
                 Dim updatedRows() As Global.System.Data.DataRow = dataSet.TBLG3_REG_BUS.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
                     result = (result + Me._tBLG3_REG_BUSTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
-            If (Not (Me._tblM4_INVENTORY_SUB_CATEGORYTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.tblM4_INVENTORY_SUB_CATEGORY.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._tblM4_INVENTORY_SUB_CATEGORYTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
-            If (Not (Me._tblM4_PURCHASEREQUEST_CATEGORYTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.tblM4_PURCHASEREQUEST_CATEGORY.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._tblM4_PURCHASEREQUEST_CATEGORYTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -57496,24 +58247,6 @@ Namespace DS_PROPERTYDBTableAdapters
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
                     result = (result + Me._tBLG3_DELIVERY_RECEIPTTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
-            If (Not (Me._tblM4_PURCHASEREQUEST_CANCELEDTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.tblM4_PURCHASEREQUEST_CANCELED.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._tblM4_PURCHASEREQUEST_CANCELEDTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
-            If (Not (Me._tblM4_PURCHASEREQUEST_REVISIONTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.tblM4_PURCHASEREQUEST_REVISION.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._tblM4_PURCHASEREQUEST_REVISIONTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -57562,12 +58295,21 @@ Namespace DS_PROPERTYDBTableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
-            If (Not (Me._tblM4_INVENTORY_ACQUISITION_ITEM_USAGETableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.tblM4_INVENTORY_ACQUISITION_ITEM_USAGE.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+            If (Not (Me._tBLG3_DELIVER_RECEIPT_DETAILSTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.TBLG3_DELIVER_RECEIPT_DETAILS.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._tblM4_INVENTORY_ACQUISITION_ITEM_USAGETableAdapter.Update(updatedRows))
+                    result = (result + Me._tBLG3_DELIVER_RECEIPT_DETAILSTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._tblM4_PURCHASEREQUEST_REVISIONTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.tblM4_PURCHASEREQUEST_REVISION.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._tblM4_PURCHASEREQUEST_REVISIONTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -57607,12 +58349,30 @@ Namespace DS_PROPERTYDBTableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
-            If (Not (Me._tblM4_ITEMBRAND1TableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.tblM4_ITEMBRAND1.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+            If (Not (Me._tblM4_INVENTORY_ACQUISITION_ITEM_USAGETableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.tblM4_INVENTORY_ACQUISITION_ITEM_USAGE.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._tblM4_ITEMBRAND1TableAdapter.Update(updatedRows))
+                    result = (result + Me._tblM4_INVENTORY_ACQUISITION_ITEM_USAGETableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._tblM4_INVENTORY_ACQUISITION_VALUETableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.tblM4_INVENTORY_ACQUISITION_VALUE.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._tblM4_INVENTORY_ACQUISITION_VALUETableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._tblM4_INVENTORY_ITEMS_PROPERTYTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.tblM4_INVENTORY_ITEMS_PROPERTY.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._tblM4_INVENTORY_ITEMS_PROPERTYTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -57622,33 +58382,6 @@ Namespace DS_PROPERTYDBTableAdapters
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
                     result = (result + Me._tblM4_PURCHASEREQUEST_ITEMTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
-            If (Not (Me._tBLG3_DELIVER_RECEIPT_DETAILSTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.TBLG3_DELIVER_RECEIPT_DETAILS.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._tBLG3_DELIVER_RECEIPT_DETAILSTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
-            If (Not (Me._tBLG3_INVOICE_DETAILSTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.TBLG3_INVOICE_DETAILS.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._tBLG3_INVOICE_DETAILSTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
-            If (Not (Me._tBLG3_PRIMARY_SIGNATORYTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.TBLG3_PRIMARY_SIGNATORY.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._tBLG3_PRIMARY_SIGNATORYTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -57679,6 +58412,24 @@ Namespace DS_PROPERTYDBTableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
+            If (Not (Me._tBLG3_PRIMARY_SIGNATORYTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.TBLG3_PRIMARY_SIGNATORY.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._tBLG3_PRIMARY_SIGNATORYTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._tBLG3_INVOICE_DETAILSTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.TBLG3_INVOICE_DETAILS.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._tBLG3_INVOICE_DETAILSTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
             If (Not (Me._tBLG3_SIGNATORY1TableAdapter) Is Nothing) Then
                 Dim updatedRows() As Global.System.Data.DataRow = dataSet.TBLG3_SIGNATORY1.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
@@ -57697,21 +58448,21 @@ Namespace DS_PROPERTYDBTableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
-            If (Not (Me._tblM4_INVENTORY_ACQUISITION_VALUETableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.tblM4_INVENTORY_ACQUISITION_VALUE.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+            If (Not (Me._tblM4_ITEMBRAND1TableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.tblM4_ITEMBRAND1.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._tblM4_INVENTORY_ACQUISITION_VALUETableAdapter.Update(updatedRows))
+                    result = (result + Me._tblM4_ITEMBRAND1TableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
-            If (Not (Me._tblM4_INVENTORY_ITEMS_PROPERTYTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.tblM4_INVENTORY_ITEMS_PROPERTY.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+            If (Not (Me._tblM4_PURCHASEREQUEST_CANCELEDTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.tblM4_PURCHASEREQUEST_CANCELED.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._tblM4_INVENTORY_ITEMS_PROPERTYTableAdapter.Update(updatedRows))
+                    result = (result + Me._tblM4_PURCHASEREQUEST_CANCELEDTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -57741,11 +58492,27 @@ Namespace DS_PROPERTYDBTableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
+            If (Not (Me._tblM4_INVENTORY_SUB_CATEGORYTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.tblM4_INVENTORY_SUB_CATEGORY.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._tblM4_INVENTORY_SUB_CATEGORYTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
             If (Not (Me._tblM4_INVENTORY_ITEMBRANDTableAdapter) Is Nothing) Then
                 Dim addedRows() As Global.System.Data.DataRow = dataSet.tblM4_INVENTORY_ITEMBRAND.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
                     result = (result + Me._tblM4_INVENTORY_ITEMBRANDTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._tblM4_PURCHASEREQUEST_CATEGORYTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.tblM4_PURCHASEREQUEST_CATEGORY.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._tblM4_PURCHASEREQUEST_CATEGORYTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -57773,27 +58540,19 @@ Namespace DS_PROPERTYDBTableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
+            If (Not (Me._tblM4_INVENTORY_TYPETableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.tblM4_INVENTORY_TYPE.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._tblM4_INVENTORY_TYPETableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
             If (Not (Me._tBLG3_REG_BUSTableAdapter) Is Nothing) Then
                 Dim addedRows() As Global.System.Data.DataRow = dataSet.TBLG3_REG_BUS.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
                     result = (result + Me._tBLG3_REG_BUSTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
-            If (Not (Me._tblM4_INVENTORY_SUB_CATEGORYTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.tblM4_INVENTORY_SUB_CATEGORY.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._tblM4_INVENTORY_SUB_CATEGORYTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
-            If (Not (Me._tblM4_PURCHASEREQUEST_CATEGORYTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.tblM4_PURCHASEREQUEST_CATEGORY.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._tblM4_PURCHASEREQUEST_CATEGORYTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -57810,22 +58569,6 @@ Namespace DS_PROPERTYDBTableAdapters
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
                     result = (result + Me._tBLG3_DELIVERY_RECEIPTTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
-            If (Not (Me._tblM4_PURCHASEREQUEST_CANCELEDTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.tblM4_PURCHASEREQUEST_CANCELED.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._tblM4_PURCHASEREQUEST_CANCELEDTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
-            If (Not (Me._tblM4_PURCHASEREQUEST_REVISIONTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.tblM4_PURCHASEREQUEST_REVISION.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._tblM4_PURCHASEREQUEST_REVISIONTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -57869,11 +58612,19 @@ Namespace DS_PROPERTYDBTableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
-            If (Not (Me._tblM4_INVENTORY_ACQUISITION_ITEM_USAGETableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.tblM4_INVENTORY_ACQUISITION_ITEM_USAGE.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+            If (Not (Me._tBLG3_DELIVER_RECEIPT_DETAILSTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.TBLG3_DELIVER_RECEIPT_DETAILS.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._tblM4_INVENTORY_ACQUISITION_ITEM_USAGETableAdapter.Update(addedRows))
+                    result = (result + Me._tBLG3_DELIVER_RECEIPT_DETAILSTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._tblM4_PURCHASEREQUEST_REVISIONTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.tblM4_PURCHASEREQUEST_REVISION.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._tblM4_PURCHASEREQUEST_REVISIONTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -57909,11 +58660,27 @@ Namespace DS_PROPERTYDBTableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
-            If (Not (Me._tblM4_ITEMBRAND1TableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.tblM4_ITEMBRAND1.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+            If (Not (Me._tblM4_INVENTORY_ACQUISITION_ITEM_USAGETableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.tblM4_INVENTORY_ACQUISITION_ITEM_USAGE.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._tblM4_ITEMBRAND1TableAdapter.Update(addedRows))
+                    result = (result + Me._tblM4_INVENTORY_ACQUISITION_ITEM_USAGETableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._tblM4_INVENTORY_ACQUISITION_VALUETableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.tblM4_INVENTORY_ACQUISITION_VALUE.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._tblM4_INVENTORY_ACQUISITION_VALUETableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._tblM4_INVENTORY_ITEMS_PROPERTYTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.tblM4_INVENTORY_ITEMS_PROPERTY.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._tblM4_INVENTORY_ITEMS_PROPERTYTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -57922,30 +58689,6 @@ Namespace DS_PROPERTYDBTableAdapters
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
                     result = (result + Me._tblM4_PURCHASEREQUEST_ITEMTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
-            If (Not (Me._tBLG3_DELIVER_RECEIPT_DETAILSTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.TBLG3_DELIVER_RECEIPT_DETAILS.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._tBLG3_DELIVER_RECEIPT_DETAILSTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
-            If (Not (Me._tBLG3_INVOICE_DETAILSTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.TBLG3_INVOICE_DETAILS.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._tBLG3_INVOICE_DETAILSTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
-            If (Not (Me._tBLG3_PRIMARY_SIGNATORYTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.TBLG3_PRIMARY_SIGNATORY.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._tBLG3_PRIMARY_SIGNATORYTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -57973,6 +58716,22 @@ Namespace DS_PROPERTYDBTableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
+            If (Not (Me._tBLG3_PRIMARY_SIGNATORYTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.TBLG3_PRIMARY_SIGNATORY.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._tBLG3_PRIMARY_SIGNATORYTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._tBLG3_INVOICE_DETAILSTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.TBLG3_INVOICE_DETAILS.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._tBLG3_INVOICE_DETAILSTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
             If (Not (Me._tBLG3_SIGNATORY1TableAdapter) Is Nothing) Then
                 Dim addedRows() As Global.System.Data.DataRow = dataSet.TBLG3_SIGNATORY1.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
@@ -57989,19 +58748,19 @@ Namespace DS_PROPERTYDBTableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
-            If (Not (Me._tblM4_INVENTORY_ACQUISITION_VALUETableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.tblM4_INVENTORY_ACQUISITION_VALUE.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+            If (Not (Me._tblM4_ITEMBRAND1TableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.tblM4_ITEMBRAND1.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._tblM4_INVENTORY_ACQUISITION_VALUETableAdapter.Update(addedRows))
+                    result = (result + Me._tblM4_ITEMBRAND1TableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
-            If (Not (Me._tblM4_INVENTORY_ITEMS_PROPERTYTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.tblM4_INVENTORY_ITEMS_PROPERTY.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+            If (Not (Me._tblM4_PURCHASEREQUEST_CANCELEDTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.tblM4_PURCHASEREQUEST_CANCELED.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._tblM4_INVENTORY_ITEMS_PROPERTYTableAdapter.Update(addedRows))
+                    result = (result + Me._tblM4_PURCHASEREQUEST_CANCELEDTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -58015,19 +58774,19 @@ Namespace DS_PROPERTYDBTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Function UpdateDeletedRows(ByVal dataSet As DS_PROPERTYDB, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._tblM4_INVENTORY_ITEMS_PROPERTYTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.tblM4_INVENTORY_ITEMS_PROPERTY.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+            If (Not (Me._tblM4_PURCHASEREQUEST_CANCELEDTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.tblM4_PURCHASEREQUEST_CANCELED.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._tblM4_INVENTORY_ITEMS_PROPERTYTableAdapter.Update(deletedRows))
+                    result = (result + Me._tblM4_PURCHASEREQUEST_CANCELEDTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
-            If (Not (Me._tblM4_INVENTORY_ACQUISITION_VALUETableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.tblM4_INVENTORY_ACQUISITION_VALUE.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+            If (Not (Me._tblM4_ITEMBRAND1TableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.tblM4_ITEMBRAND1.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._tblM4_INVENTORY_ACQUISITION_VALUETableAdapter.Update(deletedRows))
+                    result = (result + Me._tblM4_ITEMBRAND1TableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -58044,6 +58803,22 @@ Namespace DS_PROPERTYDBTableAdapters
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
                     result = (result + Me._tBLG3_SIGNATORY1TableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._tBLG3_INVOICE_DETAILSTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.TBLG3_INVOICE_DETAILS.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._tBLG3_INVOICE_DETAILSTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._tBLG3_PRIMARY_SIGNATORYTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.TBLG3_PRIMARY_SIGNATORY.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._tBLG3_PRIMARY_SIGNATORYTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -58071,30 +58846,6 @@ Namespace DS_PROPERTYDBTableAdapters
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
-            If (Not (Me._tBLG3_PRIMARY_SIGNATORYTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.TBLG3_PRIMARY_SIGNATORY.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._tBLG3_PRIMARY_SIGNATORYTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
-            If (Not (Me._tBLG3_INVOICE_DETAILSTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.TBLG3_INVOICE_DETAILS.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._tBLG3_INVOICE_DETAILSTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
-            If (Not (Me._tBLG3_DELIVER_RECEIPT_DETAILSTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.TBLG3_DELIVER_RECEIPT_DETAILS.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._tBLG3_DELIVER_RECEIPT_DETAILSTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
             If (Not (Me._tblM4_PURCHASEREQUEST_ITEMTableAdapter) Is Nothing) Then
                 Dim deletedRows() As Global.System.Data.DataRow = dataSet.tblM4_PURCHASEREQUEST_ITEM.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
@@ -58103,11 +58854,27 @@ Namespace DS_PROPERTYDBTableAdapters
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
-            If (Not (Me._tblM4_ITEMBRAND1TableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.tblM4_ITEMBRAND1.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+            If (Not (Me._tblM4_INVENTORY_ITEMS_PROPERTYTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.tblM4_INVENTORY_ITEMS_PROPERTY.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._tblM4_ITEMBRAND1TableAdapter.Update(deletedRows))
+                    result = (result + Me._tblM4_INVENTORY_ITEMS_PROPERTYTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._tblM4_INVENTORY_ACQUISITION_VALUETableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.tblM4_INVENTORY_ACQUISITION_VALUE.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._tblM4_INVENTORY_ACQUISITION_VALUETableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._tblM4_INVENTORY_ACQUISITION_ITEM_USAGETableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.tblM4_INVENTORY_ACQUISITION_ITEM_USAGE.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._tblM4_INVENTORY_ACQUISITION_ITEM_USAGETableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -58143,11 +58910,19 @@ Namespace DS_PROPERTYDBTableAdapters
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
-            If (Not (Me._tblM4_INVENTORY_ACQUISITION_ITEM_USAGETableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.tblM4_INVENTORY_ACQUISITION_ITEM_USAGE.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+            If (Not (Me._tblM4_PURCHASEREQUEST_REVISIONTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.tblM4_PURCHASEREQUEST_REVISION.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._tblM4_INVENTORY_ACQUISITION_ITEM_USAGETableAdapter.Update(deletedRows))
+                    result = (result + Me._tblM4_PURCHASEREQUEST_REVISIONTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._tBLG3_DELIVER_RECEIPT_DETAILSTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.TBLG3_DELIVER_RECEIPT_DETAILS.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._tBLG3_DELIVER_RECEIPT_DETAILSTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -58191,22 +58966,6 @@ Namespace DS_PROPERTYDBTableAdapters
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
-            If (Not (Me._tblM4_PURCHASEREQUEST_REVISIONTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.tblM4_PURCHASEREQUEST_REVISION.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._tblM4_PURCHASEREQUEST_REVISIONTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
-            If (Not (Me._tblM4_PURCHASEREQUEST_CANCELEDTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.tblM4_PURCHASEREQUEST_CANCELED.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._tblM4_PURCHASEREQUEST_CANCELEDTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
             If (Not (Me._tBLG3_DELIVERY_RECEIPTTableAdapter) Is Nothing) Then
                 Dim deletedRows() As Global.System.Data.DataRow = dataSet.TBLG3_DELIVERY_RECEIPT.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
@@ -58223,27 +58982,19 @@ Namespace DS_PROPERTYDBTableAdapters
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
-            If (Not (Me._tblM4_PURCHASEREQUEST_CATEGORYTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.tblM4_PURCHASEREQUEST_CATEGORY.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._tblM4_PURCHASEREQUEST_CATEGORYTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
-            If (Not (Me._tblM4_INVENTORY_SUB_CATEGORYTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.tblM4_INVENTORY_SUB_CATEGORY.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._tblM4_INVENTORY_SUB_CATEGORYTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
             If (Not (Me._tBLG3_REG_BUSTableAdapter) Is Nothing) Then
                 Dim deletedRows() As Global.System.Data.DataRow = dataSet.TBLG3_REG_BUS.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
                     result = (result + Me._tBLG3_REG_BUSTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._tblM4_INVENTORY_TYPETableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.tblM4_INVENTORY_TYPE.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._tblM4_INVENTORY_TYPETableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -58271,11 +59022,27 @@ Namespace DS_PROPERTYDBTableAdapters
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
+            If (Not (Me._tblM4_PURCHASEREQUEST_CATEGORYTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.tblM4_PURCHASEREQUEST_CATEGORY.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._tblM4_PURCHASEREQUEST_CATEGORYTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
             If (Not (Me._tblM4_INVENTORY_ITEMBRANDTableAdapter) Is Nothing) Then
                 Dim deletedRows() As Global.System.Data.DataRow = dataSet.tblM4_INVENTORY_ITEMBRAND.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
                     result = (result + Me._tblM4_INVENTORY_ITEMBRANDTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._tblM4_INVENTORY_SUB_CATEGORYTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.tblM4_INVENTORY_SUB_CATEGORY.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._tblM4_INVENTORY_SUB_CATEGORYTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -58508,6 +59275,11 @@ Namespace DS_PROPERTYDBTableAdapters
             End If
             If ((Not (Me._tblM4_INVENTORY_ITEMS_PROPERTYTableAdapter) Is Nothing)  _
                         AndAlso (Me.MatchTableAdapterConnection(Me._tblM4_INVENTORY_ITEMS_PROPERTYTableAdapter.Connection) = false)) Then
+                Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
+                        "tring.")
+            End If
+            If ((Not (Me._tblM4_INVENTORY_TYPETableAdapter) Is Nothing)  _
+                        AndAlso (Me.MatchTableAdapterConnection(Me._tblM4_INVENTORY_TYPETableAdapter.Connection) = false)) Then
                 Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
                         "tring.")
             End If
@@ -58858,6 +59630,15 @@ Namespace DS_PROPERTYDBTableAdapters
                         adaptersWithAcceptChangesDuringUpdate.Add(Me._tblM4_INVENTORY_ITEMS_PROPERTYTableAdapter.Adapter)
                     End If
                 End If
+                If (Not (Me._tblM4_INVENTORY_TYPETableAdapter) Is Nothing) Then
+                    revertConnections.Add(Me._tblM4_INVENTORY_TYPETableAdapter, Me._tblM4_INVENTORY_TYPETableAdapter.Connection)
+                    Me._tblM4_INVENTORY_TYPETableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
+                    Me._tblM4_INVENTORY_TYPETableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
+                    If Me._tblM4_INVENTORY_TYPETableAdapter.Adapter.AcceptChangesDuringUpdate Then
+                        Me._tblM4_INVENTORY_TYPETableAdapter.Adapter.AcceptChangesDuringUpdate = false
+                        adaptersWithAcceptChangesDuringUpdate.Add(Me._tblM4_INVENTORY_TYPETableAdapter.Adapter)
+                    End If
+                End If
                 '
                 '---- Perform updates -----------
                 '
@@ -59057,6 +59838,10 @@ Namespace DS_PROPERTYDBTableAdapters
                 If (Not (Me._tblM4_INVENTORY_ITEMS_PROPERTYTableAdapter) Is Nothing) Then
                     Me._tblM4_INVENTORY_ITEMS_PROPERTYTableAdapter.Connection = CType(revertConnections(Me._tblM4_INVENTORY_ITEMS_PROPERTYTableAdapter),Global.System.Data.SqlClient.SqlConnection)
                     Me._tblM4_INVENTORY_ITEMS_PROPERTYTableAdapter.Transaction = Nothing
+                End If
+                If (Not (Me._tblM4_INVENTORY_TYPETableAdapter) Is Nothing) Then
+                    Me._tblM4_INVENTORY_TYPETableAdapter.Connection = CType(revertConnections(Me._tblM4_INVENTORY_TYPETableAdapter),Global.System.Data.SqlClient.SqlConnection)
+                    Me._tblM4_INVENTORY_TYPETableAdapter.Transaction = Nothing
                 End If
                 If (0 < adaptersWithAcceptChangesDuringUpdate.Count) Then
                     Dim adapters((adaptersWithAcceptChangesDuringUpdate.Count) - 1) As Global.System.Data.Common.DataAdapter

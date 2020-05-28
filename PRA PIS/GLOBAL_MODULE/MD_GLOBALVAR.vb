@@ -104,7 +104,23 @@ Module MD_GLOBALVAR
     Public employee_no As TextBox
     Public BSDGRID As BindingSource
     Public QRTEXT As String
-    Public ACCOUNTABLE_OFFICER As String
+    Public ACCOUNTABLE_OFFICER As TextBox
     Public PROPERTY_USER As String
     Public ACCOUNTABLE_CTR As Boolean = True
+    Public TXTAPPCODE As TextBox
+    Public TXTREQUESTEDDATE As TextBox
+    Public TXTSUBMITTEDBY As TextBox
+    Public RBTNISDOLLAR As RadioButton
+    Public CBDEPARTMENT As ComboBox
+    Public CBDIVISION As ComboBox
+    Public TXTPURPOSE As TextBox
+    Public IR_CBFILTERBY As String
+    Public IR_CBDATEBY As String
+    Public IR_KEYWORD As String
+    Public IR_DATEFROM As String
+    Public IR_DATETO As String
+    Public IR_REPORTHEADER As String
+    Public IR_ALLITEMS As Boolean
+    Public IR_ASOFDATE As Date
+    Public ITEQUIPMENTBOOL As Boolean
 End Module

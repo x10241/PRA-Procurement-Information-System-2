@@ -211,7 +211,15 @@ Public Class FRM_PR
 
             'EDIT BUTTON
         ElseIf pb Is PB_PBICONEDIT Or lbl Is LLBL_PREDIT Or llbl Is LLBL_PREDIT Then
-
+            _DISABLE(False)
+            TXTAPPCODE = CType(WTXT_APPCODE, TextBox)
+            TXTREQUESTEDDATE = CType(WTXT_REQUESTEDDATE, TextBox)
+            TXTSUBMITTEDBY = CType(WTXT_SUBMITTEDBY, TextBox)
+            RBTNISDOLLAR = CType(RBTN_DOLLARS, RadioButton)
+            CBDEPARTMENT = CType(CB_PRDEPARTMENT, ComboBox)
+            CBDIVISION = CType(CB_PRDIVISION, ComboBox)
+            TXTPURPOSE = CType(WTXT_PURPOSE, TextBox)
+            FRM_EDITPR.ShowDialog()
             'CANCEL Button
         ElseIf pb Is PB_PRICONCANCEL Or llbl Is LLBL_PRCANCEL Then
             If MsgBox("Do you really want to cancel this request?", vbYesNo, "Confirm") = vbYes Then

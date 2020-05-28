@@ -45,18 +45,14 @@ Public Class FRM_ASSIGN
     End Sub
 
     Private Sub BTN_SELECTION_CLOSE_Click(sender As Object, e As EventArgs) Handles BTN_SELECTION_CLOSE.Click,
-                                                                                        BTN_ASSIGN_ITEM_USER.Click,
-                                                                                        BTN_ASSIGN_CANCEL.Click,
                                                                                         BTN_ONE_PLUS.Click,
                                                                                         BTN_ONE_MINUS.Click,
                                                                                         BTN_ALL_MINUS.Click,
                                                                                         BTN_ALL_PLUS.Click,
                                                                                         BTN_ASSIGN_SAVE.Click,
-                                                                                        WTXT_ASSIGN_EMP_NAME.Click,
-                                                                                        WTXT_ASSIGN_EMP_DIVISION.Click,
-                                                                                        WTXT_ASSIGN_EMP_NO.Click,
-                                                                                        BTN_REASSIGN_ITEM_TO_USER.Click,
-                                                                                        BTN_LOCATION_LIST.Click
+                                                                                        WTXT_ACC_EMP_NAME.Click,
+                                                                                        WTXT_ACC_EMP_DIVISION.Click,
+                                                                                        WTXT_ACC_EMP_NO.Click
 
         Dim btn As Button = Nothing
         Dim txt As WatermarkTextBox = Nothing
@@ -73,34 +69,34 @@ Public Class FRM_ASSIGN
 #End Region
 
 #Region "Cancel Transaction"
-        ElseIf btn Is BTN_ASSIGN_CANCEL Then
-            If MsgBox("Cancel this transaction?", vbYesNo, "Confirm") = vbYes Then
-                enableDisable("Cancel")
-                DS_CUSTOM.AssignItemsDataGridView.Rows.Clear()
-                DS_CUSTOM.ItemsDataGridView.Rows.Clear()
-            End If
+            'ElseIf btn Is BTN_ASSIGN_CANCEL Then
+            '    If MsgBox("Cancel this transaction?", vbYesNo, "Confirm") = vbYes Then
+            '        enableDisable("Cancel")
+            '        DS_CUSTOM.AssignItemsDataGridView.Rows.Clear()
+            '        DS_CUSTOM.ItemsDataGridView.Rows.Clear()
+            '    End If
 #End Region
 
 #Region "Assign to User"
-        ElseIf btn Is BTN_ASSIGN_ITEM_USER Then
-            enableDisable("New")
-            trans = "Assign"
-            TblM4_INVENTORY_ITEMS1TableAdapter.Fill(DS_PROPERTYDB.tblM4_INVENTORY_ITEMS1, WTXT_SEARCH_ITEM_DETAIL.Text)
-            BS_DGV_ASSIGN(TblM4_INVENTORY_ITEMS1BindingSource, DS_CUSTOM.ItemsDataGridView)
+            'ElseIf btn Is BTN_ASSIGN_ITEM_USER Then
+            '    '  enableDisable("New")
+            '    '  trans = "Assign"
+            '    'TblM4_INVENTORY_ITEMS1TableAdapter.Fill(DS_PROPERTYDB.tblM4_INVENTORY_ITEMS1, WTXT_SEARCH_ITEM_DETAIL.Text)
+            'BS_DGV_ASSIGN(TblM4_INVENTORY_ITEMS1BindingSource, DS_CUSTOM.ItemsDataGridView)
 #End Region
 
 #Region "Reassign to User"
-        ElseIf btn Is BTN_REASSIGN_ITEM_TO_USER Then
-            enableDisable("New")
-            trans = "ReAssign"
-            TblM4_INVENTORY_ITEMS1TableAdapter.FillByINAssign(DS_PROPERTYDB.tblM4_INVENTORY_ITEMS1, WTXT_SEARCH_ITEM_DETAIL.Text)
-            BS_DGV_ASSIGN(TblM4_INVENTORY_ITEMS1BindingSource, DS_CUSTOM.ItemsDataGridView)
+            'ElseIf btn Is BTN_REASSIGN_ITEM_TO_USER Then
+            '    enableDisable("New")
+            '    trans = "ReAssign"
+            '    TblM4_INVENTORY_ITEMS1TableAdapter.FillByINAssign(DS_PROPERTYDB.tblM4_INVENTORY_ITEMS1, WTXT_SEARCH_ITEM_DETAIL.Text)
+            '    BS_DGV_ASSIGN(TblM4_INVENTORY_ITEMS1BindingSource, DS_CUSTOM.ItemsDataGridView)
 #End Region
 
 #Region "Save"
         ElseIf btn Is BTN_ASSIGN_SAVE Then
             ISVALID = True
-            If REQFIELDVALIDATION(WTXT_ASSIGN_EMP_NAME) Or REQFIELDVALIDATION(WTXT_ASSIGN_EMP_DIVISION) Or REQFIELDVALIDATION(WTXT_ASSIGN_EMP_DEPARTMENT) Or REQFIELDVALIDATION(WTXT_ASSIGN_EMP_NO) Then
+            If REQFIELDVALIDATION(WTXT_ACC_EMP_NAME) Or REQFIELDVALIDATION(WTXT_ACC_EMP_DIVISION) Or REQFIELDVALIDATION(WTXT_ACC_EMP_DEPARTMENT) Or REQFIELDVALIDATION(WTXT_ACC_EMP_NO) Then
                 ISVALID = False
                 RECT_DEPARTMENT.BorderColor = Color.OrangeRed
                 RECT_DIVISION.BorderColor = Color.OrangeRed
@@ -181,18 +177,21 @@ Public Class FRM_ASSIGN
 #End Region
 
 #Region "GET EMPLOYEE INFO"
-        ElseIf txt Is WTXT_ASSIGN_EMP_NAME Or txt Is WTXT_ASSIGN_EMP_DIVISION Or txt Is WTXT_ASSIGN_EMP_NO Then
-            empfullname = CType(WTXT_ASSIGN_EMP_NAME, TextBox)
-            department = CType(WTXT_ASSIGN_EMP_DEPARTMENT, TextBox)
-            division = CType(WTXT_ASSIGN_EMP_DIVISION, TextBox)
-            employee_no = CType(WTXT_ASSIGN_EMP_NO, TextBox)
+        ElseIf txt Is WTXT_ACC_EMP_NAME Or txt Is WTXT_ACC_EMP_DIVISION Or txt Is WTXT_ACC_EMP_NO Then
+            empfullname = CType(WTXT_ACC_EMP_NAME, TextBox)
+            department = CType(WTXT_ACC_EMP_DEPARTMENT, TextBox)
+            division = CType(WTXT_ACC_EMP_DIVISION, TextBox)
+            employee_no = CType(WTXT_ACC_EMP_NO, TextBox)
+            ACCOUNTABLE_OFFICER = CType(WTXT_ACC_EMP_NO, TextBox)
+            ACCOUNTABLE_CTR = True
             FRM_EMPLOYEE_LIST.ShowDialog()
 #End Region
 
 #Region "Show Report"
-        ElseIf btn Is BTN_LOCATION_LIST Then
-            FRM_ASSIGN_ITEMS.ShowDialog()
+            'ElseIf btn Is BTN_LOCATION_LIST Then
+            '    FRM_ASSIGN_ITEMS.ShowDialog()
 #End Region
+
         End If
     End Sub
 
@@ -201,23 +200,23 @@ Public Class FRM_ASSIGN
             GB_ITEMDETAILS.Enabled = True
             GB_ITEM_DETAILS.Enabled = True
             GB_REMARKS.Enabled = True
-            BTN_ASSIGN_ITEM_USER.Enabled = False
-            BTN_REASSIGN_ITEM_TO_USER.Enabled = False
-            BTN_LOCATION_LIST.Enabled = False
+            'BTN_ASSIGN_ITEM_USER.Enabled = False
+            'BTN_REASSIGN_ITEM_TO_USER.Enabled = False
+            'BTN_LOCATION_LIST.Enabled = False
             WTXT_SEARCH_ITEM_DETAIL.Clear()
             WTXT_SEARCH_ASSIGN_ITEM.Clear()
         Else
             GB_ITEMDETAILS.Enabled = False
             GB_ITEM_DETAILS.Enabled = False
             GB_REMARKS.Enabled = False
-            WTXT_ASSIGN_EMP_DEPARTMENT.Clear()
-            WTXT_ASSIGN_EMP_DIVISION.Clear()
-            WTXT_ASSIGN_EMP_NAME.Clear()
-            WTXT_ASSIGN_EMP_NO.Clear()
-            WTXT_ASSIGN_EMP_REMARKS.Clear()
-            BTN_ASSIGN_ITEM_USER.Enabled = True
-            BTN_REASSIGN_ITEM_TO_USER.Enabled = True
-            BTN_LOCATION_LIST.Enabled = True
+            WTXT_ACC_EMP_DEPARTMENT.Clear()
+            WTXT_ACC_EMP_DIVISION.Clear()
+            WTXT_ACC_EMP_NAME.Clear()
+            WTXT_ACC_EMP_NO.Clear()
+            WTXT_ACC_REMARKS.Clear()
+            '  BTN_ASSIGN_ITEM_USER.Enabled = True
+            'BTN_REASSIGN_ITEM_TO_USER.Enabled = True
+            'BTN_LOCATION_LIST.Enabled = True
             WTXT_SEARCH_ITEM_DETAIL.Clear()
             WTXT_SEARCH_ASSIGN_ITEM.Clear()
         End If
@@ -225,15 +224,16 @@ Public Class FRM_ASSIGN
 
     Sub Save()
         If trans = "Assign" Then
+            EMP_NO = "test"
             For Each row As DataGridViewRow In DGV_ASSIGN_ITEMS.Rows
-                TblM4_INVENTORY_ASSIGN_PERSONTableAdapter.IQ_ASSIGN_PERSON(row.Cells(0).Value, WTXT_ASSIGN_EMP_NO.Text, If(row.Cells(8).Value.ToString = "", Nothing, row.Cells(8).Value), WTXT_ASSIGN_EMP_REMARKS.Text, EMP_NO)
+                TblM4_INVENTORY_ASSIGN_PERSONTableAdapter.IQ_ASSIGN_PERSON(row.Cells(0).Value, WTXT_ACC_EMP_NO.Text, If(row.Cells(8).Value.ToString = "", Nothing, row.Cells(8).Value), WTXT_ACC_REMARKS.Text, EMP_NO)
             Next
             NotificationManager.Show(Me, "Successfully save!", Color.Green, 1000)
         ElseIf trans = "ReAssign" Then
             Dim emp_originated As String
             For Each row As DataGridViewRow In DGV_ASSIGN_ITEMS.Rows
                 emp_originated = TblM4_INVENTORY_ASSIGN_PERSONTableAdapter.SQ_ORIGINATED(row.Cells(0).Value)
-                TblM4_INVENTORY_ASSIGN_PERSONTableAdapter.IQ_ASSIGN_PERSON(row.Cells(0).Value, WTXT_ASSIGN_EMP_NO.Text, If(emp_originated = CStr(0), Nothing, emp_originated), WTXT_ASSIGN_EMP_REMARKS.Text, EMP_NO)
+                TblM4_INVENTORY_ASSIGN_PERSONTableAdapter.IQ_ASSIGN_PERSON(row.Cells(0).Value, WTXT_ACC_EMP_NO.Text, If(emp_originated = CStr(0), Nothing, emp_originated), WTXT_ACC_REMARKS.Text, EMP_NO)
             Next
             NotificationManager.Show(Me, "Successfully Reassign!", Color.Green, 1000)
         End If
@@ -252,4 +252,12 @@ Public Class FRM_ASSIGN
         AssignItemsDataGridViewBindingSource.Filter = "ItemCode LIKE '%" + WTXT_SEARCH_ASSIGN_ITEM.Text + "%'"
     End Sub
 
+    Private Sub FRM_ASSIGN_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TblM4_INVENTORY_ITEMS1TableAdapter.Fill(DS_PROPERTYDB.tblM4_INVENTORY_ITEMS1, WTXT_SEARCH_ITEM_DETAIL.Text)
+        'BS_DGV_ASSIGN(TblM4_INVENTORY_ITEMS1BindingSource, DS_CUSTOM.ItemsDataGridView)
+    End Sub
+
+    Private Sub GB_ITEMDETAILS_Enter(sender As Object, e As EventArgs) Handles GB_ITEMDETAILS.Enter
+
+    End Sub
 End Class

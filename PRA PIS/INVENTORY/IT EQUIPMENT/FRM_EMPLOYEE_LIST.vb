@@ -15,9 +15,12 @@
     Private Sub EmployeeInfoDataGridView_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles EmployeeInfoDataGridView.CellDoubleClick
         Dim row As New DataGridViewRow()
         row = EmployeeInfoDataGridView.Rows(e.RowIndex)
+
         empfullname.Text = row.Cells(1).Value
+        department.Text = row.Cells(2).Value
+        division.Text = row.Cells(3).Value
         If ACCOUNTABLE_CTR = True Then
-            ACCOUNTABLE_OFFICER = row.Cells(0).Value
+            ACCOUNTABLE_OFFICER.Text = row.Cells(0).Value
         Else
             PROPERTY_USER = row.Cells(0).Value
         End If

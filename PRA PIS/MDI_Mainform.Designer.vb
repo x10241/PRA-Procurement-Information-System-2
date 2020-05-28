@@ -241,7 +241,7 @@ Partial Class MDI_Mainform
         Me.APNLSHOWSEL.Controls.Add(Me.ABTNSEL3)
         Me.APNLSHOWSEL.Controls.Add(Me.ABTNSEL2)
         Me.APNLSHOWSEL.Controls.Add(Me.ABTNSEL1)
-        Me.APNLSHOWSEL.Location = New System.Drawing.Point(38, 500)
+        Me.APNLSHOWSEL.Location = New System.Drawing.Point(5, 500)
         Me.APNLSHOWSEL.Name = "APNLSHOWSEL"
         Me.APNLSHOWSEL.Size = New System.Drawing.Size(142, 163)
         Me.APNLSHOWSEL.TabIndex = 1012
@@ -263,6 +263,7 @@ Partial Class MDI_Mainform
         Me.ABTNSEL5.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
         Me.ABTNSEL5.Size = New System.Drawing.Size(142, 28)
         Me.ABTNSEL5.TabIndex = 6
+        Me.ABTNSEL5.Text = "     "
         Me.ABTNSEL5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.ABTNSEL5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.ABTNSEL5.UseVisualStyleBackColor = False
@@ -280,7 +281,7 @@ Partial Class MDI_Mainform
         Me.ABTNSEL4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.ABTNSEL4.Location = New System.Drawing.Point(0, 84)
         Me.ABTNSEL4.Name = "ABTNSEL4"
-        Me.ABTNSEL4.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ABTNSEL4.Padding = New System.Windows.Forms.Padding(30, 0, 0, 0)
         Me.ABTNSEL4.Size = New System.Drawing.Size(142, 28)
         Me.ABTNSEL4.TabIndex = 5
         Me.ABTNSEL4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -302,9 +303,7 @@ Partial Class MDI_Mainform
         Me.ABTNSEL3.Padding = New System.Windows.Forms.Padding(30, 0, 0, 0)
         Me.ABTNSEL3.Size = New System.Drawing.Size(142, 28)
         Me.ABTNSEL3.TabIndex = 4
-        Me.ABTNSEL3.Text = "     "
         Me.ABTNSEL3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.ABTNSEL3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.ABTNSEL3.UseVisualStyleBackColor = False
         '
         'ABTNSEL2
@@ -323,9 +322,7 @@ Partial Class MDI_Mainform
         Me.ABTNSEL2.Padding = New System.Windows.Forms.Padding(30, 0, 0, 0)
         Me.ABTNSEL2.Size = New System.Drawing.Size(142, 28)
         Me.ABTNSEL2.TabIndex = 3
-        Me.ABTNSEL2.Text = "     "
         Me.ABTNSEL2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.ABTNSEL2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.ABTNSEL2.UseVisualStyleBackColor = False
         '
         'ABTNSEL1
@@ -344,9 +341,8 @@ Partial Class MDI_Mainform
         Me.ABTNSEL1.Padding = New System.Windows.Forms.Padding(30, 0, 0, 0)
         Me.ABTNSEL1.Size = New System.Drawing.Size(142, 28)
         Me.ABTNSEL1.TabIndex = 2
-        Me.ABTNSEL1.Text = "     "
+        Me.ABTNSEL1.Text = " "
         Me.ABTNSEL1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.ABTNSEL1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.ABTNSEL1.UseVisualStyleBackColor = False
         '
         'ABTNLOGOUT

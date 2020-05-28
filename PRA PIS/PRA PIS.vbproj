@@ -124,18 +124,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\PdfSharp.Charting.dll</HintPath>
     </Reference>
-    <Reference Include="Seagull.BarTender.Print, Version=11.1.5.1, Culture=neutral, PublicKeyToken=109ff779a1b4cbc7, processorArchitecture=AMD64">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Desktop\Assemblies\Seagull.BarTender.Print.dll</HintPath>
-    </Reference>
-    <Reference Include="Seagull.Services.PrintScheduler, Version=11.1.5.1, Culture=neutral, PublicKeyToken=109ff779a1b4cbc7, processorArchitecture=AMD64">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Desktop\Assemblies\Seagull.Services.PrintScheduler.dll</HintPath>
-    </Reference>
-    <Reference Include="Seagull.Services.PrintScheduler.Contracts, Version=11.1.5.1, Culture=neutral, PublicKeyToken=109ff779a1b4cbc7, processorArchitecture=AMD64">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Desktop\Assemblies\Seagull.Services.PrintScheduler.Contracts.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -148,7 +136,6 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Net.Http" />
     <Reference Include="ThoughtWorks.QRCode, Version=1.0.4778.30637, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\ThoughtWorks.QRCode.dll</HintPath>
@@ -204,6 +191,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_CUSTOM.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DATASETS\DS_CUSTOM.vb">
+      <DependentUpon>DS_CUSTOM.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DATASETS\DS_PROPERTYDB.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -233,91 +223,109 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_VIEWS.xsd</DependentUpon>
     </Compile>
-    <Compile Include="INVENTORY\FRM_ASSIGN.Designer.vb">
+    <Compile Include="INVENTORY\ADMIN\FRM_INVENTORY_ENCODING_ADMIN.Designer.vb">
+      <DependentUpon>FRM_INVENTORY_ENCODING_ADMIN.vb</DependentUpon>
+    </Compile>
+    <Compile Include="INVENTORY\ADMIN\FRM_INVENTORY_ENCODING_ADMIN.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INVENTORY\IT EQUIPMENT\FRM_ASSIGN.Designer.vb">
       <DependentUpon>FRM_ASSIGN.vb</DependentUpon>
     </Compile>
-    <Compile Include="INVENTORY\FRM_ASSIGN.vb">
+    <Compile Include="INVENTORY\IT EQUIPMENT\FRM_ASSIGN.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="INVENTORY\FRM_ASSIGN_ITEMS.Designer.vb">
+    <Compile Include="INVENTORY\IT EQUIPMENT\FRM_ASSIGN_ITEMS.Designer.vb">
       <DependentUpon>FRM_ASSIGN_ITEMS.vb</DependentUpon>
     </Compile>
-    <Compile Include="INVENTORY\FRM_ASSIGN_ITEMS.vb">
+    <Compile Include="INVENTORY\IT EQUIPMENT\FRM_ASSIGN_ITEMS.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="INVENTORY\FRM_EMPLOYEE_LIST.Designer.vb">
+    <Compile Include="INVENTORY\IT EQUIPMENT\FRM_EMPLOYEE_LIST.Designer.vb">
       <DependentUpon>FRM_EMPLOYEE_LIST.vb</DependentUpon>
     </Compile>
-    <Compile Include="INVENTORY\FRM_EMPLOYEE_LIST.vb">
+    <Compile Include="INVENTORY\IT EQUIPMENT\FRM_EMPLOYEE_LIST.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="INVENTORY\FRM_INVENTORY_ENCODING.Designer.vb">
+    <Compile Include="INVENTORY\IT EQUIPMENT\FRM_INVENTORY_ENCODING.Designer.vb">
       <DependentUpon>FRM_INVENTORY_ENCODING.vb</DependentUpon>
     </Compile>
-    <Compile Include="INVENTORY\FRM_INVENTORY_ENCODING.vb">
+    <Compile Include="INVENTORY\IT EQUIPMENT\FRM_INVENTORY_ENCODING.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="INVENTORY\FRM_INVENTORY_PRINT_PREVIEW.Designer.vb">
-      <DependentUpon>FRM_INVENTORY_PRINT_PREVIEW.vb</DependentUpon>
+    <Compile Include="INVENTORY\IT EQUIPMENT\FRM_INVENTORY_REPORT.Designer.vb">
+      <DependentUpon>FRM_INVENTORY_REPORT.vb</DependentUpon>
     </Compile>
-    <Compile Include="INVENTORY\FRM_INVENTORY_PRINT_PREVIEW.vb">
+    <Compile Include="INVENTORY\IT EQUIPMENT\FRM_INVENTORY_REPORT.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="INVENTORY\FRM_LOCATION_LIST.Designer.vb">
+    <Compile Include="INVENTORY\IT EQUIPMENT\FRM_INVENTORY_REPORT_PRINT_PREVIEW.Designer.vb">
+      <DependentUpon>FRM_INVENTORY_REPORT_PRINT_PREVIEW.vb</DependentUpon>
+    </Compile>
+    <Compile Include="INVENTORY\IT EQUIPMENT\FRM_INVENTORY_REPORT_PRINT_PREVIEW.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INVENTORY\IT EQUIPMENT\FRM_LOCATION_LIST.Designer.vb">
       <DependentUpon>FRM_LOCATION_LIST.vb</DependentUpon>
     </Compile>
-    <Compile Include="INVENTORY\FRM_LOCATION_LIST.vb">
+    <Compile Include="INVENTORY\IT EQUIPMENT\FRM_LOCATION_LIST.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="INVENTORY\FRM_PREVIEW.Designer.vb">
+    <Compile Include="INVENTORY\IT EQUIPMENT\FRM_PREVIEW.Designer.vb">
       <DependentUpon>FRM_PREVIEW.vb</DependentUpon>
     </Compile>
-    <Compile Include="INVENTORY\FRM_PREVIEW.vb">
+    <Compile Include="INVENTORY\IT EQUIPMENT\FRM_PREVIEW.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="INVENTORY\FRM_SETTINGS_SELECTION.Designer.vb">
+    <Compile Include="INVENTORY\IT EQUIPMENT\FRM_SETTINGS_SELECTION.Designer.vb">
       <DependentUpon>FRM_SETTINGS_SELECTION.vb</DependentUpon>
     </Compile>
-    <Compile Include="INVENTORY\FRM_SETTINGS_SELECTION.vb">
+    <Compile Include="INVENTORY\IT EQUIPMENT\FRM_SETTINGS_SELECTION.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="INVENTORY\FRM_SETTINGS.Designer.vb">
+    <Compile Include="INVENTORY\IT EQUIPMENT\FRM_SETTINGS.Designer.vb">
       <DependentUpon>FRM_SETTINGS.vb</DependentUpon>
     </Compile>
-    <Compile Include="INVENTORY\FRM_SETTINGS.vb">
+    <Compile Include="INVENTORY\IT EQUIPMENT\FRM_SETTINGS.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="INVENTORY\FRM_STICKER_TAG.Designer.vb">
+    <Compile Include="INVENTORY\IT EQUIPMENT\FRM_STICKER_TAG.Designer.vb">
       <DependentUpon>FRM_STICKER_TAG.vb</DependentUpon>
     </Compile>
-    <Compile Include="INVENTORY\FRM_STICKER_TAG.vb">
+    <Compile Include="INVENTORY\IT EQUIPMENT\FRM_STICKER_TAG.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="INVENTORY\RPT_INVENTORY_REPORT.vb">
+    <Compile Include="INVENTORY\IT EQUIPMENT\RPT_RPCI_LIST.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPT_RPCI_LIST.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="INVENTORY\IT EQUIPMENT\RPT_INVENTORY_REPORT.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RPT_INVENTORY_REPORT.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="INVENTORY\RPT_ITEMS_ASSIGN.vb">
+    <Compile Include="INVENTORY\IT EQUIPMENT\RPT_ITEMS_ASSIGN.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RPT_ITEMS_ASSIGN.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="INVENTORY\RPT_ITEMS_IN_LOCATION.vb">
+    <Compile Include="INVENTORY\IT EQUIPMENT\RPT_ITEMS_IN_LOCATION.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RPT_ITEMS_IN_LOCATION.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="INVENTORY\RPT_STICKER_TAG3x2.vb">
+    <Compile Include="INVENTORY\IT EQUIPMENT\RPT_STICKER_TAG3x2.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RPT_STICKER_TAG3x2.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="INVENTORY\RPT_STICKER_TAG4x3.vb">
+    <Compile Include="INVENTORY\IT EQUIPMENT\RPT_STICKER_TAG4x3.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RPT_STICKER_TAG4x3.rpt</DependentUpon>
@@ -346,10 +354,10 @@
     <Compile Include="POPUP_MODULE\FRM_DGV_ENCODING.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="INVENTORY\FRM_LOCATION.Designer.vb">
+    <Compile Include="INVENTORY\IT EQUIPMENT\FRM_LOCATION.Designer.vb">
       <DependentUpon>FRM_LOCATION.vb</DependentUpon>
     </Compile>
-    <Compile Include="INVENTORY\FRM_LOCATION.vb">
+    <Compile Include="INVENTORY\IT EQUIPMENT\FRM_LOCATION.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="POPUP_MODULE\FRM_PRACCEPT.Designer.vb">
@@ -400,6 +408,12 @@
       <DependentUpon>FRM_CHECK_PR.vb</DependentUpon>
     </Compile>
     <Compile Include="PURCHASE REQUEST\FRM_CHECK_PR.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PURCHASE REQUEST\FRM_EDITPR.Designer.vb">
+      <DependentUpon>FRM_EDITPR.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PURCHASE REQUEST\FRM_EDITPR.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PURCHASE REQUEST\FRM_PR.Designer.vb">
@@ -505,53 +519,63 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="INVENTORY\FRM_ASSIGN.resx">
+    <EmbeddedResource Include="INVENTORY\ADMIN\FRM_INVENTORY_ENCODING_ADMIN.resx">
+      <DependentUpon>FRM_INVENTORY_ENCODING_ADMIN.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INVENTORY\IT EQUIPMENT\FRM_ASSIGN.resx">
       <DependentUpon>FRM_ASSIGN.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="INVENTORY\FRM_ASSIGN_ITEMS.resx">
+    <EmbeddedResource Include="INVENTORY\IT EQUIPMENT\FRM_ASSIGN_ITEMS.resx">
       <DependentUpon>FRM_ASSIGN_ITEMS.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="INVENTORY\FRM_EMPLOYEE_LIST.resx">
+    <EmbeddedResource Include="INVENTORY\IT EQUIPMENT\FRM_EMPLOYEE_LIST.resx">
       <DependentUpon>FRM_EMPLOYEE_LIST.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="INVENTORY\FRM_INVENTORY_ENCODING.resx">
+    <EmbeddedResource Include="INVENTORY\IT EQUIPMENT\FRM_INVENTORY_ENCODING.resx">
       <DependentUpon>FRM_INVENTORY_ENCODING.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="INVENTORY\FRM_INVENTORY_PRINT_PREVIEW.resx">
-      <DependentUpon>FRM_INVENTORY_PRINT_PREVIEW.vb</DependentUpon>
+    <EmbeddedResource Include="INVENTORY\IT EQUIPMENT\FRM_INVENTORY_REPORT.resx">
+      <DependentUpon>FRM_INVENTORY_REPORT.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="INVENTORY\FRM_LOCATION_LIST.resx">
+    <EmbeddedResource Include="INVENTORY\IT EQUIPMENT\FRM_INVENTORY_REPORT_PRINT_PREVIEW.resx">
+      <DependentUpon>FRM_INVENTORY_REPORT_PRINT_PREVIEW.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INVENTORY\IT EQUIPMENT\FRM_LOCATION_LIST.resx">
       <DependentUpon>FRM_LOCATION_LIST.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="INVENTORY\FRM_PREVIEW.resx">
+    <EmbeddedResource Include="INVENTORY\IT EQUIPMENT\FRM_PREVIEW.resx">
       <DependentUpon>FRM_PREVIEW.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="INVENTORY\FRM_SETTINGS_SELECTION.resx">
+    <EmbeddedResource Include="INVENTORY\IT EQUIPMENT\FRM_SETTINGS_SELECTION.resx">
       <DependentUpon>FRM_SETTINGS_SELECTION.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="INVENTORY\FRM_SETTINGS.resx">
+    <EmbeddedResource Include="INVENTORY\IT EQUIPMENT\FRM_SETTINGS.resx">
       <DependentUpon>FRM_SETTINGS.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="INVENTORY\FRM_STICKER_TAG.resx">
+    <EmbeddedResource Include="INVENTORY\IT EQUIPMENT\FRM_STICKER_TAG.resx">
       <DependentUpon>FRM_STICKER_TAG.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="INVENTORY\RPT_INVENTORY_REPORT.rpt">
+    <EmbeddedResource Include="INVENTORY\IT EQUIPMENT\RPT_RPCI_LIST.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPT_RPCI_LIST.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INVENTORY\IT EQUIPMENT\RPT_INVENTORY_REPORT.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RPT_INVENTORY_REPORT.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="INVENTORY\RPT_ITEMS_ASSIGN.rpt">
+    <EmbeddedResource Include="INVENTORY\IT EQUIPMENT\RPT_ITEMS_ASSIGN.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RPT_ITEMS_ASSIGN.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="INVENTORY\RPT_ITEMS_IN_LOCATION.rpt">
+    <EmbeddedResource Include="INVENTORY\IT EQUIPMENT\RPT_ITEMS_IN_LOCATION.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RPT_ITEMS_IN_LOCATION.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="INVENTORY\RPT_STICKER_TAG3x2.rpt">
+    <EmbeddedResource Include="INVENTORY\IT EQUIPMENT\RPT_STICKER_TAG3x2.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RPT_STICKER_TAG3x2.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="INVENTORY\RPT_STICKER_TAG4x3.rpt">
+    <EmbeddedResource Include="INVENTORY\IT EQUIPMENT\RPT_STICKER_TAG4x3.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RPT_STICKER_TAG4x3.vb</LastGenOutput>
     </EmbeddedResource>
@@ -564,7 +588,7 @@
     <EmbeddedResource Include="POPUP_MODULE\FRM_DGV_ENCODING.resx">
       <DependentUpon>FRM_DGV_ENCODING.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="INVENTORY\FRM_LOCATION.resx">
+    <EmbeddedResource Include="INVENTORY\IT EQUIPMENT\FRM_LOCATION.resx">
       <DependentUpon>FRM_LOCATION.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="POPUP_MODULE\FRM_PRACCEPT.resx">
@@ -590,6 +614,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PURCHASE REQUEST\FRM_CHECK_PR.resx">
       <DependentUpon>FRM_CHECK_PR.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PURCHASE REQUEST\FRM_EDITPR.resx">
+      <DependentUpon>FRM_EDITPR.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PURCHASE REQUEST\FRM_PR.resx">
       <DependentUpon>FRM_PR.vb</DependentUpon>
@@ -725,6 +752,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="PRAicon.ico" />
+    <None Include="Resources\outline_settings_black_18dp.png" />
+    <None Include="Resources\baseline_settings_black_18dp.png" />
     <None Include="Resources\outline_transfer_within_a_station_black_18dp.png" />
     <None Include="Resources\outline_insert_drive_file_black_18dp.png" />
     <None Include="Resources\outline_local_shipping_black_18dp.png" />

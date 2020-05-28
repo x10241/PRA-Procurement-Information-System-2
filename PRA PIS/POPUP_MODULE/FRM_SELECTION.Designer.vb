@@ -169,7 +169,7 @@ Partial Class FRM_SELECTION
         Me.BTN_SELECTIONENDUSER.Name = "BTN_SELECTIONENDUSER"
         Me.BTN_SELECTIONENDUSER.Size = New System.Drawing.Size(140, 52)
         Me.BTN_SELECTIONENDUSER.TabIndex = 1416
-        Me.BTN_SELECTIONENDUSER.Text = "End User"
+        Me.BTN_SELECTIONENDUSER.Text = "Accountable Person"
         Me.BTN_SELECTIONENDUSER.UseVisualStyleBackColor = False
         '
         'TblM4_PURCHASEREQUESTTableAdapter1

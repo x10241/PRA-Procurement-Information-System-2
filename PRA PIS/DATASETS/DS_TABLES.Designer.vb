@@ -17597,7 +17597,8 @@ Namespace DS_TABLESTableAdapters
                 " tblV1_HRISEMPDIVISION.HRIS_EMPNO = tblV1_HRISEMPLOYEEDATA.HRIS_EMPNO INNER JOIN"& _ 
                 ""&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblV1_HRISDIVISION ON tblV1_HRISEMPDIVISION.HDIVS_COD"& _ 
                 "E = tblV1_HRISDIVISION.HDIVS_CODE INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblV1_HRI"& _ 
-                "SDEPARTMENT ON tblV1_HRISDIVISION.HDPT_CODE = tblV1_HRISDEPARTMENT.HDPT_CODE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)
+                "SDEPARTMENT ON tblV1_HRISDIVISION.HDPT_CODE = tblV1_HRISDEPARTMENT.HDPT_CODE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"OR"& _ 
+                "DER BY fullname"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection

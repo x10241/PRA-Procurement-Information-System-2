@@ -23,6 +23,8 @@ Partial Class FRM_SIGNATORYLIST
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PBICONSEARCH = New System.Windows.Forms.PictureBox()
         Me.Label39 = New System.Windows.Forms.Label()
         Me.PNL = New System.Windows.Forms.Panel()
@@ -57,7 +59,7 @@ Partial Class FRM_SIGNATORYLIST
         Me.PBICONSEARCH.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PBICONSEARCH.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PBICONSEARCH.InitialImage = Nothing
-        Me.PBICONSEARCH.Location = New System.Drawing.Point(611, 31)
+        Me.PBICONSEARCH.Location = New System.Drawing.Point(611, 26)
         Me.PBICONSEARCH.Name = "PBICONSEARCH"
         Me.PBICONSEARCH.Size = New System.Drawing.Size(32, 24)
         Me.PBICONSEARCH.TabIndex = 1408
@@ -106,7 +108,7 @@ Partial Class FRM_SIGNATORYLIST
         Me.WTXT_SEARCHSIGNATORY.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.WTXT_SEARCHSIGNATORY.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.WTXT_SEARCHSIGNATORY.ForeColor = System.Drawing.Color.Black
-        Me.WTXT_SEARCHSIGNATORY.Location = New System.Drawing.Point(16, 29)
+        Me.WTXT_SEARCHSIGNATORY.Location = New System.Drawing.Point(16, 25)
         Me.WTXT_SEARCHSIGNATORY.Name = "WTXT_SEARCHSIGNATORY"
         Me.WTXT_SEARCHSIGNATORY.Size = New System.Drawing.Size(595, 26)
         Me.WTXT_SEARCHSIGNATORY.TabIndex = 0
@@ -132,7 +134,7 @@ Partial Class FRM_SIGNATORYLIST
         Me.GB_PRLIST.Controls.Add(Me.WTXT_SEARCHSIGNATORY)
         Me.GB_PRLIST.Controls.Add(Me.ShapeContainer2)
         Me.GB_PRLIST.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.GB_PRLIST.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GB_PRLIST.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GB_PRLIST.ForeColor = System.Drawing.SystemColors.ControlDarkDark
         Me.GB_PRLIST.Location = New System.Drawing.Point(4, 36)
         Me.GB_PRLIST.Name = "GB_PRLIST"
@@ -146,9 +148,25 @@ Partial Class FRM_SIGNATORYLIST
         Me.VWG3_PRIMARY_SIGNATORYDataGridView.AllowUserToDeleteRows = False
         Me.VWG3_PRIMARY_SIGNATORYDataGridView.AutoGenerateColumns = False
         Me.VWG3_PRIMARY_SIGNATORYDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.VWG3_PRIMARY_SIGNATORYDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.VWG3_PRIMARY_SIGNATORYDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.VWG3_PRIMARY_SIGNATORYDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.FullnameDataGridViewTextBoxColumn, Me.SIGPOSITIONDataGridViewTextBoxColumn, Me.SIG_NO})
         Me.VWG3_PRIMARY_SIGNATORYDataGridView.DataSource = Me.TBLG3SIGNATORY1BindingSource
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.VWG3_PRIMARY_SIGNATORYDataGridView.DefaultCellStyle = DataGridViewCellStyle2
         Me.VWG3_PRIMARY_SIGNATORYDataGridView.Location = New System.Drawing.Point(6, 61)
         Me.VWG3_PRIMARY_SIGNATORYDataGridView.Name = "VWG3_PRIMARY_SIGNATORYDataGridView"
         Me.VWG3_PRIMARY_SIGNATORYDataGridView.ReadOnly = True
@@ -192,11 +210,11 @@ Partial Class FRM_SIGNATORYLIST
         '
         'ShapeContainer2
         '
-        Me.ShapeContainer2.Location = New System.Drawing.Point(3, 23)
+        Me.ShapeContainer2.Location = New System.Drawing.Point(3, 19)
         Me.ShapeContainer2.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer2.Name = "ShapeContainer2"
         Me.ShapeContainer2.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RECT_PRSEARCH})
-        Me.ShapeContainer2.Size = New System.Drawing.Size(656, 557)
+        Me.ShapeContainer2.Size = New System.Drawing.Size(656, 561)
         Me.ShapeContainer2.TabIndex = 5
         Me.ShapeContainer2.TabStop = False
         '
@@ -236,12 +254,19 @@ Partial Class FRM_SIGNATORYLIST
         Me.TableAdapterManager.TBLG3_SIGNATORYTableAdapter = Nothing
         Me.TableAdapterManager.TBLG3_UNITSTableAdapter = Nothing
         Me.TableAdapterManager.tblM4_CATEGORY1TableAdapter = Nothing
-        '   Me.TableAdapterManager.tblM4_CATEGORYTableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_INVENTORY_ACQUISITION_ITEM_USAGETableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_INVENTORY_ACQUISITION_VALUETableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_INVENTORY_ASSIGN_PERSONTableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_INVENTORY_CATEGORY1TableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_INVENTORY_CATEGORYTableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_INVENTORY_ITEMBRAND1TableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_INVENTORY_ITEMBRANDTableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_INVENTORY_ITEMS_DEFLOCATIONTableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_INVENTORY_ITEMS_LOCATIONTableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_INVENTORY_ITEMS_PROPERTYTableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_INVENTORY_ITEMSTableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_INVENTORY_SUB_CATEGORYTableAdapter = Nothing
         Me.TableAdapterManager.tblM4_ITEMBRAND1TableAdapter = Nothing
-        '  Me.TableAdapterManager.tblM4_ITEMBRANDTableAdapter = Nothing
-        '   Me.TableAdapterManager.tblM4_ITEMS_DEFLOCATIONTableAdapter = Nothing
-        'Me.TableAdapterManager.tblM4_ITEMS_LOCATIONTableAdapter = Nothing
-        '   Me.TableAdapterManager.tblM4_ITEMSTableAdapter = Nothing
         Me.TableAdapterManager.tblM4_PURCHASEREQUEST_ACCEPTEDTableAdapter = Nothing
         Me.TableAdapterManager.tblM4_PURCHASEREQUEST_CANCELEDTableAdapter = Nothing
         Me.TableAdapterManager.tblM4_PURCHASEREQUEST_CATEGORYTableAdapter = Nothing

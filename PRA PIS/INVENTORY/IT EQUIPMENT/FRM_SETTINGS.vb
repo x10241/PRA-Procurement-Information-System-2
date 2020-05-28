@@ -269,7 +269,7 @@ Public Class FRM_SETTINGS
                 'brand
                 If GRP_BRANDS.Visible = True Then
                     Me.SPM4_BR_CODE_GENERATORTableAdapter.Fill(Me.DS_STOREDPROC.SPM4_BR_CODE_GENERATOR)
-                    TblM4_INVENTORY_ITEMBRANDTableAdapter.IQ_INVENTORY_ITEMS_BRAND(BRCODETextBox.Text, WTXT_BRANDNAME.Text, EMP_NO, If(RGB_BRANDS_ACTIVE.Checked = True, 1, 0))
+                    TblM4_INVENTORY_ITEMBRANDTableAdapter.IQ_INVENTORY_ITEMS_BRAND(BRCODETextBox.Text, WTXT_BRANDNAME.Text, EMP_NO, If(RGB_BRANDS_ACTIVE.Checked = True, 1, 0), "")
                     Me.TblM4_INVENTORY_ITEMBRAND1TableAdapter.Fill(Me.DS_PROPERTYDB.tblM4_INVENTORY_ITEMBRAND1, WTXT_SEARCH.Text)
                     DGV_MAINTENANCE_LIST.DataSource = TblM4_INVENTORY_ITEMBRAND1BindingSource
                     LLBL_RECORDSFOUND.Text = DGV_MAINTENANCE_LIST.RowCount
@@ -278,7 +278,7 @@ Public Class FRM_SETTINGS
                     CB_MAINTENANCE_SELECTION.Enabled = True
                     'category
                 ElseIf GRP_CATEGORY.Visible = True Then
-                    TblM4_INVENTORY_CATEGORYTableAdapter.IQ_INVENTORY_CATEGORY(RandomCode, WTXT_CATEGORY_NAME.Text, If(RGB_CATEGORY_ACTIVE.Checked = True, 1, 0), EMP_NO)
+                    TblM4_INVENTORY_CATEGORYTableAdapter.IQ_INVENTORY_CATEGORY(RandomCode, WTXT_CATEGORY_NAME.Text, If(RGB_CATEGORY_ACTIVE.Checked = True, 1, 0), EMP_NO, "")
                     TblM4_INVENTORY_CATEGORY1TableAdapter.Fill(DS_PROPERTYDB.tblM4_INVENTORY_CATEGORY1, WTXT_SEARCH.Text)
                     DGV_MAINTENANCE_LIST.DataSource = TblM4_INVENTORY_CATEGORY1BindingSource
                     LLBL_RECORDSFOUND.Text = DGV_MAINTENANCE_LIST.RowCount

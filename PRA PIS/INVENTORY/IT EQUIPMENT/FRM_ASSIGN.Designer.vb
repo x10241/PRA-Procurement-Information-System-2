@@ -31,8 +31,28 @@ Partial Class FRM_ASSIGN
         Me.BTN_Minimize = New System.Windows.Forms.Button()
         Me.BTN_CLOSE = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.WTXT_ASS_PERSON_REMARKS = New PRA_PIS.WatermarkTextBox()
+        Me.ShapeContainer2 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
+        Me.RectangleShape6 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.WTXT_ASS_PERSON_DIVISION = New PRA_PIS.WatermarkTextBox()
+        Me.WTXT_ASS_PERSON_DEPARTMENT = New PRA_PIS.WatermarkTextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.WTXT_ASS_PERSON_EMP_NO = New PRA_PIS.WatermarkTextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.WTXT_ASS_PERSON_NAME = New PRA_PIS.WatermarkTextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.ShapeContainer5 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
+        Me.RectangleShape1 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.RectangleShape2 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.RectangleShape3 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.RectangleShape4 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.GB_REMARKS = New System.Windows.Forms.GroupBox()
-        Me.WTXT_ASSIGN_EMP_REMARKS = New PRA_PIS.WatermarkTextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.WTXT_ACC_REMARKS = New PRA_PIS.WatermarkTextBox()
         Me.ShapeContainer3 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
         Me.RectangleShape9 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.GB_ITEMDETAILS = New System.Windows.Forms.GroupBox()
@@ -54,7 +74,6 @@ Partial Class FRM_ASSIGN
         Me.BTN_ONE_PLUS = New System.Windows.Forms.Button()
         Me.BTN_ONE_MINUS = New System.Windows.Forms.Button()
         Me.BTN_ALL_MINUS = New System.Windows.Forms.Button()
-        Me.BTN_ASSIGN_CANCEL = New System.Windows.Forms.Button()
         Me.BTN_ASSIGN_SAVE = New System.Windows.Forms.Button()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
@@ -76,26 +95,18 @@ Partial Class FRM_ASSIGN
         Me.RECT_PRCANCELEDIT = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.GB_ITEM_DETAILS = New System.Windows.Forms.GroupBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.WTXT_ASSIGN_EMP_DIVISION = New PRA_PIS.WatermarkTextBox()
-        Me.WTXT_ASSIGN_EMP_DEPARTMENT = New PRA_PIS.WatermarkTextBox()
+        Me.WTXT_ACC_EMP_DIVISION = New PRA_PIS.WatermarkTextBox()
+        Me.WTXT_ACC_EMP_DEPARTMENT = New PRA_PIS.WatermarkTextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.WTXT_ASSIGN_EMP_NO = New PRA_PIS.WatermarkTextBox()
+        Me.WTXT_ACC_EMP_NO = New PRA_PIS.WatermarkTextBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.WTXT_ASSIGN_EMP_NAME = New PRA_PIS.WatermarkTextBox()
+        Me.WTXT_ACC_EMP_NAME = New PRA_PIS.WatermarkTextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
         Me.RECT_DIVISION = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RECT_DEPARTMENT = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RECT_POSITION = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RECT_NAME = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.BTN_REASSIGN_ITEM_TO_USER = New System.Windows.Forms.Button()
-        Me.BTN_ASSIGN_ITEM_USER = New System.Windows.Forms.Button()
-        Me.BTN_LOCATION_LIST = New System.Windows.Forms.Button()
-        Me.ShapeContainer2 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
-        Me.RectangleShape1 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
-        Me.RectangleShape6 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
-        Me.RECT_INVENTORY_CANCEL = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.DS_PROPERTYDB = New PRA_PIS.DS_PROPERTYDB()
         Me.TblM4_INVENTORY_ASSIGN_PERSONTableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.tblM4_INVENTORY_ASSIGN_PERSONTableAdapter()
         Me.TblM4_INVENTORY_ITEMSTableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.tblM4_INVENTORY_ITEMSTableAdapter()
@@ -104,6 +115,8 @@ Partial Class FRM_ASSIGN
         Me.TblM4_INVENTORY_ITEMS1TableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.tblM4_INVENTORY_ITEMS1TableAdapter()
         Me.PNL.SuspendLayout()
         Me.Panel2.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
         Me.GB_REMARKS.SuspendLayout()
         Me.GB_ITEMDETAILS.SuspendLayout()
         CType(Me.TblM4_INVENTORY_ITEMS1DataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -116,7 +129,6 @@ Partial Class FRM_ASSIGN
         CType(Me.DGV_ASSIGN_ITEMS, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AssignItemsDataGridViewBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GB_ITEM_DETAILS.SuspendLayout()
-        Me.Panel1.SuspendLayout()
         CType(Me.DS_PROPERTYDB, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TblM4_INVENTORY_ITEMS1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -198,39 +210,258 @@ Partial Class FRM_ASSIGN
         'Panel2
         '
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel2.Controls.Add(Me.GroupBox2)
+        Me.Panel2.Controls.Add(Me.GroupBox1)
         Me.Panel2.Controls.Add(Me.GB_REMARKS)
         Me.Panel2.Controls.Add(Me.GB_ITEMDETAILS)
         Me.Panel2.Controls.Add(Me.GB_ITEM_DETAILS)
-        Me.Panel2.Location = New System.Drawing.Point(4, 106)
+        Me.Panel2.Location = New System.Drawing.Point(4, 47)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1100, 556)
+        Me.Panel2.Size = New System.Drawing.Size(1100, 662)
         Me.Panel2.TabIndex = 1473
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.Label9)
+        Me.GroupBox2.Controls.Add(Me.WTXT_ASS_PERSON_REMARKS)
+        Me.GroupBox2.Controls.Add(Me.ShapeContainer2)
+        Me.GroupBox2.Font = New System.Drawing.Font("Century Gothic", 9.75!)
+        Me.GroupBox2.ForeColor = System.Drawing.Color.DimGray
+        Me.GroupBox2.Location = New System.Drawing.Point(720, 105)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(370, 103)
+        Me.GroupBox2.TabIndex = 1482
+        Me.GroupBox2.TabStop = False
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Century Gothic", 9.75!)
+        Me.Label9.Location = New System.Drawing.Point(21, 17)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(62, 17)
+        Me.Label9.TabIndex = 1482
+        Me.Label9.Text = "Remarks"
+        '
+        'WTXT_ASS_PERSON_REMARKS
+        '
+        Me.WTXT_ASS_PERSON_REMARKS.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.WTXT_ASS_PERSON_REMARKS.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.WTXT_ASS_PERSON_REMARKS.Location = New System.Drawing.Point(14, 31)
+        Me.WTXT_ASS_PERSON_REMARKS.Multiline = True
+        Me.WTXT_ASS_PERSON_REMARKS.Name = "WTXT_ASS_PERSON_REMARKS"
+        Me.WTXT_ASS_PERSON_REMARKS.Size = New System.Drawing.Size(344, 55)
+        Me.WTXT_ASS_PERSON_REMARKS.TabIndex = 0
+        Me.WTXT_ASS_PERSON_REMARKS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.WTXT_ASS_PERSON_REMARKS.Watermark = Nothing
+        '
+        'ShapeContainer2
+        '
+        Me.ShapeContainer2.Location = New System.Drawing.Point(3, 19)
+        Me.ShapeContainer2.Margin = New System.Windows.Forms.Padding(0)
+        Me.ShapeContainer2.Name = "ShapeContainer2"
+        Me.ShapeContainer2.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape6})
+        Me.ShapeContainer2.Size = New System.Drawing.Size(364, 81)
+        Me.ShapeContainer2.TabIndex = 1480
+        Me.ShapeContainer2.TabStop = False
+        '
+        'RectangleShape6
+        '
+        Me.RectangleShape6.BorderColor = System.Drawing.Color.LightSeaGreen
+        Me.RectangleShape6.BorderWidth = 2
+        Me.RectangleShape6.CornerRadius = 5
+        Me.RectangleShape6.Location = New System.Drawing.Point(6, 5)
+        Me.RectangleShape6.Name = "RECT_PRAPPCODE"
+        Me.RectangleShape6.Size = New System.Drawing.Size(353, 66)
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.Label5)
+        Me.GroupBox1.Controls.Add(Me.WTXT_ASS_PERSON_DIVISION)
+        Me.GroupBox1.Controls.Add(Me.WTXT_ASS_PERSON_DEPARTMENT)
+        Me.GroupBox1.Controls.Add(Me.Label6)
+        Me.GroupBox1.Controls.Add(Me.WTXT_ASS_PERSON_EMP_NO)
+        Me.GroupBox1.Controls.Add(Me.Label7)
+        Me.GroupBox1.Controls.Add(Me.WTXT_ASS_PERSON_NAME)
+        Me.GroupBox1.Controls.Add(Me.Label8)
+        Me.GroupBox1.Controls.Add(Me.ShapeContainer5)
+        Me.GroupBox1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox1.ForeColor = System.Drawing.Color.DimGray
+        Me.GroupBox1.Location = New System.Drawing.Point(7, 105)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(709, 103)
+        Me.GroupBox1.TabIndex = 1481
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Assign person to use"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Century Gothic", 9.75!)
+        Me.Label5.Location = New System.Drawing.Point(397, 56)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(57, 17)
+        Me.Label5.TabIndex = 1484
+        Me.Label5.Text = "Division"
+        '
+        'WTXT_ASS_PERSON_DIVISION
+        '
+        Me.WTXT_ASS_PERSON_DIVISION.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.WTXT_ASS_PERSON_DIVISION.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.WTXT_ASS_PERSON_DIVISION.Location = New System.Drawing.Point(388, 74)
+        Me.WTXT_ASS_PERSON_DIVISION.Name = "WTXT_ASS_PERSON_DIVISION"
+        Me.WTXT_ASS_PERSON_DIVISION.ReadOnly = True
+        Me.WTXT_ASS_PERSON_DIVISION.Size = New System.Drawing.Size(305, 14)
+        Me.WTXT_ASS_PERSON_DIVISION.TabIndex = 3
+        Me.WTXT_ASS_PERSON_DIVISION.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.WTXT_ASS_PERSON_DIVISION.Watermark = Nothing
+        '
+        'WTXT_ASS_PERSON_DEPARTMENT
+        '
+        Me.WTXT_ASS_PERSON_DEPARTMENT.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.WTXT_ASS_PERSON_DEPARTMENT.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.WTXT_ASS_PERSON_DEPARTMENT.Location = New System.Drawing.Point(9, 74)
+        Me.WTXT_ASS_PERSON_DEPARTMENT.Name = "WTXT_ASS_PERSON_DEPARTMENT"
+        Me.WTXT_ASS_PERSON_DEPARTMENT.ReadOnly = True
+        Me.WTXT_ASS_PERSON_DEPARTMENT.Size = New System.Drawing.Size(361, 14)
+        Me.WTXT_ASS_PERSON_DEPARTMENT.TabIndex = 1
+        Me.WTXT_ASS_PERSON_DEPARTMENT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.WTXT_ASS_PERSON_DEPARTMENT.Watermark = Nothing
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Century Gothic", 9.75!)
+        Me.Label6.Location = New System.Drawing.Point(14, 56)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(87, 17)
+        Me.Label6.TabIndex = 1482
+        Me.Label6.Text = "Department"
+        '
+        'WTXT_ASS_PERSON_EMP_NO
+        '
+        Me.WTXT_ASS_PERSON_EMP_NO.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.WTXT_ASS_PERSON_EMP_NO.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.WTXT_ASS_PERSON_EMP_NO.Location = New System.Drawing.Point(388, 34)
+        Me.WTXT_ASS_PERSON_EMP_NO.Name = "WTXT_ASS_PERSON_EMP_NO"
+        Me.WTXT_ASS_PERSON_EMP_NO.ReadOnly = True
+        Me.WTXT_ASS_PERSON_EMP_NO.Size = New System.Drawing.Size(305, 14)
+        Me.WTXT_ASS_PERSON_EMP_NO.TabIndex = 2
+        Me.WTXT_ASS_PERSON_EMP_NO.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.WTXT_ASS_PERSON_EMP_NO.Watermark = Nothing
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Century Gothic", 9.75!)
+        Me.Label7.Location = New System.Drawing.Point(397, 17)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(98, 17)
+        Me.Label7.TabIndex = 1481
+        Me.Label7.Text = "Employee No."
+        '
+        'WTXT_ASS_PERSON_NAME
+        '
+        Me.WTXT_ASS_PERSON_NAME.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.WTXT_ASS_PERSON_NAME.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.WTXT_ASS_PERSON_NAME.Location = New System.Drawing.Point(9, 34)
+        Me.WTXT_ASS_PERSON_NAME.Name = "WTXT_ASS_PERSON_NAME"
+        Me.WTXT_ASS_PERSON_NAME.ReadOnly = True
+        Me.WTXT_ASS_PERSON_NAME.Size = New System.Drawing.Size(361, 14)
+        Me.WTXT_ASS_PERSON_NAME.TabIndex = 0
+        Me.WTXT_ASS_PERSON_NAME.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.WTXT_ASS_PERSON_NAME.Watermark = Nothing
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(14, 17)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(48, 17)
+        Me.Label8.TabIndex = 1479
+        Me.Label8.Text = "Name"
+        '
+        'ShapeContainer5
+        '
+        Me.ShapeContainer5.Location = New System.Drawing.Point(3, 19)
+        Me.ShapeContainer5.Margin = New System.Windows.Forms.Padding(0)
+        Me.ShapeContainer5.Name = "ShapeContainer5"
+        Me.ShapeContainer5.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape1, Me.RectangleShape2, Me.RectangleShape3, Me.RectangleShape4})
+        Me.ShapeContainer5.Size = New System.Drawing.Size(703, 81)
+        Me.ShapeContainer5.TabIndex = 1480
+        Me.ShapeContainer5.TabStop = False
+        '
+        'RectangleShape1
+        '
+        Me.RectangleShape1.BorderColor = System.Drawing.Color.LightSeaGreen
+        Me.RectangleShape1.BorderWidth = 2
+        Me.RectangleShape1.CornerRadius = 5
+        Me.RectangleShape1.Location = New System.Drawing.Point(379, 49)
+        Me.RectangleShape1.Name = "RECT_DIVISION"
+        Me.RectangleShape1.Size = New System.Drawing.Size(315, 24)
+        '
+        'RectangleShape2
+        '
+        Me.RectangleShape2.BorderColor = System.Drawing.Color.LightSeaGreen
+        Me.RectangleShape2.BorderWidth = 2
+        Me.RectangleShape2.CornerRadius = 5
+        Me.RectangleShape2.Location = New System.Drawing.Point(1, 49)
+        Me.RectangleShape2.Name = "RECT_DEPARTMENT"
+        Me.RectangleShape2.Size = New System.Drawing.Size(373, 24)
+        '
+        'RectangleShape3
+        '
+        Me.RectangleShape3.BorderColor = System.Drawing.Color.LightSeaGreen
+        Me.RectangleShape3.BorderWidth = 2
+        Me.RectangleShape3.CornerRadius = 5
+        Me.RectangleShape3.Location = New System.Drawing.Point(379, 9)
+        Me.RectangleShape3.Name = "RECT_POSITION"
+        Me.RectangleShape3.Size = New System.Drawing.Size(315, 24)
+        '
+        'RectangleShape4
+        '
+        Me.RectangleShape4.BorderColor = System.Drawing.Color.LightSeaGreen
+        Me.RectangleShape4.BorderWidth = 2
+        Me.RectangleShape4.CornerRadius = 5
+        Me.RectangleShape4.Location = New System.Drawing.Point(1, 9)
+        Me.RectangleShape4.Name = "RECT_NAME"
+        Me.RectangleShape4.Size = New System.Drawing.Size(373, 24)
         '
         'GB_REMARKS
         '
-        Me.GB_REMARKS.Controls.Add(Me.WTXT_ASSIGN_EMP_REMARKS)
+        Me.GB_REMARKS.Controls.Add(Me.Label10)
+        Me.GB_REMARKS.Controls.Add(Me.WTXT_ACC_REMARKS)
         Me.GB_REMARKS.Controls.Add(Me.ShapeContainer3)
-        Me.GB_REMARKS.Enabled = False
         Me.GB_REMARKS.Font = New System.Drawing.Font("Century Gothic", 9.75!)
         Me.GB_REMARKS.ForeColor = System.Drawing.Color.DimGray
-        Me.GB_REMARKS.Location = New System.Drawing.Point(720, 3)
+        Me.GB_REMARKS.Location = New System.Drawing.Point(720, 0)
         Me.GB_REMARKS.Name = "GB_REMARKS"
         Me.GB_REMARKS.Size = New System.Drawing.Size(370, 103)
         Me.GB_REMARKS.TabIndex = 1479
         Me.GB_REMARKS.TabStop = False
-        Me.GB_REMARKS.Text = "Remarks"
         '
-        'WTXT_ASSIGN_EMP_REMARKS
+        'Label10
         '
-        Me.WTXT_ASSIGN_EMP_REMARKS.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.WTXT_ASSIGN_EMP_REMARKS.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.WTXT_ASSIGN_EMP_REMARKS.Location = New System.Drawing.Point(14, 31)
-        Me.WTXT_ASSIGN_EMP_REMARKS.Multiline = True
-        Me.WTXT_ASSIGN_EMP_REMARKS.Name = "WTXT_ASSIGN_EMP_REMARKS"
-        Me.WTXT_ASSIGN_EMP_REMARKS.Size = New System.Drawing.Size(344, 55)
-        Me.WTXT_ASSIGN_EMP_REMARKS.TabIndex = 0
-        Me.WTXT_ASSIGN_EMP_REMARKS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.WTXT_ASSIGN_EMP_REMARKS.Watermark = Nothing
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Century Gothic", 9.75!)
+        Me.Label10.Location = New System.Drawing.Point(21, 17)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(62, 17)
+        Me.Label10.TabIndex = 1483
+        Me.Label10.Text = "Remarks"
+        '
+        'WTXT_ACC_REMARKS
+        '
+        Me.WTXT_ACC_REMARKS.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.WTXT_ACC_REMARKS.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.WTXT_ACC_REMARKS.Location = New System.Drawing.Point(14, 31)
+        Me.WTXT_ACC_REMARKS.Multiline = True
+        Me.WTXT_ACC_REMARKS.Name = "WTXT_ACC_REMARKS"
+        Me.WTXT_ACC_REMARKS.Size = New System.Drawing.Size(344, 55)
+        Me.WTXT_ACC_REMARKS.TabIndex = 0
+        Me.WTXT_ACC_REMARKS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.WTXT_ACC_REMARKS.Watermark = Nothing
         '
         'ShapeContainer3
         '
@@ -260,7 +491,6 @@ Partial Class FRM_ASSIGN
         Me.GB_ITEMDETAILS.Controls.Add(Me.BTN_ONE_PLUS)
         Me.GB_ITEMDETAILS.Controls.Add(Me.BTN_ONE_MINUS)
         Me.GB_ITEMDETAILS.Controls.Add(Me.BTN_ALL_MINUS)
-        Me.GB_ITEMDETAILS.Controls.Add(Me.BTN_ASSIGN_CANCEL)
         Me.GB_ITEMDETAILS.Controls.Add(Me.BTN_ASSIGN_SAVE)
         Me.GB_ITEMDETAILS.Controls.Add(Me.PictureBox3)
         Me.GB_ITEMDETAILS.Controls.Add(Me.PictureBox2)
@@ -268,10 +498,9 @@ Partial Class FRM_ASSIGN
         Me.GB_ITEMDETAILS.Controls.Add(Me.PB_INVENTORY_SEARCH)
         Me.GB_ITEMDETAILS.Controls.Add(Me.DGV_ASSIGN_ITEMS)
         Me.GB_ITEMDETAILS.Controls.Add(Me.ShapeContainer4)
-        Me.GB_ITEMDETAILS.Enabled = False
         Me.GB_ITEMDETAILS.Font = New System.Drawing.Font("Century Gothic", 9.75!)
         Me.GB_ITEMDETAILS.ForeColor = System.Drawing.Color.DimGray
-        Me.GB_ITEMDETAILS.Location = New System.Drawing.Point(7, 108)
+        Me.GB_ITEMDETAILS.Location = New System.Drawing.Point(7, 210)
         Me.GB_ITEMDETAILS.Name = "GB_ITEMDETAILS"
         Me.GB_ITEMDETAILS.Size = New System.Drawing.Size(1083, 443)
         Me.GB_ITEMDETAILS.TabIndex = 1478
@@ -444,26 +673,6 @@ Partial Class FRM_ASSIGN
         Me.BTN_ALL_MINUS.Text = "<<"
         Me.BTN_ALL_MINUS.UseVisualStyleBackColor = True
         '
-        'BTN_ASSIGN_CANCEL
-        '
-        Me.BTN_ASSIGN_CANCEL.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.BTN_ASSIGN_CANCEL.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.BTN_ASSIGN_CANCEL.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BTN_ASSIGN_CANCEL.FlatAppearance.BorderColor = System.Drawing.Color.Silver
-        Me.BTN_ASSIGN_CANCEL.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
-        Me.BTN_ASSIGN_CANCEL.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen
-        Me.BTN_ASSIGN_CANCEL.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BTN_ASSIGN_CANCEL.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTN_ASSIGN_CANCEL.ForeColor = System.Drawing.Color.Black
-        Me.BTN_ASSIGN_CANCEL.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.BTN_ASSIGN_CANCEL.Location = New System.Drawing.Point(976, 408)
-        Me.BTN_ASSIGN_CANCEL.Name = "BTN_ASSIGN_CANCEL"
-        Me.BTN_ASSIGN_CANCEL.Size = New System.Drawing.Size(99, 29)
-        Me.BTN_ASSIGN_CANCEL.TabIndex = 1485
-        Me.BTN_ASSIGN_CANCEL.Text = "Cancel"
-        Me.BTN_ASSIGN_CANCEL.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.BTN_ASSIGN_CANCEL.UseVisualStyleBackColor = False
-        '
         'BTN_ASSIGN_SAVE
         '
         Me.BTN_ASSIGN_SAVE.BackColor = System.Drawing.Color.WhiteSmoke
@@ -476,7 +685,7 @@ Partial Class FRM_ASSIGN
         Me.BTN_ASSIGN_SAVE.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTN_ASSIGN_SAVE.ForeColor = System.Drawing.Color.Black
         Me.BTN_ASSIGN_SAVE.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.BTN_ASSIGN_SAVE.Location = New System.Drawing.Point(875, 408)
+        Me.BTN_ASSIGN_SAVE.Location = New System.Drawing.Point(979, 408)
         Me.BTN_ASSIGN_SAVE.Name = "BTN_ASSIGN_SAVE"
         Me.BTN_ASSIGN_SAVE.Size = New System.Drawing.Size(95, 29)
         Me.BTN_ASSIGN_SAVE.TabIndex = 1484
@@ -657,105 +866,108 @@ Partial Class FRM_ASSIGN
         'GB_ITEM_DETAILS
         '
         Me.GB_ITEM_DETAILS.Controls.Add(Me.Label4)
-        Me.GB_ITEM_DETAILS.Controls.Add(Me.WTXT_ASSIGN_EMP_DIVISION)
-        Me.GB_ITEM_DETAILS.Controls.Add(Me.WTXT_ASSIGN_EMP_DEPARTMENT)
+        Me.GB_ITEM_DETAILS.Controls.Add(Me.WTXT_ACC_EMP_DIVISION)
+        Me.GB_ITEM_DETAILS.Controls.Add(Me.WTXT_ACC_EMP_DEPARTMENT)
         Me.GB_ITEM_DETAILS.Controls.Add(Me.Label2)
-        Me.GB_ITEM_DETAILS.Controls.Add(Me.WTXT_ASSIGN_EMP_NO)
+        Me.GB_ITEM_DETAILS.Controls.Add(Me.WTXT_ACC_EMP_NO)
         Me.GB_ITEM_DETAILS.Controls.Add(Me.Label3)
-        Me.GB_ITEM_DETAILS.Controls.Add(Me.WTXT_ASSIGN_EMP_NAME)
+        Me.GB_ITEM_DETAILS.Controls.Add(Me.WTXT_ACC_EMP_NAME)
         Me.GB_ITEM_DETAILS.Controls.Add(Me.Label1)
         Me.GB_ITEM_DETAILS.Controls.Add(Me.ShapeContainer1)
-        Me.GB_ITEM_DETAILS.Enabled = False
-        Me.GB_ITEM_DETAILS.Font = New System.Drawing.Font("Century Gothic", 9.75!)
+        Me.GB_ITEM_DETAILS.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GB_ITEM_DETAILS.ForeColor = System.Drawing.Color.DimGray
-        Me.GB_ITEM_DETAILS.Location = New System.Drawing.Point(7, 3)
+        Me.GB_ITEM_DETAILS.Location = New System.Drawing.Point(7, 0)
         Me.GB_ITEM_DETAILS.Name = "GB_ITEM_DETAILS"
         Me.GB_ITEM_DETAILS.Size = New System.Drawing.Size(709, 103)
         Me.GB_ITEM_DETAILS.TabIndex = 1477
         Me.GB_ITEM_DETAILS.TabStop = False
-        Me.GB_ITEM_DETAILS.Text = "Assign Employee Info"
+        Me.GB_ITEM_DETAILS.Text = "Accountable Officer"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Font = New System.Drawing.Font("Century Gothic", 9.75!)
         Me.Label4.Location = New System.Drawing.Point(397, 56)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(58, 16)
+        Me.Label4.Size = New System.Drawing.Size(57, 17)
         Me.Label4.TabIndex = 1484
         Me.Label4.Text = "Division"
         '
-        'WTXT_ASSIGN_EMP_DIVISION
+        'WTXT_ACC_EMP_DIVISION
         '
-        Me.WTXT_ASSIGN_EMP_DIVISION.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.WTXT_ASSIGN_EMP_DIVISION.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.WTXT_ASSIGN_EMP_DIVISION.Location = New System.Drawing.Point(388, 74)
-        Me.WTXT_ASSIGN_EMP_DIVISION.Name = "WTXT_ASSIGN_EMP_DIVISION"
-        Me.WTXT_ASSIGN_EMP_DIVISION.Size = New System.Drawing.Size(305, 14)
-        Me.WTXT_ASSIGN_EMP_DIVISION.TabIndex = 3
-        Me.WTXT_ASSIGN_EMP_DIVISION.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.WTXT_ASSIGN_EMP_DIVISION.Watermark = Nothing
+        Me.WTXT_ACC_EMP_DIVISION.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.WTXT_ACC_EMP_DIVISION.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.WTXT_ACC_EMP_DIVISION.Location = New System.Drawing.Point(388, 74)
+        Me.WTXT_ACC_EMP_DIVISION.Name = "WTXT_ACC_EMP_DIVISION"
+        Me.WTXT_ACC_EMP_DIVISION.ReadOnly = True
+        Me.WTXT_ACC_EMP_DIVISION.Size = New System.Drawing.Size(305, 14)
+        Me.WTXT_ACC_EMP_DIVISION.TabIndex = 3
+        Me.WTXT_ACC_EMP_DIVISION.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.WTXT_ACC_EMP_DIVISION.Watermark = Nothing
         '
-        'WTXT_ASSIGN_EMP_DEPARTMENT
+        'WTXT_ACC_EMP_DEPARTMENT
         '
-        Me.WTXT_ASSIGN_EMP_DEPARTMENT.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.WTXT_ASSIGN_EMP_DEPARTMENT.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.WTXT_ASSIGN_EMP_DEPARTMENT.Location = New System.Drawing.Point(9, 74)
-        Me.WTXT_ASSIGN_EMP_DEPARTMENT.Name = "WTXT_ASSIGN_EMP_DEPARTMENT"
-        Me.WTXT_ASSIGN_EMP_DEPARTMENT.Size = New System.Drawing.Size(361, 14)
-        Me.WTXT_ASSIGN_EMP_DEPARTMENT.TabIndex = 1
-        Me.WTXT_ASSIGN_EMP_DEPARTMENT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.WTXT_ASSIGN_EMP_DEPARTMENT.Watermark = Nothing
+        Me.WTXT_ACC_EMP_DEPARTMENT.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.WTXT_ACC_EMP_DEPARTMENT.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.WTXT_ACC_EMP_DEPARTMENT.Location = New System.Drawing.Point(9, 74)
+        Me.WTXT_ACC_EMP_DEPARTMENT.Name = "WTXT_ACC_EMP_DEPARTMENT"
+        Me.WTXT_ACC_EMP_DEPARTMENT.ReadOnly = True
+        Me.WTXT_ACC_EMP_DEPARTMENT.Size = New System.Drawing.Size(361, 14)
+        Me.WTXT_ACC_EMP_DEPARTMENT.TabIndex = 1
+        Me.WTXT_ACC_EMP_DEPARTMENT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.WTXT_ACC_EMP_DEPARTMENT.Watermark = Nothing
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Century Gothic", 9.75!)
         Me.Label2.Location = New System.Drawing.Point(14, 56)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(84, 16)
+        Me.Label2.Size = New System.Drawing.Size(87, 17)
         Me.Label2.TabIndex = 1482
         Me.Label2.Text = "Department"
         '
-        'WTXT_ASSIGN_EMP_NO
+        'WTXT_ACC_EMP_NO
         '
-        Me.WTXT_ASSIGN_EMP_NO.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.WTXT_ASSIGN_EMP_NO.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.WTXT_ASSIGN_EMP_NO.Location = New System.Drawing.Point(388, 34)
-        Me.WTXT_ASSIGN_EMP_NO.Name = "WTXT_ASSIGN_EMP_NO"
-        Me.WTXT_ASSIGN_EMP_NO.Size = New System.Drawing.Size(305, 14)
-        Me.WTXT_ASSIGN_EMP_NO.TabIndex = 2
-        Me.WTXT_ASSIGN_EMP_NO.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.WTXT_ASSIGN_EMP_NO.Watermark = Nothing
+        Me.WTXT_ACC_EMP_NO.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.WTXT_ACC_EMP_NO.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.WTXT_ACC_EMP_NO.Location = New System.Drawing.Point(388, 34)
+        Me.WTXT_ACC_EMP_NO.Name = "WTXT_ACC_EMP_NO"
+        Me.WTXT_ACC_EMP_NO.ReadOnly = True
+        Me.WTXT_ACC_EMP_NO.Size = New System.Drawing.Size(305, 14)
+        Me.WTXT_ACC_EMP_NO.TabIndex = 2
+        Me.WTXT_ACC_EMP_NO.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.WTXT_ACC_EMP_NO.Watermark = Nothing
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Font = New System.Drawing.Font("Century Gothic", 9.75!)
         Me.Label3.Location = New System.Drawing.Point(397, 17)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(98, 16)
+        Me.Label3.Size = New System.Drawing.Size(98, 17)
         Me.Label3.TabIndex = 1481
         Me.Label3.Text = "Employee No."
         '
-        'WTXT_ASSIGN_EMP_NAME
+        'WTXT_ACC_EMP_NAME
         '
-        Me.WTXT_ASSIGN_EMP_NAME.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.WTXT_ASSIGN_EMP_NAME.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.WTXT_ASSIGN_EMP_NAME.Location = New System.Drawing.Point(9, 34)
-        Me.WTXT_ASSIGN_EMP_NAME.Name = "WTXT_ASSIGN_EMP_NAME"
-        Me.WTXT_ASSIGN_EMP_NAME.Size = New System.Drawing.Size(361, 14)
-        Me.WTXT_ASSIGN_EMP_NAME.TabIndex = 0
-        Me.WTXT_ASSIGN_EMP_NAME.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.WTXT_ASSIGN_EMP_NAME.Watermark = Nothing
+        Me.WTXT_ACC_EMP_NAME.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.WTXT_ACC_EMP_NAME.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.WTXT_ACC_EMP_NAME.Location = New System.Drawing.Point(9, 34)
+        Me.WTXT_ACC_EMP_NAME.Name = "WTXT_ACC_EMP_NAME"
+        Me.WTXT_ACC_EMP_NAME.ReadOnly = True
+        Me.WTXT_ACC_EMP_NAME.Size = New System.Drawing.Size(361, 14)
+        Me.WTXT_ACC_EMP_NAME.TabIndex = 0
+        Me.WTXT_ACC_EMP_NAME.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.WTXT_ACC_EMP_NAME.Watermark = Nothing
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Century Gothic", 9.75!)
         Me.Label1.Location = New System.Drawing.Point(14, 17)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(47, 16)
+        Me.Label1.Size = New System.Drawing.Size(48, 17)
         Me.Label1.TabIndex = 1479
         Me.Label1.Text = "Name"
         '
@@ -805,123 +1017,6 @@ Partial Class FRM_ASSIGN
         Me.RECT_NAME.Name = "RECT_NAME"
         Me.RECT_NAME.Size = New System.Drawing.Size(373, 24)
         '
-        'Panel1
-        '
-        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel1.Controls.Add(Me.BTN_REASSIGN_ITEM_TO_USER)
-        Me.Panel1.Controls.Add(Me.BTN_ASSIGN_ITEM_USER)
-        Me.Panel1.Controls.Add(Me.BTN_LOCATION_LIST)
-        Me.Panel1.Controls.Add(Me.ShapeContainer2)
-        Me.Panel1.Location = New System.Drawing.Point(4, 44)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1100, 58)
-        Me.Panel1.TabIndex = 1474
-        '
-        'BTN_REASSIGN_ITEM_TO_USER
-        '
-        Me.BTN_REASSIGN_ITEM_TO_USER.BackColor = System.Drawing.Color.White
-        Me.BTN_REASSIGN_ITEM_TO_USER.FlatAppearance.BorderColor = System.Drawing.Color.LightSeaGreen
-        Me.BTN_REASSIGN_ITEM_TO_USER.FlatAppearance.BorderSize = 0
-        Me.BTN_REASSIGN_ITEM_TO_USER.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
-        Me.BTN_REASSIGN_ITEM_TO_USER.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen
-        Me.BTN_REASSIGN_ITEM_TO_USER.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BTN_REASSIGN_ITEM_TO_USER.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.BTN_REASSIGN_ITEM_TO_USER.Image = Global.PRA_PIS.My.Resources.Resources.outline_transfer_within_a_station_black_18dp
-        Me.BTN_REASSIGN_ITEM_TO_USER.Location = New System.Drawing.Point(173, 8)
-        Me.BTN_REASSIGN_ITEM_TO_USER.Name = "BTN_REASSIGN_ITEM_TO_USER"
-        Me.BTN_REASSIGN_ITEM_TO_USER.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.BTN_REASSIGN_ITEM_TO_USER.Size = New System.Drawing.Size(139, 41)
-        Me.BTN_REASSIGN_ITEM_TO_USER.TabIndex = 1475
-        Me.BTN_REASSIGN_ITEM_TO_USER.Text = "REASSIGN ITEM TO USER"
-        Me.BTN_REASSIGN_ITEM_TO_USER.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.BTN_REASSIGN_ITEM_TO_USER.UseVisualStyleBackColor = False
-        '
-        'BTN_ASSIGN_ITEM_USER
-        '
-        Me.BTN_ASSIGN_ITEM_USER.BackColor = System.Drawing.Color.White
-        Me.BTN_ASSIGN_ITEM_USER.FlatAppearance.BorderColor = System.Drawing.Color.LightSeaGreen
-        Me.BTN_ASSIGN_ITEM_USER.FlatAppearance.BorderSize = 0
-        Me.BTN_ASSIGN_ITEM_USER.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
-        Me.BTN_ASSIGN_ITEM_USER.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen
-        Me.BTN_ASSIGN_ITEM_USER.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BTN_ASSIGN_ITEM_USER.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTN_ASSIGN_ITEM_USER.Image = Global.PRA_PIS.My.Resources.Resources.outline_person_add_black_18dp
-        Me.BTN_ASSIGN_ITEM_USER.ImageAlign = System.Drawing.ContentAlignment.TopRight
-        Me.BTN_ASSIGN_ITEM_USER.Location = New System.Drawing.Point(19, 8)
-        Me.BTN_ASSIGN_ITEM_USER.Name = "BTN_ASSIGN_ITEM_USER"
-        Me.BTN_ASSIGN_ITEM_USER.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.BTN_ASSIGN_ITEM_USER.Size = New System.Drawing.Size(146, 41)
-        Me.BTN_ASSIGN_ITEM_USER.TabIndex = 1475
-        Me.BTN_ASSIGN_ITEM_USER.Text = "ASSIGN ITEM TO USER"
-        Me.BTN_ASSIGN_ITEM_USER.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.BTN_ASSIGN_ITEM_USER.UseVisualStyleBackColor = False
-        '
-        'BTN_LOCATION_LIST
-        '
-        Me.BTN_LOCATION_LIST.BackColor = System.Drawing.Color.White
-        Me.BTN_LOCATION_LIST.FlatAppearance.BorderColor = System.Drawing.Color.LightSeaGreen
-        Me.BTN_LOCATION_LIST.FlatAppearance.BorderSize = 0
-        Me.BTN_LOCATION_LIST.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
-        Me.BTN_LOCATION_LIST.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen
-        Me.BTN_LOCATION_LIST.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BTN_LOCATION_LIST.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.BTN_LOCATION_LIST.Image = Global.PRA_PIS.My.Resources.Resources.outline_list_alt_black_18dp
-        Me.BTN_LOCATION_LIST.Location = New System.Drawing.Point(320, 8)
-        Me.BTN_LOCATION_LIST.Name = "BTN_LOCATION_LIST"
-        Me.BTN_LOCATION_LIST.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.BTN_LOCATION_LIST.Size = New System.Drawing.Size(139, 41)
-        Me.BTN_LOCATION_LIST.TabIndex = 1472
-        Me.BTN_LOCATION_LIST.Text = "LIST OF ASSIGN ITEM"
-        Me.BTN_LOCATION_LIST.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.BTN_LOCATION_LIST.UseVisualStyleBackColor = False
-        '
-        'ShapeContainer2
-        '
-        Me.ShapeContainer2.AutoScroll = True
-        Me.ShapeContainer2.Location = New System.Drawing.Point(0, 0)
-        Me.ShapeContainer2.Margin = New System.Windows.Forms.Padding(0)
-        Me.ShapeContainer2.Name = "ShapeContainer2"
-        Me.ShapeContainer2.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape1, Me.RectangleShape6, Me.RECT_INVENTORY_CANCEL})
-        Me.ShapeContainer2.Size = New System.Drawing.Size(1098, 56)
-        Me.ShapeContainer2.TabIndex = 1470
-        Me.ShapeContainer2.TabStop = False
-        '
-        'RectangleShape1
-        '
-        Me.RectangleShape1.BorderColor = System.Drawing.Color.LightSeaGreen
-        Me.RectangleShape1.BorderWidth = 2
-        Me.RectangleShape1.CornerRadius = 5
-        Me.RectangleShape1.Cursor = System.Windows.Forms.Cursors.Arrow
-        Me.RectangleShape1.FillColor = System.Drawing.SystemColors.HighlightText
-        Me.RectangleShape1.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
-        Me.RectangleShape1.Location = New System.Drawing.Point(170, 6)
-        Me.RectangleShape1.Name = "RectangleShape1"
-        Me.RectangleShape1.Size = New System.Drawing.Size(143, 44)
-        '
-        'RectangleShape6
-        '
-        Me.RectangleShape6.BorderColor = System.Drawing.Color.LightSeaGreen
-        Me.RectangleShape6.BorderWidth = 2
-        Me.RectangleShape6.CornerRadius = 5
-        Me.RectangleShape6.Cursor = System.Windows.Forms.Cursors.Arrow
-        Me.RectangleShape6.FillColor = System.Drawing.SystemColors.HighlightText
-        Me.RectangleShape6.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
-        Me.RectangleShape6.Location = New System.Drawing.Point(17, 6)
-        Me.RectangleShape6.Name = "RectangleShape6"
-        Me.RectangleShape6.Size = New System.Drawing.Size(149, 44)
-        '
-        'RECT_INVENTORY_CANCEL
-        '
-        Me.RECT_INVENTORY_CANCEL.BorderColor = System.Drawing.Color.LightSeaGreen
-        Me.RECT_INVENTORY_CANCEL.BorderWidth = 2
-        Me.RECT_INVENTORY_CANCEL.CornerRadius = 5
-        Me.RECT_INVENTORY_CANCEL.Cursor = System.Windows.Forms.Cursors.Arrow
-        Me.RECT_INVENTORY_CANCEL.FillColor = System.Drawing.SystemColors.HighlightText
-        Me.RECT_INVENTORY_CANCEL.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
-        Me.RECT_INVENTORY_CANCEL.Location = New System.Drawing.Point(317, 6)
-        Me.RECT_INVENTORY_CANCEL.Name = "RECT_INVENTORY_CANCEL"
-        Me.RECT_INVENTORY_CANCEL.Size = New System.Drawing.Size(143, 44)
-        '
         'DS_PROPERTYDB
         '
         Me.DS_PROPERTYDB.DataSetName = "DS_PROPERTYDB"
@@ -953,6 +1048,8 @@ Partial Class FRM_ASSIGN
         Me.TableAdapterManager.TBLG3_SIGNATORYTableAdapter = Nothing
         Me.TableAdapterManager.TBLG3_UNITSTableAdapter = Nothing
         Me.TableAdapterManager.tblM4_CATEGORY1TableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_INVENTORY_ACQUISITION_ITEM_USAGETableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_INVENTORY_ACQUISITION_VALUETableAdapter = Nothing
         Me.TableAdapterManager.tblM4_INVENTORY_ASSIGN_PERSONTableAdapter = Me.TblM4_INVENTORY_ASSIGN_PERSONTableAdapter
         Me.TableAdapterManager.tblM4_INVENTORY_CATEGORY1TableAdapter = Nothing
         Me.TableAdapterManager.tblM4_INVENTORY_CATEGORYTableAdapter = Nothing
@@ -960,6 +1057,7 @@ Partial Class FRM_ASSIGN
         Me.TableAdapterManager.tblM4_INVENTORY_ITEMBRANDTableAdapter = Nothing
         Me.TableAdapterManager.tblM4_INVENTORY_ITEMS_DEFLOCATIONTableAdapter = Nothing
         Me.TableAdapterManager.tblM4_INVENTORY_ITEMS_LOCATIONTableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_INVENTORY_ITEMS_PROPERTYTableAdapter = Nothing
         Me.TableAdapterManager.tblM4_INVENTORY_ITEMSTableAdapter = Me.TblM4_INVENTORY_ITEMSTableAdapter
         Me.TableAdapterManager.tblM4_INVENTORY_SUB_CATEGORYTableAdapter = Nothing
         Me.TableAdapterManager.tblM4_ITEMBRAND1TableAdapter = Nothing
@@ -988,8 +1086,7 @@ Partial Class FRM_ASSIGN
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1107, 666)
-        Me.Controls.Add(Me.Panel1)
+        Me.ClientSize = New System.Drawing.Size(1107, 708)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.PNL)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -999,6 +1096,10 @@ Partial Class FRM_ASSIGN
         Me.PNL.ResumeLayout(False)
         Me.PNL.PerformLayout()
         Me.Panel2.ResumeLayout(False)
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.GB_REMARKS.ResumeLayout(False)
         Me.GB_REMARKS.PerformLayout()
         Me.GB_ITEMDETAILS.ResumeLayout(False)
@@ -1014,7 +1115,6 @@ Partial Class FRM_ASSIGN
         CType(Me.AssignItemsDataGridViewBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GB_ITEM_DETAILS.ResumeLayout(False)
         Me.GB_ITEM_DETAILS.PerformLayout()
-        Me.Panel1.ResumeLayout(False)
         CType(Me.DS_PROPERTYDB, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TblM4_INVENTORY_ITEMS1BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -1027,28 +1127,20 @@ Partial Class FRM_ASSIGN
     Friend WithEvents BTN_Minimize As Button
     Friend WithEvents BTN_CLOSE As Button
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents BTN_ASSIGN_ITEM_USER As Button
-    Friend WithEvents BTN_LOCATION_LIST As Button
-    Friend WithEvents ShapeContainer2 As PowerPacks.ShapeContainer
-    Friend WithEvents RectangleShape6 As PowerPacks.RectangleShape
-    Friend WithEvents RECT_INVENTORY_CANCEL As PowerPacks.RectangleShape
-    Friend WithEvents RectangleShape1 As PowerPacks.RectangleShape
-    Friend WithEvents BTN_REASSIGN_ITEM_TO_USER As Button
     Friend WithEvents GB_ITEM_DETAILS As GroupBox
     Friend WithEvents RECT_NAME As PowerPacks.RectangleShape
-    Friend WithEvents WTXT_ASSIGN_EMP_NAME As WatermarkTextBox
+    Friend WithEvents WTXT_ACC_EMP_NAME As WatermarkTextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents ShapeContainer1 As PowerPacks.ShapeContainer
     Friend WithEvents Label2 As Label
     Friend WithEvents Label4 As Label
-    Friend WithEvents WTXT_ASSIGN_EMP_DIVISION As WatermarkTextBox
-    Friend WithEvents WTXT_ASSIGN_EMP_DEPARTMENT As WatermarkTextBox
+    Friend WithEvents WTXT_ACC_EMP_DIVISION As WatermarkTextBox
+    Friend WithEvents WTXT_ACC_EMP_DEPARTMENT As WatermarkTextBox
     Friend WithEvents RECT_DIVISION As PowerPacks.RectangleShape
     Friend WithEvents RECT_DEPARTMENT As PowerPacks.RectangleShape
     Friend WithEvents GB_ITEMDETAILS As GroupBox
     Friend WithEvents GB_REMARKS As GroupBox
-    Friend WithEvents WTXT_ASSIGN_EMP_REMARKS As WatermarkTextBox
+    Friend WithEvents WTXT_ACC_REMARKS As WatermarkTextBox
     Friend WithEvents ShapeContainer3 As PowerPacks.ShapeContainer
     Friend WithEvents RectangleShape9 As PowerPacks.RectangleShape
     Friend WithEvents DGV_ASSIGN_ITEMS As DataGridView
@@ -1059,7 +1151,6 @@ Partial Class FRM_ASSIGN
     Friend WithEvents PB_INVENTORY_SEARCH As PictureBox
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents BTN_ASSIGN_CANCEL As Button
     Friend WithEvents BTN_ASSIGN_SAVE As Button
     Friend WithEvents BTN_ALL_PLUS As Button
     Friend WithEvents BTN_ONE_PLUS As Button
@@ -1071,7 +1162,7 @@ Partial Class FRM_ASSIGN
     Friend WithEvents TblM4_INVENTORY_ASSIGN_PERSONTableAdapter As DS_PROPERTYDBTableAdapters.tblM4_INVENTORY_ASSIGN_PERSONTableAdapter
     Friend WithEvents DS_CUSTOM As DS_CUSTOM
     Friend WithEvents ItemsDataGridViewBindingSource As BindingSource
-    Friend WithEvents WTXT_ASSIGN_EMP_NO As WatermarkTextBox
+    Friend WithEvents WTXT_ACC_EMP_NO As WatermarkTextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents RECT_POSITION As PowerPacks.RectangleShape
     Friend WithEvents AssignItemsDataGridViewBindingSource As BindingSource
@@ -1098,4 +1189,24 @@ Partial Class FRM_ASSIGN
     Friend WithEvents QuantityDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents DateAcquisitionDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents WTXT_ASS_PERSON_DIVISION As WatermarkTextBox
+    Friend WithEvents WTXT_ASS_PERSON_DEPARTMENT As WatermarkTextBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents WTXT_ASS_PERSON_EMP_NO As WatermarkTextBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents WTXT_ASS_PERSON_NAME As WatermarkTextBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents ShapeContainer5 As PowerPacks.ShapeContainer
+    Friend WithEvents RectangleShape1 As PowerPacks.RectangleShape
+    Friend WithEvents RectangleShape2 As PowerPacks.RectangleShape
+    Friend WithEvents RectangleShape3 As PowerPacks.RectangleShape
+    Friend WithEvents RectangleShape4 As PowerPacks.RectangleShape
+    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents Label9 As Label
+    Friend WithEvents WTXT_ASS_PERSON_REMARKS As WatermarkTextBox
+    Friend WithEvents ShapeContainer2 As PowerPacks.ShapeContainer
+    Friend WithEvents RectangleShape6 As PowerPacks.RectangleShape
+    Friend WithEvents Label10 As Label
 End Class

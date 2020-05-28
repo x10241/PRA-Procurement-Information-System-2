@@ -141,18 +141,28 @@ Public Class MDI_Mainform
                 newApp.Show()
 #End Region
 
-#Region "INVENTORY ENCODING"
+#Region "INVENTORY ENCODING(IT EQUIPMENT)"
             ElseIf btnSlidePanel Is ABTNSEL1 And V1VW_USERACCESSSUBTableAdapter.SQ_USERHASACCESSSUB(FRM_LOGIN.TXT_USERNAME.Text, 33, 47) > 0 And ABTNMAINCTR = 33 Then
                 Dim newApp As Form = FRM_INVENTORY_ENCODING.OpenProgram(FRM_INVENTORY_ENCODING)
                 APNLSHOWSEL.Visible = False
                 newApp.Location = New Point(0, 0)
                 newApp.MdiParent = Me
-                newApp.Text = "Inventory Encoding"
+                newApp.Text = "Inventory Encoding(IT Equipment)"
+                newApp.Show()
+#End Region
+
+#Region "INVENTORY ENCODING(ADMIN)"
+            ElseIf btnSlidePanel Is ABTNSEL2 And V1VW_USERACCESSSUBTableAdapter.SQ_USERHASACCESSSUB(FRM_LOGIN.TXT_USERNAME.Text, 33, 53) > 0 And ABTNMAINCTR = 33 Then
+                Dim newApp As Form = FRM_INVENTORY_ENCODING_ADMIN.OpenProgram(FRM_INVENTORY_ENCODING_ADMIN)
+                APNLSHOWSEL.Visible = False
+                newApp.Location = New Point(0, 0)
+                newApp.MdiParent = Me
+                newApp.Text = "Inventory Encoding(Admin)"
                 newApp.Show()
 #End Region
 
 #Region "Print Sticker"
-            ElseIf btnSlidePanel Is ABTNSEL2 And V1VW_USERACCESSSUBTableAdapter.SQ_USERHASACCESSSUB(FRM_LOGIN.TXT_USERNAME.Text, 33, 48) > 0 And ABTNMAINCTR = 33 Then
+            ElseIf btnSlidePanel Is ABTNSEL3 And V1VW_USERACCESSSUBTableAdapter.SQ_USERHASACCESSSUB(FRM_LOGIN.TXT_USERNAME.Text, 33, 48) > 0 And ABTNMAINCTR = 33 Then
                 Dim newApp As Form = FRM_STICKER_TAG.OpenProgram(FRM_STICKER_TAG)
                 APNLSHOWSEL.Visible = False
                 newApp.Location = New Point(0, 0)
@@ -162,7 +172,7 @@ Public Class MDI_Mainform
 #End Region
 
 #Region "MAINTENANCE"
-            ElseIf btnSlidePanel Is ABTNSEL3 And V1VW_USERACCESSSUBTableAdapter.SQ_USERHASACCESSSUB(FRM_LOGIN.TXT_USERNAME.Text, 33, 49) > 0 And ABTNMAINCTR = 33 Then
+            ElseIf btnSlidePanel Is ABTNSEL4 And V1VW_USERACCESSSUBTableAdapter.SQ_USERHASACCESSSUB(FRM_LOGIN.TXT_USERNAME.Text, 33, 49) > 0 And ABTNMAINCTR = 33 Then
                 Dim newApp As Form = FRM_SETTINGS.OpenProgram(FRM_SETTINGS)
                 APNLSHOWSEL.Visible = False
                 newApp.Location = New Point(0, 0)
@@ -186,8 +196,6 @@ Public Class MDI_Mainform
                 MsgBox("YOU DO NOT HAVE PERMISSION TO ACCESS THIS MODULE", vbInformation, "USER ACCESS")
                 btnSlidePanelflag = False
             End If
-
-
         End If
     End Sub
 
@@ -218,7 +226,7 @@ Public Class MDI_Mainform
         ElseIf btnSlidePanel Is ABTNMAINREQUEST Then
             ABTNMAINCTR = 31
             If V1VW_USERACCESSMAINTableAdapter.SQ_IFUSERHASACCESSMAIN(FRM_LOGIN.TXT_USERNAME.Text, ABTNMAINCTR) > 0 Then
-                ABTNSEL1.Text = "Purchase Request Encoding"
+                ABTNSEL1.Text = "Purchase Request"
                 ABTNSEL2.Text = "Check PR"
                 '  ABTNSEL3.Text = "Purchase Order"
                 APNLSHOWSEL.Height = 57
@@ -240,13 +248,16 @@ Public Class MDI_Mainform
         ElseIf btnSlidePanel Is ABTNMAININVENTORY Then
             ABTNMAINCTR = 33
             If V1VW_USERACCESSMAINTableAdapter.SQ_IFUSERHASACCESSMAIN(FRM_LOGIN.TXT_USERNAME.Text, ABTNMAINCTR) > 0 Then
-                ABTNSEL1.Text = "Inventory Encoding"
-                ABTNSEL2.Text = "Print Sticker"
-                ABTNSEL3.Text = "Categorization"
+                ABTNSEL1.Text = "Inventory(IT Equipment)"
+                ABTNSEL2.Text = "Inventory(Admin)"
+                ABTNSEL3.Text = "Print Sticker"
+                ABTNSEL4.Text = "Categorization"
+
                 APNLSHOWSEL.BringToFront()
-                APNLSHOWSEL.Height = 85
+                APNLSHOWSEL.Height = 113
+                APNLSHOWSEL.Width = 190
                 APNLSHOWSEL.Visible = True
-                APNLSHOWSEL.Location = New Point(39, 350)
+                APNLSHOWSEL.Location = New Point(6, 350)
             End If
         Else
             APNLSHOWSEL.Visible = False

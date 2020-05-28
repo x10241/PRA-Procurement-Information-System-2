@@ -32,7 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.PRA_PIS.FRM_LOGIN
+            Me.MainForm = Global.PRA_PIS.FRM_INVENTORY_ENCODING_ADMIN
         End Sub
     End Class
 End Namespace
