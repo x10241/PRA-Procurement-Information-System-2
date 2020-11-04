@@ -141,8 +141,18 @@ Public Class MDI_Mainform
                 newApp.Show()
 #End Region
 
+#Region "ITEM REQUISITION"
+            ElseIf btnSlidePanel Is ABTNSEL1 And V1VW_USERACCESSSUBTableAdapter.SQ_USERHASACCESSSUB(FRM_LOGIN.TXT_USERNAME.Text, 33, 54) > 0 And ABTNMAINCTR = 33 Then
+                Dim newApp As Form = FRM_ITEM_REQ.OpenProgram(FRM_ITEM_REQ)
+                APNLSHOWSEL.Visible = False
+                newApp.Location = New Point(0, 0)
+                newApp.MdiParent = Me
+                newApp.Text = "Item Requisition"
+                newApp.Show()
+#End Region
+
 #Region "INVENTORY ENCODING(IT EQUIPMENT)"
-            ElseIf btnSlidePanel Is ABTNSEL1 And V1VW_USERACCESSSUBTableAdapter.SQ_USERHASACCESSSUB(FRM_LOGIN.TXT_USERNAME.Text, 33, 47) > 0 And ABTNMAINCTR = 33 Then
+            ElseIf btnSlidePanel Is ABTNSEL2 And V1VW_USERACCESSSUBTableAdapter.SQ_USERHASACCESSSUB(FRM_LOGIN.TXT_USERNAME.Text, 33, 47) > 0 And ABTNMAINCTR = 33 Then
                 Dim newApp As Form = FRM_INVENTORY_ENCODING.OpenProgram(FRM_INVENTORY_ENCODING)
                 APNLSHOWSEL.Visible = False
                 newApp.Location = New Point(0, 0)
@@ -152,7 +162,7 @@ Public Class MDI_Mainform
 #End Region
 
 #Region "INVENTORY ENCODING(ADMIN)"
-            ElseIf btnSlidePanel Is ABTNSEL2 And V1VW_USERACCESSSUBTableAdapter.SQ_USERHASACCESSSUB(FRM_LOGIN.TXT_USERNAME.Text, 33, 53) > 0 And ABTNMAINCTR = 33 Then
+            ElseIf btnSlidePanel Is ABTNSEL3 And V1VW_USERACCESSSUBTableAdapter.SQ_USERHASACCESSSUB(FRM_LOGIN.TXT_USERNAME.Text, 33, 53) > 0 And ABTNMAINCTR = 33 Then
                 Dim newApp As Form = FRM_INVENTORY_ENCODING_ADMIN.OpenProgram(FRM_INVENTORY_ENCODING_ADMIN)
                 APNLSHOWSEL.Visible = False
                 newApp.Location = New Point(0, 0)
@@ -162,7 +172,7 @@ Public Class MDI_Mainform
 #End Region
 
 #Region "Print Sticker"
-            ElseIf btnSlidePanel Is ABTNSEL3 And V1VW_USERACCESSSUBTableAdapter.SQ_USERHASACCESSSUB(FRM_LOGIN.TXT_USERNAME.Text, 33, 48) > 0 And ABTNMAINCTR = 33 Then
+            ElseIf btnSlidePanel Is ABTNSEL4 And V1VW_USERACCESSSUBTableAdapter.SQ_USERHASACCESSSUB(FRM_LOGIN.TXT_USERNAME.Text, 33, 48) > 0 And ABTNMAINCTR = 33 Then
                 Dim newApp As Form = FRM_STICKER_TAG.OpenProgram(FRM_STICKER_TAG)
                 APNLSHOWSEL.Visible = False
                 newApp.Location = New Point(0, 0)
@@ -172,7 +182,7 @@ Public Class MDI_Mainform
 #End Region
 
 #Region "MAINTENANCE"
-            ElseIf btnSlidePanel Is ABTNSEL4 And V1VW_USERACCESSSUBTableAdapter.SQ_USERHASACCESSSUB(FRM_LOGIN.TXT_USERNAME.Text, 33, 49) > 0 And ABTNMAINCTR = 33 Then
+            ElseIf btnSlidePanel Is ABTNSEL5 And V1VW_USERACCESSSUBTableAdapter.SQ_USERHASACCESSSUB(FRM_LOGIN.TXT_USERNAME.Text, 33, 49) > 0 And ABTNMAINCTR = 33 Then
                 Dim newApp As Form = FRM_SETTINGS.OpenProgram(FRM_SETTINGS)
                 APNLSHOWSEL.Visible = False
                 newApp.Location = New Point(0, 0)
@@ -184,6 +194,7 @@ Public Class MDI_Mainform
             ElseIf btnSlidePanel Is ABTNLOGOUT Then
                 If MsgBox("LOGGING OUT?" & vbNewLine & vbNewLine & "Do you want to close the program?", vbYesNo, "CONFIRM") = vbYes Then
                     Try
+
                         Me.Close()
                     Catch ex As Exception
                         MsgBox(ex.Message)
@@ -248,13 +259,13 @@ Public Class MDI_Mainform
         ElseIf btnSlidePanel Is ABTNMAININVENTORY Then
             ABTNMAINCTR = 33
             If V1VW_USERACCESSMAINTableAdapter.SQ_IFUSERHASACCESSMAIN(FRM_LOGIN.TXT_USERNAME.Text, ABTNMAINCTR) > 0 Then
-                ABTNSEL1.Text = "Inventory(IT Equipment)"
-                ABTNSEL2.Text = "Inventory(Admin)"
-                ABTNSEL3.Text = "Print Sticker"
-                ABTNSEL4.Text = "Categorization"
-
+                ABTNSEL1.Text = "Requisition"
+                ABTNSEL2.Text = "Inventory(IT Equipment)"
+                ABTNSEL3.Text = "Inventory"
+                ABTNSEL4.Text = "Print Sticker"
+                ABTNSEL5.Text = "Categorization"
                 APNLSHOWSEL.BringToFront()
-                APNLSHOWSEL.Height = 113
+                APNLSHOWSEL.Height = 144
                 APNLSHOWSEL.Width = 190
                 APNLSHOWSEL.Visible = True
                 APNLSHOWSEL.Location = New Point(6, 350)
@@ -270,6 +281,7 @@ Public Class MDI_Mainform
 #End Region
 
     Private Sub MDI_Mainform_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        LBL_RIMSHEADER.Text = My.Settings.APPVER
         TMR_MDIMAIN.Start()
     End Sub
 

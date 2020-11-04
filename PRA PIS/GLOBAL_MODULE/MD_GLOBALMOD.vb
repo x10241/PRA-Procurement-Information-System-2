@@ -36,7 +36,10 @@ Module MD_GLOBALMOD
 #End Region
 
     Public Function BS_SINGLEROW(ByVal BD As BindingSource, COL As Integer) As String
-        Dim STR As String = CType(BD.List(0), DataRowView).Item(COL)
+        Dim STR As String = ""
+        If BD.Count > 0 Then
+            STR = CStr(If(IsDBNull(CType(BD.List(0), DataRowView).Item(COL)), "", CType(BD.List(0), DataRowView).Item(COL)))
+        End If
         Return STR
     End Function
 
@@ -60,6 +63,15 @@ Module MD_GLOBALMOD
         Dim ms As New IO.MemoryStream(CType(byt, Byte()))
         Dim returnImage As Image = Image.FromStream(ms)
         Return returnImage
+    End Function
+
+    Public Function SAVEIMAGE_TOFOLDER(ByVal FOLDERNAME As String, FILNAME As String, IMG_PBX As Image) As String
+        If Not Directory.Exists(My.Settings.PIS_ITEM_DIR & FOLDERNAME) Then
+            'My.Computer.FileSystem.DeleteDirectory(My.Settings.PIS_ITEM_DIR & FOLDERNAME, FileIO.DeleteDirectoryOption.DeleteAllContents)
+            Directory.CreateDirectory(My.Settings.PIS_ITEM_DIR & FOLDERNAME)
+        End If
+        IMG_PBX.Save(My.Settings.PIS_ITEM_DIR & FOLDERNAME & "\" & FILNAME & ".jpg", ImageFormat.Jpeg)
+        Return My.Settings.PIS_ITEM_DIR & FOLDERNAME & "\" & FILNAME & ".jpg"
     End Function
 #End Region
 
@@ -218,5 +230,25 @@ Module MD_GLOBALMOD
     End Function
 #End Region
 
+#Region "BS_TRANSFER"
+    Public Sub BS_DGV_TRANSFER(ByVal BSMAIN As BindingSource, BSTRANSFER As DataTable)
+        For i = 0 To BSMAIN.Count - 1
+            BSTRANSFER.Rows.Add(CStr(If(IsDBNull(CType(BSMAIN.List(i), DataRowView).Item(0)), "", CType(BSMAIN.List(i), DataRowView).Item(0))),
+                                                 CStr(If(IsDBNull(CType(BSMAIN.List(i), DataRowView).Item(1)), "", CType(BSMAIN.List(i), DataRowView).Item(1))),
+                                                 CStr(If(IsDBNull(CType(BSMAIN.List(i), DataRowView).Item(2)), "", CType(BSMAIN.List(i), DataRowView).Item(2))))
+        Next
+    End Sub
+
+    Public Sub BS_DGV_ITEM_LIST_DGV(ByVal BD As BindingSource, DAGV As DataGridView, COL_COUNT As Integer)
+        For i = 0 To BD.Count
+            DAGV.Rows.Add(CStr(If(IsDBNull(CType(BD.List(i), DataRowView).Item(2)), "", CType(BD.List(i), DataRowView).Item(2))),
+                          CStr(If(IsDBNull(CType(BD.List(i), DataRowView).Item(1)), "", CType(BD.List(i), DataRowView).Item(1))),
+                            CStr(If(IsDBNull(CType(BD.List(i), DataRowView).Item(3)), "", CType(BD.List(i), DataRowView).Item(3))))
+            'For x = 1 To COL_COUNT
+            '    DAGV(x, i).Value = If(x = 13, CStr(If(IsDBNull(CType(BD.List(i), DataRowView).Item(0)), "", CType(BD.List(i), DataRowView).Item(0))), CStr(If(IsDBNull(CType(BD.List(i), DataRowView).Item(x)), "", CType(BD.List(i), DataRowView).Item(x))))
+            'Next
+        Next
+    End Sub
+#End Region
 
 End Module

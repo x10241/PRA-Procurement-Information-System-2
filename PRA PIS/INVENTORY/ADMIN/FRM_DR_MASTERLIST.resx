@@ -117,55 +117,61 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="btnView.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="btnPrint.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="SPM4_PURCHASELISTBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>656, 56</value>
-  </metadata>
-  <metadata name="DS_PROPERTYDB.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="SPM4_ITEM_DR_LISTTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <metadata name="SPM4PURCHASELISTBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>169, 56</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="PB_STOCK_VIEW_REPORT.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAABGdBTUEAALGPC/xhBQAAASVJREFUWEft
+        lcttw0AMRHXwwceUkFJcikvINZ+DSzDgBtxQ0kA6SQzYwxgLjASOsrukfNIDHiAR5FDYPWhYWXkQhyTT
+        uCaZhhfeYxoc6l3FnDybRiQ0MiuJhEZmJZHQyKwkEhqZ/WMLT/AbXiAHZvgLLdt22K5ZNvALekFL+Alt
+        p+QVeoNL+gYl9sWl8cMKiTzB5/vj8A7LHtsp+YGl8d/7bWAHS649W3Z5t52S0mRm8gJL7t4KoGpXVVMH
+        dlVHeIZ2dUbVLtU0/T/1yqhdI1QT1yMyqj5CNXE9IqPqI7iJj1rVa1SzXJdwk7IVL2OqxGue2oqXMVXC
+        R8pWDQt41ss2m+HQViKzkkhoZFbCod6Rz8mzaXBoxDS88B7T8K6ix5WVhRmGGz48ibjjHpY+AAAAAElF
+        TkSuQmCC
+</value>
+  </data>
+  <metadata name="DS_STOREDPROC.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>254, 17</value>
   </metadata>
-  <metadata name="TblV1_HRISDIVISIONTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>891, 17</value>
+  <metadata name="SPM4_ITEM_DR_LISTBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>402, 17</value>
   </metadata>
-  <metadata name="TblV1_HRISDEPARTMENTTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1129, 17</value>
-  </metadata>
-  <metadata name="DS_TABLES.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1393, 17</value>
-  </metadata>
-  <metadata name="TblV1_HRISEMPLOYEEDATATableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1505, 17</value>
-  </metadata>
-  <metadata name="btnViewDetails.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="SPM4PURCHASEREQUESTSTATUSBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>905, 56</value>
-  </metadata>
-  <metadata name="TblM4_PURCHASEREQUESTBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>162, 17</value>
-  </metadata>
-  <metadata name="TblM4_PURCHASEREQUESTTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>443, 17</value>
+  <data name="PB_ITEM_STOCK_SEARCH.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAeBJREFUaEPtmM0rBVEYh++CpZAi2bCSr6zIDhvlP2FFsRCFreyw9G9IyldRyhIl
+        bCzYK6wUnl+59Xaam3vv3HPmzu089SzudOb9vdPM3HPOFCKRSKTh6cMFPMQHfMdPvP87toi9WHeMohr8
+        KVONHcbMacZdTGqyHPdQNTKhE68wqbFKVA3VCkoTXmNSQ6c4h4PYgq04hPN4gknnqJZqBmMH3SZecBL/
+        Q2M01j1fNYOgF/YbbfgddmG5aOwt2hqqGeTFvkQb/IjVPMMdqL9aW0u1vaJn2QbKCawWnevW83oXVtGG
+        XWBaVMPWVIY3ztCGLWNaVMPWVIY3ntCGjWFaxtHWVIY3PtCGtWNa2tDWVIY3tDizYbm7AK0qbZhuf1qC
+        PkIHaMNq8RIvoa3p9SVeRxtWi4nHnRjX0BtTaMNkriYycYM2sJZLiXP0zizaUFmrxZwWikHYQhsuX7Gc
+        5fQ0ZrqcFt34hm4TUpsWbV4GsLih0eZGx44x6ZxgG5pNtMFfzu9qDLal3EY3vAf3nWOVGGxTn9S8LDKD
+        R5g0Jkl9VhnBIJRqfgNd+lHreU1Oz6iPWlrb2A9b+vgVjFLNr2DdE5vPith8VuS6eaFGc9t8EXsRuWu+
+        iBrXhBOJRCKRRqJQ+AXIdlRqap7t4wAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="PB_DR_CLEAR_SEARCH.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAABGdBTUEAALGPC/xhBQAAAoNJREFUWEft
+        mMlqFFEUhlvBIU6PoT5CUFAUVJA8ggPoJi4E0QdQXDgtnMAhoK7cCpE8QNz7Bi6SiJqI08YBV+r/xf7h
+        cKl763Z3RUTzwQddt849p7q66g7dW+V/YZe8K5/LBfldfu1/pu2O3C1XlI3ytJyXPyudk/Shb6ccl+9k
+        U9Ea6XtMdsIFmRb4KB/Iw3Kn3CK3yh1yQnLuk0z7kWsk7suY8KU8JdfJNtbLSflKxhxTciiuyJhoWg7z
+        LNDniYy5yD0QJ2RMcEuOym0Zc56UVfCNPkh3nJFrpNkn43EOYog1HD+VzvtejslWzkl3ei03S3NG0v5o
+        +agMMcTyzJlNkpzOT61WlqQ7xFd1j3Q7MjDm4FyMjYMkOd1OrSLj0sEMgGtl5Ib0eeQ4Jb2YyzJCTgZM
+        n6dmlqvSgTdpaKB0UTUXDOR2DDWzzEoHHqIhQ3oXzkvuRGwr/aQHpeOomeWFdOB2Ggr4oW2ydDFAbsdS
+        MwsztgO30VCA1/ixdLyteQPJ7fgvNOT4LB3I/FSCC2q6SzUXRG7HUzPLX/eTPZMO5MHLkT7UF/vGttJF
+        HZCOo2aWa9KB12looIvXntyOoWYWlqYOZGBMqSnYdPdS4sBIzSw8qIvSwUek2SvdjqWfJL2oWJScbqcW
+        NYucle7ARMiEaAadXH9I+hhyvZHOT61WWBKwNHAnlgzxWwyy/Nj/++MyHLOUcd7q5QeweHJH7GKBFucv
+        rF6gmXRuGmUJS9+Y65IcivThHGSRv0ESmy7y78mRYCaPCZFt0EPJlodtEFugP7INMkflW5kWqJW+nW0U
+        Dc8C2+I4qLXprTQ/34rCQMeGL/7Z8K3/2X82FEfgVf4Rer1fYSFepma1DdgAAAAASUVORK5CYII=
+</value>
+  </data>
+  <metadata name="DS_VIEWS.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>644, 17</value>
   </metadata>
   <metadata name="TableAdapterManager.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>718, 17</value>
-  </metadata>
-  <metadata name="SPM4_PURCHASELISTTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>413, 56</value>
-  </metadata>
-  <metadata name="SPM4_PURCHASEREQUEST_STATUSTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1220, 56</value>
-  </metadata>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>99</value>
+    <value>751, 17</value>
   </metadata>
 </root>

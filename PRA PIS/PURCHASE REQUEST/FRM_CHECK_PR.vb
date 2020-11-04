@@ -42,28 +42,24 @@ Public Class FRM_CHECK_PR
             Try
                 If slideFlaG = True Then
                     X_LOC -= 100
-                    PNL_SLIDE.Location = New Point(X_LOC, 40)
+                    PNL_SLIDE.Location = New Point(X_LOC, 0)
                     If PNL_SLIDE Is APNL_VALIDATEPR Then
                         If X_LOC < 0 Then
-                            PNL_SLIDE.Location = New Point(0, 40)
+                            PNL_SLIDE.Location = New Point(0, 0)
                             X_LOC = 0
                             UCPROCTim.Enabled = False
                         End If
                     End If
                 Else
                     X_LOC += 100
-                    PNL_SLIDE.Location = New Point(X_LOC, 40)
+                    PNL_SLIDE.Location = New Point(X_LOC, 0)
                     If PNL_SLIDE Is APNL_VALIDATEPR Then
                         If X_LOC > 1095 Then
-                            PNL_SLIDE.Location = New Point(1095, 40)
+                            PNL_SLIDE.Location = New Point(1095, 0)
                             X_LOC = 1095
                             UCPROCTim.Enabled = False
                         End If
                     End If
-
-                    'PNL_SLIDE.Location = New Point(1095, 40)
-                    'X_LOC = 1095
-                    'UCPROCTim.Enabled = False
                 End If
             Catch ex As Exception
                 X_LOC = 0
@@ -114,31 +110,47 @@ Public Class FRM_CHECK_PR
         ElseIf btn Is BTN_PRCLOSE Then
             Me.Close()
 
-#Region "Accepted"
+#Region "Accept"
         ElseIf btn Is BTN_CPR_ACCEPT Then
             PRNO = WTXT_SEARCHPR.Text
-            If MsgBox("Are you sure you want to accept this?" & vbCrLf & "You can't undo this action.", vbYesNo, "Please confirm the details in purchase request info.") = vbYes Then
-                FRM_PRACCEPT.ShowDialog()
-
+            ISVALID = True
+            If Trim(WTXT_APPCODE.Text.Length) > 0 Then
+                ISVALID = True
+                RECT_PRAPPCODE.BorderColor = Color.LightSeaGreen
+            Else
+                ISVALID = False
+                RECT_PRAPPCODE.BorderColor = Color.Red
             End If
+
+            If ISVALID Then
+                If MsgBox("Are you sure you want to accept this?" & vbCrLf & "You can't undo this action.", vbYesNo, "Please confirm the details in purchase request info.") = vbYes Then
+                    PR_APPCODE = Trim(WTXT_APPCODE.Text)
+                    FRM_PRACCEPT.ShowDialog()
+                    SPM4_PURCHASELISTTableAdapter.FillByPMD_LIST(DS_STOREDPROC.SPM4_PURCHASELIST, WTXT_SEARCHLIST_PR.Text, String.Empty, True)
+                    LBL_TOTALNOOFPR.Text = DGV_PRLIST.Rows.Count
+                End If
+            Else
+                NotificationManager.Show(Me, "Please check APP CODE value!", Color.Red, 4000)
+            End If
+
+
 #End Region
 
 #Region "Cancel PR"
         ElseIf btn Is BTN_CPR_CANCEL Then
             PRNO = WTXT_SEARCHPR.Text
             If MsgBox("Are you sure you want to cancel this PR?" & vbCrLf & "You can't undo this action.", vbYesNo, "Confimation") = vbYes Then
+                PR_APPCODE = Trim(WTXT_APPCODE.Text)
                 FRM_PRCANCELED.ShowDialog()
-                Me.SPM4_PURCHASELISTTableAdapter.Fill(Me.DS_PROPERTYDB.SPM4_PURCHASELIST, String.Empty, String.Empty, True)
+                WTXT_SEARCHPR.Clear()
+                SPM4_PURCHASELISTTableAdapter.FillByPMD_LIST(DS_STOREDPROC.SPM4_PURCHASELIST, WTXT_SEARCHLIST_PR.Text, String.Empty, True)
+                LBL_TOTALNOOFPR.Text = DGV_PRLIST.Rows.Count
             End If
-#End Region
-
-#Region "For Revision"
-        ElseIf btn Is BTN_CPR_FORREVISION Then
-            '    FRM_PRREVISION.ShowDialog()
 #End Region
 
 #Region "Validate PR"
         ElseIf pb Is PB_VALIDATE_PR Or llbl Is LLBL_VALIDATE_PR Then
+            _CLEAR()
             UCPROCTim.Enabled = True
             slideFlaG = True
             PNL_SLIDE = APNL_VALIDATEPR
@@ -156,7 +168,26 @@ Public Class FRM_CHECK_PR
 #Region "View Report"
         ElseIf pb Is PB_VALIDATE_PRPREVIEW Or llbl Is LLBL_VALIDATE_PRPREVIEW Then
             PRNO_GEN = WTXT_SEARCHPR.Text
-            is_preview = False
+            REPRINT = True
+            dgv = DGV_PR_ITEMLIST
+            PR_DATEREQUESTED = WTXT_REQUESTEDDATE.Text
+            PR_APPCODE = WTXT_APPCODE.Text
+            PR_PURPOSE = WTXT_PURPOSE.Text
+            PR_REQUESTEDBY = ""
+            PR_REQUESTEDBYPOSITION = ""
+            PR_APPROVEDBY = ""
+            PR_APPROVEDBYPOSITION = ""
+            PR_CERTIFIEDBY = ""
+            PR_CERTIFIEDBYPOSITION = ""
+            PR_NOTEDBY = ""
+            PR_NOTEDBYPOSITION = ""
+            PR_DEPARTMENT = WTXT_DEPARTMENT.Text
+            PR_DIVISION = WTXT_DIVISION.Text
+            If LBL_SIGN.Text = "Php" Then
+                ISDOLLARS = 0
+            Else
+                ISDOLLARS = 1
+            End If
             FRM_PURCHASE_REQUEST_PRINTPREVIEW.ShowDialog()
 #End Region
 
@@ -179,13 +210,23 @@ Public Class FRM_CHECK_PR
     End Sub
 
 #Region "CLEAR"
-    Sub _ENABLE(TRANSACTION As String)
-        'If TRANSACTION = "CancelMini" Then
-        '    WTXT_SEARCHPR.Clear()
-
-        'End If
+    Sub _CLEAR()
+        WTXT_APPCODE.Clear()
+        WTXT_REQUESTEDDATE.Clear()
+        WTXT_SUBMITTEDBY.Clear()
+        WTXT_DEPARTMENT.Clear()
+        WTXT_DIVISION.Clear()
+        WTXT_PURPOSE.Clear()
+        BTN_CPR_ACCEPT.Enabled = False
+        BTN_CPR_CANCEL.Enabled = False
+        LLBL_VALIDATE_PRPREVIEW.Enabled = False
+        PB_VALIDATE_PRPREVIEW.Enabled = False
+        WTXT_SEARCHPR.Clear()
+        DGV_PR_ITEMLIST.Rows.Clear()
     End Sub
 #End Region
+
+#Region "KEY EVENT"
 
     Private Sub WTXT_SEARCHPR_KeyDown(ByVal sender As Object, ByVal e As KeyEventArgs) Handles WTXT_SEARCHPR.KeyDown
         If e.KeyCode = Keys.Enter Then
@@ -220,11 +261,20 @@ Public Class FRM_CHECK_PR
 
             If DS_PROPERTYDB.tblM4_PURCHASEREQUEST_ITEM.Rows.Count > 0 Then
                 Dim totalEstimatedCost As Decimal = 0.00
+                Dim hestiunitcost As Decimal = 0.00
+                Dim hesticost As Decimal = 0.00
                 For Each row As DataRow In DS_PROPERTYDB.tblM4_PURCHASEREQUEST_ITEM.Rows
-                    Dim EstimatedCost As Decimal = row.Item(6)
-                    Dim EstimatedUnitCost As Decimal = row.Item(5)
-                    DGV_PR_ITEMLIST.Rows.Add(row.Item(3), row.Item(1), row.Item(2), row.Item(4), EstimatedUnitCost.ToString("N2"), EstimatedCost.ToString("N2"))
-                    totalEstimatedCost += row.Item(6)
+                    If IsDBNull(row.Item(4)) Then
+                        row.Item(4) = 0.00
+                    End If
+
+                    If IsDBNull(row.Item(5)) Then
+                        row.Item(5) = 0.00
+                    End If
+                    hestiunitcost = row.Item(4)
+                    hesticost = row.Item(5)
+                    DGV_PR_ITEMLIST.Rows.Add(row.Item(2), row.Item(0), row.Item(1), row.Item(3), hestiunitcost.ToString("N2"), hesticost.ToString("N2"))
+                    totalEstimatedCost += row.Item(5)
                 Next row
                 LLBL_TOTALESTIMATEDCOST.Text = totalEstimatedCost.ToString("N2")
             Else
@@ -236,8 +286,8 @@ Public Class FRM_CHECK_PR
             If isValidPRNO Then
                 If PR_STATUS = 1 Then
                     NotificationManager.Show(Me, "PR NO. HAS ALREADY BEEN ACCEPTED!", Color.Red, 3000)
-                ElseIf PR_STATUS = 2 Then
-                    NotificationManager.Show(Me, "PR NO. HAS ALREADY BEEN SET FOR REVISION!", Color.Red, 4000)
+                    'ElseIf PR_STATUS = 2 Then
+                    '    NotificationManager.Show(Me, "PR NO. HAS ALREADY BEEN SET FOR REVISION!", Color.Red, 4000)
                 ElseIf PR_STATUS = 3 Then
                     NotificationManager.Show(Me, "PR NO. HAS ALREADY BEEN CANCELED!", Color.Red, 3000)
                 ElseIf PR_STATUS = 4 Then
@@ -246,6 +296,7 @@ Public Class FRM_CHECK_PR
                     BTN_CPR_FORREVISION.Enabled = True
                     LLBL_VALIDATE_PRPREVIEW.Enabled = True
                     PB_VALIDATE_PRPREVIEW.Enabled = True
+                    WTXT_APPCODE.SelectAll()
                 End If
             Else
                 WTXT_SUBMITTEDBY.Clear()
@@ -265,26 +316,25 @@ Public Class FRM_CHECK_PR
         End If
     End Sub
 
-
-
-
-    Private Sub WTXT_SEARCHLIST_ACCEPTEDPR_TextChanged(sender As Object, e As EventArgs) Handles WTXT_SEARCHLIST_PR.TextChanged
-        If WTXT_SEARCHLIST_PR.Text.Length > 0 Then
-            PB_CLEARSEARCH.Visible = True
-        Else
-            PB_CLEARSEARCH.Visible = False
+    Private Sub WTXT_SEARCHLIST_PR_KeyDown(sender As Object, e As KeyEventArgs) Handles WTXT_SEARCHLIST_PR.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            WTXT_SEARCHPR.Clear()
+            SPM4_PURCHASELISTTableAdapter.FillByPMD_LIST(DS_STOREDPROC.SPM4_PURCHASELIST, WTXT_SEARCHLIST_PR.Text, String.Empty, True)
+            LBL_TOTALNOOFPR.Text = DGV_PRLIST.Rows.Count
         End If
-
-        Me.SPM4_PURCHASELISTTableAdapter.Fill(Me.DS_PROPERTYDB.SPM4_PURCHASELIST, WTXT_SEARCHLIST_PR.Text, String.Empty, True)
-        LBL_TOTALNOOFPR.Text = DGV_PRLIST.Rows.Count
     End Sub
 
+#End Region
+
+#Region "LOAD"
     Private Sub FRM_CHECK_PR_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         WTXT_SEARCHPR.Clear()
-        Me.SPM4_PURCHASELISTTableAdapter.Fill(Me.DS_PROPERTYDB.SPM4_PURCHASELIST, WTXT_SEARCHLIST_PR.Text, String.Empty, True)
+        SPM4_PURCHASELISTTableAdapter.FillByPMD_LIST(DS_STOREDPROC.SPM4_PURCHASELIST, WTXT_SEARCHLIST_PR.Text, String.Empty, True)
         LBL_TOTALNOOFPR.Text = DGV_PRLIST.Rows.Count
     End Sub
+#End Region
 
+#Region "CELL PAINT"
     Private Sub DGV_PRLIST_RowPrePaint(sender As Object, e As DataGridViewRowPrePaintEventArgs) Handles DGV_PRLIST.RowPrePaint
         If Not IsDBNull(DGV_PRLIST(1, e.RowIndex).Value) Then
             If DGV_PRLIST(1, e.RowIndex).Value = 1 Then
@@ -292,14 +342,14 @@ Public Class FRM_CHECK_PR
                 DGV_PRLIST(1, e.RowIndex).Style.ForeColor = Color.LimeGreen
                 '     DGV_PRLIST(1, e.RowIndex).Value = Nothing
                 '  stats = 1
-            ElseIf DGV_PRLIST(1, e.RowIndex).Value = 2 Then
+                'ElseIf DGV_PRLIST(1, e.RowIndex).Value = 2 Then
+                '    DGV_PRLIST(1, e.RowIndex).Style.BackColor = Color.Red
+                '    DGV_PRLIST(1, e.RowIndex).Style.ForeColor = Color.Red
+                '    '   DGV_PRLIST(1, e.RowIndex).Value = Nothing
+                '    '  stats = 2
+            ElseIf DGV_PRLIST(1, e.RowIndex).Value = 3 Then
                 DGV_PRLIST(1, e.RowIndex).Style.BackColor = Color.Red
                 DGV_PRLIST(1, e.RowIndex).Style.ForeColor = Color.Red
-                '   DGV_PRLIST(1, e.RowIndex).Value = Nothing
-                '  stats = 2
-            ElseIf DGV_PRLIST(1, e.RowIndex).Value = 3 Then
-                DGV_PRLIST(1, e.RowIndex).Style.BackColor = Color.Gold
-                DGV_PRLIST(1, e.RowIndex).Style.ForeColor = Color.Gold
                 '  DGV_PRLIST(1, e.RowIndex).Value = Nothing
                 '  stats = 3
             ElseIf DGV_PRLIST(1, e.RowIndex).Value = 4 Then
@@ -351,6 +401,9 @@ Public Class FRM_CHECK_PR
         End If
     End Sub
 
+#End Region
+
+#Region "CELL EVENT"
     Private Sub DGV_PRLIST_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_PRLIST.CellContentClick
         If DGV_PRLIST.SelectedRows.Count >= 0 Then
             If e.RowIndex >= 0 Then
@@ -382,6 +435,7 @@ Public Class FRM_CHECK_PR
             End If
         End If
     End Sub
+#End Region
 
     Private Sub PBICONSEARCH_Click(sender As Object, e As EventArgs) Handles PBICONSEARCH.Click
         isValidPRNO = True
@@ -415,11 +469,20 @@ Public Class FRM_CHECK_PR
 
         If DS_PROPERTYDB.tblM4_PURCHASEREQUEST_ITEM.Rows.Count > 0 Then
             Dim totalEstimatedCost As Decimal = 0.00
+            Dim hestiunitcost As Decimal = 0.00
+            Dim hesticost As Decimal = 0.00
             For Each row As DataRow In DS_PROPERTYDB.tblM4_PURCHASEREQUEST_ITEM.Rows
-                Dim EstimatedCost As Decimal = row.Item(6)
-                Dim EstimatedUnitCost As Decimal = row.Item(5)
-                DGV_PR_ITEMLIST.Rows.Add(row.Item(3), row.Item(1), row.Item(2), row.Item(4), EstimatedUnitCost.ToString("N2"), EstimatedCost.ToString("N2"))
-                totalEstimatedCost += row.Item(6)
+                If IsDBNull(row.Item(4)) Then
+                    row.Item(4) = 0.00
+                End If
+
+                If IsDBNull(row.Item(5)) Then
+                    row.Item(5) = 0.00
+                End If
+                hestiunitcost = row.Item(4)
+                hesticost = row.Item(5)
+                DGV_PR_ITEMLIST.Rows.Add(row.Item(2), row.Item(0), row.Item(1), row.Item(3), hestiunitcost.ToString("N2"), hesticost.ToString("N2"))
+                totalEstimatedCost += row.Item(5)
             Next row
             LLBL_TOTALESTIMATEDCOST.Text = totalEstimatedCost.ToString("N2")
         Else
@@ -431,8 +494,8 @@ Public Class FRM_CHECK_PR
         If isValidPRNO Then
             If PR_STATUS = 1 Then
                 NotificationManager.Show(Me, "PR NO. HAS ALREADY BEEN ACCEPTED!", Color.Red, 3000)
-            ElseIf PR_STATUS = 2 Then
-                NotificationManager.Show(Me, "PR NO. HAS ALREADY BEEN SET FOR REVISION!", Color.Red, 4000)
+                'ElseIf PR_STATUS = 2 Then
+                '    NotificationManager.Show(Me, "PR NO. HAS ALREADY BEEN SET FOR REVISION!", Color.Red, 4000)
             ElseIf PR_STATUS = 3 Then
                 NotificationManager.Show(Me, "PR NO. HAS ALREADY BEEN CANCELED!", Color.Red, 3000)
             ElseIf PR_STATUS = 4 Then
@@ -441,6 +504,7 @@ Public Class FRM_CHECK_PR
                 BTN_CPR_FORREVISION.Enabled = True
                 LLBL_VALIDATE_PRPREVIEW.Enabled = True
                 PB_VALIDATE_PRPREVIEW.Enabled = True
+                WTXT_APPCODE.SelectAll()
             End If
         Else
             WTXT_SUBMITTEDBY.Clear()

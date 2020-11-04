@@ -223,11 +223,133 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_VIEWS.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DATASETS\DS_VIEWS.vb">
+      <DependentUpon>DS_VIEWS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="INVENTORY\ADMIN\DS_PRAJO_DATABASE.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_PRAJO_DATABASE.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="INVENTORY\ADMIN\FRM_DR_LIST_DETAILS.Designer.vb">
+      <DependentUpon>FRM_DR_LIST_DETAILS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="INVENTORY\ADMIN\FRM_DR_LIST_DETAILS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INVENTORY\ADMIN\FRM_DR_MASTERLIST.Designer.vb">
+      <DependentUpon>FRM_DR_MASTERLIST.vb</DependentUpon>
+    </Compile>
+    <Compile Include="INVENTORY\ADMIN\FRM_DR_MASTERLIST.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="INVENTORY\ADMIN\FRM_INVENTORY_ENCODING_ADMIN.Designer.vb">
       <DependentUpon>FRM_INVENTORY_ENCODING_ADMIN.vb</DependentUpon>
     </Compile>
     <Compile Include="INVENTORY\ADMIN\FRM_INVENTORY_ENCODING_ADMIN.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INVENTORY\ADMIN\FRM_ISSUED_ITEM_LIST.Designer.vb">
+      <DependentUpon>FRM_ISSUED_ITEM_LIST.vb</DependentUpon>
+    </Compile>
+    <Compile Include="INVENTORY\ADMIN\FRM_ISSUED_ITEM_LIST.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INVENTORY\ADMIN\FRM_ITEM_CODE_SELECTION.Designer.vb">
+      <DependentUpon>FRM_ITEM_CODE_SELECTION.vb</DependentUpon>
+    </Compile>
+    <Compile Include="INVENTORY\ADMIN\FRM_ITEM_CODE_SELECTION.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INVENTORY\ADMIN\FRM_ITEM_DISTRIBUTION.Designer.vb">
+      <DependentUpon>FRM_ITEM_DISTRIBUTION.vb</DependentUpon>
+    </Compile>
+    <Compile Include="INVENTORY\ADMIN\FRM_ITEM_DISTRIBUTION.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INVENTORY\ADMIN\FRM_ITEM_DR_LIST.Designer.vb">
+      <DependentUpon>FRM_ITEM_DR_LIST.vb</DependentUpon>
+    </Compile>
+    <Compile Include="INVENTORY\ADMIN\FRM_ITEM_DR_LIST.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INVENTORY\ADMIN\FRM_ITEM_REQ.Designer.vb">
+      <DependentUpon>FRM_ITEM_REQ.vb</DependentUpon>
+    </Compile>
+    <Compile Include="INVENTORY\ADMIN\FRM_ITEM_REQ.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INVENTORY\ADMIN\FRM_ITEM_REQ_ENC.Designer.vb">
+      <DependentUpon>FRM_ITEM_REQ_ENC.vb</DependentUpon>
+    </Compile>
+    <Compile Include="INVENTORY\ADMIN\FRM_ITEM_REQ_ENC.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INVENTORY\ADMIN\FRM_MIGRATE.Designer.vb">
+      <DependentUpon>FRM_MIGRATE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="INVENTORY\ADMIN\FRM_MIGRATE.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INVENTORY\ADMIN\FRM_PCOUNT.Designer.vb">
+      <DependentUpon>FRM_PCOUNT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="INVENTORY\ADMIN\FRM_PCOUNT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INVENTORY\ADMIN\FRM_PRINT_PREVIEW.Designer.vb">
+      <DependentUpon>FRM_PRINT_PREVIEW.vb</DependentUpon>
+    </Compile>
+    <Compile Include="INVENTORY\ADMIN\FRM_PRINT_PREVIEW.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INVENTORY\ADMIN\FRM_SEARCH_REF_NO.Designer.vb">
+      <DependentUpon>FRM_SEARCH_REF_NO.vb</DependentUpon>
+    </Compile>
+    <Compile Include="INVENTORY\ADMIN\FRM_SEARCH_REF_NO.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INVENTORY\ADMIN\FRM_STK_CTRL.Designer.vb">
+      <DependentUpon>FRM_STK_CTRL.vb</DependentUpon>
+    </Compile>
+    <Compile Include="INVENTORY\ADMIN\FRM_STK_CTRL.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INVENTORY\ADMIN\FRM_STOCKS_DIST.Designer.vb">
+      <DependentUpon>FRM_STOCKS_DIST.vb</DependentUpon>
+    </Compile>
+    <Compile Include="INVENTORY\ADMIN\FRM_STOCKS_DIST.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INVENTORY\ADMIN\FRM_STOCK_ENC.Designer.vb">
+      <DependentUpon>FRM_STOCK_ENC.vb</DependentUpon>
+    </Compile>
+    <Compile Include="INVENTORY\ADMIN\FRM_STOCK_ENC.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INVENTORY\ADMIN\RPT_MARKETING_SLIP.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPT_MARKETING_SLIP.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="INVENTORY\ADMIN\RPT_PCOUNT_LIST.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPT_PCOUNT_LIST.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="INVENTORY\ADMIN\RPT_SLIP_DRAWING.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPT_SLIP_DRAWING.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="INVENTORY\ADMIN\RPT_STOCKMASTERLIST.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPT_STOCKMASTERLIST.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="INVENTORY\IT EQUIPMENT\FRM_ASSIGN.Designer.vb">
       <DependentUpon>FRM_ASSIGN.vb</DependentUpon>
@@ -245,6 +367,12 @@
       <DependentUpon>FRM_EMPLOYEE_LIST.vb</DependentUpon>
     </Compile>
     <Compile Include="INVENTORY\IT EQUIPMENT\FRM_EMPLOYEE_LIST.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INVENTORY\IT EQUIPMENT\FRM_INV.Designer.vb">
+      <DependentUpon>FRM_INV.vb</DependentUpon>
+    </Compile>
+    <Compile Include="INVENTORY\IT EQUIPMENT\FRM_INV.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="INVENTORY\IT EQUIPMENT\FRM_INVENTORY_ENCODING.Designer.vb">
@@ -275,12 +403,6 @@
       <DependentUpon>FRM_PREVIEW.vb</DependentUpon>
     </Compile>
     <Compile Include="INVENTORY\IT EQUIPMENT\FRM_PREVIEW.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="INVENTORY\IT EQUIPMENT\FRM_SETTINGS_SELECTION.Designer.vb">
-      <DependentUpon>FRM_SETTINGS_SELECTION.vb</DependentUpon>
-    </Compile>
-    <Compile Include="INVENTORY\IT EQUIPMENT\FRM_SETTINGS_SELECTION.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="INVENTORY\IT EQUIPMENT\FRM_SETTINGS.Designer.vb">
@@ -342,6 +464,12 @@
     <Compile Include="POPUP_MODULE\FRM_ADDITIONAL_CATEGORIZATION.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="POPUP_MODULE\FRM_AVAILABLE_QUANTITY.Designer.vb">
+      <DependentUpon>FRM_AVAILABLE_QUANTITY.vb</DependentUpon>
+    </Compile>
+    <Compile Include="POPUP_MODULE\FRM_AVAILABLE_QUANTITY.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="POPUP_MODULE\FRM_DATAENTRY.designer.vb">
       <DependentUpon>FRM_DATAENTRY.vb</DependentUpon>
     </Compile>
@@ -360,6 +488,24 @@
     <Compile Include="INVENTORY\IT EQUIPMENT\FRM_LOCATION.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="POPUP_MODULE\FRM_DISCONNECTED.designer.vb">
+      <DependentUpon>FRM_DISCONNECTED.vb</DependentUpon>
+    </Compile>
+    <Compile Include="POPUP_MODULE\FRM_DISCONNECTED.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POPUP_MODULE\FRM_DIVISIONLIST.Designer.vb">
+      <DependentUpon>FRM_DIVISIONLIST.vb</DependentUpon>
+    </Compile>
+    <Compile Include="POPUP_MODULE\FRM_DIVISIONLIST.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POPUP_MODULE\FRM_IMG.Designer.vb">
+      <DependentUpon>FRM_IMG.vb</DependentUpon>
+    </Compile>
+    <Compile Include="POPUP_MODULE\FRM_IMG.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="POPUP_MODULE\FRM_PRACCEPT.Designer.vb">
       <DependentUpon>FRM_PRACCEPT.vb</DependentUpon>
     </Compile>
@@ -376,6 +522,12 @@
       <DependentUpon>FRM_PRREVISION.vb</DependentUpon>
     </Compile>
     <Compile Include="POPUP_MODULE\FRM_PRREVISION.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POPUP_MODULE\FRM_REPORT_STOCK_FILTER.Designer.vb">
+      <DependentUpon>FRM_REPORT_STOCK_FILTER.vb</DependentUpon>
+    </Compile>
+    <Compile Include="POPUP_MODULE\FRM_REPORT_STOCK_FILTER.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="POPUP_MODULE\FRM_SELECTION.Designer.vb">
@@ -432,12 +584,6 @@
       <DependentUpon>FRM_PURCHASE_REQUEST_PRINTPREVIEW.vb</DependentUpon>
     </Compile>
     <Compile Include="PURCHASE REQUEST\FRM_PURCHASE_REQUEST_PRINTPREVIEW.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PURCHASE REQUEST\FRM_SEARCHPRLIST.Designer.vb">
-      <DependentUpon>FRM_SEARCHPRLIST.vb</DependentUpon>
-    </Compile>
-    <Compile Include="PURCHASE REQUEST\FRM_SEARCHPRLIST.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PURCHASE REQUEST\FRM_SIGNATORYLIST.Designer.vb">
@@ -511,7 +657,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="V2_VAN\LOGIN_PAGE\FRM_LOGIN.Designer.vb">
+    <Compile Include="V2_VAN\LOGIN_PAGE\FRM_LOGIN.designer.vb">
       <DependentUpon>FRM_LOGIN.vb</DependentUpon>
     </Compile>
     <Compile Include="V2_VAN\LOGIN_PAGE\FRM_LOGIN.vb">
@@ -519,8 +665,69 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="INVENTORY\ADMIN\FRM_DR_LIST_DETAILS.resx">
+      <DependentUpon>FRM_DR_LIST_DETAILS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INVENTORY\ADMIN\FRM_DR_MASTERLIST.resx">
+      <DependentUpon>FRM_DR_MASTERLIST.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="INVENTORY\ADMIN\FRM_INVENTORY_ENCODING_ADMIN.resx">
       <DependentUpon>FRM_INVENTORY_ENCODING_ADMIN.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INVENTORY\ADMIN\FRM_ISSUED_ITEM_LIST.resx">
+      <DependentUpon>FRM_ISSUED_ITEM_LIST.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INVENTORY\ADMIN\FRM_ITEM_CODE_SELECTION.resx">
+      <DependentUpon>FRM_ITEM_CODE_SELECTION.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INVENTORY\ADMIN\FRM_ITEM_DISTRIBUTION.resx">
+      <DependentUpon>FRM_ITEM_DISTRIBUTION.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INVENTORY\ADMIN\FRM_ITEM_DR_LIST.resx">
+      <DependentUpon>FRM_ITEM_DR_LIST.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INVENTORY\ADMIN\FRM_ITEM_REQ.resx">
+      <DependentUpon>FRM_ITEM_REQ.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INVENTORY\ADMIN\FRM_ITEM_REQ_ENC.resx">
+      <DependentUpon>FRM_ITEM_REQ_ENC.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INVENTORY\ADMIN\FRM_MIGRATE.resx">
+      <DependentUpon>FRM_MIGRATE.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INVENTORY\ADMIN\FRM_PCOUNT.resx">
+      <DependentUpon>FRM_PCOUNT.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INVENTORY\ADMIN\FRM_PRINT_PREVIEW.resx">
+      <DependentUpon>FRM_PRINT_PREVIEW.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INVENTORY\ADMIN\FRM_SEARCH_REF_NO.resx">
+      <DependentUpon>FRM_SEARCH_REF_NO.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INVENTORY\ADMIN\FRM_STK_CTRL.resx">
+      <DependentUpon>FRM_STK_CTRL.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INVENTORY\ADMIN\FRM_STOCKS_DIST.resx">
+      <DependentUpon>FRM_STOCKS_DIST.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INVENTORY\ADMIN\FRM_STOCK_ENC.resx">
+      <DependentUpon>FRM_STOCK_ENC.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INVENTORY\ADMIN\RPT_MARKETING_SLIP.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPT_MARKETING_SLIP.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INVENTORY\ADMIN\RPT_PCOUNT_LIST.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPT_PCOUNT_LIST.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INVENTORY\ADMIN\RPT_SLIP_DRAWING.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPT_SLIP_DRAWING.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INVENTORY\ADMIN\RPT_STOCKMASTERLIST.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPT_STOCKMASTERLIST.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="INVENTORY\IT EQUIPMENT\FRM_ASSIGN.resx">
       <DependentUpon>FRM_ASSIGN.vb</DependentUpon>
@@ -530,6 +737,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="INVENTORY\IT EQUIPMENT\FRM_EMPLOYEE_LIST.resx">
       <DependentUpon>FRM_EMPLOYEE_LIST.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INVENTORY\IT EQUIPMENT\FRM_INV.resx">
+      <DependentUpon>FRM_INV.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="INVENTORY\IT EQUIPMENT\FRM_INVENTORY_ENCODING.resx">
       <DependentUpon>FRM_INVENTORY_ENCODING.vb</DependentUpon>
@@ -545,9 +755,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="INVENTORY\IT EQUIPMENT\FRM_PREVIEW.resx">
       <DependentUpon>FRM_PREVIEW.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="INVENTORY\IT EQUIPMENT\FRM_SETTINGS_SELECTION.resx">
-      <DependentUpon>FRM_SETTINGS_SELECTION.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="INVENTORY\IT EQUIPMENT\FRM_SETTINGS.resx">
       <DependentUpon>FRM_SETTINGS.vb</DependentUpon>
@@ -582,6 +789,9 @@
     <EmbeddedResource Include="POPUP_MODULE\FRM_ADDITIONAL_CATEGORIZATION.resx">
       <DependentUpon>FRM_ADDITIONAL_CATEGORIZATION.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="POPUP_MODULE\FRM_AVAILABLE_QUANTITY.resx">
+      <DependentUpon>FRM_AVAILABLE_QUANTITY.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="POPUP_MODULE\FRM_DATAENTRY.resx">
       <DependentUpon>FRM_DATAENTRY.vb</DependentUpon>
     </EmbeddedResource>
@@ -591,6 +801,15 @@
     <EmbeddedResource Include="INVENTORY\IT EQUIPMENT\FRM_LOCATION.resx">
       <DependentUpon>FRM_LOCATION.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="POPUP_MODULE\FRM_DISCONNECTED.resx">
+      <DependentUpon>FRM_DISCONNECTED.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POPUP_MODULE\FRM_DIVISIONLIST.resx">
+      <DependentUpon>FRM_DIVISIONLIST.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POPUP_MODULE\FRM_IMG.resx">
+      <DependentUpon>FRM_IMG.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="POPUP_MODULE\FRM_PRACCEPT.resx">
       <DependentUpon>FRM_PRACCEPT.vb</DependentUpon>
     </EmbeddedResource>
@@ -599,6 +818,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="POPUP_MODULE\FRM_PRREVISION.resx">
       <DependentUpon>FRM_PRREVISION.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POPUP_MODULE\FRM_REPORT_STOCK_FILTER.resx">
+      <DependentUpon>FRM_REPORT_STOCK_FILTER.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="POPUP_MODULE\FRM_SELECTION.resx">
       <DependentUpon>FRM_SELECTION.vb</DependentUpon>
@@ -626,9 +848,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PURCHASE REQUEST\FRM_PURCHASE_REQUEST_PRINTPREVIEW.resx">
       <DependentUpon>FRM_PURCHASE_REQUEST_PRINTPREVIEW.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PURCHASE REQUEST\FRM_SEARCHPRLIST.resx">
-      <DependentUpon>FRM_SEARCHPRLIST.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PURCHASE REQUEST\FRM_SIGNATORYLIST.resx">
       <DependentUpon>FRM_SIGNATORYLIST.vb</DependentUpon>
@@ -734,6 +953,17 @@
     <None Include="DATASETS\DS_VIEWS.xss">
       <DependentUpon>DS_VIEWS.xsd</DependentUpon>
     </None>
+    <None Include="INVENTORY\ADMIN\DS_PRAJO_DATABASE.xsc">
+      <DependentUpon>DS_PRAJO_DATABASE.xsd</DependentUpon>
+    </None>
+    <None Include="INVENTORY\ADMIN\DS_PRAJO_DATABASE.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_PRAJO_DATABASE.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="INVENTORY\ADMIN\DS_PRAJO_DATABASE.xss">
+      <DependentUpon>DS_PRAJO_DATABASE.xsd</DependentUpon>
+    </None>
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
@@ -752,6 +982,40 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="PRAicon.ico" />
+    <None Include="Resources\download.png" />
+    <None Include="Resources\giphy.gif" />
+    <None Include="Resources\round_done_black_18dp.png" />
+    <None Include="Resources\baseline_check_white_18dp1.png" />
+    <None Include="Resources\light_blue_gradient_by_sirmudkipz13_d6x2542-fullview.jpg" />
+    <None Include="Resources\108-blue.jpg" />
+    <None Include="Resources\round_done_outline_white_18dp.png" />
+    <None Include="Resources\323-3233189_plm-migration-data-source-icon-png-clipart.png" />
+    <None Include="Resources\baseline_beenhere_white_18dp.png" />
+    <None Include="Resources\baseline_verified_white_18dp.png" />
+    <None Include="Resources\outline_double_arrow_black_18dp - Copy.png" />
+    <None Include="Resources\1092648.png" />
+    <None Include="Resources\baseline_check_white_18dp.png" />
+    <None Include="Resources\abc.jpg" />
+    <None Include="Resources\baseline_arrow_forward_ios_white_18dp.png" />
+    <None Include="Resources\baseline_arrow_back_ios_white_18dp.png" />
+    <None Include="Resources\Dark-Color-Wallpapers-030.jpg" />
+    <None Include="Resources\baseline_arrow_back_ios_black_18dp.png" />
+    <None Include="Resources\baseline_arrow_forward_ios_black_18dp.png" />
+    <None Include="Resources\images.png" />
+    <None Include="Resources\baseline_add_a_photo_black_18dp.png" />
+    <None Include="Resources\480px-No_image_available.svg.png" />
+    <None Include="Resources\baseline_camera_alt_black_18dp.png" />
+    <None Include="Resources\baseline_sync_black_18dp.png" />
+    <None Include="Resources\REQ_FIELD.png" />
+    <None Include="Resources\outline_note_add_black_18dp.png" />
+    <None Include="Resources\outline_group_black_18dp.png" />
+    <None Include="Resources\outline_description_black_18dp.png" />
+    <None Include="Resources\baseline_description_black_18dp1.png" />
+    <None Include="Resources\PADLOCK.png" />
+    <None Include="Resources\round_vpn_key_black_18dp1.png" />
+    <None Include="Resources\round_vpn_key_black_18dp.png" />
+    <None Include="Resources\PRA LOGO WHITE HALF BG.png" />
+    <None Include="Resources\outline_double_arrow_black_18dp1.png" />
     <None Include="Resources\outline_settings_black_18dp.png" />
     <None Include="Resources\baseline_settings_black_18dp.png" />
     <None Include="Resources\outline_transfer_within_a_station_black_18dp.png" />

@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FRM_CHECK_PR
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,11 +20,12 @@ Partial Class FRM_CHECK_PR
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -51,6 +52,7 @@ Partial Class FRM_CHECK_PR
         Me.LLBL_TOTALESTIMATEDCOST = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.WTXT_PURPOSE = New PRA_PIS.WatermarkTextBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -72,18 +74,11 @@ Partial Class FRM_CHECK_PR
         Me.RECT_PRAPPCODE = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RectangleShape11 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RectangleShape8 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
-        Me.RectangleShape6 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RectangleShape4 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RECT_PRSEARCH = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.DGV_PRLIST = New System.Windows.Forms.DataGridView()
-        Me.StatusOfOngoingPRDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PRSTATUSDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PRPRNODataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.RemarksPurposeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CREATEDDATEDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.btnViewDetails = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.btnUpdateStatus = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.SPM4PURCHASELISTBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DS_STOREDPROC = New PRA_PIS.DS_STOREDPROC()
         Me.DS_PROPERTYDB = New PRA_PIS.DS_PROPERTYDB()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.Label17 = New System.Windows.Forms.Label()
@@ -92,16 +87,12 @@ Partial Class FRM_CHECK_PR
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.RectangleShape9 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.TblV1_HRISEMPLOYEEDATATableAdapter = New PRA_PIS.DS_TABLESTableAdapters.tblV1_HRISEMPLOYEEDATATableAdapter()
         Me.APNL_VALIDATEPR = New System.Windows.Forms.Panel()
-        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.PBICONSEARCH = New System.Windows.Forms.PictureBox()
         Me.WTXT_SEARCHPR = New PRA_PIS.WatermarkTextBox()
         Me.PB_VALIDATE_PRPREVIEW = New System.Windows.Forms.PictureBox()
@@ -112,7 +103,6 @@ Partial Class FRM_CHECK_PR
         Me.BTN_CPR_FORREVISION = New System.Windows.Forms.Button()
         Me.BTN_CPR_ACCEPT = New System.Windows.Forms.Button()
         Me.ShapeContainer3 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
-        Me.RectangleShape10 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
         Me.RectangleShape5 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RECT_INVENTORY_NEW_SAVE = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
@@ -146,21 +136,31 @@ Partial Class FRM_CHECK_PR
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TblM4_PURCHASEREQUESTTableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.tblM4_PURCHASEREQUESTTableAdapter()
         Me.TblM4_PURCHASEREQUEST_ITEMTableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.tblM4_PURCHASEREQUEST_ITEMTableAdapter()
-        Me.SPM4_PURCHASELISTTableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.SPM4_PURCHASELISTTableAdapter()
         Me.TblM4_PURCHASEREQUEST_CANCELEDTableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.tblM4_PURCHASEREQUEST_CANCELEDTableAdapter()
         Me.TblM4_PURCHASEREQUEST_REVISIONTableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.tblM4_PURCHASEREQUEST_REVISIONTableAdapter()
         Me.WTXT_SEARCHLIST_PR = New PRA_PIS.WatermarkTextBox()
+        Me.SPM4_PURCHASELISTBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SPM4_PURCHASELISTTableAdapter = New PRA_PIS.DS_STOREDPROCTableAdapters.SPM4_PURCHASELISTTableAdapter()
+        Me.StatusOfOngoingPRDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PRSTATUSDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PRPRNODataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DescriptionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DateCreatedDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btnViewDetails = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.btnUpdateStatus = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.PRPRNO1DataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.MAXDATEDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PNL.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DGV_PR_ITEMLIST, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DGV_PRLIST, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SPM4PURCHASELISTBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DS_STOREDPROC, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DS_PROPERTYDB, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.APNL_VALIDATEPR.SuspendLayout()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PBICONSEARCH, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PB_VALIDATE_PRPREVIEW, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel23.SuspendLayout()
@@ -170,6 +170,7 @@ Partial Class FRM_CHECK_PR
         CType(Me.PB_VALIDATE_PR_VIEW_REPORT, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PB_VALIDATE_PR, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SPM4_PURCHASELISTBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PNL
@@ -305,7 +306,7 @@ Partial Class FRM_CHECK_PR
         Me.LLBL_VALIDATE_PRPREVIEW.ForeColor = System.Drawing.Color.DimGray
         Me.LLBL_VALIDATE_PRPREVIEW.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
         Me.LLBL_VALIDATE_PRPREVIEW.LinkColor = System.Drawing.Color.DimGray
-        Me.LLBL_VALIDATE_PRPREVIEW.Location = New System.Drawing.Point(980, 60)
+        Me.LLBL_VALIDATE_PRPREVIEW.Location = New System.Drawing.Point(992, 60)
         Me.LLBL_VALIDATE_PRPREVIEW.Name = "LLBL_VALIDATE_PRPREVIEW"
         Me.LLBL_VALIDATE_PRPREVIEW.Size = New System.Drawing.Size(79, 19)
         Me.LLBL_VALIDATE_PRPREVIEW.TabIndex = 1425
@@ -320,9 +321,9 @@ Partial Class FRM_CHECK_PR
         Me.GroupBox2.Controls.Add(Me.LLBL_TOTALESTIMATEDCOST)
         Me.GroupBox2.Controls.Add(Me.Label12)
         Me.GroupBox2.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.Location = New System.Drawing.Point(494, 95)
+        Me.GroupBox2.Location = New System.Drawing.Point(496, 95)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(597, 459)
+        Me.GroupBox2.Size = New System.Drawing.Size(595, 490)
         Me.GroupBox2.TabIndex = 1431
         Me.GroupBox2.TabStop = False
         '
@@ -348,14 +349,16 @@ Partial Class FRM_CHECK_PR
         Me.DGV_PR_ITEMLIST.AllowUserToDeleteRows = False
         Me.DGV_PR_ITEMLIST.AllowUserToResizeColumns = False
         Me.DGV_PR_ITEMLIST.AllowUserToResizeRows = False
+        Me.DGV_PR_ITEMLIST.BackgroundColor = System.Drawing.Color.White
         Me.DGV_PR_ITEMLIST.ColumnHeadersHeight = 56
         Me.DGV_PR_ITEMLIST.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.DGV_PR_ITEMLIST.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Itemdescription, Me.Quantity, Me.UnitOfIssue, Me.StockNo, Me.EstimatedUnitCost, Me.EstimatedCost})
-        Me.DGV_PR_ITEMLIST.Location = New System.Drawing.Point(7, 18)
+        Me.DGV_PR_ITEMLIST.Location = New System.Drawing.Point(5, 18)
         Me.DGV_PR_ITEMLIST.Name = "DGV_PR_ITEMLIST"
         Me.DGV_PR_ITEMLIST.ReadOnly = True
         Me.DGV_PR_ITEMLIST.RowHeadersVisible = False
-        Me.DGV_PR_ITEMLIST.Size = New System.Drawing.Size(584, 411)
+        Me.DGV_PR_ITEMLIST.RowHeadersWidth = 100
+        Me.DGV_PR_ITEMLIST.Size = New System.Drawing.Size(584, 440)
         Me.DGV_PR_ITEMLIST.TabIndex = 1435
         '
         'Itemdescription
@@ -410,7 +413,7 @@ Partial Class FRM_CHECK_PR
         Me.LBL_SIGN.AutoSize = True
         Me.LBL_SIGN.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LBL_SIGN.ForeColor = System.Drawing.Color.DimGray
-        Me.LBL_SIGN.Location = New System.Drawing.Point(459, 433)
+        Me.LBL_SIGN.Location = New System.Drawing.Point(457, 463)
         Me.LBL_SIGN.Name = "LBL_SIGN"
         Me.LBL_SIGN.Size = New System.Drawing.Size(31, 16)
         Me.LBL_SIGN.TabIndex = 1434
@@ -421,7 +424,7 @@ Partial Class FRM_CHECK_PR
         Me.LLBL_TOTALESTIMATEDCOST.AutoSize = True
         Me.LLBL_TOTALESTIMATEDCOST.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LLBL_TOTALESTIMATEDCOST.ForeColor = System.Drawing.Color.DimGray
-        Me.LLBL_TOTALESTIMATEDCOST.Location = New System.Drawing.Point(492, 433)
+        Me.LLBL_TOTALESTIMATEDCOST.Location = New System.Drawing.Point(487, 463)
         Me.LLBL_TOTALESTIMATEDCOST.Name = "LLBL_TOTALESTIMATEDCOST"
         Me.LLBL_TOTALESTIMATEDCOST.Size = New System.Drawing.Size(33, 16)
         Me.LLBL_TOTALESTIMATEDCOST.TabIndex = 1433
@@ -433,7 +436,7 @@ Partial Class FRM_CHECK_PR
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.Color.DimGray
-        Me.Label12.Location = New System.Drawing.Point(300, 433)
+        Me.Label12.Location = New System.Drawing.Point(300, 461)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(156, 17)
         Me.Label12.TabIndex = 1432
@@ -441,6 +444,7 @@ Partial Class FRM_CHECK_PR
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Label7)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.WTXT_PURPOSE)
         Me.GroupBox1.Controls.Add(Me.Label2)
@@ -458,55 +462,69 @@ Partial Class FRM_CHECK_PR
         Me.GroupBox1.ForeColor = System.Drawing.Color.DimGray
         Me.GroupBox1.Location = New System.Drawing.Point(31, 92)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(462, 510)
+        Me.GroupBox1.Size = New System.Drawing.Size(462, 493)
         Me.GroupBox1.TabIndex = 1429
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "PURCHASE REQUEST INFO"
         '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.ForeColor = System.Drawing.Color.Red
+        Me.Label7.Location = New System.Drawing.Point(223, 42)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(16, 19)
+        Me.Label7.TabIndex = 1439
+        Me.Label7.Text = "*"
+        '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.DimGray
-        Me.Label3.Location = New System.Drawing.Point(27, 484)
+        Me.Label3.Location = New System.Drawing.Point(26, 228)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(64, 17)
+        Me.Label3.Size = New System.Drawing.Size(63, 16)
         Me.Label3.TabIndex = 1438
         Me.Label3.Text = "PURPOSE"
         '
         'WTXT_PURPOSE
         '
+        Me.WTXT_PURPOSE.BackColor = System.Drawing.Color.White
         Me.WTXT_PURPOSE.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.WTXT_PURPOSE.Font = New System.Drawing.Font("Century Gothic", 11.25!)
         Me.WTXT_PURPOSE.ForeColor = System.Drawing.Color.Gray
-        Me.WTXT_PURPOSE.Location = New System.Drawing.Point(20, 240)
+        Me.WTXT_PURPOSE.Location = New System.Drawing.Point(20, 248)
         Me.WTXT_PURPOSE.MaxLength = 300
         Me.WTXT_PURPOSE.Multiline = True
         Me.WTXT_PURPOSE.Name = "WTXT_PURPOSE"
         Me.WTXT_PURPOSE.ReadOnly = True
-        Me.WTXT_PURPOSE.Size = New System.Drawing.Size(420, 245)
+        Me.WTXT_PURPOSE.Size = New System.Drawing.Size(420, 216)
         Me.WTXT_PURPOSE.TabIndex = 1438
         Me.WTXT_PURPOSE.Watermark = Nothing
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.DimGray
-        Me.Label2.Location = New System.Drawing.Point(27, 214)
+        Me.Label2.Location = New System.Drawing.Point(27, 178)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(63, 17)
+        Me.Label2.Size = New System.Drawing.Size(66, 16)
         Me.Label2.TabIndex = 1437
         Me.Label2.Text = "DIVISION"
         '
         'WTXT_DIVISION
         '
+        Me.WTXT_DIVISION.BackColor = System.Drawing.Color.White
         Me.WTXT_DIVISION.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.WTXT_DIVISION.Font = New System.Drawing.Font("Century Gothic", 11.25!)
         Me.WTXT_DIVISION.ForeColor = System.Drawing.Color.Gray
-        Me.WTXT_DIVISION.Location = New System.Drawing.Point(20, 190)
+        Me.WTXT_DIVISION.Location = New System.Drawing.Point(20, 193)
         Me.WTXT_DIVISION.MaxLength = 50
         Me.WTXT_DIVISION.Name = "WTXT_DIVISION"
         Me.WTXT_DIVISION.ReadOnly = True
-        Me.WTXT_DIVISION.Size = New System.Drawing.Size(418, 20)
+        Me.WTXT_DIVISION.Size = New System.Drawing.Size(418, 19)
         Me.WTXT_DIVISION.TabIndex = 1436
         Me.WTXT_DIVISION.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.WTXT_DIVISION.Watermark = Nothing
@@ -514,36 +532,40 @@ Partial Class FRM_CHECK_PR
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.DimGray
-        Me.Label1.Location = New System.Drawing.Point(27, 163)
+        Me.Label1.Location = New System.Drawing.Point(27, 125)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(88, 17)
+        Me.Label1.Size = New System.Drawing.Size(90, 16)
         Me.Label1.TabIndex = 1435
         Me.Label1.Text = "DEPARTMENT"
         '
         'WTXT_DEPARTMENT
         '
+        Me.WTXT_DEPARTMENT.BackColor = System.Drawing.Color.White
         Me.WTXT_DEPARTMENT.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.WTXT_DEPARTMENT.Font = New System.Drawing.Font("Century Gothic", 11.25!)
         Me.WTXT_DEPARTMENT.ForeColor = System.Drawing.Color.Gray
-        Me.WTXT_DEPARTMENT.Location = New System.Drawing.Point(20, 139)
+        Me.WTXT_DEPARTMENT.Location = New System.Drawing.Point(20, 141)
         Me.WTXT_DEPARTMENT.MaxLength = 50
         Me.WTXT_DEPARTMENT.Name = "WTXT_DEPARTMENT"
         Me.WTXT_DEPARTMENT.ReadOnly = True
-        Me.WTXT_DEPARTMENT.Size = New System.Drawing.Size(418, 20)
+        Me.WTXT_DEPARTMENT.Size = New System.Drawing.Size(418, 19)
         Me.WTXT_DEPARTMENT.TabIndex = 1434
         Me.WTXT_DEPARTMENT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.WTXT_DEPARTMENT.Watermark = Nothing
         '
         'WTXT_SUBMITTEDBY
         '
+        Me.WTXT_SUBMITTEDBY.BackColor = System.Drawing.Color.White
         Me.WTXT_SUBMITTEDBY.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.WTXT_SUBMITTEDBY.Font = New System.Drawing.Font("Century Gothic", 11.25!)
         Me.WTXT_SUBMITTEDBY.ForeColor = System.Drawing.Color.Gray
-        Me.WTXT_SUBMITTEDBY.Location = New System.Drawing.Point(20, 87)
+        Me.WTXT_SUBMITTEDBY.Location = New System.Drawing.Point(20, 89)
         Me.WTXT_SUBMITTEDBY.MaxLength = 50
         Me.WTXT_SUBMITTEDBY.Name = "WTXT_SUBMITTEDBY"
         Me.WTXT_SUBMITTEDBY.ReadOnly = True
-        Me.WTXT_SUBMITTEDBY.Size = New System.Drawing.Size(418, 20)
+        Me.WTXT_SUBMITTEDBY.Size = New System.Drawing.Size(418, 19)
         Me.WTXT_SUBMITTEDBY.TabIndex = 1433
         Me.WTXT_SUBMITTEDBY.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.WTXT_SUBMITTEDBY.Watermark = Nothing
@@ -551,56 +573,60 @@ Partial Class FRM_CHECK_PR
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.DimGray
-        Me.Label9.Location = New System.Drawing.Point(27, 111)
+        Me.Label9.Location = New System.Drawing.Point(27, 73)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(88, 17)
+        Me.Label9.Size = New System.Drawing.Size(95, 16)
         Me.Label9.TabIndex = 1432
         Me.Label9.Text = "SUBMITTED BY"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.DimGray
-        Me.Label5.Location = New System.Drawing.Point(257, 56)
+        Me.Label5.Location = New System.Drawing.Point(257, 28)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(112, 17)
+        Me.Label5.Size = New System.Drawing.Size(114, 16)
         Me.Label5.TabIndex = 1431
         Me.Label5.Text = "REQUESTED DATE"
         '
         'WTXT_REQUESTEDDATE
         '
+        Me.WTXT_REQUESTEDDATE.BackColor = System.Drawing.Color.White
         Me.WTXT_REQUESTEDDATE.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.WTXT_REQUESTEDDATE.Font = New System.Drawing.Font("Century Gothic", 11.25!)
         Me.WTXT_REQUESTEDDATE.ForeColor = System.Drawing.Color.Gray
-        Me.WTXT_REQUESTEDDATE.Location = New System.Drawing.Point(257, 36)
+        Me.WTXT_REQUESTEDDATE.Location = New System.Drawing.Point(257, 46)
         Me.WTXT_REQUESTEDDATE.Name = "WTXT_REQUESTEDDATE"
         Me.WTXT_REQUESTEDDATE.ReadOnly = True
-        Me.WTXT_REQUESTEDDATE.Size = New System.Drawing.Size(133, 20)
+        Me.WTXT_REQUESTEDDATE.Size = New System.Drawing.Size(133, 19)
         Me.WTXT_REQUESTEDDATE.TabIndex = 1430
+        Me.WTXT_REQUESTEDDATE.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.WTXT_REQUESTEDDATE.Watermark = Nothing
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.DimGray
-        Me.Label8.Location = New System.Drawing.Point(27, 56)
+        Me.Label8.Location = New System.Drawing.Point(27, 28)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(76, 17)
+        Me.Label8.Size = New System.Drawing.Size(73, 16)
         Me.Label8.TabIndex = 1429
         Me.Label8.Text = "APP CODE"
         '
         'WTXT_APPCODE
         '
+        Me.WTXT_APPCODE.BackColor = System.Drawing.Color.White
         Me.WTXT_APPCODE.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.WTXT_APPCODE.Font = New System.Drawing.Font("Century Gothic", 11.25!)
         Me.WTXT_APPCODE.ForeColor = System.Drawing.Color.Gray
-        Me.WTXT_APPCODE.Location = New System.Drawing.Point(20, 36)
+        Me.WTXT_APPCODE.Location = New System.Drawing.Point(22, 46)
         Me.WTXT_APPCODE.MaxLength = 15
         Me.WTXT_APPCODE.Name = "WTXT_APPCODE"
-        Me.WTXT_APPCODE.ReadOnly = True
-        Me.WTXT_APPCODE.Size = New System.Drawing.Size(217, 20)
+        Me.WTXT_APPCODE.Size = New System.Drawing.Size(197, 19)
         Me.WTXT_APPCODE.TabIndex = 1428
         Me.WTXT_APPCODE.Watermark = Nothing
         '
@@ -610,23 +636,21 @@ Partial Class FRM_CHECK_PR
         Me.ShapeContainer2.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer2.Name = "ShapeContainer2"
         Me.ShapeContainer2.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape3, Me.RectangleShape2, Me.RectangleShape1, Me.RectangleShape7, Me.RECT_PRREQUESTEDDATE, Me.RECT_PRAPPCODE})
-        Me.ShapeContainer2.Size = New System.Drawing.Size(456, 484)
+        Me.ShapeContainer2.Size = New System.Drawing.Size(456, 467)
         Me.ShapeContainer2.TabIndex = 0
         Me.ShapeContainer2.TabStop = False
         '
         'RectangleShape3
         '
         Me.RectangleShape3.BorderColor = System.Drawing.Color.LightSeaGreen
-        Me.RectangleShape3.BorderWidth = 2
         Me.RectangleShape3.CornerRadius = 5
-        Me.RectangleShape3.Location = New System.Drawing.Point(13, 213)
+        Me.RectangleShape3.Location = New System.Drawing.Point(13, 217)
         Me.RectangleShape3.Name = "RectangleShape3"
-        Me.RectangleShape3.Size = New System.Drawing.Size(427, 254)
+        Me.RectangleShape3.Size = New System.Drawing.Size(427, 238)
         '
         'RectangleShape2
         '
         Me.RectangleShape2.BorderColor = System.Drawing.Color.LightSeaGreen
-        Me.RectangleShape2.BorderWidth = 2
         Me.RectangleShape2.CornerRadius = 5
         Me.RectangleShape2.Location = New System.Drawing.Point(12, 162)
         Me.RectangleShape2.Name = "RectangleShape2"
@@ -635,7 +659,6 @@ Partial Class FRM_CHECK_PR
         'RectangleShape1
         '
         Me.RectangleShape1.BorderColor = System.Drawing.Color.LightSeaGreen
-        Me.RectangleShape1.BorderWidth = 2
         Me.RectangleShape1.CornerRadius = 5
         Me.RectangleShape1.Location = New System.Drawing.Point(12, 111)
         Me.RectangleShape1.Name = "RectangleShape1"
@@ -644,7 +667,6 @@ Partial Class FRM_CHECK_PR
         'RectangleShape7
         '
         Me.RectangleShape7.BorderColor = System.Drawing.Color.LightSeaGreen
-        Me.RectangleShape7.BorderWidth = 2
         Me.RectangleShape7.CornerRadius = 5
         Me.RectangleShape7.Location = New System.Drawing.Point(12, 59)
         Me.RectangleShape7.Name = "RectangleShape7"
@@ -653,18 +675,16 @@ Partial Class FRM_CHECK_PR
         'RECT_PRREQUESTEDDATE
         '
         Me.RECT_PRREQUESTEDDATE.BorderColor = System.Drawing.Color.LightSeaGreen
-        Me.RECT_PRREQUESTEDDATE.BorderWidth = 2
         Me.RECT_PRREQUESTEDDATE.CornerRadius = 5
-        Me.RECT_PRREQUESTEDDATE.Location = New System.Drawing.Point(249, 7)
+        Me.RECT_PRREQUESTEDDATE.Location = New System.Drawing.Point(249, 16)
         Me.RECT_PRREQUESTEDDATE.Name = "RECT_PRREQUESTEDDATE"
         Me.RECT_PRREQUESTEDDATE.Size = New System.Drawing.Size(142, 32)
         '
         'RECT_PRAPPCODE
         '
         Me.RECT_PRAPPCODE.BorderColor = System.Drawing.Color.LightSeaGreen
-        Me.RECT_PRAPPCODE.BorderWidth = 2
         Me.RECT_PRAPPCODE.CornerRadius = 5
-        Me.RECT_PRAPPCODE.Location = New System.Drawing.Point(12, 7)
+        Me.RECT_PRAPPCODE.Location = New System.Drawing.Point(12, 16)
         Me.RECT_PRAPPCODE.Name = "RECT_PRAPPCODE"
         Me.RECT_PRAPPCODE.Size = New System.Drawing.Size(226, 31)
         '
@@ -676,41 +696,31 @@ Partial Class FRM_CHECK_PR
         Me.RectangleShape11.Cursor = System.Windows.Forms.Cursors.Arrow
         Me.RectangleShape11.FillColor = System.Drawing.SystemColors.HighlightText
         Me.RectangleShape11.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
-        Me.RectangleShape11.Location = New System.Drawing.Point(922, 50)
+        Me.RectangleShape11.Location = New System.Drawing.Point(946, 50)
         Me.RectangleShape11.Name = "RectangleShape11"
-        Me.RectangleShape11.Size = New System.Drawing.Size(156, 39)
+        Me.RectangleShape11.Size = New System.Drawing.Size(132, 39)
         '
         'RectangleShape8
         '
         Me.RectangleShape8.BorderColor = System.Drawing.Color.LightSeaGreen
         Me.RectangleShape8.BorderWidth = 2
         Me.RectangleShape8.CornerRadius = 5
-        Me.RectangleShape8.Location = New System.Drawing.Point(979, 558)
+        Me.RectangleShape8.Location = New System.Drawing.Point(979, 590)
         Me.RectangleShape8.Name = "RectangleShape8"
         Me.RectangleShape8.Size = New System.Drawing.Size(106, 48)
-        '
-        'RectangleShape6
-        '
-        Me.RectangleShape6.BorderColor = System.Drawing.Color.LightSeaGreen
-        Me.RectangleShape6.BorderWidth = 2
-        Me.RectangleShape6.CornerRadius = 5
-        Me.RectangleShape6.Location = New System.Drawing.Point(867, 558)
-        Me.RectangleShape6.Name = "RectangleShape6"
-        Me.RectangleShape6.Size = New System.Drawing.Size(105, 48)
         '
         'RectangleShape4
         '
         Me.RectangleShape4.BorderColor = System.Drawing.Color.LightSeaGreen
         Me.RectangleShape4.BorderWidth = 2
         Me.RectangleShape4.CornerRadius = 5
-        Me.RectangleShape4.Location = New System.Drawing.Point(755, 558)
+        Me.RectangleShape4.Location = New System.Drawing.Point(868, 590)
         Me.RectangleShape4.Name = "RectangleShape4"
         Me.RectangleShape4.Size = New System.Drawing.Size(105, 49)
         '
         'RECT_PRSEARCH
         '
         Me.RECT_PRSEARCH.BorderColor = System.Drawing.Color.LightSeaGreen
-        Me.RECT_PRSEARCH.BorderWidth = 2
         Me.RECT_PRSEARCH.CornerRadius = 15
         Me.RECT_PRSEARCH.Location = New System.Drawing.Point(51, 49)
         Me.RECT_PRSEARCH.Name = "RECT_PRSEARCH"
@@ -733,99 +743,34 @@ Partial Class FRM_CHECK_PR
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DGV_PRLIST.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.DGV_PRLIST.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV_PRLIST.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.StatusOfOngoingPRDataGridViewTextBoxColumn, Me.PRSTATUSDataGridViewTextBoxColumn, Me.PRPRNODataGridViewTextBoxColumn, Me.RemarksPurposeDataGridViewTextBoxColumn, Me.CREATEDDATEDataGridViewTextBoxColumn, Me.btnViewDetails, Me.btnUpdateStatus})
+        Me.DGV_PRLIST.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.StatusOfOngoingPRDataGridViewTextBoxColumn, Me.PRSTATUSDataGridViewTextBoxColumn, Me.PRPRNODataGridViewTextBoxColumn, Me.DescriptionDataGridViewTextBoxColumn, Me.DateCreatedDataGridViewTextBoxColumn, Me.btnViewDetails, Me.btnUpdateStatus, Me.PRPRNO1DataGridViewTextBoxColumn, Me.MAXDATEDataGridViewTextBoxColumn})
         Me.DGV_PRLIST.DataSource = Me.SPM4PURCHASELISTBindingSource
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.DimGray
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGV_PRLIST.DefaultCellStyle = DataGridViewCellStyle7
         Me.DGV_PRLIST.GridColor = System.Drawing.Color.LightGray
         Me.DGV_PRLIST.Location = New System.Drawing.Point(190, 157)
         Me.DGV_PRLIST.Name = "DGV_PRLIST"
         Me.DGV_PRLIST.ReadOnly = True
         Me.DGV_PRLIST.RowHeadersVisible = False
-        Me.DGV_PRLIST.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
+        Me.DGV_PRLIST.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DGV_PRLIST.Size = New System.Drawing.Size(892, 452)
         Me.DGV_PRLIST.TabIndex = 1414
-        '
-        'StatusOfOngoingPRDataGridViewTextBoxColumn
-        '
-        Me.StatusOfOngoingPRDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.StatusOfOngoingPRDataGridViewTextBoxColumn.DataPropertyName = "Status of Ongoing PR"
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Transparent
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Transparent
-        Me.StatusOfOngoingPRDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle3
-        Me.StatusOfOngoingPRDataGridViewTextBoxColumn.HeaderText = ""
-        Me.StatusOfOngoingPRDataGridViewTextBoxColumn.Name = "StatusOfOngoingPRDataGridViewTextBoxColumn"
-        Me.StatusOfOngoingPRDataGridViewTextBoxColumn.ReadOnly = True
-        Me.StatusOfOngoingPRDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.StatusOfOngoingPRDataGridViewTextBoxColumn.Width = 20
-        '
-        'PRSTATUSDataGridViewTextBoxColumn
-        '
-        Me.PRSTATUSDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.PRSTATUSDataGridViewTextBoxColumn.DataPropertyName = "PR_STATUS"
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Transparent
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Transparent
-        Me.PRSTATUSDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle4
-        Me.PRSTATUSDataGridViewTextBoxColumn.HeaderText = ""
-        Me.PRSTATUSDataGridViewTextBoxColumn.Name = "PRSTATUSDataGridViewTextBoxColumn"
-        Me.PRSTATUSDataGridViewTextBoxColumn.ReadOnly = True
-        Me.PRSTATUSDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.PRSTATUSDataGridViewTextBoxColumn.Width = 20
-        '
-        'PRPRNODataGridViewTextBoxColumn
-        '
-        Me.PRPRNODataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.PRPRNODataGridViewTextBoxColumn.DataPropertyName = "PR_PRNO"
-        Me.PRPRNODataGridViewTextBoxColumn.HeaderText = "PR No."
-        Me.PRPRNODataGridViewTextBoxColumn.Name = "PRPRNODataGridViewTextBoxColumn"
-        Me.PRPRNODataGridViewTextBoxColumn.ReadOnly = True
-        Me.PRPRNODataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.PRPRNODataGridViewTextBoxColumn.Width = 130
-        '
-        'RemarksPurposeDataGridViewTextBoxColumn
-        '
-        Me.RemarksPurposeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.RemarksPurposeDataGridViewTextBoxColumn.DataPropertyName = "Remarks/Purpose"
-        Me.RemarksPurposeDataGridViewTextBoxColumn.HeaderText = "Remarks/Purpose"
-        Me.RemarksPurposeDataGridViewTextBoxColumn.Name = "RemarksPurposeDataGridViewTextBoxColumn"
-        Me.RemarksPurposeDataGridViewTextBoxColumn.ReadOnly = True
-        Me.RemarksPurposeDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.RemarksPurposeDataGridViewTextBoxColumn.Width = 350
-        '
-        'CREATEDDATEDataGridViewTextBoxColumn
-        '
-        Me.CREATEDDATEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.CREATEDDATEDataGridViewTextBoxColumn.DataPropertyName = "DateCreated"
-        Me.CREATEDDATEDataGridViewTextBoxColumn.HeaderText = "Date Created"
-        Me.CREATEDDATEDataGridViewTextBoxColumn.Name = "CREATEDDATEDataGridViewTextBoxColumn"
-        Me.CREATEDDATEDataGridViewTextBoxColumn.ReadOnly = True
-        Me.CREATEDDATEDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.CREATEDDATEDataGridViewTextBoxColumn.Width = 150
-        '
-        'btnViewDetails
-        '
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnViewDetails.DefaultCellStyle = DataGridViewCellStyle5
-        Me.btnViewDetails.HeaderText = ""
-        Me.btnViewDetails.Name = "btnViewDetails"
-        Me.btnViewDetails.ReadOnly = True
-        Me.btnViewDetails.Text = "View Details"
-        Me.btnViewDetails.UseColumnTextForButtonValue = True
-        '
-        'btnUpdateStatus
-        '
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnUpdateStatus.DefaultCellStyle = DataGridViewCellStyle6
-        Me.btnUpdateStatus.HeaderText = ""
-        Me.btnUpdateStatus.Name = "btnUpdateStatus"
-        Me.btnUpdateStatus.ReadOnly = True
-        Me.btnUpdateStatus.Text = "Update Status"
-        Me.btnUpdateStatus.UseColumnTextForButtonValue = True
         '
         'SPM4PURCHASELISTBindingSource
         '
         Me.SPM4PURCHASELISTBindingSource.DataMember = "SPM4_PURCHASELIST"
-        Me.SPM4PURCHASELISTBindingSource.DataSource = Me.DS_PROPERTYDB
+        Me.SPM4PURCHASELISTBindingSource.DataSource = Me.DS_STOREDPROC
+        '
+        'DS_STOREDPROC
+        '
+        Me.DS_STOREDPROC.DataSetName = "DS_STOREDPROC"
+        Me.DS_STOREDPROC.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'DS_PROPERTYDB
         '
@@ -870,15 +815,13 @@ Partial Class FRM_CHECK_PR
         Me.GroupBox3.Controls.Add(Me.Label4)
         Me.GroupBox3.Controls.Add(Me.Panel5)
         Me.GroupBox3.Controls.Add(Me.Label6)
-        Me.GroupBox3.Controls.Add(Me.Label7)
         Me.GroupBox3.Controls.Add(Me.Label10)
         Me.GroupBox3.Controls.Add(Me.Panel4)
         Me.GroupBox3.Controls.Add(Me.Panel3)
-        Me.GroupBox3.Controls.Add(Me.Panel2)
         Me.GroupBox3.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox3.Location = New System.Drawing.Point(3, 488)
+        Me.GroupBox3.Location = New System.Drawing.Point(3, 519)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(181, 169)
+        Me.GroupBox3.Size = New System.Drawing.Size(181, 135)
         Me.GroupBox3.TabIndex = 5
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Status of encoded PR"
@@ -888,7 +831,7 @@ Partial Class FRM_CHECK_PR
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label4.Location = New System.Drawing.Point(28, 132)
+        Me.Label4.Location = New System.Drawing.Point(29, 106)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(61, 16)
         Me.Label4.TabIndex = 8
@@ -898,7 +841,7 @@ Partial Class FRM_CHECK_PR
         '
         Me.Panel5.BackColor = System.Drawing.Color.DimGray
         Me.Panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Panel5.Location = New System.Drawing.Point(8, 126)
+        Me.Panel5.Location = New System.Drawing.Point(9, 100)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(20, 29)
         Me.Panel5.TabIndex = 7
@@ -908,22 +851,11 @@ Partial Class FRM_CHECK_PR
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label6.Location = New System.Drawing.Point(31, 100)
+        Me.Label6.Location = New System.Drawing.Point(31, 71)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(74, 16)
+        Me.Label6.Size = New System.Drawing.Size(72, 16)
         Me.Label6.TabIndex = 6
-        Me.Label6.Text = "Cancel PR"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label7.Location = New System.Drawing.Point(29, 68)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(84, 16)
-        Me.Label7.TabIndex = 5
-        Me.Label7.Text = "For Revision"
+        Me.Label6.Text = "Canceled"
         '
         'Label10
         '
@@ -938,9 +870,9 @@ Partial Class FRM_CHECK_PR
         '
         'Panel4
         '
-        Me.Panel4.BackColor = System.Drawing.Color.Gold
+        Me.Panel4.BackColor = System.Drawing.Color.Red
         Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Panel4.Location = New System.Drawing.Point(8, 94)
+        Me.Panel4.Location = New System.Drawing.Point(8, 65)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(20, 29)
         Me.Panel4.TabIndex = 3
@@ -954,19 +886,9 @@ Partial Class FRM_CHECK_PR
         Me.Panel3.Size = New System.Drawing.Size(20, 29)
         Me.Panel3.TabIndex = 2
         '
-        'Panel2
-        '
-        Me.Panel2.BackColor = System.Drawing.Color.Red
-        Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Panel2.Location = New System.Drawing.Point(8, 62)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(20, 29)
-        Me.Panel2.TabIndex = 1
-        '
         'RectangleShape9
         '
-        Me.RectangleShape9.BorderColor = System.Drawing.Color.LightSeaGreen
-        Me.RectangleShape9.BorderWidth = 2
+        Me.RectangleShape9.BorderColor = System.Drawing.Color.DimGray
         Me.RectangleShape9.CornerRadius = 15
         Me.RectangleShape9.Location = New System.Drawing.Point(189, 106)
         Me.RectangleShape9.Name = "RectangleShape9"
@@ -980,8 +902,6 @@ Partial Class FRM_CHECK_PR
         '
         Me.APNL_VALIDATEPR.BackColor = System.Drawing.Color.White
         Me.APNL_VALIDATEPR.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.APNL_VALIDATEPR.Controls.Add(Me.LinkLabel1)
-        Me.APNL_VALIDATEPR.Controls.Add(Me.PictureBox3)
         Me.APNL_VALIDATEPR.Controls.Add(Me.PBICONSEARCH)
         Me.APNL_VALIDATEPR.Controls.Add(Me.WTXT_SEARCHPR)
         Me.APNL_VALIDATEPR.Controls.Add(Me.LLBL_VALIDATE_PRPREVIEW)
@@ -994,40 +914,10 @@ Partial Class FRM_CHECK_PR
         Me.APNL_VALIDATEPR.Controls.Add(Me.BTN_CPR_FORREVISION)
         Me.APNL_VALIDATEPR.Controls.Add(Me.BTN_CPR_ACCEPT)
         Me.APNL_VALIDATEPR.Controls.Add(Me.ShapeContainer3)
-        Me.APNL_VALIDATEPR.Location = New System.Drawing.Point(1095, 40)
+        Me.APNL_VALIDATEPR.Location = New System.Drawing.Point(1095, 0)
         Me.APNL_VALIDATEPR.Name = "APNL_VALIDATEPR"
-        Me.APNL_VALIDATEPR.Size = New System.Drawing.Size(1095, 618)
+        Me.APNL_VALIDATEPR.Size = New System.Drawing.Size(1095, 658)
         Me.APNL_VALIDATEPR.TabIndex = 1456
-        '
-        'LinkLabel1
-        '
-        Me.LinkLabel1.AutoSize = True
-        Me.LinkLabel1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.LinkLabel1.Enabled = False
-        Me.LinkLabel1.Font = New System.Drawing.Font("Century Gothic", 12.75!, System.Drawing.FontStyle.Bold)
-        Me.LinkLabel1.ForeColor = System.Drawing.Color.DimGray
-        Me.LinkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
-        Me.LinkLabel1.LinkColor = System.Drawing.Color.DimGray
-        Me.LinkLabel1.Location = New System.Drawing.Point(793, 60)
-        Me.LinkLabel1.Name = "LinkLabel1"
-        Me.LinkLabel1.Size = New System.Drawing.Size(122, 19)
-        Me.LinkLabel1.TabIndex = 1439
-        Me.LinkLabel1.TabStop = True
-        Me.LinkLabel1.Text = "PR STATUS LIST"
-        '
-        'PictureBox3
-        '
-        Me.PictureBox3.BackgroundImage = Global.PRA_PIS.My.Resources.Resources.outline_view_list_black_18dp
-        Me.PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox3.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox3.Enabled = False
-        Me.PictureBox3.InitialImage = Nothing
-        Me.PictureBox3.Location = New System.Drawing.Point(759, 56)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(32, 28)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox3.TabIndex = 1438
-        Me.PictureBox3.TabStop = False
         '
         'PBICONSEARCH
         '
@@ -1035,7 +925,7 @@ Partial Class FRM_CHECK_PR
         Me.PBICONSEARCH.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PBICONSEARCH.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PBICONSEARCH.InitialImage = Nothing
-        Me.PBICONSEARCH.Location = New System.Drawing.Point(434, 51)
+        Me.PBICONSEARCH.Location = New System.Drawing.Point(65, 51)
         Me.PBICONSEARCH.Name = "PBICONSEARCH"
         Me.PBICONSEARCH.Size = New System.Drawing.Size(35, 30)
         Me.PBICONSEARCH.TabIndex = 1410
@@ -1047,10 +937,10 @@ Partial Class FRM_CHECK_PR
         Me.WTXT_SEARCHPR.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.WTXT_SEARCHPR.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.WTXT_SEARCHPR.ForeColor = System.Drawing.Color.Black
-        Me.WTXT_SEARCHPR.Location = New System.Drawing.Point(65, 53)
+        Me.WTXT_SEARCHPR.Location = New System.Drawing.Point(105, 53)
         Me.WTXT_SEARCHPR.MaxLength = 30
         Me.WTXT_SEARCHPR.Name = "WTXT_SEARCHPR"
-        Me.WTXT_SEARCHPR.Size = New System.Drawing.Size(367, 26)
+        Me.WTXT_SEARCHPR.Size = New System.Drawing.Size(363, 26)
         Me.WTXT_SEARCHPR.TabIndex = 1409
         Me.WTXT_SEARCHPR.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.WTXT_SEARCHPR.Watermark = "Search PR No."
@@ -1062,7 +952,7 @@ Partial Class FRM_CHECK_PR
         Me.PB_VALIDATE_PRPREVIEW.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PB_VALIDATE_PRPREVIEW.Enabled = False
         Me.PB_VALIDATE_PRPREVIEW.InitialImage = Nothing
-        Me.PB_VALIDATE_PRPREVIEW.Location = New System.Drawing.Point(941, 56)
+        Me.PB_VALIDATE_PRPREVIEW.Location = New System.Drawing.Point(960, 56)
         Me.PB_VALIDATE_PRPREVIEW.Name = "PB_VALIDATE_PRPREVIEW"
         Me.PB_VALIDATE_PRPREVIEW.Size = New System.Drawing.Size(32, 28)
         Me.PB_VALIDATE_PRPREVIEW.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -1102,7 +992,7 @@ Partial Class FRM_CHECK_PR
         Me.BTN_CPR_CANCEL.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTN_CPR_CANCEL.Image = Global.PRA_PIS.My.Resources.Resources.outline_cancel_black_18dp
         Me.BTN_CPR_CANCEL.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.BTN_CPR_CANCEL.Location = New System.Drawing.Point(981, 560)
+        Me.BTN_CPR_CANCEL.Location = New System.Drawing.Point(981, 591)
         Me.BTN_CPR_CANCEL.Name = "BTN_CPR_CANCEL"
         Me.BTN_CPR_CANCEL.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.BTN_CPR_CANCEL.Size = New System.Drawing.Size(102, 46)
@@ -1113,13 +1003,14 @@ Partial Class FRM_CHECK_PR
         '
         'BTN_CLOSE_VALIDATEPR_MINI_CLOSE
         '
+        Me.BTN_CLOSE_VALIDATEPR_MINI_CLOSE.BackgroundImage = Global.PRA_PIS.My.Resources.Resources.outline_double_arrow_black_18dp
+        Me.BTN_CLOSE_VALIDATEPR_MINI_CLOSE.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.BTN_CLOSE_VALIDATEPR_MINI_CLOSE.Dock = System.Windows.Forms.DockStyle.Left
         Me.BTN_CLOSE_VALIDATEPR_MINI_CLOSE.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTN_CLOSE_VALIDATEPR_MINI_CLOSE.Location = New System.Drawing.Point(0, 0)
         Me.BTN_CLOSE_VALIDATEPR_MINI_CLOSE.Name = "BTN_CLOSE_VALIDATEPR_MINI_CLOSE"
-        Me.BTN_CLOSE_VALIDATEPR_MINI_CLOSE.Size = New System.Drawing.Size(30, 616)
+        Me.BTN_CLOSE_VALIDATEPR_MINI_CLOSE.Size = New System.Drawing.Size(30, 656)
         Me.BTN_CLOSE_VALIDATEPR_MINI_CLOSE.TabIndex = 0
-        Me.BTN_CLOSE_VALIDATEPR_MINI_CLOSE.Text = ">>"
         Me.BTN_CLOSE_VALIDATEPR_MINI_CLOSE.UseVisualStyleBackColor = True
         '
         'BTN_CPR_FORREVISION
@@ -1133,7 +1024,7 @@ Partial Class FRM_CHECK_PR
         Me.BTN_CPR_FORREVISION.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTN_CPR_FORREVISION.Image = Global.PRA_PIS.My.Resources.Resources.outline_refresh_black_18dp
         Me.BTN_CPR_FORREVISION.ImageAlign = System.Drawing.ContentAlignment.TopRight
-        Me.BTN_CPR_FORREVISION.Location = New System.Drawing.Point(869, 560)
+        Me.BTN_CPR_FORREVISION.Location = New System.Drawing.Point(745, 567)
         Me.BTN_CPR_FORREVISION.Name = "BTN_CPR_FORREVISION"
         Me.BTN_CPR_FORREVISION.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.BTN_CPR_FORREVISION.Size = New System.Drawing.Size(102, 46)
@@ -1141,6 +1032,7 @@ Partial Class FRM_CHECK_PR
         Me.BTN_CPR_FORREVISION.Text = "FOR REVISION"
         Me.BTN_CPR_FORREVISION.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.BTN_CPR_FORREVISION.UseVisualStyleBackColor = True
+        Me.BTN_CPR_FORREVISION.Visible = False
         '
         'BTN_CPR_ACCEPT
         '
@@ -1153,7 +1045,7 @@ Partial Class FRM_CHECK_PR
         Me.BTN_CPR_ACCEPT.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTN_CPR_ACCEPT.Image = Global.PRA_PIS.My.Resources.Resources.outline_check_black_18dp
         Me.BTN_CPR_ACCEPT.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BTN_CPR_ACCEPT.Location = New System.Drawing.Point(757, 560)
+        Me.BTN_CPR_ACCEPT.Location = New System.Drawing.Point(870, 592)
         Me.BTN_CPR_ACCEPT.Name = "BTN_CPR_ACCEPT"
         Me.BTN_CPR_ACCEPT.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.BTN_CPR_ACCEPT.Size = New System.Drawing.Size(102, 46)
@@ -1167,22 +1059,10 @@ Partial Class FRM_CHECK_PR
         Me.ShapeContainer3.Location = New System.Drawing.Point(0, 0)
         Me.ShapeContainer3.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer3.Name = "ShapeContainer3"
-        Me.ShapeContainer3.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape10, Me.RECT_PRSEARCH, Me.RectangleShape11, Me.RectangleShape8, Me.RectangleShape6, Me.RectangleShape4})
-        Me.ShapeContainer3.Size = New System.Drawing.Size(1093, 616)
+        Me.ShapeContainer3.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RECT_PRSEARCH, Me.RectangleShape11, Me.RectangleShape8, Me.RectangleShape4})
+        Me.ShapeContainer3.Size = New System.Drawing.Size(1093, 656)
         Me.ShapeContainer3.TabIndex = 1437
         Me.ShapeContainer3.TabStop = False
-        '
-        'RectangleShape10
-        '
-        Me.RectangleShape10.BorderColor = System.Drawing.Color.DimGray
-        Me.RectangleShape10.BorderWidth = 2
-        Me.RectangleShape10.CornerRadius = 19
-        Me.RectangleShape10.Cursor = System.Windows.Forms.Cursors.Arrow
-        Me.RectangleShape10.FillColor = System.Drawing.SystemColors.HighlightText
-        Me.RectangleShape10.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
-        Me.RectangleShape10.Location = New System.Drawing.Point(745, 50)
-        Me.RectangleShape10.Name = "RectangleShape10"
-        Me.RectangleShape10.Size = New System.Drawing.Size(174, 39)
         '
         'ShapeContainer1
         '
@@ -1272,9 +1152,9 @@ Partial Class FRM_CHECK_PR
         Me.GroupBox5.Controls.Add(Me.Panel7)
         Me.GroupBox5.Controls.Add(Me.Panel8)
         Me.GroupBox5.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox5.Location = New System.Drawing.Point(3, 106)
+        Me.GroupBox5.Location = New System.Drawing.Point(3, 148)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(181, 376)
+        Me.GroupBox5.Size = New System.Drawing.Size(181, 372)
         Me.GroupBox5.TabIndex = 1463
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Status for on-going PR"
@@ -1284,7 +1164,7 @@ Partial Class FRM_CHECK_PR
         Me.Label23.AutoSize = True
         Me.Label23.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label23.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label23.Location = New System.Drawing.Point(31, 346)
+        Me.Label23.Location = New System.Drawing.Point(31, 315)
         Me.Label23.Name = "Label23"
         Me.Label23.Size = New System.Drawing.Size(61, 16)
         Me.Label23.TabIndex = 1466
@@ -1294,7 +1174,7 @@ Partial Class FRM_CHECK_PR
         '
         Me.Panel13.BackColor = System.Drawing.Color.DimGray
         Me.Panel13.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Panel13.Location = New System.Drawing.Point(8, 341)
+        Me.Panel13.Location = New System.Drawing.Point(8, 310)
         Me.Panel13.Name = "Panel13"
         Me.Panel13.Size = New System.Drawing.Size(20, 29)
         Me.Panel13.TabIndex = 1465
@@ -1303,7 +1183,7 @@ Partial Class FRM_CHECK_PR
         '
         Me.PictureBox2.BackgroundImage = Global.PRA_PIS.My.Resources.Resources.outline_subdirectory_arrow_right_black_18dp
         Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox2.Location = New System.Drawing.Point(9, 237)
+        Me.PictureBox2.Location = New System.Drawing.Point(187, 237)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(33, 29)
         Me.PictureBox2.TabIndex = 1464
@@ -1314,7 +1194,7 @@ Partial Class FRM_CHECK_PR
         Me.Label24.AutoSize = True
         Me.Label24.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label24.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label24.Location = New System.Drawing.Point(44, 255)
+        Me.Label24.Location = New System.Drawing.Point(222, 255)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(86, 16)
         Me.Label24.TabIndex = 21
@@ -1325,7 +1205,7 @@ Partial Class FRM_CHECK_PR
         Me.Label22.AutoSize = True
         Me.Label22.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label22.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label22.Location = New System.Drawing.Point(30, 312)
+        Me.Label22.Location = New System.Drawing.Point(30, 281)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(94, 16)
         Me.Label22.TabIndex = 16
@@ -1335,7 +1215,7 @@ Partial Class FRM_CHECK_PR
         '
         Me.Panel11.BackColor = System.Drawing.Color.SpringGreen
         Me.Panel11.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Panel11.Location = New System.Drawing.Point(8, 306)
+        Me.Panel11.Location = New System.Drawing.Point(8, 275)
         Me.Panel11.Name = "Panel11"
         Me.Panel11.Size = New System.Drawing.Size(20, 29)
         Me.Panel11.TabIndex = 15
@@ -1345,7 +1225,7 @@ Partial Class FRM_CHECK_PR
         Me.Label21.AutoSize = True
         Me.Label21.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label21.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label21.Location = New System.Drawing.Point(30, 277)
+        Me.Label21.Location = New System.Drawing.Point(30, 246)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(84, 16)
         Me.Label21.TabIndex = 16
@@ -1355,7 +1235,7 @@ Partial Class FRM_CHECK_PR
         '
         Me.Panel12.BackColor = System.Drawing.Color.OrangeRed
         Me.Panel12.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Panel12.Location = New System.Drawing.Point(8, 271)
+        Me.Panel12.Location = New System.Drawing.Point(8, 240)
         Me.Panel12.Name = "Panel12"
         Me.Panel12.Size = New System.Drawing.Size(20, 29)
         Me.Panel12.TabIndex = 15
@@ -1365,7 +1245,7 @@ Partial Class FRM_CHECK_PR
         Me.Label20.AutoSize = True
         Me.Label20.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label20.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label20.Location = New System.Drawing.Point(42, 236)
+        Me.Label20.Location = New System.Drawing.Point(220, 236)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(102, 16)
         Me.Label20.TabIndex = 14
@@ -1376,7 +1256,7 @@ Partial Class FRM_CHECK_PR
         Me.Label19.AutoSize = True
         Me.Label19.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label19.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label19.Location = New System.Drawing.Point(29, 211)
+        Me.Label19.Location = New System.Drawing.Point(29, 214)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(133, 16)
         Me.Label19.TabIndex = 12
@@ -1386,7 +1266,7 @@ Partial Class FRM_CHECK_PR
         '
         Me.Panel10.BackColor = System.Drawing.Color.Blue
         Me.Panel10.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Panel10.Location = New System.Drawing.Point(8, 205)
+        Me.Panel10.Location = New System.Drawing.Point(8, 208)
         Me.Panel10.Name = "Panel10"
         Me.Panel10.Size = New System.Drawing.Size(20, 29)
         Me.Panel10.TabIndex = 11
@@ -1396,7 +1276,7 @@ Partial Class FRM_CHECK_PR
         Me.Label18.AutoSize = True
         Me.Label18.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label18.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label18.Location = New System.Drawing.Point(30, 176)
+        Me.Label18.Location = New System.Drawing.Point(30, 179)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(68, 16)
         Me.Label18.TabIndex = 10
@@ -1406,7 +1286,7 @@ Partial Class FRM_CHECK_PR
         '
         Me.Panel9.BackColor = System.Drawing.Color.MediumTurquoise
         Me.Panel9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Panel9.Location = New System.Drawing.Point(8, 170)
+        Me.Panel9.Location = New System.Drawing.Point(8, 173)
         Me.Panel9.Name = "Panel9"
         Me.Panel9.Size = New System.Drawing.Size(20, 29)
         Me.Panel9.TabIndex = 9
@@ -1416,7 +1296,7 @@ Partial Class FRM_CHECK_PR
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label11.Location = New System.Drawing.Point(28, 141)
+        Me.Label11.Location = New System.Drawing.Point(28, 144)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(151, 16)
         Me.Label11.TabIndex = 8
@@ -1426,7 +1306,7 @@ Partial Class FRM_CHECK_PR
         '
         Me.Panel1.BackColor = System.Drawing.Color.HotPink
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Panel1.Location = New System.Drawing.Point(8, 135)
+        Me.Panel1.Location = New System.Drawing.Point(8, 138)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(20, 29)
         Me.Panel1.TabIndex = 7
@@ -1436,7 +1316,7 @@ Partial Class FRM_CHECK_PR
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label13.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label13.Location = New System.Drawing.Point(31, 106)
+        Me.Label13.Location = New System.Drawing.Point(31, 109)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(116, 16)
         Me.Label13.TabIndex = 6
@@ -1447,7 +1327,7 @@ Partial Class FRM_CHECK_PR
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label15.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label15.Location = New System.Drawing.Point(29, 71)
+        Me.Label15.Location = New System.Drawing.Point(29, 74)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(99, 16)
         Me.Label15.TabIndex = 5
@@ -1458,7 +1338,7 @@ Partial Class FRM_CHECK_PR
         Me.Label16.AutoSize = True
         Me.Label16.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label16.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label16.Location = New System.Drawing.Point(30, 36)
+        Me.Label16.Location = New System.Drawing.Point(30, 39)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(50, 16)
         Me.Label16.TabIndex = 4
@@ -1468,7 +1348,7 @@ Partial Class FRM_CHECK_PR
         '
         Me.Panel6.BackColor = System.Drawing.Color.MediumOrchid
         Me.Panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Panel6.Location = New System.Drawing.Point(8, 100)
+        Me.Panel6.Location = New System.Drawing.Point(8, 103)
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(20, 29)
         Me.Panel6.TabIndex = 3
@@ -1477,7 +1357,7 @@ Partial Class FRM_CHECK_PR
         '
         Me.Panel7.BackColor = System.Drawing.Color.CornflowerBlue
         Me.Panel7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Panel7.Location = New System.Drawing.Point(8, 30)
+        Me.Panel7.Location = New System.Drawing.Point(8, 33)
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(20, 29)
         Me.Panel7.TabIndex = 2
@@ -1486,7 +1366,7 @@ Partial Class FRM_CHECK_PR
         '
         Me.Panel8.BackColor = System.Drawing.Color.DarkOrange
         Me.Panel8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Panel8.Location = New System.Drawing.Point(8, 65)
+        Me.Panel8.Location = New System.Drawing.Point(8, 68)
         Me.Panel8.Name = "Panel8"
         Me.Panel8.Size = New System.Drawing.Size(20, 29)
         Me.Panel8.TabIndex = 1
@@ -1497,7 +1377,7 @@ Partial Class FRM_CHECK_PR
         Me.PB_CLEARSEARCH.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PB_CLEARSEARCH.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PB_CLEARSEARCH.InitialImage = Nothing
-        Me.PB_CLEARSEARCH.Location = New System.Drawing.Point(1049, 116)
+        Me.PB_CLEARSEARCH.Location = New System.Drawing.Point(1049, 115)
         Me.PB_CLEARSEARCH.Name = "PB_CLEARSEARCH"
         Me.PB_CLEARSEARCH.Size = New System.Drawing.Size(25, 25)
         Me.PB_CLEARSEARCH.TabIndex = 1462
@@ -1531,11 +1411,11 @@ Partial Class FRM_CHECK_PR
         '
         'PictureBox1
         '
-        Me.PictureBox1.BackgroundImage = Global.PRA_PIS.My.Resources.Resources.outline_search_black_24dp
+        Me.PictureBox1.BackgroundImage = Global.PRA_PIS.My.Resources.Resources.outline_search_black_18dp
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox1.InitialImage = Nothing
-        Me.PictureBox1.Location = New System.Drawing.Point(196, 110)
+        Me.PictureBox1.Location = New System.Drawing.Point(198, 110)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(37, 37)
         Me.PictureBox1.TabIndex = 1409
@@ -1548,10 +1428,6 @@ Partial Class FRM_CHECK_PR
         'TblM4_PURCHASEREQUEST_ITEMTableAdapter
         '
         Me.TblM4_PURCHASEREQUEST_ITEMTableAdapter.ClearBeforeFill = True
-        '
-        'SPM4_PURCHASELISTTableAdapter
-        '
-        Me.SPM4_PURCHASELISTTableAdapter.ClearBeforeFill = True
         '
         'TblM4_PURCHASEREQUEST_CANCELEDTableAdapter
         '
@@ -1567,13 +1443,122 @@ Partial Class FRM_CHECK_PR
         Me.WTXT_SEARCHLIST_PR.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.WTXT_SEARCHLIST_PR.Font = New System.Drawing.Font("Century Gothic", 18.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.WTXT_SEARCHLIST_PR.ForeColor = System.Drawing.Color.Black
-        Me.WTXT_SEARCHLIST_PR.Location = New System.Drawing.Point(237, 113)
+        Me.WTXT_SEARCHLIST_PR.Location = New System.Drawing.Point(241, 113)
         Me.WTXT_SEARCHLIST_PR.MaxLength = 30
         Me.WTXT_SEARCHLIST_PR.Name = "WTXT_SEARCHLIST_PR"
-        Me.WTXT_SEARCHLIST_PR.Size = New System.Drawing.Size(800, 31)
+        Me.WTXT_SEARCHLIST_PR.Size = New System.Drawing.Size(796, 31)
         Me.WTXT_SEARCHLIST_PR.TabIndex = 1410
         Me.WTXT_SEARCHLIST_PR.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.WTXT_SEARCHLIST_PR.Watermark = "Search PR No."
+        '
+        'SPM4_PURCHASELISTBindingSource
+        '
+        Me.SPM4_PURCHASELISTBindingSource.DataMember = "SPM4_PURCHASELIST"
+        '
+        'SPM4_PURCHASELISTTableAdapter
+        '
+        Me.SPM4_PURCHASELISTTableAdapter.ClearBeforeFill = True
+        '
+        'StatusOfOngoingPRDataGridViewTextBoxColumn
+        '
+        Me.StatusOfOngoingPRDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.StatusOfOngoingPRDataGridViewTextBoxColumn.DataPropertyName = "Status of Ongoing PR"
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Transparent
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Transparent
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Transparent
+        Me.StatusOfOngoingPRDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle3
+        Me.StatusOfOngoingPRDataGridViewTextBoxColumn.HeaderText = ""
+        Me.StatusOfOngoingPRDataGridViewTextBoxColumn.Name = "StatusOfOngoingPRDataGridViewTextBoxColumn"
+        Me.StatusOfOngoingPRDataGridViewTextBoxColumn.ReadOnly = True
+        Me.StatusOfOngoingPRDataGridViewTextBoxColumn.Width = 25
+        '
+        'PRSTATUSDataGridViewTextBoxColumn
+        '
+        Me.PRSTATUSDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.PRSTATUSDataGridViewTextBoxColumn.DataPropertyName = "PR_STATUS"
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Transparent
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Transparent
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Transparent
+        Me.PRSTATUSDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle4
+        Me.PRSTATUSDataGridViewTextBoxColumn.FillWeight = 385.8268!
+        Me.PRSTATUSDataGridViewTextBoxColumn.HeaderText = ""
+        Me.PRSTATUSDataGridViewTextBoxColumn.Name = "PRSTATUSDataGridViewTextBoxColumn"
+        Me.PRSTATUSDataGridViewTextBoxColumn.ReadOnly = True
+        Me.PRSTATUSDataGridViewTextBoxColumn.Width = 25
+        '
+        'PRPRNODataGridViewTextBoxColumn
+        '
+        Me.PRPRNODataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.PRPRNODataGridViewTextBoxColumn.DataPropertyName = "PR_PRNO"
+        Me.PRPRNODataGridViewTextBoxColumn.FillWeight = 52.3622!
+        Me.PRPRNODataGridViewTextBoxColumn.HeaderText = "PR No."
+        Me.PRPRNODataGridViewTextBoxColumn.Name = "PRPRNODataGridViewTextBoxColumn"
+        Me.PRPRNODataGridViewTextBoxColumn.ReadOnly = True
+        Me.PRPRNODataGridViewTextBoxColumn.Width = 140
+        '
+        'DescriptionDataGridViewTextBoxColumn
+        '
+        Me.DescriptionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DescriptionDataGridViewTextBoxColumn.DataPropertyName = "Description"
+        Me.DescriptionDataGridViewTextBoxColumn.FillWeight = 52.3622!
+        Me.DescriptionDataGridViewTextBoxColumn.HeaderText = "Description"
+        Me.DescriptionDataGridViewTextBoxColumn.Name = "DescriptionDataGridViewTextBoxColumn"
+        Me.DescriptionDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'DateCreatedDataGridViewTextBoxColumn
+        '
+        Me.DateCreatedDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.DateCreatedDataGridViewTextBoxColumn.DataPropertyName = "DateCreated"
+        Me.DateCreatedDataGridViewTextBoxColumn.FillWeight = 52.3622!
+        Me.DateCreatedDataGridViewTextBoxColumn.HeaderText = "Date Created"
+        Me.DateCreatedDataGridViewTextBoxColumn.Name = "DateCreatedDataGridViewTextBoxColumn"
+        Me.DateCreatedDataGridViewTextBoxColumn.ReadOnly = True
+        Me.DateCreatedDataGridViewTextBoxColumn.Width = 150
+        '
+        'btnViewDetails
+        '
+        Me.btnViewDetails.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnViewDetails.DefaultCellStyle = DataGridViewCellStyle5
+        Me.btnViewDetails.FillWeight = 52.3622!
+        Me.btnViewDetails.HeaderText = ""
+        Me.btnViewDetails.Name = "btnViewDetails"
+        Me.btnViewDetails.ReadOnly = True
+        Me.btnViewDetails.Text = "View Details"
+        Me.btnViewDetails.UseColumnTextForButtonValue = True
+        Me.btnViewDetails.Width = 110
+        '
+        'btnUpdateStatus
+        '
+        Me.btnUpdateStatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnUpdateStatus.DefaultCellStyle = DataGridViewCellStyle6
+        Me.btnUpdateStatus.FillWeight = 52.3622!
+        Me.btnUpdateStatus.HeaderText = ""
+        Me.btnUpdateStatus.Name = "btnUpdateStatus"
+        Me.btnUpdateStatus.ReadOnly = True
+        Me.btnUpdateStatus.Text = "Update Status"
+        Me.btnUpdateStatus.UseColumnTextForButtonValue = True
+        Me.btnUpdateStatus.Width = 110
+        '
+        'PRPRNO1DataGridViewTextBoxColumn
+        '
+        Me.PRPRNO1DataGridViewTextBoxColumn.DataPropertyName = "PR_PRNO1"
+        Me.PRPRNO1DataGridViewTextBoxColumn.HeaderText = "PR_PRNO1"
+        Me.PRPRNO1DataGridViewTextBoxColumn.Name = "PRPRNO1DataGridViewTextBoxColumn"
+        Me.PRPRNO1DataGridViewTextBoxColumn.ReadOnly = True
+        Me.PRPRNO1DataGridViewTextBoxColumn.Visible = False
+        '
+        'MAXDATEDataGridViewTextBoxColumn
+        '
+        Me.MAXDATEDataGridViewTextBoxColumn.DataPropertyName = "MAXDATE"
+        Me.MAXDATEDataGridViewTextBoxColumn.FillWeight = 52.3622!
+        Me.MAXDATEDataGridViewTextBoxColumn.HeaderText = "MAXDATE"
+        Me.MAXDATEDataGridViewTextBoxColumn.Name = "MAXDATEDataGridViewTextBoxColumn"
+        Me.MAXDATEDataGridViewTextBoxColumn.ReadOnly = True
+        Me.MAXDATEDataGridViewTextBoxColumn.Visible = False
         '
         'FRM_CHECK_PR
         '
@@ -1608,6 +1593,7 @@ Partial Class FRM_CHECK_PR
         Me.GroupBox1.PerformLayout()
         CType(Me.DGV_PRLIST, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SPM4PURCHASELISTBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DS_STOREDPROC, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DS_PROPERTYDB, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
@@ -1615,7 +1601,6 @@ Partial Class FRM_CHECK_PR
         Me.GroupBox3.PerformLayout()
         Me.APNL_VALIDATEPR.ResumeLayout(False)
         Me.APNL_VALIDATEPR.PerformLayout()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PBICONSEARCH, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PB_VALIDATE_PRPREVIEW, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel23.ResumeLayout(False)
@@ -1627,6 +1612,7 @@ Partial Class FRM_CHECK_PR
         CType(Me.PB_VALIDATE_PR_VIEW_REPORT, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PB_VALIDATE_PR, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SPM4_PURCHASELISTBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1666,17 +1652,14 @@ Partial Class FRM_CHECK_PR
     Friend WithEvents BTN_CPR_CANCEL As Button
     Friend WithEvents BTN_CPR_FORREVISION As Button
     Friend WithEvents RectangleShape8 As PowerPacks.RectangleShape
-    Friend WithEvents RectangleShape6 As PowerPacks.RectangleShape
     Friend WithEvents RectangleShape4 As PowerPacks.RectangleShape
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents Label4 As Label
     Friend WithEvents Panel5 As Panel
     Friend WithEvents Label6 As Label
-    Friend WithEvents Label7 As Label
     Friend WithEvents Label10 As Label
     Friend WithEvents Panel4 As Panel
     Friend WithEvents Panel3 As Panel
-    Friend WithEvents Panel2 As Panel
     Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents LBL_TOTALNOOFPR As Label
     Friend WithEvents DGV_PRLIST As DataGridView
@@ -1735,22 +1718,24 @@ Partial Class FRM_CHECK_PR
     Friend WithEvents Label20 As Label
     Friend WithEvents Label24 As Label
     Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents Label22 As Label
-    Friend WithEvents Panel11 As Panel
     Friend WithEvents Label23 As Label
     Friend WithEvents Panel13 As Panel
-    Friend WithEvents LinkLabel1 As LinkLabel
-    Friend WithEvents PictureBox3 As PictureBox
-    Friend WithEvents RectangleShape10 As PowerPacks.RectangleShape
-    Friend WithEvents SPM4PURCHASELISTBindingSource As BindingSource
-    Friend WithEvents SPM4_PURCHASELISTTableAdapter As DS_PROPERTYDBTableAdapters.SPM4_PURCHASELISTTableAdapter
     Friend WithEvents TblM4_PURCHASEREQUEST_CANCELEDTableAdapter As DS_PROPERTYDBTableAdapters.tblM4_PURCHASEREQUEST_CANCELEDTableAdapter
     Friend WithEvents TblM4_PURCHASEREQUEST_REVISIONTableAdapter As DS_PROPERTYDBTableAdapters.tblM4_PURCHASEREQUEST_REVISIONTableAdapter
+    Friend WithEvents Label22 As Label
+    Friend WithEvents Panel11 As Panel
+    Friend WithEvents Label7 As Label
+    Friend WithEvents SPM4_PURCHASELISTBindingSource As BindingSource
+    Friend WithEvents SPM4_PURCHASELISTTableAdapter As DS_STOREDPROCTableAdapters.SPM4_PURCHASELISTTableAdapter
+    Friend WithEvents DS_STOREDPROC As DS_STOREDPROC
+    Friend WithEvents SPM4PURCHASELISTBindingSource As BindingSource
     Friend WithEvents StatusOfOngoingPRDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents PRSTATUSDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents PRPRNODataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents RemarksPurposeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents CREATEDDATEDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents DescriptionDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents DateCreatedDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents btnViewDetails As DataGridViewButtonColumn
     Friend WithEvents btnUpdateStatus As DataGridViewButtonColumn
+    Friend WithEvents PRPRNO1DataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents MAXDATEDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class

@@ -23,232 +23,94 @@ Partial Class FRM_LOGIN
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.TBLG3_PRIMARY_SIGNATORYDataGridView = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TBLG3_PRIMARY_SIGNATORYBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DSPROPERTYDB_TABLES = New PRA_PIS.DS_PROPERTYDB()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FRM_LOGIN))
         Me.BTNCLOSE = New System.Windows.Forms.Button()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.BTNLOGIN = New System.Windows.Forms.Button()
-        Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.TXT_PASSWORD = New PRA_PIS.WatermarkTextBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.TXT_USERNAME = New PRA_PIS.WatermarkTextBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.tmrClockTimer = New System.Windows.Forms.Timer(Me.components)
         Me.DS_TABLES = New PRA_PIS.DS_TABLES()
         Me.TblV1_USERACCOUNTTableAdapter = New PRA_PIS.DS_TABLESTableAdapters.tblV1_USERACCOUNTTableAdapter()
         Me.TblV1_USERACCOUNTBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.tmrClockTimer = New System.Windows.Forms.Timer(Me.components)
         Me.TblV1_USERACCOUNTLOGSBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TblV1_USERACCOUNTLOGSTableAdapter = New PRA_PIS.DS_TABLESTableAdapters.tblV1_USERACCOUNTLOGSTableAdapter()
-        Me.TblV1_HRISEMPLOYEEDATATableAdapter1 = New PRA_PIS.DS_TABLESTableAdapters.tblV1_HRISEMPLOYEEDATATableAdapter()
-        Me.TblV1_HRISDIVISIONTableAdapter1 = New PRA_PIS.DS_TABLESTableAdapters.tblV1_HRISDIVISIONTableAdapter()
-        Me.TblV1_HRISDEPARTMENTTableAdapter1 = New PRA_PIS.DS_TABLESTableAdapters.tblV1_HRISDEPARTMENTTableAdapter()
-        Me.Panel1.SuspendLayout()
-        CType(Me.TBLG3_PRIMARY_SIGNATORYDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TBLG3_PRIMARY_SIGNATORYBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DSPROPERTYDB_TABLES, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel5.SuspendLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel2.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.RECT_MAINRECT = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
+        Me.PNL_MAINPANEL = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.LBL_PASSCLEAR = New System.Windows.Forms.Label()
+        Me.TXT_PASSWORD = New PRA_PIS.WatermarkTextBox()
+        Me.ShapeContainer4 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
+        Me.RectangleShape2 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.LBL_USERCLEAR = New System.Windows.Forms.Label()
+        Me.Label55 = New System.Windows.Forms.Label()
+        Me.TXT_USERNAME = New PRA_PIS.WatermarkTextBox()
+        Me.ShapeContainer3 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
+        Me.RectangleShape22 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.ShapeContainer2 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
+        Me.RectangleShape1 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
+        Me.DS_VIEWS = New PRA_PIS.DS_VIEWS()
+        Me.V1VW_USERACCEMPLOYEEBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.V1VW_USERACCEMPLOYEETableAdapter = New PRA_PIS.DS_VIEWSTableAdapters.V1VW_USERACCEMPLOYEETableAdapter()
+        Me.TableAdapterManager = New PRA_PIS.DS_PRAJO_DATABASETableAdapters.TableAdapterManager()
+        Me.SPM4_PDS_LISTTableAdapter = New PRA_PIS.DS_PRAJO_DATABASETableAdapters.SPM4_PDS_LISTTableAdapter()
+        Me.SPM4_PDS_LISTBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.DS_TABLES, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TblV1_USERACCOUNTBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TblV1_USERACCOUNTLOGSBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PNL_MAINPANEL.SuspendLayout()
+        Me.Panel7.SuspendLayout()
+        Me.Panel4.SuspendLayout()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DS_VIEWS, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.V1VW_USERACCEMPLOYEEBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SPM4_PDS_LISTBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'Panel1
-        '
-        Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.BackColor = System.Drawing.Color.White
-        Me.Panel1.Controls.Add(Me.TBLG3_PRIMARY_SIGNATORYDataGridView)
-        Me.Panel1.Controls.Add(Me.BTNCLOSE)
-        Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Controls.Add(Me.BTNLOGIN)
-        Me.Panel1.Controls.Add(Me.Panel5)
-        Me.Panel1.Controls.Add(Me.Panel2)
-        Me.Panel1.Location = New System.Drawing.Point(4, 48)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(392, 266)
-        Me.Panel1.TabIndex = 1
-        '
-        'TBLG3_PRIMARY_SIGNATORYDataGridView
-        '
-        Me.TBLG3_PRIMARY_SIGNATORYDataGridView.AutoGenerateColumns = False
-        Me.TBLG3_PRIMARY_SIGNATORYDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.TBLG3_PRIMARY_SIGNATORYDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3})
-        Me.TBLG3_PRIMARY_SIGNATORYDataGridView.DataSource = Me.TBLG3_PRIMARY_SIGNATORYBindingSource
-        Me.TBLG3_PRIMARY_SIGNATORYDataGridView.Location = New System.Drawing.Point(587, 195)
-        Me.TBLG3_PRIMARY_SIGNATORYDataGridView.Name = "TBLG3_PRIMARY_SIGNATORYDataGridView"
-        Me.TBLG3_PRIMARY_SIGNATORYDataGridView.Size = New System.Drawing.Size(197, 62)
-        Me.TBLG3_PRIMARY_SIGNATORYDataGridView.TabIndex = 50
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "SIG_TY_NO"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "SIG_TY_NO"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.DataPropertyName = "HRIS_EMPNO_USER"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "HRIS_EMPNO_USER"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.DataPropertyName = "HRIS_EMPNO_SIG"
-        Me.DataGridViewTextBoxColumn3.HeaderText = "HRIS_EMPNO_SIG"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        '
-        'TBLG3_PRIMARY_SIGNATORYBindingSource
-        '
-        Me.TBLG3_PRIMARY_SIGNATORYBindingSource.DataMember = "TBLG3_PRIMARY_SIGNATORY"
-        Me.TBLG3_PRIMARY_SIGNATORYBindingSource.DataSource = Me.DSPROPERTYDB_TABLES
-        '
-        'DSPROPERTYDB_TABLES
-        '
-        Me.DSPROPERTYDB_TABLES.DataSetName = "DSPROPERTYDB_TABLES"
-        Me.DSPROPERTYDB_TABLES.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'BTNCLOSE
         '
         Me.BTNCLOSE.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.BTNCLOSE.BackColor = System.Drawing.SystemColors.GrayText
+        Me.BTNCLOSE.BackColor = System.Drawing.Color.LightSeaGreen
+        Me.BTNCLOSE.BackgroundImage = Global.PRA_PIS.My.Resources.Resources.PADLOCK
         Me.BTNCLOSE.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.BTNCLOSE.FlatAppearance.BorderColor = System.Drawing.SystemColors.GradientActiveCaption
+        Me.BTNCLOSE.FlatAppearance.BorderSize = 2
+        Me.BTNCLOSE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTNCLOSE.Font = New System.Drawing.Font("Agency FB", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTNCLOSE.ForeColor = System.Drawing.Color.White
-        Me.BTNCLOSE.Location = New System.Drawing.Point(207, 156)
+        Me.BTNCLOSE.Location = New System.Drawing.Point(431, 350)
         Me.BTNCLOSE.Name = "BTNCLOSE"
-        Me.BTNCLOSE.Size = New System.Drawing.Size(98, 33)
+        Me.BTNCLOSE.Size = New System.Drawing.Size(230, 46)
         Me.BTNCLOSE.TabIndex = 50
-        Me.BTNCLOSE.Text = "CLOSE"
+        Me.BTNCLOSE.Text = "EXIT"
+        Me.BTNCLOSE.TextAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.BTNCLOSE.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         Me.BTNCLOSE.UseVisualStyleBackColor = False
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(45, 33)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(51, 21)
-        Me.Label2.TabIndex = 49
-        Me.Label2.Text = "Login"
         '
         'BTNLOGIN
         '
         Me.BTNLOGIN.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.BTNLOGIN.BackColor = System.Drawing.SystemColors.GrayText
+        Me.BTNLOGIN.BackColor = System.Drawing.Color.LightSeaGreen
+        Me.BTNLOGIN.BackgroundImage = Global.PRA_PIS.My.Resources.Resources.PADLOCK
+        Me.BTNLOGIN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.BTNLOGIN.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.BTNLOGIN.FlatAppearance.BorderColor = System.Drawing.SystemColors.GradientActiveCaption
+        Me.BTNLOGIN.FlatAppearance.BorderSize = 2
+        Me.BTNLOGIN.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTNLOGIN.Font = New System.Drawing.Font("Agency FB", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTNLOGIN.ForeColor = System.Drawing.Color.White
-        Me.BTNLOGIN.Location = New System.Drawing.Point(66, 156)
+        Me.BTNLOGIN.Location = New System.Drawing.Point(116, 350)
         Me.BTNLOGIN.Name = "BTNLOGIN"
-        Me.BTNLOGIN.Size = New System.Drawing.Size(98, 33)
+        Me.BTNLOGIN.Size = New System.Drawing.Size(230, 46)
         Me.BTNLOGIN.TabIndex = 48
         Me.BTNLOGIN.Text = "LOGIN"
+        Me.BTNLOGIN.TextAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.BTNLOGIN.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         Me.BTNLOGIN.UseVisualStyleBackColor = False
-        '
-        'Panel5
-        '
-        Me.Panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel5.Controls.Add(Me.TXT_PASSWORD)
-        Me.Panel5.Controls.Add(Me.PictureBox2)
-        Me.Panel5.Controls.Add(Me.Panel6)
-        Me.Panel5.Location = New System.Drawing.Point(44, 107)
-        Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(283, 30)
-        Me.Panel5.TabIndex = 6
-        '
-        'TXT_PASSWORD
-        '
-        Me.TXT_PASSWORD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TXT_PASSWORD.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TXT_PASSWORD.Font = New System.Drawing.Font("Century Gothic", 12.75!, System.Drawing.FontStyle.Bold)
-        Me.TXT_PASSWORD.Location = New System.Drawing.Point(5, 0)
-        Me.TXT_PASSWORD.Name = "TXT_PASSWORD"
-        Me.TXT_PASSWORD.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.TXT_PASSWORD.Size = New System.Drawing.Size(245, 28)
-        Me.TXT_PASSWORD.TabIndex = 52
-        Me.TXT_PASSWORD.Watermark = Nothing
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.Dock = System.Windows.Forms.DockStyle.Right
-        Me.PictureBox2.Location = New System.Drawing.Point(250, 0)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(31, 28)
-        Me.PictureBox2.TabIndex = 5
-        Me.PictureBox2.TabStop = False
-        '
-        'Panel6
-        '
-        Me.Panel6.BackColor = System.Drawing.Color.Gray
-        Me.Panel6.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel6.Location = New System.Drawing.Point(0, 0)
-        Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(5, 28)
-        Me.Panel6.TabIndex = 4
-        '
-        'Panel2
-        '
-        Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel2.Controls.Add(Me.TXT_USERNAME)
-        Me.Panel2.Controls.Add(Me.PictureBox1)
-        Me.Panel2.Controls.Add(Me.Panel3)
-        Me.Panel2.Location = New System.Drawing.Point(44, 57)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(283, 30)
-        Me.Panel2.TabIndex = 3
-        '
-        'TXT_USERNAME
-        '
-        Me.TXT_USERNAME.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TXT_USERNAME.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TXT_USERNAME.Font = New System.Drawing.Font("Century Gothic", 12.75!, System.Drawing.FontStyle.Bold)
-        Me.TXT_USERNAME.Location = New System.Drawing.Point(5, 0)
-        Me.TXT_USERNAME.Name = "TXT_USERNAME"
-        Me.TXT_USERNAME.Size = New System.Drawing.Size(245, 28)
-        Me.TXT_USERNAME.TabIndex = 51
-        Me.TXT_USERNAME.Watermark = Nothing
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Right
-        Me.PictureBox1.Location = New System.Drawing.Point(250, 0)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(31, 28)
-        Me.PictureBox1.TabIndex = 5
-        Me.PictureBox1.TabStop = False
-        '
-        'Panel3
-        '
-        Me.Panel3.BackColor = System.Drawing.Color.Gray
-        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel3.Location = New System.Drawing.Point(0, 0)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(5, 28)
-        Me.Panel3.TabIndex = 4
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Century Gothic", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(125, 15)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(147, 32)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "WELCOME"
         '
         'DS_TABLES
         '
@@ -274,77 +136,348 @@ Partial Class FRM_LOGIN
         '
         Me.TblV1_USERACCOUNTLOGSTableAdapter.ClearBeforeFill = True
         '
-        'TblV1_HRISEMPLOYEEDATATableAdapter1
+        'RECT_MAINRECT
         '
-        Me.TblV1_HRISEMPLOYEEDATATableAdapter1.ClearBeforeFill = True
+        Me.RECT_MAINRECT.BorderColor = System.Drawing.Color.Gainsboro
+        Me.RECT_MAINRECT.BorderWidth = 3
+        Me.RECT_MAINRECT.CornerRadius = 8
+        Me.RECT_MAINRECT.FillColor = System.Drawing.Color.White
+        Me.RECT_MAINRECT.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
+        Me.RECT_MAINRECT.Location = New System.Drawing.Point(8, 74)
+        Me.RECT_MAINRECT.Name = "RECT_MAINRECT"
+        Me.RECT_MAINRECT.Size = New System.Drawing.Size(788, 433)
         '
-        'TblV1_HRISDIVISIONTableAdapter1
+        'ShapeContainer1
         '
-        Me.TblV1_HRISDIVISIONTableAdapter1.ClearBeforeFill = True
+        Me.ShapeContainer1.Location = New System.Drawing.Point(0, 0)
+        Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
+        Me.ShapeContainer1.Name = "ShapeContainer1"
+        Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RECT_MAINRECT})
+        Me.ShapeContainer1.Size = New System.Drawing.Size(803, 513)
+        Me.ShapeContainer1.TabIndex = 2
+        Me.ShapeContainer1.TabStop = False
         '
-        'TblV1_HRISDEPARTMENTTableAdapter1
+        'PNL_MAINPANEL
         '
-        Me.TblV1_HRISDEPARTMENTTableAdapter1.ClearBeforeFill = True
+        Me.PNL_MAINPANEL.BackColor = System.Drawing.Color.White
+        Me.PNL_MAINPANEL.Controls.Add(Me.BTNCLOSE)
+        Me.PNL_MAINPANEL.Controls.Add(Me.BTNLOGIN)
+        Me.PNL_MAINPANEL.Controls.Add(Me.Label1)
+        Me.PNL_MAINPANEL.Controls.Add(Me.Label6)
+        Me.PNL_MAINPANEL.Controls.Add(Me.Label3)
+        Me.PNL_MAINPANEL.Controls.Add(Me.Panel7)
+        Me.PNL_MAINPANEL.Controls.Add(Me.Panel4)
+        Me.PNL_MAINPANEL.Controls.Add(Me.ShapeContainer2)
+        Me.PNL_MAINPANEL.Location = New System.Drawing.Point(14, 78)
+        Me.PNL_MAINPANEL.Name = "PNL_MAINPANEL"
+        Me.PNL_MAINPANEL.Size = New System.Drawing.Size(776, 426)
+        Me.PNL_MAINPANEL.TabIndex = 3
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Century Gothic", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(323, 172)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(130, 30)
+        Me.Label1.TabIndex = 1448
+        Me.Label1.Text = "PRA Login"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Century Gothic", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(287, 116)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(203, 33)
+        Me.Label6.TabIndex = 1444
+        Me.Label6.Text = "Welcome User"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Century Gothic", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(118, 42)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(535, 42)
+        Me.Label3.TabIndex = 1443
+        Me.Label3.Text = "Philippine Retirement Authority"
+        '
+        'Panel7
+        '
+        Me.Panel7.Controls.Add(Me.Label7)
+        Me.Panel7.Controls.Add(Me.LBL_PASSCLEAR)
+        Me.Panel7.Controls.Add(Me.TXT_PASSWORD)
+        Me.Panel7.Controls.Add(Me.ShapeContainer4)
+        Me.Panel7.Location = New System.Drawing.Point(116, 276)
+        Me.Panel7.Name = "Panel7"
+        Me.Panel7.Size = New System.Drawing.Size(545, 48)
+        Me.Panel7.TabIndex = 1442
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Label7.Font = New System.Drawing.Font("Century Gothic", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.DimGray
+        Me.Label7.Image = Global.PRA_PIS.My.Resources.Resources.round_vpn_key_black_18dp
+        Me.Label7.Location = New System.Drawing.Point(17, 7)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(39, 36)
+        Me.Label7.TabIndex = 1445
+        Me.Label7.Text = "   "
+        '
+        'LBL_PASSCLEAR
+        '
+        Me.LBL_PASSCLEAR.AutoSize = True
+        Me.LBL_PASSCLEAR.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.LBL_PASSCLEAR.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LBL_PASSCLEAR.ForeColor = System.Drawing.Color.DimGray
+        Me.LBL_PASSCLEAR.Location = New System.Drawing.Point(507, 14)
+        Me.LBL_PASSCLEAR.Name = "LBL_PASSCLEAR"
+        Me.LBL_PASSCLEAR.Size = New System.Drawing.Size(32, 21)
+        Me.LBL_PASSCLEAR.TabIndex = 1446
+        Me.LBL_PASSCLEAR.Text = "❌"
+        Me.LBL_PASSCLEAR.Visible = False
+        '
+        'TXT_PASSWORD
+        '
+        Me.TXT_PASSWORD.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TXT_PASSWORD.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TXT_PASSWORD.Font = New System.Drawing.Font("Century Gothic", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TXT_PASSWORD.ForeColor = System.Drawing.Color.DimGray
+        Me.TXT_PASSWORD.Location = New System.Drawing.Point(62, 10)
+        Me.TXT_PASSWORD.Name = "TXT_PASSWORD"
+        Me.TXT_PASSWORD.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.TXT_PASSWORD.Size = New System.Drawing.Size(437, 30)
+        Me.TXT_PASSWORD.TabIndex = 1438
+        Me.TXT_PASSWORD.Text = "123123123"
+        Me.TXT_PASSWORD.Watermark = "Password"
+        '
+        'ShapeContainer4
+        '
+        Me.ShapeContainer4.Location = New System.Drawing.Point(0, 0)
+        Me.ShapeContainer4.Margin = New System.Windows.Forms.Padding(0)
+        Me.ShapeContainer4.Name = "ShapeContainer4"
+        Me.ShapeContainer4.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape2})
+        Me.ShapeContainer4.Size = New System.Drawing.Size(545, 48)
+        Me.ShapeContainer4.TabIndex = 0
+        Me.ShapeContainer4.TabStop = False
+        '
+        'RectangleShape2
+        '
+        Me.RectangleShape2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.RectangleShape2.BorderColor = System.Drawing.SystemColors.ActiveCaption
+        Me.RectangleShape2.BorderWidth = 2
+        Me.RectangleShape2.CornerRadius = 5
+        Me.RectangleShape2.FillColor = System.Drawing.SystemColors.ButtonFace
+        Me.RectangleShape2.Location = New System.Drawing.Point(6, 3)
+        Me.RectangleShape2.Name = "RectangleShape22"
+        Me.RectangleShape2.Size = New System.Drawing.Size(536, 42)
+        '
+        'Panel4
+        '
+        Me.Panel4.Controls.Add(Me.LBL_USERCLEAR)
+        Me.Panel4.Controls.Add(Me.Label55)
+        Me.Panel4.Controls.Add(Me.TXT_USERNAME)
+        Me.Panel4.Controls.Add(Me.ShapeContainer3)
+        Me.Panel4.Location = New System.Drawing.Point(116, 216)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(545, 48)
+        Me.Panel4.TabIndex = 1441
+        '
+        'LBL_USERCLEAR
+        '
+        Me.LBL_USERCLEAR.AutoSize = True
+        Me.LBL_USERCLEAR.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.LBL_USERCLEAR.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LBL_USERCLEAR.ForeColor = System.Drawing.Color.DimGray
+        Me.LBL_USERCLEAR.Location = New System.Drawing.Point(507, 13)
+        Me.LBL_USERCLEAR.Name = "LBL_USERCLEAR"
+        Me.LBL_USERCLEAR.Size = New System.Drawing.Size(32, 21)
+        Me.LBL_USERCLEAR.TabIndex = 1447
+        Me.LBL_USERCLEAR.Text = "❌"
+        Me.LBL_USERCLEAR.Visible = False
+        '
+        'Label55
+        '
+        Me.Label55.AutoSize = True
+        Me.Label55.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Label55.Font = New System.Drawing.Font("Century Gothic", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label55.ForeColor = System.Drawing.Color.DimGray
+        Me.Label55.Image = CType(resources.GetObject("Label55.Image"), System.Drawing.Image)
+        Me.Label55.Location = New System.Drawing.Point(17, 7)
+        Me.Label55.Name = "Label55"
+        Me.Label55.Size = New System.Drawing.Size(39, 36)
+        Me.Label55.TabIndex = 1440
+        Me.Label55.Text = "   "
+        '
+        'TXT_USERNAME
+        '
+        Me.TXT_USERNAME.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TXT_USERNAME.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TXT_USERNAME.Font = New System.Drawing.Font("Century Gothic", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TXT_USERNAME.ForeColor = System.Drawing.Color.DimGray
+        Me.TXT_USERNAME.Location = New System.Drawing.Point(62, 10)
+        Me.TXT_USERNAME.Name = "TXT_USERNAME"
+        Me.TXT_USERNAME.Size = New System.Drawing.Size(437, 30)
+        Me.TXT_USERNAME.TabIndex = 1438
+        Me.TXT_USERNAME.Text = "x10241"
+        Me.TXT_USERNAME.Watermark = "Username"
+        '
+        'ShapeContainer3
+        '
+        Me.ShapeContainer3.Location = New System.Drawing.Point(0, 0)
+        Me.ShapeContainer3.Margin = New System.Windows.Forms.Padding(0)
+        Me.ShapeContainer3.Name = "ShapeContainer3"
+        Me.ShapeContainer3.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape22})
+        Me.ShapeContainer3.Size = New System.Drawing.Size(545, 48)
+        Me.ShapeContainer3.TabIndex = 0
+        Me.ShapeContainer3.TabStop = False
+        '
+        'RectangleShape22
+        '
+        Me.RectangleShape22.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.RectangleShape22.BorderColor = System.Drawing.SystemColors.ActiveCaption
+        Me.RectangleShape22.BorderWidth = 2
+        Me.RectangleShape22.CornerRadius = 5
+        Me.RectangleShape22.FillColor = System.Drawing.SystemColors.ButtonFace
+        Me.RectangleShape22.Location = New System.Drawing.Point(6, 3)
+        Me.RectangleShape22.Name = "RectangleShape22"
+        Me.RectangleShape22.Size = New System.Drawing.Size(534, 42)
+        '
+        'ShapeContainer2
+        '
+        Me.ShapeContainer2.Location = New System.Drawing.Point(0, 0)
+        Me.ShapeContainer2.Margin = New System.Windows.Forms.Padding(0)
+        Me.ShapeContainer2.Name = "ShapeContainer2"
+        Me.ShapeContainer2.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape1})
+        Me.ShapeContainer2.Size = New System.Drawing.Size(776, 426)
+        Me.ShapeContainer2.TabIndex = 1405
+        Me.ShapeContainer2.TabStop = False
+        '
+        'RectangleShape1
+        '
+        Me.RectangleShape1.BorderColor = System.Drawing.Color.White
+        Me.RectangleShape1.BorderWidth = 2
+        Me.RectangleShape1.CornerRadius = 2
+        Me.RectangleShape1.FillColor = System.Drawing.Color.Silver
+        Me.RectangleShape1.FillGradientColor = System.Drawing.Color.LightSlateGray
+        Me.RectangleShape1.FillGradientStyle = Microsoft.VisualBasic.PowerPacks.FillGradientStyle.Vertical
+        Me.RectangleShape1.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
+        Me.RectangleShape1.Location = New System.Drawing.Point(56, 149)
+        Me.RectangleShape1.Name = "RectangleShape1"
+        Me.RectangleShape1.SelectionColor = System.Drawing.Color.HotPink
+        Me.RectangleShape1.Size = New System.Drawing.Size(665, 12)
+        '
+        'PictureBox5
+        '
+        Me.PictureBox5.BackgroundImage = Global.PRA_PIS.My.Resources.Resources.PRA_LOGO_WHITE_HALF_BG
+        Me.PictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.PictureBox5.Location = New System.Drawing.Point(352, 24)
+        Me.PictureBox5.Name = "PictureBox5"
+        Me.PictureBox5.Size = New System.Drawing.Size(100, 100)
+        Me.PictureBox5.TabIndex = 1446
+        Me.PictureBox5.TabStop = False
+        '
+        'DS_VIEWS
+        '
+        Me.DS_VIEWS.DataSetName = "DS_VIEWS"
+        Me.DS_VIEWS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'V1VW_USERACCEMPLOYEEBindingSource
+        '
+        Me.V1VW_USERACCEMPLOYEEBindingSource.DataMember = "V1VW_USERACCEMPLOYEE"
+        Me.V1VW_USERACCEMPLOYEEBindingSource.DataSource = Me.DS_VIEWS
+        '
+        'V1VW_USERACCEMPLOYEETableAdapter
+        '
+        Me.V1VW_USERACCEMPLOYEETableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.Connection = Nothing
+        Me.TableAdapterManager.UpdateOrder = PRA_PIS.DS_PRAJO_DATABASETableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
+        'SPM4_PDS_LISTTableAdapter
+        '
+        Me.SPM4_PDS_LISTTableAdapter.ClearBeforeFill = True
+        '
+        'SPM4_PDS_LISTBindingSource
+        '
+        Me.SPM4_PDS_LISTBindingSource.DataMember = "SPM4_PDS_LIST"
         '
         'FRM_LOGIN
         '
         Me.AcceptButton = Me.BTNLOGIN
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.Gray
+        Me.BackColor = System.Drawing.SystemColors.Control
         Me.CancelButton = Me.BTNCLOSE
-        Me.ClientSize = New System.Drawing.Size(400, 317)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.Panel1)
+        Me.ClientSize = New System.Drawing.Size(803, 513)
+        Me.Controls.Add(Me.PictureBox5)
+        Me.Controls.Add(Me.PNL_MAINPANEL)
+        Me.Controls.Add(Me.ShapeContainer1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "FRM_LOGIN"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
-        CType(Me.TBLG3_PRIMARY_SIGNATORYDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TBLG3_PRIMARY_SIGNATORYBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DSPROPERTYDB_TABLES, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel5.ResumeLayout(False)
-        Me.Panel5.PerformLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel2.ResumeLayout(False)
-        Me.Panel2.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TransparencyKey = System.Drawing.SystemColors.Control
         CType(Me.DS_TABLES, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TblV1_USERACCOUNTBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TblV1_USERACCOUNTLOGSBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PNL_MAINPANEL.ResumeLayout(False)
+        Me.PNL_MAINPANEL.PerformLayout()
+        Me.Panel7.ResumeLayout(False)
+        Me.Panel7.PerformLayout()
+        Me.Panel4.ResumeLayout(False)
+        Me.Panel4.PerformLayout()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DS_VIEWS, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.V1VW_USERACCEMPLOYEEBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SPM4_PDS_LISTBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents Panel5 As Panel
-    Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents Panel6 As Panel
-    Friend WithEvents Panel2 As Panel
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents Panel3 As Panel
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
     Friend WithEvents BTNLOGIN As Button
     Friend WithEvents BTNCLOSE As Button
     Friend WithEvents TblV1_USERACCOUNTBindingSource As BindingSource
     Friend WithEvents DS_TABLES As DS_TABLES
     Friend WithEvents TblV1_USERACCOUNTTableAdapter As DS_TABLESTableAdapters.tblV1_USERACCOUNTTableAdapter
-    Friend WithEvents TXT_PASSWORD As WatermarkTextBox
-    Friend WithEvents TXT_USERNAME As WatermarkTextBox
     Friend WithEvents tmrClockTimer As Timer
     Friend WithEvents TblV1_USERACCOUNTLOGSBindingSource As BindingSource
     Friend WithEvents TblV1_USERACCOUNTLOGSTableAdapter As DS_TABLESTableAdapters.tblV1_USERACCOUNTLOGSTableAdapter
-    Friend WithEvents TblV1_HRISEMPLOYEEDATATableAdapter1 As DS_TABLESTableAdapters.tblV1_HRISEMPLOYEEDATATableAdapter
-    Friend WithEvents TblV1_HRISDIVISIONTableAdapter1 As DS_TABLESTableAdapters.tblV1_HRISDIVISIONTableAdapter
-    Friend WithEvents TblV1_HRISDEPARTMENTTableAdapter1 As DS_TABLESTableAdapters.tblV1_HRISDEPARTMENTTableAdapter
-    Friend WithEvents DSPROPERTYDB_TABLES As DS_PROPERTYDB
-    Friend WithEvents TBLG3_PRIMARY_SIGNATORYBindingSource As BindingSource
-
-    Friend WithEvents TBLG3_PRIMARY_SIGNATORYDataGridView As DataGridView
-    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
+    Friend WithEvents RECT_MAINRECT As PowerPacks.RectangleShape
+    Friend WithEvents ShapeContainer1 As PowerPacks.ShapeContainer
+    Friend WithEvents PNL_MAINPANEL As Panel
+    Friend WithEvents Panel4 As Panel
+    Friend WithEvents Label55 As Label
+    Friend WithEvents TXT_USERNAME As WatermarkTextBox
+    Friend WithEvents ShapeContainer3 As PowerPacks.ShapeContainer
+    Friend WithEvents RectangleShape22 As PowerPacks.RectangleShape
+    Friend WithEvents ShapeContainer2 As PowerPacks.ShapeContainer
+    Friend WithEvents RectangleShape1 As PowerPacks.RectangleShape
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Panel7 As Panel
+    Friend WithEvents TXT_PASSWORD As WatermarkTextBox
+    Friend WithEvents ShapeContainer4 As PowerPacks.ShapeContainer
+    Friend WithEvents RectangleShape2 As PowerPacks.RectangleShape
+    Friend WithEvents Label6 As Label
+    Friend WithEvents PictureBox5 As PictureBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents LBL_PASSCLEAR As Label
+    Friend WithEvents LBL_USERCLEAR As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents DS_VIEWS As DS_VIEWS
+    Friend WithEvents V1VW_USERACCEMPLOYEEBindingSource As BindingSource
+    Friend WithEvents V1VW_USERACCEMPLOYEETableAdapter As DS_VIEWSTableAdapters.V1VW_USERACCEMPLOYEETableAdapter
+    Friend WithEvents TableAdapterManager As DS_PRAJO_DATABASETableAdapters.TableAdapterManager
+    Friend WithEvents SPM4_PDS_LISTTableAdapter As DS_PRAJO_DATABASETableAdapters.SPM4_PDS_LISTTableAdapter
+    Friend WithEvents SPM4_PDS_LISTBindingSource As BindingSource
 End Class

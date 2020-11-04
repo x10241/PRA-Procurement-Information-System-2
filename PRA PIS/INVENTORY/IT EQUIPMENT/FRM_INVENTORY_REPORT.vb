@@ -168,17 +168,10 @@
 #End Region
 
     Private Sub FRM_INVENTORY_PRINT_PREVIEW_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'CHK_USE_AS_HEADER.Enabled = False
         CB_REPORT_TYPE.SelectedIndex = 0
         CB_FILTERBY.SelectedIndex = 0
         CB_DATE_FILTER.SelectedIndex = 0
         CB_ASSIGN_BY.SelectedIndex = 0
-        ' Me.SPM4_CURRENTDATETIMETableAdapter.Fill(Me.DS_PROPERTYDB.SPM4_CURRENTDATETIME)
-        'Dim dte As Date = WatermarkTextBox1.Text
-        'WTXT_INVENTORY_REPORT_FROM.Text = dte.ToString("MM/dd/yyyy")
-        'WTXT_INVENTORY_REPORT_TO.Text = dte.ToString("MM/dd/yyyy")
-        'CB_INVENTORY_REPORT_CATEGORY.SelectedIndex = 0
-        'CB_INVENTORY_REPORT_BRAND_NAME.SelectedIndex = 0
     End Sub
 
     Private Sub CB_DATE_FILTER_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CB_DATE_FILTER.SelectedIndexChanged
@@ -189,18 +182,11 @@
         End If
     End Sub
 
-    Private Sub WTXT_INVENTORY_SEARCH_TextChanged(sender As Object, e As EventArgs)
-        'If WTXT_INVENTORY_SEARCH.Text.Length > 0 Then
-        '    CHK_USE_AS_HEADER.Enabled = True
-        'Else
-        '    CHK_USE_AS_HEADER.Enabled = False
-        'End If
-    End Sub
 
     Private Sub CB_FILTERBY_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CB_FILTERBY.SelectedIndexChanged
         'category
         If CB_FILTERBY.SelectedIndex = 0 Then
-            TblM4_INVENTORY_CATEGORYTableAdapter.Fill(DS_PROPERTYDB.tblM4_INVENTORY_CATEGORY)
+            TblM4_INVENTORY_CATEGORYTableAdapter.FillByINV_CODE(DS_PROPERTYDB.tblM4_INVENTORY_CATEGORY, "ITE05002", DIVISION_NO)
             With CB_SEARCH_BY
                 .DataSource = TblM4INVENTORYCATEGORYBindingSource
                 .ValueMember = "CAT_CODE"
@@ -218,7 +204,7 @@
             CHK_SEL_ALL_ITEMS.Text = CHKTEXT & "Sub Category/Type"
             'brand
         ElseIf CB_FILTERBY.SelectedIndex = 2 Then
-            TblM4_INVENTORY_ITEMBRANDTableAdapter.Fill(DS_PROPERTYDB.tblM4_INVENTORY_ITEMBRAND)
+            TblM4_INVENTORY_ITEMBRANDTableAdapter.FillByINVCODE(DS_PROPERTYDB.tblM4_INVENTORY_ITEMBRAND, "ITE05002")
             With CB_SEARCH_BY
                 .DataSource = TblM4INVENTORYITEMBRANDBindingSource
                 .ValueMember = "ITBR_NO"
@@ -266,4 +252,7 @@
         End If
     End Sub
 
+    Private Sub CB_ASSIGN_SEARCH_BY_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CB_ASSIGN_SEARCH_BY.SelectedIndexChanged
+
+    End Sub
 End Class

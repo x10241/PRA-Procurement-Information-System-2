@@ -23,7 +23,7 @@ Partial Class FRM_SETTINGS
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FRM_SETTINGS))
         Me.DGV_MAINTENANCE_LIST = New System.Windows.Forms.DataGridView()
         Me.PNL = New System.Windows.Forms.Panel()
@@ -44,15 +44,6 @@ Partial Class FRM_SETTINGS
         Me.CB_MAINTENANCE_SELECTION = New System.Windows.Forms.ComboBox()
         Me.LLBL_MAINTENANCE_NEW = New System.Windows.Forms.LinkLabel()
         Me.PB_MAINTENANCE_NEW = New System.Windows.Forms.PictureBox()
-        Me.GRP_CATEGORY = New System.Windows.Forms.GroupBox()
-        Me.RGB_CATEGORY_INACTIVE = New System.Windows.Forms.RadioButton()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.RGB_CATEGORY_ACTIVE = New System.Windows.Forms.RadioButton()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.WTXT_CATEGORY_NAME = New PRA_PIS.WatermarkTextBox()
-        Me.ShapeContainer2 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
-        Me.RectangleShape3 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
-        Me.RECT_CATEGORY_NAME = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.LLBL_MAINTENANCE_EDIT = New System.Windows.Forms.LinkLabel()
         Me.PB_MAINTENANCE_EDIT = New System.Windows.Forms.PictureBox()
         Me.PB_MAINTENANCE_CANCEL = New System.Windows.Forms.PictureBox()
@@ -113,7 +104,6 @@ Partial Class FRM_SETTINGS
         CType(Me.DS_PROPERTYDB, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GBOX_SETTINGS.SuspendLayout()
         CType(Me.PB_MAINTENANCE_NEW, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GRP_CATEGORY.SuspendLayout()
         CType(Me.PB_MAINTENANCE_EDIT, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PB_MAINTENANCE_CANCEL, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GRP_SUB_CATEGORY.SuspendLayout()
@@ -141,14 +131,14 @@ Partial Class FRM_SETTINGS
         Me.DGV_MAINTENANCE_LIST.AllowUserToResizeRows = False
         Me.DGV_MAINTENANCE_LIST.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGV_MAINTENANCE_LIST.BackgroundColor = System.Drawing.Color.LightGray
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGV_MAINTENANCE_LIST.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGV_MAINTENANCE_LIST.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.DGV_MAINTENANCE_LIST.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGV_MAINTENANCE_LIST.Location = New System.Drawing.Point(391, 54)
         Me.DGV_MAINTENANCE_LIST.MultiSelect = False
@@ -393,106 +383,6 @@ Partial Class FRM_SETTINGS
         Me.PB_MAINTENANCE_NEW.TabIndex = 1440
         Me.PB_MAINTENANCE_NEW.TabStop = False
         Me.PB_MAINTENANCE_NEW.Visible = False
-        '
-        'GRP_CATEGORY
-        '
-        Me.GRP_CATEGORY.Controls.Add(Me.RGB_CATEGORY_INACTIVE)
-        Me.GRP_CATEGORY.Controls.Add(Me.Label2)
-        Me.GRP_CATEGORY.Controls.Add(Me.RGB_CATEGORY_ACTIVE)
-        Me.GRP_CATEGORY.Controls.Add(Me.Label1)
-        Me.GRP_CATEGORY.Controls.Add(Me.WTXT_CATEGORY_NAME)
-        Me.GRP_CATEGORY.Controls.Add(Me.ShapeContainer2)
-        Me.GRP_CATEGORY.Enabled = False
-        Me.GRP_CATEGORY.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GRP_CATEGORY.Location = New System.Drawing.Point(12, 257)
-        Me.GRP_CATEGORY.Name = "GRP_CATEGORY"
-        Me.GRP_CATEGORY.Size = New System.Drawing.Size(375, 183)
-        Me.GRP_CATEGORY.TabIndex = 1441
-        Me.GRP_CATEGORY.TabStop = False
-        Me.GRP_CATEGORY.Text = "Category"
-        Me.GRP_CATEGORY.Visible = False
-        '
-        'RGB_CATEGORY_INACTIVE
-        '
-        Me.RGB_CATEGORY_INACTIVE.AutoSize = True
-        Me.RGB_CATEGORY_INACTIVE.Font = New System.Drawing.Font("Century Gothic", 12.0!)
-        Me.RGB_CATEGORY_INACTIVE.Location = New System.Drawing.Point(141, 125)
-        Me.RGB_CATEGORY_INACTIVE.Name = "RGB_CATEGORY_INACTIVE"
-        Me.RGB_CATEGORY_INACTIVE.Size = New System.Drawing.Size(94, 25)
-        Me.RGB_CATEGORY_INACTIVE.TabIndex = 1433
-        Me.RGB_CATEGORY_INACTIVE.TabStop = True
-        Me.RGB_CATEGORY_INACTIVE.Text = "Inactive"
-        Me.RGB_CATEGORY_INACTIVE.UseVisualStyleBackColor = True
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(19, 104)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(52, 19)
-        Me.Label2.TabIndex = 1432
-        Me.Label2.Text = "Status"
-        '
-        'RGB_CATEGORY_ACTIVE
-        '
-        Me.RGB_CATEGORY_ACTIVE.AutoSize = True
-        Me.RGB_CATEGORY_ACTIVE.Font = New System.Drawing.Font("Century Gothic", 12.0!)
-        Me.RGB_CATEGORY_ACTIVE.Location = New System.Drawing.Point(38, 125)
-        Me.RGB_CATEGORY_ACTIVE.Name = "RGB_CATEGORY_ACTIVE"
-        Me.RGB_CATEGORY_ACTIVE.Size = New System.Drawing.Size(81, 25)
-        Me.RGB_CATEGORY_ACTIVE.TabIndex = 1431
-        Me.RGB_CATEGORY_ACTIVE.TabStop = True
-        Me.RGB_CATEGORY_ACTIVE.Text = "Active"
-        Me.RGB_CATEGORY_ACTIVE.UseVisualStyleBackColor = True
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(19, 42)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(134, 19)
-        Me.Label1.TabIndex = 1430
-        Me.Label1.Text = "Category Name"
-        '
-        'WTXT_CATEGORY_NAME
-        '
-        Me.WTXT_CATEGORY_NAME.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.WTXT_CATEGORY_NAME.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.WTXT_CATEGORY_NAME.Location = New System.Drawing.Point(16, 63)
-        Me.WTXT_CATEGORY_NAME.MaxLength = 120
-        Me.WTXT_CATEGORY_NAME.Name = "WTXT_CATEGORY_NAME"
-        Me.WTXT_CATEGORY_NAME.Size = New System.Drawing.Size(339, 24)
-        Me.WTXT_CATEGORY_NAME.TabIndex = 1428
-        Me.WTXT_CATEGORY_NAME.Watermark = Nothing
-        '
-        'ShapeContainer2
-        '
-        Me.ShapeContainer2.Location = New System.Drawing.Point(3, 23)
-        Me.ShapeContainer2.Margin = New System.Windows.Forms.Padding(0)
-        Me.ShapeContainer2.Name = "ShapeContainer2"
-        Me.ShapeContainer2.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape3, Me.RECT_CATEGORY_NAME})
-        Me.ShapeContainer2.Size = New System.Drawing.Size(369, 157)
-        Me.ShapeContainer2.TabIndex = 1429
-        Me.ShapeContainer2.TabStop = False
-        '
-        'RectangleShape3
-        '
-        Me.RectangleShape3.BorderColor = System.Drawing.Color.LightSeaGreen
-        Me.RectangleShape3.BorderWidth = 2
-        Me.RectangleShape3.CornerRadius = 5
-        Me.RectangleShape3.Location = New System.Drawing.Point(8, 98)
-        Me.RectangleShape3.Name = "RectangleShape3"
-        Me.RectangleShape3.Size = New System.Drawing.Size(249, 32)
-        '
-        'RECT_CATEGORY_NAME
-        '
-        Me.RECT_CATEGORY_NAME.BorderColor = System.Drawing.Color.LightSeaGreen
-        Me.RECT_CATEGORY_NAME.BorderWidth = 2
-        Me.RECT_CATEGORY_NAME.CornerRadius = 5
-        Me.RECT_CATEGORY_NAME.Location = New System.Drawing.Point(8, 35)
-        Me.RECT_CATEGORY_NAME.Name = "RECT_CATEGORY_NAME"
-        Me.RECT_CATEGORY_NAME.Size = New System.Drawing.Size(348, 32)
         '
         'LLBL_MAINTENANCE_EDIT
         '
@@ -847,7 +737,6 @@ Partial Class FRM_SETTINGS
         Me.Panel1.Controls.Add(Me.GRP_BRANDS)
         Me.Panel1.Controls.Add(Me.SCCODETextBox)
         Me.Panel1.Controls.Add(Me.BRCODETextBox)
-        Me.Panel1.Controls.Add(Me.GRP_CATEGORY)
         Me.Panel1.Controls.Add(Me.PB_MAINTENANCE_CLEAR)
         Me.Panel1.Controls.Add(Me.WTXT_SEARCH)
         Me.Panel1.Controls.Add(Me.PB_INVENTORY_SEARCH)
@@ -978,18 +867,33 @@ Partial Class FRM_SETTINGS
         Me.TableAdapterManager.TBLG3_SIGNATORYTableAdapter = Nothing
         Me.TableAdapterManager.TBLG3_UNITSTableAdapter = Nothing
         Me.TableAdapterManager.tblM4_CATEGORY1TableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_DIST_MAINTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_DR_ITEMSTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_ITEMS_COLOR_MAINTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_ITEMS_COLORTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_ITEMS_LENG_MAINTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_ITEMS_LENGTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_ITEMS_OTHERS_MAINTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_ITEMS_OTHERSTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_ITEMS_SIZE_MAINTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_ITEMS_SIZETableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_ITEMSTableAdapter = Nothing
         Me.TableAdapterManager.tblM4_INVENTORY_ACQUISITION_ITEM_USAGETableAdapter = Nothing
         Me.TableAdapterManager.tblM4_INVENTORY_ACQUISITION_VALUETableAdapter = Nothing
         Me.TableAdapterManager.tblM4_INVENTORY_ASSIGN_PERSONTableAdapter = Nothing
         Me.TableAdapterManager.tblM4_INVENTORY_CATEGORY1TableAdapter = Nothing
         Me.TableAdapterManager.tblM4_INVENTORY_CATEGORYTableAdapter = Me.TblM4_INVENTORY_CATEGORYTableAdapter
+        Me.TableAdapterManager.TBLM4_INVENTORY_ITEM_REQUISITIONTableAdapter = Nothing
         Me.TableAdapterManager.tblM4_INVENTORY_ITEMBRAND1TableAdapter = Nothing
         Me.TableAdapterManager.tblM4_INVENTORY_ITEMBRANDTableAdapter = Me.TblM4_INVENTORY_ITEMBRANDTableAdapter
         Me.TableAdapterManager.tblM4_INVENTORY_ITEMS_DEFLOCATIONTableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_INVENTORY_ITEMS_DISTRIBUTIONTableAdapter = Nothing
         Me.TableAdapterManager.tblM4_INVENTORY_ITEMS_LOCATIONTableAdapter = Nothing
         Me.TableAdapterManager.tblM4_INVENTORY_ITEMS_PROPERTYTableAdapter = Nothing
         Me.TableAdapterManager.tblM4_INVENTORY_ITEMSTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INVENTORY_REQUISITIONTableAdapter = Nothing
         Me.TableAdapterManager.tblM4_INVENTORY_SUB_CATEGORYTableAdapter = Me.TblM4_INVENTORY_SUB_CATEGORYTableAdapter
+        Me.TableAdapterManager.tblM4_INVENTORY_TYPETableAdapter = Nothing
         Me.TableAdapterManager.tblM4_ITEMBRAND1TableAdapter = Nothing
         Me.TableAdapterManager.tblM4_PURCHASEREQUEST_ACCEPTEDTableAdapter = Nothing
         Me.TableAdapterManager.tblM4_PURCHASEREQUEST_CANCELEDTableAdapter = Nothing
@@ -1085,8 +989,6 @@ Partial Class FRM_SETTINGS
         Me.GBOX_SETTINGS.ResumeLayout(False)
         Me.GBOX_SETTINGS.PerformLayout()
         CType(Me.PB_MAINTENANCE_NEW, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GRP_CATEGORY.ResumeLayout(False)
-        Me.GRP_CATEGORY.PerformLayout()
         CType(Me.PB_MAINTENANCE_EDIT, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PB_MAINTENANCE_CANCEL, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GRP_SUB_CATEGORY.ResumeLayout(False)
@@ -1129,21 +1031,12 @@ Partial Class FRM_SETTINGS
     Friend WithEvents LLBL_RECORDSFOUND As LinkLabel
     Friend WithEvents LinkLabel1 As LinkLabel
     Friend WithEvents DS_PROPERTYDB As DS_PROPERTYDB
-    Friend WithEvents GRP_CATEGORY As GroupBox
     Friend WithEvents LLBL_MAINTENANCE_EDIT As LinkLabel
     Friend WithEvents PB_MAINTENANCE_EDIT As PictureBox
     Friend WithEvents RectangleShape2 As PowerPacks.RectangleShape
     Friend WithEvents PB_MAINTENANCE_CANCEL As PictureBox
     Friend WithEvents LLBL_MAINTENANCE_CANCEL As LinkLabel
     Friend WithEvents RECT_PRCANCELEDIT As PowerPacks.RectangleShape
-    Friend WithEvents WTXT_CATEGORY_NAME As WatermarkTextBox
-    Friend WithEvents RGB_CATEGORY_INACTIVE As RadioButton
-    Friend WithEvents Label2 As Label
-    Friend WithEvents RGB_CATEGORY_ACTIVE As RadioButton
-    Friend WithEvents Label1 As Label
-    Friend WithEvents ShapeContainer2 As PowerPacks.ShapeContainer
-    Friend WithEvents RectangleShape3 As PowerPacks.RectangleShape
-    Friend WithEvents RECT_CATEGORY_NAME As PowerPacks.RectangleShape
     Friend WithEvents GRP_SUB_CATEGORY As GroupBox
     Friend WithEvents RGB_SUB_CATEGORY_INACTIVE As RadioButton
     Friend WithEvents Label3 As Label

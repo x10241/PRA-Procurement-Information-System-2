@@ -22,6 +22,7 @@ Partial Class FRM_PRCANCELED
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.PNL = New System.Windows.Forms.Panel()
         Me.Label39 = New System.Windows.Forms.Label()
         Me.BTN_Minimize = New System.Windows.Forms.Button()
@@ -32,12 +33,17 @@ Partial Class FRM_PRCANCELED
         Me.BTN_SAVE = New System.Windows.Forms.Button()
         Me.DGV_CLOSE = New System.Windows.Forms.Button()
         Me.WTXT_CANCELED_REMARKS = New PRA_PIS.WatermarkTextBox()
-        Me.TblM4_PURCHASEREQUEST_CANCELEDTableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.tblM4_PURCHASEREQUEST_CANCELEDTableAdapter()
-        Me.TblM4_PURCHASEREQUESTTableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.tblM4_PURCHASEREQUESTTableAdapter()
         Me.DS_PROPERTYDB = New PRA_PIS.DS_PROPERTYDB()
         Me.SpM4_PURCHASELISTTableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.SPM4_PURCHASELISTTableAdapter()
+        Me.TblM4_PURCHASEREQUEST_CANCELEDBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TableAdapterManager = New PRA_PIS.DS_PROPERTYDBTableAdapters.TableAdapterManager()
+        Me.TblM4_PURCHASEREQUEST_CANCELEDTableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.tblM4_PURCHASEREQUEST_CANCELEDTableAdapter()
+        Me.TblM4_PURCHASEREQUESTTableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.tblM4_PURCHASEREQUESTTableAdapter()
+        Me.TblM4_PURCHASEREQUESTBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PNL.SuspendLayout()
         CType(Me.DS_PROPERTYDB, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TblM4_PURCHASEREQUEST_CANCELEDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TblM4_PURCHASEREQUESTBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PNL
@@ -50,7 +56,7 @@ Partial Class FRM_PRCANCELED
         Me.PNL.Location = New System.Drawing.Point(0, 0)
         Me.PNL.Margin = New System.Windows.Forms.Padding(5)
         Me.PNL.Name = "PNL"
-        Me.PNL.Size = New System.Drawing.Size(287, 40)
+        Me.PNL.Size = New System.Drawing.Size(289, 40)
         Me.PNL.TabIndex = 1408
         '
         'Label39
@@ -74,7 +80,7 @@ Partial Class FRM_PRCANCELED
         Me.BTN_Minimize.FlatAppearance.BorderColor = System.Drawing.Color.Teal
         Me.BTN_Minimize.FlatAppearance.BorderSize = 3
         Me.BTN_Minimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BTN_Minimize.Location = New System.Drawing.Point(-4218, 11)
+        Me.BTN_Minimize.Location = New System.Drawing.Point(-4341, 11)
         Me.BTN_Minimize.Margin = New System.Windows.Forms.Padding(5)
         Me.BTN_Minimize.Name = "BTN_Minimize"
         Me.BTN_Minimize.Size = New System.Drawing.Size(47, 45)
@@ -90,7 +96,7 @@ Partial Class FRM_PRCANCELED
         Me.BTN_CLOSE.FlatAppearance.BorderColor = System.Drawing.Color.Teal
         Me.BTN_CLOSE.FlatAppearance.BorderSize = 3
         Me.BTN_CLOSE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BTN_CLOSE.Location = New System.Drawing.Point(-4171, 10)
+        Me.BTN_CLOSE.Location = New System.Drawing.Point(-4294, 10)
         Me.BTN_CLOSE.Margin = New System.Windows.Forms.Padding(5)
         Me.BTN_CLOSE.Name = "BTN_CLOSE"
         Me.BTN_CLOSE.Size = New System.Drawing.Size(50, 48)
@@ -101,11 +107,10 @@ Partial Class FRM_PRCANCELED
         'RectangleShape3
         '
         Me.RectangleShape3.BorderColor = System.Drawing.Color.LightSeaGreen
-        Me.RectangleShape3.BorderWidth = 2
         Me.RectangleShape3.CornerRadius = 5
         Me.RectangleShape3.Location = New System.Drawing.Point(6, 49)
         Me.RectangleShape3.Name = "RectangleShape3"
-        Me.RectangleShape3.Size = New System.Drawing.Size(275, 121)
+        Me.RectangleShape3.Size = New System.Drawing.Size(274, 121)
         '
         'ShapeContainer1
         '
@@ -113,7 +118,7 @@ Partial Class FRM_PRCANCELED
         Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer1.Name = "ShapeContainer1"
         Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape3})
-        Me.ShapeContainer1.Size = New System.Drawing.Size(287, 222)
+        Me.ShapeContainer1.Size = New System.Drawing.Size(289, 222)
         Me.ShapeContainer1.TabIndex = 1409
         Me.ShapeContainer1.TabStop = False
         '
@@ -165,14 +170,6 @@ Partial Class FRM_PRCANCELED
         Me.WTXT_CANCELED_REMARKS.TabIndex = 1418
         Me.WTXT_CANCELED_REMARKS.Watermark = Nothing
         '
-        'TblM4_PURCHASEREQUEST_CANCELEDTableAdapter
-        '
-        Me.TblM4_PURCHASEREQUEST_CANCELEDTableAdapter.ClearBeforeFill = True
-        '
-        'TblM4_PURCHASEREQUESTTableAdapter
-        '
-        Me.TblM4_PURCHASEREQUESTTableAdapter.ClearBeforeFill = True
-        '
         'DS_PROPERTYDB
         '
         Me.DS_PROPERTYDB.DataSetName = "DS_PROPERTYDB"
@@ -183,12 +180,91 @@ Partial Class FRM_PRCANCELED
         '
         Me.SpM4_PURCHASELISTTableAdapter.ClearBeforeFill = True
         '
+        'TblM4_PURCHASEREQUEST_CANCELEDBindingSource
+        '
+        Me.TblM4_PURCHASEREQUEST_CANCELEDBindingSource.DataMember = "tblM4_PURCHASEREQUEST_CANCELED"
+        Me.TblM4_PURCHASEREQUEST_CANCELEDBindingSource.DataSource = Me.DS_PROPERTYDB
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.TBLG3_COMPANY_INFOTableAdapter = Nothing
+        Me.TableAdapterManager.TBLG3_DELIVER_RECEIPT_DETAILSTableAdapter = Nothing
+        Me.TableAdapterManager.TBLG3_DELIVERY_RECEIPTTableAdapter = Nothing
+        Me.TableAdapterManager.TBLG3_INVOICE_DETAILSTableAdapter = Nothing
+        Me.TableAdapterManager.TBLG3_INVOICETableAdapter = Nothing
+        Me.TableAdapterManager.TBLG3_PRIMARY_SIGNATORYTableAdapter = Nothing
+        Me.TableAdapterManager.TBLG3_REG_BUSTableAdapter = Nothing
+        Me.TableAdapterManager.TBLG3_REG_DVTableAdapter = Nothing
+        Me.TableAdapterManager.TBLG3_REG_PARTICULARTableAdapter = Nothing
+        Me.TableAdapterManager.TBLG3_SIGNATORY_TYPETableAdapter = Nothing
+        Me.TableAdapterManager.TBLG3_SIGNATORY1TableAdapter = Nothing
+        Me.TableAdapterManager.TBLG3_SIGNATORYTableAdapter = Nothing
+        Me.TableAdapterManager.TBLG3_UNITSTableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_CATEGORY1TableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_DIST_MAINTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_DR_ITEMSTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_ITEMS_COLOR_MAINTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_ITEMS_COLORTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_ITEMS_LENG_MAINTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_ITEMS_LENGTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_ITEMS_NAME_MAINTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_ITEMS_NAMETableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_ITEMS_OTHERS_MAINTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_ITEMS_OTHERSTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_ITEMS_PCOUNT_MAINTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_ITEMS_PCOUNTTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_ITEMS_SIZE_MAINTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_ITEMS_SIZETableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_ITEMS_STK_CTRLTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_ITEMSTableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_INVENTORY_ACCOUNTABLE_OFFICERTableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_INVENTORY_ACQUISITION_ITEM_USAGETableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_INVENTORY_ACQUISITION_VALUETableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_INVENTORY_ASSIGN_PERSONTableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_INVENTORY_CATEGORY1TableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_INVENTORY_CATEGORYTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INVENTORY_ITEM_REQUISITIONTableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_INVENTORY_ITEMBRAND1TableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_INVENTORY_ITEMBRANDTableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_INVENTORY_ITEMS_DEFLOCATIONTableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_INVENTORY_ITEMS_DISTRIBUTIONTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INVENTORY_ITEMS_DRTableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_INVENTORY_ITEMS_LOCATIONTableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_INVENTORY_ITEMS_PROPERTYTableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_INVENTORY_ITEMSTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INVENTORY_REQUISITIONTableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_INVENTORY_SUB_CATEGORYTableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_INVENTORY_TYPETableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_ITEMBRAND1TableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_PURCHASEREQUEST_ACCEPTEDTableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_PURCHASEREQUEST_CANCELEDTableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_PURCHASEREQUEST_CATEGORYTableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_PURCHASEREQUEST_ITEMTableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_PURCHASEREQUEST_POSTEDTableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_PURCHASEREQUEST_PROVIDERTableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_PURCHASEREQUEST_REVISIONTableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = PRA_PIS.DS_PROPERTYDBTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
+        'TblM4_PURCHASEREQUEST_CANCELEDTableAdapter
+        '
+        Me.TblM4_PURCHASEREQUEST_CANCELEDTableAdapter.ClearBeforeFill = True
+        '
+        'TblM4_PURCHASEREQUESTTableAdapter
+        '
+        Me.TblM4_PURCHASEREQUESTTableAdapter.ClearBeforeFill = True
+        '
+        'TblM4_PURCHASEREQUESTBindingSource
+        '
+        Me.TblM4_PURCHASEREQUESTBindingSource.DataMember = "tblM4_PURCHASEREQUEST"
+        Me.TblM4_PURCHASEREQUESTBindingSource.DataSource = Me.DS_PROPERTYDB
+        '
         'FRM_PRCANCELED
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 19.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(287, 222)
+        Me.ClientSize = New System.Drawing.Size(289, 222)
         Me.Controls.Add(Me.WTXT_CANCELED_REMARKS)
         Me.Controls.Add(Me.BTN_SAVE)
         Me.Controls.Add(Me.DGV_CLOSE)
@@ -204,6 +280,8 @@ Partial Class FRM_PRCANCELED
         Me.PNL.ResumeLayout(False)
         Me.PNL.PerformLayout()
         CType(Me.DS_PROPERTYDB, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TblM4_PURCHASEREQUEST_CANCELEDBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TblM4_PURCHASEREQUESTBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -219,8 +297,23 @@ Partial Class FRM_PRCANCELED
     Friend WithEvents BTN_SAVE As Button
     Friend WithEvents DGV_CLOSE As Button
     Friend WithEvents WTXT_CANCELED_REMARKS As WatermarkTextBox
-    Friend WithEvents TblM4_PURCHASEREQUEST_CANCELEDTableAdapter As DS_PROPERTYDBTableAdapters.tblM4_PURCHASEREQUEST_CANCELEDTableAdapter
-    Friend WithEvents TblM4_PURCHASEREQUESTTableAdapter As DS_PROPERTYDBTableAdapters.tblM4_PURCHASEREQUESTTableAdapter
     Friend WithEvents DS_PROPERTYDB As DS_PROPERTYDB
     Friend WithEvents SpM4_PURCHASELISTTableAdapter As DS_PROPERTYDBTableAdapters.SPM4_PURCHASELISTTableAdapter
+    Friend WithEvents TblM4_PURCHASEREQUEST_CANCELEDBindingSource As BindingSource
+    Friend WithEvents TableAdapterManager As DS_PROPERTYDBTableAdapters.TableAdapterManager
+    Friend WithEvents BindingNavigator1 As BindingNavigator
+    Friend WithEvents BindingNavigatorAddNewItem As ToolStripButton
+    Friend WithEvents BindingNavigatorCountItem As ToolStripLabel
+    Friend WithEvents BindingNavigatorDeleteItem As ToolStripButton
+    Friend WithEvents BindingNavigatorMoveFirstItem As ToolStripButton
+    Friend WithEvents BindingNavigatorMovePreviousItem As ToolStripButton
+    Friend WithEvents BindingNavigatorSeparator As ToolStripSeparator
+    Friend WithEvents BindingNavigatorPositionItem As ToolStripTextBox
+    Friend WithEvents BindingNavigatorSeparator1 As ToolStripSeparator
+    Friend WithEvents BindingNavigatorMoveNextItem As ToolStripButton
+    Friend WithEvents BindingNavigatorMoveLastItem As ToolStripButton
+    Friend WithEvents BindingNavigatorSeparator2 As ToolStripSeparator
+    Friend WithEvents TblM4_PURCHASEREQUEST_CANCELEDTableAdapter As DS_PROPERTYDBTableAdapters.tblM4_PURCHASEREQUEST_CANCELEDTableAdapter
+    Friend WithEvents TblM4_PURCHASEREQUESTTableAdapter As DS_PROPERTYDBTableAdapters.tblM4_PURCHASEREQUESTTableAdapter
+    Friend WithEvents TblM4_PURCHASEREQUESTBindingSource As BindingSource
 End Class

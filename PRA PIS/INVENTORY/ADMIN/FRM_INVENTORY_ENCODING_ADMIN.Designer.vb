@@ -33,8 +33,6 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
         Me.BTN_CLOSE = New System.Windows.Forms.Button()
         Me.GRP_ITEMINFO = New System.Windows.Forms.GroupBox()
         Me.CB_SUPPLY_TYPE = New System.Windows.Forms.ComboBox()
-        Me.TblM4INVENTORYTYPEBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DS_PROPERTYDB = New PRA_PIS.DS_PROPERTYDB()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.LLBL_CLOSE = New System.Windows.Forms.LinkLabel()
         Me.LLBL_SAVE_ADD_ITEM = New System.Windows.Forms.LinkLabel()
@@ -42,19 +40,14 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
         Me.BTN_ADD_BRAND_PROVIDER = New System.Windows.Forms.Button()
         Me.BTN_ADD_SUBCATEGORY = New System.Windows.Forms.Button()
         Me.WTXT_INVENTORY_DATE_OF_ACQUISITION = New PRA_PIS.WatermarkTextBox()
-        Me.SPM4CURRENTDATETIMEBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.WTXT_INVENTORY_UNITCOST = New PRA_PIS.WatermarkTextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.BTN_ADD_CATEGORY = New System.Windows.Forms.Button()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.CB_INVENTORY_UNIT_TYPE = New System.Windows.Forms.ComboBox()
-        Me.TBLG3UNITSBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.CB_INVENTORY_BRAND_NAME = New System.Windows.Forms.ComboBox()
-        Me.TblM4INVENTORYITEMBRANDBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.CB_INVENTORY_SUBCATEGORY = New System.Windows.Forms.ComboBox()
-        Me.TblM4INVENTORYSUBCATEGORYBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.CB_INVENTORY_CATEGORY = New System.Windows.Forms.ComboBox()
-        Me.TblM4INVENTORYCATEGORYBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.WTXT_INVENTORY_ITEM_DESCRIPTION = New PRA_PIS.WatermarkTextBox()
         Me.WTXT_INVENTORY_TOTAL_COST = New PRA_PIS.WatermarkTextBox()
         Me.WTXT_INVENTORY_QUANTITY = New PRA_PIS.WatermarkTextBox()
@@ -80,66 +73,120 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
         Me.RECT_INVENTORY_QUANTITY = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RectangleShape4 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RECT_INVENTORY_SERIAL_NO = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
-        Me.RectangleShape2 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
-        Me.RectangleShape1 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
-        Me.RECT_PRAPPCODE = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
-        Me.VWM4ITEMSCATEGORYSUBCATEGORYBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.RECT_SUB_CATEGORY = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.RECT_BRAND = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.RECT_CATEGORY = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.DS_VIEWS = New PRA_PIS.DS_VIEWS()
-        Me.VWM4ITEMSCATEGORYSUBCATEGORYBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.LLBL_INVENTORY_VIEW_REPORT = New System.Windows.Forms.LinkLabel()
+        Me.PB_INVENTORY_VIEW_REPORT = New System.Windows.Forms.PictureBox()
         Me.PB_INVENTORY_SEARCH = New System.Windows.Forms.PictureBox()
         Me.PB_INVENTORY_CLEAR_SEARCH = New System.Windows.Forms.PictureBox()
-        Me.WTXT_INVENTORY_SEARCH = New PRA_PIS.WatermarkTextBox()
+        Me.WTXT_ITEM_SEARCH = New PRA_PIS.WatermarkTextBox()
         Me.GBOX_SETTINGS = New System.Windows.Forms.GroupBox()
         Me.LLBL_RECORDSFOUND = New System.Windows.Forms.LinkLabel()
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
-        Me.DGV_INVENTORY_LIST = New System.Windows.Forms.DataGridView()
+        Me.DGV_INV_ITEM_LIST = New System.Windows.Forms.DataGridView()
+        Me.Column1 = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.ITEMCODEDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CATCODEDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CATNAMEDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.SCSUBCATEGORYNAMEDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SCNODataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ITBRNAMEDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SCSUBCATEGORYNAMEDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ITBRNODataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ITBRNAMEDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FULLDESC = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ITEMSERIALNODataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ITEMDESCRIPTIONDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ITEMUNITDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ITEMQUANTITYDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ITEM_UNIT_COST = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ITEM_TOTAL_COST = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ITEMDATEAQUISITIONDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.COLRNUMDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.COLRNAMEDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ISACTIVEDataGridViewCheckBoxColumn = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.SIZENUMDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SIZENAMEDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ITEMCREATEDDATEDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ITEMUPDATEDDATEDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.LOC_LOCATION_ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.SPM4INVENTORYDGVLISTBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.CREATEDBYDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ISACTIVESIZEDataGridViewCheckBoxColumn = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.LENG_NUM = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.OTHER_NUM = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ITM_NAME_NUM = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ITM_NAME = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NAME_IS_ACTIVE = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.btnEdit = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.IMG_PATH = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.VWM4_ITEM_LISTBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
+        Me.RectangleShape5 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RECT_PRCANCELEDIT = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RECT_INVENTORY_NEW_SAVE = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.ShapeContainer3 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
-        Me.RectangleShape8 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
-        Me.RectangleShape7 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
-        Me.RectangleShape5 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
-        Me.RECT_INVENTORY_CANCEL = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RECT_INVENTORY_EDIT = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
-        Me.TblM4_INVENTORY_ITEMSBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.TblM4_INVENTORY_ITEMS_PROPERTYBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.LLBL_INVENTORY_SAVE = New System.Windows.Forms.LinkLabel()
-        Me.PB_INVENTORY_SAVE = New System.Windows.Forms.PictureBox()
+        Me.RECT_STOCKS = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.RECT_ITEM_DISTRIBUTION = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.RECT_INVENTORY_CANCEL = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.LLBL_INVENTORY_NEW = New System.Windows.Forms.LinkLabel()
         Me.PB_INVENTORY_NEW = New System.Windows.Forms.PictureBox()
         Me.LLBL_INVENTORY_EDIT = New System.Windows.Forms.LinkLabel()
         Me.PB_INVENTORY_EDIT = New System.Windows.Forms.PictureBox()
-        Me.PB_INVENTORY_VIEW_REPORT = New System.Windows.Forms.PictureBox()
-        Me.LLBL_INVENTORY_VIEW_REPORT = New System.Windows.Forms.LinkLabel()
         Me.APNL_ITEMINFO = New System.Windows.Forms.Panel()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.Label24 = New System.Windows.Forms.Label()
+        Me.PB_ITEM_IMAGE = New System.Windows.Forms.PictureBox()
+        Me.WTXT_INV_ALIAS_NAME = New PRA_PIS.WatermarkTextBox()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.BTN_INV_NAME = New System.Windows.Forms.Button()
+        Me.CB_INV_NAME = New System.Windows.Forms.ComboBox()
+        Me.TBLM4INVITEMSNAMEMAINBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DS_PROPERTYDB = New PRA_PIS.DS_PROPERTYDB()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.CB_INV_OTHER_DESC = New System.Windows.Forms.ComboBox()
+        Me.TBLM4INVITEMSOTHERSMAINBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.CB_INV_LENGTH = New System.Windows.Forms.ComboBox()
+        Me.TBLM4INVITEMSLENGMAINBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.BTN_INV_OTHER_DESC = New System.Windows.Forms.Button()
+        Me.BTN_INV_LENGTH = New System.Windows.Forms.Button()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.CB_INV_SC = New System.Windows.Forms.ComboBox()
+        Me.TblM4INVENTORYSUBCATEGORYBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.CB_INV_COLOR = New System.Windows.Forms.ComboBox()
+        Me.TBLM4INVITEMSCOLORMAINBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.BTN_INV_COLOR = New System.Windows.Forms.Button()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.BTN_INV_SIZE = New System.Windows.Forms.Button()
+        Me.CB_INV_SIZE = New System.Windows.Forms.ComboBox()
+        Me.TBLM4INVITEMSSIZEMAINBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.CB_INV_BRAND = New System.Windows.Forms.ComboBox()
+        Me.TblM4INVENTORYITEMBRANDBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.BTN_INV_BR = New System.Windows.Forms.Button()
+        Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
+        Me.LinkLabel3 = New System.Windows.Forms.LinkLabel()
+        Me.BTN_INV_SC = New System.Windows.Forms.Button()
+        Me.BTN_INV_CAT = New System.Windows.Forms.Button()
+        Me.CB_INV_CAT = New System.Windows.Forms.ComboBox()
+        Me.TblM4INVENTORYCATEGORYBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.Label25 = New System.Windows.Forms.Label()
+        Me.Label26 = New System.Windows.Forms.Label()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.ShapeContainer5 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
+        Me.RectangleShape21 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.RectangleShape20 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.RectangleShape19 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.RectangleShape18 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.RectangleShape17 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.RectangleShape16 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.RectangleShape8 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.RectangleShape1 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.RectangleShape2 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.RectangleShape7 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.RectangleShape24 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.GRP_CONSUMABLE = New System.Windows.Forms.GroupBox()
         Me.RBT_DEPLETED = New System.Windows.Forms.RadioButton()
         Me.RBT_PERPARTS = New System.Windows.Forms.RadioButton()
         Me.CB_ITEM_USAGE = New System.Windows.Forms.ComboBox()
-        Me.TblM4INVENTORYACQUISITIONITEMUSAGEBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.CB_ACQUISITION_VALUE = New System.Windows.Forms.ComboBox()
-        Me.TblM4INVENTORYACQUISITIONVALUEBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.RBT_PURCHASED = New System.Windows.Forms.RadioButton()
         Me.RBT_DONATED = New System.Windows.Forms.RadioButton()
         Me.Label15 = New System.Windows.Forms.Label()
@@ -149,10 +196,10 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
         Me.RectangleShape10 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RectangleShape11 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RectangleShape12 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
-        Me.BTN_INVENTORY_CANCEL = New System.Windows.Forms.Button()
         Me.BTN_INVENTORY_SAVE = New System.Windows.Forms.Button()
         Me.Panel23 = New System.Windows.Forms.Panel()
         Me.LLBL_INVENTORY_ENCODING_HEADER = New System.Windows.Forms.Label()
+        Me.BTN_INVENTORY_CANCEL = New System.Windows.Forms.Button()
         Me.BTN_CLOSE_INVENTORY_MINI_CLOSE = New System.Windows.Forms.Button()
         Me.ShapeContainer4 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
         Me.RectangleShape6 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
@@ -180,29 +227,7 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
         Me.RECT_EDIT_ITEM = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RECT_REMOVE_ITEM = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RectangleShape13 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
-        Me.TblV1HRISDIVISIONBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DS_TABLES = New PRA_PIS.DS_TABLES()
-        Me.TblM4INVENTORYACQUISITIONTYPEBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.LLBL_INVENOTYR_ASSIGN = New System.Windows.Forms.LinkLabel()
-        Me.SpM4_ITEM_CODE_GENERATORTableAdapter = New PRA_PIS.DS_STOREDPROCTableAdapters.SPM4_ITEM_CODE_GENERATORTableAdapter()
-        Me.DS_STOREDPROC = New PRA_PIS.DS_STOREDPROC()
-        Me.DS_CUSTOM = New PRA_PIS.DS_CUSTOM()
-        Me.DSCUSTOMBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.TblV1_HRISDIVISIONTableAdapter = New PRA_PIS.DS_TABLESTableAdapters.tblV1_HRISDIVISIONTableAdapter()
-        Me.TblV1_HRISEMPLOYEEDATATableAdapter = New PRA_PIS.DS_TABLESTableAdapters.tblV1_HRISEMPLOYEEDATATableAdapter()
-        Me.SPM4_CURRENTDATETIMETableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.SPM4_CURRENTDATETIMETableAdapter()
-        Me.TBLG3_UNITSTableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.TBLG3_UNITSTableAdapter()
-        Me.SPM4_INVENTORYDGVLISTTableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.SPM4_INVENTORYDGVLISTTableAdapter()
-        Me.SPM4_PROPERTY_NOTableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.SPM4_PROPERTY_NOTableAdapter()
-        Me.TblG3_DELIVER_RECEIPT_DETAILSTableAdapter1 = New PRA_PIS.DS_PROPERTYDBTableAdapters.TBLG3_DELIVER_RECEIPT_DETAILSTableAdapter()
-        Me.TblM4_INVENTORY_CATEGORYTableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.tblM4_INVENTORY_CATEGORYTableAdapter()
-        Me.TblM4_INVENTORY_SUB_CATEGORYTableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.tblM4_INVENTORY_SUB_CATEGORYTableAdapter()
-        Me.TblM4_INVENTORY_ITEMBRANDTableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.tblM4_INVENTORY_ITEMBRANDTableAdapter()
-        Me.TblM4_INVENTORY_ACQUISITION_ITEM_USAGETableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.tblM4_INVENTORY_ACQUISITION_ITEM_USAGETableAdapter()
-        Me.TblM4_INVENTORY_ACQUISITION_VALUETableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.tblM4_INVENTORY_ACQUISITION_VALUETableAdapter()
-        Me.TblM4_CATEGORY_AND_SUBTableAdapter1 = New PRA_PIS.DS_PROPERTYDBTableAdapters.tblM4_CATEGORY_AND_SUBTableAdapter()
-        Me.TableAdapterManager = New PRA_PIS.DS_PROPERTYDBTableAdapters.TableAdapterManager()
-        Me.TblM4_INVENTORY_ITEMS_PROPERTYTableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.tblM4_INVENTORY_ITEMS_PROPERTYTableAdapter()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
         Me.GroupBox7 = New System.Windows.Forms.GroupBox()
@@ -228,60 +253,101 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
         Me.RectangleShape31 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RectangleShape32 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
-        Me.LinkLabel3 = New System.Windows.Forms.LinkLabel()
-        Me.TblM4_INVENTORY_TYPETableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.tblM4_INVENTORY_TYPETableAdapter()
-        Me.VWM4_ITEMS_CATEGORY_SUB_CATEGORYTableAdapter = New PRA_PIS.DS_VIEWSTableAdapters.VWM4_ITEMS_CATEGORY_SUB_CATEGORYTableAdapter()
-        Me.TblM4_INVENTORY_ITEMSTableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.tblM4_INVENTORY_ITEMSTableAdapter()
+        Me.LLBL_ITEM_DISTRIBUTION = New System.Windows.Forms.LinkLabel()
+        Me.PB_ITEM_DISTRIBUTION = New System.Windows.Forms.PictureBox()
+        Me.TblM4_INVENTORY_CATEGORYTableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.tblM4_INVENTORY_CATEGORYTableAdapter()
+        Me.TblM4_INVENTORY_SUB_CATEGORYTableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.tblM4_INVENTORY_SUB_CATEGORYTableAdapter()
+        Me.TblM4_INVENTORY_ITEMBRANDTableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.tblM4_INVENTORY_ITEMBRANDTableAdapter()
+        Me.TBLM4_INV_ITEMS_SIZE_MAINTableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.TBLM4_INV_ITEMS_SIZE_MAINTableAdapter()
+        Me.TBLM4_INV_ITEMS_COLOR_MAINTableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.TBLM4_INV_ITEMS_COLOR_MAINTableAdapter()
+        Me.SPM4_ITEM_CODE_GENERATORTableAdapter = New PRA_PIS.DS_STOREDPROCTableAdapters.SPM4_ITEM_CODE_GENERATORTableAdapter()
+        Me.SPM4_ITEM_CODE_GENERATORBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DS_STOREDPROC = New PRA_PIS.DS_STOREDPROC()
+        Me.TableAdapterManager = New PRA_PIS.DS_STOREDPROCTableAdapters.TableAdapterManager()
+        Me.TBLM4_INV_ITEMS_SIZETableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.TBLM4_INV_ITEMS_SIZETableAdapter()
+        Me.TBLM4_INV_ITEMS_SIZEBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TBLM4_INV_ITEMS_COLORTableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.TBLM4_INV_ITEMS_COLORTableAdapter()
+        Me.TBLM4_INV_ITEMS_COLORBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PB_STOCKS = New System.Windows.Forms.PictureBox()
+        Me.LLBL_STOCKS = New System.Windows.Forms.LinkLabel()
+        Me.TBLM4_INV_ITEMS_LENG_MAINTableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.TBLM4_INV_ITEMS_LENG_MAINTableAdapter()
+        Me.TBLM4_INV_ITEMS_OTHERS_MAINTableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.TBLM4_INV_ITEMS_OTHERS_MAINTableAdapter()
+        Me.TBLM4_INV_ITEMS_LENGTableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.TBLM4_INV_ITEMS_LENGTableAdapter()
+        Me.TBLM4_INV_ITEMS_LENGBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TBLM4_INV_ITEMS_OTHERSTableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.TBLM4_INV_ITEMS_OTHERSTableAdapter()
+        Me.TBLM4_INV_ITEMS_OTHERSBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TBLM4_INV_ITEMS_NAME_MAINTableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.TBLM4_INV_ITEMS_NAME_MAINTableAdapter()
+        Me.TBLM4_INV_ITEMS_NAMETableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.TBLM4_INV_ITEMS_NAMETableAdapter()
+        Me.TBLM4_INV_ITEMS_NAMEBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TBLM4_INV_ITEMSTableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.TBLM4_INV_ITEMSTableAdapter()
+        Me.TBLM4_INV_ITEMSBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.VWM4_ITEM_LISTTableAdapter = New PRA_PIS.DS_VIEWSTableAdapters.VWM4_ITEM_LISTTableAdapter()
+        Me.RECT_DR_LIST = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.RECT_IIL = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.LLBL_PCOUNT = New System.Windows.Forms.LinkLabel()
+        Me.PB_PCOUNT = New System.Windows.Forms.PictureBox()
+        Me.PB_IIL = New System.Windows.Forms.PictureBox()
+        Me.LLBL_IIL = New System.Windows.Forms.LinkLabel()
+        Me.PB_DR_LIST = New System.Windows.Forms.PictureBox()
+        Me.LLBL_DR_LIST = New System.Windows.Forms.LinkLabel()
+        Me.ShapeContainer8 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
+        Me.RECT_PCOUNT = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.OFD_ITEM_DESC = New System.Windows.Forms.OpenFileDialog()
+        Me.TBLM4_INV_ITEMS_IMGTableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.TBLM4_INV_ITEMS_IMGTableAdapter()
+        Me.TBLM4_INV_ITEMS_IMGBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PNL.SuspendLayout()
         Me.GRP_ITEMINFO.SuspendLayout()
-        CType(Me.TblM4INVENTORYTYPEBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DS_PROPERTYDB, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.SPM4CURRENTDATETIMEBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TBLG3UNITSBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TblM4INVENTORYITEMBRANDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TblM4INVENTORYSUBCATEGORYBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TblM4INVENTORYCATEGORYBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PBOX_PRNOQRCODE, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.VWM4ITEMSCATEGORYSUBCATEGORYBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DS_VIEWS, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.VWM4ITEMSCATEGORYSUBCATEGORYBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.PB_INVENTORY_VIEW_REPORT, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PB_INVENTORY_SEARCH, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PB_INVENTORY_CLEAR_SEARCH, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GBOX_SETTINGS.SuspendLayout()
-        CType(Me.DGV_INVENTORY_LIST, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.SPM4INVENTORYDGVLISTBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DGV_INV_ITEM_LIST, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.VWM4_ITEM_LISTBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TblM4_INVENTORY_ITEMSBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TblM4_INVENTORY_ITEMS_PROPERTYBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PB_INVENTORY_SAVE, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PB_INVENTORY_NEW, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PB_INVENTORY_EDIT, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PB_INVENTORY_VIEW_REPORT, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.APNL_ITEMINFO.SuspendLayout()
+        Me.GroupBox4.SuspendLayout()
+        CType(Me.PB_ITEM_IMAGE, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TBLM4INVITEMSNAMEMAINBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DS_PROPERTYDB, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TBLM4INVITEMSOTHERSMAINBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TBLM4INVITEMSLENGMAINBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TblM4INVENTORYSUBCATEGORYBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TBLM4INVITEMSCOLORMAINBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TBLM4INVITEMSSIZEMAINBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TblM4INVENTORYITEMBRANDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TblM4INVENTORYCATEGORYBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox3.SuspendLayout()
         Me.GRP_CONSUMABLE.SuspendLayout()
-        CType(Me.TblM4INVENTORYACQUISITIONITEMUSAGEBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TblM4INVENTORYACQUISITIONVALUEBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel23.SuspendLayout()
         Me.GRP_LIST_ITEMS.SuspendLayout()
         CType(Me.DGV_ITEM_INFO, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TblV1HRISDIVISIONBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DS_TABLES, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TblM4INVENTORYACQUISITIONTYPEBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DS_STOREDPROC, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DS_CUSTOM, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DSCUSTOMBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.GroupBox6.SuspendLayout()
         Me.GroupBox7.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PB_ITEM_DISTRIBUTION, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SPM4_ITEM_CODE_GENERATORBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DS_STOREDPROC, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TBLM4_INV_ITEMS_SIZEBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TBLM4_INV_ITEMS_COLORBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PB_STOCKS, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TBLM4_INV_ITEMS_LENGBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TBLM4_INV_ITEMS_OTHERSBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TBLM4_INV_ITEMS_NAMEBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TBLM4_INV_ITEMSBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel3.SuspendLayout()
+        CType(Me.PB_PCOUNT, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PB_IIL, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PB_DR_LIST, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TBLM4_INV_ITEMS_IMGBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PNL
@@ -349,7 +415,7 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
         Me.BTN_Minimize.FlatAppearance.BorderColor = System.Drawing.Color.Teal
         Me.BTN_Minimize.FlatAppearance.BorderSize = 3
         Me.BTN_Minimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BTN_Minimize.Location = New System.Drawing.Point(-6792, 11)
+        Me.BTN_Minimize.Location = New System.Drawing.Point(-9370, 11)
         Me.BTN_Minimize.Margin = New System.Windows.Forms.Padding(5)
         Me.BTN_Minimize.Name = "BTN_Minimize"
         Me.BTN_Minimize.Size = New System.Drawing.Size(47, 45)
@@ -365,7 +431,7 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
         Me.BTN_CLOSE.FlatAppearance.BorderColor = System.Drawing.Color.Teal
         Me.BTN_CLOSE.FlatAppearance.BorderSize = 3
         Me.BTN_CLOSE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BTN_CLOSE.Location = New System.Drawing.Point(-6745, 10)
+        Me.BTN_CLOSE.Location = New System.Drawing.Point(-9323, 10)
         Me.BTN_CLOSE.Margin = New System.Windows.Forms.Padding(5)
         Me.BTN_CLOSE.Name = "BTN_CLOSE"
         Me.BTN_CLOSE.Size = New System.Drawing.Size(50, 48)
@@ -410,7 +476,7 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
         Me.GRP_ITEMINFO.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.GRP_ITEMINFO.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold)
         Me.GRP_ITEMINFO.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.GRP_ITEMINFO.Location = New System.Drawing.Point(40, 41)
+        Me.GRP_ITEMINFO.Location = New System.Drawing.Point(34, 549)
         Me.GRP_ITEMINFO.Name = "GRP_ITEMINFO"
         Me.GRP_ITEMINFO.Size = New System.Drawing.Size(530, 503)
         Me.GRP_ITEMINFO.TabIndex = 1406
@@ -419,8 +485,7 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
         '
         'CB_SUPPLY_TYPE
         '
-        Me.CB_SUPPLY_TYPE.DataSource = Me.TblM4INVENTORYTYPEBindingSource
-        Me.CB_SUPPLY_TYPE.DisplayMember = "INV_DESC"
+        Me.CB_SUPPLY_TYPE.DisplayMember = "INV_CODE"
         Me.CB_SUPPLY_TYPE.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CB_SUPPLY_TYPE.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.CB_SUPPLY_TYPE.Font = New System.Drawing.Font("Century Gothic", 12.75!, System.Drawing.FontStyle.Bold)
@@ -430,17 +495,6 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
         Me.CB_SUPPLY_TYPE.Size = New System.Drawing.Size(500, 27)
         Me.CB_SUPPLY_TYPE.TabIndex = 1463
         Me.CB_SUPPLY_TYPE.ValueMember = "INV_CODE"
-        '
-        'TblM4INVENTORYTYPEBindingSource
-        '
-        Me.TblM4INVENTORYTYPEBindingSource.DataMember = "tblM4_INVENTORY_TYPE"
-        Me.TblM4INVENTORYTYPEBindingSource.DataSource = Me.DS_PROPERTYDB
-        '
-        'DS_PROPERTYDB
-        '
-        Me.DS_PROPERTYDB.DataSetName = "DS_PROPERTYDB"
-        Me.DS_PROPERTYDB.EnforceConstraints = False
-        Me.DS_PROPERTYDB.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'Label6
         '
@@ -547,7 +601,6 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
         'WTXT_INVENTORY_DATE_OF_ACQUISITION
         '
         Me.WTXT_INVENTORY_DATE_OF_ACQUISITION.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.WTXT_INVENTORY_DATE_OF_ACQUISITION.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SPM4CURRENTDATETIMEBindingSource, "datenow", True))
         Me.WTXT_INVENTORY_DATE_OF_ACQUISITION.Enabled = False
         Me.WTXT_INVENTORY_DATE_OF_ACQUISITION.Location = New System.Drawing.Point(380, 85)
         Me.WTXT_INVENTORY_DATE_OF_ACQUISITION.Name = "WTXT_INVENTORY_DATE_OF_ACQUISITION"
@@ -555,11 +608,6 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
         Me.WTXT_INVENTORY_DATE_OF_ACQUISITION.TabIndex = 1417
         Me.WTXT_INVENTORY_DATE_OF_ACQUISITION.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.WTXT_INVENTORY_DATE_OF_ACQUISITION.Watermark = "MM/DD/YYYY"
-        '
-        'SPM4CURRENTDATETIMEBindingSource
-        '
-        Me.SPM4CURRENTDATETIMEBindingSource.DataMember = "SPM4_CURRENTDATETIME"
-        Me.SPM4CURRENTDATETIMEBindingSource.DataSource = Me.DS_PROPERTYDB
         '
         'WTXT_INVENTORY_UNITCOST
         '
@@ -617,8 +665,7 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
         '
         'CB_INVENTORY_UNIT_TYPE
         '
-        Me.CB_INVENTORY_UNIT_TYPE.DataSource = Me.TBLG3UNITSBindingSource
-        Me.CB_INVENTORY_UNIT_TYPE.DisplayMember = "UN_DESCRIPTION"
+        Me.CB_INVENTORY_UNIT_TYPE.DisplayMember = "UN_NO"
         Me.CB_INVENTORY_UNIT_TYPE.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CB_INVENTORY_UNIT_TYPE.Enabled = False
         Me.CB_INVENTORY_UNIT_TYPE.FlatStyle = System.Windows.Forms.FlatStyle.Popup
@@ -630,15 +677,9 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
         Me.CB_INVENTORY_UNIT_TYPE.TabIndex = 4
         Me.CB_INVENTORY_UNIT_TYPE.ValueMember = "UN_NO"
         '
-        'TBLG3UNITSBindingSource
-        '
-        Me.TBLG3UNITSBindingSource.DataMember = "TBLG3_UNITS"
-        Me.TBLG3UNITSBindingSource.DataSource = Me.DS_PROPERTYDB
-        '
         'CB_INVENTORY_BRAND_NAME
         '
-        Me.CB_INVENTORY_BRAND_NAME.DataSource = Me.TblM4INVENTORYITEMBRANDBindingSource
-        Me.CB_INVENTORY_BRAND_NAME.DisplayMember = "ITBR_NAME"
+        Me.CB_INVENTORY_BRAND_NAME.DisplayMember = "ITBR_NO"
         Me.CB_INVENTORY_BRAND_NAME.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CB_INVENTORY_BRAND_NAME.Enabled = False
         Me.CB_INVENTORY_BRAND_NAME.FlatStyle = System.Windows.Forms.FlatStyle.Popup
@@ -650,15 +691,9 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
         Me.CB_INVENTORY_BRAND_NAME.TabIndex = 2
         Me.CB_INVENTORY_BRAND_NAME.ValueMember = "ITBR_NO"
         '
-        'TblM4INVENTORYITEMBRANDBindingSource
-        '
-        Me.TblM4INVENTORYITEMBRANDBindingSource.DataMember = "tblM4_INVENTORY_ITEMBRAND"
-        Me.TblM4INVENTORYITEMBRANDBindingSource.DataSource = Me.DS_PROPERTYDB
-        '
         'CB_INVENTORY_SUBCATEGORY
         '
-        Me.CB_INVENTORY_SUBCATEGORY.DataSource = Me.TblM4INVENTORYSUBCATEGORYBindingSource
-        Me.CB_INVENTORY_SUBCATEGORY.DisplayMember = "SC_SUBCATEGORY_NAME"
+        Me.CB_INVENTORY_SUBCATEGORY.DisplayMember = "SC_NO"
         Me.CB_INVENTORY_SUBCATEGORY.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CB_INVENTORY_SUBCATEGORY.Enabled = False
         Me.CB_INVENTORY_SUBCATEGORY.FlatStyle = System.Windows.Forms.FlatStyle.Popup
@@ -670,15 +705,9 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
         Me.CB_INVENTORY_SUBCATEGORY.TabIndex = 1
         Me.CB_INVENTORY_SUBCATEGORY.ValueMember = "SC_NO"
         '
-        'TblM4INVENTORYSUBCATEGORYBindingSource
-        '
-        Me.TblM4INVENTORYSUBCATEGORYBindingSource.DataMember = "tblM4_INVENTORY_SUB_CATEGORY"
-        Me.TblM4INVENTORYSUBCATEGORYBindingSource.DataSource = Me.DS_PROPERTYDB
-        '
         'CB_INVENTORY_CATEGORY
         '
-        Me.CB_INVENTORY_CATEGORY.DataSource = Me.TblM4INVENTORYCATEGORYBindingSource
-        Me.CB_INVENTORY_CATEGORY.DisplayMember = "CAT_NAME"
+        Me.CB_INVENTORY_CATEGORY.DisplayMember = "CAT_CODE"
         Me.CB_INVENTORY_CATEGORY.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CB_INVENTORY_CATEGORY.Enabled = False
         Me.CB_INVENTORY_CATEGORY.FlatStyle = System.Windows.Forms.FlatStyle.Popup
@@ -689,11 +718,6 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
         Me.CB_INVENTORY_CATEGORY.Size = New System.Drawing.Size(329, 27)
         Me.CB_INVENTORY_CATEGORY.TabIndex = 0
         Me.CB_INVENTORY_CATEGORY.ValueMember = "CAT_CODE"
-        '
-        'TblM4INVENTORYCATEGORYBindingSource
-        '
-        Me.TblM4INVENTORYCATEGORYBindingSource.DataMember = "tblM4_INVENTORY_CATEGORY"
-        Me.TblM4INVENTORYCATEGORYBindingSource.DataSource = Me.DS_PROPERTYDB
         '
         'WTXT_INVENTORY_ITEM_DESCRIPTION
         '
@@ -858,7 +882,7 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
         Me.ShapeContainer2.Location = New System.Drawing.Point(3, 19)
         Me.ShapeContainer2.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer2.Name = "ShapeContainer2"
-        Me.ShapeContainer2.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape9, Me.RectangleShape15, Me.RectangleShape14, Me.RECT_PRREQUESTEDDATE, Me.RECT_INVENTORY_ITEM_DESCRIPTION, Me.RECT_INVENTORY_TOTAL_COST, Me.RECT_INVENTORY_UNIT_COST, Me.RECT_INVENTORY_QUANTITY, Me.RectangleShape4, Me.RECT_INVENTORY_SERIAL_NO, Me.RectangleShape2, Me.RectangleShape1, Me.RECT_PRAPPCODE})
+        Me.ShapeContainer2.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape9, Me.RectangleShape15, Me.RectangleShape14, Me.RECT_PRREQUESTEDDATE, Me.RECT_INVENTORY_ITEM_DESCRIPTION, Me.RECT_INVENTORY_TOTAL_COST, Me.RECT_INVENTORY_UNIT_COST, Me.RECT_INVENTORY_QUANTITY, Me.RectangleShape4, Me.RECT_INVENTORY_SERIAL_NO, Me.RECT_SUB_CATEGORY, Me.RECT_BRAND, Me.RECT_CATEGORY})
         Me.ShapeContainer2.Size = New System.Drawing.Size(524, 481)
         Me.ShapeContainer2.TabIndex = 1
         Me.ShapeContainer2.TabStop = False
@@ -959,66 +983,86 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
         Me.RECT_INVENTORY_SERIAL_NO.Name = "RECT_INVENTORY_SERIAL_NO"
         Me.RECT_INVENTORY_SERIAL_NO.Size = New System.Drawing.Size(334, 32)
         '
-        'RectangleShape2
+        'RECT_SUB_CATEGORY
         '
-        Me.RectangleShape2.BorderColor = System.Drawing.Color.LightSeaGreen
-        Me.RectangleShape2.BorderWidth = 2
-        Me.RectangleShape2.CornerRadius = 5
-        Me.RectangleShape2.Location = New System.Drawing.Point(3, 107)
-        Me.RectangleShape2.Name = "RectangleShape2"
-        Me.RectangleShape2.Size = New System.Drawing.Size(397, 32)
+        Me.RECT_SUB_CATEGORY.BorderColor = System.Drawing.Color.LightSeaGreen
+        Me.RECT_SUB_CATEGORY.BorderWidth = 2
+        Me.RECT_SUB_CATEGORY.CornerRadius = 5
+        Me.RECT_SUB_CATEGORY.Location = New System.Drawing.Point(3, 107)
+        Me.RECT_SUB_CATEGORY.Name = "RECT_SUB_CATEGORY"
+        Me.RECT_SUB_CATEGORY.Size = New System.Drawing.Size(397, 32)
         '
-        'RectangleShape1
+        'RECT_BRAND
         '
-        Me.RectangleShape1.BorderColor = System.Drawing.Color.LightSeaGreen
-        Me.RectangleShape1.BorderWidth = 2
-        Me.RectangleShape1.CornerRadius = 5
-        Me.RectangleShape1.Location = New System.Drawing.Point(3, 156)
-        Me.RectangleShape1.Name = "RectangleShape1"
-        Me.RectangleShape1.Size = New System.Drawing.Size(397, 33)
+        Me.RECT_BRAND.BorderColor = System.Drawing.Color.LightSeaGreen
+        Me.RECT_BRAND.BorderWidth = 2
+        Me.RECT_BRAND.CornerRadius = 5
+        Me.RECT_BRAND.Location = New System.Drawing.Point(3, 156)
+        Me.RECT_BRAND.Name = "RECT_BRAND"
+        Me.RECT_BRAND.Size = New System.Drawing.Size(397, 33)
         '
-        'RECT_PRAPPCODE
+        'RECT_CATEGORY
         '
-        Me.RECT_PRAPPCODE.BorderColor = System.Drawing.Color.LightSeaGreen
-        Me.RECT_PRAPPCODE.BorderWidth = 2
-        Me.RECT_PRAPPCODE.CornerRadius = 5
-        Me.RECT_PRAPPCODE.Location = New System.Drawing.Point(3, 56)
-        Me.RECT_PRAPPCODE.Name = "RECT_PRAPPCODE"
-        Me.RECT_PRAPPCODE.Size = New System.Drawing.Size(339, 32)
-        '
-        'VWM4ITEMSCATEGORYSUBCATEGORYBindingSource1
-        '
-        Me.VWM4ITEMSCATEGORYSUBCATEGORYBindingSource1.DataMember = "VWM4_ITEMS_CATEGORY_SUB_CATEGORY"
-        Me.VWM4ITEMSCATEGORYSUBCATEGORYBindingSource1.DataSource = Me.DS_VIEWS
+        Me.RECT_CATEGORY.BorderColor = System.Drawing.Color.LightSeaGreen
+        Me.RECT_CATEGORY.BorderWidth = 2
+        Me.RECT_CATEGORY.CornerRadius = 5
+        Me.RECT_CATEGORY.Location = New System.Drawing.Point(3, 56)
+        Me.RECT_CATEGORY.Name = "RECT_CATEGORY"
+        Me.RECT_CATEGORY.Size = New System.Drawing.Size(339, 32)
         '
         'DS_VIEWS
         '
         Me.DS_VIEWS.DataSetName = "DS_VIEWS"
+        Me.DS_VIEWS.EnforceConstraints = False
         Me.DS_VIEWS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'VWM4ITEMSCATEGORYSUBCATEGORYBindingSource
-        '
-        Me.VWM4ITEMSCATEGORYSUBCATEGORYBindingSource.DataMember = "VWM4_ITEMS_CATEGORY_SUB_CATEGORY"
-        Me.VWM4ITEMSCATEGORYSUBCATEGORYBindingSource.DataSource = Me.DS_VIEWS
         '
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.SystemColors.Window
+        Me.GroupBox1.Controls.Add(Me.LLBL_INVENTORY_VIEW_REPORT)
+        Me.GroupBox1.Controls.Add(Me.PB_INVENTORY_VIEW_REPORT)
         Me.GroupBox1.Controls.Add(Me.PB_INVENTORY_SEARCH)
         Me.GroupBox1.Controls.Add(Me.PB_INVENTORY_CLEAR_SEARCH)
-        Me.GroupBox1.Controls.Add(Me.WTXT_INVENTORY_SEARCH)
+        Me.GroupBox1.Controls.Add(Me.WTXT_ITEM_SEARCH)
         Me.GroupBox1.Controls.Add(Me.GBOX_SETTINGS)
-        Me.GroupBox1.Controls.Add(Me.DGV_INVENTORY_LIST)
+        Me.GroupBox1.Controls.Add(Me.DGV_INV_ITEM_LIST)
         Me.GroupBox1.Controls.Add(Me.PictureBox1)
         Me.GroupBox1.Controls.Add(Me.ShapeContainer1)
         Me.GroupBox1.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.GroupBox1.Location = New System.Drawing.Point(9, 102)
+        Me.GroupBox1.Location = New System.Drawing.Point(10, 108)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(1074, 546)
+        Me.GroupBox1.Size = New System.Drawing.Size(1074, 541)
         Me.GroupBox1.TabIndex = 1407
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Item List"
+        '
+        'LLBL_INVENTORY_VIEW_REPORT
+        '
+        Me.LLBL_INVENTORY_VIEW_REPORT.AutoSize = True
+        Me.LLBL_INVENTORY_VIEW_REPORT.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.LLBL_INVENTORY_VIEW_REPORT.Font = New System.Drawing.Font("Century Gothic", 12.75!, System.Drawing.FontStyle.Bold)
+        Me.LLBL_INVENTORY_VIEW_REPORT.ForeColor = System.Drawing.Color.DimGray
+        Me.LLBL_INVENTORY_VIEW_REPORT.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
+        Me.LLBL_INVENTORY_VIEW_REPORT.LinkColor = System.Drawing.Color.DimGray
+        Me.LLBL_INVENTORY_VIEW_REPORT.Location = New System.Drawing.Point(945, 506)
+        Me.LLBL_INVENTORY_VIEW_REPORT.Name = "LLBL_INVENTORY_VIEW_REPORT"
+        Me.LLBL_INVENTORY_VIEW_REPORT.Size = New System.Drawing.Size(115, 19)
+        Me.LLBL_INVENTORY_VIEW_REPORT.TabIndex = 1453
+        Me.LLBL_INVENTORY_VIEW_REPORT.TabStop = True
+        Me.LLBL_INVENTORY_VIEW_REPORT.Text = "VIEW REPORT"
+        '
+        'PB_INVENTORY_VIEW_REPORT
+        '
+        Me.PB_INVENTORY_VIEW_REPORT.BackgroundImage = Global.PRA_PIS.My.Resources.Resources.outline_print_black_18dp
+        Me.PB_INVENTORY_VIEW_REPORT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PB_INVENTORY_VIEW_REPORT.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PB_INVENTORY_VIEW_REPORT.InitialImage = Nothing
+        Me.PB_INVENTORY_VIEW_REPORT.Location = New System.Drawing.Point(907, 502)
+        Me.PB_INVENTORY_VIEW_REPORT.Name = "PB_INVENTORY_VIEW_REPORT"
+        Me.PB_INVENTORY_VIEW_REPORT.Size = New System.Drawing.Size(32, 28)
+        Me.PB_INVENTORY_VIEW_REPORT.TabIndex = 1454
+        Me.PB_INVENTORY_VIEW_REPORT.TabStop = False
         '
         'PB_INVENTORY_SEARCH
         '
@@ -1026,7 +1070,7 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
         Me.PB_INVENTORY_SEARCH.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PB_INVENTORY_SEARCH.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PB_INVENTORY_SEARCH.InitialImage = Nothing
-        Me.PB_INVENTORY_SEARCH.Location = New System.Drawing.Point(1027, 25)
+        Me.PB_INVENTORY_SEARCH.Location = New System.Drawing.Point(13, 25)
         Me.PB_INVENTORY_SEARCH.Name = "PB_INVENTORY_SEARCH"
         Me.PB_INVENTORY_SEARCH.Size = New System.Drawing.Size(32, 28)
         Me.PB_INVENTORY_SEARCH.TabIndex = 1430
@@ -1038,24 +1082,24 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
         Me.PB_INVENTORY_CLEAR_SEARCH.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PB_INVENTORY_CLEAR_SEARCH.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PB_INVENTORY_CLEAR_SEARCH.InitialImage = Nothing
-        Me.PB_INVENTORY_CLEAR_SEARCH.Location = New System.Drawing.Point(1027, 25)
+        Me.PB_INVENTORY_CLEAR_SEARCH.Location = New System.Drawing.Point(1028, 25)
         Me.PB_INVENTORY_CLEAR_SEARCH.Name = "PB_INVENTORY_CLEAR_SEARCH"
         Me.PB_INVENTORY_CLEAR_SEARCH.Size = New System.Drawing.Size(32, 28)
         Me.PB_INVENTORY_CLEAR_SEARCH.TabIndex = 1440
         Me.PB_INVENTORY_CLEAR_SEARCH.TabStop = False
+        Me.PB_INVENTORY_CLEAR_SEARCH.Visible = False
         '
-        'WTXT_INVENTORY_SEARCH
+        'WTXT_ITEM_SEARCH
         '
-        Me.WTXT_INVENTORY_SEARCH.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.WTXT_INVENTORY_SEARCH.Font = New System.Drawing.Font("Century Gothic", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.WTXT_INVENTORY_SEARCH.ForeColor = System.Drawing.Color.Black
-        Me.WTXT_INVENTORY_SEARCH.Location = New System.Drawing.Point(30, 29)
-        Me.WTXT_INVENTORY_SEARCH.MaxLength = 300
-        Me.WTXT_INVENTORY_SEARCH.Name = "WTXT_INVENTORY_SEARCH"
-        Me.WTXT_INVENTORY_SEARCH.Size = New System.Drawing.Size(993, 21)
-        Me.WTXT_INVENTORY_SEARCH.TabIndex = 1430
-        Me.WTXT_INVENTORY_SEARCH.Watermark = "Search Item Code, Category, Sub Category, Brand/Provider Name, Serial No. Or Item" &
-    " Description"
+        Me.WTXT_ITEM_SEARCH.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.WTXT_ITEM_SEARCH.Font = New System.Drawing.Font("Century Gothic", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.WTXT_ITEM_SEARCH.ForeColor = System.Drawing.Color.Black
+        Me.WTXT_ITEM_SEARCH.Location = New System.Drawing.Point(49, 29)
+        Me.WTXT_ITEM_SEARCH.MaxLength = 300
+        Me.WTXT_ITEM_SEARCH.Name = "WTXT_ITEM_SEARCH"
+        Me.WTXT_ITEM_SEARCH.Size = New System.Drawing.Size(974, 21)
+        Me.WTXT_ITEM_SEARCH.TabIndex = 1430
+        Me.WTXT_ITEM_SEARCH.Watermark = "Search Item Description"
         '
         'GBOX_SETTINGS
         '
@@ -1097,25 +1141,62 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
         Me.LinkLabel1.TabStop = True
         Me.LinkLabel1.Text = "Total No. of Records Found :"
         '
-        'DGV_INVENTORY_LIST
+        'DGV_INV_ITEM_LIST
         '
-        Me.DGV_INVENTORY_LIST.AllowUserToAddRows = False
-        Me.DGV_INVENTORY_LIST.AllowUserToDeleteRows = False
-        Me.DGV_INVENTORY_LIST.AllowUserToResizeColumns = False
-        Me.DGV_INVENTORY_LIST.AllowUserToResizeRows = False
-        Me.DGV_INVENTORY_LIST.AutoGenerateColumns = False
-        Me.DGV_INVENTORY_LIST.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DGV_INVENTORY_LIST.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV_INVENTORY_LIST.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CATNAMEDataGridViewTextBoxColumn, Me.Column1, Me.SCSUBCATEGORYNAMEDataGridViewTextBoxColumn, Me.SCNODataGridViewTextBoxColumn, Me.ITBRNAMEDataGridViewTextBoxColumn, Me.ITBRNODataGridViewTextBoxColumn, Me.ITEMSERIALNODataGridViewTextBoxColumn, Me.ITEMDESCRIPTIONDataGridViewTextBoxColumn, Me.ITEMUNITDataGridViewTextBoxColumn, Me.ITEMQUANTITYDataGridViewTextBoxColumn, Me.ITEM_UNIT_COST, Me.ITEM_TOTAL_COST, Me.ITEMDATEAQUISITIONDataGridViewTextBoxColumn, Me.ITEMCREATEDDATEDataGridViewTextBoxColumn, Me.ITEMUPDATEDDATEDataGridViewTextBoxColumn, Me.LOC_LOCATION_ID})
-        Me.DGV_INVENTORY_LIST.DataSource = Me.SPM4INVENTORYDGVLISTBindingSource
-        Me.DGV_INVENTORY_LIST.Location = New System.Drawing.Point(6, 63)
-        Me.DGV_INVENTORY_LIST.MultiSelect = False
-        Me.DGV_INVENTORY_LIST.Name = "DGV_INVENTORY_LIST"
-        Me.DGV_INVENTORY_LIST.ReadOnly = True
-        Me.DGV_INVENTORY_LIST.RowHeadersVisible = False
-        Me.DGV_INVENTORY_LIST.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGV_INVENTORY_LIST.Size = New System.Drawing.Size(1062, 422)
-        Me.DGV_INVENTORY_LIST.TabIndex = 1
+        Me.DGV_INV_ITEM_LIST.AllowUserToAddRows = False
+        Me.DGV_INV_ITEM_LIST.AllowUserToDeleteRows = False
+        Me.DGV_INV_ITEM_LIST.AllowUserToResizeColumns = False
+        Me.DGV_INV_ITEM_LIST.AllowUserToResizeRows = False
+        Me.DGV_INV_ITEM_LIST.AutoGenerateColumns = False
+        Me.DGV_INV_ITEM_LIST.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DGV_INV_ITEM_LIST.BackgroundColor = System.Drawing.Color.White
+        Me.DGV_INV_ITEM_LIST.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGV_INV_ITEM_LIST.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.ITEMCODEDataGridViewTextBoxColumn, Me.CATCODEDataGridViewTextBoxColumn, Me.CATNAMEDataGridViewTextBoxColumn, Me.SCNODataGridViewTextBoxColumn, Me.SCSUBCATEGORYNAMEDataGridViewTextBoxColumn, Me.ITBRNODataGridViewTextBoxColumn, Me.ITBRNAMEDataGridViewTextBoxColumn, Me.FULLDESC, Me.ITEMSERIALNODataGridViewTextBoxColumn, Me.COLRNUMDataGridViewTextBoxColumn, Me.COLRNAMEDataGridViewTextBoxColumn, Me.ISACTIVEDataGridViewCheckBoxColumn, Me.SIZENUMDataGridViewTextBoxColumn, Me.SIZENAMEDataGridViewTextBoxColumn, Me.ITEMCREATEDDATEDataGridViewTextBoxColumn, Me.CREATEDBYDataGridViewTextBoxColumn, Me.ISACTIVESIZEDataGridViewCheckBoxColumn, Me.LENG_NUM, Me.OTHER_NUM, Me.ITM_NAME_NUM, Me.ITM_NAME, Me.NAME_IS_ACTIVE, Me.btnEdit, Me.IMG_PATH, Me.Column2})
+        Me.DGV_INV_ITEM_LIST.DataSource = Me.VWM4_ITEM_LISTBindingSource
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGV_INV_ITEM_LIST.DefaultCellStyle = DataGridViewCellStyle1
+        Me.DGV_INV_ITEM_LIST.Location = New System.Drawing.Point(6, 64)
+        Me.DGV_INV_ITEM_LIST.MultiSelect = False
+        Me.DGV_INV_ITEM_LIST.Name = "DGV_INV_ITEM_LIST"
+        Me.DGV_INV_ITEM_LIST.ReadOnly = True
+        Me.DGV_INV_ITEM_LIST.RowHeadersVisible = False
+        Me.DGV_INV_ITEM_LIST.RowTemplate.Height = 25
+        Me.DGV_INV_ITEM_LIST.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DGV_INV_ITEM_LIST.Size = New System.Drawing.Size(1062, 422)
+        Me.DGV_INV_ITEM_LIST.TabIndex = 1
+        '
+        'Column1
+        '
+        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.Column1.HeaderText = ""
+        Me.Column1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch
+        Me.Column1.MinimumWidth = 100
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.Column1.Visible = False
+        '
+        'ITEMCODEDataGridViewTextBoxColumn
+        '
+        Me.ITEMCODEDataGridViewTextBoxColumn.DataPropertyName = "ITEM_CODE"
+        Me.ITEMCODEDataGridViewTextBoxColumn.HeaderText = "Item Code"
+        Me.ITEMCODEDataGridViewTextBoxColumn.Name = "ITEMCODEDataGridViewTextBoxColumn"
+        Me.ITEMCODEDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'CATCODEDataGridViewTextBoxColumn
+        '
+        Me.CATCODEDataGridViewTextBoxColumn.DataPropertyName = "CAT_CODE"
+        Me.CATCODEDataGridViewTextBoxColumn.HeaderText = "CAT_CODE"
+        Me.CATCODEDataGridViewTextBoxColumn.Name = "CATCODEDataGridViewTextBoxColumn"
+        Me.CATCODEDataGridViewTextBoxColumn.ReadOnly = True
+        Me.CATCODEDataGridViewTextBoxColumn.Visible = False
         '
         'CATNAMEDataGridViewTextBoxColumn
         '
@@ -1123,20 +1204,6 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
         Me.CATNAMEDataGridViewTextBoxColumn.HeaderText = "Category"
         Me.CATNAMEDataGridViewTextBoxColumn.Name = "CATNAMEDataGridViewTextBoxColumn"
         Me.CATNAMEDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'Column1
-        '
-        Me.Column1.DataPropertyName = "ITEM_CODE"
-        Me.Column1.HeaderText = "Item Code"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        '
-        'SCSUBCATEGORYNAMEDataGridViewTextBoxColumn
-        '
-        Me.SCSUBCATEGORYNAMEDataGridViewTextBoxColumn.DataPropertyName = "SC_SUBCATEGORY_NAME"
-        Me.SCSUBCATEGORYNAMEDataGridViewTextBoxColumn.HeaderText = "Sub Category Name"
-        Me.SCSUBCATEGORYNAMEDataGridViewTextBoxColumn.Name = "SCSUBCATEGORYNAMEDataGridViewTextBoxColumn"
-        Me.SCSUBCATEGORYNAMEDataGridViewTextBoxColumn.ReadOnly = True
         '
         'SCNODataGridViewTextBoxColumn
         '
@@ -1146,12 +1213,13 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
         Me.SCNODataGridViewTextBoxColumn.ReadOnly = True
         Me.SCNODataGridViewTextBoxColumn.Visible = False
         '
-        'ITBRNAMEDataGridViewTextBoxColumn
+        'SCSUBCATEGORYNAMEDataGridViewTextBoxColumn
         '
-        Me.ITBRNAMEDataGridViewTextBoxColumn.DataPropertyName = "ITBR_NAME"
-        Me.ITBRNAMEDataGridViewTextBoxColumn.HeaderText = "Brand/Provider Name"
-        Me.ITBRNAMEDataGridViewTextBoxColumn.Name = "ITBRNAMEDataGridViewTextBoxColumn"
-        Me.ITBRNAMEDataGridViewTextBoxColumn.ReadOnly = True
+        Me.SCSUBCATEGORYNAMEDataGridViewTextBoxColumn.DataPropertyName = "SC_SUBCATEGORY_NAME"
+        Me.SCSUBCATEGORYNAMEDataGridViewTextBoxColumn.HeaderText = "Sub Category Name"
+        Me.SCSUBCATEGORYNAMEDataGridViewTextBoxColumn.Name = "SCSUBCATEGORYNAMEDataGridViewTextBoxColumn"
+        Me.SCSUBCATEGORYNAMEDataGridViewTextBoxColumn.ReadOnly = True
+        Me.SCSUBCATEGORYNAMEDataGridViewTextBoxColumn.Visible = False
         '
         'ITBRNODataGridViewTextBoxColumn
         '
@@ -1161,87 +1229,166 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
         Me.ITBRNODataGridViewTextBoxColumn.ReadOnly = True
         Me.ITBRNODataGridViewTextBoxColumn.Visible = False
         '
+        'ITBRNAMEDataGridViewTextBoxColumn
+        '
+        Me.ITBRNAMEDataGridViewTextBoxColumn.DataPropertyName = "ITBR_NAME"
+        Me.ITBRNAMEDataGridViewTextBoxColumn.HeaderText = "Brand Name"
+        Me.ITBRNAMEDataGridViewTextBoxColumn.Name = "ITBRNAMEDataGridViewTextBoxColumn"
+        Me.ITBRNAMEDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'FULLDESC
+        '
+        Me.FULLDESC.DataPropertyName = "FULLDESC"
+        Me.FULLDESC.HeaderText = "Item Description"
+        Me.FULLDESC.Name = "FULLDESC"
+        Me.FULLDESC.ReadOnly = True
+        '
         'ITEMSERIALNODataGridViewTextBoxColumn
         '
         Me.ITEMSERIALNODataGridViewTextBoxColumn.DataPropertyName = "ITEM_SERIAL_NO"
-        Me.ITEMSERIALNODataGridViewTextBoxColumn.HeaderText = "Serial No./Product No."
+        Me.ITEMSERIALNODataGridViewTextBoxColumn.HeaderText = "ITEM_SERIAL_NO"
         Me.ITEMSERIALNODataGridViewTextBoxColumn.Name = "ITEMSERIALNODataGridViewTextBoxColumn"
         Me.ITEMSERIALNODataGridViewTextBoxColumn.ReadOnly = True
+        Me.ITEMSERIALNODataGridViewTextBoxColumn.Visible = False
         '
-        'ITEMDESCRIPTIONDataGridViewTextBoxColumn
+        'COLRNUMDataGridViewTextBoxColumn
         '
-        Me.ITEMDESCRIPTIONDataGridViewTextBoxColumn.DataPropertyName = "ITEM_DESCRIPTION"
-        Me.ITEMDESCRIPTIONDataGridViewTextBoxColumn.HeaderText = "Item Description"
-        Me.ITEMDESCRIPTIONDataGridViewTextBoxColumn.Name = "ITEMDESCRIPTIONDataGridViewTextBoxColumn"
-        Me.ITEMDESCRIPTIONDataGridViewTextBoxColumn.ReadOnly = True
+        Me.COLRNUMDataGridViewTextBoxColumn.DataPropertyName = "COLR_NUM"
+        Me.COLRNUMDataGridViewTextBoxColumn.HeaderText = "COLR_NUM"
+        Me.COLRNUMDataGridViewTextBoxColumn.Name = "COLRNUMDataGridViewTextBoxColumn"
+        Me.COLRNUMDataGridViewTextBoxColumn.ReadOnly = True
+        Me.COLRNUMDataGridViewTextBoxColumn.Visible = False
         '
-        'ITEMUNITDataGridViewTextBoxColumn
+        'COLRNAMEDataGridViewTextBoxColumn
         '
-        Me.ITEMUNITDataGridViewTextBoxColumn.DataPropertyName = "ITEM_UNIT"
-        Me.ITEMUNITDataGridViewTextBoxColumn.HeaderText = "Unit Type"
-        Me.ITEMUNITDataGridViewTextBoxColumn.Name = "ITEMUNITDataGridViewTextBoxColumn"
-        Me.ITEMUNITDataGridViewTextBoxColumn.ReadOnly = True
-        Me.ITEMUNITDataGridViewTextBoxColumn.Visible = False
+        Me.COLRNAMEDataGridViewTextBoxColumn.DataPropertyName = "COLR_NAME"
+        Me.COLRNAMEDataGridViewTextBoxColumn.HeaderText = "Color"
+        Me.COLRNAMEDataGridViewTextBoxColumn.Name = "COLRNAMEDataGridViewTextBoxColumn"
+        Me.COLRNAMEDataGridViewTextBoxColumn.ReadOnly = True
+        Me.COLRNAMEDataGridViewTextBoxColumn.Visible = False
         '
-        'ITEMQUANTITYDataGridViewTextBoxColumn
+        'ISACTIVEDataGridViewCheckBoxColumn
         '
-        Me.ITEMQUANTITYDataGridViewTextBoxColumn.DataPropertyName = "ITEM_QUANTITY"
-        Me.ITEMQUANTITYDataGridViewTextBoxColumn.HeaderText = "Quantity"
-        Me.ITEMQUANTITYDataGridViewTextBoxColumn.Name = "ITEMQUANTITYDataGridViewTextBoxColumn"
-        Me.ITEMQUANTITYDataGridViewTextBoxColumn.ReadOnly = True
+        Me.ISACTIVEDataGridViewCheckBoxColumn.DataPropertyName = "IS_ACTIVE"
+        Me.ISACTIVEDataGridViewCheckBoxColumn.HeaderText = "IS_ACTIVE"
+        Me.ISACTIVEDataGridViewCheckBoxColumn.Name = "ISACTIVEDataGridViewCheckBoxColumn"
+        Me.ISACTIVEDataGridViewCheckBoxColumn.ReadOnly = True
+        Me.ISACTIVEDataGridViewCheckBoxColumn.Visible = False
         '
-        'ITEM_UNIT_COST
+        'SIZENUMDataGridViewTextBoxColumn
         '
-        Me.ITEM_UNIT_COST.DataPropertyName = "ITEM_UNIT_COST"
-        Me.ITEM_UNIT_COST.HeaderText = "Unit Cost"
-        Me.ITEM_UNIT_COST.Name = "ITEM_UNIT_COST"
-        Me.ITEM_UNIT_COST.ReadOnly = True
+        Me.SIZENUMDataGridViewTextBoxColumn.DataPropertyName = "SIZE_NUM"
+        Me.SIZENUMDataGridViewTextBoxColumn.HeaderText = "SIZE_NUM"
+        Me.SIZENUMDataGridViewTextBoxColumn.Name = "SIZENUMDataGridViewTextBoxColumn"
+        Me.SIZENUMDataGridViewTextBoxColumn.ReadOnly = True
+        Me.SIZENUMDataGridViewTextBoxColumn.Visible = False
         '
-        'ITEM_TOTAL_COST
+        'SIZENAMEDataGridViewTextBoxColumn
         '
-        Me.ITEM_TOTAL_COST.DataPropertyName = "ITEM_TOTAL_COST"
-        Me.ITEM_TOTAL_COST.HeaderText = "Total Cost"
-        Me.ITEM_TOTAL_COST.Name = "ITEM_TOTAL_COST"
-        Me.ITEM_TOTAL_COST.ReadOnly = True
-        '
-        'ITEMDATEAQUISITIONDataGridViewTextBoxColumn
-        '
-        Me.ITEMDATEAQUISITIONDataGridViewTextBoxColumn.DataPropertyName = "ITEM_DATE_AQUISITION"
-        DataGridViewCellStyle1.Format = "MM/dd/yyyy"
-        DataGridViewCellStyle1.NullValue = Nothing
-        Me.ITEMDATEAQUISITIONDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle1
-        Me.ITEMDATEAQUISITIONDataGridViewTextBoxColumn.HeaderText = "Date Acquisition"
-        Me.ITEMDATEAQUISITIONDataGridViewTextBoxColumn.Name = "ITEMDATEAQUISITIONDataGridViewTextBoxColumn"
-        Me.ITEMDATEAQUISITIONDataGridViewTextBoxColumn.ReadOnly = True
+        Me.SIZENAMEDataGridViewTextBoxColumn.DataPropertyName = "SIZE_NAME"
+        Me.SIZENAMEDataGridViewTextBoxColumn.HeaderText = "Size"
+        Me.SIZENAMEDataGridViewTextBoxColumn.Name = "SIZENAMEDataGridViewTextBoxColumn"
+        Me.SIZENAMEDataGridViewTextBoxColumn.ReadOnly = True
+        Me.SIZENAMEDataGridViewTextBoxColumn.Visible = False
         '
         'ITEMCREATEDDATEDataGridViewTextBoxColumn
         '
         Me.ITEMCREATEDDATEDataGridViewTextBoxColumn.DataPropertyName = "ITEM_CREATED_DATE"
-        Me.ITEMCREATEDDATEDataGridViewTextBoxColumn.HeaderText = "ITEM_CREATED_DATE"
+        Me.ITEMCREATEDDATEDataGridViewTextBoxColumn.HeaderText = "Created Date"
         Me.ITEMCREATEDDATEDataGridViewTextBoxColumn.Name = "ITEMCREATEDDATEDataGridViewTextBoxColumn"
         Me.ITEMCREATEDDATEDataGridViewTextBoxColumn.ReadOnly = True
-        Me.ITEMCREATEDDATEDataGridViewTextBoxColumn.Visible = False
         '
-        'ITEMUPDATEDDATEDataGridViewTextBoxColumn
+        'CREATEDBYDataGridViewTextBoxColumn
         '
-        Me.ITEMUPDATEDDATEDataGridViewTextBoxColumn.DataPropertyName = "ITEM_UPDATED_DATE"
-        Me.ITEMUPDATEDDATEDataGridViewTextBoxColumn.HeaderText = "ITEM_UPDATED_DATE"
-        Me.ITEMUPDATEDDATEDataGridViewTextBoxColumn.Name = "ITEMUPDATEDDATEDataGridViewTextBoxColumn"
-        Me.ITEMUPDATEDDATEDataGridViewTextBoxColumn.ReadOnly = True
-        Me.ITEMUPDATEDDATEDataGridViewTextBoxColumn.Visible = False
+        Me.CREATEDBYDataGridViewTextBoxColumn.DataPropertyName = "CREATED_BY"
+        Me.CREATEDBYDataGridViewTextBoxColumn.HeaderText = "Encoded By"
+        Me.CREATEDBYDataGridViewTextBoxColumn.Name = "CREATEDBYDataGridViewTextBoxColumn"
+        Me.CREATEDBYDataGridViewTextBoxColumn.ReadOnly = True
         '
-        'LOC_LOCATION_ID
+        'ISACTIVESIZEDataGridViewCheckBoxColumn
         '
-        Me.LOC_LOCATION_ID.DataPropertyName = "LOC_LOCATION_ID"
-        Me.LOC_LOCATION_ID.HeaderText = "LOC_LOCATION_ID"
-        Me.LOC_LOCATION_ID.Name = "LOC_LOCATION_ID"
-        Me.LOC_LOCATION_ID.ReadOnly = True
-        Me.LOC_LOCATION_ID.Visible = False
+        Me.ISACTIVESIZEDataGridViewCheckBoxColumn.DataPropertyName = "IS_ACTIVE_SIZE"
+        Me.ISACTIVESIZEDataGridViewCheckBoxColumn.HeaderText = "IS_ACTIVE_SIZE"
+        Me.ISACTIVESIZEDataGridViewCheckBoxColumn.Name = "ISACTIVESIZEDataGridViewCheckBoxColumn"
+        Me.ISACTIVESIZEDataGridViewCheckBoxColumn.ReadOnly = True
+        Me.ISACTIVESIZEDataGridViewCheckBoxColumn.Visible = False
         '
-        'SPM4INVENTORYDGVLISTBindingSource
+        'LENG_NUM
         '
-        Me.SPM4INVENTORYDGVLISTBindingSource.DataMember = "SPM4_INVENTORYDGVLIST"
-        Me.SPM4INVENTORYDGVLISTBindingSource.DataSource = Me.DS_PROPERTYDB
+        Me.LENG_NUM.DataPropertyName = "LENG_NUM"
+        Me.LENG_NUM.HeaderText = "LENG_NUM"
+        Me.LENG_NUM.Name = "LENG_NUM"
+        Me.LENG_NUM.ReadOnly = True
+        Me.LENG_NUM.Visible = False
+        '
+        'OTHER_NUM
+        '
+        Me.OTHER_NUM.DataPropertyName = "OTHER_NUM"
+        Me.OTHER_NUM.HeaderText = "OTHER_NUM"
+        Me.OTHER_NUM.Name = "OTHER_NUM"
+        Me.OTHER_NUM.ReadOnly = True
+        Me.OTHER_NUM.Visible = False
+        '
+        'ITM_NAME_NUM
+        '
+        Me.ITM_NAME_NUM.DataPropertyName = "ITM_NAME_NUM"
+        Me.ITM_NAME_NUM.HeaderText = "ITM_NAME_NUM"
+        Me.ITM_NAME_NUM.Name = "ITM_NAME_NUM"
+        Me.ITM_NAME_NUM.ReadOnly = True
+        Me.ITM_NAME_NUM.Visible = False
+        '
+        'ITM_NAME
+        '
+        Me.ITM_NAME.DataPropertyName = "ITM_NAME"
+        Me.ITM_NAME.HeaderText = "ITM_NAME"
+        Me.ITM_NAME.Name = "ITM_NAME"
+        Me.ITM_NAME.ReadOnly = True
+        Me.ITM_NAME.Visible = False
+        '
+        'NAME_IS_ACTIVE
+        '
+        Me.NAME_IS_ACTIVE.DataPropertyName = "NAME_IS_ACTIVE"
+        Me.NAME_IS_ACTIVE.HeaderText = "NAME_IS_ACTIVE"
+        Me.NAME_IS_ACTIVE.Name = "NAME_IS_ACTIVE"
+        Me.NAME_IS_ACTIVE.ReadOnly = True
+        Me.NAME_IS_ACTIVE.Visible = False
+        '
+        'btnEdit
+        '
+        Me.btnEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.btnEdit.HeaderText = "Action"
+        Me.btnEdit.Name = "btnEdit"
+        Me.btnEdit.ReadOnly = True
+        Me.btnEdit.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.btnEdit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.btnEdit.Text = "Edit"
+        Me.btnEdit.UseColumnTextForButtonValue = True
+        Me.btnEdit.Width = 70
+        '
+        'IMG_PATH
+        '
+        Me.IMG_PATH.DataPropertyName = "IMG_PATH"
+        Me.IMG_PATH.HeaderText = ""
+        Me.IMG_PATH.Name = "IMG_PATH"
+        Me.IMG_PATH.ReadOnly = True
+        Me.IMG_PATH.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.IMG_PATH.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        Me.IMG_PATH.Visible = False
+        '
+        'Column2
+        '
+        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.Column2.HeaderText = "Action"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        Me.Column2.Text = "View Image"
+        Me.Column2.UseColumnTextForButtonValue = True
+        Me.Column2.Width = 90
+        '
+        'VWM4_ITEM_LISTBindingSource
+        '
+        Me.VWM4_ITEM_LISTBindingSource.DataMember = "VWM4_ITEM_LIST"
+        Me.VWM4_ITEM_LISTBindingSource.DataSource = Me.DS_VIEWS
         '
         'PictureBox1
         '
@@ -1259,10 +1406,22 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
         Me.ShapeContainer1.Location = New System.Drawing.Point(3, 18)
         Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer1.Name = "ShapeContainer1"
-        Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RECT_PRCANCELEDIT})
-        Me.ShapeContainer1.Size = New System.Drawing.Size(1068, 525)
+        Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape5, Me.RECT_PRCANCELEDIT})
+        Me.ShapeContainer1.Size = New System.Drawing.Size(1068, 520)
         Me.ShapeContainer1.TabIndex = 1439
         Me.ShapeContainer1.TabStop = False
+        '
+        'RectangleShape5
+        '
+        Me.RectangleShape5.BorderColor = System.Drawing.Color.DimGray
+        Me.RectangleShape5.BorderWidth = 2
+        Me.RectangleShape5.CornerRadius = 19
+        Me.RectangleShape5.Cursor = System.Windows.Forms.Cursors.Arrow
+        Me.RectangleShape5.FillColor = System.Drawing.SystemColors.HighlightText
+        Me.RectangleShape5.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
+        Me.RectangleShape5.Location = New System.Drawing.Point(893, 477)
+        Me.RectangleShape5.Name = "RectangleShape5"
+        Me.RectangleShape5.Size = New System.Drawing.Size(170, 39)
         '
         'RECT_PRCANCELEDIT
         '
@@ -1284,67 +1443,19 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
         Me.RECT_INVENTORY_NEW_SAVE.Cursor = System.Windows.Forms.Cursors.Arrow
         Me.RECT_INVENTORY_NEW_SAVE.FillColor = System.Drawing.SystemColors.HighlightText
         Me.RECT_INVENTORY_NEW_SAVE.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
-        Me.RECT_INVENTORY_NEW_SAVE.Location = New System.Drawing.Point(10, 56)
+        Me.RECT_INVENTORY_NEW_SAVE.Location = New System.Drawing.Point(5, 5)
         Me.RECT_INVENTORY_NEW_SAVE.Name = "RECT_INVENTORY_NEW_SAVE"
-        Me.RECT_INVENTORY_NEW_SAVE.Size = New System.Drawing.Size(102, 39)
+        Me.RECT_INVENTORY_NEW_SAVE.Size = New System.Drawing.Size(141, 39)
         '
         'ShapeContainer3
         '
         Me.ShapeContainer3.Location = New System.Drawing.Point(0, 0)
         Me.ShapeContainer3.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer3.Name = "ShapeContainer3"
-        Me.ShapeContainer3.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape8, Me.RectangleShape7, Me.RectangleShape5, Me.RECT_INVENTORY_CANCEL, Me.RECT_INVENTORY_EDIT, Me.RECT_INVENTORY_NEW_SAVE})
+        Me.ShapeContainer3.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RECT_INVENTORY_EDIT})
         Me.ShapeContainer3.Size = New System.Drawing.Size(1095, 660)
         Me.ShapeContainer3.TabIndex = 1408
         Me.ShapeContainer3.TabStop = False
-        '
-        'RectangleShape8
-        '
-        Me.RectangleShape8.BorderColor = System.Drawing.Color.DimGray
-        Me.RectangleShape8.BorderWidth = 2
-        Me.RectangleShape8.CornerRadius = 19
-        Me.RectangleShape8.Cursor = System.Windows.Forms.Cursors.Arrow
-        Me.RectangleShape8.FillColor = System.Drawing.SystemColors.HighlightText
-        Me.RectangleShape8.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
-        Me.RectangleShape8.Location = New System.Drawing.Point(427, 56)
-        Me.RectangleShape8.Name = "RectangleShape8"
-        Me.RectangleShape8.Size = New System.Drawing.Size(161, 39)
-        '
-        'RectangleShape7
-        '
-        Me.RectangleShape7.BorderColor = System.Drawing.Color.DimGray
-        Me.RectangleShape7.BorderWidth = 2
-        Me.RectangleShape7.CornerRadius = 19
-        Me.RectangleShape7.Cursor = System.Windows.Forms.Cursors.Arrow
-        Me.RectangleShape7.FillColor = System.Drawing.SystemColors.HighlightText
-        Me.RectangleShape7.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
-        Me.RectangleShape7.Location = New System.Drawing.Point(216, 56)
-        Me.RectangleShape7.Name = "RectangleShape7"
-        Me.RectangleShape7.Size = New System.Drawing.Size(209, 39)
-        '
-        'RectangleShape5
-        '
-        Me.RectangleShape5.BorderColor = System.Drawing.Color.DimGray
-        Me.RectangleShape5.BorderWidth = 2
-        Me.RectangleShape5.CornerRadius = 19
-        Me.RectangleShape5.Cursor = System.Windows.Forms.Cursors.Arrow
-        Me.RectangleShape5.FillColor = System.Drawing.SystemColors.HighlightText
-        Me.RectangleShape5.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
-        Me.RectangleShape5.Location = New System.Drawing.Point(590, 56)
-        Me.RectangleShape5.Name = "RectangleShape5"
-        Me.RectangleShape5.Size = New System.Drawing.Size(170, 39)
-        '
-        'RECT_INVENTORY_CANCEL
-        '
-        Me.RECT_INVENTORY_CANCEL.BorderColor = System.Drawing.Color.DimGray
-        Me.RECT_INVENTORY_CANCEL.BorderWidth = 2
-        Me.RECT_INVENTORY_CANCEL.CornerRadius = 19
-        Me.RECT_INVENTORY_CANCEL.Cursor = System.Windows.Forms.Cursors.Arrow
-        Me.RECT_INVENTORY_CANCEL.FillColor = System.Drawing.SystemColors.HighlightText
-        Me.RECT_INVENTORY_CANCEL.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
-        Me.RECT_INVENTORY_CANCEL.Location = New System.Drawing.Point(879, 56)
-        Me.RECT_INVENTORY_CANCEL.Name = "RECT_INVENTORY_CANCEL"
-        Me.RECT_INVENTORY_CANCEL.Size = New System.Drawing.Size(201, 39)
         '
         'RECT_INVENTORY_EDIT
         '
@@ -1354,50 +1465,45 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
         Me.RECT_INVENTORY_EDIT.Cursor = System.Windows.Forms.Cursors.Arrow
         Me.RECT_INVENTORY_EDIT.FillColor = System.Drawing.SystemColors.HighlightText
         Me.RECT_INVENTORY_EDIT.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
-        Me.RECT_INVENTORY_EDIT.Location = New System.Drawing.Point(115, 56)
+        Me.RECT_INVENTORY_EDIT.Location = New System.Drawing.Point(115, 756)
         Me.RECT_INVENTORY_EDIT.Name = "RECT_INVENTORY_EDIT"
         Me.RECT_INVENTORY_EDIT.Size = New System.Drawing.Size(98, 39)
         '
-        'TblM4_INVENTORY_ITEMSBindingSource
+        'RECT_STOCKS
         '
-        Me.TblM4_INVENTORY_ITEMSBindingSource.DataMember = "tblM4_INVENTORY_ITEMS"
-        Me.TblM4_INVENTORY_ITEMSBindingSource.DataSource = Me.DS_PROPERTYDB
+        Me.RECT_STOCKS.BorderColor = System.Drawing.Color.DimGray
+        Me.RECT_STOCKS.BorderWidth = 2
+        Me.RECT_STOCKS.CornerRadius = 19
+        Me.RECT_STOCKS.Cursor = System.Windows.Forms.Cursors.Arrow
+        Me.RECT_STOCKS.FillColor = System.Drawing.SystemColors.HighlightText
+        Me.RECT_STOCKS.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
+        Me.RECT_STOCKS.Location = New System.Drawing.Point(149, 5)
+        Me.RECT_STOCKS.Name = "RECT_STOCKS"
+        Me.RECT_STOCKS.Size = New System.Drawing.Size(120, 39)
         '
-        'TblM4_INVENTORY_ITEMS_PROPERTYBindingSource
+        'RECT_ITEM_DISTRIBUTION
         '
-        Me.TblM4_INVENTORY_ITEMS_PROPERTYBindingSource.DataMember = "tblM4_INVENTORY_ITEMS_PROPERTY"
-        Me.TblM4_INVENTORY_ITEMS_PROPERTYBindingSource.DataSource = Me.DS_PROPERTYDB
+        Me.RECT_ITEM_DISTRIBUTION.BorderColor = System.Drawing.Color.DimGray
+        Me.RECT_ITEM_DISTRIBUTION.BorderWidth = 2
+        Me.RECT_ITEM_DISTRIBUTION.CornerRadius = 19
+        Me.RECT_ITEM_DISTRIBUTION.Cursor = System.Windows.Forms.Cursors.Arrow
+        Me.RECT_ITEM_DISTRIBUTION.FillColor = System.Drawing.SystemColors.HighlightText
+        Me.RECT_ITEM_DISTRIBUTION.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
+        Me.RECT_ITEM_DISTRIBUTION.Location = New System.Drawing.Point(581, 5)
+        Me.RECT_ITEM_DISTRIBUTION.Name = "RECT_ITEM_DISTRIBUTION"
+        Me.RECT_ITEM_DISTRIBUTION.Size = New System.Drawing.Size(207, 39)
         '
-        'LLBL_INVENTORY_SAVE
+        'RECT_INVENTORY_CANCEL
         '
-        Me.LLBL_INVENTORY_SAVE.ActiveLinkColor = System.Drawing.Color.Red
-        Me.LLBL_INVENTORY_SAVE.AutoSize = True
-        Me.LLBL_INVENTORY_SAVE.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.LLBL_INVENTORY_SAVE.Font = New System.Drawing.Font("Century Gothic", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LLBL_INVENTORY_SAVE.ForeColor = System.Drawing.Color.DimGray
-        Me.LLBL_INVENTORY_SAVE.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
-        Me.LLBL_INVENTORY_SAVE.LinkColor = System.Drawing.Color.DimGray
-        Me.LLBL_INVENTORY_SAVE.Location = New System.Drawing.Point(54, 67)
-        Me.LLBL_INVENTORY_SAVE.Name = "LLBL_INVENTORY_SAVE"
-        Me.LLBL_INVENTORY_SAVE.Size = New System.Drawing.Size(52, 19)
-        Me.LLBL_INVENTORY_SAVE.TabIndex = 1447
-        Me.LLBL_INVENTORY_SAVE.TabStop = True
-        Me.LLBL_INVENTORY_SAVE.Text = "SAVE"
-        Me.LLBL_INVENTORY_SAVE.Visible = False
-        '
-        'PB_INVENTORY_SAVE
-        '
-        Me.PB_INVENTORY_SAVE.BackgroundImage = Global.PRA_PIS.My.Resources.Resources.baseline_save_black_18dp
-        Me.PB_INVENTORY_SAVE.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PB_INVENTORY_SAVE.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PB_INVENTORY_SAVE.InitialImage = Nothing
-        Me.PB_INVENTORY_SAVE.Location = New System.Drawing.Point(22, 62)
-        Me.PB_INVENTORY_SAVE.Name = "PB_INVENTORY_SAVE"
-        Me.PB_INVENTORY_SAVE.Size = New System.Drawing.Size(32, 28)
-        Me.PB_INVENTORY_SAVE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PB_INVENTORY_SAVE.TabIndex = 1448
-        Me.PB_INVENTORY_SAVE.TabStop = False
-        Me.PB_INVENTORY_SAVE.Visible = False
+        Me.RECT_INVENTORY_CANCEL.BorderColor = System.Drawing.Color.DimGray
+        Me.RECT_INVENTORY_CANCEL.BorderWidth = 2
+        Me.RECT_INVENTORY_CANCEL.CornerRadius = 19
+        Me.RECT_INVENTORY_CANCEL.Cursor = System.Windows.Forms.Cursors.Arrow
+        Me.RECT_INVENTORY_CANCEL.FillColor = System.Drawing.SystemColors.HighlightText
+        Me.RECT_INVENTORY_CANCEL.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
+        Me.RECT_INVENTORY_CANCEL.Location = New System.Drawing.Point(913, 5)
+        Me.RECT_INVENTORY_CANCEL.Name = "RECT_INVENTORY_CANCEL"
+        Me.RECT_INVENTORY_CANCEL.Size = New System.Drawing.Size(169, 39)
         '
         'LLBL_INVENTORY_NEW
         '
@@ -1407,12 +1513,13 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
         Me.LLBL_INVENTORY_NEW.ForeColor = System.Drawing.Color.DimGray
         Me.LLBL_INVENTORY_NEW.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
         Me.LLBL_INVENTORY_NEW.LinkColor = System.Drawing.Color.DimGray
-        Me.LLBL_INVENTORY_NEW.Location = New System.Drawing.Point(58, 66)
+        Me.LLBL_INVENTORY_NEW.Location = New System.Drawing.Point(51, 15)
         Me.LLBL_INVENTORY_NEW.Name = "LLBL_INVENTORY_NEW"
-        Me.LLBL_INVENTORY_NEW.Size = New System.Drawing.Size(46, 19)
+        Me.LLBL_INVENTORY_NEW.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.LLBL_INVENTORY_NEW.Size = New System.Drawing.Size(87, 19)
         Me.LLBL_INVENTORY_NEW.TabIndex = 1449
         Me.LLBL_INVENTORY_NEW.TabStop = True
-        Me.LLBL_INVENTORY_NEW.Text = "NEW"
+        Me.LLBL_INVENTORY_NEW.Text = "NEW ITEM"
         '
         'PB_INVENTORY_NEW
         '
@@ -1420,7 +1527,7 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
         Me.PB_INVENTORY_NEW.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PB_INVENTORY_NEW.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PB_INVENTORY_NEW.InitialImage = Nothing
-        Me.PB_INVENTORY_NEW.Location = New System.Drawing.Point(22, 62)
+        Me.PB_INVENTORY_NEW.Location = New System.Drawing.Point(16, 11)
         Me.PB_INVENTORY_NEW.Name = "PB_INVENTORY_NEW"
         Me.PB_INVENTORY_NEW.Size = New System.Drawing.Size(32, 28)
         Me.PB_INVENTORY_NEW.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -1435,7 +1542,7 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
         Me.LLBL_INVENTORY_EDIT.ForeColor = System.Drawing.Color.DimGray
         Me.LLBL_INVENTORY_EDIT.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
         Me.LLBL_INVENTORY_EDIT.LinkColor = System.Drawing.Color.DimGray
-        Me.LLBL_INVENTORY_EDIT.Location = New System.Drawing.Point(165, 66)
+        Me.LLBL_INVENTORY_EDIT.Location = New System.Drawing.Point(165, 766)
         Me.LLBL_INVENTORY_EDIT.Name = "LLBL_INVENTORY_EDIT"
         Me.LLBL_INVENTORY_EDIT.Size = New System.Drawing.Size(42, 19)
         Me.LLBL_INVENTORY_EDIT.TabIndex = 1452
@@ -1448,54 +1555,666 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
         Me.PB_INVENTORY_EDIT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PB_INVENTORY_EDIT.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PB_INVENTORY_EDIT.InitialImage = Nothing
-        Me.PB_INVENTORY_EDIT.Location = New System.Drawing.Point(127, 62)
+        Me.PB_INVENTORY_EDIT.Location = New System.Drawing.Point(127, 762)
         Me.PB_INVENTORY_EDIT.Name = "PB_INVENTORY_EDIT"
         Me.PB_INVENTORY_EDIT.Size = New System.Drawing.Size(32, 28)
         Me.PB_INVENTORY_EDIT.TabIndex = 1451
         Me.PB_INVENTORY_EDIT.TabStop = False
         '
-        'PB_INVENTORY_VIEW_REPORT
-        '
-        Me.PB_INVENTORY_VIEW_REPORT.BackgroundImage = Global.PRA_PIS.My.Resources.Resources.outline_print_black_18dp
-        Me.PB_INVENTORY_VIEW_REPORT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PB_INVENTORY_VIEW_REPORT.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PB_INVENTORY_VIEW_REPORT.InitialImage = Nothing
-        Me.PB_INVENTORY_VIEW_REPORT.Location = New System.Drawing.Point(602, 62)
-        Me.PB_INVENTORY_VIEW_REPORT.Name = "PB_INVENTORY_VIEW_REPORT"
-        Me.PB_INVENTORY_VIEW_REPORT.Size = New System.Drawing.Size(32, 28)
-        Me.PB_INVENTORY_VIEW_REPORT.TabIndex = 1454
-        Me.PB_INVENTORY_VIEW_REPORT.TabStop = False
-        '
-        'LLBL_INVENTORY_VIEW_REPORT
-        '
-        Me.LLBL_INVENTORY_VIEW_REPORT.AutoSize = True
-        Me.LLBL_INVENTORY_VIEW_REPORT.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.LLBL_INVENTORY_VIEW_REPORT.Font = New System.Drawing.Font("Century Gothic", 12.75!, System.Drawing.FontStyle.Bold)
-        Me.LLBL_INVENTORY_VIEW_REPORT.ForeColor = System.Drawing.Color.DimGray
-        Me.LLBL_INVENTORY_VIEW_REPORT.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
-        Me.LLBL_INVENTORY_VIEW_REPORT.LinkColor = System.Drawing.Color.DimGray
-        Me.LLBL_INVENTORY_VIEW_REPORT.Location = New System.Drawing.Point(640, 66)
-        Me.LLBL_INVENTORY_VIEW_REPORT.Name = "LLBL_INVENTORY_VIEW_REPORT"
-        Me.LLBL_INVENTORY_VIEW_REPORT.Size = New System.Drawing.Size(115, 19)
-        Me.LLBL_INVENTORY_VIEW_REPORT.TabIndex = 1453
-        Me.LLBL_INVENTORY_VIEW_REPORT.TabStop = True
-        Me.LLBL_INVENTORY_VIEW_REPORT.Text = "VIEW REPORT"
-        '
         'APNL_ITEMINFO
         '
         Me.APNL_ITEMINFO.BackColor = System.Drawing.Color.White
         Me.APNL_ITEMINFO.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.APNL_ITEMINFO.Controls.Add(Me.GRP_ITEMINFO)
+        Me.APNL_ITEMINFO.Controls.Add(Me.GroupBox4)
         Me.APNL_ITEMINFO.Controls.Add(Me.GroupBox3)
-        Me.APNL_ITEMINFO.Controls.Add(Me.BTN_INVENTORY_CANCEL)
         Me.APNL_ITEMINFO.Controls.Add(Me.BTN_INVENTORY_SAVE)
         Me.APNL_ITEMINFO.Controls.Add(Me.Panel23)
+        Me.APNL_ITEMINFO.Controls.Add(Me.BTN_INVENTORY_CANCEL)
         Me.APNL_ITEMINFO.Controls.Add(Me.BTN_CLOSE_INVENTORY_MINI_CLOSE)
         Me.APNL_ITEMINFO.Controls.Add(Me.ShapeContainer4)
-        Me.APNL_ITEMINFO.Location = New System.Drawing.Point(1095, 42)
+        Me.APNL_ITEMINFO.Location = New System.Drawing.Point(1095, 3)
         Me.APNL_ITEMINFO.Name = "APNL_ITEMINFO"
-        Me.APNL_ITEMINFO.Size = New System.Drawing.Size(582, 632)
+        Me.APNL_ITEMINFO.Size = New System.Drawing.Size(582, 547)
         Me.APNL_ITEMINFO.TabIndex = 1455
+        '
+        'GroupBox4
+        '
+        Me.GroupBox4.BackColor = System.Drawing.SystemColors.Window
+        Me.GroupBox4.Controls.Add(Me.Label24)
+        Me.GroupBox4.Controls.Add(Me.PB_ITEM_IMAGE)
+        Me.GroupBox4.Controls.Add(Me.WTXT_INV_ALIAS_NAME)
+        Me.GroupBox4.Controls.Add(Me.Label21)
+        Me.GroupBox4.Controls.Add(Me.BTN_INV_NAME)
+        Me.GroupBox4.Controls.Add(Me.CB_INV_NAME)
+        Me.GroupBox4.Controls.Add(Me.Label20)
+        Me.GroupBox4.Controls.Add(Me.Label18)
+        Me.GroupBox4.Controls.Add(Me.CB_INV_OTHER_DESC)
+        Me.GroupBox4.Controls.Add(Me.CB_INV_LENGTH)
+        Me.GroupBox4.Controls.Add(Me.BTN_INV_OTHER_DESC)
+        Me.GroupBox4.Controls.Add(Me.BTN_INV_LENGTH)
+        Me.GroupBox4.Controls.Add(Me.Label14)
+        Me.GroupBox4.Controls.Add(Me.CB_INV_SC)
+        Me.GroupBox4.Controls.Add(Me.CB_INV_COLOR)
+        Me.GroupBox4.Controls.Add(Me.BTN_INV_COLOR)
+        Me.GroupBox4.Controls.Add(Me.Label13)
+        Me.GroupBox4.Controls.Add(Me.BTN_INV_SIZE)
+        Me.GroupBox4.Controls.Add(Me.CB_INV_SIZE)
+        Me.GroupBox4.Controls.Add(Me.CB_INV_BRAND)
+        Me.GroupBox4.Controls.Add(Me.BTN_INV_BR)
+        Me.GroupBox4.Controls.Add(Me.LinkLabel2)
+        Me.GroupBox4.Controls.Add(Me.LinkLabel3)
+        Me.GroupBox4.Controls.Add(Me.BTN_INV_SC)
+        Me.GroupBox4.Controls.Add(Me.BTN_INV_CAT)
+        Me.GroupBox4.Controls.Add(Me.CB_INV_CAT)
+        Me.GroupBox4.Controls.Add(Me.Label19)
+        Me.GroupBox4.Controls.Add(Me.Label25)
+        Me.GroupBox4.Controls.Add(Me.Label26)
+        Me.GroupBox4.Controls.Add(Me.PictureBox3)
+        Me.GroupBox4.Controls.Add(Me.ShapeContainer5)
+        Me.GroupBox4.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.GroupBox4.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.GroupBox4.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.GroupBox4.Location = New System.Drawing.Point(38, 34)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Size = New System.Drawing.Size(530, 441)
+        Me.GroupBox4.TabIndex = 1446
+        Me.GroupBox4.TabStop = False
+        Me.GroupBox4.Text = "Item Description"
+        '
+        'Label24
+        '
+        Me.Label24.AutoSize = True
+        Me.Label24.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label24.ForeColor = System.Drawing.Color.DimGray
+        Me.Label24.Location = New System.Drawing.Point(166, 71)
+        Me.Label24.Name = "Label24"
+        Me.Label24.Size = New System.Drawing.Size(97, 16)
+        Me.Label24.TabIndex = 1435
+        Me.Label24.Text = "Sub Category"
+        '
+        'PB_ITEM_IMAGE
+        '
+        Me.PB_ITEM_IMAGE.BackgroundImage = Global.PRA_PIS.My.Resources.Resources.images
+        Me.PB_ITEM_IMAGE.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.PB_ITEM_IMAGE.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PB_ITEM_IMAGE.Location = New System.Drawing.Point(11, 19)
+        Me.PB_ITEM_IMAGE.Name = "PB_ITEM_IMAGE"
+        Me.PB_ITEM_IMAGE.Size = New System.Drawing.Size(142, 142)
+        Me.PB_ITEM_IMAGE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PB_ITEM_IMAGE.TabIndex = 1482
+        Me.PB_ITEM_IMAGE.TabStop = False
+        '
+        'WTXT_INV_ALIAS_NAME
+        '
+        Me.WTXT_INV_ALIAS_NAME.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.WTXT_INV_ALIAS_NAME.Font = New System.Drawing.Font("Century Gothic", 11.25!)
+        Me.WTXT_INV_ALIAS_NAME.Location = New System.Drawing.Point(12, 405)
+        Me.WTXT_INV_ALIAS_NAME.Name = "WTXT_INV_ALIAS_NAME"
+        Me.WTXT_INV_ALIAS_NAME.Size = New System.Drawing.Size(473, 19)
+        Me.WTXT_INV_ALIAS_NAME.TabIndex = 1481
+        Me.WTXT_INV_ALIAS_NAME.Watermark = Nothing
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label21.ForeColor = System.Drawing.Color.DimGray
+        Me.Label21.Location = New System.Drawing.Point(21, 388)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(84, 16)
+        Me.Label21.TabIndex = 1480
+        Me.Label21.Text = "Alias Name"
+        '
+        'BTN_INV_NAME
+        '
+        Me.BTN_INV_NAME.BackgroundImage = Global.PRA_PIS.My.Resources.Resources.outline_add_box_black_18dp
+        Me.BTN_INV_NAME.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BTN_INV_NAME.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BTN_INV_NAME.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
+        Me.BTN_INV_NAME.FlatAppearance.BorderSize = 0
+        Me.BTN_INV_NAME.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.BTN_INV_NAME.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray
+        Me.BTN_INV_NAME.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BTN_INV_NAME.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTN_INV_NAME.Location = New System.Drawing.Point(494, 133)
+        Me.BTN_INV_NAME.Name = "BTN_INV_NAME"
+        Me.BTN_INV_NAME.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.BTN_INV_NAME.Size = New System.Drawing.Size(24, 24)
+        Me.BTN_INV_NAME.TabIndex = 1479
+        Me.BTN_INV_NAME.TextAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.BTN_INV_NAME.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.BTN_INV_NAME.UseVisualStyleBackColor = True
+        '
+        'CB_INV_NAME
+        '
+        Me.CB_INV_NAME.DataSource = Me.TBLM4INVITEMSNAMEMAINBindingSource
+        Me.CB_INV_NAME.DisplayMember = "ITM_NAME"
+        Me.CB_INV_NAME.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CB_INV_NAME.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.CB_INV_NAME.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CB_INV_NAME.FormattingEnabled = True
+        Me.CB_INV_NAME.Location = New System.Drawing.Point(158, 131)
+        Me.CB_INV_NAME.Name = "CB_INV_NAME"
+        Me.CB_INV_NAME.Size = New System.Drawing.Size(328, 28)
+        Me.CB_INV_NAME.TabIndex = 1478
+        Me.CB_INV_NAME.ValueMember = "ITM_NAME_NUM"
+        '
+        'TBLM4INVITEMSNAMEMAINBindingSource
+        '
+        Me.TBLM4INVITEMSNAMEMAINBindingSource.DataMember = "TBLM4_INV_ITEMS_NAME_MAIN"
+        Me.TBLM4INVITEMSNAMEMAINBindingSource.DataSource = Me.DS_PROPERTYDB
+        '
+        'DS_PROPERTYDB
+        '
+        Me.DS_PROPERTYDB.DataSetName = "DS_PROPERTYDB"
+        Me.DS_PROPERTYDB.EnforceConstraints = False
+        Me.DS_PROPERTYDB.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label20.ForeColor = System.Drawing.Color.DimGray
+        Me.Label20.Location = New System.Drawing.Point(21, 345)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(121, 16)
+        Me.Label20.TabIndex = 1477
+        Me.Label20.Text = "Other Description"
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label18.ForeColor = System.Drawing.Color.DimGray
+        Me.Label18.Location = New System.Drawing.Point(21, 298)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(51, 16)
+        Me.Label18.TabIndex = 1476
+        Me.Label18.Text = "Length"
+        '
+        'CB_INV_OTHER_DESC
+        '
+        Me.CB_INV_OTHER_DESC.DataSource = Me.TBLM4INVITEMSOTHERSMAINBindingSource
+        Me.CB_INV_OTHER_DESC.DisplayMember = "OTHERS_NAME"
+        Me.CB_INV_OTHER_DESC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CB_INV_OTHER_DESC.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.CB_INV_OTHER_DESC.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CB_INV_OTHER_DESC.FormattingEnabled = True
+        Me.CB_INV_OTHER_DESC.Location = New System.Drawing.Point(11, 355)
+        Me.CB_INV_OTHER_DESC.Name = "CB_INV_OTHER_DESC"
+        Me.CB_INV_OTHER_DESC.Size = New System.Drawing.Size(474, 28)
+        Me.CB_INV_OTHER_DESC.TabIndex = 1473
+        Me.CB_INV_OTHER_DESC.ValueMember = "OTHERS_NUM"
+        '
+        'TBLM4INVITEMSOTHERSMAINBindingSource
+        '
+        Me.TBLM4INVITEMSOTHERSMAINBindingSource.DataMember = "TBLM4_INV_ITEMS_OTHERS_MAIN"
+        Me.TBLM4INVITEMSOTHERSMAINBindingSource.DataSource = Me.DS_PROPERTYDB
+        '
+        'CB_INV_LENGTH
+        '
+        Me.CB_INV_LENGTH.DataSource = Me.TBLM4INVITEMSLENGMAINBindingSource
+        Me.CB_INV_LENGTH.DisplayMember = "LENG_NAME"
+        Me.CB_INV_LENGTH.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CB_INV_LENGTH.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.CB_INV_LENGTH.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CB_INV_LENGTH.FormattingEnabled = True
+        Me.CB_INV_LENGTH.Location = New System.Drawing.Point(11, 310)
+        Me.CB_INV_LENGTH.Name = "CB_INV_LENGTH"
+        Me.CB_INV_LENGTH.Size = New System.Drawing.Size(474, 28)
+        Me.CB_INV_LENGTH.TabIndex = 1472
+        Me.CB_INV_LENGTH.ValueMember = "LENG_NUM"
+        '
+        'TBLM4INVITEMSLENGMAINBindingSource
+        '
+        Me.TBLM4INVITEMSLENGMAINBindingSource.DataMember = "TBLM4_INV_ITEMS_LENG_MAIN"
+        Me.TBLM4INVITEMSLENGMAINBindingSource.DataSource = Me.DS_PROPERTYDB
+        '
+        'BTN_INV_OTHER_DESC
+        '
+        Me.BTN_INV_OTHER_DESC.BackgroundImage = Global.PRA_PIS.My.Resources.Resources.outline_add_box_black_18dp
+        Me.BTN_INV_OTHER_DESC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BTN_INV_OTHER_DESC.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BTN_INV_OTHER_DESC.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
+        Me.BTN_INV_OTHER_DESC.FlatAppearance.BorderSize = 0
+        Me.BTN_INV_OTHER_DESC.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.BTN_INV_OTHER_DESC.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray
+        Me.BTN_INV_OTHER_DESC.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BTN_INV_OTHER_DESC.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTN_INV_OTHER_DESC.Location = New System.Drawing.Point(494, 357)
+        Me.BTN_INV_OTHER_DESC.Name = "BTN_INV_OTHER_DESC"
+        Me.BTN_INV_OTHER_DESC.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.BTN_INV_OTHER_DESC.Size = New System.Drawing.Size(24, 24)
+        Me.BTN_INV_OTHER_DESC.TabIndex = 1475
+        Me.BTN_INV_OTHER_DESC.TextAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.BTN_INV_OTHER_DESC.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.BTN_INV_OTHER_DESC.UseVisualStyleBackColor = True
+        '
+        'BTN_INV_LENGTH
+        '
+        Me.BTN_INV_LENGTH.BackgroundImage = Global.PRA_PIS.My.Resources.Resources.outline_add_box_black_18dp
+        Me.BTN_INV_LENGTH.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BTN_INV_LENGTH.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BTN_INV_LENGTH.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
+        Me.BTN_INV_LENGTH.FlatAppearance.BorderSize = 0
+        Me.BTN_INV_LENGTH.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.BTN_INV_LENGTH.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray
+        Me.BTN_INV_LENGTH.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BTN_INV_LENGTH.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTN_INV_LENGTH.Location = New System.Drawing.Point(494, 313)
+        Me.BTN_INV_LENGTH.Name = "BTN_INV_LENGTH"
+        Me.BTN_INV_LENGTH.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.BTN_INV_LENGTH.Size = New System.Drawing.Size(24, 24)
+        Me.BTN_INV_LENGTH.TabIndex = 1474
+        Me.BTN_INV_LENGTH.TextAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.BTN_INV_LENGTH.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.BTN_INV_LENGTH.UseVisualStyleBackColor = True
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.ForeColor = System.Drawing.Color.DimGray
+        Me.Label14.Location = New System.Drawing.Point(21, 252)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(43, 16)
+        Me.Label14.TabIndex = 1472
+        Me.Label14.Text = "Color"
+        '
+        'CB_INV_SC
+        '
+        Me.CB_INV_SC.DataSource = Me.TblM4INVENTORYSUBCATEGORYBindingSource
+        Me.CB_INV_SC.DisplayMember = "SC_SUBCATEGORY_NAME"
+        Me.CB_INV_SC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CB_INV_SC.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.CB_INV_SC.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CB_INV_SC.FormattingEnabled = True
+        Me.CB_INV_SC.Location = New System.Drawing.Point(159, 84)
+        Me.CB_INV_SC.Name = "CB_INV_SC"
+        Me.CB_INV_SC.Size = New System.Drawing.Size(327, 28)
+        Me.CB_INV_SC.TabIndex = 1
+        Me.CB_INV_SC.ValueMember = "SC_NO"
+        '
+        'TblM4INVENTORYSUBCATEGORYBindingSource
+        '
+        Me.TblM4INVENTORYSUBCATEGORYBindingSource.DataMember = "tblM4_INVENTORY_SUB_CATEGORY"
+        Me.TblM4INVENTORYSUBCATEGORYBindingSource.DataSource = Me.DS_PROPERTYDB
+        '
+        'CB_INV_COLOR
+        '
+        Me.CB_INV_COLOR.DataSource = Me.TBLM4INVITEMSCOLORMAINBindingSource
+        Me.CB_INV_COLOR.DisplayMember = "COLR_NAME"
+        Me.CB_INV_COLOR.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CB_INV_COLOR.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.CB_INV_COLOR.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CB_INV_COLOR.FormattingEnabled = True
+        Me.CB_INV_COLOR.Location = New System.Drawing.Point(12, 266)
+        Me.CB_INV_COLOR.Name = "CB_INV_COLOR"
+        Me.CB_INV_COLOR.Size = New System.Drawing.Size(474, 28)
+        Me.CB_INV_COLOR.TabIndex = 1471
+        Me.CB_INV_COLOR.ValueMember = "COLR_NUM"
+        '
+        'TBLM4INVITEMSCOLORMAINBindingSource
+        '
+        Me.TBLM4INVITEMSCOLORMAINBindingSource.DataMember = "TBLM4_INV_ITEMS_COLOR_MAIN"
+        Me.TBLM4INVITEMSCOLORMAINBindingSource.DataSource = Me.DS_PROPERTYDB
+        '
+        'BTN_INV_COLOR
+        '
+        Me.BTN_INV_COLOR.BackgroundImage = Global.PRA_PIS.My.Resources.Resources.outline_add_box_black_18dp
+        Me.BTN_INV_COLOR.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BTN_INV_COLOR.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BTN_INV_COLOR.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
+        Me.BTN_INV_COLOR.FlatAppearance.BorderSize = 0
+        Me.BTN_INV_COLOR.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.BTN_INV_COLOR.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray
+        Me.BTN_INV_COLOR.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BTN_INV_COLOR.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTN_INV_COLOR.Location = New System.Drawing.Point(494, 268)
+        Me.BTN_INV_COLOR.Name = "BTN_INV_COLOR"
+        Me.BTN_INV_COLOR.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.BTN_INV_COLOR.Size = New System.Drawing.Size(24, 24)
+        Me.BTN_INV_COLOR.TabIndex = 1470
+        Me.BTN_INV_COLOR.TextAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.BTN_INV_COLOR.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.BTN_INV_COLOR.UseVisualStyleBackColor = True
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.ForeColor = System.Drawing.Color.DimGray
+        Me.Label13.Location = New System.Drawing.Point(21, 207)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(33, 16)
+        Me.Label13.TabIndex = 1469
+        Me.Label13.Text = "Size"
+        '
+        'BTN_INV_SIZE
+        '
+        Me.BTN_INV_SIZE.BackgroundImage = Global.PRA_PIS.My.Resources.Resources.outline_add_box_black_18dp
+        Me.BTN_INV_SIZE.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BTN_INV_SIZE.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BTN_INV_SIZE.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
+        Me.BTN_INV_SIZE.FlatAppearance.BorderSize = 0
+        Me.BTN_INV_SIZE.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.BTN_INV_SIZE.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray
+        Me.BTN_INV_SIZE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BTN_INV_SIZE.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTN_INV_SIZE.Location = New System.Drawing.Point(494, 223)
+        Me.BTN_INV_SIZE.Name = "BTN_INV_SIZE"
+        Me.BTN_INV_SIZE.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.BTN_INV_SIZE.Size = New System.Drawing.Size(24, 24)
+        Me.BTN_INV_SIZE.TabIndex = 1468
+        Me.BTN_INV_SIZE.TextAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.BTN_INV_SIZE.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.BTN_INV_SIZE.UseVisualStyleBackColor = True
+        '
+        'CB_INV_SIZE
+        '
+        Me.CB_INV_SIZE.DataSource = Me.TBLM4INVITEMSSIZEMAINBindingSource
+        Me.CB_INV_SIZE.DisplayMember = "SIZE_NAME"
+        Me.CB_INV_SIZE.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CB_INV_SIZE.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.CB_INV_SIZE.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CB_INV_SIZE.FormattingEnabled = True
+        Me.CB_INV_SIZE.Location = New System.Drawing.Point(12, 219)
+        Me.CB_INV_SIZE.Name = "CB_INV_SIZE"
+        Me.CB_INV_SIZE.Size = New System.Drawing.Size(474, 28)
+        Me.CB_INV_SIZE.TabIndex = 1467
+        Me.CB_INV_SIZE.ValueMember = "SIZE_NUM"
+        '
+        'TBLM4INVITEMSSIZEMAINBindingSource
+        '
+        Me.TBLM4INVITEMSSIZEMAINBindingSource.DataMember = "TBLM4_INV_ITEMS_SIZE_MAIN"
+        Me.TBLM4INVITEMSSIZEMAINBindingSource.DataSource = Me.DS_PROPERTYDB
+        '
+        'CB_INV_BRAND
+        '
+        Me.CB_INV_BRAND.DataSource = Me.TblM4INVENTORYITEMBRANDBindingSource
+        Me.CB_INV_BRAND.DisplayMember = "ITBR_NAME"
+        Me.CB_INV_BRAND.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CB_INV_BRAND.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.CB_INV_BRAND.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CB_INV_BRAND.FormattingEnabled = True
+        Me.CB_INV_BRAND.Location = New System.Drawing.Point(12, 176)
+        Me.CB_INV_BRAND.Name = "CB_INV_BRAND"
+        Me.CB_INV_BRAND.Size = New System.Drawing.Size(474, 28)
+        Me.CB_INV_BRAND.TabIndex = 1466
+        Me.CB_INV_BRAND.ValueMember = "ITBR_NO"
+        '
+        'TblM4INVENTORYITEMBRANDBindingSource
+        '
+        Me.TblM4INVENTORYITEMBRANDBindingSource.DataMember = "tblM4_INVENTORY_ITEMBRAND"
+        Me.TblM4INVENTORYITEMBRANDBindingSource.DataSource = Me.DS_PROPERTYDB
+        '
+        'BTN_INV_BR
+        '
+        Me.BTN_INV_BR.BackgroundImage = Global.PRA_PIS.My.Resources.Resources.outline_add_box_black_18dp
+        Me.BTN_INV_BR.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BTN_INV_BR.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BTN_INV_BR.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
+        Me.BTN_INV_BR.FlatAppearance.BorderSize = 0
+        Me.BTN_INV_BR.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.BTN_INV_BR.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray
+        Me.BTN_INV_BR.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BTN_INV_BR.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTN_INV_BR.Location = New System.Drawing.Point(494, 179)
+        Me.BTN_INV_BR.Name = "BTN_INV_BR"
+        Me.BTN_INV_BR.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.BTN_INV_BR.Size = New System.Drawing.Size(24, 24)
+        Me.BTN_INV_BR.TabIndex = 1465
+        Me.BTN_INV_BR.TextAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.BTN_INV_BR.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.BTN_INV_BR.UseVisualStyleBackColor = True
+        '
+        'LinkLabel2
+        '
+        Me.LinkLabel2.AutoSize = True
+        Me.LinkLabel2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.LinkLabel2.Font = New System.Drawing.Font("Century Gothic", 12.75!, System.Drawing.FontStyle.Bold)
+        Me.LinkLabel2.ForeColor = System.Drawing.Color.DimGray
+        Me.LinkLabel2.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
+        Me.LinkLabel2.LinkColor = System.Drawing.Color.DimGray
+        Me.LinkLabel2.Location = New System.Drawing.Point(454, 620)
+        Me.LinkLabel2.Name = "LinkLabel2"
+        Me.LinkLabel2.Size = New System.Drawing.Size(61, 19)
+        Me.LinkLabel2.TabIndex = 1464
+        Me.LinkLabel2.TabStop = True
+        Me.LinkLabel2.Text = "CLOSE"
+        '
+        'LinkLabel3
+        '
+        Me.LinkLabel3.AutoSize = True
+        Me.LinkLabel3.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.LinkLabel3.Font = New System.Drawing.Font("Century Gothic", 12.75!, System.Drawing.FontStyle.Bold)
+        Me.LinkLabel3.ForeColor = System.Drawing.Color.DimGray
+        Me.LinkLabel3.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
+        Me.LinkLabel3.LinkColor = System.Drawing.Color.DimGray
+        Me.LinkLabel3.Location = New System.Drawing.Point(393, 620)
+        Me.LinkLabel3.Name = "LinkLabel3"
+        Me.LinkLabel3.Size = New System.Drawing.Size(46, 19)
+        Me.LinkLabel3.TabIndex = 1463
+        Me.LinkLabel3.TabStop = True
+        Me.LinkLabel3.Text = "ADD"
+        '
+        'BTN_INV_SC
+        '
+        Me.BTN_INV_SC.BackgroundImage = Global.PRA_PIS.My.Resources.Resources.outline_add_box_black_18dp
+        Me.BTN_INV_SC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BTN_INV_SC.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BTN_INV_SC.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
+        Me.BTN_INV_SC.FlatAppearance.BorderSize = 0
+        Me.BTN_INV_SC.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.BTN_INV_SC.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray
+        Me.BTN_INV_SC.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BTN_INV_SC.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTN_INV_SC.Location = New System.Drawing.Point(494, 85)
+        Me.BTN_INV_SC.Name = "BTN_INV_SC"
+        Me.BTN_INV_SC.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.BTN_INV_SC.Size = New System.Drawing.Size(24, 24)
+        Me.BTN_INV_SC.TabIndex = 1460
+        Me.BTN_INV_SC.TextAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.BTN_INV_SC.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.BTN_INV_SC.UseVisualStyleBackColor = True
+        '
+        'BTN_INV_CAT
+        '
+        Me.BTN_INV_CAT.BackgroundImage = Global.PRA_PIS.My.Resources.Resources.outline_add_box_black_18dp
+        Me.BTN_INV_CAT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BTN_INV_CAT.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BTN_INV_CAT.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
+        Me.BTN_INV_CAT.FlatAppearance.BorderSize = 0
+        Me.BTN_INV_CAT.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.BTN_INV_CAT.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray
+        Me.BTN_INV_CAT.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BTN_INV_CAT.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTN_INV_CAT.Location = New System.Drawing.Point(494, 42)
+        Me.BTN_INV_CAT.Name = "BTN_INV_CAT"
+        Me.BTN_INV_CAT.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.BTN_INV_CAT.Size = New System.Drawing.Size(24, 24)
+        Me.BTN_INV_CAT.TabIndex = 1457
+        Me.BTN_INV_CAT.TextAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.BTN_INV_CAT.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.BTN_INV_CAT.UseVisualStyleBackColor = True
+        '
+        'CB_INV_CAT
+        '
+        Me.CB_INV_CAT.DataSource = Me.TblM4INVENTORYCATEGORYBindingSource
+        Me.CB_INV_CAT.DisplayMember = "CAT_NAME"
+        Me.CB_INV_CAT.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CB_INV_CAT.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.CB_INV_CAT.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CB_INV_CAT.FormattingEnabled = True
+        Me.CB_INV_CAT.Location = New System.Drawing.Point(159, 38)
+        Me.CB_INV_CAT.Name = "CB_INV_CAT"
+        Me.CB_INV_CAT.Size = New System.Drawing.Size(327, 28)
+        Me.CB_INV_CAT.TabIndex = 0
+        Me.CB_INV_CAT.ValueMember = "CAT_CODE"
+        '
+        'TblM4INVENTORYCATEGORYBindingSource
+        '
+        Me.TblM4INVENTORYCATEGORYBindingSource.DataMember = "tblM4_INVENTORY_CATEGORY"
+        Me.TblM4INVENTORYCATEGORYBindingSource.DataSource = Me.DS_PROPERTYDB
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.ForeColor = System.Drawing.Color.DimGray
+        Me.Label19.Location = New System.Drawing.Point(21, 162)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(106, 16)
+        Me.Label19.TabIndex = 1438
+        Me.Label19.Text = "Brand/Provider"
+        '
+        'Label25
+        '
+        Me.Label25.AutoSize = True
+        Me.Label25.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label25.ForeColor = System.Drawing.Color.DimGray
+        Me.Label25.Location = New System.Drawing.Point(166, 116)
+        Me.Label25.Name = "Label25"
+        Me.Label25.Size = New System.Drawing.Size(47, 16)
+        Me.Label25.TabIndex = 1434
+        Me.Label25.Text = "Name"
+        '
+        'Label26
+        '
+        Me.Label26.AutoSize = True
+        Me.Label26.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label26.ForeColor = System.Drawing.Color.DimGray
+        Me.Label26.Location = New System.Drawing.Point(166, 22)
+        Me.Label26.Name = "Label26"
+        Me.Label26.Size = New System.Drawing.Size(69, 16)
+        Me.Label26.TabIndex = 1433
+        Me.Label26.Text = "Category"
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PictureBox3.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox3.Location = New System.Drawing.Point(1504, 55)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(145, 145)
+        Me.PictureBox3.TabIndex = 0
+        Me.PictureBox3.TabStop = False
+        '
+        'ShapeContainer5
+        '
+        Me.ShapeContainer5.Location = New System.Drawing.Point(3, 19)
+        Me.ShapeContainer5.Margin = New System.Windows.Forms.Padding(0)
+        Me.ShapeContainer5.Name = "ShapeContainer5"
+        Me.ShapeContainer5.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape21, Me.RectangleShape20, Me.RectangleShape19, Me.RectangleShape18, Me.RectangleShape17, Me.RectangleShape16, Me.RectangleShape8, Me.RectangleShape1, Me.RectangleShape2, Me.RectangleShape7, Me.RectangleShape24})
+        Me.ShapeContainer5.Size = New System.Drawing.Size(524, 419)
+        Me.ShapeContainer5.TabIndex = 1
+        Me.ShapeContainer5.TabStop = False
+        '
+        'RectangleShape21
+        '
+        Me.RectangleShape21.BorderColor = System.Drawing.Color.Gray
+        Me.RectangleShape21.BorderWidth = 2
+        Me.RectangleShape21.CornerRadius = 5
+        Me.RectangleShape21.Location = New System.Drawing.Point(5, 379)
+        Me.RectangleShape21.Name = "RectangleShape21"
+        Me.RectangleShape21.Size = New System.Drawing.Size(479, 31)
+        '
+        'RectangleShape20
+        '
+        Me.RectangleShape20.BorderColor = System.Drawing.Color.Gray
+        Me.RectangleShape20.BorderWidth = 2
+        Me.RectangleShape20.CornerRadius = 5
+        Me.RectangleShape20.Location = New System.Drawing.Point(5, 333)
+        Me.RectangleShape20.Name = "RectangleShape20"
+        Me.RectangleShape20.Size = New System.Drawing.Size(479, 32)
+        '
+        'RectangleShape19
+        '
+        Me.RectangleShape19.BorderColor = System.Drawing.Color.Gray
+        Me.RectangleShape19.BorderWidth = 2
+        Me.RectangleShape19.CornerRadius = 5
+        Me.RectangleShape19.Location = New System.Drawing.Point(5, 288)
+        Me.RectangleShape19.Name = "RectangleShape19"
+        Me.RectangleShape19.Size = New System.Drawing.Size(479, 32)
+        '
+        'RectangleShape18
+        '
+        Me.RectangleShape18.BorderColor = System.Drawing.Color.Gray
+        Me.RectangleShape18.BorderWidth = 2
+        Me.RectangleShape18.CornerRadius = 5
+        Me.RectangleShape18.Location = New System.Drawing.Point(5, 244)
+        Me.RectangleShape18.Name = "RectangleShape18"
+        Me.RectangleShape18.Size = New System.Drawing.Size(479, 32)
+        '
+        'RectangleShape17
+        '
+        Me.RectangleShape17.BorderColor = System.Drawing.Color.Gray
+        Me.RectangleShape17.BorderWidth = 2
+        Me.RectangleShape17.CornerRadius = 5
+        Me.RectangleShape17.Location = New System.Drawing.Point(6, 197)
+        Me.RectangleShape17.Name = "RectangleShape17"
+        Me.RectangleShape17.Size = New System.Drawing.Size(479, 32)
+        '
+        'RectangleShape16
+        '
+        Me.RectangleShape16.BorderColor = System.Drawing.Color.Gray
+        Me.RectangleShape16.BorderWidth = 2
+        Me.RectangleShape16.CornerRadius = 5
+        Me.RectangleShape16.Location = New System.Drawing.Point(6, 155)
+        Me.RectangleShape16.Name = "RectangleShape16"
+        Me.RectangleShape16.Size = New System.Drawing.Size(479, 31)
+        '
+        'RectangleShape8
+        '
+        Me.RectangleShape8.BorderColor = System.Drawing.Color.Gray
+        Me.RectangleShape8.BorderWidth = 2
+        Me.RectangleShape8.CornerRadius = 5
+        Me.RectangleShape8.Location = New System.Drawing.Point(153, 110)
+        Me.RectangleShape8.Name = "RectangleShape8"
+        Me.RectangleShape8.Size = New System.Drawing.Size(332, 31)
+        '
+        'RectangleShape1
+        '
+        Me.RectangleShape1.BorderColor = System.Drawing.Color.Gray
+        Me.RectangleShape1.BorderWidth = 2
+        Me.RectangleShape1.CornerRadius = 5
+        Me.RectangleShape1.Location = New System.Drawing.Point(153, 63)
+        Me.RectangleShape1.Name = "RectangleShape1"
+        Me.RectangleShape1.Size = New System.Drawing.Size(332, 31)
+        '
+        'RectangleShape2
+        '
+        Me.RectangleShape2.BorderColor = System.Drawing.Color.DimGray
+        Me.RectangleShape2.BorderWidth = 2
+        Me.RectangleShape2.CornerRadius = 19
+        Me.RectangleShape2.Cursor = System.Windows.Forms.Cursors.Arrow
+        Me.RectangleShape2.FillColor = System.Drawing.SystemColors.HighlightText
+        Me.RectangleShape2.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
+        Me.RectangleShape2.Location = New System.Drawing.Point(447, 602)
+        Me.RectangleShape2.Name = "RectangleShape15"
+        Me.RectangleShape2.Size = New System.Drawing.Size(67, 39)
+        '
+        'RectangleShape7
+        '
+        Me.RectangleShape7.BorderColor = System.Drawing.Color.DimGray
+        Me.RectangleShape7.BorderWidth = 2
+        Me.RectangleShape7.CornerRadius = 19
+        Me.RectangleShape7.Cursor = System.Windows.Forms.Cursors.Arrow
+        Me.RectangleShape7.FillColor = System.Drawing.SystemColors.HighlightText
+        Me.RectangleShape7.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
+        Me.RectangleShape7.Location = New System.Drawing.Point(382, 602)
+        Me.RectangleShape7.Name = "RectangleShape14"
+        Me.RectangleShape7.Size = New System.Drawing.Size(62, 39)
+        '
+        'RectangleShape24
+        '
+        Me.RectangleShape24.BorderColor = System.Drawing.Color.Gray
+        Me.RectangleShape24.BorderWidth = 2
+        Me.RectangleShape24.CornerRadius = 5
+        Me.RectangleShape24.Location = New System.Drawing.Point(153, 17)
+        Me.RectangleShape24.Name = "RECT_CATEGORY"
+        Me.RectangleShape24.Size = New System.Drawing.Size(332, 32)
         '
         'GroupBox3
         '
@@ -1551,8 +2270,7 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
         '
         'CB_ITEM_USAGE
         '
-        Me.CB_ITEM_USAGE.DataSource = Me.TblM4INVENTORYACQUISITIONITEMUSAGEBindingSource
-        Me.CB_ITEM_USAGE.DisplayMember = "USG_NAME"
+        Me.CB_ITEM_USAGE.DisplayMember = "USG_CODE"
         Me.CB_ITEM_USAGE.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CB_ITEM_USAGE.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.CB_ITEM_USAGE.Font = New System.Drawing.Font("Century Gothic", 12.75!, System.Drawing.FontStyle.Bold)
@@ -1563,15 +2281,9 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
         Me.CB_ITEM_USAGE.TabIndex = 1458
         Me.CB_ITEM_USAGE.ValueMember = "USG_CODE"
         '
-        'TblM4INVENTORYACQUISITIONITEMUSAGEBindingSource
-        '
-        Me.TblM4INVENTORYACQUISITIONITEMUSAGEBindingSource.DataMember = "tblM4_INVENTORY_ACQUISITION_ITEM_USAGE"
-        Me.TblM4INVENTORYACQUISITIONITEMUSAGEBindingSource.DataSource = Me.DS_PROPERTYDB
-        '
         'CB_ACQUISITION_VALUE
         '
-        Me.CB_ACQUISITION_VALUE.DataSource = Me.TblM4INVENTORYACQUISITIONVALUEBindingSource
-        Me.CB_ACQUISITION_VALUE.DisplayMember = "ACQV_TITLE"
+        Me.CB_ACQUISITION_VALUE.DisplayMember = "ACQV_CODE"
         Me.CB_ACQUISITION_VALUE.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CB_ACQUISITION_VALUE.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.CB_ACQUISITION_VALUE.Font = New System.Drawing.Font("Century Gothic", 12.75!, System.Drawing.FontStyle.Bold)
@@ -1581,11 +2293,6 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
         Me.CB_ACQUISITION_VALUE.Size = New System.Drawing.Size(453, 27)
         Me.CB_ACQUISITION_VALUE.TabIndex = 1457
         Me.CB_ACQUISITION_VALUE.ValueMember = "ACQV_CODE"
-        '
-        'TblM4INVENTORYACQUISITIONVALUEBindingSource
-        '
-        Me.TblM4INVENTORYACQUISITIONVALUEBindingSource.DataMember = "tblM4_INVENTORY_ACQUISITION_VALUE"
-        Me.TblM4INVENTORYACQUISITIONVALUEBindingSource.DataSource = Me.DS_PROPERTYDB
         '
         'RBT_PURCHASED
         '
@@ -1679,25 +2386,6 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
         Me.RectangleShape12.Name = "RectangleShape7"
         Me.RectangleShape12.Size = New System.Drawing.Size(462, 32)
         '
-        'BTN_INVENTORY_CANCEL
-        '
-        Me.BTN_INVENTORY_CANCEL.FlatAppearance.BorderColor = System.Drawing.Color.LightSeaGreen
-        Me.BTN_INVENTORY_CANCEL.FlatAppearance.BorderSize = 0
-        Me.BTN_INVENTORY_CANCEL.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
-        Me.BTN_INVENTORY_CANCEL.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen
-        Me.BTN_INVENTORY_CANCEL.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BTN_INVENTORY_CANCEL.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTN_INVENTORY_CANCEL.Image = Global.PRA_PIS.My.Resources.Resources.outline_cancel_black_18dp
-        Me.BTN_INVENTORY_CANCEL.ImageAlign = System.Drawing.ContentAlignment.TopRight
-        Me.BTN_INVENTORY_CANCEL.Location = New System.Drawing.Point(455, 556)
-        Me.BTN_INVENTORY_CANCEL.Name = "BTN_INVENTORY_CANCEL"
-        Me.BTN_INVENTORY_CANCEL.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.BTN_INVENTORY_CANCEL.Size = New System.Drawing.Size(104, 46)
-        Me.BTN_INVENTORY_CANCEL.TabIndex = 1438
-        Me.BTN_INVENTORY_CANCEL.Text = "CANCEL"
-        Me.BTN_INVENTORY_CANCEL.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.BTN_INVENTORY_CANCEL.UseVisualStyleBackColor = True
-        '
         'BTN_INVENTORY_SAVE
         '
         Me.BTN_INVENTORY_SAVE.FlatAppearance.BorderColor = System.Drawing.Color.LightSeaGreen
@@ -1708,7 +2396,7 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
         Me.BTN_INVENTORY_SAVE.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTN_INVENTORY_SAVE.Image = Global.PRA_PIS.My.Resources.Resources.outline_save_black_18dp
         Me.BTN_INVENTORY_SAVE.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BTN_INVENTORY_SAVE.Location = New System.Drawing.Point(343, 556)
+        Me.BTN_INVENTORY_SAVE.Location = New System.Drawing.Point(340, 487)
         Me.BTN_INVENTORY_SAVE.Name = "BTN_INVENTORY_SAVE"
         Me.BTN_INVENTORY_SAVE.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.BTN_INVENTORY_SAVE.Size = New System.Drawing.Size(104, 46)
@@ -1739,13 +2427,32 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
         Me.LLBL_INVENTORY_ENCODING_HEADER.TabIndex = 8
         Me.LLBL_INVENTORY_ENCODING_HEADER.Text = "I t e m  I n f o"
         '
+        'BTN_INVENTORY_CANCEL
+        '
+        Me.BTN_INVENTORY_CANCEL.FlatAppearance.BorderColor = System.Drawing.Color.LightSeaGreen
+        Me.BTN_INVENTORY_CANCEL.FlatAppearance.BorderSize = 0
+        Me.BTN_INVENTORY_CANCEL.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.BTN_INVENTORY_CANCEL.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen
+        Me.BTN_INVENTORY_CANCEL.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BTN_INVENTORY_CANCEL.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTN_INVENTORY_CANCEL.Image = Global.PRA_PIS.My.Resources.Resources.outline_cancel_black_18dp
+        Me.BTN_INVENTORY_CANCEL.ImageAlign = System.Drawing.ContentAlignment.TopRight
+        Me.BTN_INVENTORY_CANCEL.Location = New System.Drawing.Point(452, 487)
+        Me.BTN_INVENTORY_CANCEL.Name = "BTN_INVENTORY_CANCEL"
+        Me.BTN_INVENTORY_CANCEL.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.BTN_INVENTORY_CANCEL.Size = New System.Drawing.Size(104, 46)
+        Me.BTN_INVENTORY_CANCEL.TabIndex = 1438
+        Me.BTN_INVENTORY_CANCEL.Text = "CANCEL"
+        Me.BTN_INVENTORY_CANCEL.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.BTN_INVENTORY_CANCEL.UseVisualStyleBackColor = True
+        '
         'BTN_CLOSE_INVENTORY_MINI_CLOSE
         '
         Me.BTN_CLOSE_INVENTORY_MINI_CLOSE.Dock = System.Windows.Forms.DockStyle.Left
         Me.BTN_CLOSE_INVENTORY_MINI_CLOSE.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTN_CLOSE_INVENTORY_MINI_CLOSE.Location = New System.Drawing.Point(0, 0)
         Me.BTN_CLOSE_INVENTORY_MINI_CLOSE.Name = "BTN_CLOSE_INVENTORY_MINI_CLOSE"
-        Me.BTN_CLOSE_INVENTORY_MINI_CLOSE.Size = New System.Drawing.Size(30, 630)
+        Me.BTN_CLOSE_INVENTORY_MINI_CLOSE.Size = New System.Drawing.Size(30, 545)
         Me.BTN_CLOSE_INVENTORY_MINI_CLOSE.TabIndex = 0
         Me.BTN_CLOSE_INVENTORY_MINI_CLOSE.Text = ">>"
         Me.BTN_CLOSE_INVENTORY_MINI_CLOSE.UseVisualStyleBackColor = True
@@ -1756,8 +2463,8 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
         Me.ShapeContainer4.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer4.Name = "ShapeContainer4"
         Me.ShapeContainer4.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape6, Me.RectangleShape3})
-        Me.ShapeContainer4.Size = New System.Drawing.Size(580, 630)
-        Me.ShapeContainer4.TabIndex = 1440
+        Me.ShapeContainer4.Size = New System.Drawing.Size(580, 545)
+        Me.ShapeContainer4.TabIndex = 1447
         Me.ShapeContainer4.TabStop = False
         '
         'RectangleShape6
@@ -1765,7 +2472,7 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
         Me.RectangleShape6.BorderColor = System.Drawing.Color.LightSeaGreen
         Me.RectangleShape6.BorderWidth = 2
         Me.RectangleShape6.CornerRadius = 5
-        Me.RectangleShape6.Location = New System.Drawing.Point(454, 554)
+        Me.RectangleShape6.Location = New System.Drawing.Point(451, 485)
         Me.RectangleShape6.Name = "RectangleShape6"
         Me.RectangleShape6.Size = New System.Drawing.Size(105, 49)
         '
@@ -1774,7 +2481,7 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
         Me.RectangleShape3.BorderColor = System.Drawing.Color.LightSeaGreen
         Me.RectangleShape3.BorderWidth = 2
         Me.RectangleShape3.CornerRadius = 5
-        Me.RectangleShape3.Location = New System.Drawing.Point(342, 554)
+        Me.RectangleShape3.Location = New System.Drawing.Point(339, 485)
         Me.RectangleShape3.Name = "RectangleShape3"
         Me.RectangleShape3.Size = New System.Drawing.Size(105, 49)
         '
@@ -2012,151 +2719,26 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
         Me.RectangleShape13.Name = "RectangleShape13"
         Me.RectangleShape13.Size = New System.Drawing.Size(99, 31)
         '
-        'TblV1HRISDIVISIONBindingSource
-        '
-        Me.TblV1HRISDIVISIONBindingSource.DataMember = "tblV1_HRISDIVISION"
-        Me.TblV1HRISDIVISIONBindingSource.DataSource = Me.DS_TABLES
-        '
-        'DS_TABLES
-        '
-        Me.DS_TABLES.DataSetName = "DS_TABLES"
-        Me.DS_TABLES.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'LLBL_INVENOTYR_ASSIGN
         '
         Me.LLBL_INVENOTYR_ASSIGN.AutoSize = True
         Me.LLBL_INVENOTYR_ASSIGN.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.LLBL_INVENOTYR_ASSIGN.Font = New System.Drawing.Font("Century Gothic", 12.75!, System.Drawing.FontStyle.Bold)
+        Me.LLBL_INVENOTYR_ASSIGN.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LLBL_INVENOTYR_ASSIGN.ForeColor = System.Drawing.Color.DimGray
         Me.LLBL_INVENOTYR_ASSIGN.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
         Me.LLBL_INVENOTYR_ASSIGN.LinkColor = System.Drawing.Color.DimGray
-        Me.LLBL_INVENOTYR_ASSIGN.Location = New System.Drawing.Point(920, 66)
+        Me.LLBL_INVENOTYR_ASSIGN.Location = New System.Drawing.Point(955, 17)
         Me.LLBL_INVENOTYR_ASSIGN.Name = "LLBL_INVENOTYR_ASSIGN"
-        Me.LLBL_INVENOTYR_ASSIGN.Size = New System.Drawing.Size(155, 19)
+        Me.LLBL_INVENOTYR_ASSIGN.Size = New System.Drawing.Size(123, 16)
         Me.LLBL_INVENOTYR_ASSIGN.TabIndex = 1456
         Me.LLBL_INVENOTYR_ASSIGN.TabStop = True
         Me.LLBL_INVENOTYR_ASSIGN.Text = "CATEGORIZATION"
-        '
-        'SpM4_ITEM_CODE_GENERATORTableAdapter
-        '
-        Me.SpM4_ITEM_CODE_GENERATORTableAdapter.ClearBeforeFill = True
-        '
-        'DS_STOREDPROC
-        '
-        Me.DS_STOREDPROC.DataSetName = "DS_STOREDPROC"
-        Me.DS_STOREDPROC.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'DS_CUSTOM
-        '
-        Me.DS_CUSTOM.DataSetName = "DS_CUSTOM"
-        Me.DS_CUSTOM.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'DSCUSTOMBindingSource
-        '
-        Me.DSCUSTOMBindingSource.DataSource = Me.DS_CUSTOM
-        Me.DSCUSTOMBindingSource.Position = 0
-        '
-        'TblV1_HRISDIVISIONTableAdapter
-        '
-        Me.TblV1_HRISDIVISIONTableAdapter.ClearBeforeFill = True
-        '
-        'TblV1_HRISEMPLOYEEDATATableAdapter
-        '
-        Me.TblV1_HRISEMPLOYEEDATATableAdapter.ClearBeforeFill = True
-        '
-        'SPM4_CURRENTDATETIMETableAdapter
-        '
-        Me.SPM4_CURRENTDATETIMETableAdapter.ClearBeforeFill = True
-        '
-        'TBLG3_UNITSTableAdapter
-        '
-        Me.TBLG3_UNITSTableAdapter.ClearBeforeFill = True
-        '
-        'SPM4_INVENTORYDGVLISTTableAdapter
-        '
-        Me.SPM4_INVENTORYDGVLISTTableAdapter.ClearBeforeFill = True
-        '
-        'SPM4_PROPERTY_NOTableAdapter
-        '
-        Me.SPM4_PROPERTY_NOTableAdapter.ClearBeforeFill = True
-        '
-        'TblG3_DELIVER_RECEIPT_DETAILSTableAdapter1
-        '
-        Me.TblG3_DELIVER_RECEIPT_DETAILSTableAdapter1.ClearBeforeFill = True
-        '
-        'TblM4_INVENTORY_CATEGORYTableAdapter
-        '
-        Me.TblM4_INVENTORY_CATEGORYTableAdapter.ClearBeforeFill = True
-        '
-        'TblM4_INVENTORY_SUB_CATEGORYTableAdapter
-        '
-        Me.TblM4_INVENTORY_SUB_CATEGORYTableAdapter.ClearBeforeFill = True
-        '
-        'TblM4_INVENTORY_ITEMBRANDTableAdapter
-        '
-        Me.TblM4_INVENTORY_ITEMBRANDTableAdapter.ClearBeforeFill = True
-        '
-        'TblM4_INVENTORY_ACQUISITION_ITEM_USAGETableAdapter
-        '
-        Me.TblM4_INVENTORY_ACQUISITION_ITEM_USAGETableAdapter.ClearBeforeFill = True
-        '
-        'TblM4_INVENTORY_ACQUISITION_VALUETableAdapter
-        '
-        Me.TblM4_INVENTORY_ACQUISITION_VALUETableAdapter.ClearBeforeFill = True
-        '
-        'TblM4_CATEGORY_AND_SUBTableAdapter1
-        '
-        Me.TblM4_CATEGORY_AND_SUBTableAdapter1.ClearBeforeFill = True
-        '
-        'TableAdapterManager
-        '
-        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.TBLG3_COMPANY_INFOTableAdapter = Nothing
-        Me.TableAdapterManager.TBLG3_DELIVER_RECEIPT_DETAILSTableAdapter = Me.TblG3_DELIVER_RECEIPT_DETAILSTableAdapter1
-        Me.TableAdapterManager.TBLG3_DELIVERY_RECEIPTTableAdapter = Nothing
-        Me.TableAdapterManager.TBLG3_INVOICE_DETAILSTableAdapter = Nothing
-        Me.TableAdapterManager.TBLG3_INVOICETableAdapter = Nothing
-        Me.TableAdapterManager.TBLG3_PRIMARY_SIGNATORYTableAdapter = Nothing
-        Me.TableAdapterManager.TBLG3_REG_BUSTableAdapter = Nothing
-        Me.TableAdapterManager.TBLG3_REG_DVTableAdapter = Nothing
-        Me.TableAdapterManager.TBLG3_REG_PARTICULARTableAdapter = Nothing
-        Me.TableAdapterManager.TBLG3_SIGNATORY_TYPETableAdapter = Nothing
-        Me.TableAdapterManager.TBLG3_SIGNATORY1TableAdapter = Nothing
-        Me.TableAdapterManager.TBLG3_SIGNATORYTableAdapter = Nothing
-        Me.TableAdapterManager.TBLG3_UNITSTableAdapter = Me.TBLG3_UNITSTableAdapter
-        Me.TableAdapterManager.tblM4_CATEGORY1TableAdapter = Nothing
-        Me.TableAdapterManager.tblM4_INVENTORY_ACQUISITION_ITEM_USAGETableAdapter = Me.TblM4_INVENTORY_ACQUISITION_ITEM_USAGETableAdapter
-        Me.TableAdapterManager.tblM4_INVENTORY_ACQUISITION_VALUETableAdapter = Me.TblM4_INVENTORY_ACQUISITION_VALUETableAdapter
-        Me.TableAdapterManager.tblM4_INVENTORY_ASSIGN_PERSONTableAdapter = Nothing
-        Me.TableAdapterManager.tblM4_INVENTORY_CATEGORY1TableAdapter = Nothing
-        Me.TableAdapterManager.tblM4_INVENTORY_CATEGORYTableAdapter = Me.TblM4_INVENTORY_CATEGORYTableAdapter
-        Me.TableAdapterManager.tblM4_INVENTORY_ITEMBRAND1TableAdapter = Nothing
-        Me.TableAdapterManager.tblM4_INVENTORY_ITEMBRANDTableAdapter = Me.TblM4_INVENTORY_ITEMBRANDTableAdapter
-        Me.TableAdapterManager.tblM4_INVENTORY_ITEMS_DEFLOCATIONTableAdapter = Nothing
-        Me.TableAdapterManager.tblM4_INVENTORY_ITEMS_LOCATIONTableAdapter = Nothing
-        Me.TableAdapterManager.tblM4_INVENTORY_ITEMS_PROPERTYTableAdapter = Nothing
-        Me.TableAdapterManager.tblM4_INVENTORY_ITEMSTableAdapter = Nothing
-        Me.TableAdapterManager.tblM4_INVENTORY_SUB_CATEGORYTableAdapter = Me.TblM4_INVENTORY_SUB_CATEGORYTableAdapter
-        Me.TableAdapterManager.tblM4_INVENTORY_TYPETableAdapter = Nothing
-        Me.TableAdapterManager.tblM4_ITEMBRAND1TableAdapter = Nothing
-        Me.TableAdapterManager.tblM4_PURCHASEREQUEST_ACCEPTEDTableAdapter = Nothing
-        Me.TableAdapterManager.tblM4_PURCHASEREQUEST_CANCELEDTableAdapter = Nothing
-        Me.TableAdapterManager.tblM4_PURCHASEREQUEST_CATEGORYTableAdapter = Nothing
-        Me.TableAdapterManager.tblM4_PURCHASEREQUEST_ITEMTableAdapter = Nothing
-        Me.TableAdapterManager.tblM4_PURCHASEREQUEST_POSTEDTableAdapter = Nothing
-        Me.TableAdapterManager.tblM4_PURCHASEREQUEST_PROVIDERTableAdapter = Nothing
-        Me.TableAdapterManager.tblM4_PURCHASEREQUEST_REVISIONTableAdapter = Nothing
-        Me.TableAdapterManager.tblM4_PURCHASEREQUESTTableAdapter = Nothing
-        Me.TableAdapterManager.UpdateOrder = PRA_PIS.DS_PROPERTYDBTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        '
-        'TblM4_INVENTORY_ITEMS_PROPERTYTableAdapter
-        '
-        Me.TblM4_INVENTORY_ITEMS_PROPERTYTableAdapter.ClearBeforeFill = True
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.White
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.GRP_ITEMINFO)
         Me.Panel1.Controls.Add(Me.GRP_LIST_ITEMS)
         Me.Panel1.Controls.Add(Me.GroupBox6)
         Me.Panel1.Controls.Add(Me.Button5)
@@ -2223,8 +2805,7 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
         '
         'ComboBox5
         '
-        Me.ComboBox5.DataSource = Me.TblM4INVENTORYACQUISITIONITEMUSAGEBindingSource
-        Me.ComboBox5.DisplayMember = "USG_NAME"
+        Me.ComboBox5.DisplayMember = "USG_CODE"
         Me.ComboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox5.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.ComboBox5.Font = New System.Drawing.Font("Century Gothic", 12.75!, System.Drawing.FontStyle.Bold)
@@ -2237,8 +2818,7 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
         '
         'ComboBox6
         '
-        Me.ComboBox6.DataSource = Me.TblM4INVENTORYACQUISITIONVALUEBindingSource
-        Me.ComboBox6.DisplayMember = "ACQV_TITLE"
+        Me.ComboBox6.DisplayMember = "ACQV_CODE"
         Me.ComboBox6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox6.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.ComboBox6.Font = New System.Drawing.Font("Century Gothic", 12.75!, System.Drawing.FontStyle.Bold)
@@ -2446,77 +3026,341 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
         Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PictureBox2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox2.InitialImage = Nothing
-        Me.PictureBox2.Location = New System.Drawing.Point(890, 62)
+        Me.PictureBox2.Location = New System.Drawing.Point(923, 11)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(32, 28)
         Me.PictureBox2.TabIndex = 1459
         Me.PictureBox2.TabStop = False
         '
-        'LinkLabel2
+        'LLBL_ITEM_DISTRIBUTION
         '
-        Me.LinkLabel2.AutoSize = True
-        Me.LinkLabel2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.LinkLabel2.Font = New System.Drawing.Font("Century Gothic", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LinkLabel2.ForeColor = System.Drawing.Color.DimGray
-        Me.LinkLabel2.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
-        Me.LinkLabel2.LinkColor = System.Drawing.Color.DimGray
-        Me.LinkLabel2.Location = New System.Drawing.Point(265, 66)
-        Me.LinkLabel2.Name = "LinkLabel2"
-        Me.LinkLabel2.Size = New System.Drawing.Size(157, 19)
-        Me.LinkLabel2.TabIndex = 1461
-        Me.LinkLabel2.TabStop = True
-        Me.LinkLabel2.Text = "ITEM DISTRIBUTION"
+        Me.LLBL_ITEM_DISTRIBUTION.AutoSize = True
+        Me.LLBL_ITEM_DISTRIBUTION.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.LLBL_ITEM_DISTRIBUTION.Font = New System.Drawing.Font("Century Gothic", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LLBL_ITEM_DISTRIBUTION.ForeColor = System.Drawing.Color.DimGray
+        Me.LLBL_ITEM_DISTRIBUTION.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
+        Me.LLBL_ITEM_DISTRIBUTION.LinkColor = System.Drawing.Color.DimGray
+        Me.LLBL_ITEM_DISTRIBUTION.Location = New System.Drawing.Point(625, 15)
+        Me.LLBL_ITEM_DISTRIBUTION.Name = "LLBL_ITEM_DISTRIBUTION"
+        Me.LLBL_ITEM_DISTRIBUTION.Size = New System.Drawing.Size(157, 19)
+        Me.LLBL_ITEM_DISTRIBUTION.TabIndex = 1461
+        Me.LLBL_ITEM_DISTRIBUTION.TabStop = True
+        Me.LLBL_ITEM_DISTRIBUTION.Text = "ITEM DISTRIBUTION"
         '
-        'PictureBox3
+        'PB_ITEM_DISTRIBUTION
         '
-        Me.PictureBox3.BackgroundImage = Global.PRA_PIS.My.Resources.Resources.outline_low_priority_black_18dp
-        Me.PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox3.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox3.InitialImage = Nothing
-        Me.PictureBox3.Location = New System.Drawing.Point(227, 62)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(32, 28)
-        Me.PictureBox3.TabIndex = 1460
-        Me.PictureBox3.TabStop = False
+        Me.PB_ITEM_DISTRIBUTION.BackgroundImage = Global.PRA_PIS.My.Resources.Resources.outline_low_priority_black_18dp
+        Me.PB_ITEM_DISTRIBUTION.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PB_ITEM_DISTRIBUTION.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PB_ITEM_DISTRIBUTION.InitialImage = Nothing
+        Me.PB_ITEM_DISTRIBUTION.Location = New System.Drawing.Point(590, 11)
+        Me.PB_ITEM_DISTRIBUTION.Name = "PB_ITEM_DISTRIBUTION"
+        Me.PB_ITEM_DISTRIBUTION.Size = New System.Drawing.Size(32, 28)
+        Me.PB_ITEM_DISTRIBUTION.TabIndex = 1460
+        Me.PB_ITEM_DISTRIBUTION.TabStop = False
         '
-        'PictureBox4
+        'TblM4_INVENTORY_CATEGORYTableAdapter
         '
-        Me.PictureBox4.BackgroundImage = Global.PRA_PIS.My.Resources.Resources.outline_list_alt_black_18dp
-        Me.PictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox4.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox4.InitialImage = Nothing
-        Me.PictureBox4.Location = New System.Drawing.Point(437, 62)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(32, 28)
-        Me.PictureBox4.TabIndex = 1462
-        Me.PictureBox4.TabStop = False
+        Me.TblM4_INVENTORY_CATEGORYTableAdapter.ClearBeforeFill = True
         '
-        'LinkLabel3
+        'TblM4_INVENTORY_SUB_CATEGORYTableAdapter
         '
-        Me.LinkLabel3.AutoSize = True
-        Me.LinkLabel3.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.LinkLabel3.Font = New System.Drawing.Font("Century Gothic", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LinkLabel3.ForeColor = System.Drawing.Color.DimGray
-        Me.LinkLabel3.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
-        Me.LinkLabel3.LinkColor = System.Drawing.Color.DimGray
-        Me.LinkLabel3.Location = New System.Drawing.Point(475, 66)
-        Me.LinkLabel3.Name = "LinkLabel3"
-        Me.LinkLabel3.Size = New System.Drawing.Size(110, 19)
-        Me.LinkLabel3.TabIndex = 1462
-        Me.LinkLabel3.TabStop = True
-        Me.LinkLabel3.Text = "REQUISITION"
+        Me.TblM4_INVENTORY_SUB_CATEGORYTableAdapter.ClearBeforeFill = True
         '
-        'TblM4_INVENTORY_TYPETableAdapter
+        'TblM4_INVENTORY_ITEMBRANDTableAdapter
         '
-        Me.TblM4_INVENTORY_TYPETableAdapter.ClearBeforeFill = True
+        Me.TblM4_INVENTORY_ITEMBRANDTableAdapter.ClearBeforeFill = True
         '
-        'VWM4_ITEMS_CATEGORY_SUB_CATEGORYTableAdapter
+        'TBLM4_INV_ITEMS_SIZE_MAINTableAdapter
         '
-        Me.VWM4_ITEMS_CATEGORY_SUB_CATEGORYTableAdapter.ClearBeforeFill = True
+        Me.TBLM4_INV_ITEMS_SIZE_MAINTableAdapter.ClearBeforeFill = True
         '
-        'TblM4_INVENTORY_ITEMSTableAdapter
+        'TBLM4_INV_ITEMS_COLOR_MAINTableAdapter
         '
-        Me.TblM4_INVENTORY_ITEMSTableAdapter.ClearBeforeFill = True
+        Me.TBLM4_INV_ITEMS_COLOR_MAINTableAdapter.ClearBeforeFill = True
+        '
+        'SPM4_ITEM_CODE_GENERATORTableAdapter
+        '
+        Me.SPM4_ITEM_CODE_GENERATORTableAdapter.ClearBeforeFill = True
+        '
+        'SPM4_ITEM_CODE_GENERATORBindingSource
+        '
+        Me.SPM4_ITEM_CODE_GENERATORBindingSource.DataMember = "SPM4_ITEM_CODE_GENERATOR"
+        Me.SPM4_ITEM_CODE_GENERATORBindingSource.DataSource = Me.DS_STOREDPROC
+        '
+        'DS_STOREDPROC
+        '
+        Me.DS_STOREDPROC.DataSetName = "DS_STOREDPROC"
+        Me.DS_STOREDPROC.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.A_CLOSEPROGRAMTableAdapter = Nothing
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.Connection = Nothing
+        Me.TableAdapterManager.UpdateOrder = PRA_PIS.DS_STOREDPROCTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
+        'TBLM4_INV_ITEMS_SIZETableAdapter
+        '
+        Me.TBLM4_INV_ITEMS_SIZETableAdapter.ClearBeforeFill = True
+        '
+        'TBLM4_INV_ITEMS_SIZEBindingSource
+        '
+        Me.TBLM4_INV_ITEMS_SIZEBindingSource.DataMember = "TBLM4_INV_ITEMS_SIZE"
+        Me.TBLM4_INV_ITEMS_SIZEBindingSource.DataSource = Me.DS_PROPERTYDB
+        '
+        'TBLM4_INV_ITEMS_COLORTableAdapter
+        '
+        Me.TBLM4_INV_ITEMS_COLORTableAdapter.ClearBeforeFill = True
+        '
+        'TBLM4_INV_ITEMS_COLORBindingSource
+        '
+        Me.TBLM4_INV_ITEMS_COLORBindingSource.DataMember = "TBLM4_INV_ITEMS_COLOR"
+        Me.TBLM4_INV_ITEMS_COLORBindingSource.DataSource = Me.DS_PROPERTYDB
+        '
+        'PB_STOCKS
+        '
+        Me.PB_STOCKS.BackgroundImage = Global.PRA_PIS.My.Resources.Resources.outline_assignment_turned_in_black_18dp
+        Me.PB_STOCKS.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PB_STOCKS.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PB_STOCKS.InitialImage = Nothing
+        Me.PB_STOCKS.Location = New System.Drawing.Point(157, 11)
+        Me.PB_STOCKS.Name = "PB_STOCKS"
+        Me.PB_STOCKS.Size = New System.Drawing.Size(32, 28)
+        Me.PB_STOCKS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PB_STOCKS.TabIndex = 1462
+        Me.PB_STOCKS.TabStop = False
+        '
+        'LLBL_STOCKS
+        '
+        Me.LLBL_STOCKS.AutoSize = True
+        Me.LLBL_STOCKS.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.LLBL_STOCKS.Font = New System.Drawing.Font("Century Gothic", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LLBL_STOCKS.ForeColor = System.Drawing.Color.DimGray
+        Me.LLBL_STOCKS.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
+        Me.LLBL_STOCKS.LinkColor = System.Drawing.Color.DimGray
+        Me.LLBL_STOCKS.Location = New System.Drawing.Point(191, 16)
+        Me.LLBL_STOCKS.Name = "LLBL_STOCKS"
+        Me.LLBL_STOCKS.Size = New System.Drawing.Size(72, 19)
+        Me.LLBL_STOCKS.TabIndex = 1463
+        Me.LLBL_STOCKS.TabStop = True
+        Me.LLBL_STOCKS.Text = "STOCKS"
+        '
+        'TBLM4_INV_ITEMS_LENG_MAINTableAdapter
+        '
+        Me.TBLM4_INV_ITEMS_LENG_MAINTableAdapter.ClearBeforeFill = True
+        '
+        'TBLM4_INV_ITEMS_OTHERS_MAINTableAdapter
+        '
+        Me.TBLM4_INV_ITEMS_OTHERS_MAINTableAdapter.ClearBeforeFill = True
+        '
+        'TBLM4_INV_ITEMS_LENGTableAdapter
+        '
+        Me.TBLM4_INV_ITEMS_LENGTableAdapter.ClearBeforeFill = True
+        '
+        'TBLM4_INV_ITEMS_LENGBindingSource
+        '
+        Me.TBLM4_INV_ITEMS_LENGBindingSource.DataMember = "TBLM4_INV_ITEMS_LENG"
+        Me.TBLM4_INV_ITEMS_LENGBindingSource.DataSource = Me.DS_PROPERTYDB
+        '
+        'TBLM4_INV_ITEMS_OTHERSTableAdapter
+        '
+        Me.TBLM4_INV_ITEMS_OTHERSTableAdapter.ClearBeforeFill = True
+        '
+        'TBLM4_INV_ITEMS_OTHERSBindingSource
+        '
+        Me.TBLM4_INV_ITEMS_OTHERSBindingSource.DataMember = "TBLM4_INV_ITEMS_OTHERS"
+        Me.TBLM4_INV_ITEMS_OTHERSBindingSource.DataSource = Me.DS_PROPERTYDB
+        '
+        'TBLM4_INV_ITEMS_NAME_MAINTableAdapter
+        '
+        Me.TBLM4_INV_ITEMS_NAME_MAINTableAdapter.ClearBeforeFill = True
+        '
+        'TBLM4_INV_ITEMS_NAMETableAdapter
+        '
+        Me.TBLM4_INV_ITEMS_NAMETableAdapter.ClearBeforeFill = True
+        '
+        'TBLM4_INV_ITEMS_NAMEBindingSource
+        '
+        Me.TBLM4_INV_ITEMS_NAMEBindingSource.DataMember = "TBLM4_INV_ITEMS_NAME"
+        Me.TBLM4_INV_ITEMS_NAMEBindingSource.DataSource = Me.DS_PROPERTYDB
+        '
+        'TBLM4_INV_ITEMSTableAdapter
+        '
+        Me.TBLM4_INV_ITEMSTableAdapter.ClearBeforeFill = True
+        '
+        'TBLM4_INV_ITEMSBindingSource
+        '
+        Me.TBLM4_INV_ITEMSBindingSource.DataMember = "TBLM4_INV_ITEMS"
+        Me.TBLM4_INV_ITEMSBindingSource.DataSource = Me.DS_PROPERTYDB
+        '
+        'VWM4_ITEM_LISTTableAdapter
+        '
+        Me.VWM4_ITEM_LISTTableAdapter.ClearBeforeFill = True
+        '
+        'RECT_DR_LIST
+        '
+        Me.RECT_DR_LIST.BorderColor = System.Drawing.Color.DimGray
+        Me.RECT_DR_LIST.BorderWidth = 2
+        Me.RECT_DR_LIST.CornerRadius = 19
+        Me.RECT_DR_LIST.Cursor = System.Windows.Forms.Cursors.Arrow
+        Me.RECT_DR_LIST.FillColor = System.Drawing.SystemColors.HighlightText
+        Me.RECT_DR_LIST.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
+        Me.RECT_DR_LIST.Location = New System.Drawing.Point(272, 5)
+        Me.RECT_DR_LIST.Name = "RECT_DR_LIST"
+        Me.RECT_DR_LIST.Size = New System.Drawing.Size(115, 40)
+        '
+        'RECT_IIL
+        '
+        Me.RECT_IIL.BorderColor = System.Drawing.Color.DimGray
+        Me.RECT_IIL.BorderWidth = 2
+        Me.RECT_IIL.CornerRadius = 19
+        Me.RECT_IIL.Cursor = System.Windows.Forms.Cursors.Arrow
+        Me.RECT_IIL.FillColor = System.Drawing.SystemColors.HighlightText
+        Me.RECT_IIL.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
+        Me.RECT_IIL.Location = New System.Drawing.Point(389, 5)
+        Me.RECT_IIL.Name = "RECT_IIL"
+        Me.RECT_IIL.Size = New System.Drawing.Size(190, 40)
+        '
+        'Panel3
+        '
+        Me.Panel3.Controls.Add(Me.LLBL_PCOUNT)
+        Me.Panel3.Controls.Add(Me.PB_PCOUNT)
+        Me.Panel3.Controls.Add(Me.PB_IIL)
+        Me.Panel3.Controls.Add(Me.LLBL_INVENOTYR_ASSIGN)
+        Me.Panel3.Controls.Add(Me.LLBL_IIL)
+        Me.Panel3.Controls.Add(Me.LLBL_INVENTORY_NEW)
+        Me.Panel3.Controls.Add(Me.PB_DR_LIST)
+        Me.Panel3.Controls.Add(Me.PB_INVENTORY_NEW)
+        Me.Panel3.Controls.Add(Me.LLBL_DR_LIST)
+        Me.Panel3.Controls.Add(Me.PictureBox2)
+        Me.Panel3.Controls.Add(Me.PB_ITEM_DISTRIBUTION)
+        Me.Panel3.Controls.Add(Me.LLBL_STOCKS)
+        Me.Panel3.Controls.Add(Me.LLBL_ITEM_DISTRIBUTION)
+        Me.Panel3.Controls.Add(Me.PB_STOCKS)
+        Me.Panel3.Controls.Add(Me.ShapeContainer8)
+        Me.Panel3.Location = New System.Drawing.Point(2, 53)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(1090, 51)
+        Me.Panel3.TabIndex = 1464
+        '
+        'LLBL_PCOUNT
+        '
+        Me.LLBL_PCOUNT.AutoSize = True
+        Me.LLBL_PCOUNT.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.LLBL_PCOUNT.Font = New System.Drawing.Font("Century Gothic", 12.75!, System.Drawing.FontStyle.Bold)
+        Me.LLBL_PCOUNT.ForeColor = System.Drawing.Color.DimGray
+        Me.LLBL_PCOUNT.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
+        Me.LLBL_PCOUNT.LinkColor = System.Drawing.Color.DimGray
+        Me.LLBL_PCOUNT.Location = New System.Drawing.Point(831, 15)
+        Me.LLBL_PCOUNT.Name = "LLBL_PCOUNT"
+        Me.LLBL_PCOUNT.Size = New System.Drawing.Size(76, 19)
+        Me.LLBL_PCOUNT.TabIndex = 1465
+        Me.LLBL_PCOUNT.TabStop = True
+        Me.LLBL_PCOUNT.Text = "PCOUNT"
+        '
+        'PB_PCOUNT
+        '
+        Me.PB_PCOUNT.BackgroundImage = Global.PRA_PIS.My.Resources.Resources.outline_description_black_18dp
+        Me.PB_PCOUNT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PB_PCOUNT.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PB_PCOUNT.InitialImage = Nothing
+        Me.PB_PCOUNT.Location = New System.Drawing.Point(799, 11)
+        Me.PB_PCOUNT.Name = "PB_PCOUNT"
+        Me.PB_PCOUNT.Size = New System.Drawing.Size(32, 28)
+        Me.PB_PCOUNT.TabIndex = 1465
+        Me.PB_PCOUNT.TabStop = False
+        '
+        'PB_IIL
+        '
+        Me.PB_IIL.BackgroundImage = Global.PRA_PIS.My.Resources.Resources.outline_list_alt_black_18dp
+        Me.PB_IIL.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PB_IIL.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PB_IIL.InitialImage = Nothing
+        Me.PB_IIL.Location = New System.Drawing.Point(401, 8)
+        Me.PB_IIL.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.PB_IIL.Name = "PB_IIL"
+        Me.PB_IIL.Size = New System.Drawing.Size(37, 34)
+        Me.PB_IIL.TabIndex = 1537
+        Me.PB_IIL.TabStop = False
+        '
+        'LLBL_IIL
+        '
+        Me.LLBL_IIL.AutoSize = True
+        Me.LLBL_IIL.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.LLBL_IIL.Font = New System.Drawing.Font("Century Gothic", 12.75!, System.Drawing.FontStyle.Bold)
+        Me.LLBL_IIL.ForeColor = System.Drawing.Color.DimGray
+        Me.LLBL_IIL.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
+        Me.LLBL_IIL.LinkColor = System.Drawing.Color.DimGray
+        Me.LLBL_IIL.Location = New System.Drawing.Point(438, 16)
+        Me.LLBL_IIL.Name = "LLBL_IIL"
+        Me.LLBL_IIL.Size = New System.Drawing.Size(137, 19)
+        Me.LLBL_IIL.TabIndex = 1536
+        Me.LLBL_IIL.TabStop = True
+        Me.LLBL_IIL.Text = "ISSUED ITEM LIST"
+        '
+        'PB_DR_LIST
+        '
+        Me.PB_DR_LIST.BackgroundImage = Global.PRA_PIS.My.Resources.Resources.outline_assignment_black_18dp
+        Me.PB_DR_LIST.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PB_DR_LIST.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PB_DR_LIST.InitialImage = Nothing
+        Me.PB_DR_LIST.Location = New System.Drawing.Point(283, 8)
+        Me.PB_DR_LIST.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.PB_DR_LIST.Name = "PB_DR_LIST"
+        Me.PB_DR_LIST.Size = New System.Drawing.Size(37, 34)
+        Me.PB_DR_LIST.TabIndex = 1535
+        Me.PB_DR_LIST.TabStop = False
+        '
+        'LLBL_DR_LIST
+        '
+        Me.LLBL_DR_LIST.AutoSize = True
+        Me.LLBL_DR_LIST.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.LLBL_DR_LIST.Font = New System.Drawing.Font("Century Gothic", 12.75!, System.Drawing.FontStyle.Bold)
+        Me.LLBL_DR_LIST.ForeColor = System.Drawing.Color.DimGray
+        Me.LLBL_DR_LIST.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
+        Me.LLBL_DR_LIST.LinkColor = System.Drawing.Color.DimGray
+        Me.LLBL_DR_LIST.Location = New System.Drawing.Point(319, 16)
+        Me.LLBL_DR_LIST.Name = "LLBL_DR_LIST"
+        Me.LLBL_DR_LIST.Size = New System.Drawing.Size(64, 19)
+        Me.LLBL_DR_LIST.TabIndex = 1534
+        Me.LLBL_DR_LIST.TabStop = True
+        Me.LLBL_DR_LIST.Text = "DR LIST"
+        '
+        'ShapeContainer8
+        '
+        Me.ShapeContainer8.Location = New System.Drawing.Point(0, 0)
+        Me.ShapeContainer8.Margin = New System.Windows.Forms.Padding(0)
+        Me.ShapeContainer8.Name = "ShapeContainer8"
+        Me.ShapeContainer8.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RECT_PCOUNT, Me.RECT_IIL, Me.RECT_DR_LIST, Me.RECT_STOCKS, Me.RECT_ITEM_DISTRIBUTION, Me.RECT_INVENTORY_CANCEL, Me.RECT_INVENTORY_NEW_SAVE})
+        Me.ShapeContainer8.Size = New System.Drawing.Size(1090, 51)
+        Me.ShapeContainer8.TabIndex = 0
+        Me.ShapeContainer8.TabStop = False
+        '
+        'RECT_PCOUNT
+        '
+        Me.RECT_PCOUNT.BorderColor = System.Drawing.Color.DimGray
+        Me.RECT_PCOUNT.BorderWidth = 2
+        Me.RECT_PCOUNT.CornerRadius = 19
+        Me.RECT_PCOUNT.Cursor = System.Windows.Forms.Cursors.Arrow
+        Me.RECT_PCOUNT.FillColor = System.Drawing.SystemColors.HighlightText
+        Me.RECT_PCOUNT.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
+        Me.RECT_PCOUNT.Location = New System.Drawing.Point(790, 5)
+        Me.RECT_PCOUNT.Name = "RECT_PCOUNT"
+        Me.RECT_PCOUNT.Size = New System.Drawing.Size(121, 39)
+        '
+        'OFD_ITEM_DESC
+        '
+        Me.OFD_ITEM_DESC.FileName = "OpenFileDialog1"
+        '
+        'TBLM4_INV_ITEMS_IMGTableAdapter
+        '
+        Me.TBLM4_INV_ITEMS_IMGTableAdapter.ClearBeforeFill = True
+        '
+        'TBLM4_INV_ITEMS_IMGBindingSource
+        '
+        Me.TBLM4_INV_ITEMS_IMGBindingSource.DataSource = Me.DS_PROPERTYDB
+        Me.TBLM4_INV_ITEMS_IMGBindingSource.Position = 0
         '
         'FRM_INVENTORY_ENCODING_ADMIN
         '
@@ -2524,22 +3368,11 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1095, 660)
-        Me.Controls.Add(Me.LinkLabel3)
-        Me.Controls.Add(Me.PictureBox4)
-        Me.Controls.Add(Me.LinkLabel2)
-        Me.Controls.Add(Me.PictureBox3)
-        Me.Controls.Add(Me.PictureBox2)
+        Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.LLBL_INVENOTYR_ASSIGN)
         Me.Controls.Add(Me.APNL_ITEMINFO)
-        Me.Controls.Add(Me.PB_INVENTORY_VIEW_REPORT)
-        Me.Controls.Add(Me.LLBL_INVENTORY_VIEW_REPORT)
         Me.Controls.Add(Me.LLBL_INVENTORY_EDIT)
         Me.Controls.Add(Me.PB_INVENTORY_EDIT)
-        Me.Controls.Add(Me.PB_INVENTORY_NEW)
-        Me.Controls.Add(Me.LLBL_INVENTORY_NEW)
-        Me.Controls.Add(Me.PB_INVENTORY_SAVE)
-        Me.Controls.Add(Me.LLBL_INVENTORY_SAVE)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.PNL)
         Me.Controls.Add(Me.ShapeContainer3)
@@ -2549,55 +3382,47 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
         Me.Name = "FRM_INVENTORY_ENCODING_ADMIN"
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
-        Me.Text = "+"
         Me.PNL.ResumeLayout(False)
         Me.PNL.PerformLayout()
         Me.GRP_ITEMINFO.ResumeLayout(False)
         Me.GRP_ITEMINFO.PerformLayout()
-        CType(Me.TblM4INVENTORYTYPEBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DS_PROPERTYDB, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.SPM4CURRENTDATETIMEBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TBLG3UNITSBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TblM4INVENTORYITEMBRANDBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TblM4INVENTORYSUBCATEGORYBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TblM4INVENTORYCATEGORYBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PBOX_PRNOQRCODE, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.VWM4ITEMSCATEGORYSUBCATEGORYBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DS_VIEWS, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.VWM4ITEMSCATEGORYSUBCATEGORYBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.PB_INVENTORY_VIEW_REPORT, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PB_INVENTORY_SEARCH, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PB_INVENTORY_CLEAR_SEARCH, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GBOX_SETTINGS.ResumeLayout(False)
         Me.GBOX_SETTINGS.PerformLayout()
-        CType(Me.DGV_INVENTORY_LIST, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.SPM4INVENTORYDGVLISTBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DGV_INV_ITEM_LIST, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.VWM4_ITEM_LISTBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TblM4_INVENTORY_ITEMSBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TblM4_INVENTORY_ITEMS_PROPERTYBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PB_INVENTORY_SAVE, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PB_INVENTORY_NEW, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PB_INVENTORY_EDIT, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PB_INVENTORY_VIEW_REPORT, System.ComponentModel.ISupportInitialize).EndInit()
         Me.APNL_ITEMINFO.ResumeLayout(False)
+        Me.GroupBox4.ResumeLayout(False)
+        Me.GroupBox4.PerformLayout()
+        CType(Me.PB_ITEM_IMAGE, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TBLM4INVITEMSNAMEMAINBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DS_PROPERTYDB, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TBLM4INVITEMSOTHERSMAINBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TBLM4INVITEMSLENGMAINBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TblM4INVENTORYSUBCATEGORYBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TBLM4INVITEMSCOLORMAINBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TBLM4INVITEMSSIZEMAINBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TblM4INVENTORYITEMBRANDBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TblM4INVENTORYCATEGORYBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         Me.GRP_CONSUMABLE.ResumeLayout(False)
         Me.GRP_CONSUMABLE.PerformLayout()
-        CType(Me.TblM4INVENTORYACQUISITIONITEMUSAGEBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TblM4INVENTORYACQUISITIONVALUEBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel23.ResumeLayout(False)
         Me.Panel23.PerformLayout()
         Me.GRP_LIST_ITEMS.ResumeLayout(False)
         Me.GRP_LIST_ITEMS.PerformLayout()
         CType(Me.DGV_ITEM_INFO, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TblV1HRISDIVISIONBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DS_TABLES, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TblM4INVENTORYACQUISITIONTYPEBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DS_STOREDPROC, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DS_CUSTOM, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DSCUSTOMBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.GroupBox6.ResumeLayout(False)
         Me.GroupBox6.PerformLayout()
@@ -2606,8 +3431,22 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PB_ITEM_DISTRIBUTION, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SPM4_ITEM_CODE_GENERATORBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DS_STOREDPROC, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TBLM4_INV_ITEMS_SIZEBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TBLM4_INV_ITEMS_COLORBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PB_STOCKS, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TBLM4_INV_ITEMS_LENGBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TBLM4_INV_ITEMS_OTHERSBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TBLM4_INV_ITEMS_NAMEBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TBLM4_INV_ITEMSBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
+        CType(Me.PB_PCOUNT, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PB_IIL, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PB_DR_LIST, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TBLM4_INV_ITEMS_IMGBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -2624,17 +3463,17 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
     Friend WithEvents Label5 As Label
     Friend WithEvents PBOX_PRNOQRCODE As PictureBox
     Friend WithEvents ShapeContainer2 As PowerPacks.ShapeContainer
-    Friend WithEvents RECT_PRAPPCODE As PowerPacks.RectangleShape
+    Friend WithEvents RECT_CATEGORY As PowerPacks.RectangleShape
     Friend WithEvents RECT_PRREQUESTEDDATE As PowerPacks.RectangleShape
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents RectangleShape1 As PowerPacks.RectangleShape
+    Friend WithEvents RECT_BRAND As PowerPacks.RectangleShape
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents DGV_INVENTORY_LIST As DataGridView
+    Friend WithEvents DGV_INV_ITEM_LIST As DataGridView
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Label3 As Label
     Friend WithEvents RECT_INVENTORY_SERIAL_NO As PowerPacks.RectangleShape
-    Friend WithEvents RectangleShape2 As PowerPacks.RectangleShape
+    Friend WithEvents RECT_SUB_CATEGORY As PowerPacks.RectangleShape
     Friend WithEvents Label10 As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents Label7 As Label
@@ -2657,14 +3496,12 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
     Friend WithEvents CB_INVENTORY_CATEGORY As ComboBox
     Friend WithEvents ShapeContainer1 As PowerPacks.ShapeContainer
     Friend WithEvents RECT_PRCANCELEDIT As PowerPacks.RectangleShape
-    Friend WithEvents WTXT_INVENTORY_SEARCH As WatermarkTextBox
+    Friend WithEvents WTXT_ITEM_SEARCH As WatermarkTextBox
     Friend WithEvents PB_INVENTORY_SEARCH As PictureBox
     Friend WithEvents PB_INVENTORY_CLEAR_SEARCH As PictureBox
     Friend WithEvents CB_INVENTORY_UNIT_TYPE As ComboBox
     Friend WithEvents RECT_INVENTORY_NEW_SAVE As PowerPacks.RectangleShape
     Friend WithEvents ShapeContainer3 As PowerPacks.ShapeContainer
-    Friend WithEvents LLBL_INVENTORY_SAVE As LinkLabel
-    Friend WithEvents PB_INVENTORY_SAVE As PictureBox
     Friend WithEvents LLBL_INVENTORY_NEW As LinkLabel
     Friend WithEvents PB_INVENTORY_NEW As PictureBox
     Friend WithEvents LLBL_INVENTORY_EDIT As LinkLabel
@@ -2673,13 +3510,6 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
     Friend WithEvents PB_INVENTORY_VIEW_REPORT As PictureBox
     Friend WithEvents LLBL_INVENTORY_VIEW_REPORT As LinkLabel
     Friend WithEvents RECT_INVENTORY_CANCEL As PowerPacks.RectangleShape
-    Friend WithEvents DS_PROPERTYDB As DS_PROPERTYDB
-    '  Friend WithEvents TblM4_CATEGORYTableAdapter As DS_PROPERTYDBTableAdapters.tblM4_CATEGORYTableAdapter
-    Friend WithEvents SPM4CURRENTDATETIMEBindingSource As BindingSource
-    Friend WithEvents SPM4_CURRENTDATETIMETableAdapter As DS_PROPERTYDBTableAdapters.SPM4_CURRENTDATETIMETableAdapter
-    '   Friend WithEvents TblM4_ITEMBRANDTableAdapter As DS_PROPERTYDBTableAdapters.tblM4_ITEMBRANDTableAdapter
-    Friend WithEvents TBLG3UNITSBindingSource As BindingSource
-    Friend WithEvents TBLG3_UNITSTableAdapter As DS_PROPERTYDBTableAdapters.TBLG3_UNITSTableAdapter
     'Friend WithEvents TblM4_ITEMSTableAdapter As DS_PROPERTYDBTableAdapters.tblM4_ITEMSTableAdapter
     Friend WithEvents Label12 As Label
     Friend WithEvents APNL_ITEMINFO As Panel
@@ -2688,32 +3518,18 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
     Friend WithEvents BTN_CLOSE_INVENTORY_MINI_CLOSE As Button
     Friend WithEvents BTN_INVENTORY_CANCEL As Button
     Friend WithEvents BTN_INVENTORY_SAVE As Button
-    Friend WithEvents ShapeContainer4 As PowerPacks.ShapeContainer
     Friend WithEvents RectangleShape6 As PowerPacks.RectangleShape
     Friend WithEvents RectangleShape3 As PowerPacks.RectangleShape
     Friend WithEvents BTN_ADD_CATEGORY As Button
-    Friend WithEvents RectangleShape5 As PowerPacks.RectangleShape
-    Friend WithEvents SPM4_INVENTORYDGVLISTTableAdapter As DS_PROPERTYDBTableAdapters.SPM4_INVENTORYDGVLISTTableAdapter
-    Friend WithEvents SPM4INVENTORYDGVLISTBindingSource As BindingSource
-    Friend WithEvents SPM4_PROPERTY_NOTableAdapter As DS_PROPERTYDBTableAdapters.SPM4_PROPERTY_NOTableAdapter
     Friend WithEvents BTN_ADD_UNITTYPE As Button
     Friend WithEvents BTN_ADD_BRAND_PROVIDER As Button
     Friend WithEvents BTN_ADD_SUBCATEGORY As Button
     Friend WithEvents BTN_INVENTORY_MINIMIZE As Button
     Friend WithEvents BTN_INVENTORY_CLOSE As Button
     Friend WithEvents LLBL_INVENOTYR_ASSIGN As LinkLabel
-    Friend WithEvents TblG3_DELIVER_RECEIPT_DETAILSTableAdapter1 As DS_PROPERTYDBTableAdapters.TBLG3_DELIVER_RECEIPT_DETAILSTableAdapter
     Friend WithEvents ITEMPROPERTYNODataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ITEMUNITCOSTDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ITEMTOTALCOSTDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents TblM4INVENTORYCATEGORYBindingSource As BindingSource
-    Friend WithEvents TblM4_INVENTORY_CATEGORYTableAdapter As DS_PROPERTYDBTableAdapters.tblM4_INVENTORY_CATEGORYTableAdapter
-    Friend WithEvents TblM4INVENTORYSUBCATEGORYBindingSource As BindingSource
-    Friend WithEvents TblM4_INVENTORY_SUB_CATEGORYTableAdapter As DS_PROPERTYDBTableAdapters.tblM4_INVENTORY_SUB_CATEGORYTableAdapter
-    Friend WithEvents TblM4INVENTORYITEMBRANDBindingSource As BindingSource
-    Friend WithEvents TblM4_INVENTORY_ITEMBRANDTableAdapter As DS_PROPERTYDBTableAdapters.tblM4_INVENTORY_ITEMBRANDTableAdapter
-    Friend WithEvents SpM4_ITEM_CODE_GENERATORTableAdapter As DS_STOREDPROCTableAdapters.SPM4_ITEM_CODE_GENERATORTableAdapter
-    Friend WithEvents DS_STOREDPROC As DS_STOREDPROC
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents Label16 As Label
     Friend WithEvents Label17 As Label
@@ -2725,24 +3541,10 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
     Friend WithEvents Label15 As Label
     Friend WithEvents RectangleShape10 As PowerPacks.RectangleShape
     Friend WithEvents CB_ACQUISITION_VALUE As ComboBox
-    Friend WithEvents DS_CUSTOM As DS_CUSTOM
-    Friend WithEvents DSCUSTOMBindingSource As BindingSource
-    Friend WithEvents TblM4INVENTORYACQUISITIONTYPEBindingSource As BindingSource
     Friend WithEvents CB_ITEM_USAGE As ComboBox
-    Friend WithEvents TblM4INVENTORYACQUISITIONITEMUSAGEBindingSource As BindingSource
-    Friend WithEvents TblM4_INVENTORY_ACQUISITION_ITEM_USAGETableAdapter As DS_PROPERTYDBTableAdapters.tblM4_INVENTORY_ACQUISITION_ITEM_USAGETableAdapter
     Friend WithEvents GRP_CONSUMABLE As GroupBox
     Friend WithEvents RBT_DEPLETED As RadioButton
     Friend WithEvents RBT_PERPARTS As RadioButton
-    Friend WithEvents DS_TABLES As DS_TABLES
-    Friend WithEvents TblV1HRISDIVISIONBindingSource As BindingSource
-    Friend WithEvents TblV1_HRISDIVISIONTableAdapter As DS_TABLESTableAdapters.tblV1_HRISDIVISIONTableAdapter
-    Friend WithEvents TblM4INVENTORYACQUISITIONVALUEBindingSource As BindingSource
-    Friend WithEvents TblM4_INVENTORY_ACQUISITION_VALUETableAdapter As DS_PROPERTYDBTableAdapters.tblM4_INVENTORY_ACQUISITION_VALUETableAdapter
-    Friend WithEvents TblM4_CATEGORY_AND_SUBTableAdapter1 As DS_PROPERTYDBTableAdapters.tblM4_CATEGORY_AND_SUBTableAdapter
-    Friend WithEvents TblM4_INVENTORY_ITEMS_PROPERTYBindingSource As BindingSource
-    Friend WithEvents TableAdapterManager As DS_PROPERTYDBTableAdapters.TableAdapterManager
-    Friend WithEvents TblM4_INVENTORY_ITEMS_PROPERTYTableAdapter As DS_PROPERTYDBTableAdapters.tblM4_INVENTORY_ITEMS_PROPERTYTableAdapter
     Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
@@ -2757,26 +3559,8 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
     Friend WithEvents GRP_LIST_ITEMS As GroupBox
     Friend WithEvents LLBL_REMOVE_ITEM As LinkLabel
     Friend WithEvents RECT_REMOVE_ITEM As PowerPacks.RectangleShape
-    Friend WithEvents TblM4_INVENTORY_ITEMSBindingSource As BindingSource
-    Friend WithEvents TblV1_HRISEMPLOYEEDATATableAdapter As DS_TABLESTableAdapters.tblV1_HRISEMPLOYEEDATATableAdapter
     Friend WithEvents LLBL_EDIT_ITEM As LinkLabel
     Friend WithEvents RECT_EDIT_ITEM As PowerPacks.RectangleShape
-    Friend WithEvents CATNAMEDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents Column1 As DataGridViewTextBoxColumn
-    Friend WithEvents SCSUBCATEGORYNAMEDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents SCNODataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents ITBRNAMEDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents ITBRNODataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents ITEMSERIALNODataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents ITEMDESCRIPTIONDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents ITEMUNITDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents ITEMQUANTITYDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents ITEM_UNIT_COST As DataGridViewTextBoxColumn
-    Friend WithEvents ITEM_TOTAL_COST As DataGridViewTextBoxColumn
-    Friend WithEvents ITEMDATEAQUISITIONDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents ITEMCREATEDDATEDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents ITEMUPDATEDDATEDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents LOC_LOCATION_ID As DataGridViewTextBoxColumn
     Friend WithEvents Panel1 As Panel
     Friend WithEvents GroupBox6 As GroupBox
     Friend WithEvents GroupBox7 As GroupBox
@@ -2817,20 +3601,135 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
     Friend WithEvents ShapeContainer7 As PowerPacks.ShapeContainer
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents RectangleShape7 As PowerPacks.RectangleShape
-    Friend WithEvents LinkLabel2 As LinkLabel
-    Friend WithEvents PictureBox3 As PictureBox
-    Friend WithEvents RectangleShape8 As PowerPacks.RectangleShape
-    Friend WithEvents PictureBox4 As PictureBox
-    Friend WithEvents LinkLabel3 As LinkLabel
+    Friend WithEvents RECT_ITEM_DISTRIBUTION As PowerPacks.RectangleShape
+    Friend WithEvents LLBL_ITEM_DISTRIBUTION As LinkLabel
+    Friend WithEvents PB_ITEM_DISTRIBUTION As PictureBox
     Friend WithEvents Label6 As Label
     Friend WithEvents RectangleShape9 As PowerPacks.RectangleShape
     Friend WithEvents CB_SUPPLY_TYPE As ComboBox
-    Friend WithEvents TblM4INVENTORYTYPEBindingSource As BindingSource
-    Friend WithEvents TblM4_INVENTORY_TYPETableAdapter As DS_PROPERTYDBTableAdapters.tblM4_INVENTORY_TYPETableAdapter
     Friend WithEvents DS_VIEWS As DS_VIEWS
-    Friend WithEvents VWM4ITEMSCATEGORYSUBCATEGORYBindingSource As BindingSource
-    Friend WithEvents VWM4_ITEMS_CATEGORY_SUB_CATEGORYTableAdapter As DS_VIEWSTableAdapters.VWM4_ITEMS_CATEGORY_SUB_CATEGORYTableAdapter
-    Friend WithEvents VWM4ITEMSCATEGORYSUBCATEGORYBindingSource1 As BindingSource
-    Friend WithEvents TblM4_INVENTORY_ITEMSTableAdapter As DS_PROPERTYDBTableAdapters.tblM4_INVENTORY_ITEMSTableAdapter
+    Friend WithEvents RectangleShape5 As PowerPacks.RectangleShape
+    Friend WithEvents GroupBox4 As GroupBox
+    Friend WithEvents LinkLabel2 As LinkLabel
+    Friend WithEvents LinkLabel3 As LinkLabel
+    Friend WithEvents BTN_INV_SC As Button
+    Friend WithEvents CB_INV_SC As ComboBox
+    Friend WithEvents CB_INV_CAT As ComboBox
+    Friend WithEvents Label24 As Label
+    Friend WithEvents Label25 As Label
+    Friend WithEvents Label26 As Label
+    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents ShapeContainer5 As PowerPacks.ShapeContainer
+    Friend WithEvents RectangleShape2 As PowerPacks.RectangleShape
+    Friend WithEvents RectangleShape7 As PowerPacks.RectangleShape
+    Friend WithEvents RectangleShape24 As PowerPacks.RectangleShape
+    Friend WithEvents BTN_INV_CAT As Button
+    Friend WithEvents CB_INV_BRAND As ComboBox
+    Friend WithEvents BTN_INV_BR As Button
+    Friend WithEvents RectangleShape8 As PowerPacks.RectangleShape
+    Friend WithEvents RectangleShape1 As PowerPacks.RectangleShape
+    Friend WithEvents BTN_INV_SIZE As Button
+    Friend WithEvents CB_INV_SIZE As ComboBox
+    Friend WithEvents Label19 As Label
+    Friend WithEvents RectangleShape16 As PowerPacks.RectangleShape
+    Friend WithEvents BTN_INV_COLOR As Button
+    Friend WithEvents Label13 As Label
+    Friend WithEvents RectangleShape17 As PowerPacks.RectangleShape
+    Friend WithEvents CB_INV_COLOR As ComboBox
+    Friend WithEvents VWM4_ITEM_LISTBindingSource As BindingSource
+    Friend WithEvents DS_PROPERTYDB As DS_PROPERTYDB
+    Friend WithEvents TblM4INVENTORYCATEGORYBindingSource As BindingSource
+    Friend WithEvents TblM4_INVENTORY_CATEGORYTableAdapter As DS_PROPERTYDBTableAdapters.tblM4_INVENTORY_CATEGORYTableAdapter
+    Friend WithEvents TblM4INVENTORYSUBCATEGORYBindingSource As BindingSource
+    Friend WithEvents TblM4_INVENTORY_SUB_CATEGORYTableAdapter As DS_PROPERTYDBTableAdapters.tblM4_INVENTORY_SUB_CATEGORYTableAdapter
+    Friend WithEvents TblM4INVENTORYITEMBRANDBindingSource As BindingSource
+    Friend WithEvents TblM4_INVENTORY_ITEMBRANDTableAdapter As DS_PROPERTYDBTableAdapters.tblM4_INVENTORY_ITEMBRANDTableAdapter
+    Friend WithEvents TBLM4INVITEMSSIZEMAINBindingSource As BindingSource
+    Friend WithEvents TBLM4_INV_ITEMS_SIZE_MAINTableAdapter As DS_PROPERTYDBTableAdapters.TBLM4_INV_ITEMS_SIZE_MAINTableAdapter
+    Friend WithEvents TBLM4INVITEMSCOLORMAINBindingSource As BindingSource
+    Friend WithEvents TBLM4_INV_ITEMS_COLOR_MAINTableAdapter As DS_PROPERTYDBTableAdapters.TBLM4_INV_ITEMS_COLOR_MAINTableAdapter
+    Friend WithEvents SPM4_ITEM_CODE_GENERATORTableAdapter As DS_STOREDPROCTableAdapters.SPM4_ITEM_CODE_GENERATORTableAdapter
+    Friend WithEvents SPM4_ITEM_CODE_GENERATORBindingSource As BindingSource
+    Friend WithEvents DS_STOREDPROC As DS_STOREDPROC
+    Friend WithEvents TableAdapterManager As DS_STOREDPROCTableAdapters.TableAdapterManager
+    Friend WithEvents TBLM4_INV_ITEMS_SIZETableAdapter As DS_PROPERTYDBTableAdapters.TBLM4_INV_ITEMS_SIZETableAdapter
+    Friend WithEvents TBLM4_INV_ITEMS_SIZEBindingSource As BindingSource
+    Friend WithEvents TBLM4_INV_ITEMS_COLORTableAdapter As DS_PROPERTYDBTableAdapters.TBLM4_INV_ITEMS_COLORTableAdapter
+    Friend WithEvents TBLM4_INV_ITEMS_COLORBindingSource As BindingSource
+    Friend WithEvents RECT_STOCKS As PowerPacks.RectangleShape
+    Friend WithEvents PB_STOCKS As PictureBox
+    Friend WithEvents LLBL_STOCKS As LinkLabel
+    Friend WithEvents BTN_INV_OTHER_DESC As Button
+    Friend WithEvents BTN_INV_LENGTH As Button
+    Friend WithEvents Label14 As Label
+    Friend WithEvents RectangleShape19 As PowerPacks.RectangleShape
+    Friend WithEvents RectangleShape18 As PowerPacks.RectangleShape
+    Friend WithEvents Label18 As Label
+    Friend WithEvents CB_INV_OTHER_DESC As ComboBox
+    Friend WithEvents CB_INV_LENGTH As ComboBox
+    Friend WithEvents TBLM4INVITEMSLENGMAINBindingSource As BindingSource
+    Friend WithEvents TBLM4_INV_ITEMS_LENG_MAINTableAdapter As DS_PROPERTYDBTableAdapters.TBLM4_INV_ITEMS_LENG_MAINTableAdapter
+    Friend WithEvents TBLM4INVITEMSOTHERSMAINBindingSource As BindingSource
+    Friend WithEvents TBLM4_INV_ITEMS_OTHERS_MAINTableAdapter As DS_PROPERTYDBTableAdapters.TBLM4_INV_ITEMS_OTHERS_MAINTableAdapter
+    Friend WithEvents TBLM4_INV_ITEMS_LENGTableAdapter As DS_PROPERTYDBTableAdapters.TBLM4_INV_ITEMS_LENGTableAdapter
+    Friend WithEvents TBLM4_INV_ITEMS_LENGBindingSource As BindingSource
+    Friend WithEvents TBLM4_INV_ITEMS_OTHERSTableAdapter As DS_PROPERTYDBTableAdapters.TBLM4_INV_ITEMS_OTHERSTableAdapter
+    Friend WithEvents TBLM4_INV_ITEMS_OTHERSBindingSource As BindingSource
+    Friend WithEvents ITEMDESCRIPTIONDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents Label20 As Label
+    Friend WithEvents RectangleShape20 As PowerPacks.RectangleShape
+    Friend WithEvents CB_INV_NAME As ComboBox
+    Friend WithEvents BTN_INV_NAME As Button
+    Friend WithEvents WTXT_INV_ALIAS_NAME As WatermarkTextBox
+    Friend WithEvents Label21 As Label
+    Friend WithEvents RectangleShape21 As PowerPacks.RectangleShape
+    Friend WithEvents TBLM4INVITEMSNAMEMAINBindingSource As BindingSource
+    Friend WithEvents TBLM4_INV_ITEMS_NAME_MAINTableAdapter As DS_PROPERTYDBTableAdapters.TBLM4_INV_ITEMS_NAME_MAINTableAdapter
+    Friend WithEvents TBLM4_INV_ITEMS_NAMETableAdapter As DS_PROPERTYDBTableAdapters.TBLM4_INV_ITEMS_NAMETableAdapter
+    Friend WithEvents TBLM4_INV_ITEMS_NAMEBindingSource As BindingSource
+    Friend WithEvents TBLM4_INV_ITEMSTableAdapter As DS_PROPERTYDBTableAdapters.TBLM4_INV_ITEMSTableAdapter
+    Friend WithEvents TBLM4_INV_ITEMSBindingSource As BindingSource
+    Friend WithEvents VWM4_ITEM_LISTTableAdapter As DS_VIEWSTableAdapters.VWM4_ITEM_LISTTableAdapter
+    Friend WithEvents RECT_IIL As PowerPacks.RectangleShape
+    Friend WithEvents RECT_DR_LIST As PowerPacks.RectangleShape
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents PB_IIL As PictureBox
+    Friend WithEvents LLBL_IIL As LinkLabel
+    Friend WithEvents PB_DR_LIST As PictureBox
+    Friend WithEvents LLBL_DR_LIST As LinkLabel
+    Friend WithEvents ShapeContainer8 As PowerPacks.ShapeContainer
+    Friend WithEvents PB_PCOUNT As PictureBox
+    Friend WithEvents RECT_PCOUNT As PowerPacks.RectangleShape
+    Friend WithEvents LLBL_PCOUNT As LinkLabel
+    Friend WithEvents PB_ITEM_IMAGE As PictureBox
+    Friend WithEvents ShapeContainer4 As PowerPacks.ShapeContainer
+    Friend WithEvents OFD_ITEM_DESC As OpenFileDialog
+    Friend WithEvents TBLM4_INV_ITEMS_IMGTableAdapter As DS_PROPERTYDBTableAdapters.TBLM4_INV_ITEMS_IMGTableAdapter
+    Friend WithEvents TBLM4_INV_ITEMS_IMGBindingSource As BindingSource
+    Friend WithEvents Column1 As DataGridViewImageColumn
+    Friend WithEvents ITEMCODEDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents CATCODEDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents CATNAMEDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents SCNODataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents SCSUBCATEGORYNAMEDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ITBRNODataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ITBRNAMEDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents FULLDESC As DataGridViewTextBoxColumn
+    Friend WithEvents ITEMSERIALNODataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents COLRNUMDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents COLRNAMEDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ISACTIVEDataGridViewCheckBoxColumn As DataGridViewCheckBoxColumn
+    Friend WithEvents SIZENUMDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents SIZENAMEDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ITEMCREATEDDATEDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents CREATEDBYDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ISACTIVESIZEDataGridViewCheckBoxColumn As DataGridViewCheckBoxColumn
+    Friend WithEvents LENG_NUM As DataGridViewTextBoxColumn
+    Friend WithEvents OTHER_NUM As DataGridViewTextBoxColumn
+    Friend WithEvents ITM_NAME_NUM As DataGridViewTextBoxColumn
+    Friend WithEvents ITM_NAME As DataGridViewTextBoxColumn
+    Friend WithEvents NAME_IS_ACTIVE As DataGridViewCheckBoxColumn
+    Friend WithEvents btnEdit As DataGridViewButtonColumn
+    Friend WithEvents IMG_PATH As DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As DataGridViewButtonColumn
 End Class

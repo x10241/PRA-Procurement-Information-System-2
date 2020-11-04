@@ -98,11 +98,11 @@ Partial Class FRM_DGV_ENCODING
         'BTN_SAVE
         '
         Me.BTN_SAVE.Font = New System.Drawing.Font("Century Gothic", 12.75!, System.Drawing.FontStyle.Bold)
-        Me.BTN_SAVE.Location = New System.Drawing.Point(117, 381)
+        Me.BTN_SAVE.Location = New System.Drawing.Point(85, 381)
         Me.BTN_SAVE.Name = "BTN_SAVE"
-        Me.BTN_SAVE.Size = New System.Drawing.Size(92, 32)
+        Me.BTN_SAVE.Size = New System.Drawing.Size(148, 32)
         Me.BTN_SAVE.TabIndex = 0
-        Me.BTN_SAVE.Text = "SAVE"
+        Me.BTN_SAVE.Text = "Add Particulars"
         Me.BTN_SAVE.UseVisualStyleBackColor = True
         '
         'PictureBox1
@@ -121,10 +121,11 @@ Partial Class FRM_DGV_ENCODING
         Me.CB_UNITOFISSUE.DisplayMember = "UN_DESCRIPTION"
         Me.CB_UNITOFISSUE.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CB_UNITOFISSUE.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.CB_UNITOFISSUE.Font = New System.Drawing.Font("Century Gothic", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CB_UNITOFISSUE.FormattingEnabled = True
-        Me.CB_UNITOFISSUE.Location = New System.Drawing.Point(257, 17)
+        Me.CB_UNITOFISSUE.Location = New System.Drawing.Point(256, 17)
         Me.CB_UNITOFISSUE.Name = "CB_UNITOFISSUE"
-        Me.CB_UNITOFISSUE.Size = New System.Drawing.Size(143, 27)
+        Me.CB_UNITOFISSUE.Size = New System.Drawing.Size(143, 29)
         Me.CB_UNITOFISSUE.TabIndex = 1
         Me.CB_UNITOFISSUE.ValueMember = "UN_DESCRIPTION"
         '
@@ -151,6 +152,7 @@ Partial Class FRM_DGV_ENCODING
         'WTXT_DESCRIPTION
         '
         Me.WTXT_DESCRIPTION.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.WTXT_DESCRIPTION.Font = New System.Drawing.Font("Century Gothic", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.WTXT_DESCRIPTION.Location = New System.Drawing.Point(20, 69)
         Me.WTXT_DESCRIPTION.Multiline = True
         Me.WTXT_DESCRIPTION.Name = "WTXT_DESCRIPTION"
@@ -161,39 +163,41 @@ Partial Class FRM_DGV_ENCODING
         'WTXT_QUANTITY
         '
         Me.WTXT_QUANTITY.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.WTXT_QUANTITY.Font = New System.Drawing.Font("Century Gothic", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.WTXT_QUANTITY.Location = New System.Drawing.Point(201, 204)
         Me.WTXT_QUANTITY.MaxLength = 10
         Me.WTXT_QUANTITY.Name = "WTXT_QUANTITY"
         Me.WTXT_QUANTITY.Size = New System.Drawing.Size(83, 21)
         Me.WTXT_QUANTITY.TabIndex = 3
-        Me.WTXT_QUANTITY.Text = "0"
         Me.WTXT_QUANTITY.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.WTXT_QUANTITY.Watermark = Nothing
+        Me.WTXT_QUANTITY.Watermark = "0"
         '
         'WTXT_ESTIMATEDCOST
         '
         Me.WTXT_ESTIMATEDCOST.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.WTXT_ESTIMATEDCOST.Font = New System.Drawing.Font("Century Gothic", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.WTXT_ESTIMATEDCOST.Location = New System.Drawing.Point(199, 270)
         Me.WTXT_ESTIMATEDCOST.MaxLength = 30
         Me.WTXT_ESTIMATEDCOST.Name = "WTXT_ESTIMATEDCOST"
         Me.WTXT_ESTIMATEDCOST.ReadOnly = True
         Me.WTXT_ESTIMATEDCOST.Size = New System.Drawing.Size(197, 21)
         Me.WTXT_ESTIMATEDCOST.TabIndex = 1438
-        Me.WTXT_ESTIMATEDCOST.Text = "0"
+        Me.WTXT_ESTIMATEDCOST.Text = "0.00"
         Me.WTXT_ESTIMATEDCOST.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        Me.WTXT_ESTIMATEDCOST.Watermark = Nothing
+        Me.WTXT_ESTIMATEDCOST.Watermark = "0.00"
         '
         'WTXT_ESTIMATEDUNITCOST
         '
         Me.WTXT_ESTIMATEDUNITCOST.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.WTXT_ESTIMATEDUNITCOST.Font = New System.Drawing.Font("Century Gothic", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.WTXT_ESTIMATEDUNITCOST.Location = New System.Drawing.Point(199, 237)
         Me.WTXT_ESTIMATEDUNITCOST.MaxLength = 20
         Me.WTXT_ESTIMATEDUNITCOST.Name = "WTXT_ESTIMATEDUNITCOST"
         Me.WTXT_ESTIMATEDUNITCOST.Size = New System.Drawing.Size(197, 21)
         Me.WTXT_ESTIMATEDUNITCOST.TabIndex = 4
-        Me.WTXT_ESTIMATEDUNITCOST.Text = "0"
+        Me.WTXT_ESTIMATEDUNITCOST.Text = "0.00"
         Me.WTXT_ESTIMATEDUNITCOST.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        Me.WTXT_ESTIMATEDUNITCOST.Watermark = Nothing
+        Me.WTXT_ESTIMATEDUNITCOST.Watermark = "0.00"
         '
         'TblV1_HRISDEPARTMENTBindingSource
         '
@@ -243,11 +247,11 @@ Partial Class FRM_DGV_ENCODING
         Me.DGV_CLOSE.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red
         Me.DGV_CLOSE.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.DGV_CLOSE.Font = New System.Drawing.Font("Century Gothic", 12.75!, System.Drawing.FontStyle.Bold)
-        Me.DGV_CLOSE.Location = New System.Drawing.Point(218, 381)
+        Me.DGV_CLOSE.Location = New System.Drawing.Point(239, 381)
         Me.DGV_CLOSE.Name = "DGV_CLOSE"
         Me.DGV_CLOSE.Size = New System.Drawing.Size(90, 32)
         Me.DGV_CLOSE.TabIndex = 1
-        Me.DGV_CLOSE.Text = "CLOSE"
+        Me.DGV_CLOSE.Text = "Close"
         Me.DGV_CLOSE.UseVisualStyleBackColor = True
         '
         'TblV1_HRISDEPARTMENTTableAdapter
@@ -265,7 +269,6 @@ Partial Class FRM_DGV_ENCODING
         Me.TableAdapterManager.tblV1_USERACCOUNTLOGSTableAdapter = Nothing
         Me.TableAdapterManager.tblV1_USERACCOUNTTableAdapter = Nothing
         Me.TableAdapterManager.tblV2_ACCOUNTCODETableAdapter = Nothing
-
         Me.TableAdapterManager.tblV2_UsersAccountTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = PRA_PIS.DS_TABLESTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
@@ -317,7 +320,7 @@ Partial Class FRM_DGV_ENCODING
         Me.BTN_Minimize.FlatAppearance.BorderColor = System.Drawing.Color.Teal
         Me.BTN_Minimize.FlatAppearance.BorderSize = 3
         Me.BTN_Minimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BTN_Minimize.Location = New System.Drawing.Point(-4070, 11)
+        Me.BTN_Minimize.Location = New System.Drawing.Point(-4072, 11)
         Me.BTN_Minimize.Margin = New System.Windows.Forms.Padding(5)
         Me.BTN_Minimize.Name = "BTN_Minimize"
         Me.BTN_Minimize.Size = New System.Drawing.Size(47, 45)
@@ -335,7 +338,7 @@ Partial Class FRM_DGV_ENCODING
         Me.PNL.Location = New System.Drawing.Point(0, 0)
         Me.PNL.Margin = New System.Windows.Forms.Padding(5)
         Me.PNL.Name = "PNL"
-        Me.PNL.Size = New System.Drawing.Size(435, 50)
+        Me.PNL.Size = New System.Drawing.Size(433, 50)
         Me.PNL.TabIndex = 1407
         '
         'BTN_CLOSE
@@ -346,7 +349,7 @@ Partial Class FRM_DGV_ENCODING
         Me.BTN_CLOSE.FlatAppearance.BorderColor = System.Drawing.Color.Teal
         Me.BTN_CLOSE.FlatAppearance.BorderSize = 3
         Me.BTN_CLOSE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BTN_CLOSE.Location = New System.Drawing.Point(-4023, 10)
+        Me.BTN_CLOSE.Location = New System.Drawing.Point(-4025, 10)
         Me.BTN_CLOSE.Margin = New System.Windows.Forms.Padding(5)
         Me.BTN_CLOSE.Name = "BTN_CLOSE"
         Me.BTN_CLOSE.Size = New System.Drawing.Size(50, 48)
@@ -357,6 +360,7 @@ Partial Class FRM_DGV_ENCODING
         'WTXT_STOCKNO
         '
         Me.WTXT_STOCKNO.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.WTXT_STOCKNO.Font = New System.Drawing.Font("Century Gothic", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.WTXT_STOCKNO.Location = New System.Drawing.Point(20, 19)
         Me.WTXT_STOCKNO.Name = "WTXT_STOCKNO"
         Me.WTXT_STOCKNO.Size = New System.Drawing.Size(184, 21)
@@ -381,9 +385,9 @@ Partial Class FRM_DGV_ENCODING
         Me.PNL_PARTICULARS.Controls.Add(Me.WTXT_STOCKNO)
         Me.PNL_PARTICULARS.Controls.Add(Me.ShapeContainer1)
         Me.PNL_PARTICULARS.Font = New System.Drawing.Font("Century Gothic", 12.75!, System.Drawing.FontStyle.Bold)
-        Me.PNL_PARTICULARS.Location = New System.Drawing.Point(10, 65)
+        Me.PNL_PARTICULARS.Location = New System.Drawing.Point(10, 56)
         Me.PNL_PARTICULARS.Name = "PNL_PARTICULARS"
-        Me.PNL_PARTICULARS.Size = New System.Drawing.Size(418, 310)
+        Me.PNL_PARTICULARS.Size = New System.Drawing.Size(418, 319)
         Me.PNL_PARTICULARS.TabIndex = 1406
         '
         'ShapeContainer1
@@ -392,14 +396,13 @@ Partial Class FRM_DGV_ENCODING
         Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer1.Name = "ShapeContainer1"
         Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape5, Me.RECT_DGESTIMATEDUNITCOST, Me.RectangleShape3, Me.RECT_DGVQUANTITY, Me.RectangleShape1, Me.RECT_PRPRNO})
-        Me.ShapeContainer1.Size = New System.Drawing.Size(416, 308)
+        Me.ShapeContainer1.Size = New System.Drawing.Size(416, 317)
         Me.ShapeContainer1.TabIndex = 1429
         Me.ShapeContainer1.TabStop = False
         '
         'RectangleShape5
         '
-        Me.RectangleShape5.BorderColor = System.Drawing.Color.LightSeaGreen
-        Me.RectangleShape5.BorderWidth = 2
+        Me.RectangleShape5.BorderColor = System.Drawing.Color.DimGray
         Me.RectangleShape5.CornerRadius = 5
         Me.RectangleShape5.Location = New System.Drawing.Point(15, 63)
         Me.RectangleShape5.Name = "RectangleShape5"
@@ -407,8 +410,7 @@ Partial Class FRM_DGV_ENCODING
         '
         'RECT_DGESTIMATEDUNITCOST
         '
-        Me.RECT_DGESTIMATEDUNITCOST.BorderColor = System.Drawing.Color.LightSeaGreen
-        Me.RECT_DGESTIMATEDUNITCOST.BorderWidth = 2
+        Me.RECT_DGESTIMATEDUNITCOST.BorderColor = System.Drawing.Color.DimGray
         Me.RECT_DGESTIMATEDUNITCOST.CornerRadius = 5
         Me.RECT_DGESTIMATEDUNITCOST.Location = New System.Drawing.Point(195, 233)
         Me.RECT_DGESTIMATEDUNITCOST.Name = "RECT_DGESTIMATEDUNITCOST"
@@ -416,8 +418,7 @@ Partial Class FRM_DGV_ENCODING
         '
         'RectangleShape3
         '
-        Me.RectangleShape3.BorderColor = System.Drawing.Color.LightSeaGreen
-        Me.RectangleShape3.BorderWidth = 2
+        Me.RectangleShape3.BorderColor = System.Drawing.Color.DimGray
         Me.RectangleShape3.CornerRadius = 5
         Me.RectangleShape3.Location = New System.Drawing.Point(195, 264)
         Me.RectangleShape3.Name = "RectangleShape3"
@@ -425,8 +426,7 @@ Partial Class FRM_DGV_ENCODING
         '
         'RECT_DGVQUANTITY
         '
-        Me.RECT_DGVQUANTITY.BorderColor = System.Drawing.Color.LightSeaGreen
-        Me.RECT_DGVQUANTITY.BorderWidth = 2
+        Me.RECT_DGVQUANTITY.BorderColor = System.Drawing.Color.DimGray
         Me.RECT_DGVQUANTITY.CornerRadius = 5
         Me.RECT_DGVQUANTITY.Location = New System.Drawing.Point(196, 198)
         Me.RECT_DGVQUANTITY.Name = "RECT_DGVQUANTITY"
@@ -434,8 +434,7 @@ Partial Class FRM_DGV_ENCODING
         '
         'RectangleShape1
         '
-        Me.RectangleShape1.BorderColor = System.Drawing.Color.LightSeaGreen
-        Me.RectangleShape1.BorderWidth = 2
+        Me.RectangleShape1.BorderColor = System.Drawing.Color.DimGray
         Me.RectangleShape1.CornerRadius = 5
         Me.RectangleShape1.Location = New System.Drawing.Point(252, 12)
         Me.RectangleShape1.Name = "RectangleShape1"
@@ -443,8 +442,7 @@ Partial Class FRM_DGV_ENCODING
         '
         'RECT_PRPRNO
         '
-        Me.RECT_PRPRNO.BorderColor = System.Drawing.Color.LightSeaGreen
-        Me.RECT_PRPRNO.BorderWidth = 2
+        Me.RECT_PRPRNO.BorderColor = System.Drawing.Color.DimGray
         Me.RECT_PRPRNO.CornerRadius = 5
         Me.RECT_PRPRNO.Location = New System.Drawing.Point(15, 12)
         Me.RECT_PRPRNO.Name = "RECT_PRPRNO"
@@ -469,7 +467,7 @@ Partial Class FRM_DGV_ENCODING
         Me.PNL_SELECT_PARTICULARS.Controls.Add(Me.Label10)
         Me.PNL_SELECT_PARTICULARS.Controls.Add(Me.ShapeContainer2)
         Me.PNL_SELECT_PARTICULARS.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PNL_SELECT_PARTICULARS.Location = New System.Drawing.Point(10, 57)
+        Me.PNL_SELECT_PARTICULARS.Location = New System.Drawing.Point(450, 56)
         Me.PNL_SELECT_PARTICULARS.Name = "PNL_SELECT_PARTICULARS"
         Me.PNL_SELECT_PARTICULARS.Size = New System.Drawing.Size(418, 318)
         Me.PNL_SELECT_PARTICULARS.TabIndex = 1408
@@ -702,7 +700,7 @@ Partial Class FRM_DGV_ENCODING
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(435, 421)
+        Me.ClientSize = New System.Drawing.Size(433, 421)
         Me.Controls.Add(Me.PNL_SELECT_PARTICULARS)
         Me.Controls.Add(Me.BTN_SAVE)
         Me.Controls.Add(Me.DGV_CLOSE)

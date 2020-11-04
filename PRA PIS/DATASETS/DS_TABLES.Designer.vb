@@ -3324,6 +3324,10 @@ Partial Public Class DS_TABLES
         
         Private columnHDPT_CODE As Global.System.Data.DataColumn
         
+        Private columnIS_CHECKED As Global.System.Data.DataColumn
+        
+        Private columnQUANTITY As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub New()
@@ -3384,6 +3388,22 @@ Partial Public Class DS_TABLES
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property IS_CHECKEDColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnIS_CHECKED
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property QUANTITYColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnQUANTITY
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -3420,9 +3440,9 @@ Partial Public Class DS_TABLES
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Function AddtblV1_HRISDIVISIONRow(ByVal HDIV_DIVISION As String, ByVal HDIVS_CODE As String, ByVal parenttblV1_HRISDEPARTMENTRowByFK_tblV1_HRISDIVISION_tblV1_HRISDEPARTMENT As tblV1_HRISDEPARTMENTRow) As tblV1_HRISDIVISIONRow
+        Public Overloads Function AddtblV1_HRISDIVISIONRow(ByVal HDIV_DIVISION As String, ByVal HDIVS_CODE As String, ByVal parenttblV1_HRISDEPARTMENTRowByFK_tblV1_HRISDIVISION_tblV1_HRISDEPARTMENT As tblV1_HRISDEPARTMENTRow, ByVal IS_CHECKED As Boolean, ByVal QUANTITY As Integer) As tblV1_HRISDIVISIONRow
             Dim rowtblV1_HRISDIVISIONRow As tblV1_HRISDIVISIONRow = CType(Me.NewRow,tblV1_HRISDIVISIONRow)
-            Dim columnValuesArray() As Object = New Object() {HDIV_DIVISION, HDIVS_CODE, Nothing}
+            Dim columnValuesArray() As Object = New Object() {HDIV_DIVISION, HDIVS_CODE, Nothing, IS_CHECKED, QUANTITY}
             If (Not (parenttblV1_HRISDEPARTMENTRowByFK_tblV1_HRISDIVISION_tblV1_HRISDEPARTMENT) Is Nothing) Then
                 columnValuesArray(2) = parenttblV1_HRISDEPARTMENTRowByFK_tblV1_HRISDIVISION_tblV1_HRISDEPARTMENT(0)
             End If
@@ -3457,6 +3477,8 @@ Partial Public Class DS_TABLES
             Me.columnHDIV_DIVISION = MyBase.Columns("HDIV_DIVISION")
             Me.columnHDIVS_CODE = MyBase.Columns("HDIVS_CODE")
             Me.columnHDPT_CODE = MyBase.Columns("HDPT_CODE")
+            Me.columnIS_CHECKED = MyBase.Columns("IS_CHECKED")
+            Me.columnQUANTITY = MyBase.Columns("QUANTITY")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -3468,6 +3490,10 @@ Partial Public Class DS_TABLES
             MyBase.Columns.Add(Me.columnHDIVS_CODE)
             Me.columnHDPT_CODE = New Global.System.Data.DataColumn("HDPT_CODE", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnHDPT_CODE)
+            Me.columnIS_CHECKED = New Global.System.Data.DataColumn("IS_CHECKED", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnIS_CHECKED)
+            Me.columnQUANTITY = New Global.System.Data.DataColumn("QUANTITY", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnQUANTITY)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnHDIVS_CODE}, true))
             Me.columnHDIV_DIVISION.AllowDBNull = false
             Me.columnHDIV_DIVISION.MaxLength = 100
@@ -3476,6 +3502,8 @@ Partial Public Class DS_TABLES
             Me.columnHDIVS_CODE.MaxLength = 10
             Me.columnHDPT_CODE.AllowDBNull = false
             Me.columnHDPT_CODE.MaxLength = 5
+            Me.columnIS_CHECKED.DefaultValue = CType(false,Boolean)
+            Me.columnQUANTITY.DefaultValue = CType(0,Integer)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -8649,6 +8677,36 @@ Partial Public Class DS_TABLES
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property IS_CHECKED() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tabletblV1_HRISDIVISION.IS_CHECKEDColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'IS_CHECKED' in table 'tblV1_HRISDIVISION' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tabletblV1_HRISDIVISION.IS_CHECKEDColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property QUANTITY() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tabletblV1_HRISDIVISION.QUANTITYColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'QUANTITY' in table 'tblV1_HRISDIVISION' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tabletblV1_HRISDIVISION.QUANTITYColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Property tblV1_HRISDEPARTMENTRow() As tblV1_HRISDEPARTMENTRow
             Get
                 Return CType(Me.GetParentRow(Me.Table.ParentRelations("FK_tblV1_HRISDIVISION_tblV1_HRISDEPARTMENT")),tblV1_HRISDEPARTMENTRow)
@@ -8657,6 +8715,30 @@ Partial Public Class DS_TABLES
                 Me.SetParentRow(value, Me.Table.ParentRelations("FK_tblV1_HRISDIVISION_tblV1_HRISDEPARTMENT"))
             End Set
         End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsIS_CHECKEDNull() As Boolean
+            Return Me.IsNull(Me.tabletblV1_HRISDIVISION.IS_CHECKEDColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetIS_CHECKEDNull()
+            Me(Me.tabletblV1_HRISDIVISION.IS_CHECKEDColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsQUANTITYNull() As Boolean
+            Return Me.IsNull(Me.tabletblV1_HRISDIVISION.QUANTITYColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetQUANTITYNull()
+            Me(Me.tabletblV1_HRISDIVISION.QUANTITYColumn) = Global.System.Convert.DBNull
+        End Sub
     End Class
     
     '''<summary>
@@ -11929,7 +12011,7 @@ Namespace DS_TABLESTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(6) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(8) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT        UAC_USERNAME, UAC_PASSWORD, UAC_ISACTIVE, UAC_ISLOGGED, Pers_ID, UA"& _ 
@@ -11942,35 +12024,48 @@ Namespace DS_TABLESTableAdapters
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(2).Connection = Me.Connection
-            Me._commandCollection(2).CommandText = "SELECT        D.HDIVS_CODE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            tblV1_USERACCOUNT AS U INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"  "& _ 
-                "                       tblV1_HRISEMPDIVISION AS D ON U.HRIS_EMPNO = D.HRIS_EMPNO"& _ 
-                " AND U.UAC_USERNAME = @UAC_USERNAME"
-            Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@UAC_USERNAME", Global.System.Data.SqlDbType.VarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, "UAC_USERNAME", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(2).CommandText = "dbo.SPV1_SQ_USER_FULLNAME_FML"
+            Me._commandCollection(2).CommandType = Global.System.Data.CommandType.StoredProcedure
+            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@UAC_USERNAME", Global.System.Data.SqlDbType.NVarChar, 150, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(3) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(3).Connection = Me.Connection
-            Me._commandCollection(3).CommandText = "SELECT  UAC_PASSWORD FROM tblV1_USERACCOUNT WHERE UAC_PASSWORD=@UAC_PASSWORD"
+            Me._commandCollection(3).CommandText = "SELECT        D.HDIVS_CODE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            tblV1_USERACCOUNT AS U INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"  "& _ 
+                "                       tblV1_HRISEMPDIVISION AS D ON U.HRIS_EMPNO = D.HRIS_EMPNO"& _ 
+                " AND U.UAC_USERNAME = @UAC_USERNAME"
             Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@UAC_PASSWORD", Global.System.Data.SqlDbType.VarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, "UAC_PASSWORD", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@UAC_USERNAME", Global.System.Data.SqlDbType.VarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, "UAC_USERNAME", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(4) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(4).Connection = Me.Connection
-            Me._commandCollection(4).CommandText = "SELECT  COUNT(*) FROM tblV1_USERACCOUNT WHERE UAC_PASSWORD=@UAC_PASSWORD AND UAC_"& _ 
-                "ISACTIVE=1"
+            Me._commandCollection(4).CommandText = "SELECT  UAC_PASSWORD FROM tblV1_USERACCOUNT WHERE UAC_PASSWORD=@UAC_PASSWORD"
             Me._commandCollection(4).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@UAC_PASSWORD", Global.System.Data.SqlDbType.VarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, "UAC_PASSWORD", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(5) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(5).Connection = Me.Connection
-            Me._commandCollection(5).CommandText = "SELECT        HRIS_EMPNO"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            tblV1_USERACCOUNT"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (UAC_US"& _ 
-                "ERNAME =@UAC_USERNAME)"
+            Me._commandCollection(5).CommandText = "SELECT        HRIS.EMP_POSITION"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            tblV1_USERACCOUNT AS UAC INNER J"& _ 
+                "OIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblV1_HRISEMPLOYEEDATA AS HRIS ON HRIS.HRIS_EMPNO "& _ 
+                "= UAC.HRIS_EMPNO"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (UAC.UAC_USERNAME = @UAC_USERNAME)"
             Me._commandCollection(5).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@UAC_USERNAME", Global.System.Data.SqlDbType.VarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, "UAC_USERNAME", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(6) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(6).Connection = Me.Connection
-            Me._commandCollection(6).CommandText = "UPDATE [tblV1_USERACCOUNT] SET  [UAC_ISLOGGED] = @UAC_ISLOGGED WHERE [UAC_USERNAM"& _ 
-                "E] = @UAC_USERNAME"
+            Me._commandCollection(6).CommandText = "SELECT  COUNT(*) FROM tblV1_USERACCOUNT WHERE UAC_PASSWORD=@UAC_PASSWORD AND UAC_"& _ 
+                "ISACTIVE=1"
             Me._commandCollection(6).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@UAC_ISLOGGED", Global.System.Data.SqlDbType.Bit, 1, Global.System.Data.ParameterDirection.Input, 0, 0, "UAC_ISLOGGED", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@UAC_USERNAME", Global.System.Data.SqlDbType.VarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, "UAC_USERNAME", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@UAC_PASSWORD", Global.System.Data.SqlDbType.VarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, "UAC_PASSWORD", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(7) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(7).Connection = Me.Connection
+            Me._commandCollection(7).CommandText = "SELECT        EMP_ID"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            tblV1_USERACCOUNT"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (UAC_USERNA"& _ 
+                "ME =@UAC_USERNAME)"
+            Me._commandCollection(7).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(7).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@UAC_USERNAME", Global.System.Data.SqlDbType.VarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, "UAC_USERNAME", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(8) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(8).Connection = Me.Connection
+            Me._commandCollection(8).CommandText = "UPDATE [tblV1_USERACCOUNT] SET  [UAC_ISLOGGED] = @UAC_ISLOGGED WHERE [UAC_USERNAM"& _ 
+                "E] = @UAC_USERNAME"
+            Me._commandCollection(8).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(8).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@UAC_ISLOGGED", Global.System.Data.SqlDbType.Bit, 1, Global.System.Data.ParameterDirection.Input, 0, 0, "UAC_ISLOGGED", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(8).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@UAC_USERNAME", Global.System.Data.SqlDbType.VarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, "UAC_USERNAME", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -12265,8 +12360,39 @@ Namespace DS_TABLESTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function SQ_DIVS_CODE(ByVal UAC_USERNAME As String) As String
+        Public Overloads Overridable Function SPV1_SQ_USER_FULLNAME_FML(ByVal UAC_USERNAME As String) As Object
             Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(2)
+            If (UAC_USERNAME Is Nothing) Then
+                command.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(1).Value = CType(UAC_USERNAME,String)
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Object
+            Try 
+                returnValue = command.ExecuteScalar
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            If ((returnValue Is Nothing)  _
+                        OrElse (returnValue.GetType Is GetType(Global.System.DBNull))) Then
+                Return Nothing
+            Else
+                Return CType(returnValue,Object)
+            End If
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function SQ_DIVS_CODE(ByVal UAC_USERNAME As String) As String
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(3)
             If (UAC_USERNAME Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("UAC_USERNAME")
             Else
@@ -12297,7 +12423,7 @@ Namespace DS_TABLESTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
         Public Overloads Overridable Function SQ_GETUACPASSWORD(ByVal UAC_PASSWORD As String) As String
-            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(3)
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(4)
             If (UAC_PASSWORD Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("UAC_PASSWORD")
             Else
@@ -12327,38 +12453,7 @@ Namespace DS_TABLESTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function SQ_IFUSERISACTIVE(ByVal UAC_PASSWORD As String) As Global.System.Nullable(Of Integer)
-            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(4)
-            If (UAC_PASSWORD Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("UAC_PASSWORD")
-            Else
-                command.Parameters(0).Value = CType(UAC_PASSWORD,String)
-            End If
-            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
-            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                command.Connection.Open
-            End If
-            Dim returnValue As Object
-            Try 
-                returnValue = command.ExecuteScalar
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    command.Connection.Close
-                End If
-            End Try
-            If ((returnValue Is Nothing)  _
-                        OrElse (returnValue.GetType Is GetType(Global.System.DBNull))) Then
-                Return New Global.System.Nullable(Of Integer)()
-            Else
-                Return New Global.System.Nullable(Of Integer)(CType(returnValue,Integer))
-            End If
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function SQ_UHRIS_EMPNO(ByVal UAC_USERNAME As String) As String
+        Public Overloads Overridable Function SQ_HRIS_GET_POSITION(ByVal UAC_USERNAME As String) As String
             Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(5)
             If (UAC_USERNAME Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("UAC_USERNAME")
@@ -12388,10 +12483,72 @@ Namespace DS_TABLESTableAdapters
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function SQ_IFUSERISACTIVE(ByVal UAC_PASSWORD As String) As Global.System.Nullable(Of Integer)
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(6)
+            If (UAC_PASSWORD Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("UAC_PASSWORD")
+            Else
+                command.Parameters(0).Value = CType(UAC_PASSWORD,String)
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Object
+            Try 
+                returnValue = command.ExecuteScalar
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            If ((returnValue Is Nothing)  _
+                        OrElse (returnValue.GetType Is GetType(Global.System.DBNull))) Then
+                Return New Global.System.Nullable(Of Integer)()
+            Else
+                Return New Global.System.Nullable(Of Integer)(CType(returnValue,Integer))
+            End If
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function SQ_UHRIS_EMPNO(ByVal UAC_USERNAME As String) As Object
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(7)
+            If (UAC_USERNAME Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("UAC_USERNAME")
+            Else
+                command.Parameters(0).Value = CType(UAC_USERNAME,String)
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Object
+            Try 
+                returnValue = command.ExecuteScalar
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            If ((returnValue Is Nothing)  _
+                        OrElse (returnValue.GetType Is GetType(Global.System.DBNull))) Then
+                Return Nothing
+            Else
+                Return CType(returnValue,Object)
+            End If
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, false)>  _
         Public Overloads Overridable Function UQ_USERLOGSTATUS(ByVal UAC_ISLOGGED As Boolean, ByVal UAC_USERNAME As String) As Integer
-            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(6)
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(8)
             command.Parameters(0).Value = CType(UAC_ISLOGGED,Boolean)
             If (UAC_USERNAME Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("UAC_USERNAME")
@@ -15552,25 +15709,22 @@ Namespace DS_TABLESTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(3) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT        HDIV_DIVISION, HDIVS_CODE, HDPT_CODE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            tblV1_HRISDIV"& _ 
-                "ISION"
+            Me._commandCollection(0).CommandText = "SELECT HDIV_DIVISION, HDIVS_CODE, HDPT_CODE FROM tblV1_HRISDIVISION"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "SELECT        HDIV_DIVISION, HDIVS_CODE, HDPT_CODE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            tblV1_HRISDIV"& _ 
-                "ISION"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (HDPT_CODE = @hdpt_code)"
+            Me._commandCollection(1).CommandText = "SELECT HDIV_DIVISION, HDIVS_CODE, HDPT_CODE FROM tblV1_HRISDIVISION WHERE (HDPT_C"& _ 
+                "ODE = @hdpt_code)"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@hdpt_code", Global.System.Data.SqlDbType.NVarChar, 5, Global.System.Data.ParameterDirection.Input, 0, 0, "HDPT_CODE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(2).Connection = Me.Connection
-            Me._commandCollection(2).CommandText = "SELECT        HDIV_DIVISION"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            tblV1_HRISDIVISION"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (HD"& _ 
-                "IVS_CODE = @HDIVS_CODE)"
+            Me._commandCollection(2).CommandText = "SELECT HDIV_DIVISION FROM tblV1_HRISDIVISION WHERE (HDIVS_CODE = @HDIVS_CODE)"
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@HDIVS_CODE", Global.System.Data.SqlDbType.NVarChar, 10, Global.System.Data.ParameterDirection.Input, 0, 0, "HDIVS_CODE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(3) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(3).Connection = Me.Connection
-            Me._commandCollection(3).CommandText = "SELECT        HDPT_CODE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            tblV1_HRISDIVISION"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (HDIVS_"& _ 
-                "CODE = @HDIVS_CODE )"
+            Me._commandCollection(3).CommandText = "SELECT HDPT_CODE FROM tblV1_HRISDIVISION WHERE (HDIVS_CODE = @HDIVS_CODE)"
             Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@HDIVS_CODE", Global.System.Data.SqlDbType.NVarChar, 10, Global.System.Data.ParameterDirection.Input, 0, 0, "HDIVS_CODE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
@@ -17974,15 +18128,6 @@ Namespace DS_TABLESTableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
-            If (Not (Me._tblV2_UsersAccountTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.tblV2_UsersAccount.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._tblV2_UsersAccountTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
             If (Not (Me._tblV1_USERACCOUNTTableAdapter) Is Nothing) Then
                 Dim updatedRows() As Global.System.Data.DataRow = dataSet.tblV1_USERACCOUNT.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
@@ -18037,6 +18182,15 @@ Namespace DS_TABLESTableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
+            If (Not (Me._tblV2_UsersAccountTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.tblV2_UsersAccount.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._tblV2_UsersAccountTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
             Return result
         End Function
         
@@ -18060,14 +18214,6 @@ Namespace DS_TABLESTableAdapters
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
                     result = (result + Me._tblV1_DEFPRADEPARTMENTSTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
-            If (Not (Me._tblV2_UsersAccountTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.tblV2_UsersAccount.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._tblV2_UsersAccountTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -18119,6 +18265,14 @@ Namespace DS_TABLESTableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
+            If (Not (Me._tblV2_UsersAccountTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.tblV2_UsersAccount.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._tblV2_UsersAccountTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
             Return result
         End Function
         
@@ -18129,6 +18283,14 @@ Namespace DS_TABLESTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Function UpdateDeletedRows(ByVal dataSet As DS_TABLES, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
+            If (Not (Me._tblV2_UsersAccountTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.tblV2_UsersAccount.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._tblV2_UsersAccountTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
             If (Not (Me._tblV1_DEFPRADIVISIONTableAdapter) Is Nothing) Then
                 Dim deletedRows() As Global.System.Data.DataRow = dataSet.tblV1_DEFPRADIVISION.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
@@ -18174,14 +18336,6 @@ Namespace DS_TABLESTableAdapters
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
                     result = (result + Me._tblV1_USERACCOUNTTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
-            If (Not (Me._tblV2_UsersAccountTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.tblV2_UsersAccount.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._tblV2_UsersAccountTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If

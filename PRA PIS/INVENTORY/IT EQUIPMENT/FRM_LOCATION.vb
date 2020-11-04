@@ -13,18 +13,17 @@
     End Sub
 
 
-
-
-
+#Region "CLICK"
     Private Sub BTN_NEW_LOCATION_Click(sender As Object, e As EventArgs) Handles BTN_SELECTION_CLOSE.Click,
-                                                                                    BTN_LOC_DONE.Click,
+                                                                                    BTN_LOC_SAVE.Click,
                                                                                     CHK_SHOW_ALL_ITEMS.Click,
                                                                                     BTN_ONE_PLUS.Click,
                                                                                     BTN_ONE_MINUS.Click,
                                                                                     BTN_ALL_PLUS.Click,
                                                                                     BTN_ALL_MINUS.Click,
                                                                                     BTN_ASSIGN_ITEM_LOCATION.Click,
-                                                                                    BTN_LOCATION_LIST.Click
+                                                                                    BTN_LOCATION_LIST.Click,
+                                                                                    BTN_LOC_CANCEL.Click
 
 
         Dim btn As Button = Nothing
@@ -41,24 +40,9 @@
             isNew = False
             PNL_LOCATION_MAIN.Enabled = True
             TblM4_INVENTORY_ITEMS_DEFLOCATIONTableAdapter.Fill(DS_PROPERTYDB.tblM4_INVENTORY_ITEMS_DEFLOCATION)
-            '    SpM4_ITEMS_LOCATIONTableAdapter.Fill(DS_STOREDPROC.SPM4_ITEMS_LOCATION, True)
-
-            AssignItemsLocationDataGridViewBindingSource = SPM4ITEMSLOCATIONBindingSource
-            DGV_ITEMS_LIST.DataSource = AssignItemsLocationDataGridViewBindingSource
+            SpM4_ITEMS_LOCATIONTableAdapter.Fill(DS_STOREDPROC.SPM4_ITEMS_LOCATION, True)
+            BS_DGV_ASSIGN(SPM4ITEMSLOCATIONBindingSource, DS_CUSTOM.ItemsLocationDataGridView)
             EnableDisable(False)
-#End Region
-
-#Region "Close"
-        ElseIf btn Is BTN_SELECTION_CLOSE Then
-            Me.Close()
-            Me.Dispose()
-#End Region
-
-#Region "Done"
-        ElseIf btn Is BTN_LOC_DONE Then
-            PNL_LOCATION_MAIN.Enabled = False
-            EnableDisable(True)
-            clearFields()
 #End Region
 
 #Region "Add one item to Location"
@@ -82,59 +66,37 @@
 #Region "Add all items to location"
         ElseIf btn Is BTN_ALL_PLUS Then
             If DGV_ITEMS_LIST.Rows.Count > 0 Then
-                BS_DGV_ASSIGN(SPM4ITEMSLOCATIONBindingSource, DS_CUSTOM.AssignItemsLocationDataGridView)
+                BS_DGV_ASSIGN(ItemsLocationDataGridViewBindingSource, DS_CUSTOM.AssignItemsLocationDataGridView)
+                DS_CUSTOM.ItemsLocationDataGridView.Clear()
                 DGV_ITEMS_LOCATION.DataSource = AssignItemsLocationDataGridViewBindingSource
-                DS_STOREDPROC.SPM4_ITEMS_LOCATION.Clear()
             End If
 #End Region
 
 #Region "Remove one Item from location"
         ElseIf btn Is BTN_ONE_MINUS Then
-            Try
-                For Each row In DGV_ITEMS_LOCATION.SelectedRows
-                    Dim newRow As DataRow
-                    newRow = DS_STOREDPROC.SPM4_ITEMS_LOCATION.DataSet.Tables(1).NewRow
-                    With newRow
-                        .Item(0) = row.Cells(0).Value
-                        .Item(1) = row.Cells(1).Value
-                        .Item(2) = row.Cells(2).Value
-                        .Item(3) = row.Cells(3).Value
-                        .Item(4) = row.Cells(4).Value
-                        .Item(5) = row.Cells(5).Value
-                    End With
-                    DS_STOREDPROC.SPM4_ITEMS_LOCATION.DataSet.Tables(1).Rows.Add(newRow)
-                    TblM4_INVENTORY_ITEMS_LOCATIONTableAdapter.DQ_ITEMS_IN_LOCATION(row.Cells(0).Value)
-                    DGV_ITEMS_LOCATION.Rows.Remove(row)
-                Next
-                NotificationManager.Show(Me, "Successfully Removed.", Color.Green, 2000)
-            Catch ex As Exception
-                NotificationManager.Show(Me, ex.Message, Color.Red, 3000)
-            End Try
+            If DGV_ITEMS_LOCATION.Rows.Count > 0 Then
+                Try
+                    DS_CUSTOM.ItemsLocationDataGridView.Rows.Add(DGV_ITEMS_LOCATION(0, DGV_ITEMS_LOCATION.CurrentRow.Index).Value,
+                                                         DGV_ITEMS_LOCATION(1, DGV_ITEMS_LOCATION.CurrentRow.Index).Value,
+                                                         DGV_ITEMS_LOCATION(2, DGV_ITEMS_LOCATION.CurrentRow.Index).Value,
+                                                         DGV_ITEMS_LOCATION(3, DGV_ITEMS_LOCATION.CurrentRow.Index).Value,
+                                                         DGV_ITEMS_LOCATION(4, DGV_ITEMS_LOCATION.CurrentRow.Index).Value,
+                                                         DGV_ITEMS_LOCATION(5, DGV_ITEMS_LOCATION.CurrentRow.Index).Value)
+                    DGV_ITEMS_LOCATION.Rows.RemoveAt(DGV_ITEMS_LOCATION.CurrentRow.Index)
+                    DGV_ITEMS_LIST.DataSource = ItemsLocationDataGridViewBindingSource
+                Catch ex As Exception
+                    NotificationManager.Show(Me, ex.Message, Color.Red, 3000)
+                End Try
+            End If
 #End Region
 
 #Region "Remove all items from location"
         ElseIf btn Is BTN_ALL_MINUS Then
-            Try
-                DGV_ITEMS_LOCATION.SelectAll()
-                For Each row As DataGridViewRow In DGV_ITEMS_LOCATION.SelectedRows
-                    Dim newRow As DataRow
-                    newRow = DS_STOREDPROC.SPM4_ITEMS_LOCATION.DataSet.Tables(1).NewRow
-                    With newRow
-                        .Item(0) = row.Cells(0).Value
-                        .Item(1) = row.Cells(1).Value
-                        .Item(2) = row.Cells(2).Value
-                        .Item(3) = row.Cells(3).Value
-                        .Item(4) = row.Cells(4).Value
-                        .Item(5) = row.Cells(5).Value
-                    End With
-                    DS_STOREDPROC.SPM4_ITEMS_LOCATION.DataSet.Tables(1).Rows.Add(newRow)
-                    TblM4_INVENTORY_ITEMS_LOCATIONTableAdapter.DQ_ITEMS_IN_LOCATION(row.Cells(0).Value)
-                    DGV_ITEMS_LOCATION.Rows.Remove(row)
-                Next
-                NotificationManager.Show(Me, "Successfully Removed.", Color.Green, 2000)
-            Catch ex As Exception
-                NotificationManager.Show(Me, ex.Message, Color.Red, 3000)
-            End Try
+            If DGV_ITEMS_LOCATION.Rows.Count > 0 Then
+                BS_DGV_ASSIGN(AssignItemsLocationDataGridViewBindingSource, DS_CUSTOM.ItemsLocationDataGridView)
+                DS_CUSTOM.AssignItemsLocationDataGridView.Clear()
+                DGV_ITEMS_LIST.DataSource = ItemsLocationDataGridViewBindingSource
+            End If
 #End Region
 
 #Region "Location List"
@@ -142,22 +104,32 @@
             FRM_LOCATION_LIST.ShowDialog()
 #End Region
 
+#Region "CANCEL"
+        ElseIf btn Is BTN_LOC_CANCEL Then
+            If MsgBox("Do you want to cancel this?", vbYesNo, "Confirm") = vbYes Then
+                PNL_LOCATION_MAIN.Enabled = False
+                EnableDisable(True)
+                clearFields()
+            End If
+#End Region
 
+#Region "CLOSE"
+        ElseIf btn Is BTN_SELECTION_CLOSE Then
+            Me.Close()
+            Me.Dispose()
+#End Region
+
+#Region "SAVE"
+        ElseIf btn Is BTN_LOC_SAVE Then
+            If DGV_ITEMS_LOCATION.Rows.Count > 0 Then
+                _SAVE()
+            End If
+#End Region
 
         End If
     End Sub
 
-    Sub SavePreferredItems()
-        Try
-            For Each row As DataGridViewRow In DGV_ITEMS_LOCATION.Rows
-                TblM4_INVENTORY_ITEMS_LOCATIONTableAdapter.IQ_INVENTORY_ITEMS(row.Cells(0).Value, CB_LOC_DEFAULT_LOC.SelectedValue)
-            Next
-            NotificationManager.Show(Me, "Successfully Saved.", Color.Green, 4000)
-            PNL_LOCATION_MAIN.Enabled = False
-        Catch ex As Exception
-            NotificationManager.Show(Me, ex.Message, Color.Red, 3000)
-        End Try
-    End Sub
+#End Region
 
 #Region "Clear"
     Sub clearFields()
@@ -181,17 +153,14 @@
 #Region "Enable/Disable"
     Sub EnableDisable(enableBool As Boolean)
         If enableBool Then
-
             BTN_ASSIGN_ITEM_LOCATION.Enabled = True
             BTN_LOCATION_LIST.Enabled = True
         Else
-
             BTN_ASSIGN_ITEM_LOCATION.Enabled = False
             BTN_LOCATION_LIST.Enabled = False
         End If
-
     End Sub
-
+#End Region
     Private Sub CB_LOC_DEFAULT_LOC_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CB_LOC_DEFAULT_LOC.SelectedIndexChanged
         If CB_LOC_DEFAULT_LOC.SelectedIndex >= 0 Then
             DGV_ITEMS_LOCATION.SelectAll()
@@ -204,19 +173,30 @@
         End If
     End Sub
 
-    Private Sub FRM_LOCATION_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the 'DS_PROPERTYDB.tblM4_INVENTORY_ITEMS_DEFLOCATION' table. You can move, or remove it, as needed.
-        ' Me.TblM4_INVENTORY_ITEMS_DEFLOCATIONTableAdapter.Fill(Me.DS_PROPERTYDB.tblM4_INVENTORY_ITEMS_DEFLOCATION)
-        BS_DGV_ASSIGN(SPM4ITEMSLOCATIONBindingSource, DS_CUSTOM.ItemsLocationDataGridView)
-    End Sub
-
+#Region "FILTER SEARCH"
     Private Sub WTXT_LIST_ITEM_SEARCH_TextChanged(sender As Object, e As EventArgs) Handles WTXT_LIST_ITEM_SEARCH.TextChanged
-        AssignItemsLocationDataGridViewBindingSource.Filter = "ItemCode Like '%" + WTXT_LIST_ITEM_SEARCH.Text + "%'"
+        ItemsLocationDataGridViewBindingSource.Filter = "ItemCode Like '%" + WTXT_LIST_ITEM_SEARCH.Text + "%'"
     End Sub
 
     Private Sub WTXT_LIST_PREFERRED_ITEMS_TextChanged(sender As Object, e As EventArgs) Handles WTXT_LIST_PREFERRED_ITEMS.TextChanged
-        AssignItemsLocationDataGridViewBindingSource.Filter = "Item Code Like '%" + WTXT_LIST_PREFERRED_ITEMS.Text + "%'"
+        AssignItemsLocationDataGridViewBindingSource.Filter = "ItemCode Like '%" + WTXT_LIST_PREFERRED_ITEMS.Text + "%'"
+    End Sub
+#End Region
+
+
+    Sub _SAVE()
+        Try
+            For Each row As DataGridViewRow In DGV_ITEMS_LOCATION.Rows
+                TblM4_INVENTORY_ITEMS_LOCATIONTableAdapter.IQ_INVITEMS_LOCATION(Trim(row.Cells(0).Value), Trim(CB_LOC_DEFAULT_LOC.SelectedValue))
+            Next
+            NotificationManager.Show(Me, "Successfully saved.", Color.Green, 6000)
+            PNL_LOCATION_MAIN.Enabled = False
+            EnableDisable(True)
+            clearFields()
+        Catch ex As Exception
+            NotificationManager.Show(Me, ex.Message, Color.Red, 3000)
+        End Try
     End Sub
 
-#End Region
+
 End Class

@@ -117,40 +117,60 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="TBLG3_PRIMARY_SIGNATORYBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 104</value>
-  </metadata>
-  <metadata name="DSPROPERTYDB_TABLES.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1672, 65</value>
-  </metadata>
-  <metadata name="tmrClockTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>606, 19</value>
-  </metadata>
   <metadata name="DS_TABLES.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>9, 12</value>
   </metadata>
   <metadata name="TblV1_USERACCOUNTTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>110, 15</value>
+    <value>121, 12</value>
   </metadata>
   <metadata name="TblV1_USERACCOUNTBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>353, 17</value>
+    <value>367, 12</value>
+  </metadata>
+  <metadata name="tmrClockTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>901, 12</value>
   </metadata>
   <metadata name="TblV1_USERACCOUNTLOGSBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>25, 65</value>
+    <value>619, 12</value>
   </metadata>
   <metadata name="TblV1_USERACCOUNTLOGSTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>597, 65</value>
+    <value>1032, 12</value>
   </metadata>
-  <metadata name="TblV1_HRISEMPLOYEEDATATableAdapter1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>874, 65</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="Label55.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAABGdBTUEAALGPC/xhBQAAAk9JREFUWEft
+        mDvPDFEYgFcQ95qQaCT4BYIejUZCh4JCJDREJULhEgqhcCn4D5/oNKjFDyCucb82LhEFnufLvjI5OWdm
+        dme24XuSJ9k58142OzNnztnBDP8LG/Ey3sNn+AO/DT87dgmNmSjz8QA+wd8tNfYgmtsru/A95pq20Vxr
+        9MJxzDUZxxPYiauYK9xFa47FGcwVVG/gX8nYKFp7JPZgrlB4DI8kY6Nqj1b4RHzEXBH9hItQ6n7FJj/g
+        AmzkMOYKhDuwylHMxbXRXo28wVyynsccu/Ed5nLqtFct6zGXqDdwNpbw59+HLzCXX9KeRc5imuDTdBJn
+        YRv80tvxFr7EtN59vFs5tmeR21hNfopbsG+2YvSwZ5GHGIGncB5OgpUYfR44UMIJLwLnOJDBS7cOl00f
+        5WmKWYjR56sDJb5gBC52IMH55xF6/i0uxZQ2MdaOPvYsUr1kqx1I2IZxXr15U9rEWDvO27PIHYzAzQ4k
+        eAlinvqJKzClTcwmjD72LHIOI7A0CS5HF2qrpo/yNMVYO/rUPvYuOyPQR35SVFedGxwo4dPxGiN4J/aN
+        NaO+vRon3EMYCc60PqJ9Ya1XGPXt1YjvJJcGkeQ7rO1row5r3MSo23r5IXsxEvUiduUCVmvaYyROY7XA
+        FI6znTHH3Gota4+Fm8Fqoee4H+diE74HjU2XI1ewE7ltkMvY6+hbey0uGbpmOHYNP2Oa13kbFLjJ872U
+        Nmirub1tFAPvBbfFjzHXNKex5kxqGfMXZ9f0z4bvw8/xZ0PtDDzDP8Jg8Ae7Woj2O4SQQQAAAABJRU5E
+        rkJggg==
+</value>
+  </data>
+  <metadata name="DS_VIEWS.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1309, 12</value>
   </metadata>
-  <metadata name="TblV1_HRISDIVISIONTableAdapter1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1157, 65</value>
+  <metadata name="V1VW_USERACCEMPLOYEEBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 51</value>
   </metadata>
-  <metadata name="TblV1_HRISDEPARTMENTTableAdapter1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1402, 65</value>
+  <metadata name="V1VW_USERACCEMPLOYEETableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>297, 51</value>
+  </metadata>
+  <metadata name="TableAdapterManager.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1343, 51</value>
+  </metadata>
+  <metadata name="SPM4_PDS_LISTTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 90</value>
+  </metadata>
+  <metadata name="SPM4_PDS_LISTBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>228, 90</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>167</value>
+    <value>104</value>
   </metadata>
 </root>

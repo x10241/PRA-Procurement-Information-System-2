@@ -13,7 +13,7 @@
             FRM_LOCATION.ShowDialog()
         ElseIf btn Is BTN_SELECTIONENDUSER Then
             Me.Close()
-            FRM_ASSIGN.ShowDialog()
+            FRM_ASSIGN_ITEMS.ShowDialog()
         ElseIf btn Is BTN_SELECTION_CLOSE Then
             Me.Close()
         End If

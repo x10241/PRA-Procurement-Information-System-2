@@ -68,7 +68,7 @@ Public Class FRM_SETTINGS
     End Function
 
     Private Sub FRM_SETTINGS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        TblM4_INVENTORY_CATEGORY1TableAdapter.Fill(DS_PROPERTYDB.tblM4_INVENTORY_CATEGORY1, WTXT_SEARCH.Text)
+        TblM4_INVENTORY_CATEGORY1TableAdapter.Fill(DS_PROPERTYDB.tblM4_INVENTORY_CATEGORY1, WTXT_SEARCH.Text, DIVISION_NO)
         CB_MAINTENANCE_SELECTION.SelectedIndex = 0
         PB_MAINTENANCE_NEW.Visible = True
         LLBL_MAINTENANCE_NEW.Visible = True
@@ -90,14 +90,14 @@ Public Class FRM_SETTINGS
             DGV_MAINTENANCE_LIST.DataSource = TblM4_CATEGORY_AND_SUBBindingSource
             LLBL_RECORDSFOUND.Text = DGV_MAINTENANCE_LIST.RowCount
             GRP_SUB_CATEGORY.Visible = True
-            GRP_CATEGORY.Visible = False
+            ' GRP_CATEGORY.Visible = False
             GRP_BRANDS.Visible = False
             DGV_MAINTENANCE_LIST.ClearSelection()
         ElseIf CB_MAINTENANCE_SELECTION.SelectedIndex = 1 Then
             Me.TblM4_INVENTORY_ITEMBRAND1TableAdapter.Fill(Me.DS_PROPERTYDB.tblM4_INVENTORY_ITEMBRAND1, WTXT_SEARCH.Text)
             DGV_MAINTENANCE_LIST.DataSource = TblM4_INVENTORY_ITEMBRAND1BindingSource
             LLBL_RECORDSFOUND.Text = DGV_MAINTENANCE_LIST.RowCount
-            GRP_CATEGORY.Visible = False
+            '  GRP_CATEGORY.Visible = False
             GRP_BRANDS.Visible = True
             GRP_SUB_CATEGORY.Visible = False
             DGV_MAINTENANCE_LIST.ClearSelection()
@@ -150,10 +150,10 @@ Public Class FRM_SETTINGS
                 GRP_BRANDS.Enabled = True
                 RGB_BRANDS_ACTIVE.Checked = True
                 WTXT_BRANDNAME.Clear()
-            ElseIf GRP_CATEGORY.Visible = True Then
-                GRP_CATEGORY.Enabled = True
-                RGB_CATEGORY_ACTIVE.Checked = True
-                WTXT_CATEGORY_NAME.Clear()
+                'ElseIf GRP_CATEGORY.Visible = True Then
+                '    GRP_CATEGORY.Enabled = True
+                '    RGB_CATEGORY_ACTIVE.Checked = True
+                '    WTXT_CATEGORY_NAME.Clear()
             ElseIf GRP_SUB_CATEGORY.Visible = True Then
                 TblM4_INVENTORY_CATEGORYTableAdapter.Fill(DS_PROPERTYDB.tblM4_INVENTORY_CATEGORY)
                 GRP_SUB_CATEGORY.Enabled = True
@@ -178,14 +178,14 @@ Public Class FRM_SETTINGS
                 Else
                     RECT_BRAND_NAME.BorderColor = Color.LightSeaGreen
                 End If
-            ElseIf GRP_CATEGORY.Visible = True Then
-                ISVALID = True
-                If REQFIELDVALIDATION(WTXT_CATEGORY_NAME) = True Then
-                    ISVALID = False
-                    RECT_CATEGORY_NAME.BorderColor = Color.OrangeRed
-                Else
-                    RECT_CATEGORY_NAME.BorderColor = Color.LightSeaGreen
-                End If
+                'ElseIf GRP_CATEGORY.Visible = True Then
+                '    ISVALID = True
+                '    If REQFIELDVALIDATION(WTXT_CATEGORY_NAME) = True Then
+                '        ISVALID = False
+                '        RECT_CATEGORY_NAME.BorderColor = Color.OrangeRed
+                '    Else
+                '        RECT_CATEGORY_NAME.BorderColor = Color.LightSeaGreen
+                '    End If
             ElseIf GRP_SUB_CATEGORY.Visible = True Then
                 ISVALID = True
                 If REQFIELDVALIDATION(WTXT_SUBCATEGORY_NAME) = True Then
@@ -215,9 +215,9 @@ Public Class FRM_SETTINGS
                 If GRP_BRANDS.Visible = True Then
                     GRP_BRANDS.Enabled = False
                     RECT_BRAND_NAME.BorderColor = Color.LightSeaGreen
-                ElseIf GRP_CATEGORY.Visible = True Then
-                    GRP_CATEGORY.Enabled = False
-                    RECT_CATEGORY_NAME.BorderColor = Color.LightSeaGreen
+                    'ElseIf GRP_CATEGORY.Visible = True Then
+                    '    GRP_CATEGORY.Enabled = False
+                    '    RECT_CATEGORY_NAME.BorderColor = Color.LightSeaGreen
                 ElseIf GRP_SUB_CATEGORY.Visible = True Then
                     GRP_SUB_CATEGORY.Enabled = False
                     RECT_SUB_CATEGORY_NAME.BorderColor = Color.LightSeaGreen
@@ -229,7 +229,7 @@ Public Class FRM_SETTINGS
                 DGV_MAINTENANCE_LIST.Enabled = True
                 CB_CATEGORYNAME.SelectedIndex = -1
                 WTXT_BRANDNAME.Clear()
-                WTXT_CATEGORY_NAME.Clear()
+                ' WTXT_CATEGORY_NAME.Clear()
                 WTXT_SEARCH.Clear()
                 WTXT_SUBCATEGORY_NAME.Clear()
             End If
@@ -245,8 +245,8 @@ Public Class FRM_SETTINGS
                 PB_MAINTENANCE_NEW.Visible = False
                 If GRP_BRANDS.Visible = True Then
                     GRP_BRANDS.Enabled = True
-                ElseIf GRP_CATEGORY.Visible = True Then
-                    GRP_CATEGORY.Enabled = True
+                    'ElseIf GRP_CATEGORY.Visible = True Then
+                    '    GRP_CATEGORY.Enabled = True
                 ElseIf GRP_SUB_CATEGORY.Visible = True Then
                     GRP_SUB_CATEGORY.Enabled = True
                 End If
@@ -269,7 +269,7 @@ Public Class FRM_SETTINGS
                 'brand
                 If GRP_BRANDS.Visible = True Then
                     Me.SPM4_BR_CODE_GENERATORTableAdapter.Fill(Me.DS_STOREDPROC.SPM4_BR_CODE_GENERATOR)
-                    TblM4_INVENTORY_ITEMBRANDTableAdapter.IQ_INVENTORY_ITEMS_BRAND(BRCODETextBox.Text, WTXT_BRANDNAME.Text, EMP_NO, If(RGB_BRANDS_ACTIVE.Checked = True, 1, 0), "")
+                    '     TblM4_INVENTORY_ITEMBRANDTableAdapter.IQ_INVENTORY_ITEMS_BRAND(BRCODETextBox.Text, WTXT_BRANDNAME.Text, EMP_NO, If(RGB_BRANDS_ACTIVE.Checked = True, 1, 0))
                     Me.TblM4_INVENTORY_ITEMBRAND1TableAdapter.Fill(Me.DS_PROPERTYDB.tblM4_INVENTORY_ITEMBRAND1, WTXT_SEARCH.Text)
                     DGV_MAINTENANCE_LIST.DataSource = TblM4_INVENTORY_ITEMBRAND1BindingSource
                     LLBL_RECORDSFOUND.Text = DGV_MAINTENANCE_LIST.RowCount
@@ -277,18 +277,18 @@ Public Class FRM_SETTINGS
                     GRP_BRANDS.Enabled = False
                     CB_MAINTENANCE_SELECTION.Enabled = True
                     'category
-                ElseIf GRP_CATEGORY.Visible = True Then
-                    TblM4_INVENTORY_CATEGORYTableAdapter.IQ_INVENTORY_CATEGORY(RandomCode, WTXT_CATEGORY_NAME.Text, If(RGB_CATEGORY_ACTIVE.Checked = True, 1, 0), EMP_NO, "")
-                    TblM4_INVENTORY_CATEGORY1TableAdapter.Fill(DS_PROPERTYDB.tblM4_INVENTORY_CATEGORY1, WTXT_SEARCH.Text)
-                    DGV_MAINTENANCE_LIST.DataSource = TblM4_INVENTORY_CATEGORY1BindingSource
-                    LLBL_RECORDSFOUND.Text = DGV_MAINTENANCE_LIST.RowCount
-                    GRP_CATEGORY.Enabled = False
-                    CB_MAINTENANCE_SELECTION.Enabled = True
-                    WTXT_CATEGORY_NAME.Clear()
+                    'ElseIf GRP_CATEGORY.Visible = True Then
+                    '    TblM4_INVENTORY_CATEGORYTableAdapter.IQ_INVENTORY_CATEGORY(RandomCode, WTXT_CATEGORY_NAME.Text, If(RGB_CATEGORY_ACTIVE.Checked = True, 1, 0), EMP_NO)
+                    '    TblM4_INVENTORY_CATEGORY1TableAdapter.Fill(DS_PROPERTYDB.tblM4_INVENTORY_CATEGORY1, WTXT_SEARCH.Text)
+                    '    DGV_MAINTENANCE_LIST.DataSource = TblM4_INVENTORY_CATEGORY1BindingSource
+                    '    LLBL_RECORDSFOUND.Text = DGV_MAINTENANCE_LIST.RowCount
+                    '    GRP_CATEGORY.Enabled = False
+                    '    CB_MAINTENANCE_SELECTION.Enabled = True
+                    '    WTXT_CATEGORY_NAME.Clear()
                     'sub category
                 ElseIf GRP_SUB_CATEGORY.Visible = True Then
                     SPM4_SC_CODE_GENERATORTableAdapter.Fill(DS_STOREDPROC.SPM4_SC_CODE_GENERATOR)
-                    TblM4_INVENTORY_SUB_CATEGORYTableAdapter.IQ_INVENTORY_SUB_CATEGORY(SCCODETextBox.Text, CB_CATEGORYNAME.SelectedValue, WTXT_SUBCATEGORY_NAME.Text, If(RGB_SUB_CATEGORY_ACTIVE.Checked = True, 1, 0), EMP_NO)
+                    '    TblM4_INVENTORY_SUB_CATEGORYTableAdapter.IQ_INVENTORY_SUB_CATEGORY(SCCODETextBox.Text, CB_CATEGORYNAME.SelectedValue, WTXT_SUBCATEGORY_NAME.Text, If(RGB_SUB_CATEGORY_ACTIVE.Checked = True, 1, 0))
                     TblM4_CATEGORY_AND_SUBTableAdapter.Fill(DS_PROPERTYDB.tblM4_CATEGORY_AND_SUB, WTXT_SEARCH.Text)
                     DGV_MAINTENANCE_LIST.DataSource = TblM4_CATEGORY_AND_SUBBindingSource
                     LLBL_RECORDSFOUND.Text = DGV_MAINTENANCE_LIST.RowCount
@@ -308,13 +308,13 @@ Public Class FRM_SETTINGS
                     GRP_BRANDS.Enabled = False
                     CB_MAINTENANCE_SELECTION.Enabled = True
                     'category
-                ElseIf GRP_CATEGORY.Visible = True Then
-                    TblM4_INVENTORY_CATEGORYTableAdapter.UQ_INVENTORY_CATEGORY(WTXT_CATEGORY_NAME.Text, If(RGB_CATEGORY_ACTIVE.Checked = True, 1, 0), EMP_NO, MAINTENANCEIDHOLD)
-                    TblM4_INVENTORY_CATEGORY1TableAdapter.Fill(DS_PROPERTYDB.tblM4_INVENTORY_CATEGORY1, WTXT_SEARCH.Text)
-                    DGV_MAINTENANCE_LIST.DataSource = TblM4_INVENTORY_CATEGORY1BindingSource
-                    LLBL_RECORDSFOUND.Text = DGV_MAINTENANCE_LIST.RowCount
-                    GRP_CATEGORY.Enabled = False
-                    CB_MAINTENANCE_SELECTION.Enabled = True
+                    'ElseIf GRP_CATEGORY.Visible = True Then
+                    '    TblM4_INVENTORY_CATEGORYTableAdapter.UQ_INVENTORY_CATEGORY(WTXT_CATEGORY_NAME.Text, If(RGB_CATEGORY_ACTIVE.Checked = True, 1, 0), EMP_NO, MAINTENANCEIDHOLD)
+                    '    TblM4_INVENTORY_CATEGORY1TableAdapter.Fill(DS_PROPERTYDB.tblM4_INVENTORY_CATEGORY1, WTXT_SEARCH.Text)
+                    '    DGV_MAINTENANCE_LIST.DataSource = TblM4_INVENTORY_CATEGORY1BindingSource
+                    '    LLBL_RECORDSFOUND.Text = DGV_MAINTENANCE_LIST.RowCount
+                    '    GRP_CATEGORY.Enabled = False
+                    '    CB_MAINTENANCE_SELECTION.Enabled = True
                     'sub category
                 ElseIf GRP_SUB_CATEGORY.Visible = True Then
                     TblM4_INVENTORY_SUB_CATEGORYTableAdapter.UQ_INVENTORY_SUB_CATEGORY(CB_CATEGORYNAME.SelectedValue, WTXT_SUBCATEGORY_NAME.Text, If(RGB_SUB_CATEGORY_ACTIVE.Checked = True, 1, 0), EMP_NO, MAINTENANCEIDHOLD)
@@ -350,14 +350,14 @@ Public Class FRM_SETTINGS
                     MAINTENANCEIDHOLD = dgv1.Rows(e.RowIndex).Cells(0).Value.ToString()
                     WTXT_BRANDNAME.Text = dgv1.Rows(e.RowIndex).Cells(1).Value.ToString()
                     'CATEGORY
-                ElseIf GRP_CATEGORY.Visible = True Then
-                    If dgv1.Rows(e.RowIndex).Cells(3).Value.ToString() = "Active" Then
-                        RGB_CATEGORY_ACTIVE.Checked = True
-                    Else
-                        RGB_CATEGORY_INACTIVE.Checked = True
-                    End If
-                    MAINTENANCEIDHOLD = dgv1.Rows(e.RowIndex).Cells(0).Value.ToString()
-                    WTXT_CATEGORY_NAME.Text = dgv1.Rows(e.RowIndex).Cells(1).Value.ToString()
+                    'ElseIf GRP_CATEGORY.Visible = True Then
+                    '    If dgv1.Rows(e.RowIndex).Cells(3).Value.ToString() = "Active" Then
+                    '        RGB_CATEGORY_ACTIVE.Checked = True
+                    '    Else
+                    '        RGB_CATEGORY_INACTIVE.Checked = True
+                    '    End If
+                    '    MAINTENANCEIDHOLD = dgv1.Rows(e.RowIndex).Cells(0).Value.ToString()
+                    '    WTXT_CATEGORY_NAME.Text = dgv1.Rows(e.RowIndex).Cells(1).Value.ToString()
                     'SUB CATEGORY
                 ElseIf GRP_SUB_CATEGORY.Visible = True Then
                     If dgv1.Rows(e.RowIndex).Cells(4).Value.ToString() = "Active" Then
@@ -387,7 +387,7 @@ Public Class FRM_SETTINGS
         Else
             PB_MAINTENANCE_CLEAR.Visible = True
         End If
-        TblM4_INVENTORY_CATEGORY1TableAdapter.Fill(DS_PROPERTYDB.tblM4_INVENTORY_CATEGORY1, WTXT_SEARCH.Text)
+        TblM4_INVENTORY_CATEGORY1TableAdapter.Fill(DS_PROPERTYDB.tblM4_INVENTORY_CATEGORY1, WTXT_SEARCH.Text, DIVISION_NO)
     End Sub
 
     Private Sub BTN_ADD_SUBCATEGORY_Click(sender As Object, e As EventArgs) Handles BTN_ADD_CATEGORY.Click

@@ -23,8 +23,8 @@ Partial Class FRM_LOCATION
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PNL = New System.Windows.Forms.Panel()
         Me.BTN_SELECTION_CLOSE = New System.Windows.Forms.Button()
         Me.Label39 = New System.Windows.Forms.Label()
@@ -32,6 +32,14 @@ Partial Class FRM_LOCATION
         Me.BTN_CLOSE = New System.Windows.Forms.Button()
         Me.LLBL_INVENTORY_VIEW_REPORT = New System.Windows.Forms.LinkLabel()
         Me.DGV_ITEMS_LIST = New System.Windows.Forms.DataGridView()
+        Me.ItemCodeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CategoryDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SubCategoryDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.BrandDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SerialNoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ItemDescriptionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ItemsLocationDataGridViewBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DS_CUSTOM = New PRA_PIS.DS_CUSTOM()
         Me.SPM4ITEMSLOCATIONBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DS_STOREDPROC = New PRA_PIS.DS_STOREDPROC()
         Me.DGV_ITEMS_LOCATION = New System.Windows.Forms.DataGridView()
@@ -42,7 +50,6 @@ Partial Class FRM_LOCATION
         Me.Serial = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ItemDescription = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.AssignItemsLocationDataGridViewBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DS_CUSTOM = New PRA_PIS.DS_CUSTOM()
         Me.SPM4ITEMSINLOCATIONBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.RectangleShape4 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RectangleShape2 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
@@ -67,12 +74,14 @@ Partial Class FRM_LOCATION
         Me.DS_PROPERTYDB = New PRA_PIS.DS_PROPERTYDB()
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
-        Me.BTN_LOC_DONE = New System.Windows.Forms.Button()
+        Me.BTN_LOC_SAVE = New System.Windows.Forms.Button()
         Me.PNL_LOCATION_MAIN = New System.Windows.Forms.Panel()
+        Me.BTN_LOC_CANCEL = New System.Windows.Forms.Button()
         Me.CHK_SHOW_ALL_ITEMS = New System.Windows.Forms.CheckBox()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.ShapeContainer3 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
+        Me.RectangleShape3 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.SpM4_ITEMS_LOCATIONTableAdapter = New PRA_PIS.DS_STOREDPROCTableAdapters.SPM4_ITEMS_LOCATIONTableAdapter()
         Me.TblM4ITEMSDEFLOCATIONBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TblM4ITEMSLOCATIONBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -83,20 +92,14 @@ Partial Class FRM_LOCATION
         Me.SpM4_ITEMS_IN_LOCATIONTableAdapter = New PRA_PIS.DS_STOREDPROCTableAdapters.SPM4_ITEMS_IN_LOCATIONTableAdapter()
         Me.TblM4_INVENTORY_ITEMS_DEFLOCATIONTableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.tblM4_INVENTORY_ITEMS_DEFLOCATIONTableAdapter()
         Me.TblM4_INVENTORY_ITEMS_LOCATIONTableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.tblM4_INVENTORY_ITEMS_LOCATIONTableAdapter()
-        Me.ItemsLocationDataGridViewBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.ItemCodeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CategoryDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.SubCategoryDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.BrandDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.SerialNoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ItemDescriptionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PNL.SuspendLayout()
         CType(Me.DGV_ITEMS_LIST, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ItemsLocationDataGridViewBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DS_CUSTOM, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SPM4ITEMSLOCATIONBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DS_STOREDPROC, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DGV_ITEMS_LOCATION, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AssignItemsLocationDataGridViewBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DS_CUSTOM, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SPM4ITEMSINLOCATIONBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PB_INVENTORY_SEARCH, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -110,7 +113,6 @@ Partial Class FRM_LOCATION
         CType(Me.TblM4ITEMSLOCATIONBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SPM4INVENTORYDGVLISTBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TblM4ITEMSBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ItemsLocationDataGridViewBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PNL
@@ -210,14 +212,14 @@ Partial Class FRM_LOCATION
         Me.DGV_ITEMS_LIST.AllowUserToResizeRows = False
         Me.DGV_ITEMS_LIST.AutoGenerateColumns = False
         Me.DGV_ITEMS_LIST.BackgroundColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGV_ITEMS_LIST.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Century Gothic", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGV_ITEMS_LIST.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.DGV_ITEMS_LIST.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGV_ITEMS_LIST.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ItemCodeDataGridViewTextBoxColumn, Me.CategoryDataGridViewTextBoxColumn, Me.SubCategoryDataGridViewTextBoxColumn, Me.BrandDataGridViewTextBoxColumn, Me.SerialNoDataGridViewTextBoxColumn, Me.ItemDescriptionDataGridViewTextBoxColumn})
         Me.DGV_ITEMS_LIST.DataSource = Me.ItemsLocationDataGridViewBindingSource
@@ -228,6 +230,58 @@ Partial Class FRM_LOCATION
         Me.DGV_ITEMS_LIST.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DGV_ITEMS_LIST.Size = New System.Drawing.Size(498, 408)
         Me.DGV_ITEMS_LIST.TabIndex = 1456
+        '
+        'ItemCodeDataGridViewTextBoxColumn
+        '
+        Me.ItemCodeDataGridViewTextBoxColumn.DataPropertyName = "ItemCode"
+        Me.ItemCodeDataGridViewTextBoxColumn.HeaderText = "Item Code"
+        Me.ItemCodeDataGridViewTextBoxColumn.Name = "ItemCodeDataGridViewTextBoxColumn"
+        Me.ItemCodeDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'CategoryDataGridViewTextBoxColumn
+        '
+        Me.CategoryDataGridViewTextBoxColumn.DataPropertyName = "Category"
+        Me.CategoryDataGridViewTextBoxColumn.HeaderText = "Category"
+        Me.CategoryDataGridViewTextBoxColumn.Name = "CategoryDataGridViewTextBoxColumn"
+        Me.CategoryDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'SubCategoryDataGridViewTextBoxColumn
+        '
+        Me.SubCategoryDataGridViewTextBoxColumn.DataPropertyName = "SubCategory"
+        Me.SubCategoryDataGridViewTextBoxColumn.HeaderText = "Sub Category"
+        Me.SubCategoryDataGridViewTextBoxColumn.Name = "SubCategoryDataGridViewTextBoxColumn"
+        Me.SubCategoryDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'BrandDataGridViewTextBoxColumn
+        '
+        Me.BrandDataGridViewTextBoxColumn.DataPropertyName = "Brand"
+        Me.BrandDataGridViewTextBoxColumn.HeaderText = "Brand"
+        Me.BrandDataGridViewTextBoxColumn.Name = "BrandDataGridViewTextBoxColumn"
+        Me.BrandDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'SerialNoDataGridViewTextBoxColumn
+        '
+        Me.SerialNoDataGridViewTextBoxColumn.DataPropertyName = "SerialNo"
+        Me.SerialNoDataGridViewTextBoxColumn.HeaderText = "Serial No"
+        Me.SerialNoDataGridViewTextBoxColumn.Name = "SerialNoDataGridViewTextBoxColumn"
+        Me.SerialNoDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'ItemDescriptionDataGridViewTextBoxColumn
+        '
+        Me.ItemDescriptionDataGridViewTextBoxColumn.DataPropertyName = "ItemDescription"
+        Me.ItemDescriptionDataGridViewTextBoxColumn.HeaderText = "Item Description"
+        Me.ItemDescriptionDataGridViewTextBoxColumn.Name = "ItemDescriptionDataGridViewTextBoxColumn"
+        Me.ItemDescriptionDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'ItemsLocationDataGridViewBindingSource
+        '
+        Me.ItemsLocationDataGridViewBindingSource.DataMember = "ItemsLocationDataGridView"
+        Me.ItemsLocationDataGridViewBindingSource.DataSource = Me.DS_CUSTOM
+        '
+        'DS_CUSTOM
+        '
+        Me.DS_CUSTOM.DataSetName = "DS_CUSTOM"
+        Me.DS_CUSTOM.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'SPM4ITEMSLOCATIONBindingSource
         '
@@ -246,14 +300,14 @@ Partial Class FRM_LOCATION
         Me.DGV_ITEMS_LOCATION.AllowUserToResizeColumns = False
         Me.DGV_ITEMS_LOCATION.AllowUserToResizeRows = False
         Me.DGV_ITEMS_LOCATION.BackgroundColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Century Gothic", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGV_ITEMS_LOCATION.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Century Gothic", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGV_ITEMS_LOCATION.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle6
         Me.DGV_ITEMS_LOCATION.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGV_ITEMS_LOCATION.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ItemCode, Me.Category, Me.SubCategory, Me.Brand, Me.Serial, Me.ItemDescription})
         Me.DGV_ITEMS_LOCATION.Location = New System.Drawing.Point(580, 96)
@@ -311,11 +365,6 @@ Partial Class FRM_LOCATION
         Me.AssignItemsLocationDataGridViewBindingSource.DataMember = "AssignItemsLocationDataGridView"
         Me.AssignItemsLocationDataGridViewBindingSource.DataSource = Me.DS_CUSTOM
         '
-        'DS_CUSTOM
-        '
-        Me.DS_CUSTOM.DataSetName = "DS_CUSTOM"
-        Me.DS_CUSTOM.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'SPM4ITEMSINLOCATIONBindingSource
         '
         Me.SPM4ITEMSINLOCATIONBindingSource.DataMember = "SPM4_ITEMS_IN_LOCATION"
@@ -329,9 +378,9 @@ Partial Class FRM_LOCATION
         Me.RectangleShape4.Cursor = System.Windows.Forms.Cursors.Arrow
         Me.RectangleShape4.FillColor = System.Drawing.SystemColors.HighlightText
         Me.RectangleShape4.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
-        Me.RectangleShape4.Location = New System.Drawing.Point(1002, 508)
+        Me.RectangleShape4.Location = New System.Drawing.Point(991, 508)
         Me.RectangleShape4.Name = "RectangleShape4"
-        Me.RectangleShape4.Size = New System.Drawing.Size(86, 45)
+        Me.RectangleShape4.Size = New System.Drawing.Size(97, 45)
         '
         'RectangleShape2
         '
@@ -606,32 +655,33 @@ Partial Class FRM_LOCATION
         Me.LinkLabel2.TabStop = True
         Me.LinkLabel2.Text = "Preferred items in Location :"
         '
-        'BTN_LOC_DONE
+        'BTN_LOC_SAVE
         '
-        Me.BTN_LOC_DONE.BackColor = System.Drawing.Color.White
-        Me.BTN_LOC_DONE.FlatAppearance.BorderColor = System.Drawing.Color.LightSeaGreen
-        Me.BTN_LOC_DONE.FlatAppearance.BorderSize = 0
-        Me.BTN_LOC_DONE.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
-        Me.BTN_LOC_DONE.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen
-        Me.BTN_LOC_DONE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BTN_LOC_DONE.Font = New System.Drawing.Font("Century Gothic", 6.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTN_LOC_DONE.Image = Global.PRA_PIS.My.Resources.Resources.outline_assignment_turned_in_black_18dp
-        Me.BTN_LOC_DONE.Location = New System.Drawing.Point(1004, 510)
-        Me.BTN_LOC_DONE.Name = "BTN_LOC_DONE"
-        Me.BTN_LOC_DONE.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.BTN_LOC_DONE.Size = New System.Drawing.Size(83, 42)
-        Me.BTN_LOC_DONE.TabIndex = 1474
-        Me.BTN_LOC_DONE.Text = "SAVE"
-        Me.BTN_LOC_DONE.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.BTN_LOC_DONE.UseVisualStyleBackColor = False
+        Me.BTN_LOC_SAVE.BackColor = System.Drawing.Color.White
+        Me.BTN_LOC_SAVE.FlatAppearance.BorderColor = System.Drawing.Color.LightSeaGreen
+        Me.BTN_LOC_SAVE.FlatAppearance.BorderSize = 0
+        Me.BTN_LOC_SAVE.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.BTN_LOC_SAVE.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen
+        Me.BTN_LOC_SAVE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BTN_LOC_SAVE.Font = New System.Drawing.Font("Century Gothic", 6.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTN_LOC_SAVE.Image = Global.PRA_PIS.My.Resources.Resources.outline_check_black_18dp
+        Me.BTN_LOC_SAVE.Location = New System.Drawing.Point(901, 509)
+        Me.BTN_LOC_SAVE.Name = "BTN_LOC_SAVE"
+        Me.BTN_LOC_SAVE.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.BTN_LOC_SAVE.Size = New System.Drawing.Size(83, 42)
+        Me.BTN_LOC_SAVE.TabIndex = 1474
+        Me.BTN_LOC_SAVE.Text = "SAVE"
+        Me.BTN_LOC_SAVE.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.BTN_LOC_SAVE.UseVisualStyleBackColor = False
         '
         'PNL_LOCATION_MAIN
         '
         Me.PNL_LOCATION_MAIN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PNL_LOCATION_MAIN.Controls.Add(Me.BTN_LOC_CANCEL)
         Me.PNL_LOCATION_MAIN.Controls.Add(Me.CHK_SHOW_ALL_ITEMS)
         Me.PNL_LOCATION_MAIN.Controls.Add(Me.PictureBox3)
         Me.PNL_LOCATION_MAIN.Controls.Add(Me.PictureBox1)
-        Me.PNL_LOCATION_MAIN.Controls.Add(Me.BTN_LOC_DONE)
+        Me.PNL_LOCATION_MAIN.Controls.Add(Me.BTN_LOC_SAVE)
         Me.PNL_LOCATION_MAIN.Controls.Add(Me.LinkLabel2)
         Me.PNL_LOCATION_MAIN.Controls.Add(Me.PictureBox2)
         Me.PNL_LOCATION_MAIN.Controls.Add(Me.WTXT_LIST_ITEM_SEARCH)
@@ -652,6 +702,25 @@ Partial Class FRM_LOCATION
         Me.PNL_LOCATION_MAIN.Name = "PNL_LOCATION_MAIN"
         Me.PNL_LOCATION_MAIN.Size = New System.Drawing.Size(1101, 559)
         Me.PNL_LOCATION_MAIN.TabIndex = 1475
+        '
+        'BTN_LOC_CANCEL
+        '
+        Me.BTN_LOC_CANCEL.BackColor = System.Drawing.Color.White
+        Me.BTN_LOC_CANCEL.FlatAppearance.BorderColor = System.Drawing.Color.LightSeaGreen
+        Me.BTN_LOC_CANCEL.FlatAppearance.BorderSize = 0
+        Me.BTN_LOC_CANCEL.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.BTN_LOC_CANCEL.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen
+        Me.BTN_LOC_CANCEL.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BTN_LOC_CANCEL.Font = New System.Drawing.Font("Century Gothic", 6.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTN_LOC_CANCEL.Image = Global.PRA_PIS.My.Resources.Resources.outline_cancel_black_18dp
+        Me.BTN_LOC_CANCEL.Location = New System.Drawing.Point(992, 510)
+        Me.BTN_LOC_CANCEL.Name = "BTN_LOC_CANCEL"
+        Me.BTN_LOC_CANCEL.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.BTN_LOC_CANCEL.Size = New System.Drawing.Size(96, 42)
+        Me.BTN_LOC_CANCEL.TabIndex = 1479
+        Me.BTN_LOC_CANCEL.Text = "CANCEL"
+        Me.BTN_LOC_CANCEL.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.BTN_LOC_CANCEL.UseVisualStyleBackColor = False
         '
         'CHK_SHOW_ALL_ITEMS
         '
@@ -695,10 +764,22 @@ Partial Class FRM_LOCATION
         Me.ShapeContainer3.Location = New System.Drawing.Point(0, 0)
         Me.ShapeContainer3.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer3.Name = "ShapeContainer3"
-        Me.ShapeContainer3.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape4, Me.RectangleShape1, Me.RectangleShape2, Me.RECT_PRCANCELEDIT})
+        Me.ShapeContainer3.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape3, Me.RectangleShape4, Me.RectangleShape1, Me.RectangleShape2, Me.RECT_PRCANCELEDIT})
         Me.ShapeContainer3.Size = New System.Drawing.Size(1099, 557)
         Me.ShapeContainer3.TabIndex = 1472
         Me.ShapeContainer3.TabStop = False
+        '
+        'RectangleShape3
+        '
+        Me.RectangleShape3.BorderColor = System.Drawing.Color.LightSeaGreen
+        Me.RectangleShape3.BorderWidth = 2
+        Me.RectangleShape3.CornerRadius = 5
+        Me.RectangleShape3.Cursor = System.Windows.Forms.Cursors.Arrow
+        Me.RectangleShape3.FillColor = System.Drawing.SystemColors.HighlightText
+        Me.RectangleShape3.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
+        Me.RectangleShape3.Location = New System.Drawing.Point(899, 507)
+        Me.RectangleShape3.Name = "RectangleShape3"
+        Me.RectangleShape3.Size = New System.Drawing.Size(86, 45)
         '
         'SpM4_ITEMS_LOCATIONTableAdapter
         '
@@ -735,10 +816,12 @@ Partial Class FRM_LOCATION
         Me.TableAdapterManager.tblM4_INVENTORY_ITEMBRAND1TableAdapter = Nothing
         Me.TableAdapterManager.tblM4_INVENTORY_ITEMBRANDTableAdapter = Nothing
         Me.TableAdapterManager.tblM4_INVENTORY_ITEMS_DEFLOCATIONTableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_INVENTORY_ITEMS_DISTRIBUTIONTableAdapter = Nothing
         Me.TableAdapterManager.tblM4_INVENTORY_ITEMS_LOCATIONTableAdapter = Nothing
         Me.TableAdapterManager.tblM4_INVENTORY_ITEMS_PROPERTYTableAdapter = Nothing
         Me.TableAdapterManager.tblM4_INVENTORY_ITEMSTableAdapter = Nothing
         Me.TableAdapterManager.tblM4_INVENTORY_SUB_CATEGORYTableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_INVENTORY_TYPETableAdapter = Nothing
         Me.TableAdapterManager.tblM4_ITEMBRAND1TableAdapter = Nothing
         Me.TableAdapterManager.tblM4_PURCHASEREQUEST_ACCEPTEDTableAdapter = Nothing
         Me.TableAdapterManager.tblM4_PURCHASEREQUEST_CANCELEDTableAdapter = Nothing
@@ -766,53 +849,6 @@ Partial Class FRM_LOCATION
         '
         Me.TblM4_INVENTORY_ITEMS_LOCATIONTableAdapter.ClearBeforeFill = True
         '
-        'ItemsLocationDataGridViewBindingSource
-        '
-        Me.ItemsLocationDataGridViewBindingSource.DataMember = "ItemsLocationDataGridView"
-        Me.ItemsLocationDataGridViewBindingSource.DataSource = Me.DS_CUSTOM
-        '
-        'ItemCodeDataGridViewTextBoxColumn
-        '
-        Me.ItemCodeDataGridViewTextBoxColumn.DataPropertyName = "ItemCode"
-        Me.ItemCodeDataGridViewTextBoxColumn.HeaderText = "ItemCode"
-        Me.ItemCodeDataGridViewTextBoxColumn.Name = "ItemCodeDataGridViewTextBoxColumn"
-        Me.ItemCodeDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'CategoryDataGridViewTextBoxColumn
-        '
-        Me.CategoryDataGridViewTextBoxColumn.DataPropertyName = "Category"
-        Me.CategoryDataGridViewTextBoxColumn.HeaderText = "Category"
-        Me.CategoryDataGridViewTextBoxColumn.Name = "CategoryDataGridViewTextBoxColumn"
-        Me.CategoryDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'SubCategoryDataGridViewTextBoxColumn
-        '
-        Me.SubCategoryDataGridViewTextBoxColumn.DataPropertyName = "SubCategory"
-        Me.SubCategoryDataGridViewTextBoxColumn.HeaderText = "SubCategory"
-        Me.SubCategoryDataGridViewTextBoxColumn.Name = "SubCategoryDataGridViewTextBoxColumn"
-        Me.SubCategoryDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'BrandDataGridViewTextBoxColumn
-        '
-        Me.BrandDataGridViewTextBoxColumn.DataPropertyName = "Brand"
-        Me.BrandDataGridViewTextBoxColumn.HeaderText = "Brand"
-        Me.BrandDataGridViewTextBoxColumn.Name = "BrandDataGridViewTextBoxColumn"
-        Me.BrandDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'SerialNoDataGridViewTextBoxColumn
-        '
-        Me.SerialNoDataGridViewTextBoxColumn.DataPropertyName = "SerialNo"
-        Me.SerialNoDataGridViewTextBoxColumn.HeaderText = "SerialNo"
-        Me.SerialNoDataGridViewTextBoxColumn.Name = "SerialNoDataGridViewTextBoxColumn"
-        Me.SerialNoDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'ItemDescriptionDataGridViewTextBoxColumn
-        '
-        Me.ItemDescriptionDataGridViewTextBoxColumn.DataPropertyName = "ItemDescription"
-        Me.ItemDescriptionDataGridViewTextBoxColumn.HeaderText = "ItemDescription"
-        Me.ItemDescriptionDataGridViewTextBoxColumn.Name = "ItemDescriptionDataGridViewTextBoxColumn"
-        Me.ItemDescriptionDataGridViewTextBoxColumn.ReadOnly = True
-        '
         'FRM_LOCATION
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -831,11 +867,12 @@ Partial Class FRM_LOCATION
         Me.PNL.ResumeLayout(False)
         Me.PNL.PerformLayout()
         CType(Me.DGV_ITEMS_LIST, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ItemsLocationDataGridViewBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DS_CUSTOM, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SPM4ITEMSLOCATIONBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DS_STOREDPROC, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DGV_ITEMS_LOCATION, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AssignItemsLocationDataGridViewBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DS_CUSTOM, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SPM4ITEMSINLOCATIONBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PB_INVENTORY_SEARCH, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -850,7 +887,6 @@ Partial Class FRM_LOCATION
         CType(Me.TblM4ITEMSLOCATIONBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SPM4INVENTORYDGVLISTBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TblM4ITEMSBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ItemsLocationDataGridViewBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -888,7 +924,7 @@ Partial Class FRM_LOCATION
     Friend WithEvents LinkLabel2 As LinkLabel
     Friend WithEvents BTN_LOCATION_LIST As Button
     Friend WithEvents RectangleShape4 As PowerPacks.RectangleShape
-    Friend WithEvents BTN_LOC_DONE As Button
+    Friend WithEvents BTN_LOC_SAVE As Button
     Friend WithEvents RectangleShape6 As PowerPacks.RectangleShape
     Friend WithEvents BTN_ASSIGN_ITEM_LOCATION As Button
     Friend WithEvents TblM4ITEMSBindingSource As BindingSource
@@ -918,11 +954,13 @@ Partial Class FRM_LOCATION
     Friend WithEvents Brand As DataGridViewTextBoxColumn
     Friend WithEvents Serial As DataGridViewTextBoxColumn
     Friend WithEvents ItemDescription As DataGridViewTextBoxColumn
+    Friend WithEvents ItemsLocationDataGridViewBindingSource As BindingSource
     Friend WithEvents ItemCodeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents CategoryDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents SubCategoryDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents BrandDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents SerialNoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ItemDescriptionDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents ItemsLocationDataGridViewBindingSource As BindingSource
+    Friend WithEvents BTN_LOC_CANCEL As Button
+    Friend WithEvents RectangleShape3 As PowerPacks.RectangleShape
 End Class

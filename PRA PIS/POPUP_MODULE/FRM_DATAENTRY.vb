@@ -61,9 +61,26 @@ Public Class FRM_DATAENTRY
             dtpTrue = False
         End Try
         If dtpTrue Then
+            'If DATEPERIODBOOL Then
+            '    For i = 0 To 1
+            '        Dim dt As DateTime = dtpDate.Text
+            '        TXTDATE.Text = dt.ToString("MMM dd, yyyy")
+
+            '        If i = 1 Then
+            '            DATEPERIOD = DATEPERIOD & " - " & TXTDATE.Text
+            '        Else
+            '            TXTDATE.Text = DATEPERIOD
+            '        End If
+            '        MTB_DATEFrom.Clear()
+            '        MTB_DATEFrom.Select()
+            '    Next
+            '    Me.Close()
+            'Else
             Dim dt As DateTime = dtpDate.Text
             TXTDATE.Text = dt.ToString("MMM dd, yyyy")
-            ' TXTDATE.Text = dtpDate.Text
+            Me.Close()
+            'End If
+
 
             If Me.A_CLOSEPROGRAMTableAdapter.UDFV1_DOB_AGE(TXTDATE.Text) < 0 Then
                 MsgBox("INVALID DATE" & vbNewLine & "DATE CANNOT BE GREATER THAN TODAY", vbCritical, "DATE INPUT")
@@ -87,7 +104,7 @@ Public Class FRM_DATAENTRY
             '        'FRM_CHECKLIST.WTXT_AGE.Text = Me.A_CLOSEPROGRAMTableAdapter.UDFV1_DOB_AGE(TXTDATE.Text)
             '    End If
             'End If
-            Me.Close()
+
         Else
             MsgBox("Please check date format!" + vbNewLine + vbNewLine + "Date Format must be in (Month/Day/Year)", vbOKOnly, "INVALID DATE FORMAT")
             dtpTrue = False

@@ -24,19 +24,19 @@ Partial Class FRM_ADDITIONAL_CATEGORIZATION
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.BTN_SAVE = New System.Windows.Forms.Button()
-        Me.DGV_CLOSE = New System.Windows.Forms.Button()
         Me.LBL_ADDITIONAL_CATEGORIZATION = New System.Windows.Forms.Label()
         Me.BTN_Minimize = New System.Windows.Forms.Button()
         Me.PNL = New System.Windows.Forms.Panel()
+        Me.BTN_CATEGORIZATION_CLOSE = New System.Windows.Forms.Button()
         Me.BTN_CLOSE = New System.Windows.Forms.Button()
         Me.GRP_CATEGORY = New System.Windows.Forms.GroupBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.WTXT_CATEGORY_NAME = New PRA_PIS.WatermarkTextBox()
+        Me.WTXT_GRP_CAT_NAME = New PRA_PIS.WatermarkTextBox()
         Me.ShapeContainer2 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
         Me.RECT_CATEGORY_NAME = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
-        Me.GRP_BRANDS = New System.Windows.Forms.GroupBox()
+        Me.GRP_BRAND = New System.Windows.Forms.GroupBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.WTXT_BRANDNAME = New PRA_PIS.WatermarkTextBox()
+        Me.WTXT_GRP_BRAND_BRANDNAME = New PRA_PIS.WatermarkTextBox()
         Me.ShapeContainer4 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
         Me.RECT_BRAND_NAME = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.GRP_SUB_CATEGORY_ADMIN = New System.Windows.Forms.GroupBox()
@@ -77,19 +77,73 @@ Partial Class FRM_ADDITIONAL_CATEGORIZATION
         Me.RectangleShape3 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.TblM4_INVENTORY_TYPETableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.tblM4_INVENTORY_TYPETableAdapter()
         Me.GRP_SUB_CATEGORY = New System.Windows.Forms.GroupBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-        Me.Label11 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.WatermarkTextBox2 = New PRA_PIS.WatermarkTextBox()
+        Me.CB_GRP_SUB_CAT_NAME = New System.Windows.Forms.ComboBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.WTXT_GRP_SUB_SUBCAT_NAME = New PRA_PIS.WatermarkTextBox()
         Me.ShapeContainer6 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
-        Me.RectangleShape6 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RectangleShape7 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RectangleShape8 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.SpM4_ITEM_CATEGORY_CODE_GENERATORTableAdapter = New PRA_PIS.DS_STOREDPROCTableAdapters.SPM4_ITEM_CATEGORY_CODE_GENERATORTableAdapter()
+        Me.SpM4_ITEM_BRAND_CODE_GENERATORTableAdapter = New PRA_PIS.DS_STOREDPROCTableAdapters.SPM4_ITEM_BRAND_CODE_GENERATORTableAdapter()
+        Me.SpM4_ITEM_SUB_CATEGORY_CODE_GENERATORTableAdapter = New PRA_PIS.DS_STOREDPROCTableAdapters.SPM4_ITEM_SUB_CATEGORY_CODE_GENERATORTableAdapter()
+        Me.GRP_SIZE = New System.Windows.Forms.GroupBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.WTXT_GRP_SIZE = New PRA_PIS.WatermarkTextBox()
+        Me.ShapeContainer7 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
+        Me.RectangleShape6 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.GRP_COLOR = New System.Windows.Forms.GroupBox()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.WTXT_GRP_COLOR = New PRA_PIS.WatermarkTextBox()
+        Me.ShapeContainer8 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
+        Me.RectangleShape9 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.GRP_LENGTH = New System.Windows.Forms.GroupBox()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.WTXT_GRP_LENGTH = New PRA_PIS.WatermarkTextBox()
+        Me.ShapeContainer9 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
+        Me.RectangleShape10 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.GRP_OTHER_DESC = New System.Windows.Forms.GroupBox()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.WTXT_GRP_OTHER_DESC = New PRA_PIS.WatermarkTextBox()
+        Me.ShapeContainer10 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
+        Me.RectangleShape11 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.TBLM4_INV_ITEMS_LENG_MAINBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TBLM4_INV_ITEMS_LENG_MAINTableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.TBLM4_INV_ITEMS_LENG_MAINTableAdapter()
+        Me.TBLM4_INV_ITEMS_OTHERS_MAINBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TBLM4_INV_ITEMS_OTHERS_MAINTableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.TBLM4_INV_ITEMS_OTHERS_MAINTableAdapter()
+        Me.GRP_ITEM_NAME = New System.Windows.Forms.GroupBox()
+        Me.CB_INV_CAT = New System.Windows.Forms.ComboBox()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.CB_INV_SC = New System.Windows.Forms.ComboBox()
+        Me.TblM4INVENTORYSUBCATEGORYBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.WTXT_ITEM_NAME = New PRA_PIS.WatermarkTextBox()
+        Me.ShapeContainer11 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
+        Me.RectangleShape14 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.RectangleShape13 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.RectangleShape12 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.TBLM4_INV_ITEMS_NAME_MAINTableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.TBLM4_INV_ITEMS_NAME_MAINTableAdapter()
+        Me.TBLM4_INV_ITEMS_NAME_MAINBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TBLM4_INV_ITEMS_COLOR_MAINTableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.TBLM4_INV_ITEMS_COLOR_MAINTableAdapter()
+        Me.TBLM4_INV_ITEMS_COLOR_MAINBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TBLM4_INV_ITEMS_SIZE_MAINBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TBLM4_INV_ITEMS_SIZE_MAINTableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.TBLM4_INV_ITEMS_SIZE_MAINTableAdapter()
+        Me.SPM4_ITEM_COLOR_CODE_GENERATORTableAdapter = New PRA_PIS.DS_STOREDPROCTableAdapters.SPM4_ITEM_COLOR_CODE_GENERATORTableAdapter()
+        Me.SPM4_ITEM_COLOR_CODE_GENERATORBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SPM4_ITEM_LENG_CODE_GENERATORBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SPM4_ITEM_LENG_CODE_GENERATORTableAdapter = New PRA_PIS.DS_STOREDPROCTableAdapters.SPM4_ITEM_LENG_CODE_GENERATORTableAdapter()
+        Me.SPM4_ITEM_NAME_CODE_GENERATORTableAdapter = New PRA_PIS.DS_STOREDPROCTableAdapters.SPM4_ITEM_NAME_CODE_GENERATORTableAdapter()
+        Me.SPM4_ITEM_NAME_CODE_GENERATORBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SPM4_ITEM_OTHERS_CODE_GENERATORTableAdapter = New PRA_PIS.DS_STOREDPROCTableAdapters.SPM4_ITEM_OTHERS_CODE_GENERATORTableAdapter()
+        Me.SPM4_ITEM_OTHERS_CODE_GENERATORBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SPM4_ITEM_SIZE_CODE_GENERATORTableAdapter = New PRA_PIS.DS_STOREDPROCTableAdapters.SPM4_ITEM_SIZE_CODE_GENERATORTableAdapter()
+        Me.SPM4_ITEM_SIZE_CODE_GENERATORBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.FKtblM4INVENTORYITEMStblM4INVENTORYITEMSBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TblM4_INVENTORY_ITEMSTableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.tblM4_INVENTORY_ITEMSTableAdapter()
         Me.PNL.SuspendLayout()
         Me.GRP_CATEGORY.SuspendLayout()
-        Me.GRP_BRANDS.SuspendLayout()
+        Me.GRP_BRAND.SuspendLayout()
         Me.GRP_SUB_CATEGORY_ADMIN.SuspendLayout()
         CType(Me.TblM4INVENTORYTYPEBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DS_PROPERTYDB, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -99,31 +153,34 @@ Partial Class FRM_ADDITIONAL_CATEGORIZATION
         Me.GRP_CATEGORY_ADMIN.SuspendLayout()
         Me.GRP_BRAND_ADMIN.SuspendLayout()
         Me.GRP_SUB_CATEGORY.SuspendLayout()
+        Me.GRP_SIZE.SuspendLayout()
+        Me.GRP_COLOR.SuspendLayout()
+        Me.GRP_LENGTH.SuspendLayout()
+        Me.GRP_OTHER_DESC.SuspendLayout()
+        CType(Me.TBLM4_INV_ITEMS_LENG_MAINBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TBLM4_INV_ITEMS_OTHERS_MAINBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GRP_ITEM_NAME.SuspendLayout()
+        CType(Me.TblM4INVENTORYSUBCATEGORYBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TBLM4_INV_ITEMS_NAME_MAINBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TBLM4_INV_ITEMS_COLOR_MAINBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TBLM4_INV_ITEMS_SIZE_MAINBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SPM4_ITEM_COLOR_CODE_GENERATORBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SPM4_ITEM_LENG_CODE_GENERATORBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SPM4_ITEM_NAME_CODE_GENERATORBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SPM4_ITEM_OTHERS_CODE_GENERATORBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SPM4_ITEM_SIZE_CODE_GENERATORBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.FKtblM4INVENTORYITEMStblM4INVENTORYITEMSBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BTN_SAVE
         '
         Me.BTN_SAVE.Font = New System.Drawing.Font("Century Gothic", 12.75!, System.Drawing.FontStyle.Bold)
-        Me.BTN_SAVE.Location = New System.Drawing.Point(197, 252)
+        Me.BTN_SAVE.Location = New System.Drawing.Point(287, 194)
         Me.BTN_SAVE.Name = "BTN_SAVE"
         Me.BTN_SAVE.Size = New System.Drawing.Size(92, 32)
         Me.BTN_SAVE.TabIndex = 1409
         Me.BTN_SAVE.Text = "SAVE"
         Me.BTN_SAVE.UseVisualStyleBackColor = True
-        '
-        'DGV_CLOSE
-        '
-        Me.DGV_CLOSE.FlatAppearance.BorderColor = System.Drawing.Color.Red
-        Me.DGV_CLOSE.FlatAppearance.BorderSize = 5
-        Me.DGV_CLOSE.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red
-        Me.DGV_CLOSE.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.DGV_CLOSE.Font = New System.Drawing.Font("Century Gothic", 12.75!, System.Drawing.FontStyle.Bold)
-        Me.DGV_CLOSE.Location = New System.Drawing.Point(295, 252)
-        Me.DGV_CLOSE.Name = "DGV_CLOSE"
-        Me.DGV_CLOSE.Size = New System.Drawing.Size(90, 32)
-        Me.DGV_CLOSE.TabIndex = 1410
-        Me.DGV_CLOSE.Text = "CLOSE"
-        Me.DGV_CLOSE.UseVisualStyleBackColor = True
         '
         'LBL_ADDITIONAL_CATEGORIZATION
         '
@@ -145,7 +202,7 @@ Partial Class FRM_ADDITIONAL_CATEGORIZATION
         Me.BTN_Minimize.FlatAppearance.BorderColor = System.Drawing.Color.Teal
         Me.BTN_Minimize.FlatAppearance.BorderSize = 3
         Me.BTN_Minimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BTN_Minimize.Location = New System.Drawing.Point(-4110, 11)
+        Me.BTN_Minimize.Location = New System.Drawing.Point(-4905, 11)
         Me.BTN_Minimize.Margin = New System.Windows.Forms.Padding(5)
         Me.BTN_Minimize.Name = "BTN_Minimize"
         Me.BTN_Minimize.Size = New System.Drawing.Size(47, 45)
@@ -156,6 +213,7 @@ Partial Class FRM_ADDITIONAL_CATEGORIZATION
         'PNL
         '
         Me.PNL.BackColor = System.Drawing.Color.Teal
+        Me.PNL.Controls.Add(Me.BTN_CATEGORIZATION_CLOSE)
         Me.PNL.Controls.Add(Me.LBL_ADDITIONAL_CATEGORIZATION)
         Me.PNL.Controls.Add(Me.BTN_Minimize)
         Me.PNL.Controls.Add(Me.BTN_CLOSE)
@@ -163,8 +221,22 @@ Partial Class FRM_ADDITIONAL_CATEGORIZATION
         Me.PNL.Location = New System.Drawing.Point(0, 0)
         Me.PNL.Margin = New System.Windows.Forms.Padding(5)
         Me.PNL.Name = "PNL"
-        Me.PNL.Size = New System.Drawing.Size(395, 50)
+        Me.PNL.Size = New System.Drawing.Size(388, 50)
         Me.PNL.TabIndex = 1412
+        '
+        'BTN_CATEGORIZATION_CLOSE
+        '
+        Me.BTN_CATEGORIZATION_CLOSE.BackgroundImage = Global.PRA_PIS.My.Resources.Resources.close_icon_white
+        Me.BTN_CATEGORIZATION_CLOSE.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BTN_CATEGORIZATION_CLOSE.FlatAppearance.BorderColor = System.Drawing.Color.Teal
+        Me.BTN_CATEGORIZATION_CLOSE.FlatAppearance.BorderSize = 3
+        Me.BTN_CATEGORIZATION_CLOSE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BTN_CATEGORIZATION_CLOSE.Location = New System.Drawing.Point(352, 9)
+        Me.BTN_CATEGORIZATION_CLOSE.Name = "BTN_CATEGORIZATION_CLOSE"
+        Me.BTN_CATEGORIZATION_CLOSE.Size = New System.Drawing.Size(30, 30)
+        Me.BTN_CATEGORIZATION_CLOSE.TabIndex = 17
+        Me.BTN_CATEGORIZATION_CLOSE.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.BTN_CATEGORIZATION_CLOSE.UseVisualStyleBackColor = True
         '
         'BTN_CLOSE
         '
@@ -174,7 +246,7 @@ Partial Class FRM_ADDITIONAL_CATEGORIZATION
         Me.BTN_CLOSE.FlatAppearance.BorderColor = System.Drawing.Color.Teal
         Me.BTN_CLOSE.FlatAppearance.BorderSize = 3
         Me.BTN_CLOSE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BTN_CLOSE.Location = New System.Drawing.Point(-4063, 10)
+        Me.BTN_CLOSE.Location = New System.Drawing.Point(-4858, 10)
         Me.BTN_CLOSE.Margin = New System.Windows.Forms.Padding(5)
         Me.BTN_CLOSE.Name = "BTN_CLOSE"
         Me.BTN_CLOSE.Size = New System.Drawing.Size(50, 48)
@@ -185,13 +257,12 @@ Partial Class FRM_ADDITIONAL_CATEGORIZATION
         'GRP_CATEGORY
         '
         Me.GRP_CATEGORY.Controls.Add(Me.Label1)
-        Me.GRP_CATEGORY.Controls.Add(Me.WTXT_CATEGORY_NAME)
+        Me.GRP_CATEGORY.Controls.Add(Me.WTXT_GRP_CAT_NAME)
         Me.GRP_CATEGORY.Controls.Add(Me.ShapeContainer2)
-        Me.GRP_CATEGORY.Enabled = False
         Me.GRP_CATEGORY.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GRP_CATEGORY.Location = New System.Drawing.Point(10, 51)
         Me.GRP_CATEGORY.Name = "GRP_CATEGORY"
-        Me.GRP_CATEGORY.Size = New System.Drawing.Size(375, 195)
+        Me.GRP_CATEGORY.Size = New System.Drawing.Size(369, 137)
         Me.GRP_CATEGORY.TabIndex = 1442
         Me.GRP_CATEGORY.TabStop = False
         Me.GRP_CATEGORY.Visible = False
@@ -200,22 +271,22 @@ Partial Class FRM_ADDITIONAL_CATEGORIZATION
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(19, 43)
+        Me.Label1.Location = New System.Drawing.Point(16, 43)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(134, 19)
         Me.Label1.TabIndex = 1430
         Me.Label1.Text = "Category Name"
         '
-        'WTXT_CATEGORY_NAME
+        'WTXT_GRP_CAT_NAME
         '
-        Me.WTXT_CATEGORY_NAME.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.WTXT_CATEGORY_NAME.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.WTXT_CATEGORY_NAME.Location = New System.Drawing.Point(16, 63)
-        Me.WTXT_CATEGORY_NAME.MaxLength = 120
-        Me.WTXT_CATEGORY_NAME.Name = "WTXT_CATEGORY_NAME"
-        Me.WTXT_CATEGORY_NAME.Size = New System.Drawing.Size(339, 24)
-        Me.WTXT_CATEGORY_NAME.TabIndex = 1428
-        Me.WTXT_CATEGORY_NAME.Watermark = Nothing
+        Me.WTXT_GRP_CAT_NAME.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.WTXT_GRP_CAT_NAME.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.WTXT_GRP_CAT_NAME.Location = New System.Drawing.Point(13, 65)
+        Me.WTXT_GRP_CAT_NAME.MaxLength = 120
+        Me.WTXT_GRP_CAT_NAME.Name = "WTXT_GRP_CAT_NAME"
+        Me.WTXT_GRP_CAT_NAME.Size = New System.Drawing.Size(339, 24)
+        Me.WTXT_GRP_CAT_NAME.TabIndex = 1428
+        Me.WTXT_GRP_CAT_NAME.Watermark = Nothing
         '
         'ShapeContainer2
         '
@@ -223,52 +294,52 @@ Partial Class FRM_ADDITIONAL_CATEGORIZATION
         Me.ShapeContainer2.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer2.Name = "ShapeContainer2"
         Me.ShapeContainer2.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RECT_CATEGORY_NAME})
-        Me.ShapeContainer2.Size = New System.Drawing.Size(369, 169)
+        Me.ShapeContainer2.Size = New System.Drawing.Size(363, 111)
         Me.ShapeContainer2.TabIndex = 1429
         Me.ShapeContainer2.TabStop = False
         '
         'RECT_CATEGORY_NAME
         '
-        Me.RECT_CATEGORY_NAME.BorderColor = System.Drawing.Color.LightSeaGreen
+        Me.RECT_CATEGORY_NAME.BorderColor = System.Drawing.Color.Gray
         Me.RECT_CATEGORY_NAME.BorderWidth = 2
         Me.RECT_CATEGORY_NAME.CornerRadius = 5
-        Me.RECT_CATEGORY_NAME.Location = New System.Drawing.Point(8, 35)
+        Me.RECT_CATEGORY_NAME.Location = New System.Drawing.Point(5, 36)
         Me.RECT_CATEGORY_NAME.Name = "RECT_CATEGORY_NAME"
-        Me.RECT_CATEGORY_NAME.Size = New System.Drawing.Size(348, 32)
+        Me.RECT_CATEGORY_NAME.Size = New System.Drawing.Size(348, 34)
         '
-        'GRP_BRANDS
+        'GRP_BRAND
         '
-        Me.GRP_BRANDS.Controls.Add(Me.Label7)
-        Me.GRP_BRANDS.Controls.Add(Me.WTXT_BRANDNAME)
-        Me.GRP_BRANDS.Controls.Add(Me.ShapeContainer4)
-        Me.GRP_BRANDS.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GRP_BRANDS.Location = New System.Drawing.Point(10, 51)
-        Me.GRP_BRANDS.Name = "GRP_BRANDS"
-        Me.GRP_BRANDS.Size = New System.Drawing.Size(375, 195)
-        Me.GRP_BRANDS.TabIndex = 1446
-        Me.GRP_BRANDS.TabStop = False
-        Me.GRP_BRANDS.Visible = False
+        Me.GRP_BRAND.Controls.Add(Me.Label7)
+        Me.GRP_BRAND.Controls.Add(Me.WTXT_GRP_BRAND_BRANDNAME)
+        Me.GRP_BRAND.Controls.Add(Me.ShapeContainer4)
+        Me.GRP_BRAND.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GRP_BRAND.Location = New System.Drawing.Point(10, 51)
+        Me.GRP_BRAND.Name = "GRP_BRAND"
+        Me.GRP_BRAND.Size = New System.Drawing.Size(369, 137)
+        Me.GRP_BRAND.TabIndex = 1446
+        Me.GRP_BRAND.TabStop = False
+        Me.GRP_BRAND.Visible = False
         '
         'Label7
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(19, 69)
+        Me.Label7.Location = New System.Drawing.Point(19, 43)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(108, 19)
         Me.Label7.TabIndex = 1430
         Me.Label7.Text = "Brand Name"
         '
-        'WTXT_BRANDNAME
+        'WTXT_GRP_BRAND_BRANDNAME
         '
-        Me.WTXT_BRANDNAME.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.WTXT_BRANDNAME.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.WTXT_BRANDNAME.Location = New System.Drawing.Point(16, 90)
-        Me.WTXT_BRANDNAME.MaxLength = 120
-        Me.WTXT_BRANDNAME.Name = "WTXT_BRANDNAME"
-        Me.WTXT_BRANDNAME.Size = New System.Drawing.Size(339, 24)
-        Me.WTXT_BRANDNAME.TabIndex = 1428
-        Me.WTXT_BRANDNAME.Watermark = Nothing
+        Me.WTXT_GRP_BRAND_BRANDNAME.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.WTXT_GRP_BRAND_BRANDNAME.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.WTXT_GRP_BRAND_BRANDNAME.Location = New System.Drawing.Point(16, 62)
+        Me.WTXT_GRP_BRAND_BRANDNAME.MaxLength = 120
+        Me.WTXT_GRP_BRAND_BRANDNAME.Name = "WTXT_GRP_BRAND_BRANDNAME"
+        Me.WTXT_GRP_BRAND_BRANDNAME.Size = New System.Drawing.Size(339, 24)
+        Me.WTXT_GRP_BRAND_BRANDNAME.TabIndex = 1428
+        Me.WTXT_GRP_BRAND_BRANDNAME.Watermark = Nothing
         '
         'ShapeContainer4
         '
@@ -276,16 +347,16 @@ Partial Class FRM_ADDITIONAL_CATEGORIZATION
         Me.ShapeContainer4.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer4.Name = "ShapeContainer4"
         Me.ShapeContainer4.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RECT_BRAND_NAME})
-        Me.ShapeContainer4.Size = New System.Drawing.Size(369, 169)
+        Me.ShapeContainer4.Size = New System.Drawing.Size(363, 111)
         Me.ShapeContainer4.TabIndex = 1429
         Me.ShapeContainer4.TabStop = False
         '
         'RECT_BRAND_NAME
         '
-        Me.RECT_BRAND_NAME.BorderColor = System.Drawing.Color.LightSeaGreen
+        Me.RECT_BRAND_NAME.BorderColor = System.Drawing.Color.Gray
         Me.RECT_BRAND_NAME.BorderWidth = 2
         Me.RECT_BRAND_NAME.CornerRadius = 5
-        Me.RECT_BRAND_NAME.Location = New System.Drawing.Point(8, 60)
+        Me.RECT_BRAND_NAME.Location = New System.Drawing.Point(8, 33)
         Me.RECT_BRAND_NAME.Name = "RECT_BRAND_NAME"
         Me.RECT_BRAND_NAME.Size = New System.Drawing.Size(348, 32)
         '
@@ -299,7 +370,7 @@ Partial Class FRM_ADDITIONAL_CATEGORIZATION
         Me.GRP_SUB_CATEGORY_ADMIN.Controls.Add(Me.WTXT_SUB_CATEGORY_SUBCATEGORY_NAME)
         Me.GRP_SUB_CATEGORY_ADMIN.Controls.Add(Me.ShapeContainer3)
         Me.GRP_SUB_CATEGORY_ADMIN.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GRP_SUB_CATEGORY_ADMIN.Location = New System.Drawing.Point(10, 51)
+        Me.GRP_SUB_CATEGORY_ADMIN.Location = New System.Drawing.Point(10, 336)
         Me.GRP_SUB_CATEGORY_ADMIN.Name = "GRP_SUB_CATEGORY_ADMIN"
         Me.GRP_SUB_CATEGORY_ADMIN.Size = New System.Drawing.Size(375, 195)
         Me.GRP_SUB_CATEGORY_ADMIN.TabIndex = 1447
@@ -456,17 +527,34 @@ Partial Class FRM_ADDITIONAL_CATEGORIZATION
         Me.TableAdapterManager.TBLG3_SIGNATORYTableAdapter = Nothing
         Me.TableAdapterManager.TBLG3_UNITSTableAdapter = Nothing
         Me.TableAdapterManager.tblM4_CATEGORY1TableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_DIST_MAINTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_DR_ITEMSTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_ITEMS_COLOR_MAINTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_ITEMS_COLORTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_ITEMS_LENG_MAINTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_ITEMS_LENGTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_ITEMS_NAME_MAINTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_ITEMS_NAMETableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_ITEMS_OTHERS_MAINTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_ITEMS_OTHERSTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_ITEMS_SIZE_MAINTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_ITEMS_SIZETableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_ITEMSTableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_INVENTORY_ACCOUNTABLE_OFFICERTableAdapter = Nothing
         Me.TableAdapterManager.tblM4_INVENTORY_ACQUISITION_ITEM_USAGETableAdapter = Nothing
         Me.TableAdapterManager.tblM4_INVENTORY_ACQUISITION_VALUETableAdapter = Nothing
         Me.TableAdapterManager.tblM4_INVENTORY_ASSIGN_PERSONTableAdapter = Nothing
         Me.TableAdapterManager.tblM4_INVENTORY_CATEGORY1TableAdapter = Nothing
         Me.TableAdapterManager.tblM4_INVENTORY_CATEGORYTableAdapter = Me.TblM4_INVENTORY_CATEGORYTableAdapter
+        Me.TableAdapterManager.TBLM4_INVENTORY_ITEM_REQUISITIONTableAdapter = Nothing
         Me.TableAdapterManager.tblM4_INVENTORY_ITEMBRAND1TableAdapter = Nothing
         Me.TableAdapterManager.tblM4_INVENTORY_ITEMBRANDTableAdapter = Me.TblM4_INVENTORY_ITEMBRANDTableAdapter
         Me.TableAdapterManager.tblM4_INVENTORY_ITEMS_DEFLOCATIONTableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_INVENTORY_ITEMS_DISTRIBUTIONTableAdapter = Nothing
         Me.TableAdapterManager.tblM4_INVENTORY_ITEMS_LOCATIONTableAdapter = Nothing
         Me.TableAdapterManager.tblM4_INVENTORY_ITEMS_PROPERTYTableAdapter = Nothing
         Me.TableAdapterManager.tblM4_INVENTORY_ITEMSTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INVENTORY_REQUISITIONTableAdapter = Nothing
         Me.TableAdapterManager.tblM4_INVENTORY_SUB_CATEGORYTableAdapter = Nothing
         Me.TableAdapterManager.tblM4_INVENTORY_TYPETableAdapter = Nothing
         Me.TableAdapterManager.tblM4_ITEMBRAND1TableAdapter = Nothing
@@ -497,7 +585,7 @@ Partial Class FRM_ADDITIONAL_CATEGORIZATION
         Me.GRP_CATEGORY_ADMIN.Controls.Add(Me.WTXT_CATEGORY_CATEGORY_NAME_ADMIN)
         Me.GRP_CATEGORY_ADMIN.Controls.Add(Me.ShapeContainer1)
         Me.GRP_CATEGORY_ADMIN.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GRP_CATEGORY_ADMIN.Location = New System.Drawing.Point(10, 51)
+        Me.GRP_CATEGORY_ADMIN.Location = New System.Drawing.Point(391, 336)
         Me.GRP_CATEGORY_ADMIN.Name = "GRP_CATEGORY_ADMIN"
         Me.GRP_CATEGORY_ADMIN.Size = New System.Drawing.Size(375, 195)
         Me.GRP_CATEGORY_ADMIN.TabIndex = 1448
@@ -585,7 +673,7 @@ Partial Class FRM_ADDITIONAL_CATEGORIZATION
         Me.GRP_BRAND_ADMIN.Controls.Add(Me.WTXT_BRAND_ADMIN_BRAND_NAME)
         Me.GRP_BRAND_ADMIN.Controls.Add(Me.ShapeContainer5)
         Me.GRP_BRAND_ADMIN.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GRP_BRAND_ADMIN.Location = New System.Drawing.Point(10, 51)
+        Me.GRP_BRAND_ADMIN.Location = New System.Drawing.Point(781, 336)
         Me.GRP_BRAND_ADMIN.Name = "GRP_BRAND_ADMIN"
         Me.GRP_BRAND_ADMIN.Size = New System.Drawing.Size(375, 195)
         Me.GRP_BRAND_ADMIN.TabIndex = 1449
@@ -671,152 +759,567 @@ Partial Class FRM_ADDITIONAL_CATEGORIZATION
         '
         'GRP_SUB_CATEGORY
         '
-        Me.GRP_SUB_CATEGORY.Controls.Add(Me.ComboBox1)
-        Me.GRP_SUB_CATEGORY.Controls.Add(Me.Label10)
-        Me.GRP_SUB_CATEGORY.Controls.Add(Me.ComboBox2)
-        Me.GRP_SUB_CATEGORY.Controls.Add(Me.Label11)
         Me.GRP_SUB_CATEGORY.Controls.Add(Me.Label12)
-        Me.GRP_SUB_CATEGORY.Controls.Add(Me.WatermarkTextBox2)
+        Me.GRP_SUB_CATEGORY.Controls.Add(Me.CB_GRP_SUB_CAT_NAME)
+        Me.GRP_SUB_CATEGORY.Controls.Add(Me.Label11)
+        Me.GRP_SUB_CATEGORY.Controls.Add(Me.WTXT_GRP_SUB_SUBCAT_NAME)
         Me.GRP_SUB_CATEGORY.Controls.Add(Me.ShapeContainer6)
         Me.GRP_SUB_CATEGORY.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GRP_SUB_CATEGORY.Location = New System.Drawing.Point(10, 51)
         Me.GRP_SUB_CATEGORY.Name = "GRP_SUB_CATEGORY"
-        Me.GRP_SUB_CATEGORY.Size = New System.Drawing.Size(375, 195)
+        Me.GRP_SUB_CATEGORY.Size = New System.Drawing.Size(369, 137)
         Me.GRP_SUB_CATEGORY.TabIndex = 1450
         Me.GRP_SUB_CATEGORY.TabStop = False
         Me.GRP_SUB_CATEGORY.Visible = False
         '
-        'ComboBox1
-        '
-        Me.ComboBox1.DataSource = Me.TblM4INVENTORYTYPEBindingSource
-        Me.ComboBox1.DisplayMember = "INV_DESC"
-        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.ComboBox1.Font = New System.Drawing.Font("Century Gothic", 12.75!, System.Drawing.FontStyle.Bold)
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(16, 50)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(339, 27)
-        Me.ComboBox1.TabIndex = 1465
-        Me.ComboBox1.ValueMember = "INV_CODE"
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(22, 31)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(103, 19)
-        Me.Label10.TabIndex = 1452
-        Me.Label10.Text = "Supply Type"
-        '
-        'ComboBox2
-        '
-        Me.ComboBox2.DataSource = Me.TblM4INVENTORYCATEGORYBindingSource
-        Me.ComboBox2.DisplayMember = "CAT_NAME"
-        Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.ComboBox2.Font = New System.Drawing.Font("Century Gothic", 12.75!, System.Drawing.FontStyle.Bold)
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(16, 103)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(339, 27)
-        Me.ComboBox2.TabIndex = 1445
-        Me.ComboBox2.ValueMember = "CAT_CODE"
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(22, 83)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(134, 19)
-        Me.Label11.TabIndex = 1445
-        Me.Label11.Text = "Category Name"
-        '
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(19, 135)
+        Me.Label12.Location = New System.Drawing.Point(22, 74)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(167, 19)
         Me.Label12.TabIndex = 1430
         Me.Label12.Text = "Sub Category Name"
         '
-        'WatermarkTextBox2
+        'CB_GRP_SUB_CAT_NAME
         '
-        Me.WatermarkTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.WatermarkTextBox2.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.WatermarkTextBox2.Location = New System.Drawing.Point(16, 157)
-        Me.WatermarkTextBox2.MaxLength = 120
-        Me.WatermarkTextBox2.Name = "WatermarkTextBox2"
-        Me.WatermarkTextBox2.Size = New System.Drawing.Size(339, 24)
-        Me.WatermarkTextBox2.TabIndex = 1428
-        Me.WatermarkTextBox2.Watermark = Nothing
+        Me.CB_GRP_SUB_CAT_NAME.DataSource = Me.TblM4INVENTORYCATEGORYBindingSource
+        Me.CB_GRP_SUB_CAT_NAME.DisplayMember = "CAT_NAME"
+        Me.CB_GRP_SUB_CAT_NAME.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CB_GRP_SUB_CAT_NAME.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.CB_GRP_SUB_CAT_NAME.Font = New System.Drawing.Font("Century Gothic", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CB_GRP_SUB_CAT_NAME.FormattingEnabled = True
+        Me.CB_GRP_SUB_CAT_NAME.Location = New System.Drawing.Point(16, 40)
+        Me.CB_GRP_SUB_CAT_NAME.Name = "CB_GRP_SUB_CAT_NAME"
+        Me.CB_GRP_SUB_CAT_NAME.Size = New System.Drawing.Size(339, 29)
+        Me.CB_GRP_SUB_CAT_NAME.TabIndex = 1445
+        Me.CB_GRP_SUB_CAT_NAME.ValueMember = "CAT_CODE"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(22, 20)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(134, 19)
+        Me.Label11.TabIndex = 1445
+        Me.Label11.Text = "Category Name"
+        '
+        'WTXT_GRP_SUB_SUBCAT_NAME
+        '
+        Me.WTXT_GRP_SUB_SUBCAT_NAME.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.WTXT_GRP_SUB_SUBCAT_NAME.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.WTXT_GRP_SUB_SUBCAT_NAME.Location = New System.Drawing.Point(16, 92)
+        Me.WTXT_GRP_SUB_SUBCAT_NAME.MaxLength = 120
+        Me.WTXT_GRP_SUB_SUBCAT_NAME.Name = "WTXT_GRP_SUB_SUBCAT_NAME"
+        Me.WTXT_GRP_SUB_SUBCAT_NAME.Size = New System.Drawing.Size(339, 24)
+        Me.WTXT_GRP_SUB_SUBCAT_NAME.TabIndex = 1428
+        Me.WTXT_GRP_SUB_SUBCAT_NAME.Watermark = Nothing
         '
         'ShapeContainer6
         '
         Me.ShapeContainer6.Location = New System.Drawing.Point(3, 23)
         Me.ShapeContainer6.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer6.Name = "ShapeContainer6"
-        Me.ShapeContainer6.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape6, Me.RectangleShape7, Me.RectangleShape8})
-        Me.ShapeContainer6.Size = New System.Drawing.Size(369, 169)
+        Me.ShapeContainer6.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape7, Me.RectangleShape8})
+        Me.ShapeContainer6.Size = New System.Drawing.Size(363, 111)
         Me.ShapeContainer6.TabIndex = 1429
         Me.ShapeContainer6.TabStop = False
         '
-        'RectangleShape6
-        '
-        Me.RectangleShape6.BorderColor = System.Drawing.Color.LightSeaGreen
-        Me.RectangleShape6.BorderWidth = 2
-        Me.RectangleShape6.CornerRadius = 5
-        Me.RectangleShape6.Location = New System.Drawing.Point(8, 23)
-        Me.RectangleShape6.Name = "RectangleShape5"
-        Me.RectangleShape6.Size = New System.Drawing.Size(348, 33)
-        '
         'RectangleShape7
         '
-        Me.RectangleShape7.BorderColor = System.Drawing.Color.LightSeaGreen
+        Me.RectangleShape7.BorderColor = System.Drawing.Color.Gray
         Me.RectangleShape7.BorderWidth = 2
         Me.RectangleShape7.CornerRadius = 5
-        Me.RectangleShape7.Location = New System.Drawing.Point(8, 77)
+        Me.RectangleShape7.Location = New System.Drawing.Point(8, 13)
         Me.RectangleShape7.Name = "RECT_SUBCATEGORY_CATEGORYNAME"
         Me.RectangleShape7.Size = New System.Drawing.Size(348, 33)
         '
         'RectangleShape8
         '
-        Me.RectangleShape8.BorderColor = System.Drawing.Color.LightSeaGreen
+        Me.RectangleShape8.BorderColor = System.Drawing.Color.Gray
         Me.RectangleShape8.BorderWidth = 2
         Me.RectangleShape8.CornerRadius = 5
-        Me.RectangleShape8.Location = New System.Drawing.Point(8, 127)
+        Me.RectangleShape8.Location = New System.Drawing.Point(8, 63)
         Me.RectangleShape8.Name = "RECT_SUB_CATEGORY_NAME"
         Me.RectangleShape8.Size = New System.Drawing.Size(348, 33)
+        '
+        'SpM4_ITEM_CATEGORY_CODE_GENERATORTableAdapter
+        '
+        Me.SpM4_ITEM_CATEGORY_CODE_GENERATORTableAdapter.ClearBeforeFill = True
+        '
+        'SpM4_ITEM_BRAND_CODE_GENERATORTableAdapter
+        '
+        Me.SpM4_ITEM_BRAND_CODE_GENERATORTableAdapter.ClearBeforeFill = True
+        '
+        'SpM4_ITEM_SUB_CATEGORY_CODE_GENERATORTableAdapter
+        '
+        Me.SpM4_ITEM_SUB_CATEGORY_CODE_GENERATORTableAdapter.ClearBeforeFill = True
+        '
+        'GRP_SIZE
+        '
+        Me.GRP_SIZE.Controls.Add(Me.Label10)
+        Me.GRP_SIZE.Controls.Add(Me.WTXT_GRP_SIZE)
+        Me.GRP_SIZE.Controls.Add(Me.ShapeContainer7)
+        Me.GRP_SIZE.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GRP_SIZE.Location = New System.Drawing.Point(10, 51)
+        Me.GRP_SIZE.Name = "GRP_SIZE"
+        Me.GRP_SIZE.Size = New System.Drawing.Size(369, 137)
+        Me.GRP_SIZE.TabIndex = 1451
+        Me.GRP_SIZE.TabStop = False
+        Me.GRP_SIZE.Visible = False
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(23, 43)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(38, 19)
+        Me.Label10.TabIndex = 1430
+        Me.Label10.Text = "Size"
+        '
+        'WTXT_GRP_SIZE
+        '
+        Me.WTXT_GRP_SIZE.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.WTXT_GRP_SIZE.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.WTXT_GRP_SIZE.Location = New System.Drawing.Point(16, 62)
+        Me.WTXT_GRP_SIZE.MaxLength = 120
+        Me.WTXT_GRP_SIZE.Name = "WTXT_GRP_SIZE"
+        Me.WTXT_GRP_SIZE.Size = New System.Drawing.Size(339, 24)
+        Me.WTXT_GRP_SIZE.TabIndex = 1428
+        Me.WTXT_GRP_SIZE.Watermark = Nothing
+        '
+        'ShapeContainer7
+        '
+        Me.ShapeContainer7.Location = New System.Drawing.Point(3, 23)
+        Me.ShapeContainer7.Margin = New System.Windows.Forms.Padding(0)
+        Me.ShapeContainer7.Name = "ShapeContainer7"
+        Me.ShapeContainer7.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape6})
+        Me.ShapeContainer7.Size = New System.Drawing.Size(363, 111)
+        Me.ShapeContainer7.TabIndex = 1429
+        Me.ShapeContainer7.TabStop = False
+        '
+        'RectangleShape6
+        '
+        Me.RectangleShape6.BorderColor = System.Drawing.Color.Gray
+        Me.RectangleShape6.BorderWidth = 2
+        Me.RectangleShape6.CornerRadius = 5
+        Me.RectangleShape6.Location = New System.Drawing.Point(8, 33)
+        Me.RectangleShape6.Name = "RECT_BRAND_NAME"
+        Me.RectangleShape6.Size = New System.Drawing.Size(348, 32)
+        '
+        'GRP_COLOR
+        '
+        Me.GRP_COLOR.Controls.Add(Me.Label13)
+        Me.GRP_COLOR.Controls.Add(Me.WTXT_GRP_COLOR)
+        Me.GRP_COLOR.Controls.Add(Me.ShapeContainer8)
+        Me.GRP_COLOR.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GRP_COLOR.Location = New System.Drawing.Point(10, 51)
+        Me.GRP_COLOR.Name = "GRP_COLOR"
+        Me.GRP_COLOR.Size = New System.Drawing.Size(369, 137)
+        Me.GRP_COLOR.TabIndex = 1452
+        Me.GRP_COLOR.TabStop = False
+        Me.GRP_COLOR.Visible = False
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.Location = New System.Drawing.Point(23, 43)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(50, 19)
+        Me.Label13.TabIndex = 1430
+        Me.Label13.Text = "Color"
+        '
+        'WTXT_GRP_COLOR
+        '
+        Me.WTXT_GRP_COLOR.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.WTXT_GRP_COLOR.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.WTXT_GRP_COLOR.Location = New System.Drawing.Point(16, 61)
+        Me.WTXT_GRP_COLOR.MaxLength = 120
+        Me.WTXT_GRP_COLOR.Name = "WTXT_GRP_COLOR"
+        Me.WTXT_GRP_COLOR.Size = New System.Drawing.Size(339, 24)
+        Me.WTXT_GRP_COLOR.TabIndex = 1428
+        Me.WTXT_GRP_COLOR.Watermark = Nothing
+        '
+        'ShapeContainer8
+        '
+        Me.ShapeContainer8.Location = New System.Drawing.Point(3, 23)
+        Me.ShapeContainer8.Margin = New System.Windows.Forms.Padding(0)
+        Me.ShapeContainer8.Name = "ShapeContainer8"
+        Me.ShapeContainer8.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape9})
+        Me.ShapeContainer8.Size = New System.Drawing.Size(363, 111)
+        Me.ShapeContainer8.TabIndex = 1429
+        Me.ShapeContainer8.TabStop = False
+        '
+        'RectangleShape9
+        '
+        Me.RectangleShape9.BorderColor = System.Drawing.Color.Gray
+        Me.RectangleShape9.BorderWidth = 2
+        Me.RectangleShape9.CornerRadius = 5
+        Me.RectangleShape9.Location = New System.Drawing.Point(8, 33)
+        Me.RectangleShape9.Name = "RECT_BRAND_NAME"
+        Me.RectangleShape9.Size = New System.Drawing.Size(348, 32)
+        '
+        'GRP_LENGTH
+        '
+        Me.GRP_LENGTH.Controls.Add(Me.Label14)
+        Me.GRP_LENGTH.Controls.Add(Me.WTXT_GRP_LENGTH)
+        Me.GRP_LENGTH.Controls.Add(Me.ShapeContainer9)
+        Me.GRP_LENGTH.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GRP_LENGTH.Location = New System.Drawing.Point(10, 51)
+        Me.GRP_LENGTH.Name = "GRP_LENGTH"
+        Me.GRP_LENGTH.Size = New System.Drawing.Size(369, 137)
+        Me.GRP_LENGTH.TabIndex = 1453
+        Me.GRP_LENGTH.TabStop = False
+        Me.GRP_LENGTH.Visible = False
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.Location = New System.Drawing.Point(23, 43)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(61, 19)
+        Me.Label14.TabIndex = 1430
+        Me.Label14.Text = "Length"
+        '
+        'WTXT_GRP_LENGTH
+        '
+        Me.WTXT_GRP_LENGTH.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.WTXT_GRP_LENGTH.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.WTXT_GRP_LENGTH.Location = New System.Drawing.Point(16, 61)
+        Me.WTXT_GRP_LENGTH.MaxLength = 120
+        Me.WTXT_GRP_LENGTH.Name = "WTXT_GRP_LENGTH"
+        Me.WTXT_GRP_LENGTH.Size = New System.Drawing.Size(339, 24)
+        Me.WTXT_GRP_LENGTH.TabIndex = 1428
+        Me.WTXT_GRP_LENGTH.Watermark = Nothing
+        '
+        'ShapeContainer9
+        '
+        Me.ShapeContainer9.Location = New System.Drawing.Point(3, 23)
+        Me.ShapeContainer9.Margin = New System.Windows.Forms.Padding(0)
+        Me.ShapeContainer9.Name = "ShapeContainer9"
+        Me.ShapeContainer9.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape10})
+        Me.ShapeContainer9.Size = New System.Drawing.Size(363, 111)
+        Me.ShapeContainer9.TabIndex = 1429
+        Me.ShapeContainer9.TabStop = False
+        '
+        'RectangleShape10
+        '
+        Me.RectangleShape10.BorderColor = System.Drawing.Color.Gray
+        Me.RectangleShape10.BorderWidth = 2
+        Me.RectangleShape10.CornerRadius = 5
+        Me.RectangleShape10.Location = New System.Drawing.Point(8, 33)
+        Me.RectangleShape10.Name = "RECT_BRAND_NAME"
+        Me.RectangleShape10.Size = New System.Drawing.Size(348, 32)
+        '
+        'GRP_OTHER_DESC
+        '
+        Me.GRP_OTHER_DESC.Controls.Add(Me.Label15)
+        Me.GRP_OTHER_DESC.Controls.Add(Me.WTXT_GRP_OTHER_DESC)
+        Me.GRP_OTHER_DESC.Controls.Add(Me.ShapeContainer10)
+        Me.GRP_OTHER_DESC.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GRP_OTHER_DESC.Location = New System.Drawing.Point(10, 51)
+        Me.GRP_OTHER_DESC.Name = "GRP_OTHER_DESC"
+        Me.GRP_OTHER_DESC.Size = New System.Drawing.Size(369, 137)
+        Me.GRP_OTHER_DESC.TabIndex = 1454
+        Me.GRP_OTHER_DESC.TabStop = False
+        Me.GRP_OTHER_DESC.Visible = False
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.Location = New System.Drawing.Point(23, 43)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(140, 19)
+        Me.Label15.TabIndex = 1430
+        Me.Label15.Text = "Other Description"
+        '
+        'WTXT_GRP_OTHER_DESC
+        '
+        Me.WTXT_GRP_OTHER_DESC.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.WTXT_GRP_OTHER_DESC.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.WTXT_GRP_OTHER_DESC.Location = New System.Drawing.Point(16, 61)
+        Me.WTXT_GRP_OTHER_DESC.MaxLength = 120
+        Me.WTXT_GRP_OTHER_DESC.Name = "WTXT_GRP_OTHER_DESC"
+        Me.WTXT_GRP_OTHER_DESC.Size = New System.Drawing.Size(339, 24)
+        Me.WTXT_GRP_OTHER_DESC.TabIndex = 1428
+        Me.WTXT_GRP_OTHER_DESC.Watermark = Nothing
+        '
+        'ShapeContainer10
+        '
+        Me.ShapeContainer10.Location = New System.Drawing.Point(3, 23)
+        Me.ShapeContainer10.Margin = New System.Windows.Forms.Padding(0)
+        Me.ShapeContainer10.Name = "ShapeContainer10"
+        Me.ShapeContainer10.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape11})
+        Me.ShapeContainer10.Size = New System.Drawing.Size(363, 111)
+        Me.ShapeContainer10.TabIndex = 1429
+        Me.ShapeContainer10.TabStop = False
+        '
+        'RectangleShape11
+        '
+        Me.RectangleShape11.BorderColor = System.Drawing.Color.Gray
+        Me.RectangleShape11.BorderWidth = 2
+        Me.RectangleShape11.CornerRadius = 5
+        Me.RectangleShape11.Location = New System.Drawing.Point(8, 33)
+        Me.RectangleShape11.Name = "RECT_BRAND_NAME"
+        Me.RectangleShape11.Size = New System.Drawing.Size(348, 32)
+        '
+        'TBLM4_INV_ITEMS_LENG_MAINBindingSource
+        '
+        Me.TBLM4_INV_ITEMS_LENG_MAINBindingSource.DataMember = "TBLM4_INV_ITEMS_LENG_MAIN"
+        Me.TBLM4_INV_ITEMS_LENG_MAINBindingSource.DataSource = Me.DS_PROPERTYDB
+        '
+        'TBLM4_INV_ITEMS_LENG_MAINTableAdapter
+        '
+        Me.TBLM4_INV_ITEMS_LENG_MAINTableAdapter.ClearBeforeFill = True
+        '
+        'TBLM4_INV_ITEMS_OTHERS_MAINBindingSource
+        '
+        Me.TBLM4_INV_ITEMS_OTHERS_MAINBindingSource.DataMember = "TBLM4_INV_ITEMS_OTHERS_MAIN"
+        Me.TBLM4_INV_ITEMS_OTHERS_MAINBindingSource.DataSource = Me.DS_PROPERTYDB
+        '
+        'TBLM4_INV_ITEMS_OTHERS_MAINTableAdapter
+        '
+        Me.TBLM4_INV_ITEMS_OTHERS_MAINTableAdapter.ClearBeforeFill = True
+        '
+        'GRP_ITEM_NAME
+        '
+        Me.GRP_ITEM_NAME.Controls.Add(Me.CB_INV_CAT)
+        Me.GRP_ITEM_NAME.Controls.Add(Me.Label18)
+        Me.GRP_ITEM_NAME.Controls.Add(Me.CB_INV_SC)
+        Me.GRP_ITEM_NAME.Controls.Add(Me.Label17)
+        Me.GRP_ITEM_NAME.Controls.Add(Me.Label16)
+        Me.GRP_ITEM_NAME.Controls.Add(Me.WTXT_ITEM_NAME)
+        Me.GRP_ITEM_NAME.Controls.Add(Me.ShapeContainer11)
+        Me.GRP_ITEM_NAME.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GRP_ITEM_NAME.Location = New System.Drawing.Point(10, 51)
+        Me.GRP_ITEM_NAME.Name = "GRP_ITEM_NAME"
+        Me.GRP_ITEM_NAME.Size = New System.Drawing.Size(369, 140)
+        Me.GRP_ITEM_NAME.TabIndex = 1455
+        Me.GRP_ITEM_NAME.TabStop = False
+        Me.GRP_ITEM_NAME.Visible = False
+        '
+        'CB_INV_CAT
+        '
+        Me.CB_INV_CAT.DataSource = Me.TblM4INVENTORYCATEGORYBindingSource
+        Me.CB_INV_CAT.DisplayMember = "CAT_NAME"
+        Me.CB_INV_CAT.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CB_INV_CAT.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.CB_INV_CAT.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CB_INV_CAT.FormattingEnabled = True
+        Me.CB_INV_CAT.Location = New System.Drawing.Point(17, 26)
+        Me.CB_INV_CAT.Name = "CB_INV_CAT"
+        Me.CB_INV_CAT.Size = New System.Drawing.Size(339, 25)
+        Me.CB_INV_CAT.TabIndex = 1457
+        Me.CB_INV_CAT.ValueMember = "CAT_CODE"
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label18.Location = New System.Drawing.Point(22, 10)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(69, 16)
+        Me.Label18.TabIndex = 1457
+        Me.Label18.Text = "Category"
+        '
+        'CB_INV_SC
+        '
+        Me.CB_INV_SC.DataSource = Me.TblM4INVENTORYSUBCATEGORYBindingSource
+        Me.CB_INV_SC.DisplayMember = "SC_SUBCATEGORY_NAME"
+        Me.CB_INV_SC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CB_INV_SC.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.CB_INV_SC.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CB_INV_SC.FormattingEnabled = True
+        Me.CB_INV_SC.Location = New System.Drawing.Point(17, 69)
+        Me.CB_INV_SC.Name = "CB_INV_SC"
+        Me.CB_INV_SC.Size = New System.Drawing.Size(339, 25)
+        Me.CB_INV_SC.TabIndex = 1456
+        Me.CB_INV_SC.ValueMember = "SC_NO"
+        '
+        'TblM4INVENTORYSUBCATEGORYBindingSource
+        '
+        Me.TblM4INVENTORYSUBCATEGORYBindingSource.DataMember = "tblM4_INVENTORY_SUB_CATEGORY"
+        Me.TblM4INVENTORYSUBCATEGORYBindingSource.DataSource = Me.DS_PROPERTYDB
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label17.Location = New System.Drawing.Point(22, 54)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(95, 16)
+        Me.Label17.TabIndex = 1431
+        Me.Label17.Text = "Sub category"
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.Location = New System.Drawing.Point(23, 97)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(79, 16)
+        Me.Label16.TabIndex = 1430
+        Me.Label16.Text = "Item Name"
+        '
+        'WTXT_ITEM_NAME
+        '
+        Me.WTXT_ITEM_NAME.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.WTXT_ITEM_NAME.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.WTXT_ITEM_NAME.Location = New System.Drawing.Point(16, 114)
+        Me.WTXT_ITEM_NAME.MaxLength = 120
+        Me.WTXT_ITEM_NAME.Name = "WTXT_ITEM_NAME"
+        Me.WTXT_ITEM_NAME.Size = New System.Drawing.Size(339, 16)
+        Me.WTXT_ITEM_NAME.TabIndex = 1428
+        Me.WTXT_ITEM_NAME.Watermark = Nothing
+        '
+        'ShapeContainer11
+        '
+        Me.ShapeContainer11.Location = New System.Drawing.Point(3, 23)
+        Me.ShapeContainer11.Margin = New System.Windows.Forms.Padding(0)
+        Me.ShapeContainer11.Name = "ShapeContainer11"
+        Me.ShapeContainer11.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape14, Me.RectangleShape13, Me.RectangleShape12})
+        Me.ShapeContainer11.Size = New System.Drawing.Size(363, 114)
+        Me.ShapeContainer11.TabIndex = 1429
+        Me.ShapeContainer11.TabStop = False
+        '
+        'RectangleShape14
+        '
+        Me.RectangleShape14.BorderColor = System.Drawing.Color.Gray
+        Me.RectangleShape14.BorderWidth = 2
+        Me.RectangleShape14.CornerRadius = 5
+        Me.RectangleShape14.Location = New System.Drawing.Point(7, 1)
+        Me.RectangleShape14.Name = "RectangleShape14"
+        Me.RectangleShape14.Size = New System.Drawing.Size(348, 28)
+        '
+        'RectangleShape13
+        '
+        Me.RectangleShape13.BorderColor = System.Drawing.Color.Gray
+        Me.RectangleShape13.BorderWidth = 2
+        Me.RectangleShape13.CornerRadius = 5
+        Me.RectangleShape13.Location = New System.Drawing.Point(7, 44)
+        Me.RectangleShape13.Name = "RectangleShape13"
+        Me.RectangleShape13.Size = New System.Drawing.Size(348, 28)
+        '
+        'RectangleShape12
+        '
+        Me.RectangleShape12.BorderColor = System.Drawing.Color.Gray
+        Me.RectangleShape12.BorderWidth = 2
+        Me.RectangleShape12.CornerRadius = 5
+        Me.RectangleShape12.Location = New System.Drawing.Point(8, 85)
+        Me.RectangleShape12.Name = "RECT_BRAND_NAME"
+        Me.RectangleShape12.Size = New System.Drawing.Size(348, 26)
+        '
+        'TBLM4_INV_ITEMS_NAME_MAINTableAdapter
+        '
+        Me.TBLM4_INV_ITEMS_NAME_MAINTableAdapter.ClearBeforeFill = True
+        '
+        'TBLM4_INV_ITEMS_NAME_MAINBindingSource
+        '
+        Me.TBLM4_INV_ITEMS_NAME_MAINBindingSource.DataMember = "TBLM4_INV_ITEMS_NAME_MAIN"
+        Me.TBLM4_INV_ITEMS_NAME_MAINBindingSource.DataSource = Me.DS_PROPERTYDB
+        '
+        'TBLM4_INV_ITEMS_COLOR_MAINTableAdapter
+        '
+        Me.TBLM4_INV_ITEMS_COLOR_MAINTableAdapter.ClearBeforeFill = True
+        '
+        'TBLM4_INV_ITEMS_COLOR_MAINBindingSource
+        '
+        Me.TBLM4_INV_ITEMS_COLOR_MAINBindingSource.DataMember = "TBLM4_INV_ITEMS_COLOR_MAIN"
+        Me.TBLM4_INV_ITEMS_COLOR_MAINBindingSource.DataSource = Me.DS_PROPERTYDB
+        '
+        'TBLM4_INV_ITEMS_SIZE_MAINBindingSource
+        '
+        Me.TBLM4_INV_ITEMS_SIZE_MAINBindingSource.DataMember = "TBLM4_INV_ITEMS_SIZE_MAIN"
+        Me.TBLM4_INV_ITEMS_SIZE_MAINBindingSource.DataSource = Me.DS_PROPERTYDB
+        '
+        'TBLM4_INV_ITEMS_SIZE_MAINTableAdapter
+        '
+        Me.TBLM4_INV_ITEMS_SIZE_MAINTableAdapter.ClearBeforeFill = True
+        '
+        'SPM4_ITEM_COLOR_CODE_GENERATORTableAdapter
+        '
+        Me.SPM4_ITEM_COLOR_CODE_GENERATORTableAdapter.ClearBeforeFill = True
+        '
+        'SPM4_ITEM_COLOR_CODE_GENERATORBindingSource
+        '
+        Me.SPM4_ITEM_COLOR_CODE_GENERATORBindingSource.DataMember = "SPM4_ITEM_COLOR_CODE_GENERATOR"
+        '
+        'SPM4_ITEM_LENG_CODE_GENERATORBindingSource
+        '
+        Me.SPM4_ITEM_LENG_CODE_GENERATORBindingSource.DataMember = "SPM4_ITEM_LENG_CODE_GENERATOR"
+        '
+        'SPM4_ITEM_LENG_CODE_GENERATORTableAdapter
+        '
+        Me.SPM4_ITEM_LENG_CODE_GENERATORTableAdapter.ClearBeforeFill = True
+        '
+        'SPM4_ITEM_NAME_CODE_GENERATORTableAdapter
+        '
+        Me.SPM4_ITEM_NAME_CODE_GENERATORTableAdapter.ClearBeforeFill = True
+        '
+        'SPM4_ITEM_NAME_CODE_GENERATORBindingSource
+        '
+        Me.SPM4_ITEM_NAME_CODE_GENERATORBindingSource.DataMember = "SPM4_ITEM_NAME_CODE_GENERATOR"
+        '
+        'SPM4_ITEM_OTHERS_CODE_GENERATORTableAdapter
+        '
+        Me.SPM4_ITEM_OTHERS_CODE_GENERATORTableAdapter.ClearBeforeFill = True
+        '
+        'SPM4_ITEM_OTHERS_CODE_GENERATORBindingSource
+        '
+        Me.SPM4_ITEM_OTHERS_CODE_GENERATORBindingSource.DataMember = "SPM4_ITEM_OTHERS_CODE_GENERATOR"
+        '
+        'SPM4_ITEM_SIZE_CODE_GENERATORTableAdapter
+        '
+        Me.SPM4_ITEM_SIZE_CODE_GENERATORTableAdapter.ClearBeforeFill = True
+        '
+        'SPM4_ITEM_SIZE_CODE_GENERATORBindingSource
+        '
+        Me.SPM4_ITEM_SIZE_CODE_GENERATORBindingSource.DataMember = "SPM4_ITEM_SIZE_CODE_GENERATOR"
+        '
+        'FKtblM4INVENTORYITEMStblM4INVENTORYITEMSBindingSource
+        '
+        Me.FKtblM4INVENTORYITEMStblM4INVENTORYITEMSBindingSource.DataMember = "FK_tblM4_INVENTORY_ITEMS_tblM4_INVENTORY_ITEMS"
+        Me.FKtblM4INVENTORYITEMStblM4INVENTORYITEMSBindingSource.DataSource = Me.TblM4_INVENTORY_SUB_CATEGORYBindingSource
+        '
+        'TblM4_INVENTORY_ITEMSTableAdapter
+        '
+        Me.TblM4_INVENTORY_ITEMSTableAdapter.ClearBeforeFill = True
         '
         'FRM_ADDITIONAL_CATEGORIZATION
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(395, 314)
+        Me.ClientSize = New System.Drawing.Size(388, 234)
+        Me.Controls.Add(Me.GRP_ITEM_NAME)
+        Me.Controls.Add(Me.GRP_OTHER_DESC)
+        Me.Controls.Add(Me.GRP_LENGTH)
+        Me.Controls.Add(Me.GRP_COLOR)
+        Me.Controls.Add(Me.GRP_SIZE)
         Me.Controls.Add(Me.GRP_SUB_CATEGORY)
         Me.Controls.Add(Me.GRP_BRAND_ADMIN)
         Me.Controls.Add(Me.GRP_CATEGORY_ADMIN)
         Me.Controls.Add(Me.GRP_SUB_CATEGORY_ADMIN)
-        Me.Controls.Add(Me.GRP_BRANDS)
+        Me.Controls.Add(Me.GRP_BRAND)
         Me.Controls.Add(Me.GRP_CATEGORY)
         Me.Controls.Add(Me.BTN_SAVE)
-        Me.Controls.Add(Me.DGV_CLOSE)
         Me.Controls.Add(Me.PNL)
         Me.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "FRM_ADDITIONAL_CATEGORIZATION"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "FRM_ADDITIONAL_CATEGORIZATION"
+        Me.Text = " "
         Me.PNL.ResumeLayout(False)
         Me.PNL.PerformLayout()
         Me.GRP_CATEGORY.ResumeLayout(False)
         Me.GRP_CATEGORY.PerformLayout()
-        Me.GRP_BRANDS.ResumeLayout(False)
-        Me.GRP_BRANDS.PerformLayout()
+        Me.GRP_BRAND.ResumeLayout(False)
+        Me.GRP_BRAND.PerformLayout()
         Me.GRP_SUB_CATEGORY_ADMIN.ResumeLayout(False)
         Me.GRP_SUB_CATEGORY_ADMIN.PerformLayout()
         CType(Me.TblM4INVENTORYTYPEBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
@@ -830,23 +1333,44 @@ Partial Class FRM_ADDITIONAL_CATEGORIZATION
         Me.GRP_BRAND_ADMIN.PerformLayout()
         Me.GRP_SUB_CATEGORY.ResumeLayout(False)
         Me.GRP_SUB_CATEGORY.PerformLayout()
+        Me.GRP_SIZE.ResumeLayout(False)
+        Me.GRP_SIZE.PerformLayout()
+        Me.GRP_COLOR.ResumeLayout(False)
+        Me.GRP_COLOR.PerformLayout()
+        Me.GRP_LENGTH.ResumeLayout(False)
+        Me.GRP_LENGTH.PerformLayout()
+        Me.GRP_OTHER_DESC.ResumeLayout(False)
+        Me.GRP_OTHER_DESC.PerformLayout()
+        CType(Me.TBLM4_INV_ITEMS_LENG_MAINBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TBLM4_INV_ITEMS_OTHERS_MAINBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GRP_ITEM_NAME.ResumeLayout(False)
+        Me.GRP_ITEM_NAME.PerformLayout()
+        CType(Me.TblM4INVENTORYSUBCATEGORYBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TBLM4_INV_ITEMS_NAME_MAINBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TBLM4_INV_ITEMS_COLOR_MAINBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TBLM4_INV_ITEMS_SIZE_MAINBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SPM4_ITEM_COLOR_CODE_GENERATORBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SPM4_ITEM_LENG_CODE_GENERATORBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SPM4_ITEM_NAME_CODE_GENERATORBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SPM4_ITEM_OTHERS_CODE_GENERATORBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SPM4_ITEM_SIZE_CODE_GENERATORBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.FKtblM4INVENTORYITEMStblM4INVENTORYITEMSBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents BTN_SAVE As Button
-    Friend WithEvents DGV_CLOSE As Button
     Friend WithEvents LBL_ADDITIONAL_CATEGORIZATION As Label
     Friend WithEvents BTN_Minimize As Button
     Friend WithEvents PNL As Panel
     Friend WithEvents BTN_CLOSE As Button
     Friend WithEvents GRP_CATEGORY As GroupBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents WTXT_CATEGORY_NAME As WatermarkTextBox
+    Friend WithEvents WTXT_GRP_CAT_NAME As WatermarkTextBox
     Friend WithEvents ShapeContainer2 As PowerPacks.ShapeContainer
     Friend WithEvents RECT_CATEGORY_NAME As PowerPacks.RectangleShape
-    Friend WithEvents GRP_BRANDS As GroupBox
+    Friend WithEvents GRP_BRAND As GroupBox
     Friend WithEvents Label7 As Label
-    Friend WithEvents WTXT_BRANDNAME As WatermarkTextBox
+    Friend WithEvents WTXT_GRP_BRAND_BRANDNAME As WatermarkTextBox
     Friend WithEvents ShapeContainer4 As PowerPacks.ShapeContainer
     Friend WithEvents RECT_BRAND_NAME As PowerPacks.RectangleShape
     Friend WithEvents GRP_SUB_CATEGORY_ADMIN As GroupBox
@@ -887,14 +1411,69 @@ Partial Class FRM_ADDITIONAL_CATEGORIZATION
     Friend WithEvents Label9 As Label
     Friend WithEvents RectangleShape5 As PowerPacks.RectangleShape
     Friend WithEvents GRP_SUB_CATEGORY As GroupBox
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents Label10 As Label
-    Friend WithEvents ComboBox2 As ComboBox
+    Friend WithEvents CB_GRP_SUB_CAT_NAME As ComboBox
     Friend WithEvents Label11 As Label
     Friend WithEvents Label12 As Label
-    Friend WithEvents WatermarkTextBox2 As WatermarkTextBox
+    Friend WithEvents WTXT_GRP_SUB_SUBCAT_NAME As WatermarkTextBox
     Friend WithEvents ShapeContainer6 As PowerPacks.ShapeContainer
-    Friend WithEvents RectangleShape6 As PowerPacks.RectangleShape
     Friend WithEvents RectangleShape7 As PowerPacks.RectangleShape
     Friend WithEvents RectangleShape8 As PowerPacks.RectangleShape
+    Friend WithEvents SpM4_ITEM_CATEGORY_CODE_GENERATORTableAdapter As DS_STOREDPROCTableAdapters.SPM4_ITEM_CATEGORY_CODE_GENERATORTableAdapter
+    Friend WithEvents SpM4_ITEM_BRAND_CODE_GENERATORTableAdapter As DS_STOREDPROCTableAdapters.SPM4_ITEM_BRAND_CODE_GENERATORTableAdapter
+    Friend WithEvents SpM4_ITEM_SUB_CATEGORY_CODE_GENERATORTableAdapter As DS_STOREDPROCTableAdapters.SPM4_ITEM_SUB_CATEGORY_CODE_GENERATORTableAdapter
+    Friend WithEvents GRP_SIZE As GroupBox
+    Friend WithEvents Label10 As Label
+    Friend WithEvents WTXT_GRP_SIZE As WatermarkTextBox
+    Friend WithEvents ShapeContainer7 As PowerPacks.ShapeContainer
+    Friend WithEvents RectangleShape6 As PowerPacks.RectangleShape
+    Friend WithEvents GRP_COLOR As GroupBox
+    Friend WithEvents Label13 As Label
+    Friend WithEvents WTXT_GRP_COLOR As WatermarkTextBox
+    Friend WithEvents ShapeContainer8 As PowerPacks.ShapeContainer
+    Friend WithEvents RectangleShape9 As PowerPacks.RectangleShape
+    Friend WithEvents BTN_CATEGORIZATION_CLOSE As Button
+    Friend WithEvents GRP_LENGTH As GroupBox
+    Friend WithEvents Label14 As Label
+    Friend WithEvents WTXT_GRP_LENGTH As WatermarkTextBox
+    Friend WithEvents ShapeContainer9 As PowerPacks.ShapeContainer
+    Friend WithEvents RectangleShape10 As PowerPacks.RectangleShape
+    Friend WithEvents GRP_OTHER_DESC As GroupBox
+    Friend WithEvents Label15 As Label
+    Friend WithEvents WTXT_GRP_OTHER_DESC As WatermarkTextBox
+    Friend WithEvents ShapeContainer10 As PowerPacks.ShapeContainer
+    Friend WithEvents RectangleShape11 As PowerPacks.RectangleShape
+    Friend WithEvents TBLM4_INV_ITEMS_LENG_MAINBindingSource As BindingSource
+    Friend WithEvents TBLM4_INV_ITEMS_LENG_MAINTableAdapter As DS_PROPERTYDBTableAdapters.TBLM4_INV_ITEMS_LENG_MAINTableAdapter
+    Friend WithEvents TBLM4_INV_ITEMS_OTHERS_MAINBindingSource As BindingSource
+    Friend WithEvents TBLM4_INV_ITEMS_OTHERS_MAINTableAdapter As DS_PROPERTYDBTableAdapters.TBLM4_INV_ITEMS_OTHERS_MAINTableAdapter
+    Friend WithEvents GRP_ITEM_NAME As GroupBox
+    Friend WithEvents Label16 As Label
+    Friend WithEvents WTXT_ITEM_NAME As WatermarkTextBox
+    Friend WithEvents ShapeContainer11 As PowerPacks.ShapeContainer
+    Friend WithEvents RectangleShape12 As PowerPacks.RectangleShape
+    Friend WithEvents TBLM4_INV_ITEMS_NAME_MAINTableAdapter As DS_PROPERTYDBTableAdapters.TBLM4_INV_ITEMS_NAME_MAINTableAdapter
+    Friend WithEvents TBLM4_INV_ITEMS_NAME_MAINBindingSource As BindingSource
+    Friend WithEvents TBLM4_INV_ITEMS_COLOR_MAINTableAdapter As DS_PROPERTYDBTableAdapters.TBLM4_INV_ITEMS_COLOR_MAINTableAdapter
+    Friend WithEvents TBLM4_INV_ITEMS_COLOR_MAINBindingSource As BindingSource
+    Friend WithEvents TBLM4_INV_ITEMS_SIZE_MAINBindingSource As BindingSource
+    Friend WithEvents TBLM4_INV_ITEMS_SIZE_MAINTableAdapter As DS_PROPERTYDBTableAdapters.TBLM4_INV_ITEMS_SIZE_MAINTableAdapter
+    Friend WithEvents SPM4_ITEM_COLOR_CODE_GENERATORTableAdapter As DS_STOREDPROCTableAdapters.SPM4_ITEM_COLOR_CODE_GENERATORTableAdapter
+    Friend WithEvents SPM4_ITEM_COLOR_CODE_GENERATORBindingSource As BindingSource
+    Friend WithEvents SPM4_ITEM_LENG_CODE_GENERATORBindingSource As BindingSource
+    Friend WithEvents SPM4_ITEM_LENG_CODE_GENERATORTableAdapter As DS_STOREDPROCTableAdapters.SPM4_ITEM_LENG_CODE_GENERATORTableAdapter
+    Friend WithEvents SPM4_ITEM_NAME_CODE_GENERATORTableAdapter As DS_STOREDPROCTableAdapters.SPM4_ITEM_NAME_CODE_GENERATORTableAdapter
+    Friend WithEvents SPM4_ITEM_NAME_CODE_GENERATORBindingSource As BindingSource
+    Friend WithEvents SPM4_ITEM_OTHERS_CODE_GENERATORTableAdapter As DS_STOREDPROCTableAdapters.SPM4_ITEM_OTHERS_CODE_GENERATORTableAdapter
+    Friend WithEvents SPM4_ITEM_OTHERS_CODE_GENERATORBindingSource As BindingSource
+    Friend WithEvents SPM4_ITEM_SIZE_CODE_GENERATORTableAdapter As DS_STOREDPROCTableAdapters.SPM4_ITEM_SIZE_CODE_GENERATORTableAdapter
+    Friend WithEvents SPM4_ITEM_SIZE_CODE_GENERATORBindingSource As BindingSource
+    Friend WithEvents CB_INV_SC As ComboBox
+    Friend WithEvents Label17 As Label
+    Friend WithEvents RectangleShape13 As PowerPacks.RectangleShape
+    Friend WithEvents FKtblM4INVENTORYITEMStblM4INVENTORYITEMSBindingSource As BindingSource
+    Friend WithEvents TblM4_INVENTORY_ITEMSTableAdapter As DS_PROPERTYDBTableAdapters.tblM4_INVENTORY_ITEMSTableAdapter
+    Friend WithEvents TblM4INVENTORYSUBCATEGORYBindingSource As BindingSource
+    Friend WithEvents CB_INV_CAT As ComboBox
+    Friend WithEvents Label18 As Label
+    Friend WithEvents RectangleShape14 As PowerPacks.RectangleShape
 End Class

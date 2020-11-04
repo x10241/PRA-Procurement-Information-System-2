@@ -41,10 +41,10 @@
 
         ElseIf printPreview = "AssignItem" Then
             rptDoc = New RPT_ITEMS_ASSIGN
-            SPM4_ASSIGN_ITEMSTableAdapter.Fill(DS_STOREDPROC.SPM4_ASSIGN_ITEMS, FRM_ASSIGN_ITEMS.WTXT_LIST_PREFERRED_ITEMS.Text)
+            SPM4_ASSIGN_ITEMSTableAdapter.Fill(DS_STOREDPROC.SPM4_ASSIGN_ITEMS, FRM_ASSIGN_ITEMS.WTXT_SEARCH_ASS_ITEM.Text)
             rptDoc.SetDataSource(DS_STOREDPROC.SPM4_ASSIGN_ITEMS.DataSet)
             With rptDoc
-                .SetParameterValue(0, Trim(FRM_ASSIGN_ITEMS.WTXT_LIST_PREFERRED_ITEMS.Text))
+                .SetParameterValue(0, Trim(FRM_ASSIGN_ITEMS.WTXT_SEARCH_ASS_ITEM.Text))
             End With
             CRV_PREVIEW.ReportSource = rptDoc
         End If
@@ -60,10 +60,10 @@
             BS_DATA_TRANSFER_STICKERPREVIEW_DATA(SPM4_PRINTSTICKERBindingSource)
         ElseIf printPreview = "AssignItem" Then
             rptDoc = New RPT_ITEMS_ASSIGN
-            SPM4_ASSIGN_ITEMSTableAdapter.Fill(DS_STOREDPROC.SPM4_ASSIGN_ITEMS, FRM_ASSIGN_ITEMS.WTXT_LIST_PREFERRED_ITEMS.Text)
+            SPM4_ASSIGN_ITEMSTableAdapter.Fill(DS_STOREDPROC.SPM4_ASSIGN_ITEMS, FRM_ASSIGN_ITEMS.WTXT_SEARCH_ASS_ITEM.Text)
             rptDoc.SetDataSource(DS_STOREDPROC.SPM4_ASSIGN_ITEMS.DataSet)
             With rptDoc
-                .SetParameterValue(0, Trim(FRM_ASSIGN_ITEMS.WTXT_LIST_PREFERRED_ITEMS.Text))
+                .SetParameterValue(0, Trim(FRM_ASSIGN_ITEMS.WTXT_SEARCH_ASS_ITEM.Text))
             End With
             CRV_PREVIEW.ReportSource = rptDoc
         End If

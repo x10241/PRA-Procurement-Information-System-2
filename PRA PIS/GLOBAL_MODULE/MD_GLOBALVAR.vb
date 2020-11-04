@@ -23,11 +23,18 @@ Module MD_GLOBALVAR
     Public MEMTYPE As String
     Public SRRV_STR As String
     Public slideFlaG As Boolean
+    Public slideFlaGY As Boolean
+    Public slideFlaGX2 As Boolean
+    Public X2_LOC As Integer = 1095
     Public X_LOC As Integer = 1095
     Public Y_LOC As Integer = 620
     Public PNL_SLIDE As Panel
+    Public PNL_SLIDE2 As Panel
+    Public PNL_SLIDE_Y As Panel
     Public GRP_SLIDE As GroupBox
     Public rptDoc As ReportDocument
+
+    Public _IMGPATH As String
 
     Public ABTNMAINCTR As Integer = 0
 
@@ -123,4 +130,74 @@ Module MD_GLOBALVAR
     Public IR_ALLITEMS As Boolean
     Public IR_ASOFDATE As Date
     Public ITEQUIPMENTBOOL As Boolean
+    Public QUANTITYFORDISTRIBUTION As Integer
+    Public CELLVALUEHOLDER As Integer
+    Public DATEPERIOD As String
+    Public DATEPERIODBOOL As Boolean = True
+    Public ISITE As Boolean = True
+    Public EMP_DEPT_DIV As String
+    Public SYS_USER As String
+    Public SYS_FULLNAME_FML As String
+    Public TXT_REQ_ID As TextBox
+    Public TXT_AUTH_ID As TextBox
+    Public TXT_APPR_ID As TextBox
+    Public TXT_ISSU_ID As TextBox
+    Public R_CB_REQUISITION_TYPE As String
+    Public R_PURPOSE As String
+    Public R_FOR_THE_PERIOD As String
+    Public R_DATE_NEEDED As String
+    Public R_REQU_NAME As String
+    Public R_REQU_POSI As String
+    Public R_AUTHORIZEDNAME As String
+    Public R_AUTH_POSITION As String
+    Public R_APPR_NAME As String
+    Public R_APPR_POSI As String
+    Public R_ISSU_NAME As String
+    Public R_ISSU_POSI As String
+    Public R_DATE As String
+    Public REQ_CODE As String
+    Public EMP_POSITION As String
+    Public REPRINT As Boolean
+    Public A_STOCKS As Integer
+    Public ITM_CODE As String
+    Public INV_CAT As Integer
+    Public INV_SUB_CAT As Integer
+    Public INV_BRAND As Integer
+    Public INV_SIZE As Integer
+    Public INV_COLOR As Integer
+    Public INV_LENG As Integer
+    Public INV_OTHERS As Integer
+    Public INV_NAME As Integer
+    Public DR_ID As String
+    Public CODEHOLDER As Integer
+    Public INV_DEF_CAT As String
+    Public INV_DEF_SUB_CAT As String
+    Public INV_DEF_BRAND As String
+    Public INV_DEF_SIZE As String
+    Public INV_DEF_COLOR As String
+    Public INV_DEF_LENG As String
+    Public INV_DEF_OTHER As String
+    Public INV_DEF_NAME As String
+    Public REPORT_TYPE As String
+    Public ISSAVE As Boolean
+    Public REP_TYPE As String
+    Public ENC_TYPE As String
+    Public ITM_DR_NO As String
+    Public ITM_DR_DATE_DELIVERED As String
+    Public ITM_DR_TIN_NO As String
+    Public ITM_DR_COMP_NAME As String
+    Public ITM_DR_DESC As String
+    Public ITM_DR_QTY As String
+    Public ITM_DR_UNIT_TYPE As String
+    Public ITM_DR_WARRANTY As String
+    Public INV_NO As String
+    Public T_INV_NO As String
+    Public T_INV_DT As String
+    Public T_INV_TIN_NO As String
+    Public T_INV_COMPANY As String
+    Public FILTERTYPE As String = Nothing
+    Public USER_DIVISION As String
+    Public ISLOT As Boolean
+    Public INV_ENC_UNIT_COST As String
+    Public INV_ENC_TOTAL_COST As String
 End Module

@@ -260,12 +260,11 @@ Partial Class MDI_Mainform
         Me.ABTNSEL5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.ABTNSEL5.Location = New System.Drawing.Point(0, 112)
         Me.ABTNSEL5.Name = "ABTNSEL5"
-        Me.ABTNSEL5.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.ABTNSEL5.Padding = New System.Windows.Forms.Padding(30, 0, 0, 0)
         Me.ABTNSEL5.Size = New System.Drawing.Size(142, 28)
         Me.ABTNSEL5.TabIndex = 6
         Me.ABTNSEL5.Text = "     "
         Me.ABTNSEL5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.ABTNSEL5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.ABTNSEL5.UseVisualStyleBackColor = False
         '
         'ABTNSEL4
@@ -555,9 +554,9 @@ Partial Class MDI_Mainform
         Me.LBL_RIMSHEADER.ForeColor = System.Drawing.Color.DarkRed
         Me.LBL_RIMSHEADER.Location = New System.Drawing.Point(68, 14)
         Me.LBL_RIMSHEADER.Name = "LBL_RIMSHEADER"
-        Me.LBL_RIMSHEADER.Size = New System.Drawing.Size(405, 31)
+        Me.LBL_RIMSHEADER.Size = New System.Drawing.Size(36, 31)
         Me.LBL_RIMSHEADER.TabIndex = 17
-        Me.LBL_RIMSHEADER.Text = "PROCUREMENT INFORMATION SYSTEM (V 1.00006)"
+        Me.LBL_RIMSHEADER.Text = "PR"
         '
         'PNL_Home
         '
@@ -566,7 +565,6 @@ Partial Class MDI_Mainform
         Me.PNL_Home.Controls.Add(Me.ABTNSYSTEMADMIN)
         Me.PNL_Home.Controls.Add(Me.PictureBox1)
         Me.PNL_Home.Controls.Add(Me.LBLSRRVHEADER)
-        Me.PNL_Home.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PNL_Home.Location = New System.Drawing.Point(180, 56)
         Me.PNL_Home.Name = "PNL_Home"
         Me.PNL_Home.Size = New System.Drawing.Size(1100, 665)

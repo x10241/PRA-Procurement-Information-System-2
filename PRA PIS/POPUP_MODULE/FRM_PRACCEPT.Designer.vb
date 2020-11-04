@@ -67,15 +67,16 @@ Partial Class FRM_PRACCEPT
         Me.DGV_SCANNED_IMG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGV_SCANNED_IMG.ColumnHeadersVisible = False
         Me.DGV_SCANNED_IMG.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.SCANNED_IMG})
-        Me.DGV_SCANNED_IMG.Location = New System.Drawing.Point(9, 126)
+        Me.DGV_SCANNED_IMG.Location = New System.Drawing.Point(358, 560)
         Me.DGV_SCANNED_IMG.Name = "DGV_SCANNED_IMG"
         Me.DGV_SCANNED_IMG.ReadOnly = True
         Me.DGV_SCANNED_IMG.RowHeadersVisible = False
         DataGridViewCellStyle2.Padding = New System.Windows.Forms.Padding(5)
         Me.DGV_SCANNED_IMG.RowsDefaultCellStyle = DataGridViewCellStyle2
         Me.DGV_SCANNED_IMG.RowTemplate.Height = 461
-        Me.DGV_SCANNED_IMG.Size = New System.Drawing.Size(364, 449)
+        Me.DGV_SCANNED_IMG.Size = New System.Drawing.Size(15, 0)
         Me.DGV_SCANNED_IMG.TabIndex = 1427
+        Me.DGV_SCANNED_IMG.Visible = False
         '
         'SCANNED_IMG
         '
@@ -97,7 +98,7 @@ Partial Class FRM_PRACCEPT
         Me.PNL.Location = New System.Drawing.Point(0, 0)
         Me.PNL.Margin = New System.Windows.Forms.Padding(5)
         Me.PNL.Name = "PNL"
-        Me.PNL.Size = New System.Drawing.Size(389, 32)
+        Me.PNL.Size = New System.Drawing.Size(341, 32)
         Me.PNL.TabIndex = 1428
         '
         'BTN_PRMINIMIZE
@@ -109,7 +110,7 @@ Partial Class FRM_PRACCEPT
         Me.BTN_PRMINIMIZE.FlatAppearance.BorderColor = System.Drawing.Color.Teal
         Me.BTN_PRMINIMIZE.FlatAppearance.BorderSize = 3
         Me.BTN_PRMINIMIZE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BTN_PRMINIMIZE.Location = New System.Drawing.Point(1466, 8)
+        Me.BTN_PRMINIMIZE.Location = New System.Drawing.Point(1418, 8)
         Me.BTN_PRMINIMIZE.Name = "BTN_PRMINIMIZE"
         Me.BTN_PRMINIMIZE.Size = New System.Drawing.Size(28, 28)
         Me.BTN_PRMINIMIZE.TabIndex = 11
@@ -124,7 +125,7 @@ Partial Class FRM_PRACCEPT
         Me.BTN_PRCLOSE.FlatAppearance.BorderColor = System.Drawing.Color.Teal
         Me.BTN_PRCLOSE.FlatAppearance.BorderSize = 3
         Me.BTN_PRCLOSE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BTN_PRCLOSE.Location = New System.Drawing.Point(1501, 7)
+        Me.BTN_PRCLOSE.Location = New System.Drawing.Point(1453, 7)
         Me.BTN_PRCLOSE.Name = "BTN_PRCLOSE"
         Me.BTN_PRCLOSE.Size = New System.Drawing.Size(30, 30)
         Me.BTN_PRCLOSE.TabIndex = 10
@@ -152,7 +153,7 @@ Partial Class FRM_PRACCEPT
         Me.BTN_Minimize.FlatAppearance.BorderColor = System.Drawing.Color.Teal
         Me.BTN_Minimize.FlatAppearance.BorderSize = 3
         Me.BTN_Minimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BTN_Minimize.Location = New System.Drawing.Point(-2971, 11)
+        Me.BTN_Minimize.Location = New System.Drawing.Point(-3019, 11)
         Me.BTN_Minimize.Margin = New System.Windows.Forms.Padding(5)
         Me.BTN_Minimize.Name = "BTN_Minimize"
         Me.BTN_Minimize.Size = New System.Drawing.Size(47, 45)
@@ -168,7 +169,7 @@ Partial Class FRM_PRACCEPT
         Me.BTN_CLOSE.FlatAppearance.BorderColor = System.Drawing.Color.Teal
         Me.BTN_CLOSE.FlatAppearance.BorderSize = 3
         Me.BTN_CLOSE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BTN_CLOSE.Location = New System.Drawing.Point(-2924, 10)
+        Me.BTN_CLOSE.Location = New System.Drawing.Point(-2972, 10)
         Me.BTN_CLOSE.Margin = New System.Windows.Forms.Padding(5)
         Me.BTN_CLOSE.Name = "BTN_CLOSE"
         Me.BTN_CLOSE.Size = New System.Drawing.Size(50, 48)
@@ -180,11 +181,9 @@ Partial Class FRM_PRACCEPT
         '
         Me.PNL_SCANSELECTION.Controls.Add(Me.Label1)
         Me.PNL_SCANSELECTION.Controls.Add(Me.CB_PURCHASE_REQUEST_CATEGORY)
-        Me.PNL_SCANSELECTION.Controls.Add(Me.Label46)
-        Me.PNL_SCANSELECTION.Controls.Add(Me.cbxSources)
-        Me.PNL_SCANSELECTION.Location = New System.Drawing.Point(10, 42)
+        Me.PNL_SCANSELECTION.Location = New System.Drawing.Point(7, 42)
         Me.PNL_SCANSELECTION.Name = "PNL_SCANSELECTION"
-        Me.PNL_SCANSELECTION.Size = New System.Drawing.Size(327, 82)
+        Me.PNL_SCANSELECTION.Size = New System.Drawing.Size(327, 49)
         Me.PNL_SCANSELECTION.TabIndex = 1453
         '
         'Label1
@@ -192,7 +191,7 @@ Partial Class FRM_PRACCEPT
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(4, 37)
+        Me.Label1.Location = New System.Drawing.Point(2, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(130, 16)
         Me.Label1.TabIndex = 1462
@@ -207,7 +206,7 @@ Partial Class FRM_PRACCEPT
         Me.CB_PURCHASE_REQUEST_CATEGORY.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CB_PURCHASE_REQUEST_CATEGORY.ForeColor = System.Drawing.Color.DimGray
         Me.CB_PURCHASE_REQUEST_CATEGORY.FormattingEnabled = True
-        Me.CB_PURCHASE_REQUEST_CATEGORY.Location = New System.Drawing.Point(2, 54)
+        Me.CB_PURCHASE_REQUEST_CATEGORY.Location = New System.Drawing.Point(2, 19)
         Me.CB_PURCHASE_REQUEST_CATEGORY.Name = "CB_PURCHASE_REQUEST_CATEGORY"
         Me.CB_PURCHASE_REQUEST_CATEGORY.Size = New System.Drawing.Size(321, 24)
         Me.CB_PURCHASE_REQUEST_CATEGORY.TabIndex = 1461
@@ -229,7 +228,7 @@ Partial Class FRM_PRACCEPT
         Me.Label46.AutoSize = True
         Me.Label46.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label46.ForeColor = System.Drawing.Color.Black
-        Me.Label46.Location = New System.Drawing.Point(4, -3)
+        Me.Label46.Location = New System.Drawing.Point(18, 535)
         Me.Label46.Name = "Label46"
         Me.Label46.Size = New System.Drawing.Size(120, 16)
         Me.Label46.TabIndex = 1421
@@ -242,7 +241,7 @@ Partial Class FRM_PRACCEPT
         Me.cbxSources.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbxSources.ForeColor = System.Drawing.Color.DimGray
         Me.cbxSources.FormattingEnabled = True
-        Me.cbxSources.Location = New System.Drawing.Point(3, 13)
+        Me.cbxSources.Location = New System.Drawing.Point(17, 551)
         Me.cbxSources.Name = "cbxSources"
         Me.cbxSources.Size = New System.Drawing.Size(321, 24)
         Me.cbxSources.TabIndex = 12
@@ -250,12 +249,11 @@ Partial Class FRM_PRACCEPT
         'RectangleShape43
         '
         Me.RectangleShape43.BorderColor = System.Drawing.Color.LightSeaGreen
-        Me.RectangleShape43.BorderWidth = 2
         Me.RectangleShape43.CornerRadius = 3
         Me.RectangleShape43.FillColor = System.Drawing.SystemColors.ButtonFace
-        Me.RectangleShape43.Location = New System.Drawing.Point(5, 37)
+        Me.RectangleShape43.Location = New System.Drawing.Point(3, 36)
         Me.RectangleShape43.Name = "RectangleShape43"
-        Me.RectangleShape43.Size = New System.Drawing.Size(371, 542)
+        Me.RectangleShape43.Size = New System.Drawing.Size(333, 60)
         '
         'ShapeContainer1
         '
@@ -263,7 +261,7 @@ Partial Class FRM_PRACCEPT
         Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer1.Name = "ShapeContainer1"
         Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape2, Me.RectangleShape4, Me.RectangleShape43})
-        Me.ShapeContainer1.Size = New System.Drawing.Size(389, 647)
+        Me.ShapeContainer1.Size = New System.Drawing.Size(341, 148)
         Me.ShapeContainer1.TabIndex = 1454
         Me.ShapeContainer1.TabStop = False
         '
@@ -272,9 +270,9 @@ Partial Class FRM_PRACCEPT
         Me.RectangleShape2.BorderColor = System.Drawing.Color.LightSeaGreen
         Me.RectangleShape2.BorderWidth = 2
         Me.RectangleShape2.CornerRadius = 5
-        Me.RectangleShape2.Location = New System.Drawing.Point(269, 589)
+        Me.RectangleShape2.Location = New System.Drawing.Point(253, 101)
         Me.RectangleShape2.Name = "RectangleShape2"
-        Me.RectangleShape2.Size = New System.Drawing.Size(105, 49)
+        Me.RectangleShape2.Size = New System.Drawing.Size(80, 39)
         '
         'RectangleShape4
         '
@@ -284,9 +282,6 @@ Partial Class FRM_PRACCEPT
         Me.RectangleShape4.Location = New System.Drawing.Point(157, 589)
         Me.RectangleShape4.Name = "RectangleShape4"
         Me.RectangleShape4.Size = New System.Drawing.Size(105, 49)
-        '
-        'BwMakePdf
-        '
         '
         'OFD_SCANCTD
         '
@@ -301,7 +296,7 @@ Partial Class FRM_PRACCEPT
         Me.BTN_ACCEPT_SCAN.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTN_ACCEPT_SCAN.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTN_ACCEPT_SCAN.Image = Global.PRA_PIS.My.Resources.Resources.outline_scanner_black_18dp
-        Me.BTN_ACCEPT_SCAN.Location = New System.Drawing.Point(159, 591)
+        Me.BTN_ACCEPT_SCAN.Location = New System.Drawing.Point(236, 460)
         Me.BTN_ACCEPT_SCAN.Name = "BTN_ACCEPT_SCAN"
         Me.BTN_ACCEPT_SCAN.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.BTN_ACCEPT_SCAN.Size = New System.Drawing.Size(102, 46)
@@ -313,22 +308,24 @@ Partial Class FRM_PRACCEPT
         '
         'BTN_ACCEPT_SAVE
         '
+        Me.BTN_ACCEPT_SAVE.BackColor = System.Drawing.Color.White
+        Me.BTN_ACCEPT_SAVE.BackgroundImage = Global.PRA_PIS.My.Resources.Resources.baseline_save_black_18dp
+        Me.BTN_ACCEPT_SAVE.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.BTN_ACCEPT_SAVE.FlatAppearance.BorderColor = System.Drawing.Color.LightSeaGreen
         Me.BTN_ACCEPT_SAVE.FlatAppearance.BorderSize = 0
         Me.BTN_ACCEPT_SAVE.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
         Me.BTN_ACCEPT_SAVE.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen
         Me.BTN_ACCEPT_SAVE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTN_ACCEPT_SAVE.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTN_ACCEPT_SAVE.Image = Global.PRA_PIS.My.Resources.Resources.outline_save_black_18dp
-        Me.BTN_ACCEPT_SAVE.Location = New System.Drawing.Point(271, 591)
+        Me.BTN_ACCEPT_SAVE.Location = New System.Drawing.Point(255, 102)
         Me.BTN_ACCEPT_SAVE.Name = "BTN_ACCEPT_SAVE"
         Me.BTN_ACCEPT_SAVE.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.BTN_ACCEPT_SAVE.Size = New System.Drawing.Size(102, 46)
+        Me.BTN_ACCEPT_SAVE.Size = New System.Drawing.Size(77, 38)
         Me.BTN_ACCEPT_SAVE.TabIndex = 1459
         Me.BTN_ACCEPT_SAVE.Text = "SAVE"
         Me.BTN_ACCEPT_SAVE.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BTN_ACCEPT_SAVE.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.BTN_ACCEPT_SAVE.UseVisualStyleBackColor = True
+        Me.BTN_ACCEPT_SAVE.UseVisualStyleBackColor = False
         '
         'TblM4_PURCHASEREQUEST_CATEGORYTableAdapter
         '
@@ -347,7 +344,9 @@ Partial Class FRM_PRACCEPT
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(389, 647)
+        Me.ClientSize = New System.Drawing.Size(341, 148)
+        Me.Controls.Add(Me.cbxSources)
+        Me.Controls.Add(Me.Label46)
         Me.Controls.Add(Me.BTN_ACCEPT_SAVE)
         Me.Controls.Add(Me.BTN_ACCEPT_SCAN)
         Me.Controls.Add(Me.PNL_SCANSELECTION)
@@ -368,6 +367,7 @@ Partial Class FRM_PRACCEPT
         CType(Me.TblM4PURCHASEREQUESTCATEGORYBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DS_PROPERTYDB, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 

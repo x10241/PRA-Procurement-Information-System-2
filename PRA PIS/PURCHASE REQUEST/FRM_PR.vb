@@ -2,6 +2,9 @@
 Imports Microsoft.VisualBasic.PowerPacks
 Public Class FRM_PR
 
+    Public Function OpenProgram(ByVal ThisOne As Form) As Form
+        Return CType(Activator.CreateInstance(ThisOne.GetType()), Form)
+    End Function
 
 #Region "VARIABLES DECLARATION"
 
@@ -65,27 +68,16 @@ Public Class FRM_PR
 #Region "LOAD"
     Private Sub FRM_PURCHASE_REQUEST_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        'TODO: This line of code loads data into the 'DS_PROPERTYDB.TBLG3_PRIMARY_SIGNATORY' table. You can move, or remove it, as needed.
-        Me.TBLG3_PRIMARY_SIGNATORYTableAdapter.Fill(Me.DS_PROPERTYDB.TBLG3_PRIMARY_SIGNATORY)
-        'TODO: This line of code loads data into the 'DS_PROPERTYDB.tblM4_PURCHASEREQUEST' table. You can move, or remove it, as needed.
-        Me.TblM4_PURCHASEREQUESTTableAdapter.Fill(Me.DS_PROPERTYDB.tblM4_PURCHASEREQUEST)
-
-        'TODO: This line of code loads data into the 'DS_PROPERTYDB.VWG3_PRIMARY_SIGNATORY' table. You can move, or remove it, as needed.
-        Me.VWG3_PRIMARY_SIGNATORYTableAdapter.Fill(Me.DS_PROPERTYDB.VWG3_PRIMARY_SIGNATORY)
+        SPM4_PR_LISTTableAdapter.FillByDIV_SEARCH(DS_STOREDPROC.SPM4_PR_LIST, DIVISION_NO, WTXT_PR_SEARCH.Text)
+        LLBL_RECORDSFOUND.Text = DGV_PR_LIST.Rows.Count
         _DISABLE(True)
-        '   OPENINITSCANNER()
-
-
-
     End Sub
 #End Region
 
-    Public Function OpenProgram(ByVal ThisOne As Form) As Form
-        Return CType(Activator.CreateInstance(ThisOne.GetType()), Form)
-    End Function
-
+#Region "TIMER"
     Private WithEvents UCPROCTim As New Timer With {.Interval = 10}
-
+    Private WithEvents UCPROCTimY As New Timer With {.Interval = 10}
+    Private WithEvents UCPROCTimPRSTATS As New Timer With {.Interval = 10}
     Private Sub Tim_Tick(sender As Object, e As EventArgs) Handles UCPROCTim.Tick
         Dim timr As Timer = CType(sender, Timer)
         If timr Is UCPROCTim Then
@@ -93,10 +85,10 @@ Public Class FRM_PR
                 If slideFlaG = True Then
                     X_LOC -= 100
                     PNL_SLIDE.Location = New Point(X_LOC, 40)
-                    If PNL_SLIDE Is APNL_PRREMARKS Then
-                        If X_LOC < 424 Then
-                            PNL_SLIDE.Location = New Point(424, 40)
-                            X_LOC = 424
+                    If PNL_SLIDE Is APNL_PR_DETAILS Then
+                        If X_LOC < 395 Then
+                            PNL_SLIDE.Location = New Point(336, 40)
+                            X_LOC = 395
                             UCPROCTim.Enabled = False
                         End If
                     End If
@@ -111,15 +103,66 @@ Public Class FRM_PR
         End If
     End Sub
 
-#Region "BUTTON/TEXTBOX/LINKLABEL CLICK"
+    Private Sub Tim_Tick2(sender As Object, e As EventArgs) Handles UCPROCTimY.Tick
+        Dim timr As Timer = CType(sender, Timer)
+        If timr Is UCPROCTimY Then
+            Try
+                If slideFlaGY = True Then
+                    Y_LOC -= 100
+                    PNL_SLIDE_Y.Location = New Point(575, Y_LOC)
+                    If PNL_SLIDE_Y Is APNL_PR_SIGNATORIES Then
+                        If Y_LOC < 132 Then
+                            PNL_SLIDE_Y.Location = New Point(575, 132)
+                            Y_LOC = 132
+                            UCPROCTimY.Enabled = False
+                        End If
+                    End If
+                Else
+                    PNL_SLIDE_Y.Location = New Point(575, Y_LOC)
+                    Y_LOC = 660
+                    UCPROCTimY.Enabled = False
+                End If
+            Catch ex As Exception
+                Y_LOC = 0
+            End Try
+        End If
+    End Sub
 
-    Public Sub WTXT_REQUESTEDDATE_Click(sender As Object, e As EventArgs) Handles RECT_PRSAVENEW.Click,
+    Private Sub Tim_Tick3(sender As Object, e As EventArgs) Handles UCPROCTimPRSTATS.Tick
+        Dim timr As Timer = CType(sender, Timer)
+        If timr Is UCPROCTimPRSTATS Then
+            Try
+                If slideFlaGX2 = True Then
+                    X2_LOC -= 100
+                    PNL_SLIDE2.Location = New Point(580, 0)
+                    If PNL_SLIDE2 Is APNL_PR_STATUS Then
+                        If X2_LOC < 580 Then
+                            PNL_SLIDE2.Location = New Point(580, 0)
+                            X2_LOC = 580
+                            UCPROCTimPRSTATS.Enabled = False
+                        End If
+                    End If
+                Else
+                    PNL_SLIDE2.Location = New Point(1095, 0)
+                    X2_LOC = 1095
+                    UCPROCTimPRSTATS.Enabled = False
+                End If
+            Catch ex As Exception
+                X2_LOC = 0
+            End Try
+        End If
+    End Sub
+
+
+#End Region
+
+#Region "CLICK"
+    Public Sub WTXT_REQUESTEDDATE_Click(sender As Object, e As EventArgs) Handles RECT_PRNEW.Click,
                                                                                     RECT_PRCANCELEDIT.Click,
                                                                                     PB_PRICONNEW.Click,
                                                                                     PB_PBICONEDIT.Click,
                                                                                     PB_PRICONSEARCH.Click,
                                                                                     PB_PRICONSAVE.Click,
-                                                                                    PB_PRICONPRINTPREVIEW.Click,
                                                                                     BTN_CLOSE.Click,
                                                                                     LLBL_PREDIT.Click,
                                                                                     LLBL_PRSEARCH.Click,
@@ -130,15 +173,28 @@ Public Class FRM_PR
                                                                                     WTXT_SIGNCERTIFIEDNAME.Click,
                                                                                     WTXT_SIGNNOTEDNAME.Click,
                                                                                     WTXT_SIGNREQUESTEDNAME.Click,
-                                                                                    LLBL_PRPRINTPREVIEW.Click,
-                                                                                    LLBL_SAVEDEFAULT.Click,
-                                                                                    PB_SAVEICONSAVEDEFAULT.Click,
                                                                                     LLBL_ADDPARTICULARS.Click,
                                                                                     BTN_TRANSCODE.Click,
                                                                                     BTN_PRCLOSE.Click,
                                                                                     BTN_PRMINIMIZE.Click,
-                                                                                    LLBL_PRVIEWREMARKS.LinkClicked,
-                                                                                    BTN_CLOSE_PRREMARKS.Click
+                                                                                    BTN_CLOSE_PR_DETAILS.Click,
+                                                                                    LLBL_SIGNATORIES.Click,
+                                                                                    PB_SIGNATORIES.Click,
+                                                                                    BTN_CLOSE_SIGNATORY.Click,
+                                                                                    LLBL_PR_SAVE_TRANS.Click,
+                                                                                    PB_PRICONPRINTPREVIEW.Click,
+                                                                                    PB_ADD_PART.Click,
+                                                                                    RECT_ADD_PARTICULARS.Click,
+                                                                                    LLBL_SIG_SAVEDEFAULT.Click,
+                                                                                    PB_SIG_SAVEDEFAULT.Click,
+                                                                                    RECT_SIG_SAVEDEFAULT.Click,
+                                                                                    BTN_PR_STATUS_CLOSE.Click,
+                                                                                    WTXT_REQUESTEDDATE.Click,
+                                                                                    LLBL_PRINT_PREV.Click,
+                                                                                    PB_PRINT_PREV.Click,
+                                                                                    RECT_PRINT_PREV.Click
+
+
         Dim pb As PictureBox = Nothing
         Dim lbl As Label = Nothing
         Dim btn As Button = Nothing
@@ -186,49 +242,43 @@ Public Class FRM_PR
             End If
             FRM_SIGNATORYLIST.ShowDialog()
             'NEW BUTTON
-        ElseIf pb Is PB_PRICONNEW Or llbl Is LLBL_PRNEW Then
+#Region "NEW PR"
+        ElseIf pb Is PB_PRICONNEW Or llbl Is LLBL_PRNEW Or rect Is RECT_PRNEW Then
+            dgv = Nothing
+            UCPROCTim.Enabled = True
+            slideFlaG = True
+            PNL_SLIDE = APNL_PR_DETAILS
+            PNL_SLIDE.BringToFront()
+            PNL_BUTTONS.Enabled = False
+            PNL_LIST.Enabled = False
+            REPRINT = False
             _CLEAR()
             _DISABLE(False)
             isNew = True
-
             WTXT_SUBMITTEDBY.Text = USERFULLNAME
             PB_SAVEICONSAVEDEFAULT.Enabled = True
             LLBL_SAVEDEFAULT.Enabled = True
             LLBL_ADDPARTICULARS.Enabled = True
             GET_PRI_SIGNATORY()
             'GETDATE
-            Me.SPM4_CURRENTDATETIMETableAdapter.Fill(Me.DS_PROPERTYDB.SPM4_CURRENTDATETIME)
-            'GET DIVISION
-            Me.TblV1_HRISDIVISIONTableAdapter.Fill(Me.DS_TABLES.tblV1_HRISDIVISION)
-            'GET DEPARTMENT
-            Me.TblV1_HRISDEPARTMENTTableAdapter.Fill(Me.DS_TABLES.tblV1_HRISDEPARTMENT)
-            Me.TblV1_HRISDIVISIONTableAdapter.FillByDEPTCODE(Me.DS_TABLES.tblV1_HRISDIVISION, CB_PRDEPARTMENT.SelectedValue)
-            Me.DGV_PR_ITEMLIST.Columns(6).Visible = True
-            Me.DGV_PR_ITEMLIST.Columns(7).Visible = True
+            Me.SPM4_CURRENTDATETIMETableAdapter.Fill(Me.DS_STOREDPROC.SPM4_CURRENTDATETIME)
+            Me.V1VW_USERACCEMPLOYEETableAdapter.FillByUSERNAME(Me.DS_VIEWS.V1VW_USERACCEMPLOYEE, SYS_USER)
+            'Me.DGV_PR_ITEMLIST.Columns(6).Visible = True
+            'Me.DGV_PR_ITEMLIST.Columns(7).Visible = True
             RECT_PRPARTICULARS.Visible = False
-            CB_PRDEPARTMENT.SelectedIndex = CB_PRDEPARTMENT.FindStringExact(USERDEPARTMENT)
-            CB_PRDIVISION.SelectedIndex = CB_PRDIVISION.FindStringExact(USERDIVISION)
+            WTXT_SUBMITTEDBY.Text = SYS_FULLNAME_FML
 
-            'EDIT BUTTON
-        ElseIf pb Is PB_PBICONEDIT Or lbl Is LLBL_PREDIT Or llbl Is LLBL_PREDIT Then
-            _DISABLE(False)
-            TXTAPPCODE = CType(WTXT_APPCODE, TextBox)
-            TXTREQUESTEDDATE = CType(WTXT_REQUESTEDDATE, TextBox)
-            TXTSUBMITTEDBY = CType(WTXT_SUBMITTEDBY, TextBox)
-            RBTNISDOLLAR = CType(RBTN_DOLLARS, RadioButton)
-            CBDEPARTMENT = CType(CB_PRDEPARTMENT, ComboBox)
-            CBDIVISION = CType(CB_PRDIVISION, ComboBox)
-            TXTPURPOSE = CType(WTXT_PURPOSE, TextBox)
-            FRM_EDITPR.ShowDialog()
-            'CANCEL Button
+
+#End Region
+
+#Region "CANCEL"
         ElseIf pb Is PB_PRICONCANCEL Or llbl Is LLBL_PRCANCEL Then
-            If MsgBox("Do you really want to cancel this request?", vbYesNo, "Confirm") = vbYes Then
+            If MsgBox("Do you really want to cancel this?", vbYesNo, "Confirm") = vbYes Then
                 _DISABLE(True)
                 _CLEAR()
                 LLBL_PRNEW.BringToFront()
                 LLBL_ADDPARTICULARS.Enabled = False
-                CB_PRDEPARTMENT.SelectedIndex = -1
-                CB_PRDIVISION.SelectedIndex = -1
+
                 isNew = False
                 DGV_PR_ITEMLIST.Rows.Clear()
                 RECT_PRPARTICULARS.Visible = False
@@ -237,16 +287,18 @@ Public Class FRM_PR
                 PB_PRICONNEW.Enabled = True
                 LLBL_PRNEW.Enabled = True
             End If
-            'SAVE BUTTON
-        ElseIf pb Is PB_PRICONSAVE Or llbl Is LLBL_PRSAVE Or llbl Is LLBL_PRSAVE Then
+#End Region
 
+#Region "SAVE"
+        ElseIf llbl Is LLBL_PR_SAVE_TRANS Or pb Is PB_PRICONPRINTPREVIEW Then
+            ' is_preview = True
             ISVALID = True
             'PURPOSE VALIDATION
             If REQFIELDVALIDATION(WTXT_PURPOSE) Then
                 RECT_PRPURPOSE.BorderColor = Color.OrangeRed
                 ISVALID = False
             Else
-                RECT_PRPURPOSE.BorderColor = Color.LightSeaGreen
+                RECT_PRPURPOSE.BorderColor = Color.DimGray
             End If
             'PARTICULARS
             If DGV_PR_ITEMLIST.RowCount = 0 Then
@@ -257,120 +309,115 @@ Public Class FRM_PR
             End If
 
             'APPROVE NAME
-            If REQFIELDVALIDATION(WTXT_SIGNAPPROVENAME) Then
-                RECT_PRSIGNAPPROVEDNAME.BorderColor = Color.OrangeRed
-                RECT_PRSIGNAPPROVEPOSITION.BorderColor = Color.OrangeRed
-                ISVALID = False
-            Else
-                RECT_PRSIGNAPPROVEDNAME.BorderColor = Color.LightSeaGreen
-                RECT_PRSIGNAPPROVEPOSITION.BorderColor = Color.LightSeaGreen
-            End If
-
-            'CERTIFIED NAME
-            If REQFIELDVALIDATION(WTXT_SIGNCERTIFIEDNAME) Then
-                RECT_PRSIGNCERTIFIEDNAME.BorderColor = Color.OrangeRed
-                RECT_PRSIGNCERTIFIEDPOSITION.BorderColor = Color.OrangeRed
-                ISVALID = False
-            Else
-                RECT_PRSIGNCERTIFIEDNAME.BorderColor = Color.LightSeaGreen
-                RECT_PRSIGNCERTIFIEDPOSITION.BorderColor = Color.LightSeaGreen
-            End If
-
-            'NOTED NAME
-            If REQFIELDVALIDATION(WTXT_SIGNNOTEDNAME) Then
-                RECT_PRSIGNNOTEDNAME.BorderColor = Color.OrangeRed
-                RECT_PRSIGNNOTEDPOSITION.BorderColor = Color.OrangeRed
-                ISVALID = False
-            Else
-                RECT_PRSIGNNOTEDNAME.BorderColor = Color.LightSeaGreen
-                RECT_PRSIGNNOTEDPOSITION.BorderColor = Color.LightSeaGreen
-            End If
-
-            'REQUESTED NAME
-            If REQFIELDVALIDATION(WTXT_SIGNREQUESTEDNAME) Then
-                RECT_PRSIGNREQUESTEDNAME.BorderColor = Color.OrangeRed
-                RECT_PRSIGNREQUESTEDPOSITION.BorderColor = Color.OrangeRed
-                ISVALID = False
-            Else
-                RECT_PRSIGNREQUESTEDNAME.BorderColor = Color.LightSeaGreen
-                RECT_PRSIGNREQUESTEDPOSITION.BorderColor = Color.LightSeaGreen
-            End If
-
-            'APPCODE
-            'If REQFIELDVALIDATION(WTXT_APPCODE) Then
-            '    RECT_PRAPPCODE.BorderColor = Color.OrangeRed
-            '    RECT_PRAPPCODE.BorderColor = Color.OrangeRed
+            'If REQFIELDVALIDATION(WTXT_SIGNAPPROVENAME) Then
+            '    RECT_PRSIGNAPPROVEDNAME.BorderColor = Color.OrangeRed
+            '    RECT_PRSIGNAPPROVEPOSITION.BorderColor = Color.OrangeRed
             '    ISVALID = False
             'Else
-            '    RECT_PRAPPCODE.BorderColor = Color.LightSeaGreen
+            '    RECT_PRSIGNAPPROVEDNAME.BorderColor = Color.DimGray
+            '    RECT_PRSIGNAPPROVEPOSITION.BorderColor = Color.DimGray
             'End If
 
-            'if all required fields are filled up.
+            ''CERTIFIED NAME
+            'If REQFIELDVALIDATION(WTXT_SIGNCERTIFIEDNAME) Then
+            '    RECT_PRSIGNCERTIFIEDNAME.BorderColor = Color.OrangeRed
+            '    RECT_PRSIGNCERTIFIEDPOSITION.BorderColor = Color.OrangeRed
+            '    ISVALID = False
+            'Else
+            '    RECT_PRSIGNCERTIFIEDNAME.BorderColor = Color.DimGray
+            '    RECT_PRSIGNCERTIFIEDPOSITION.BorderColor = Color.DimGray
+            'End If
+
+            ''NOTED NAME
+            'If REQFIELDVALIDATION(WTXT_SIGNNOTEDNAME) Then
+            '    RECT_PRSIGNNOTEDNAME.BorderColor = Color.OrangeRed
+            '    RECT_PRSIGNNOTEDPOSITION.BorderColor = Color.OrangeRed
+            '    ISVALID = False
+            'Else
+            '    RECT_PRSIGNNOTEDNAME.BorderColor = Color.DimGray
+            '    RECT_PRSIGNNOTEDPOSITION.BorderColor = Color.DimGray
+            'End If
+
+            ''REQUESTED NAME
+            'If REQFIELDVALIDATION(WTXT_SIGNREQUESTEDNAME) Then
+            '    RECT_PRSIGNREQUESTEDNAME.BorderColor = Color.OrangeRed
+            '    RECT_PRSIGNREQUESTEDPOSITION.BorderColor = Color.OrangeRed
+            '    ISVALID = False
+            'Else
+            '    RECT_PRSIGNREQUESTEDNAME.BorderColor = Color.DimGray
+            '    RECT_PRSIGNREQUESTEDPOSITION.BorderColor = Color.DimGray
+            'End If
+
             If ISVALID Then
-                If MsgBox("Submit this request?", vbYesNo, "Confirm") = vbYes Then
-                    _SAVE()
-                    If MsgBox("Do you want to print this transaction?", vbYesNo, "Confirm") = vbYes Then
-                        is_preview = False
-                        PREVIEW()
-                    End If
-                    _DISABLE(True)
-                    _CLEAR()
-                    PB_PRICONNEW.Enabled = True
-                    LLBL_PRNEW.Enabled = True
-                    PB_PRICONNEW.BringToFront()
-                    PB_PBICONEDIT.BringToFront()
-                    PB_PRICONSAVE.SendToBack()
-                    LLBL_PRNEW.BringToFront()
-                    CB_PRDEPARTMENT.SelectedIndex = -1
-                    CB_PRDIVISION.SelectedIndex = -1
-                    isNew = False
-                    DGV_PR_ITEMLIST.Rows.Clear()
-                End If
+                SAVE()
             Else
-                NotificationManager.Show(Me, "PLEASE PROVIDE ALL REQUIRED FIELD!", Color.Red, 3000)
+                NotificationManager.Show(Me, "PLEASE CHECK SIGNATORIES AND OTHER REQUIRED FIELDS!", Color.Red, 3000)
             End If
-            'CLOSE BUTTON
-        ElseIf btn Is BTN_PRCLOSE Then
-            Me.Close()
-            'MINIMIZE BUTTON
-        ElseIf btn Is BTN_PRMINIMIZE Then
-            Me.WindowState = FormWindowState.Minimized
-            'SEARCH BUTTON
-        ElseIf llbl Is LLBL_PRSEARCH Or pb Is PB_PRICONSEARCH Then
-            FRM_SEARCHPRLIST.ShowDialog()
-        ElseIf llbl Is LLBL_PRPRINTPREVIEW Or pb Is PB_PRICONPRINTPREVIEW Then
-            is_preview = True
-            PREVIEW()
-        ElseIf llbl Is LLBL_SAVEDEFAULT Or pb Is PB_SAVEICONSAVEDEFAULT Then
-            _SIGNATORYDEFAULT()
-        ElseIf llbl Is LLBL_ADDPARTICULARS Then
-            dgv = DGV_PR_ITEMLIST
-            FRM_DGV_ENCODING.PNL_PARTICULARS.BringToFront()
-            FRM_DGV_ENCODING.BTN_SAVE.Text = "SAVE"
-            FRM_DGV_ENCODING.ShowDialog()
-        ElseIf llbl Is LLBL_PRVIEWREMARKS Then
-            UCPROCTim.Enabled = True
-            slideFlaG = True
-            PNL_SLIDE = APNL_PRREMARKS
-            PNL_SLIDE.BringToFront()
-        ElseIf btn Is BTN_CLOSE_PRREMARKS Then
-            UCPROCTim.Enabled = True
-            slideFlaG = False
-        End If
-    End Sub
 #End Region
 
-#Region "Hover BUTTON/PB/LLBL"
+#Region "SAVE SIGNATORIES"
+        ElseIf llbl Is LLBL_SIG_SAVEDEFAULT Or pb Is PB_SIG_SAVEDEFAULT Or rect Is RECT_SIG_SAVEDEFAULT Then
+            _SIGNATORYDEFAULT()
+#End Region
 
+#Region "ADD PARTICULARS"
+        ElseIf llbl Is LLBL_ADDPARTICULARS Or pb Is PB_ADD_PART Or rect Is RECT_ADD_PARTICULARS Then
+            dgv = DGV_PR_ITEMLIST
+            FRM_DGV_ENCODING.PNL_PARTICULARS.BringToFront()
+            FRM_DGV_ENCODING.ShowDialog()
+#End Region
+
+#Region "MINIMIZE"
+        ElseIf btn Is BTN_PRMINIMIZE Then
+            Me.WindowState = FormWindowState.Minimized
+#End Region
+
+#Region "CLOSE FORM"
+        ElseIf btn Is BTN_CLOSE_SIGNATORY Then
+            'UCPROCTimY.Enabled = True
+            'slideFlaGY = False
+            APNL_PR_DETAILS.Enabled = True
+            APNL_PR_SIGNATORIES.Location = New Point(575, 660)
+        ElseIf btn Is BTN_CLOSE_PR_DETAILS Then
+            UCPROCTim.Enabled = True
+            slideFlaG = False
+            PNL_BUTTONS.Enabled = True
+            PNL_LIST.Enabled = True
+        ElseIf btn Is BTN_PRCLOSE Then
+            Me.Close()
+        ElseIf btn Is BTN_PR_STATUS_CLOSE Then
+            UCPROCTimPRSTATS.Enabled = True
+            slideFlaGX2 = False
+            PNL_BUTTONS.Enabled = True
+            PNL_LIST.Enabled = True
+#End Region
+
+#Region "SHOW SIGNATORIES"
+        ElseIf rect Is RECT_SIGNATORIES Or llbl Is LLBL_SIGNATORIES Or pb Is PB_SIGNATORIES Then
+            UCPROCTimY.Enabled = True
+            slideFlaGY = True
+            PNL_SLIDE_Y = APNL_PR_SIGNATORIES
+            PNL_SLIDE_Y.BringToFront()
+            APNL_PR_DETAILS.Enabled = False
 #End Region
 
 #Region "PRINT PREVIEW"
-    Sub PREVIEW()
-        If CB_PRDEPARTMENT.SelectedValue = "PSO" Then
-            isSatellite = True
-        Else
-            isSatellite = False
+        ElseIf llbl Is LLBL_PRINT_PREV Or pb Is PB_PRINT_PREV Or rect Is RECT_PRINT_PREV Then
+            PRINT_PREVIEW()
+#End Region
+
         End If
+    End Sub
+
+#End Region
+
+#Region "SAVE"
+    Sub SAVE()
+        'If CB_PRDEPARTMENT.SelectedValue = "PSO" Then
+        '    isSatellite = True
+        'Else
+        '    isSatellite = False
+        'End If
 
         If RBTN_DOLLARS.Checked = True Then
             ISDOLLARS = True
@@ -380,8 +427,8 @@ Public Class FRM_PR
         dgv = DGV_PR_ITEMLIST
         PR_DATEREQUESTED = WTXT_REQUESTEDDATE.Text
         PR_APPCODE = WTXT_APPCODE.Text
-        PR_DEPARTMENT = CB_PRDEPARTMENT.Text
-        PR_DIVISION = CB_PRDIVISION.Text
+        PR_DEPARTMENT = WTXT_PRDEPARTMENT.Text
+        PR_DIVISION = WTXT_PRDIV.Text
         PR_PURPOSE = WTXT_PURPOSE.Text
         PR_REQUESTEDBY = WTXT_SIGNREQUESTEDNAME.Text
         PR_REQUESTEDBYPOSITION = WTXT_SIGNREQUESTEDPOSITION.Text
@@ -391,8 +438,131 @@ Public Class FRM_PR
         PR_CERTIFIEDBYPOSITION = WTXT_SIGNCERTIFIEDPOSITION.Text
         PR_NOTEDBY = WTXT_SIGNNOTEDNAME.Text
         PR_NOTEDBYPOSITION = WTXT_SIGNNOTEDPOSITION.Text
+
+        If isNew Then
+            PRNO_GEN = SPM4_PRCODETableAdapter.SPM4_SQ_PRCODE(DIVISION_NO)
+            TblM4_PURCHASEREQUESTTableAdapter.IQ_PURCHASE_REQUEST(PRNO_GEN, Trim(PR_DATEREQUESTED), Trim(PR_APPCODE), Trim(PR_PURPOSE), 4, Trim(PR_REQUESTEDBY), Trim(PR_REQUESTEDBYPOSITION), Trim(PR_APPROVEDBY), Trim(PR_APPROVEDBYPOSITION), Trim(PR_CERTIFIEDBY), Trim(PR_CERTIFIEDBYPOSITION), Trim(PR_NOTEDBY), Trim(PR_NOTEDBYPOSITION), Trim(EMP_NO), Trim(PR_DEPARTMENT), Trim(PR_DIVISION), ISDOLLARS)
+            For Each row As DataGridViewRow In DGV_PR_ITEMLIST.Rows
+                If Not row.IsNewRow Then
+                    TblM4_PURCHASEREQUEST_ITEMTableAdapter.IQ_PR_ITEMS(PRNO_GEN, row.Cells(1).Value.ToString, row.Cells(2).Value.ToString, row.Cells(0).Value.ToString, row.Cells(3).Value.ToString, row.Cells(4).Value.ToString, row.Cells(5).Value.ToString)
+                End If
+            Next
+        Else
+            TblM4_PURCHASEREQUESTTableAdapter.UQ_PR(Trim(PR_DATEREQUESTED), Trim(PR_APPCODE), Trim(PR_PURPOSE), 4, Trim(PR_REQUESTEDBY), Trim(PR_REQUESTEDBYPOSITION), Trim(PR_APPROVEDBY), Trim(PR_APPROVEDBYPOSITION), Trim(PR_CERTIFIEDBY), Trim(PR_CERTIFIEDBYPOSITION), Trim(PR_NOTEDBY), Trim(PR_NOTEDBYPOSITION), Trim(EMP_NO), Trim(PR_DEPARTMENT), Trim(PR_DIVISION), Trim(EMP_NO), ISDOLLARS, PRNO_GEN)
+            TblM4_PURCHASEREQUEST_ITEMTableAdapter.DQ_PR_ITEMS(PRNO_GEN)
+            For Each row As DataGridViewRow In dgv.Rows
+                If Not row.IsNewRow Then
+                    TblM4_PURCHASEREQUEST_ITEMTableAdapter.IQ_PR_ITEMS(PRNO_GEN, row.Cells(1).Value.ToString, row.Cells(2).Value.ToString, row.Cells(0).Value.ToString, row.Cells(3).Value.ToString, row.Cells(4).Value.ToString, row.Cells(5).Value.ToString)
+                End If
+            Next
+        End If
+
+
+        MessageBox.Show("Successfully saved.", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        If MsgBox("Do you want to print?", vbYesNo, "Confirm") = vbYes Then
+            FRM_PURCHASE_REQUEST_PRINTPREVIEW.BTN_GENERATE_REPORT.Visible = True
+            FRM_PURCHASE_REQUEST_PRINTPREVIEW.BTN_GENERATE_REPORT.Text = "PRINT"
+            FRM_PURCHASE_REQUEST_PRINTPREVIEW.ShowDialog()
+        End If
+        _DISABLE(True)
+        _CLEAR()
+        PB_PRICONNEW.Enabled = True
+        LLBL_PRNEW.Enabled = True
+        PB_PRICONNEW.BringToFront()
+        PB_PBICONEDIT.BringToFront()
+        PB_PRICONSAVE.SendToBack()
+        LLBL_PRNEW.BringToFront()
+        UCPROCTim.Enabled = True
+        slideFlaG = False
+        PNL_BUTTONS.Enabled = True
+        PNL_LIST.Enabled = True
+        isNew = False
+        DGV_PR_ITEMLIST.Rows.Clear()
+        SPM4_PR_LISTTableAdapter.FillByDIV_SEARCH(DS_STOREDPROC.SPM4_PR_LIST, DIVISION_NO, WTXT_PR_SEARCH.Text)
+        'ISSAVE = False
+        'If RBTN_DOLLARS.Checked = True Then
+        '    ISDOLLARS = True
+        'Else
+        '    ISDOLLARS = False
+        'End If
+        'dgv = DGV_PR_ITEMLIST
+        'PR_DATEREQUESTED = WTXT_REQUESTEDDATE.Text
+        'PR_APPCODE = WTXT_APPCODE.Text
+        'PR_DEPARTMENT = WTXT_PRDEPARTMENT.Text
+        'PR_DIVISION = WTXT_PRDIV.Text
+        'PR_PURPOSE = WTXT_PURPOSE.Text
+        'PR_REQUESTEDBY = WTXT_SIGNREQUESTEDNAME.Text
+        'PR_REQUESTEDBYPOSITION = WTXT_SIGNREQUESTEDPOSITION.Text
+        'PR_APPROVEDBY = WTXT_SIGNAPPROVENAME.Text
+        'PR_APPROVEDBYPOSITION = WTXT_SIGNAPPROVEPOSITION.Text
+        'PR_CERTIFIEDBY = WTXT_SIGNCERTIFIEDNAME.Text
+        'PR_CERTIFIEDBYPOSITION = WTXT_SIGNCERTIFIEDPOSITION.Text
+        'PR_NOTEDBY = WTXT_SIGNNOTEDNAME.Text
+        'PR_NOTEDBYPOSITION = WTXT_SIGNNOTEDPOSITION.Text
+        'If REPRINT Then
+        '    If isNew = False Then
+        '        FRM_PURCHASE_REQUEST_PRINTPREVIEW.BTN_GENERATE_REPORT.Text = "SAVE AND PRINT"
+        '    Else
+        '        FRM_PURCHASE_REQUEST_PRINTPREVIEW.BTN_GENERATE_REPORT.Text = "PRINT"
+        '    End If
+        'End If
+        'FRM_PURCHASE_REQUEST_PRINTPREVIEW.ShowDialog()
+        'If ISSAVE Then
+        '    NotificationManager.Show(Me, "Successfully save!.", Color.Green, 6000)
+        '    _DISABLE(True)
+        '    _CLEAR()
+        '    PB_PRICONNEW.Enabled = True
+        '    LLBL_PRNEW.Enabled = True
+        '    PB_PRICONNEW.BringToFront()
+        '    PB_PBICONEDIT.BringToFront()
+        '    PB_PRICONSAVE.SendToBack()
+        '    LLBL_PRNEW.BringToFront()
+        '    UCPROCTim.Enabled = True
+        '    slideFlaG = False
+        '    PNL_BUTTONS.Enabled = True
+        '    PNL_LIST.Enabled = True
+        '    isNew = False
+        '    DGV_PR_ITEMLIST.Rows.Clear()
+        'End If
+    End Sub
+#End Region
+
+#Region "PREVIEW"
+    Sub PRINT_PREVIEW()
+        If RBTN_DOLLARS.Checked = True Then
+            ISDOLLARS = True
+        Else
+            ISDOLLARS = False
+        End If
+        dgv = DGV_PR_ITEMLIST
+        PR_DATEREQUESTED = WTXT_REQUESTEDDATE.Text
+        PR_APPCODE = WTXT_APPCODE.Text
+        PR_DEPARTMENT = WTXT_PRDEPARTMENT.Text
+        PR_DIVISION = WTXT_PRDIV.Text
+        PR_PURPOSE = WTXT_PURPOSE.Text
+        PR_REQUESTEDBY = WTXT_SIGNREQUESTEDNAME.Text
+        PR_REQUESTEDBYPOSITION = WTXT_SIGNREQUESTEDPOSITION.Text
+        PR_APPROVEDBY = WTXT_SIGNAPPROVENAME.Text
+        PR_APPROVEDBYPOSITION = WTXT_SIGNAPPROVEPOSITION.Text
+        PR_CERTIFIEDBY = WTXT_SIGNCERTIFIEDNAME.Text
+        PR_CERTIFIEDBYPOSITION = WTXT_SIGNCERTIFIEDPOSITION.Text
+        PR_NOTEDBY = WTXT_SIGNNOTEDNAME.Text
+        PR_NOTEDBYPOSITION = WTXT_SIGNNOTEDPOSITION.Text
+        FRM_PURCHASE_REQUEST_PRINTPREVIEW.BTN_GENERATE_REPORT.Text = "PRINT"
+        If REPRINT Then
+            If isNew = False Then
+                FRM_PURCHASE_REQUEST_PRINTPREVIEW.BTN_GENERATE_REPORT.Visible = False
+            Else
+                FRM_PURCHASE_REQUEST_PRINTPREVIEW.BTN_GENERATE_REPORT.Visible = True
+            End If
+
+        Else
+            PRNO_GEN = SPM4_PRCODETableAdapter.SPM4_SQ_PRCODE(DIVISION_NO)
+            FRM_PURCHASE_REQUEST_PRINTPREVIEW.BTN_GENERATE_REPORT.Visible = False
+        End If
         FRM_PURCHASE_REQUEST_PRINTPREVIEW.ShowDialog()
 
+        'FRM_PURCHASE_REQUEST_PRINTPREVIEW.ShowDialog()
     End Sub
 #End Region
 
@@ -410,12 +580,8 @@ Public Class FRM_PR
             PB_PRICONNEW.BringToFront()
             DGV_PR_ITEMLIST.Enabled = False
             PanelSignatory.Enabled = False
-            LLBL_PRPRINTPREVIEW.Enabled = False
-            PB_PRICONPRINTPREVIEW.Enabled = False
-            RBTN_PESO.Checked = False
             'FALSE
         Else
-            RBTN_PESO.Checked = True
             GB_PRINFO.Enabled = True
             PB_PRICONSAVE.BringToFront()
             LLBL_PRSAVE.BringToFront()
@@ -427,8 +593,6 @@ Public Class FRM_PR
             LLBL_PRCANCEL.Enabled = True
             DGV_PR_ITEMLIST.Enabled = True
             PanelSignatory.Enabled = True
-            LLBL_PRPRINTPREVIEW.Enabled = True
-            PB_PRICONPRINTPREVIEW.Enabled = True
         End If
     End Sub
 #End Region
@@ -448,99 +612,86 @@ Public Class FRM_PR
         WTXT_SIGNNOTEDPOSITION.Clear()
         WTXT_SIGNREQUESTEDNAME.Clear()
         WTXT_SIGNREQUESTEDPOSITION.Clear()
+        DGV_PR_ITEMLIST.Rows.Clear()
         DGV_PR_ITEMLIST.DataSource = Nothing
-        RECT_PRPURPOSE.BorderColor = Color.LightSeaGreen
-        RECT_PRREQUESTEDDATE.BorderColor = Color.LightSeaGreen
-        RECT_PRAPPCODE.BorderColor = Color.LightSeaGreen
+        RECT_PRPURPOSE.BorderColor = Color.DimGray
+        RECT_PRREQUESTEDDATE.BorderColor = Color.DimGray
+        RECT_PRAPPCODE.BorderColor = Color.DimGray
     End Sub
 
-#End Region
-
-#Region "SAVE"
-    Sub _SAVE()
-        Try
-
-            'check if request is new
-            If isNew Then
-                PRNO_GEN = SPM4_PRCODETableAdapter.SPM4_SQ_PRCODE(CB_PRDIVISION.SelectedValue)
-                If RBTN_DOLLARS.Checked = True Then
-                    ISDOLLARS = True
-                Else
-                    ISDOLLARS = False
-                End If
-                TblM4_PURCHASEREQUESTTableAdapter.IQ_PURCHASE_REQUEST(PRNO_GEN, Trim(WTXT_REQUESTEDDATE.Text), Trim(WTXT_APPCODE.Text), Trim(WTXT_PURPOSE.Text), 4, Trim(WTXT_SIGNREQUESTEDNAME.Text), Trim(WTXT_SIGNREQUESTEDPOSITION.Text), Trim(WTXT_SIGNAPPROVENAME.Text), Trim(WTXT_SIGNAPPROVEPOSITION.Text), Trim(WTXT_SIGNCERTIFIEDNAME.Text), Trim(WTXT_SIGNCERTIFIEDPOSITION.Text), Trim(WTXT_SIGNNOTEDNAME.Text), Trim(WTXT_SIGNNOTEDPOSITION.Text), Trim(EMP_NO), Trim(CB_PRDEPARTMENT.Text), Trim(CB_PRDIVISION.Text), ISDOLLARS)
-                For Each row As DataGridViewRow In DGV_PR_ITEMLIST.Rows
-                    If Not row.IsNewRow Then
-                        TblM4_PURCHASEREQUEST_ITEMTableAdapter.IQ_PR_ITEMS(PRNO_GEN, row.Cells(1).Value.ToString, row.Cells(2).Value.ToString, row.Cells(0).Value.ToString, row.Cells(3).Value.ToString, row.Cells(4).Value.ToString, row.Cells(5).Value.ToString)
-                    End If
-                Next
-                NotificationManager.Show(Me, "Successfully submit!.", Color.Green, 3000)
-            End If
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-        End Try
-    End Sub
 #End Region
 
 #Region "GET PRIMARY SIGNATORY"
     Sub GET_PRI_SIGNATORY()
         Try
-            VWG3_PRIMARY_SIGNATORYTableAdapter.FillBy_HRIS_EMPNO_USER(DS_PROPERTYDB.VWG3_PRIMARY_SIGNATORY, EMP_NO)
-
-            WTXT_SIGNREQUESTEDNAME.Text = BS(VWG3_PRIMARY_SIGNATORYBindingSource, 0, 8)
-            WTXT_SIGNREQUESTEDPOSITION.Text = BS(VWG3_PRIMARY_SIGNATORYBindingSource, 0, 9)
-            TXT_PRREQUESTEDID.Text = BS(VWG3_PRIMARY_SIGNATORYBindingSource, 0, 5)
-
-            WTXT_SIGNAPPROVENAME.Text = BS(VWG3_PRIMARY_SIGNATORYBindingSource, 1, 8)
-            WTXT_SIGNAPPROVEPOSITION.Text = BS(VWG3_PRIMARY_SIGNATORYBindingSource, 1, 9)
-            TXT_PRRAPPROVEDID.Text = BS(VWG3_PRIMARY_SIGNATORYBindingSource, 1, 5)
-
-            WTXT_SIGNCERTIFIEDNAME.Text = BS(VWG3_PRIMARY_SIGNATORYBindingSource, 2, 8)
-            WTXT_SIGNCERTIFIEDPOSITION.Text = BS(VWG3_PRIMARY_SIGNATORYBindingSource, 2, 9)
-            TXT_PRCERTIFIEDID.Text = BS(VWG3_PRIMARY_SIGNATORYBindingSource, 2, 5)
-
-            WTXT_SIGNNOTEDNAME.Text = BS(VWG3_PRIMARY_SIGNATORYBindingSource, 3, 8)
-            WTXT_SIGNNOTEDPOSITION.Text = BS(VWG3_PRIMARY_SIGNATORYBindingSource, 3, 9)
-            TXT_PRNOTEDID.Text = BS(VWG3_PRIMARY_SIGNATORYBindingSource, 3, 5)
+            SPM4_USER_SIGNATORYTableAdapter.FillByEMPID_FORM_CODE(DS_STOREDPROC.SPM4_USER_SIGNATORY, EMP_NO, "PRA-PM-FORM-0001")
+            Dim cnt As Integer = SPM4_USER_SIGNATORYBindingSource.Count - 1
+            For i = 0 To cnt
+                If BS(SPM4_USER_SIGNATORYBindingSource, i, 10) = "Requested by:" Then
+                    WTXT_SIGNREQUESTEDNAME.Text = Trim(BS(SPM4_USER_SIGNATORYBindingSource, i, 3))
+                    WTXT_SIGNREQUESTEDPOSITION.Text = Trim(BS(SPM4_USER_SIGNATORYBindingSource, i, 4))
+                    TXT_PRREQUESTEDID.Text = Trim(BS(SPM4_USER_SIGNATORYBindingSource, i, 2))
+                ElseIf BS(SPM4_USER_SIGNATORYBindingSource, i, 10) = "Approved by:" Then
+                    WTXT_SIGNAPPROVENAME.Text = Trim(BS(SPM4_USER_SIGNATORYBindingSource, i, 3))
+                    WTXT_SIGNAPPROVEPOSITION.Text = Trim(BS(SPM4_USER_SIGNATORYBindingSource, i, 4))
+                    TXT_PRRAPPROVEDID.Text = Trim(BS(SPM4_USER_SIGNATORYBindingSource, i, 2))
+                ElseIf BS(SPM4_USER_SIGNATORYBindingSource, i, 10) = "Certified by:" Then
+                    WTXT_SIGNCERTIFIEDNAME.Text = Trim(BS(SPM4_USER_SIGNATORYBindingSource, i, 3))
+                    WTXT_SIGNCERTIFIEDPOSITION.Text = Trim(BS(SPM4_USER_SIGNATORYBindingSource, i, 4))
+                    TXT_PRCERTIFIEDID.Text = Trim(BS(SPM4_USER_SIGNATORYBindingSource, i, 2))
+                ElseIf BS(SPM4_USER_SIGNATORYBindingSource, i, 10) = "Noted by:" Then
+                    WTXT_SIGNNOTEDNAME.Text = Trim(BS(SPM4_USER_SIGNATORYBindingSource, i, 3))
+                    WTXT_SIGNNOTEDPOSITION.Text = Trim(BS(SPM4_USER_SIGNATORYBindingSource, i, 4))
+                    TXT_PRNOTEDID.Text = Trim(BS(SPM4_USER_SIGNATORYBindingSource, i, 2))
+                End If
+            Next
         Catch ex As Exception
-            MsgBox(ex.Message)
+            ERRLOG.WriteToErrorLog(ex.Message, ex.StackTrace, "GET_PRI_SIGNATORY")
         End Try
     End Sub
 #End Region
 
 #Region "SAVE/UPDATE DEFAULT SIGNATORY"
     Sub _SIGNATORYDEFAULT()
-        'update
-        If TBLG3_PRIMARY_SIGNATORYTableAdapter.SQ_IFUSERHASDEFAULTSIGNATORY(EMP_NO) <> 0 Then
-            TBLG3_PRIMARY_SIGNATORYTableAdapter.UQ_PRIMARY_SIGNATORY_PURCHASE_REQUEST(6, EMP_NO, TXT_PRREQUESTEDID.Text, 6, EMP_NO)
-            TBLG3_PRIMARY_SIGNATORYTableAdapter.UQ_PRIMARY_SIGNATORY_PURCHASE_REQUEST(7, EMP_NO, TXT_PRRAPPROVEDID.Text, 7, EMP_NO)
-            TBLG3_PRIMARY_SIGNATORYTableAdapter.UQ_PRIMARY_SIGNATORY_PURCHASE_REQUEST(8, EMP_NO, TXT_PRCERTIFIEDID.Text, 8, EMP_NO)
-            TBLG3_PRIMARY_SIGNATORYTableAdapter.UQ_PRIMARY_SIGNATORY_PURCHASE_REQUEST(9, EMP_NO, TXT_PRNOTEDID.Text, 9, EMP_NO)
-            'insert new
-        Else
-            TBLG3_PRIMARY_SIGNATORYTableAdapter.IQ_PRIMARY_SIGNATORY_PURCHASE_REQUEST(6, EMP_NO, TXT_PRREQUESTEDID.Text)
-            TBLG3_PRIMARY_SIGNATORYTableAdapter.IQ_PRIMARY_SIGNATORY_PURCHASE_REQUEST(7, EMP_NO, TXT_PRRAPPROVEDID.Text)
-            TBLG3_PRIMARY_SIGNATORYTableAdapter.IQ_PRIMARY_SIGNATORY_PURCHASE_REQUEST(8, EMP_NO, TXT_PRCERTIFIEDID.Text)
-            TBLG3_PRIMARY_SIGNATORYTableAdapter.IQ_PRIMARY_SIGNATORY_PURCHASE_REQUEST(9, EMP_NO, TXT_PRNOTEDID.Text)
-        End If
-        'TODO: This line of code loads data into the 'DS_PROPERTYDB.TBLG3_PRIMARY_SIGNATORY' table. You can move, or remove it, as needed.
-        Me.TBLG3_PRIMARY_SIGNATORYTableAdapter.Fill(Me.DS_PROPERTYDB.TBLG3_PRIMARY_SIGNATORY)
-        'TODO: This line of code loads data into the 'DS_PROPERTYDB.TBLG3_PRIMARY_SIGNATORY' table. You can move, or remove it, as needed.
-        Me.TBLG3_PRIMARY_SIGNATORYTableAdapter.Fill(Me.DS_PROPERTYDB.TBLG3_PRIMARY_SIGNATORY)
-        'TODO: This line of code loads data into the 'DS_PROPERTYDB.tblM4_PURCHASEREQUEST' table. You can move, or remove it, as needed.
-        Me.TblM4_PURCHASEREQUESTTableAdapter.Fill(Me.DS_PROPERTYDB.tblM4_PURCHASEREQUEST)
-        'TODO: This line of code loads data into the 'DS_PROPERTYDB.TBLG3_UNITS' table. You can move, or remove it, as needed.
-        Me.TBLG3_UNITSTableAdapter.Fill(Me.DS_PROPERTYDB.TBLG3_UNITS)
-        'TODO: This line of code loads data into the 'DS_PROPERTYDB.tblM4_PURCHASEREQUEST_ITEM' table. You can move, or remove it, as needed.
-        'Me.TblM4_PURCHASEREQUEST_ITEMTableAdapter.Fill(Me.DS_PROPERTYDB.tblM4_PURCHASEREQUEST_ITEM)
-        'TODO: This line of code loads data into the 'DS_PROPERTYDB.VWG3_PRIMARY_SIGNATORY' table. You can move, or remove it, as needed.
-        Me.VWG3_PRIMARY_SIGNATORYTableAdapter.Fill(Me.DS_PROPERTYDB.VWG3_PRIMARY_SIGNATORY)
+        Try
+            NotificationManager.Show(Me, "Default Signatory has been save.", Color.Green, 3000)
+            If REQFIELDVALIDATION(TXT_PRREQUESTEDID) = False Then
+                SPM4_UQ_IQ_SIGNATORYTableAdapter.SPM4_UQ_IQ_SIGNATORY(17, EMP_NO, If(TXT_PRREQUESTEDID.Text = String.Empty, 0, TXT_PRREQUESTEDID.Text))
+            End If
 
-        NotificationManager.Show(Me, "Default Signatory has been update.", Color.Green, 3000)
+            If REQFIELDVALIDATION(TXT_PRRAPPROVEDID) = False Then
+                SPM4_UQ_IQ_SIGNATORYTableAdapter.SPM4_UQ_IQ_SIGNATORY(18, EMP_NO, If(TXT_PRRAPPROVEDID.Text = String.Empty, 0, TXT_PRRAPPROVEDID.Text))
+            End If
+
+            If REQFIELDVALIDATION(TXT_PRCERTIFIEDID) = False Then
+                SPM4_UQ_IQ_SIGNATORYTableAdapter.SPM4_UQ_IQ_SIGNATORY(19, EMP_NO, If(TXT_PRCERTIFIEDID.Text = String.Empty, 0, TXT_PRCERTIFIEDID.Text))
+            End If
+
+            If REQFIELDVALIDATION(TXT_PRNOTEDID) = False Then
+                SPM4_UQ_IQ_SIGNATORYTableAdapter.SPM4_UQ_IQ_SIGNATORY(20, EMP_NO, If(TXT_PRNOTEDID.Text = String.Empty, 0, TXT_PRNOTEDID.Text))
+            End If
+
+            GET_PRI_SIGNATORY()
+            APNL_PR_SIGNATORIES.Location = New Point(575, 660)
+            APNL_PR_DETAILS.Enabled = True
+        Catch ex As Exception
+            '  NotificationManager.Show(Me, "Please select signatory!", Color.Red, 3000)
+        End Try
+
     End Sub
 #End Region
 
-    Private Sub DGV_PR_ITEMLIST_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_PR_ITEMLIST.CellContentClick
+#Region "KEYDOWN"
+    Private Sub WTXT_PR_SEARCH_KeyDown(sender As Object, e As KeyEventArgs) Handles WTXT_PR_SEARCH.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            SPM4_PR_LISTTableAdapter.FillByDIV_SEARCH(DS_STOREDPROC.SPM4_PR_LIST, DIVISION_NO, WTXT_PR_SEARCH.Text)
+            LLBL_RECORDSFOUND.Text = DGV_PR_LIST.Rows.Count
+        End If
+    End Sub
+#End Region
+
+#Region "CELL/CONTENT CLICK"
+    Private Sub DGV_PR_ITEMLIST_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_PR_ITEMLIST.CellClick
         '   Dim dgv = DirectCast(sender, DataGridView)
         Dim dgv1 = CType(sender, DataGridView)
         If dgv1 Is DGV_PR_ITEMLIST Then
@@ -550,13 +701,16 @@ Public Class FRM_PR
                 End If
             ElseIf dgv1.ColumnCount = 8 AndAlso e.ColumnIndex = 6 Then
                 If MsgBox("UPDATE THIS?", vbYesNo, "CONFIRM") = vbYes Then
+                    dgv = DGV_PR_ITEMLIST
                     FRM_DGV_ENCODING.WTXT_DESCRIPTION.Text = dgv1.Rows(e.RowIndex).Cells(0).Value.ToString
                     FRM_DGV_ENCODING.WTXT_QUANTITY.Text = dgv1.Rows(e.RowIndex).Cells(1).Value.ToString
                     FRM_DGV_ENCODING.CB_UNITOFISSUE.Text = dgv1.Rows(e.RowIndex).Cells(2).Value.ToString
                     FRM_DGV_ENCODING.WTXT_STOCKNO.Text = dgv1.Rows(e.RowIndex).Cells(3).Value.ToString
                     FRM_DGV_ENCODING.WTXT_ESTIMATEDUNITCOST.Text = dgv1.Rows(e.RowIndex).Cells(4).Value.ToString
+                    FRM_DGV_ENCODING.WTXT_ESTIMATEDUNITCOST.Text = TXTSETTO_0(FRM_DGV_ENCODING.WTXT_ESTIMATEDUNITCOST, False)
                     FRM_DGV_ENCODING.WTXT_ESTIMATEDCOST.Text = dgv1.Rows(e.RowIndex).Cells(5).Value.ToString
-                    FRM_DGV_ENCODING.BTN_SAVE.Text = "UPDATE"
+                    FRM_DGV_ENCODING.WTXT_ESTIMATEDCOST.Text = TXTSETTO_0(FRM_DGV_ENCODING.WTXT_ESTIMATEDCOST, False)
+                    FRM_DGV_ENCODING.BTN_SAVE.Text = "Update Particulars"
                     FRM_DGV_ENCODING.ShowDialog()
                 End If
             End If
@@ -565,13 +719,69 @@ Public Class FRM_PR
 
     End Sub
 
-    Private Sub CB_PRDEPARTMENT_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CB_PRDEPARTMENT.SelectedIndexChanged
-        If CB_PRDEPARTMENT.Text.Length <> 0 Then
-            Me.TblV1_HRISDIVISIONTableAdapter.FillByDEPTCODE(Me.DS_TABLES.tblV1_HRISDIVISION, CB_PRDEPARTMENT.SelectedValue)
+    Private Sub DGV_PR_LIST_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_PR_LIST.CellContentClick
+        If e.RowIndex >= 0 Then
+            TblM4_PURCHASEREQUEST_ITEMTableAdapter.FillByPRNO(DS_PROPERTYDB.tblM4_PURCHASEREQUEST_ITEM, DGV_PR_LIST(0, e.RowIndex).Value)
+            PRNO_GEN = DGV_PR_LIST(0, e.RowIndex).Value
+            WTXT_APPCODE.Text = DGV_PR_LIST(2, e.RowIndex).Value
+            If DGV_PR_LIST(19, e.RowIndex).Value = True Then
+                RBTN_DOLLARS.Checked = True
+
+            Else
+              
+                RBTN_PESO.Checked = True
+            End If
+            WTXT_REQUESTEDDATE.Text = DGV_PR_LIST(1, e.RowIndex).Value
+            If Not IsDBNull(DGV_PR_LIST(20, e.RowIndex).Value) Then
+                WTXT_SUBMITTEDBY.Text = DGV_PR_LIST(20, e.RowIndex).Value
+            Else
+                WTXT_SUBMITTEDBY.Text = ""
+            End If
+
+            WTXT_PRDEPARTMENT.Text = DGV_PR_LIST(15, e.RowIndex).Value
+            WTXT_PRDIV.Text = DGV_PR_LIST(16, e.RowIndex).Value
+            WTXT_PURPOSE.Text = DGV_PR_LIST(4, e.RowIndex).Value
+            WTXT_SIGNREQUESTEDNAME.Text = DGV_PR_LIST(6, e.RowIndex).Value
+            WTXT_SIGNREQUESTEDPOSITION.Text = DGV_PR_LIST(7, e.RowIndex).Value
+            WTXT_SIGNAPPROVENAME.Text = DGV_PR_LIST(8, e.RowIndex).Value
+            WTXT_SIGNAPPROVEPOSITION.Text = DGV_PR_LIST(9, e.RowIndex).Value
+            WTXT_SIGNCERTIFIEDNAME.Text = DGV_PR_LIST(10, e.RowIndex).Value
+            WTXT_SIGNCERTIFIEDPOSITION.Text = DGV_PR_LIST(11, e.RowIndex).Value
+            WTXT_SIGNNOTEDNAME.Text = DGV_PR_LIST(12, e.RowIndex).Value
+            WTXT_SIGNNOTEDPOSITION.Text = DGV_PR_LIST(13, e.RowIndex).Value
+
+            DGV_PR_ITEMLIST.Rows.Clear()
+            For Each row As DataGridViewRow In TblM4_PURCHASEREQUEST_ITEMDataGridView1.Rows
+                DGV_PR_ITEMLIST.Rows.Add(row.Cells(2).Value, row.Cells(0).Value, row.Cells(1).Value, row.Cells(3).Value, row.Cells(4).Value, row.Cells(5).Value)
+            Next
+            'PRINT
+            If e.ColumnIndex = 23 Then
+                REPRINT = True
+                isNew = True
+                PRINT_PREVIEW()
+                'EDIT
+            ElseIf e.ColumnIndex = 22 Then
+                UCPROCTim.Enabled = True
+                slideFlaG = True
+                PNL_SLIDE = APNL_PR_DETAILS
+                PNL_SLIDE.BringToFront()
+                PNL_BUTTONS.Enabled = False
+                PNL_LIST.Enabled = False
+                REPRINT = True
+                isNew = False
+                _DISABLE(False)
+                'VIEW
+            ElseIf e.ColumnIndex = 21 Then
+                UCPROCTimPRSTATS.Enabled = True
+                slideFlaGX2 = True
+                PNL_SLIDE2 = APNL_PR_STATUS
+                PNL_SLIDE2.BringToFront()
+                PNL_BUTTONS.Enabled = False
+                PNL_LIST.Enabled = False
+            End If
         End If
     End Sub
+#End Region
 
-    Private Sub LLBL_PRNEW_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LLBL_PRNEW.LinkClicked
 
-    End Sub
 End Class

@@ -24,44 +24,59 @@ Partial Class FRM_ASSIGN_ITEMS
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FRM_ASSIGN_ITEMS))
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PNL = New System.Windows.Forms.Panel()
         Me.BTN_SELECTION_CLOSE = New System.Windows.Forms.Button()
         Me.Label39 = New System.Windows.Forms.Label()
         Me.BTN_Minimize = New System.Windows.Forms.Button()
         Me.BTN_CLOSE = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.BTN_ASSIGN_ITEM = New System.Windows.Forms.Button()
         Me.BTN_GENERATE_REPORT = New System.Windows.Forms.Button()
         Me.ShapeContainer2 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
+        Me.RectangleShape1 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RECT_INVENTORY_CANCEL = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PB_INVENTORY_SEARCH = New System.Windows.Forms.PictureBox()
-        Me.WTXT_LIST_PREFERRED_ITEMS = New PRA_PIS.WatermarkTextBox()
+        Me.WTXT_SEARCH_ASS_ITEM = New PRA_PIS.WatermarkTextBox()
         Me.DGV_ASSIGN_ITEMS_LIST = New System.Windows.Forms.DataGridView()
-        Me.CATNAMEDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.SUBCATEGORYDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.BRANDNAMEDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ITEMCODEDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.SERIALNODataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ITEMSERIALNODataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ITEMDESCRIPTIONDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TOTALCOSTDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DateOfAcquisitionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DateEncodeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FullnameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DIVISIONDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.SPM4ASSIGNITEMSBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DS_STOREDPROC = New PRA_PIS.DS_STOREDPROC()
+        Me.ITEMUNITDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ITEMUNITCOSTDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ITEMQUANTITYDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ITEMDATEAQUISITIONDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ITEMCREATEDDATEDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FULLNAMEDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EMPNODataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ACCOORIGINATEDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ACCOREMARKSDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ACCOASSIGNEDBYDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DATEAPPOINTEDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DATECREATEDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Expr1DataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ASSIORIGINATEDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.REMARKSDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ASSIASSIGNEDBYDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DATEASSIGNEDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Expr2DataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.BTN_REASSIGN = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.VWM4_ITEM_ASSBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DS_VIEWS = New PRA_PIS.DS_VIEWS()
         Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
         Me.RECT_PRCANCELEDIT = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
-        Me.SpM4_ASSIGN_ITEMSTableAdapter = New PRA_PIS.DS_STOREDPROCTableAdapters.SPM4_ASSIGN_ITEMSTableAdapter()
+        Me.VWM4_ITEM_ASSTableAdapter = New PRA_PIS.DS_VIEWSTableAdapters.VWM4_ITEM_ASSTableAdapter()
+        Me.TableAdapterManager = New PRA_PIS.DS_VIEWSTableAdapters.TableAdapterManager()
         Me.PNL.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PB_INVENTORY_SEARCH, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DGV_ASSIGN_ITEMS_LIST, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.SPM4ASSIGNITEMSBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DS_STOREDPROC, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.VWM4_ITEM_ASSBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DS_VIEWS, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PNL
@@ -75,7 +90,7 @@ Partial Class FRM_ASSIGN_ITEMS
         Me.PNL.Location = New System.Drawing.Point(0, 0)
         Me.PNL.Margin = New System.Windows.Forms.Padding(5)
         Me.PNL.Name = "PNL"
-        Me.PNL.Size = New System.Drawing.Size(1015, 42)
+        Me.PNL.Size = New System.Drawing.Size(1119, 42)
         Me.PNL.TabIndex = 1415
         '
         'BTN_SELECTION_CLOSE
@@ -86,7 +101,7 @@ Partial Class FRM_ASSIGN_ITEMS
         Me.BTN_SELECTION_CLOSE.FlatAppearance.BorderColor = System.Drawing.Color.Teal
         Me.BTN_SELECTION_CLOSE.FlatAppearance.BorderSize = 3
         Me.BTN_SELECTION_CLOSE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BTN_SELECTION_CLOSE.Location = New System.Drawing.Point(982, 8)
+        Me.BTN_SELECTION_CLOSE.Location = New System.Drawing.Point(1086, 8)
         Me.BTN_SELECTION_CLOSE.Name = "BTN_SELECTION_CLOSE"
         Me.BTN_SELECTION_CLOSE.Size = New System.Drawing.Size(30, 30)
         Me.BTN_SELECTION_CLOSE.TabIndex = 17
@@ -114,7 +129,7 @@ Partial Class FRM_ASSIGN_ITEMS
         Me.BTN_Minimize.FlatAppearance.BorderColor = System.Drawing.Color.Teal
         Me.BTN_Minimize.FlatAppearance.BorderSize = 3
         Me.BTN_Minimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BTN_Minimize.Location = New System.Drawing.Point(-3490, 11)
+        Me.BTN_Minimize.Location = New System.Drawing.Point(-3386, 11)
         Me.BTN_Minimize.Margin = New System.Windows.Forms.Padding(5)
         Me.BTN_Minimize.Name = "BTN_Minimize"
         Me.BTN_Minimize.Size = New System.Drawing.Size(47, 45)
@@ -130,7 +145,7 @@ Partial Class FRM_ASSIGN_ITEMS
         Me.BTN_CLOSE.FlatAppearance.BorderColor = System.Drawing.Color.Teal
         Me.BTN_CLOSE.FlatAppearance.BorderSize = 3
         Me.BTN_CLOSE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BTN_CLOSE.Location = New System.Drawing.Point(-3443, 10)
+        Me.BTN_CLOSE.Location = New System.Drawing.Point(-3339, 10)
         Me.BTN_CLOSE.Margin = New System.Windows.Forms.Padding(5)
         Me.BTN_CLOSE.Name = "BTN_CLOSE"
         Me.BTN_CLOSE.Size = New System.Drawing.Size(50, 48)
@@ -141,12 +156,32 @@ Partial Class FRM_ASSIGN_ITEMS
         'Panel1
         '
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.BTN_ASSIGN_ITEM)
         Me.Panel1.Controls.Add(Me.BTN_GENERATE_REPORT)
         Me.Panel1.Controls.Add(Me.ShapeContainer2)
         Me.Panel1.Location = New System.Drawing.Point(1, 43)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1011, 58)
+        Me.Panel1.Size = New System.Drawing.Size(1117, 58)
         Me.Panel1.TabIndex = 1473
+        '
+        'BTN_ASSIGN_ITEM
+        '
+        Me.BTN_ASSIGN_ITEM.BackColor = System.Drawing.Color.White
+        Me.BTN_ASSIGN_ITEM.FlatAppearance.BorderColor = System.Drawing.Color.LightSeaGreen
+        Me.BTN_ASSIGN_ITEM.FlatAppearance.BorderSize = 0
+        Me.BTN_ASSIGN_ITEM.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.BTN_ASSIGN_ITEM.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen
+        Me.BTN_ASSIGN_ITEM.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BTN_ASSIGN_ITEM.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.BTN_ASSIGN_ITEM.Image = Global.PRA_PIS.My.Resources.Resources.outline_post_add_black_18dp
+        Me.BTN_ASSIGN_ITEM.Location = New System.Drawing.Point(13, 6)
+        Me.BTN_ASSIGN_ITEM.Name = "BTN_ASSIGN_ITEM"
+        Me.BTN_ASSIGN_ITEM.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.BTN_ASSIGN_ITEM.Size = New System.Drawing.Size(116, 41)
+        Me.BTN_ASSIGN_ITEM.TabIndex = 1473
+        Me.BTN_ASSIGN_ITEM.Text = "ASSIGN ITEM"
+        Me.BTN_ASSIGN_ITEM.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.BTN_ASSIGN_ITEM.UseVisualStyleBackColor = False
         '
         'BTN_GENERATE_REPORT
         '
@@ -158,7 +193,7 @@ Partial Class FRM_ASSIGN_ITEMS
         Me.BTN_GENERATE_REPORT.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTN_GENERATE_REPORT.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold)
         Me.BTN_GENERATE_REPORT.Image = CType(resources.GetObject("BTN_GENERATE_REPORT.Image"), System.Drawing.Image)
-        Me.BTN_GENERATE_REPORT.Location = New System.Drawing.Point(863, 8)
+        Me.BTN_GENERATE_REPORT.Location = New System.Drawing.Point(136, 6)
         Me.BTN_GENERATE_REPORT.Name = "BTN_GENERATE_REPORT"
         Me.BTN_GENERATE_REPORT.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.BTN_GENERATE_REPORT.Size = New System.Drawing.Size(128, 41)
@@ -173,10 +208,22 @@ Partial Class FRM_ASSIGN_ITEMS
         Me.ShapeContainer2.Location = New System.Drawing.Point(0, 0)
         Me.ShapeContainer2.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer2.Name = "ShapeContainer2"
-        Me.ShapeContainer2.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RECT_INVENTORY_CANCEL})
-        Me.ShapeContainer2.Size = New System.Drawing.Size(1009, 56)
+        Me.ShapeContainer2.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape1, Me.RECT_INVENTORY_CANCEL})
+        Me.ShapeContainer2.Size = New System.Drawing.Size(1115, 56)
         Me.ShapeContainer2.TabIndex = 1470
         Me.ShapeContainer2.TabStop = False
+        '
+        'RectangleShape1
+        '
+        Me.RectangleShape1.BorderColor = System.Drawing.Color.LightSeaGreen
+        Me.RectangleShape1.BorderWidth = 2
+        Me.RectangleShape1.CornerRadius = 5
+        Me.RectangleShape1.Cursor = System.Windows.Forms.Cursors.Arrow
+        Me.RectangleShape1.FillColor = System.Drawing.SystemColors.HighlightText
+        Me.RectangleShape1.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
+        Me.RectangleShape1.Location = New System.Drawing.Point(12, 4)
+        Me.RectangleShape1.Name = "RectangleShape1"
+        Me.RectangleShape1.Size = New System.Drawing.Size(117, 44)
         '
         'RECT_INVENTORY_CANCEL
         '
@@ -186,7 +233,7 @@ Partial Class FRM_ASSIGN_ITEMS
         Me.RECT_INVENTORY_CANCEL.Cursor = System.Windows.Forms.Cursors.Arrow
         Me.RECT_INVENTORY_CANCEL.FillColor = System.Drawing.SystemColors.HighlightText
         Me.RECT_INVENTORY_CANCEL.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
-        Me.RECT_INVENTORY_CANCEL.Location = New System.Drawing.Point(861, 6)
+        Me.RECT_INVENTORY_CANCEL.Location = New System.Drawing.Point(134, 4)
         Me.RECT_INVENTORY_CANCEL.Name = "RECT_INVENTORY_CANCEL"
         Me.RECT_INVENTORY_CANCEL.Size = New System.Drawing.Size(131, 44)
         '
@@ -195,12 +242,12 @@ Partial Class FRM_ASSIGN_ITEMS
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel2.Controls.Add(Me.PictureBox1)
         Me.Panel2.Controls.Add(Me.PB_INVENTORY_SEARCH)
-        Me.Panel2.Controls.Add(Me.WTXT_LIST_PREFERRED_ITEMS)
+        Me.Panel2.Controls.Add(Me.WTXT_SEARCH_ASS_ITEM)
         Me.Panel2.Controls.Add(Me.DGV_ASSIGN_ITEMS_LIST)
         Me.Panel2.Controls.Add(Me.ShapeContainer1)
         Me.Panel2.Location = New System.Drawing.Point(1, 103)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1011, 449)
+        Me.Panel2.Size = New System.Drawing.Size(1117, 449)
         Me.Panel2.TabIndex = 1474
         '
         'PictureBox1
@@ -209,7 +256,7 @@ Partial Class FRM_ASSIGN_ITEMS
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox1.InitialImage = Nothing
-        Me.PictureBox1.Location = New System.Drawing.Point(970, 8)
+        Me.PictureBox1.Location = New System.Drawing.Point(1076, 8)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(32, 28)
         Me.PictureBox1.TabIndex = 1477
@@ -228,18 +275,17 @@ Partial Class FRM_ASSIGN_ITEMS
         Me.PB_INVENTORY_SEARCH.TabIndex = 1468
         Me.PB_INVENTORY_SEARCH.TabStop = False
         '
-        'WTXT_LIST_PREFERRED_ITEMS
+        'WTXT_SEARCH_ASS_ITEM
         '
-        Me.WTXT_LIST_PREFERRED_ITEMS.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.WTXT_LIST_PREFERRED_ITEMS.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.WTXT_LIST_PREFERRED_ITEMS.ForeColor = System.Drawing.Color.Black
-        Me.WTXT_LIST_PREFERRED_ITEMS.Location = New System.Drawing.Point(46, 12)
-        Me.WTXT_LIST_PREFERRED_ITEMS.MaxLength = 15
-        Me.WTXT_LIST_PREFERRED_ITEMS.Name = "WTXT_LIST_PREFERRED_ITEMS"
-        Me.WTXT_LIST_PREFERRED_ITEMS.Size = New System.Drawing.Size(918, 20)
-        Me.WTXT_LIST_PREFERRED_ITEMS.TabIndex = 1467
-        Me.WTXT_LIST_PREFERRED_ITEMS.Watermark = "Search Item Code, Category, Sub Category, Brand/Provider, Serial No., Item Descri" &
-    "ption"
+        Me.WTXT_SEARCH_ASS_ITEM.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.WTXT_SEARCH_ASS_ITEM.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.WTXT_SEARCH_ASS_ITEM.ForeColor = System.Drawing.Color.Black
+        Me.WTXT_SEARCH_ASS_ITEM.Location = New System.Drawing.Point(46, 12)
+        Me.WTXT_SEARCH_ASS_ITEM.MaxLength = 15
+        Me.WTXT_SEARCH_ASS_ITEM.Name = "WTXT_SEARCH_ASS_ITEM"
+        Me.WTXT_SEARCH_ASS_ITEM.Size = New System.Drawing.Size(1024, 20)
+        Me.WTXT_SEARCH_ASS_ITEM.TabIndex = 1467
+        Me.WTXT_SEARCH_ASS_ITEM.Watermark = "Search Item Code, Item Description, Serial No., Assign Person"
         '
         'DGV_ASSIGN_ITEMS_LIST
         '
@@ -252,101 +298,209 @@ Partial Class FRM_ASSIGN_ITEMS
         Me.DGV_ASSIGN_ITEMS_LIST.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.DGV_ASSIGN_ITEMS_LIST.BackgroundColor = System.Drawing.Color.White
         Me.DGV_ASSIGN_ITEMS_LIST.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV_ASSIGN_ITEMS_LIST.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CATNAMEDataGridViewTextBoxColumn, Me.SUBCATEGORYDataGridViewTextBoxColumn, Me.BRANDNAMEDataGridViewTextBoxColumn, Me.ITEMCODEDataGridViewTextBoxColumn, Me.SERIALNODataGridViewTextBoxColumn, Me.ITEMDESCRIPTIONDataGridViewTextBoxColumn, Me.TOTALCOSTDataGridViewTextBoxColumn, Me.DateOfAcquisitionDataGridViewTextBoxColumn, Me.DateEncodeDataGridViewTextBoxColumn, Me.FullnameDataGridViewTextBoxColumn, Me.DIVISIONDataGridViewTextBoxColumn})
-        Me.DGV_ASSIGN_ITEMS_LIST.DataSource = Me.SPM4ASSIGNITEMSBindingSource
+        Me.DGV_ASSIGN_ITEMS_LIST.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ITEMCODEDataGridViewTextBoxColumn, Me.ITEMSERIALNODataGridViewTextBoxColumn, Me.ITEMDESCRIPTIONDataGridViewTextBoxColumn, Me.ITEMUNITDataGridViewTextBoxColumn, Me.ITEMUNITCOSTDataGridViewTextBoxColumn, Me.ITEMQUANTITYDataGridViewTextBoxColumn, Me.ITEMDATEAQUISITIONDataGridViewTextBoxColumn, Me.ITEMCREATEDDATEDataGridViewTextBoxColumn, Me.FULLNAMEDataGridViewTextBoxColumn, Me.EMPNODataGridViewTextBoxColumn, Me.ACCOORIGINATEDDataGridViewTextBoxColumn, Me.ACCOREMARKSDataGridViewTextBoxColumn, Me.ACCOASSIGNEDBYDataGridViewTextBoxColumn, Me.DATEAPPOINTEDDataGridViewTextBoxColumn, Me.DATECREATEDDataGridViewTextBoxColumn, Me.Expr1DataGridViewTextBoxColumn, Me.ASSIORIGINATEDDataGridViewTextBoxColumn, Me.REMARKSDataGridViewTextBoxColumn, Me.ASSIASSIGNEDBYDataGridViewTextBoxColumn, Me.DATEASSIGNEDDataGridViewTextBoxColumn, Me.Expr2DataGridViewTextBoxColumn, Me.BTN_REASSIGN})
+        Me.DGV_ASSIGN_ITEMS_LIST.DataSource = Me.VWM4_ITEM_ASSBindingSource
         Me.DGV_ASSIGN_ITEMS_LIST.Location = New System.Drawing.Point(3, 43)
         Me.DGV_ASSIGN_ITEMS_LIST.Name = "DGV_ASSIGN_ITEMS_LIST"
         Me.DGV_ASSIGN_ITEMS_LIST.ReadOnly = True
         Me.DGV_ASSIGN_ITEMS_LIST.RowHeadersVisible = False
-        Me.DGV_ASSIGN_ITEMS_LIST.Size = New System.Drawing.Size(1003, 401)
+        Me.DGV_ASSIGN_ITEMS_LIST.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DGV_ASSIGN_ITEMS_LIST.Size = New System.Drawing.Size(1109, 401)
         Me.DGV_ASSIGN_ITEMS_LIST.TabIndex = 0
-        '
-        'CATNAMEDataGridViewTextBoxColumn
-        '
-        Me.CATNAMEDataGridViewTextBoxColumn.DataPropertyName = "CAT NAME"
-        Me.CATNAMEDataGridViewTextBoxColumn.HeaderText = "CAT NAME"
-        Me.CATNAMEDataGridViewTextBoxColumn.Name = "CATNAMEDataGridViewTextBoxColumn"
-        Me.CATNAMEDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'SUBCATEGORYDataGridViewTextBoxColumn
-        '
-        Me.SUBCATEGORYDataGridViewTextBoxColumn.DataPropertyName = "SUB CATEGORY"
-        Me.SUBCATEGORYDataGridViewTextBoxColumn.HeaderText = "SUB CATEGORY"
-        Me.SUBCATEGORYDataGridViewTextBoxColumn.Name = "SUBCATEGORYDataGridViewTextBoxColumn"
-        Me.SUBCATEGORYDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'BRANDNAMEDataGridViewTextBoxColumn
-        '
-        Me.BRANDNAMEDataGridViewTextBoxColumn.DataPropertyName = "BRAND NAME"
-        Me.BRANDNAMEDataGridViewTextBoxColumn.HeaderText = "BRAND NAME"
-        Me.BRANDNAMEDataGridViewTextBoxColumn.Name = "BRANDNAMEDataGridViewTextBoxColumn"
-        Me.BRANDNAMEDataGridViewTextBoxColumn.ReadOnly = True
         '
         'ITEMCODEDataGridViewTextBoxColumn
         '
-        Me.ITEMCODEDataGridViewTextBoxColumn.DataPropertyName = "ITEM CODE"
-        Me.ITEMCODEDataGridViewTextBoxColumn.HeaderText = "ITEM CODE"
+        Me.ITEMCODEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.ITEMCODEDataGridViewTextBoxColumn.DataPropertyName = "ITEM_CODE"
+        Me.ITEMCODEDataGridViewTextBoxColumn.HeaderText = "Item Code"
         Me.ITEMCODEDataGridViewTextBoxColumn.Name = "ITEMCODEDataGridViewTextBoxColumn"
         Me.ITEMCODEDataGridViewTextBoxColumn.ReadOnly = True
+        Me.ITEMCODEDataGridViewTextBoxColumn.Width = 110
         '
-        'SERIALNODataGridViewTextBoxColumn
+        'ITEMSERIALNODataGridViewTextBoxColumn
         '
-        Me.SERIALNODataGridViewTextBoxColumn.DataPropertyName = "SERIAL NO"
-        Me.SERIALNODataGridViewTextBoxColumn.HeaderText = "SERIAL NO"
-        Me.SERIALNODataGridViewTextBoxColumn.Name = "SERIALNODataGridViewTextBoxColumn"
-        Me.SERIALNODataGridViewTextBoxColumn.ReadOnly = True
+        Me.ITEMSERIALNODataGridViewTextBoxColumn.DataPropertyName = "ITEM_SERIAL_NO"
+        Me.ITEMSERIALNODataGridViewTextBoxColumn.HeaderText = "Serial No."
+        Me.ITEMSERIALNODataGridViewTextBoxColumn.Name = "ITEMSERIALNODataGridViewTextBoxColumn"
+        Me.ITEMSERIALNODataGridViewTextBoxColumn.ReadOnly = True
         '
         'ITEMDESCRIPTIONDataGridViewTextBoxColumn
         '
-        Me.ITEMDESCRIPTIONDataGridViewTextBoxColumn.DataPropertyName = "ITEM DESCRIPTION"
-        Me.ITEMDESCRIPTIONDataGridViewTextBoxColumn.HeaderText = "ITEM DESCRIPTION"
+        Me.ITEMDESCRIPTIONDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.ITEMDESCRIPTIONDataGridViewTextBoxColumn.DataPropertyName = "ITEM_DESCRIPTION"
+        Me.ITEMDESCRIPTIONDataGridViewTextBoxColumn.HeaderText = "Item Description"
         Me.ITEMDESCRIPTIONDataGridViewTextBoxColumn.Name = "ITEMDESCRIPTIONDataGridViewTextBoxColumn"
         Me.ITEMDESCRIPTIONDataGridViewTextBoxColumn.ReadOnly = True
         '
-        'TOTALCOSTDataGridViewTextBoxColumn
+        'ITEMUNITDataGridViewTextBoxColumn
         '
-        Me.TOTALCOSTDataGridViewTextBoxColumn.DataPropertyName = "TOTAL COST"
-        Me.TOTALCOSTDataGridViewTextBoxColumn.HeaderText = "TOTAL COST"
-        Me.TOTALCOSTDataGridViewTextBoxColumn.Name = "TOTALCOSTDataGridViewTextBoxColumn"
-        Me.TOTALCOSTDataGridViewTextBoxColumn.ReadOnly = True
+        Me.ITEMUNITDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.ITEMUNITDataGridViewTextBoxColumn.DataPropertyName = "ITEM_UNIT"
+        Me.ITEMUNITDataGridViewTextBoxColumn.HeaderText = "Unit"
+        Me.ITEMUNITDataGridViewTextBoxColumn.Name = "ITEMUNITDataGridViewTextBoxColumn"
+        Me.ITEMUNITDataGridViewTextBoxColumn.ReadOnly = True
+        Me.ITEMUNITDataGridViewTextBoxColumn.Width = 60
         '
-        'DateOfAcquisitionDataGridViewTextBoxColumn
+        'ITEMUNITCOSTDataGridViewTextBoxColumn
         '
-        Me.DateOfAcquisitionDataGridViewTextBoxColumn.DataPropertyName = "Date of Acquisition"
-        Me.DateOfAcquisitionDataGridViewTextBoxColumn.HeaderText = "Date of Acquisition"
-        Me.DateOfAcquisitionDataGridViewTextBoxColumn.Name = "DateOfAcquisitionDataGridViewTextBoxColumn"
-        Me.DateOfAcquisitionDataGridViewTextBoxColumn.ReadOnly = True
+        Me.ITEMUNITCOSTDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.ITEMUNITCOSTDataGridViewTextBoxColumn.DataPropertyName = "ITEM_UNIT_COST"
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.ITEMUNITCOSTDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle2
+        Me.ITEMUNITCOSTDataGridViewTextBoxColumn.HeaderText = "Unit Cost"
+        Me.ITEMUNITCOSTDataGridViewTextBoxColumn.Name = "ITEMUNITCOSTDataGridViewTextBoxColumn"
+        Me.ITEMUNITCOSTDataGridViewTextBoxColumn.ReadOnly = True
+        Me.ITEMUNITCOSTDataGridViewTextBoxColumn.Width = 130
         '
-        'DateEncodeDataGridViewTextBoxColumn
+        'ITEMQUANTITYDataGridViewTextBoxColumn
         '
-        Me.DateEncodeDataGridViewTextBoxColumn.DataPropertyName = "Date Encode"
-        Me.DateEncodeDataGridViewTextBoxColumn.HeaderText = "Date Encode"
-        Me.DateEncodeDataGridViewTextBoxColumn.Name = "DateEncodeDataGridViewTextBoxColumn"
-        Me.DateEncodeDataGridViewTextBoxColumn.ReadOnly = True
+        Me.ITEMQUANTITYDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
+        Me.ITEMQUANTITYDataGridViewTextBoxColumn.DataPropertyName = "ITEM_QUANTITY"
+        Me.ITEMQUANTITYDataGridViewTextBoxColumn.HeaderText = "Quantity"
+        Me.ITEMQUANTITYDataGridViewTextBoxColumn.Name = "ITEMQUANTITYDataGridViewTextBoxColumn"
+        Me.ITEMQUANTITYDataGridViewTextBoxColumn.ReadOnly = True
+        Me.ITEMQUANTITYDataGridViewTextBoxColumn.Visible = False
         '
-        'FullnameDataGridViewTextBoxColumn
+        'ITEMDATEAQUISITIONDataGridViewTextBoxColumn
         '
-        Me.FullnameDataGridViewTextBoxColumn.DataPropertyName = "fullname"
-        Me.FullnameDataGridViewTextBoxColumn.HeaderText = "fullname"
-        Me.FullnameDataGridViewTextBoxColumn.Name = "FullnameDataGridViewTextBoxColumn"
-        Me.FullnameDataGridViewTextBoxColumn.ReadOnly = True
+        Me.ITEMDATEAQUISITIONDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.ITEMDATEAQUISITIONDataGridViewTextBoxColumn.DataPropertyName = "ITEM_DATE_AQUISITION"
+        Me.ITEMDATEAQUISITIONDataGridViewTextBoxColumn.HeaderText = "Date Aquisition"
+        Me.ITEMDATEAQUISITIONDataGridViewTextBoxColumn.Name = "ITEMDATEAQUISITIONDataGridViewTextBoxColumn"
+        Me.ITEMDATEAQUISITIONDataGridViewTextBoxColumn.ReadOnly = True
+        Me.ITEMDATEAQUISITIONDataGridViewTextBoxColumn.Width = 115
         '
-        'DIVISIONDataGridViewTextBoxColumn
+        'ITEMCREATEDDATEDataGridViewTextBoxColumn
         '
-        Me.DIVISIONDataGridViewTextBoxColumn.DataPropertyName = "DIVISION"
-        Me.DIVISIONDataGridViewTextBoxColumn.HeaderText = "DIVISION"
-        Me.DIVISIONDataGridViewTextBoxColumn.Name = "DIVISIONDataGridViewTextBoxColumn"
-        Me.DIVISIONDataGridViewTextBoxColumn.ReadOnly = True
+        Me.ITEMCREATEDDATEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.ITEMCREATEDDATEDataGridViewTextBoxColumn.DataPropertyName = "ITEM_CREATED_DATE"
+        Me.ITEMCREATEDDATEDataGridViewTextBoxColumn.HeaderText = "Date Encoded"
+        Me.ITEMCREATEDDATEDataGridViewTextBoxColumn.Name = "ITEMCREATEDDATEDataGridViewTextBoxColumn"
+        Me.ITEMCREATEDDATEDataGridViewTextBoxColumn.ReadOnly = True
+        Me.ITEMCREATEDDATEDataGridViewTextBoxColumn.Width = 115
         '
-        'SPM4ASSIGNITEMSBindingSource
+        'FULLNAMEDataGridViewTextBoxColumn
         '
-        Me.SPM4ASSIGNITEMSBindingSource.DataMember = "SPM4_ASSIGN_ITEMS"
-        Me.SPM4ASSIGNITEMSBindingSource.DataSource = Me.DS_STOREDPROC
+        Me.FULLNAMEDataGridViewTextBoxColumn.DataPropertyName = "FULLNAME"
+        Me.FULLNAMEDataGridViewTextBoxColumn.HeaderText = "Assign Person"
+        Me.FULLNAMEDataGridViewTextBoxColumn.Name = "FULLNAMEDataGridViewTextBoxColumn"
+        Me.FULLNAMEDataGridViewTextBoxColumn.ReadOnly = True
         '
-        'DS_STOREDPROC
+        'EMPNODataGridViewTextBoxColumn
         '
-        Me.DS_STOREDPROC.DataSetName = "DS_STOREDPROC"
-        Me.DS_STOREDPROC.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        Me.EMPNODataGridViewTextBoxColumn.DataPropertyName = "EMP_NO"
+        Me.EMPNODataGridViewTextBoxColumn.HeaderText = "EMP_NO"
+        Me.EMPNODataGridViewTextBoxColumn.Name = "EMPNODataGridViewTextBoxColumn"
+        Me.EMPNODataGridViewTextBoxColumn.ReadOnly = True
+        Me.EMPNODataGridViewTextBoxColumn.Visible = False
+        '
+        'ACCOORIGINATEDDataGridViewTextBoxColumn
+        '
+        Me.ACCOORIGINATEDDataGridViewTextBoxColumn.DataPropertyName = "ACCO_ORIGINATED"
+        Me.ACCOORIGINATEDDataGridViewTextBoxColumn.HeaderText = "ACCO_ORIGINATED"
+        Me.ACCOORIGINATEDDataGridViewTextBoxColumn.Name = "ACCOORIGINATEDDataGridViewTextBoxColumn"
+        Me.ACCOORIGINATEDDataGridViewTextBoxColumn.ReadOnly = True
+        Me.ACCOORIGINATEDDataGridViewTextBoxColumn.Visible = False
+        '
+        'ACCOREMARKSDataGridViewTextBoxColumn
+        '
+        Me.ACCOREMARKSDataGridViewTextBoxColumn.DataPropertyName = "ACCO_REMARKS"
+        Me.ACCOREMARKSDataGridViewTextBoxColumn.HeaderText = "ACCO_REMARKS"
+        Me.ACCOREMARKSDataGridViewTextBoxColumn.Name = "ACCOREMARKSDataGridViewTextBoxColumn"
+        Me.ACCOREMARKSDataGridViewTextBoxColumn.ReadOnly = True
+        Me.ACCOREMARKSDataGridViewTextBoxColumn.Visible = False
+        '
+        'ACCOASSIGNEDBYDataGridViewTextBoxColumn
+        '
+        Me.ACCOASSIGNEDBYDataGridViewTextBoxColumn.DataPropertyName = "ACCO_ASSIGNED_BY"
+        Me.ACCOASSIGNEDBYDataGridViewTextBoxColumn.HeaderText = "ACCO_ASSIGNED_BY"
+        Me.ACCOASSIGNEDBYDataGridViewTextBoxColumn.Name = "ACCOASSIGNEDBYDataGridViewTextBoxColumn"
+        Me.ACCOASSIGNEDBYDataGridViewTextBoxColumn.ReadOnly = True
+        Me.ACCOASSIGNEDBYDataGridViewTextBoxColumn.Visible = False
+        '
+        'DATEAPPOINTEDDataGridViewTextBoxColumn
+        '
+        Me.DATEAPPOINTEDDataGridViewTextBoxColumn.DataPropertyName = "DATE_APPOINTED"
+        Me.DATEAPPOINTEDDataGridViewTextBoxColumn.HeaderText = "DATE_APPOINTED"
+        Me.DATEAPPOINTEDDataGridViewTextBoxColumn.Name = "DATEAPPOINTEDDataGridViewTextBoxColumn"
+        Me.DATEAPPOINTEDDataGridViewTextBoxColumn.ReadOnly = True
+        Me.DATEAPPOINTEDDataGridViewTextBoxColumn.Visible = False
+        '
+        'DATECREATEDDataGridViewTextBoxColumn
+        '
+        Me.DATECREATEDDataGridViewTextBoxColumn.DataPropertyName = "DATE_CREATED"
+        Me.DATECREATEDDataGridViewTextBoxColumn.HeaderText = "DATE_CREATED"
+        Me.DATECREATEDDataGridViewTextBoxColumn.Name = "DATECREATEDDataGridViewTextBoxColumn"
+        Me.DATECREATEDDataGridViewTextBoxColumn.ReadOnly = True
+        Me.DATECREATEDDataGridViewTextBoxColumn.Visible = False
+        '
+        'Expr1DataGridViewTextBoxColumn
+        '
+        Me.Expr1DataGridViewTextBoxColumn.DataPropertyName = "Expr1"
+        Me.Expr1DataGridViewTextBoxColumn.HeaderText = "Expr1"
+        Me.Expr1DataGridViewTextBoxColumn.Name = "Expr1DataGridViewTextBoxColumn"
+        Me.Expr1DataGridViewTextBoxColumn.ReadOnly = True
+        Me.Expr1DataGridViewTextBoxColumn.Visible = False
+        '
+        'ASSIORIGINATEDDataGridViewTextBoxColumn
+        '
+        Me.ASSIORIGINATEDDataGridViewTextBoxColumn.DataPropertyName = "ASSI_ORIGINATED"
+        Me.ASSIORIGINATEDDataGridViewTextBoxColumn.HeaderText = "ASSI_ORIGINATED"
+        Me.ASSIORIGINATEDDataGridViewTextBoxColumn.Name = "ASSIORIGINATEDDataGridViewTextBoxColumn"
+        Me.ASSIORIGINATEDDataGridViewTextBoxColumn.ReadOnly = True
+        Me.ASSIORIGINATEDDataGridViewTextBoxColumn.Visible = False
+        '
+        'REMARKSDataGridViewTextBoxColumn
+        '
+        Me.REMARKSDataGridViewTextBoxColumn.DataPropertyName = "REMARKS"
+        Me.REMARKSDataGridViewTextBoxColumn.HeaderText = "REMARKS"
+        Me.REMARKSDataGridViewTextBoxColumn.Name = "REMARKSDataGridViewTextBoxColumn"
+        Me.REMARKSDataGridViewTextBoxColumn.ReadOnly = True
+        Me.REMARKSDataGridViewTextBoxColumn.Visible = False
+        '
+        'ASSIASSIGNEDBYDataGridViewTextBoxColumn
+        '
+        Me.ASSIASSIGNEDBYDataGridViewTextBoxColumn.DataPropertyName = "ASSI_ASSIGNED_BY"
+        Me.ASSIASSIGNEDBYDataGridViewTextBoxColumn.HeaderText = "ASSI_ASSIGNED_BY"
+        Me.ASSIASSIGNEDBYDataGridViewTextBoxColumn.Name = "ASSIASSIGNEDBYDataGridViewTextBoxColumn"
+        Me.ASSIASSIGNEDBYDataGridViewTextBoxColumn.ReadOnly = True
+        Me.ASSIASSIGNEDBYDataGridViewTextBoxColumn.Visible = False
+        '
+        'DATEASSIGNEDDataGridViewTextBoxColumn
+        '
+        Me.DATEASSIGNEDDataGridViewTextBoxColumn.DataPropertyName = "DATE_ASSIGNED"
+        Me.DATEASSIGNEDDataGridViewTextBoxColumn.HeaderText = "DATE_ASSIGNED"
+        Me.DATEASSIGNEDDataGridViewTextBoxColumn.Name = "DATEASSIGNEDDataGridViewTextBoxColumn"
+        Me.DATEASSIGNEDDataGridViewTextBoxColumn.ReadOnly = True
+        Me.DATEASSIGNEDDataGridViewTextBoxColumn.Visible = False
+        '
+        'Expr2DataGridViewTextBoxColumn
+        '
+        Me.Expr2DataGridViewTextBoxColumn.DataPropertyName = "Expr2"
+        Me.Expr2DataGridViewTextBoxColumn.HeaderText = "Expr2"
+        Me.Expr2DataGridViewTextBoxColumn.Name = "Expr2DataGridViewTextBoxColumn"
+        Me.Expr2DataGridViewTextBoxColumn.ReadOnly = True
+        Me.Expr2DataGridViewTextBoxColumn.Visible = False
+        '
+        'BTN_REASSIGN
+        '
+        Me.BTN_REASSIGN.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.BTN_REASSIGN.HeaderText = "Action"
+        Me.BTN_REASSIGN.Name = "BTN_REASSIGN"
+        Me.BTN_REASSIGN.ReadOnly = True
+        Me.BTN_REASSIGN.Text = "reassign item"
+        Me.BTN_REASSIGN.UseColumnTextForButtonValue = True
+        Me.BTN_REASSIGN.Width = 90
+        '
+        'VWM4_ITEM_ASSBindingSource
+        '
+        Me.VWM4_ITEM_ASSBindingSource.DataMember = "VWM4_ITEM_ASS"
+        Me.VWM4_ITEM_ASSBindingSource.DataSource = Me.DS_VIEWS
+        '
+        'DS_VIEWS
+        '
+        Me.DS_VIEWS.DataSetName = "DS_VIEWS"
+        Me.DS_VIEWS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'ShapeContainer1
         '
@@ -354,7 +508,7 @@ Partial Class FRM_ASSIGN_ITEMS
         Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer1.Name = "ShapeContainer1"
         Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RECT_PRCANCELEDIT})
-        Me.ShapeContainer1.Size = New System.Drawing.Size(1009, 447)
+        Me.ShapeContainer1.Size = New System.Drawing.Size(1115, 447)
         Me.ShapeContainer1.TabIndex = 1468
         Me.ShapeContainer1.TabStop = False
         '
@@ -367,18 +521,24 @@ Partial Class FRM_ASSIGN_ITEMS
         Me.RECT_PRCANCELEDIT.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
         Me.RECT_PRCANCELEDIT.Location = New System.Drawing.Point(3, 5)
         Me.RECT_PRCANCELEDIT.Name = "RECT_PRCANCELEDIT"
-        Me.RECT_PRCANCELEDIT.Size = New System.Drawing.Size(1002, 33)
+        Me.RECT_PRCANCELEDIT.Size = New System.Drawing.Size(1108, 33)
         '
-        'SpM4_ASSIGN_ITEMSTableAdapter
+        'VWM4_ITEM_ASSTableAdapter
         '
-        Me.SpM4_ASSIGN_ITEMSTableAdapter.ClearBeforeFill = True
+        Me.VWM4_ITEM_ASSTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.Connection = Nothing
+        Me.TableAdapterManager.UpdateOrder = PRA_PIS.DS_VIEWSTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
         'FRM_ASSIGN_ITEMS
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1015, 554)
+        Me.ClientSize = New System.Drawing.Size(1119, 554)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.PNL)
@@ -396,8 +556,8 @@ Partial Class FRM_ASSIGN_ITEMS
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PB_INVENTORY_SEARCH, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DGV_ASSIGN_ITEMS_LIST, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.SPM4ASSIGNITEMSBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DS_STOREDPROC, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.VWM4_ITEM_ASSBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DS_VIEWS, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -414,22 +574,36 @@ Partial Class FRM_ASSIGN_ITEMS
     Friend WithEvents Panel2 As Panel
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents PB_INVENTORY_SEARCH As PictureBox
-    Friend WithEvents WTXT_LIST_PREFERRED_ITEMS As WatermarkTextBox
+    Friend WithEvents WTXT_SEARCH_ASS_ITEM As WatermarkTextBox
     Friend WithEvents DGV_ASSIGN_ITEMS_LIST As DataGridView
     Friend WithEvents ShapeContainer1 As PowerPacks.ShapeContainer
     Friend WithEvents RECT_PRCANCELEDIT As PowerPacks.RectangleShape
-    Friend WithEvents DS_STOREDPROC As DS_STOREDPROC
-    Friend WithEvents CATNAMEDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents SUBCATEGORYDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents BRANDNAMEDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents BTN_ASSIGN_ITEM As Button
+    Friend WithEvents RectangleShape1 As PowerPacks.RectangleShape
+    Friend WithEvents DS_VIEWS As DS_VIEWS
+    Friend WithEvents VWM4_ITEM_ASSBindingSource As BindingSource
+    Friend WithEvents VWM4_ITEM_ASSTableAdapter As DS_VIEWSTableAdapters.VWM4_ITEM_ASSTableAdapter
+    Friend WithEvents TableAdapterManager As DS_VIEWSTableAdapters.TableAdapterManager
     Friend WithEvents ITEMCODEDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents SERIALNODataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ITEMSERIALNODataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ITEMDESCRIPTIONDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents TOTALCOSTDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents DateOfAcquisitionDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents DateEncodeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents FullnameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents DIVISIONDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents SPM4ASSIGNITEMSBindingSource As BindingSource
-    Friend WithEvents SpM4_ASSIGN_ITEMSTableAdapter As DS_STOREDPROCTableAdapters.SPM4_ASSIGN_ITEMSTableAdapter
+    Friend WithEvents ITEMUNITDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ITEMUNITCOSTDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ITEMQUANTITYDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ITEMDATEAQUISITIONDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ITEMCREATEDDATEDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents FULLNAMEDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents EMPNODataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ACCOORIGINATEDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ACCOREMARKSDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ACCOASSIGNEDBYDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents DATEAPPOINTEDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents DATECREATEDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents Expr1DataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ASSIORIGINATEDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents REMARKSDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ASSIASSIGNEDBYDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents DATEASSIGNEDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents Expr2DataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents BTN_REASSIGN As DataGridViewButtonColumn
 End Class

@@ -24,6 +24,7 @@ Partial Class FRM_SELECTION
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FRM_SELECTION))
         Me.PNL = New System.Windows.Forms.Panel()
+        Me.BTN_CLOSE1 = New System.Windows.Forms.Button()
         Me.BTN_SELECTION_CLOSE = New System.Windows.Forms.Button()
         Me.Label39 = New System.Windows.Forms.Label()
         Me.BTN_Minimize = New System.Windows.Forms.Button()
@@ -34,7 +35,6 @@ Partial Class FRM_SELECTION
         Me.RectangleShape2 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.BTN_SELECTIONENDUSER = New System.Windows.Forms.Button()
         Me.TblM4_PURCHASEREQUESTTableAdapter1 = New PRA_PIS.DS_PROPERTYDBTableAdapters.tblM4_PURCHASEREQUESTTableAdapter()
-        Me.BTN_CLOSE1 = New System.Windows.Forms.Button()
         Me.PNL.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -52,6 +52,21 @@ Partial Class FRM_SELECTION
         Me.PNL.Name = "PNL"
         Me.PNL.Size = New System.Drawing.Size(314, 50)
         Me.PNL.TabIndex = 1412
+        '
+        'BTN_CLOSE1
+        '
+        Me.BTN_CLOSE1.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.BTN_CLOSE1.BackgroundImage = CType(resources.GetObject("BTN_CLOSE1.BackgroundImage"), System.Drawing.Image)
+        Me.BTN_CLOSE1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BTN_CLOSE1.FlatAppearance.BorderColor = System.Drawing.Color.Teal
+        Me.BTN_CLOSE1.FlatAppearance.BorderSize = 3
+        Me.BTN_CLOSE1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BTN_CLOSE1.Location = New System.Drawing.Point(276, 10)
+        Me.BTN_CLOSE1.Name = "BTN_CLOSE1"
+        Me.BTN_CLOSE1.Size = New System.Drawing.Size(30, 30)
+        Me.BTN_CLOSE1.TabIndex = 18
+        Me.BTN_CLOSE1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.BTN_CLOSE1.UseVisualStyleBackColor = True
         '
         'BTN_SELECTION_CLOSE
         '
@@ -169,27 +184,12 @@ Partial Class FRM_SELECTION
         Me.BTN_SELECTIONENDUSER.Name = "BTN_SELECTIONENDUSER"
         Me.BTN_SELECTIONENDUSER.Size = New System.Drawing.Size(140, 52)
         Me.BTN_SELECTIONENDUSER.TabIndex = 1416
-        Me.BTN_SELECTIONENDUSER.Text = "Accountable Person"
+        Me.BTN_SELECTIONENDUSER.Text = "Memorandum Receipt"
         Me.BTN_SELECTIONENDUSER.UseVisualStyleBackColor = False
         '
         'TblM4_PURCHASEREQUESTTableAdapter1
         '
         Me.TblM4_PURCHASEREQUESTTableAdapter1.ClearBeforeFill = True
-        '
-        'BTN_CLOSE1
-        '
-        Me.BTN_CLOSE1.Anchor = System.Windows.Forms.AnchorStyles.Right
-        Me.BTN_CLOSE1.BackgroundImage = CType(resources.GetObject("BTN_CLOSE1.BackgroundImage"), System.Drawing.Image)
-        Me.BTN_CLOSE1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BTN_CLOSE1.FlatAppearance.BorderColor = System.Drawing.Color.Teal
-        Me.BTN_CLOSE1.FlatAppearance.BorderSize = 3
-        Me.BTN_CLOSE1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BTN_CLOSE1.Location = New System.Drawing.Point(276, 10)
-        Me.BTN_CLOSE1.Name = "BTN_CLOSE1"
-        Me.BTN_CLOSE1.Size = New System.Drawing.Size(30, 30)
-        Me.BTN_CLOSE1.TabIndex = 18
-        Me.BTN_CLOSE1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.BTN_CLOSE1.UseVisualStyleBackColor = True
         '
         'FRM_SELECTION
         '
@@ -204,7 +204,7 @@ Partial Class FRM_SELECTION
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "FRM_SELECTION"
         Me.ShowInTaskbar = False
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "FRM_SELECTION_PO"
         Me.PNL.ResumeLayout(False)
         Me.PNL.PerformLayout()

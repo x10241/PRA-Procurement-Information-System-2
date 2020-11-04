@@ -1,6 +1,7 @@
 ﻿Imports Microsoft.VisualBasic.PowerPacks
 
 Public Class FRM_INVENTORY_ENCODING
+    Public IS_ITEM_ADD As Boolean = False
 
 #Region "VARIABLES DECLARATION"
 
@@ -76,16 +77,16 @@ Public Class FRM_INVENTORY_ENCODING
             Try
                 If slideFlaG = True Then
                     X_LOC -= 100
-                    PNL_SLIDE.Location = New Point(X_LOC, 40)
+                    PNL_SLIDE.Location = New Point(X_LOC, 0)
                     If PNL_SLIDE Is APNL_ITEMINFO Then
-                        If X_LOC < 514 Then
-                            PNL_SLIDE.Location = New Point(514, 40)
-                            X_LOC = 514
+                        If X_LOC < 0 Then
+                            PNL_SLIDE.Location = New Point(0, 0)
+                            X_LOC = 0
                             UCPROCTim.Enabled = False
                         End If
                     End If
                 Else
-                    PNL_SLIDE.Location = New Point(1095, 40)
+                    PNL_SLIDE.Location = New Point(1095, 0)
                     X_LOC = 1095
                     UCPROCTim.Enabled = False
                 End If
@@ -102,7 +103,7 @@ Public Class FRM_INVENTORY_ENCODING
                 If slideFlaG = True Then
                     Y_LOC -= 74
                     GRP_SLIDE.Location = New Point(278, Y_LOC)
-                    If GRP_SLIDE Is GRP_ITEMINFO Then
+                    If GRP_SLIDE Is GRP_ITEMINFO_PER_ITEM Then
                         If Y_LOC < 74 Then
                             GRP_SLIDE.Location = New Point(278, 74)
                             Y_LOC = 74
@@ -129,18 +130,38 @@ Public Class FRM_INVENTORY_ENCODING
                                                                                                 PB_INVENTORY_SAVE.Click,
                                                                                                 LLBL_INVENTORY_VIEW_REPORT.LinkClicked,
                                                                                                 PB_INVENTORY_VIEW_REPORT.Click,
-                                                                                                LLBL_INVENTORY_EDIT.LinkClicked,
-                                                                                                PB_INVENTORY_EDIT.Click,
                                                                                                 BTN_INVENTORY_SAVE.Click,
                                                                                                 BTN_INVENTORY_CANCEL.Click,
-                                                                                                BTN_CLOSE_INVENTORY_MINI_CLOSE.Click,
+                                                                                                BTN_INVENTORY_CANCEL_ARROW.Click,
                                                                                                 BTN_INVENTORY_MINIMIZE.Click,
                                                                                                 BTN_INVENTORY_CLOSE.Click,
                                                                                                 PB_INVENTORY_CLEAR_SEARCH.Click,
                                                                                                 PB_INVENTORY_SEARCH.Click,
-                                                                                                BTN_ADD_CATEGORY.Click,
                                                                                                 LLBL_INVENOTYR_ASSIGN.Click,
-                                                                                                WTXT_INVENTORY_DATE_OF_ACQUISITION.Click
+                                                                                                LLBL_ID_SAVE_ADD_ITEM.Click,
+                                                                                                PB_ID_SAVE_ADD_ITEM.Click,
+                                                                                                RECT_ID_SAVE_ADD_ITEM.Click,
+                                                                                                LLBL_ID_CLOSE.Click,
+                                                                                                RECT_ID_CLOSE.Click,
+                                                                                                PB_ID_CLOSE.Click,
+                                                                                                PB_ADD_ITEM.Click,
+                                                                                                LLBL_ADD_ITEM.Click,
+                                                                                                RECT_ADD_ITEM.Click,
+                                                                                                PB_SEARCH_DR.Click,
+                                                                                                WTXT_ITM_DR_DATE_DELIVERED.Click,
+                                                                                                WTXT_INVENTORY_DOA.Click,
+                                                                                                WTXT_INV_DATE_DELIVERED.Click,
+                                                                                                PB_INVOICE_NO.Click,
+                                                                                                RECT_INV_NEW.Click,
+                                                                                                RECT_INV_ASSIGN.Click,
+                                                                                                PB_ADD_ITEM_LOT.Click,
+                                                                                                RECT_ADD_ITEM_LOT.Click,
+                                                                                                LLBL_ADD_ITEM_LOT.Click,
+                                                                                                PB_CLOSE_ITEM_LOT.Click,
+                                                                                                LLBL_CLOSE_ITEM_LOT.Click,
+                                                                                                RECT_CLOSE_ITEM_LOT.Click,
+                                                                                                WTXT_DOA_LOT.Click
+
         Try
             Dim pb As PictureBox = Nothing
             Dim btn As Button = Nothing
@@ -159,47 +180,51 @@ Public Class FRM_INVENTORY_ENCODING
             ElseIf TypeOf sender Is TextBox Then
                 TXTGLOBAL = CType(sender, TextBox)
             End If
-#Region "New"
-            If llbl Is LLBL_INVENTORY_NEW Or pb Is PB_INVENTORY_NEW Then
+#Region "NEW"
+            If llbl Is LLBL_INVENTORY_NEW Or pb Is PB_INVENTORY_NEW Or rect Is RECT_INV_NEW Then
+                If MsgBox("Encode item as LOT/PACKAGE?", vbYesNo, "Confirmation") = vbYes Then
+                    ISLOT = True
+                Else
+                    ISLOT = False
+                End If
+
                 UCPROCTim.Enabled = True
                 slideFlaG = True
                 PNL_SLIDE = APNL_ITEMINFO
                 PNL_SLIDE.BringToFront()
                 _ENABLE("New")
+                isNew = True
                 'unit type
                 Me.TBLG3_UNITSTableAdapter.Fill(Me.DS_PROPERTYDB.TBLG3_UNITS)
                 'item brand
-                TblM4_INVENTORY_ITEMBRANDTableAdapter.Fill(DS_PROPERTYDB.tblM4_INVENTORY_ITEMBRAND)
+                TblM4_INVENTORY_ITEMBRANDTableAdapter.FillByINVCODE(DS_PROPERTYDB.tblM4_INVENTORY_ITEMBRAND, 0)
                 'current date time
-                Me.SPM4_CURRENTDATETIMETableAdapter.Fill(Me.DS_PROPERTYDB.SPM4_CURRENTDATETIME)
+                Me.SPM4_CURRENTDATETIMETableAdapter.Fill(Me.DS_STOREDPROC.SPM4_CURRENTDATETIME)
                 'category
-                TblM4_INVENTORY_CATEGORYTableAdapter.Fill(DS_PROPERTYDB.tblM4_INVENTORY_CATEGORY)
-                TblM4_INVENTORY_SUB_CATEGORYTableAdapter.FillByCAT_CODE(DS_PROPERTYDB.tblM4_INVENTORY_SUB_CATEGORY, CB_INVENTORY_CATEGORY.SelectedValue)
-
+                TblM4_INVENTORY_CATEGORYTableAdapter.FillByINV_CODE(DS_PROPERTYDB.tblM4_INVENTORY_CATEGORY, 0, DIVISION_NO)
+                If CB_INVENTORY_CATEGORY.Items.Count > 0 Then
+                    Me.TblM4_INVENTORY_SUB_CATEGORYTableAdapter.FillByCAT_CODE(Me.DS_PROPERTYDB.tblM4_INVENTORY_SUB_CATEGORY, CInt(If(IsDBNull(CB_INVENTORY_CATEGORY.SelectedValue), 0, CB_INVENTORY_CATEGORY.SelectedValue)))
+                End If
                 Me.TblM4_INVENTORY_ACQUISITION_VALUETableAdapter.Fill(Me.DS_PROPERTYDB.tblM4_INVENTORY_ACQUISITION_VALUE)
                 Me.TblV1_HRISDIVISIONTableAdapter.Fill(Me.DS_TABLES.tblV1_HRISDIVISION)
                 Me.TblM4_INVENTORY_ACQUISITION_ITEM_USAGETableAdapter.Fill(Me.DS_PROPERTYDB.tblM4_INVENTORY_ACQUISITION_ITEM_USAGE)
+                'If CB_INVENTORY_UNIT_TYPE.SelectedValue = 1 Then
+                '    PNL_LOT.Visible = True
+                '    PNL_NOT_LOT.Visible = False
+                'Else
+                '    PNL_LOT.Visible = False
+                '    PNL_NOT_LOT.Visible = True
+                'End If
 
 #End Region
 
-            ElseIf TXTGLOBAL Is WTXT_INVENTORY_DATE_OF_ACQUISITION Then
+#Region "DATE"
+            ElseIf TXTGLOBAL Is WTXT_ITM_DR_DATE_DELIVERED Or TXTGLOBAL Is WTXT_INVENTORY_DOA Or TXTGLOBAL Is WTXT_INV_DATE_DELIVERED Or TXTGLOBAL Is WTXT_DOA_LOT Then
                 TXTDATE = CType(sender, TextBox)
                 FRM_DATAENTRY.ShowDialog()
-
-#Region "Edit"
-            ElseIf llbl Is LLBL_INVENTORY_EDIT Or pb Is PB_INVENTORY_EDIT Then
-                If DGV_INVENTORY_LIST.SelectedRows.Count > 0 Then
-                    If EditBool Then
-                        _ENABLE("Edit")
-                        UCPROCTim.Enabled = True
-                        slideFlaG = True
-                        PNL_SLIDE = APNL_ITEMINFO
-                        PNL_SLIDE.BringToFront()
-                    End If
-                End If
 #End Region
 
-#Region "Save"
+#Region "SAVE"
             ElseIf btn Is BTN_INVENTORY_SAVE Then
 
 
@@ -210,12 +235,13 @@ Public Class FRM_INVENTORY_ENCODING
                 '  End If
 
                 ISVALID = True
-                If REQFIELDVALIDATION(WTXT_INVENTORY_ITEM_DESCRIPTION) Then
-                    RECT_INVENTORY_ITEM_DESCRIPTION.BorderColor = Color.OrangeRed
-                    ISVALID = False
-                Else
-                    RECT_INVENTORY_ITEM_DESCRIPTION.BorderColor = Color.LightSeaGreen
-                End If
+
+                'If REQFIELDVALIDATION(WTXT_INVENTORY_ITEM_DESCRIPTION) Then
+                '    RECT_INVENTORY_ITEM_DESCRIPTION.BorderColor = Color.OrangeRed
+                '    ISVALID = False
+                'Else
+                '    RECT_INVENTORY_ITEM_DESCRIPTION.BorderColor = Color.DimGray
+                'End If
 
                 'If REQFIELDVALIDATION(WTXT_INVENTORY_SERIAL_NO) Then
                 '    RECT_INVENTORY_SERIAL_NO.BorderColor = Color.OrangeRed
@@ -224,13 +250,13 @@ Public Class FRM_INVENTORY_ENCODING
                 '    RECT_INVENTORY_SERIAL_NO.BorderColor = Color.LightSeaGreen
                 'End If
 
-                If WTXT_INVENTORY_QUANTITY.Text = 0 Then
-                    RECT_INVENTORY_QUANTITY.BorderColor = Color.OrangeRed
-                    ISVALID = False
-                Else
-                    RECT_INVENTORY_QUANTITY.BorderColor = Color.LightSeaGreen
+                'If WTXT_INVENTORY_QUANTITY.Text = 0 Then
+                '    RECT_INVENTORY_QUANTITY.BorderColor = Color.OrangeRed
+                '    ISVALID = False
+                'Else
+                '    RECT_INVENTORY_QUANTITY.BorderColor = Color.LightSeaGreen
 
-                End If
+                'End If
 
                 'If WTXT_INVENTORY_UNITCOST.Text = 0 Then
                 '    RECT_INVENTORY_UNIT_COST.BorderColor = Color.OrangeRed
@@ -239,6 +265,22 @@ Public Class FRM_INVENTORY_ENCODING
                 '    RECT_INVENTORY_UNIT_COST.BorderColor = Color.LightSeaGreen
                 'End If
 
+                If DR_ID = String.Empty Then
+                    If WTXT_ITM_DR_NO.Text.Length = 0 Then
+                        ISVALID = False
+                    Else
+                        ISVALID = True
+                        DR_ID = WTXT_ITM_DR_NO.Text
+                    End If
+                Else
+                    ISVALID = True
+                End If
+
+                If DGV_ITEM_DETAILS.Rows.Count = 0 Then
+                    ISVALID = False
+                Else
+                    ISVALID = True
+                End If
 
                 If ISVALID Then
                     _SAVE()
@@ -247,8 +289,8 @@ Public Class FRM_INVENTORY_ENCODING
                 End If
 #End Region
 
-#Region "Cancel"
-            ElseIf btn Is BTN_INVENTORY_CANCEL Or btn Is BTN_CLOSE_INVENTORY_MINI_CLOSE Then
+#Region "CANCEL"
+            ElseIf btn Is BTN_INVENTORY_CANCEL Or btn Is BTN_INVENTORY_CANCEL_ARROW Then
                 If MsgBox("Do you want to cancel this?", vbYesNo, "Confirm") = vbYes Then
                     _ENABLE("Clear")
                     UCPROCTim.Enabled = True
@@ -262,7 +304,7 @@ Public Class FRM_INVENTORY_ENCODING
                 FRM_INVENTORY_REPORT.ShowDialog()
 #End Region
 
-#Region "Minimize"
+#Region "MINIMIZE"
             ElseIf btn Is BTN_INVENTORY_MINIMIZE Then
                 Me.WindowState = FormWindowState.Minimized
 #End Region
@@ -275,6 +317,7 @@ Public Class FRM_INVENTORY_ENCODING
 #Region "Clear"
             ElseIf pb Is PB_INVENTORY_CLEAR_SEARCH Then
                 WTXT_INVENTORY_SEARCH.Clear()
+                LLBL_TOT_REC.Text = DGV_ITEM_LIST.Rows.Count
 #End Region
 
 #Region "Search"
@@ -284,18 +327,100 @@ Public Class FRM_INVENTORY_ENCODING
                 Else
                     PB_INVENTORY_SEARCH.BringToFront()
                 End If
-                SPM4_INVENTORYDGVLISTTableAdapter.Fill(DS_PROPERTYDB.SPM4_INVENTORYDGVLIST, WTXT_INVENTORY_SEARCH.Text, "ITE")
-                LLBL_RECORDSFOUND.Text = DGV_INVENTORY_LIST.Rows.Count
+                VWM4_INV_ITEMS_LISTTableAdapter.FillBySEARCH(DS_VIEWS.VWM4_INV_ITEMS_LIST, WTXT_INV_SEARCH.Text)
+                LLBL_TOT_REC.Text = DGV_ITEM_LIST.Rows.Count
 #End Region
 
 #Region "Assign"
-            ElseIf llbl Is LLBL_INVENOTYR_ASSIGN Then
+            ElseIf llbl Is LLBL_INVENOTYR_ASSIGN Or rect Is RECT_INV_ASSIGN Or pb Is RECT_INV_ASSIGN Then
                 FRM_SELECTION.ShowDialog()
 #End Region
 
-#Region "Add Category"
-            ElseIf btn Is BTN_ADD_CATEGORY Then
+#Region "SAVE ADD ITEM"
+            ElseIf llbl Is LLBL_ID_SAVE_ADD_ITEM Or pb Is PB_ID_SAVE_ADD_ITEM Or rect Is RECT_ID_SAVE_ADD_ITEM Or pb Is PB_ADD_ITEM_LOT Or rect Is RECT_ADD_ITEM_LOT Or llbl Is LLBL_ADD_ITEM_LOT Then
 
+                If ISLOT Then
+                    INV_ENC_UNIT_COST = WTXT_INVENTORY_UNITCOST.Text
+                    INV_ENC_TOTAL_COST = WTXT_INVENTORY_TOTAL_COST.Text
+                    DGV_ITEM_DETAILS.Rows.Add(CB_CAT_LOT.Text,
+                                        CB_CAT_LOT.SelectedValue,
+                                        CB_SUB_CAT_LOT.Text,
+                                        CB_SUB_CAT_LOT.SelectedValue,
+                                        CB_BRAND_LOT.Text,
+                                        CB_BRAND_LOT.SelectedValue,
+                                        "0.00",
+                                        "0.00",
+                                        CB_UNIT_TYPE_LOT.Text,
+                                        WTXT_SERIAL_LOT.Text,
+                                        WTXT_ITEM_DESC_LOT.Text,
+                                        WTXT_DOA_LOT.Text)
+                Else
+                    DGV_ITEM_DETAILS.Rows.Add(CB_INVENTORY_CATEGORY.Text,
+                                         CB_INVENTORY_CATEGORY.SelectedValue,
+                                         CB_INVENTORY_SUBCATEGORY.Text,
+                                         CB_INVENTORY_SUBCATEGORY.SelectedValue,
+                                         CB_INVENTORY_BRAND_NAME.Text,
+                                         CB_INVENTORY_BRAND_NAME.SelectedValue,
+                                         WTXT_INVENTORY_UNITCOST.Text,
+                                         WTXT_INVENTORY_TOTAL_COST.Text,
+                                         CB_INVENTORY_UNIT_TYPE.Text,
+                                         WTXT_INVENTORY_SERIAL_NO.Text,
+                                         WTXT_INVENTORY_ITEM_DESCRIPTION.Text,
+                                         WTXT_INVENTORY_DOA.Text)
+                End If
+
+#End Region
+
+#Region "ADD ITEM SHOW FORM"
+            ElseIf pb Is PB_ADD_ITEM Or llbl Is LLBL_ADD_ITEM Or rect Is RECT_ADD_ITEM Then
+                If ISLOT Then
+                    GRP_ITEMINFO_PER_LOT.Visible = True
+                    GRP_ITEMINFO_PER_ITEM.Visible = False
+                    GRP_ITEMINFO_PER_LOT.BringToFront()
+                Else
+                    GRP_ITEMINFO_PER_ITEM.Visible = True
+                    GRP_ITEMINFO_PER_LOT.Visible = False
+                    GRP_ITEMINFO_PER_ITEM.BringToFront()
+                End If
+
+#End Region
+
+#Region "CLOSE ITEM"
+            ElseIf llbl Is LLBL_ID_CLOSE Or pb Is PB_ID_CLOSE Or rect Is RECT_ID_CLOSE Or rect Is RECT_CLOSE_ITEM_LOT Or llbl Is LLBL_CLOSE_ITEM_LOT Or pb Is PB_CLOSE_ITEM_LOT Then
+                If ISLOT Then
+                    GRP_ITEMINFO_PER_LOT.Visible = False
+                Else
+                    GRP_ITEMINFO_PER_ITEM.Visible = False
+                End If
+#End Region
+
+#Region "SEARCH DR"
+            ElseIf pb Is PB_SEARCH_DR Then
+                _CLEAR_DR_INV()
+                ENC_TYPE = "ITEM_ENC"
+                DGV_INV_LIST.Rows.Clear()
+                FRM_DR_LIST_DETAILS.ShowDialog()
+                DGV_INV_LIST.Rows.Add(ITM_DR_DESC, ITM_DR_QTY, ITM_DR_UNIT_TYPE, ITM_DR_WARRANTY)
+                WTXT_ITM_DR_NO.Text = T_INV_NO
+                WTXT_INV_DT.Text = T_INV_DT
+                WTXT_INV_TIN_NO.Text = T_INV_TIN_NO
+                WTXT_INV_COMPANY.Text = T_INV_COMPANY
+                WTXT_INV_NO.Clear()
+
+#End Region
+
+#Region "SEARCH INVOICE"
+            ElseIf pb Is PB_INVOICE_NO Then
+                _CLEAR_DR_INV()
+                ENC_TYPE = "INV"
+                DGV_INV_LIST.Rows.Clear()
+                FRM_INV.ShowDialog()
+                DGV_INV_LIST.Rows.Add(ITM_DR_DESC, ITM_DR_QTY, ITM_DR_UNIT_TYPE, ITM_DR_WARRANTY)
+                WTXT_INV_NO.Text = T_INV_NO
+                WTXT_INV_DT.Text = T_INV_DT
+                WTXT_INV_TIN_NO.Text = T_INV_TIN_NO
+                WTXT_INV_COMPANY.Text = T_INV_COMPANY
+                WTXT_ITM_DR_NO.Clear()
 #End Region
 
             End If
@@ -304,6 +429,18 @@ Public Class FRM_INVENTORY_ENCODING
         End Try
     End Sub
 
+    Private Sub PB_INV_CLEAR_Click(sender As Object, e As EventArgs) Handles PB_INV_CLEAR.Click
+        WTXT_INV_SEARCH.Clear()
+    End Sub
+#End Region
+
+#Region "CLEAR DR/INVOICE"
+    Sub _CLEAR_DR_INV()
+        WTXT_INV_NO.Clear()
+        WTXT_INV_DT.Clear()
+        WTXT_INV_TIN_NO.Clear()
+        WTXT_INV_COMPANY.Clear()
+    End Sub
 #End Region
 
 #Region "ENABLE/CLEAR"
@@ -311,8 +448,8 @@ Public Class FRM_INVENTORY_ENCODING
         If TRANSACTION = "New" Then
             isNew = True
             WTXT_INVENTORY_QUANTITY.Text = 0
-            WTXT_INVENTORY_UNITCOST.Text = 0
-            WTXT_INVENTORY_DATE_OF_ACQUISITION.Enabled = True
+            '  WTXT_INVENTORY_UNITCOST.Text = 0
+            ' WTXT_INVENTORY_DATE_OF_ACQUISITION.Enabled = True
             WTXT_INVENTORY_ITEM_DESCRIPTION.Enabled = True
             WTXT_INVENTORY_QUANTITY.Enabled = True
             WTXT_INVENTORY_SERIAL_NO.Enabled = True
@@ -322,16 +459,23 @@ Public Class FRM_INVENTORY_ENCODING
             CB_INVENTORY_SUBCATEGORY.Enabled = True
             CB_INVENTORY_UNIT_TYPE.Enabled = True
             '  CB_ITEMS_LOCATION.Enabled = True
-            LLBL_INVENTORY_EDIT.Enabled = False
-            PB_INVENTORY_EDIT.Enabled = False
+
             PB_INVENTORY_NEW.Enabled = False
             LLBL_INVENTORY_NEW.Enabled = False
             WTXT_INVENTORY_SEARCH.Enabled = False
             DGV_INVENTORY_LIST.Enabled = False
             LLBL_INVENTORY_VIEW_REPORT.Enabled = False
             PB_INVENTORY_VIEW_REPORT.Enabled = False
-            WTXT_INVENTORY_DATE_OF_ACQUISITION.Enabled = True
+            '   WTXT_INVENTORY_DATE_OF_ACQUISITION.Enabled = True
             RBT_PURCHASED.Checked = True
+
+            WTXT_INV_NO.Clear()
+            WTXT_INV_DT.Clear()
+            WTXT_INV_TIN_NO.Clear()
+            WTXT_INV_COMPANY.Clear()
+            DGV_INV_LIST.Rows.Clear()
+
+
         ElseIf TRANSACTION = "Edit" Then
             isNew = False
             WTXT_INVENTORY_ITEM_DESCRIPTION.Enabled = True
@@ -343,24 +487,22 @@ Public Class FRM_INVENTORY_ENCODING
             CB_INVENTORY_SUBCATEGORY.Enabled = True
             CB_INVENTORY_UNIT_TYPE.Enabled = True
             '    CB_ITEMS_LOCATION.Enabled = True
-            LLBL_INVENTORY_EDIT.Enabled = True
-            PB_INVENTORY_EDIT.Enabled = True
+
             PB_INVENTORY_NEW.Enabled = False
             LLBL_INVENTORY_NEW.Enabled = False
             WTXT_INVENTORY_SEARCH.Enabled = False
             DGV_INVENTORY_LIST.Enabled = False
             LLBL_INVENTORY_VIEW_REPORT.Enabled = False
             PB_INVENTORY_VIEW_REPORT.Enabled = True
-            WTXT_INVENTORY_DATE_OF_ACQUISITION.Enabled = True
-            DGV_ITEM_INFO.ClearSelection()
+            '   WTXT_INVENTORY_DATE_OF_ACQUISITION.Enabled = True
+            ' DGV_ITEM_INFO.ClearSelection()
         Else
-            WTXT_INVENTORY_DATE_OF_ACQUISITION.Enabled = False
+            ' WTXT_INVENTORY_DATE_OF_ACQUISITION.Enabled = False
             WTXT_INVENTORY_ITEM_DESCRIPTION.Enabled = False
             WTXT_INVENTORY_QUANTITY.Enabled = False
             WTXT_INVENTORY_SERIAL_NO.Enabled = False
             WTXT_INVENTORY_UNITCOST.Enabled = False
-            LLBL_INVENTORY_EDIT.Enabled = True
-            PB_INVENTORY_EDIT.Enabled = True
+
             CB_INVENTORY_BRAND_NAME.Enabled = False
             CB_INVENTORY_CATEGORY.Enabled = False
             CB_INVENTORY_SUBCATEGORY.Enabled = False
@@ -373,18 +515,30 @@ Public Class FRM_INVENTORY_ENCODING
             CB_INVENTORY_SUBCATEGORY.SelectedIndex = -1
             CB_INVENTORY_UNIT_TYPE.SelectedIndex = -1
             CB_ACQUISITION_VALUE.SelectedIndex = -1
+
+
+            CB_CAT_LOT.SelectedIndex = -1
+            CB_SUB_CAT_LOT.SelectedIndex = -1
+            CB_INVENTORY_BRAND_NAME.SelectedIndex = -1
+
             'CB_DIVISION_UNIT.SelectedIndex = -1
             CB_ITEM_USAGE.SelectedIndex = -1
-            WTXT_INVENTORY_DATE_OF_ACQUISITION.Clear()
+            '  WTXT_INVENTORY_DATE_OF_ACQUISITION.Clear()
             WTXT_INVENTORY_ITEM_DESCRIPTION.Clear()
             WTXT_INVENTORY_QUANTITY.Clear()
             WTXT_INVENTORY_SERIAL_NO.Clear()
             WTXT_INVENTORY_UNITCOST.Clear()
             WTXT_INVENTORY_TOTAL_COST.Clear()
-            RECT_INVENTORY_SERIAL_NO.BorderColor = Color.LightSeaGreen
-            RECT_INVENTORY_ITEM_DESCRIPTION.BorderColor = Color.LightSeaGreen
-            RECT_INVENTORY_QUANTITY.BorderColor = Color.LightSeaGreen
-            RECT_INVENTORY_UNIT_COST.BorderColor = Color.LightSeaGreen
+            RECT_INVENTORY_SERIAL_NO.BorderColor = Color.DimGray
+            RECT_INVENTORY_ITEM_DESCRIPTION.BorderColor = Color.DimGray
+            WTXT_LOT_DESCRIPTION.Clear()
+            WTXT_QTY_LOT.Clear()
+            WTXT_SERIAL_LOT.Clear()
+            WTXT_UNIT_COST_LOT.Clear()
+            WTXT_TOTAL_COST_LOT.Clear()
+            WTXT_ITEM_DESCRIPTION_LOT.Clear()
+            '  RECT_INVENTORY_QUANTITY.BorderColor = Color.LightSeaGreen
+            RECT_INVENTORY_UNIT_COST.BorderColor = Color.DimGray
             WTXT_INVENTORY_SEARCH.Enabled = True
             DGV_INVENTORY_LIST.Enabled = True
             LLBL_INVENTORY_VIEW_REPORT.Enabled = True
@@ -393,66 +547,49 @@ Public Class FRM_INVENTORY_ENCODING
             RBT_DONATED.Checked = False
             '  WTXT_CUSTODIAN_NAME.Clear()
             '   WTXT_PROPERTY_USER.Clear()
-            DGV_ITEM_INFO.Rows.Clear()
+            '  DGV_ITEM_INFO.Rows.Clear()
+            WTXT_ITM_DR_COMP_NAME.Clear()
+            WTXT_ITM_DR_DATE_DELIVERED.Clear()
+            WTXT_ITM_DR_NO.Clear()
+            WTXT_ITM_DR_TIN_NO.Clear()
+            DGV_ITM_DR_PARTICULARS.Rows.Clear()
+            DGV_ITEM_DETAILS.Rows.Clear()
         End If
     End Sub
 #End Region
 
-#Region "SAVE function"
+#Region "SAVE"
     Sub _SAVE()
         Try
-            'If isNew Then
-            '    For Each row As DataGridViewRow In DGV_ITEM_INFO.Rows
-            '        If Not row.IsNewRow Then
-            '            ITEMCODE = SpM4_ITEM_CODE_GENERATORTableAdapter.SPM4_ITEM_CODE_GEN(row.Cells(10).Value, row.Cells(11).Value, row.Cells(12).Value)
-            '            TblM4_INVENTORY_ITEMSTableAdapter.IQ_INVENTORY_ITEMS(ITEMCODE, row.Cells(11).Value, row.Cells(12).Value, row.Cells(4).Value, row.Cells(9).Value, row.Cells(5).Value, row.Cells(7).Value, row.Cells(8).Value, row.Cells(6).Value, row.Cells(0).Value)
-            '            TblM4_INVENTORY_ITEMS_PROPERTYTableAdapter.IQ_PROPERTY_ITEMS(ITEMCODE, CB_DIVISION_UNIT.SelectedValue, ACCOUNTABLE_OFFICER, PROPERTY_USER, EMP_NO)
-            '        End If
-            '    Next
-            '    DGV_ITEM_INFO.Rows.Clear()
-            '    SPM4_INVENTORYDGVLISTTableAdapter.Fill(DS_PROPERTYDB.SPM4_INVENTORYDGVLIST, "")
-            'Else
-            '    For Each row As DataGridViewRow In DGV_ITEM_INFO.Rows
-            '        If TblM4_INVENTORY_ITEMSTableAdapter.CHECKIFEXIST(row.Cells(12).Value) = 1 Then
-            '            TblM4_INVENTORY_ITEMSTableAdapter.UQ_INVENTORY_ITEMS(row.Cells(10).Value, row.Cells(11).Value, row.Cells(4).Value, row.Cells(9).Value, row.Cells(5).Value, row.Cells(7).Value, row.Cells(8).Value, row.Cells(6).Value, row.Cells(0).Value, row.Cells(12).Value)
-            '            If TblM4_INVENTORY_ITEMS_PROPERTYTableAdapter.CHECKIFEXIST(row.Cells(12).Value) = 1 Then
-            '                TblM4_INVENTORY_ITEMS_PROPERTYTableAdapter.UQ_ITEMS_PROPERTY(CB_DIVISION_UNIT.SelectedValue, ACCOUNTABLE_OFFICER, PROPERTY_USER, EMP_NO, row.Cells(12).Value)
-            '            Else
-            '                TblM4_INVENTORY_ITEMS_PROPERTYTableAdapter.IQ_PROPERTY_ITEMS(ITEMCODE, CB_DIVISION_UNIT.SelectedValue, ACCOUNTABLE_OFFICER, PROPERTY_USER, EMP_NO)
-            '            End If
-            '        Else
-            '            ITEMCODE = SpM4_ITEM_CODE_GENERATORTableAdapter.SPM4_ITEM_CODE_GEN(row.Cells(10).Value, row.Cells(11).Value, row.Cells(12).Value)
-            '            TblM4_INVENTORY_ITEMSTableAdapter.IQ_INVENTORY_ITEMS(ITEMCODE, row.Cells(11).Value, row.Cells(12).Value, row.Cells(4).Value, row.Cells(9).Value, row.Cells(5).Value, row.Cells(7).Value, row.Cells(8).Value, row.Cells(6).Value, row.Cells(0).Value)
-            '            TblM4_INVENTORY_ITEMS_PROPERTYTableAdapter.IQ_PROPERTY_ITEMS(ITEMCODE, CB_DIVISION_UNIT.SelectedValue, ACCOUNTABLE_OFFICER, PROPERTY_USER, EMP_NO)
-            '        End If
-            '    Next
-            '    DGV_ITEM_INFO.Rows.Clear()
-            '    SPM4_INVENTORYDGVLISTTableAdapter.Fill(DS_PROPERTYDB.SPM4_INVENTORYDGVLIST, "")
-            'End If
-
             If isNew Then
-
-                ITEMCODE = SpM4_ITEM_CODE_GENERATORTableAdapter.SPM4_ITEM_CODE_GEN(CB_INVENTORY_CATEGORY.SelectedValue, CB_INVENTORY_SUBCATEGORY.SelectedValue, CB_INVENTORY_BRAND_NAME.SelectedValue)
-
-                Dim dt As DateTime = WTXT_INVENTORY_DATE_OF_ACQUISITION.Text
-                WTXT_INVENTORY_DATE_OF_ACQUISITION.Text = dt.ToString("MMM dd, yyyy")
-                TblM4_INVENTORY_ITEMSTableAdapter.IQ_INVENTORY_ITEMS(ITEMCODE, CB_INVENTORY_SUBCATEGORY.SelectedValue, CB_INVENTORY_BRAND_NAME.SelectedValue, WTXT_INVENTORY_SERIAL_NO.Text, WTXT_INVENTORY_ITEM_DESCRIPTION.Text, CB_INVENTORY_UNIT_TYPE.Text, WTXT_INVENTORY_UNITCOST.Text, WTXT_INVENTORY_TOTAL_COST.Text, WTXT_INVENTORY_QUANTITY.Text, WTXT_INVENTORY_DATE_OF_ACQUISITION.Text, "ITE05002")
-                SPM4_INVENTORYDGVLISTTableAdapter.Fill(DS_PROPERTYDB.SPM4_INVENTORYDGVLIST, "", "IT-ADMIN")
-            Else
-
-                Dim dt As DateTime = WTXT_INVENTORY_DATE_OF_ACQUISITION.Text
-                WTXT_INVENTORY_DATE_OF_ACQUISITION.Text = dt.ToString("yyyy/MM/dd")
-                TblM4_INVENTORY_ITEMSTableAdapter.UQ_INVENTORY_ITEMS(CB_INVENTORY_SUBCATEGORY.SelectedValue, CB_INVENTORY_BRAND_NAME.SelectedValue, WTXT_INVENTORY_SERIAL_NO.Text, WTXT_INVENTORY_ITEM_DESCRIPTION.Text, CB_INVENTORY_UNIT_TYPE.Text, WTXT_INVENTORY_UNITCOST.Text, WTXT_INVENTORY_TOTAL_COST.Text, WTXT_INVENTORY_QUANTITY.Text, WTXT_INVENTORY_DATE_OF_ACQUISITION.Text, ITEMCODE, "ITE05002")
-                SPM4_INVENTORYDGVLISTTableAdapter.Fill(DS_PROPERTYDB.SPM4_INVENTORYDGVLIST, "", "IT-ADMIN")
+                Dim REF_CODE As String = SPM4_PHY_C_CODETableAdapter.SPM4_PHY_C_CODE()
+                If ISLOT Then
+                    TBLM4_INVENTORY_PACK_MAINTableAdapter.IQ_INV_PACK_MAIN(REF_CODE, WTXT_LOT_DESCRIPTION.Text, WTXT_QTY_LOT.Text, CDec(WTXT_UNIT_COST_LOT.Text), CDec(WTXT_TOTAL_COST_LOT.Text), EMP_NO)
+                End If
+                For Each row As DataGridViewRow In DGV_ITEM_DETAILS.Rows
+                    ITEMCODE = SPM4_IT_ITEM_CODE_GENTableAdapter.SPM4_IT_ITEM_CODE_GEN(Trim(row.Cells(1).Value), Trim(row.Cells(3).Value), Trim(row.Cells(5).Value))
+                    TblM4_INVENTORY_ITEMSTableAdapter.IQ_INVENTORY_ITEMS(ITEMCODE, Trim(row.Cells(3).Value), Trim(row.Cells(5).Value), Trim(row.Cells(9).Value), Trim(row.Cells(10).Value), Trim(row.Cells(8).Value), Trim(row.Cells(6).Value), Trim(row.Cells(7).Value), Trim(1), Trim(row.Cells(11).Value), 0)
+                    'TBLM4_INVENTORY_ITEMS_DRTableAdapter.IQ_INVENTORY_ITMS_DR(ITEMCODE, DR_ID, EMP_NO, WTXT_INVOICE_NO.Text, WTXT_INV_DATE_DELIVERED.Text)
+                    If ISLOT Then
+                        TBLM4_INVENTORY_PACKTableAdapter.IQ_INV_PACK(REF_CODE, ITEMCODE)
+                    End If
+                    If WTXT_ITM_DR_NO.Text.Length > 0 Then
+                        TBLM4_INVENTORY_ITEMS_DRTableAdapter.IQ_INVENTORY_ITMS_DR(ITEMCODE, DR_ID, EMP_NO)
+                    ElseIf WTXT_INV_NO.Text.Length > 0 Then
+                        TBLM4_INVENTORY_ITEMS_INVTableAdapter.IQ_ITEMS_INV(ITEMCODE, WTXT_INV_NO.Text, EMP_NO)
+                    End If
+                Next
+                VWM4_INV_ITEMS_LISTTableAdapter.FillBySEARCH(DS_VIEWS.VWM4_INV_ITEMS_LIST, WTXT_INV_SEARCH.Text)
             End If
             _ENABLE("Clear")
             UCPROCTim.Enabled = True
             slideFlaG = False
-            LLBL_RECORDSFOUND.Text = DGV_INVENTORY_LIST.Rows.Count
+            LLBL_TOT_REC.Text = DGV_INVENTORY_LIST.Rows.Count
             DGV_INVENTORY_LIST.ClearSelection()
             NotificationManager.Show(Me, "Successfully Saved.", Color.Green, 3000)
         Catch ex As Exception
             NotificationManager.Show(Me, ex.Message, Color.Red, 3000)
+            ERRLOG.WriteToErrorLog(ex.Message, ex.StackTrace, "_SAVE")
         End Try
     End Sub
 
@@ -460,15 +597,13 @@ Public Class FRM_INVENTORY_ENCODING
 
 #Region "Combobox Index Changed"
     Private Sub CB_INVENTORY_CATEGORY_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CB_INVENTORY_CATEGORY.SelectedIndexChanged
-        TblM4_INVENTORY_SUB_CATEGORYTableAdapter.FillByCAT_CODE(DS_PROPERTYDB.tblM4_INVENTORY_SUB_CATEGORY, CB_INVENTORY_CATEGORY.SelectedValue)
-        'If CB_INVENTORY_CATEGORY.Text <> "Software" Then
-
-        'Else
-
-        'End If
+        If CB_INVENTORY_CATEGORY.Items.Count > 0 Then
+            Me.TblM4_INVENTORY_SUB_CATEGORYTableAdapter.FillByCAT_CODE(Me.DS_PROPERTYDB.tblM4_INVENTORY_SUB_CATEGORY, CInt(If(IsDBNull(CB_INVENTORY_CATEGORY.SelectedValue), 0, CB_INVENTORY_CATEGORY.SelectedValue)))
+        End If
     End Sub
 #End Region
 
+#Region "LEAVE"
     Private Sub WTXT_INVENTORY_QUANTITY_Leave(sender As Object, e As EventArgs) Handles WTXT_INVENTORY_UNITCOST.Leave, WTXT_INVENTORY_QUANTITY.Leave
         Try
             TXTGLOBAL = Nothing
@@ -476,23 +611,48 @@ Public Class FRM_INVENTORY_ENCODING
                 TXTGLOBAL = DirectCast(sender, TextBox)
             End If
             If TXTGLOBAL Is WTXT_INVENTORY_UNITCOST Or TXTGLOBAL Is WTXT_INVENTORY_QUANTITY Then
-                WTXT_INVENTORY_TOTAL_COST.Text = CInt(WTXT_INVENTORY_QUANTITY.Text) * CDec(WTXT_INVENTORY_UNITCOST.Text)
+                WTXT_INVENTORY_TOTAL_COST.Text = 1 * CDec(WTXT_INVENTORY_UNITCOST.Text)
                 WTXT_INVENTORY_TOTAL_COST.Text = TXTSETTO_0(WTXT_INVENTORY_TOTAL_COST, False)
+                WTXT_INVENTORY_UNITCOST.Text = TXTSETTO_0(WTXT_INVENTORY_UNITCOST, False)
             End If
         Catch ex As Exception
             NotificationManager.Show(Me, "PLEASE CHECK QUANTITY AND UNIT COST VALUE!", Color.Red, 3000)
+            ERRLOG.WriteToErrorLog(ex.Message, ex.StackTrace, "WTXT_INVENTORY_QUANTITY_Leave")
         End Try
     End Sub
 
+
+    Private Sub WTXT_UNIT_COST_LOT_Leave(sender As Object, e As EventArgs) Handles WTXT_UNIT_COST_LOT.Leave, WTXT_QTY_LOT.Leave
+        Try
+            TXTGLOBAL = Nothing
+            If TypeOf sender Is TextBox Then
+                TXTGLOBAL = DirectCast(sender, TextBox)
+            End If
+            If TXTGLOBAL Is WTXT_UNIT_COST_LOT Or TXTGLOBAL Is WTXT_QTY_LOT Then
+                WTXT_TOTAL_COST_LOT.Text = CInt(WTXT_QTY_LOT.Text) * CDec(WTXT_UNIT_COST_LOT.Text)
+                WTXT_TOTAL_COST_LOT.Text = TXTSETTO_0(WTXT_TOTAL_COST_LOT, False)
+                WTXT_UNIT_COST_LOT.Text = TXTSETTO_0(WTXT_UNIT_COST_LOT, False)
+            End If
+        Catch ex As Exception
+            NotificationManager.Show(Me, "PLEASE CHECK QUANTITY AND UNIT COST VALUE!", Color.Red, 3000)
+            ERRLOG.WriteToErrorLog(ex.Message, ex.StackTrace, "WTXT_INVENTORY_QUANTITY_Leave")
+        End Try
+    End Sub
+
+#End Region
+
 #Region "LOAD"
     Private Sub FRM_INVENTORY_ENCODING_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        VWM4_INV_ITEMS_LISTTableAdapter.FillBySEARCH(DS_VIEWS.VWM4_INV_ITEMS_LIST, WTXT_INV_SEARCH.Text)
+        Me.SPM4_PHY_C_CODETableAdapter.Fill(Me.DS_STOREDPROC.SPM4_PHY_C_CODE)
+        Me.TBLM4_INVENTORY_PACK_MAINTableAdapter.Fill(Me.DS_PROPERTYDB.TBLM4_INVENTORY_PACK_MAIN)
+        Me.TBLM4_INVENTORY_PACKTableAdapter.Fill(Me.DS_PROPERTYDB.TBLM4_INVENTORY_PACK)
+        Me.VWM4_INV_ITEM_DR_LISTTableAdapter.FillBySEARCH(Me.DS_VIEWS.VWM4_INV_ITEM_DR_LIST, WTXT_INVENTORY_SEARCH.Text)
+        Me.SPM4_CURRENTDATETIMETableAdapter.Fill(Me.DS_STOREDPROC.SPM4_CURRENTDATETIME)
         Me.TblM4_INVENTORY_ITEMBRANDTableAdapter.Fill(Me.DS_PROPERTYDB.tblM4_INVENTORY_ITEMBRAND)
         Me.TblM4_INVENTORY_SUB_CATEGORYTableAdapter.Fill(Me.DS_PROPERTYDB.tblM4_INVENTORY_SUB_CATEGORY)
         Me.TblM4_INVENTORY_CATEGORYTableAdapter.Fill(Me.DS_PROPERTYDB.tblM4_INVENTORY_CATEGORY)
-
-        SPM4_INVENTORYDGVLISTTableAdapter.Fill(DS_PROPERTYDB.SPM4_INVENTORYDGVLIST, WTXT_INVENTORY_SEARCH.Text, "ITE")
-        LLBL_RECORDSFOUND.Text = DGV_INVENTORY_LIST.Rows.Count
+        LLBL_TOT_REC.Text = DGV_ITEM_LIST.Rows.Count
     End Sub
 
 #End Region
@@ -503,6 +663,17 @@ Public Class FRM_INVENTORY_ENCODING
             GRP_CONSUMABLE.Visible = True
         Else
             GRP_CONSUMABLE.Visible = False
+        End If
+    End Sub
+
+
+    Private Sub CB_INVENTORY_UNIT_TYPE_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CB_INVENTORY_UNIT_TYPE.SelectedIndexChanged
+        If CB_INVENTORY_UNIT_TYPE.SelectedValue = 1 Then
+            PNL_LOT.Visible = True
+            PNL_NOT_LOT.Visible = False
+        Else
+            PNL_LOT.Visible = False
+            PNL_NOT_LOT.Visible = True
         End If
     End Sub
 #End Region
@@ -527,260 +698,113 @@ Public Class FRM_INVENTORY_ENCODING
 #End Region
 
 #Region "BUTTON"
-    Private Sub BTN_ADD_SUBCATEGORY_Click(sender As Object, e As EventArgs) Handles BTN_ADD_SUBCATEGORY.Click, BTN_ADD_BRAND_PROVIDER.Click
+    Private Sub BTN_ADD_SUBCATEGORY_Click(sender As Object, e As EventArgs) Handles BTN_ADD_SUBCATEGORY.Click,
+                                                                                    BTN_ADD_BRAND_PROVIDER.Click,
+                                                                                    BTN_ADD_CATEGORY.Click,
+                                                                                    BTN_ADD_SUBCATEGORY_LOT.Click,
+                                                                                    BTN_ADD_BRAND_PROVIDER_LOT.Click,
+                                                                                    BTN_ADD_CATEGORY_LOT.Click
         Dim btn As Button = Nothing
 
         If TypeOf sender Is Button Then
             btn = CType(sender, Button)
         End If
-
-        If btn Is BTN_ADD_SUBCATEGORY Then
+        CODEHOLDER = 0
+        If btn Is BTN_ADD_SUBCATEGORY Or btn Is BTN_ADD_SUBCATEGORY_LOT Then
             FRM_ADDITIONAL_CATEGORIZATION.LBL_ADDITIONAL_CATEGORIZATION.Text = "S U B  C A T E G O R Y"
-            FRM_ADDITIONAL_CATEGORIZATION.GRP_SUB_CATEGORY_ADMIN.Visible = True
+            FRM_ADDITIONAL_CATEGORIZATION.GRP_SUB_CATEGORY.Visible = True
             FRM_ADDITIONAL_CATEGORIZATION.ShowDialog()
-            Me.TblM4_INVENTORY_SUB_CATEGORYTableAdapter.Fill(Me.DS_PROPERTYDB.tblM4_INVENTORY_SUB_CATEGORY)
-        ElseIf btn Is BTN_ADD_BRAND_PROVIDER Then
+            If ISLOT Then
+                Me.TblM4_INVENTORY_SUB_CATEGORYTableAdapter.FillByCAT_CODE(DS_PROPERTYDB.tblM4_INVENTORY_SUB_CATEGORY, CInt(CB_CAT_LOT.SelectedValue))
+            Else
+                Me.TblM4_INVENTORY_SUB_CATEGORYTableAdapter.FillByCAT_CODE(DS_PROPERTYDB.tblM4_INVENTORY_SUB_CATEGORY, CInt(CB_INVENTORY_CATEGORY.SelectedValue))
+            End If
+
+        ElseIf btn Is BTN_ADD_BRAND_PROVIDER Or btn Is BTN_ADD_BRAND_PROVIDER_LOT Then
             FRM_ADDITIONAL_CATEGORIZATION.LBL_ADDITIONAL_CATEGORIZATION.Text = "B R A N D  N A M E"
-            FRM_ADDITIONAL_CATEGORIZATION.GRP_BRANDS.Visible = True
+            FRM_ADDITIONAL_CATEGORIZATION.GRP_BRAND.Visible = True
             FRM_ADDITIONAL_CATEGORIZATION.ShowDialog()
-            Me.TblM4_INVENTORY_ITEMBRANDTableAdapter.Fill(Me.DS_PROPERTYDB.tblM4_INVENTORY_ITEMBRAND)
-            'ElseIf btn Is BTN_ADD_UNITTYPE Then
-            '    FRM_ADDITIONAL_CATEGORIZATION.LBL_ADDITIONAL_CATEGORIZATION.Text = "U N I T  T Y P E"
+
+            Me.TblM4_INVENTORY_ITEMBRANDTableAdapter.FillByINVCODE(Me.DS_PROPERTYDB.tblM4_INVENTORY_ITEMBRAND, 0)
+
+        ElseIf btn Is BTN_ADD_CATEGORY Or btn Is BTN_ADD_CATEGORY_LOT Then
+            FRM_ADDITIONAL_CATEGORIZATION.LBL_ADDITIONAL_CATEGORIZATION.Text = "C A T E G O R Y"
+            FRM_ADDITIONAL_CATEGORIZATION.GRP_CATEGORY.Visible = True
+            FRM_ADDITIONAL_CATEGORIZATION.ShowDialog()
+            TblM4_INVENTORY_CATEGORYTableAdapter.FillByINV_CODE(DS_PROPERTYDB.tblM4_INVENTORY_CATEGORY, 0, DIVISION_NO)
         End If
     End Sub
 
 #End Region
 
-#Region "LABEL CLICK INSIDE PANEL SLIDE"
-    Private Sub LLBL_ADDITEM_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LLBL_ADDITEM.LinkClicked,
-                                                                                                        LLBL_CLOSE.LinkClicked,
-                                                                                                         LLBL_SAVE_ADD_ITEM.LinkClicked,
-                                                                                                          LLBL_REMOVE_ITEM.LinkClicked,
-                                                                                                          LLBL_EDIT_ITEM.LinkClicked
+#Region "CELL CLICK"
+    '    Private Sub DGV_INVENTORY_LIST_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_INVENTORY_LIST.CellClick
 
-        llbl = Nothing
-        If TypeOf sender Is LinkLabel Then
-            llbl = CType(sender, LinkLabel)
-        End If
+    '        Dim dgv1 = CType(sender, DataGridView)
+    '        If DGV_INVENTORY_LIST.SelectedRows.Count > 0 Then
+    '            If e.RowIndex >= 0 Then
+    '                EditBool = True
+    '                'unit type
+    '                Me.TBLG3_UNITSTableAdapter.Fill(Me.DS_PROPERTYDB.TBLG3_UNITS)
+    '                'item brand
+    '                TblM4_INVENTORY_ITEMBRANDTableAdapter.Fill(DS_PROPERTYDB.tblM4_INVENTORY_ITEMBRAND)
+    '                'current date time
+    '                Me.SPM4_CURRENTDATETIMETableAdapter.Fill(Me.DS_STOREDPROC.SPM4_CURRENTDATETIME)
+    '                'category
+    '                TblM4_INVENTORY_CATEGORYTableAdapter.Fill(DS_PROPERTYDB.tblM4_INVENTORY_CATEGORY)
+    '                If CB_INVENTORY_CATEGORY.Items.Count > 0 Then
+    '                    Me.TblM4_INVENTORY_SUB_CATEGORYTableAdapter.FillByCAT_CODE(Me.DS_PROPERTYDB.tblM4_INVENTORY_SUB_CATEGORY, CInt(If(IsDBNull(CB_INVENTORY_CATEGORY.SelectedValue), 0, CB_INVENTORY_CATEGORY.SelectedValue)))
+    '                End If
 
-        If llbl Is LLBL_ADDITEM Then
-            UCPROCTim2.Enabled = True
-            slideFlaG = True
-            GRP_SLIDE = GRP_ITEMINFO
-            GRP_SLIDE.BringToFront()
-            'GRP_ACCOUNTABLE_UNIT_PERSON.Enabled = False
-            GRP_LIST_ITEMS.Enabled = False
-            BTN_INVENTORY_CANCEL.Enabled = False
-            BTN_INVENTORY_SAVE.Enabled = False
-            Me.SPM4_CURRENTDATETIMETableAdapter.Fill(Me.DS_PROPERTYDB.SPM4_CURRENTDATETIME)
-            '   _ENABLE("clear")
-            _ENABLE("New")
-        ElseIf llbl Is LLBL_CLOSE Then
-            UCPROCTim2.Enabled = True
-            slideFlaG = False
-            '   GRP_ACCOUNTABLE_UNIT_PERSON.Enabled = True
-            GRP_LIST_ITEMS.Enabled = True
-            BTN_INVENTORY_CANCEL.Enabled = True
-            BTN_INVENTORY_SAVE.Enabled = True
-            DGV_ITEM_INFO.ClearSelection()
-        ElseIf llbl Is LLBL_SAVE_ADD_ITEM Then
-            ISVALID = True
-            If REQFIELDVALIDATION(WTXT_INVENTORY_ITEM_DESCRIPTION) Then
-                RECT_INVENTORY_ITEM_DESCRIPTION.BorderColor = Color.OrangeRed
-                ISVALID = False
-            Else
-                RECT_INVENTORY_ITEM_DESCRIPTION.BorderColor = Color.LightSeaGreen
-            End If
+    '                Dim dt As DateTime = dgv1.Rows(e.RowIndex).Cells(12).Value.ToString()
+    '                CB_INVENTORY_CATEGORY.SelectedIndex = CB_INVENTORY_CATEGORY.FindStringExact(dgv1.Rows(e.RowIndex).Cells(0).Value)
+    '                ITEMCODE = dgv1.Rows(e.RowIndex).Cells(1).Value
+    '                CB_INVENTORY_SUBCATEGORY.SelectedValue = dgv1.Rows(e.RowIndex).Cells(3).Value
+    '                CB_INVENTORY_BRAND_NAME.SelectedValue = dgv1.Rows(e.RowIndex).Cells(5).Value
+    '                WTXT_INVENTORY_SERIAL_NO.Text = dgv1.Rows(e.RowIndex).Cells(6).Value.ToString()
+    '                WTXT_INVENTORY_ITEM_DESCRIPTION.Text = dgv1.Rows(e.RowIndex).Cells(7).Value
+    '                CB_INVENTORY_UNIT_TYPE.SelectedIndex = CB_INVENTORY_UNIT_TYPE.FindStringExact(dgv1.Rows(e.RowIndex).Cells(8).Value.ToString())
+    '                WTXT_INVENTORY_QUANTITY.Text = dgv1.Rows(e.RowIndex).Cells(9).Value.ToString()
+    '                WTXT_INVENTORY_UNITCOST.Text = dgv1.Rows(e.RowIndex).Cells(10).Value.ToString()
+    '                WTXT_INVENTORY_TOTAL_COST.Text = dgv1.Rows(e.RowIndex).Cells(11).Value.ToString()
+    '                WTXT_INVENTORY_UNITCOST.Text = TXTSETTO_0(WTXT_INVENTORY_UNITCOST, True)
+    '                WTXT_INVENTORY_TOTAL_COST.Text = TXTSETTO_0(WTXT_INVENTORY_TOTAL_COST, True)
+    '                '  WTXT_INVENTORY_DATE_OF_ACQUISITION.Text = dt.ToString("MMM dd, yyyy")
+    '            Else
+    '                EditBool = False
+    '            End If
+    '        End If
+    '    End Sub
 
-
-            If WTXT_INVENTORY_QUANTITY.Text = 0 Then
-                RECT_INVENTORY_QUANTITY.BorderColor = Color.OrangeRed
-                ISVALID = False
-            Else
-                RECT_INVENTORY_QUANTITY.BorderColor = Color.LightSeaGreen
-            End If
-
-            If ISVALID Then
-                If DGV_ITEM_INFO.Rows.Count > 0 Then
-                    DGV_ITEM_INFO.Rows.RemoveAt(DGV_ITEM_INFO.CurrentRow.Index)
-                End If
-
-                DGV_ITEM_INFO.Rows.Add(WTXT_INVENTORY_DATE_OF_ACQUISITION.Text,
-                              CB_INVENTORY_CATEGORY.Text,
-                              CB_INVENTORY_SUBCATEGORY.Text,
-                              CB_INVENTORY_BRAND_NAME.Text,
-                              WTXT_INVENTORY_SERIAL_NO.Text,
-                              CB_INVENTORY_UNIT_TYPE.Text,
-                              WTXT_INVENTORY_QUANTITY.Text,
-                              WTXT_INVENTORY_UNITCOST.Text,
-                              WTXT_INVENTORY_TOTAL_COST.Text,
-                              WTXT_INVENTORY_ITEM_DESCRIPTION.Text,
-                               CB_INVENTORY_CATEGORY.SelectedValue,
-                               CB_INVENTORY_SUBCATEGORY.SelectedValue,
-                               CB_INVENTORY_BRAND_NAME.SelectedValue)
-                NotificationManager.Show(GRP_ITEMINFO, "Successfully added!", Color.Green, 1000)
-            Else
-                NotificationManager.Show(GRP_ITEMINFO, "Please provide all required fields.", Color.Red, 3000)
-            End If
-
-        ElseIf llbl Is LLBL_REMOVE_ITEM Then
-            If DGV_ITEM_INFO.SelectedRows.Count > 0 Then
-                If MsgBox("Remove this?", vbYesNo, "Confirm") = vbYes Then
-                    DGV_ITEM_INFO.Rows.RemoveAt(DGV_ITEM_INFO.CurrentRow.Index)
+    Private Sub DGV_ITEM_DETAILS_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_ITEM_DETAILS.CellContentClick
+        If e.RowIndex >= 0 Then
+            'REMOVE
+            If e.ColumnIndex = 12 Then
+                If MsgBox("REMOVE THIS?", vbYesNo, "CONFIRM") = vbYes Then
+                    DGV_ITEM_DETAILS.Rows.RemoveAt(e.RowIndex)
                 End If
             End If
-        ElseIf llbl Is LLBL_EDIT_ITEM Then
-            If DGV_ITEM_INFO.SelectedRows.Count > 0 Then
-                Me.TblM4_INVENTORY_ITEMBRANDTableAdapter.Fill(Me.DS_PROPERTYDB.tblM4_INVENTORY_ITEMBRAND)
-                Me.TblM4_INVENTORY_CATEGORYTableAdapter.Fill(Me.DS_PROPERTYDB.tblM4_INVENTORY_CATEGORY)
-                TblM4_INVENTORY_SUB_CATEGORYTableAdapter.FillByCAT_CODE(DS_PROPERTYDB.tblM4_INVENTORY_SUB_CATEGORY, CB_INVENTORY_CATEGORY.SelectedValue)
-                CB_INVENTORY_CATEGORY.SelectedIndex = CB_INVENTORY_CATEGORY.FindStringExact(DGV_ITEM_INFO.Rows(DGV_ITEM_INFO.CurrentRow.Index).Cells(1).Value)
-                CB_INVENTORY_SUBCATEGORY.SelectedIndex = CB_INVENTORY_SUBCATEGORY.FindStringExact(DGV_ITEM_INFO.Rows(DGV_ITEM_INFO.CurrentRow.Index).Cells(2).Value)
-                CB_INVENTORY_BRAND_NAME.SelectedIndex = CB_INVENTORY_BRAND_NAME.FindStringExact(DGV_ITEM_INFO.Rows(DGV_ITEM_INFO.CurrentRow.Index).Cells(3).Value)
-                WTXT_INVENTORY_SERIAL_NO.Text = DGV_ITEM_INFO.Rows(DGV_ITEM_INFO.CurrentRow.Index).Cells(4).Value
-                CB_INVENTORY_UNIT_TYPE.SelectedIndex = CB_INVENTORY_UNIT_TYPE.FindStringExact(DGV_ITEM_INFO.Rows(DGV_ITEM_INFO.CurrentRow.Index).Cells(5).Value)
-                WTXT_INVENTORY_QUANTITY.Text = DGV_ITEM_INFO.Rows(DGV_ITEM_INFO.CurrentRow.Index).Cells(6).Value
-                WTXT_INVENTORY_UNITCOST.Text = DGV_ITEM_INFO.Rows(DGV_ITEM_INFO.CurrentRow.Index).Cells(7).Value
-                WTXT_INVENTORY_UNITCOST.Text = TXTSETTO_0(WTXT_INVENTORY_UNITCOST, True)
-                WTXT_INVENTORY_TOTAL_COST.Text = DGV_ITEM_INFO.Rows(DGV_ITEM_INFO.CurrentRow.Index).Cells(8).Value
-                WTXT_INVENTORY_TOTAL_COST.Text = TXTSETTO_0(WTXT_INVENTORY_TOTAL_COST, True)
-                WTXT_INVENTORY_ITEM_DESCRIPTION.Text = DGV_ITEM_INFO.Rows(DGV_ITEM_INFO.CurrentRow.Index).Cells(9).Value
-                WTXT_INVENTORY_DATE_OF_ACQUISITION.Text = DGV_ITEM_INFO.Rows(DGV_ITEM_INFO.CurrentRow.Index).Cells(0).Value
-                UCPROCTim2.Enabled = True
-                slideFlaG = True
-                GRP_SLIDE = GRP_ITEMINFO
-                GRP_SLIDE.BringToFront()
-                '      GRP_ACCOUNTABLE_UNIT_PERSON.Enabled = False
-                GRP_LIST_ITEMS.Enabled = False
-                BTN_INVENTORY_CANCEL.Enabled = False
-                BTN_INVENTORY_SAVE.Enabled = False
-
-            End If
         End If
     End Sub
+
+
 #End Region
 
-#Region "Cell Event"
-    Private Sub DGV_ITEM_INFO_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_ITEM_INFO.CellClick
-        If DGV_ITEM_INFO.SelectedRows.Count > 0 Then
-            RECT_REMOVE_ITEM.Visible = True
-            LLBL_REMOVE_ITEM.Visible = True
-            RECT_EDIT_ITEM.Visible = True
-            LLBL_EDIT_ITEM.Visible = True
-        Else
-            RECT_REMOVE_ITEM.Visible = False
-            LLBL_REMOVE_ITEM.Visible = False
-            RECT_EDIT_ITEM.Visible = False
-            LLBL_EDIT_ITEM.Visible = False
-        End If
-    End Sub
-
-    Private Sub DGV_ITEM_INFO_RowsRemoved(sender As Object, e As DataGridViewRowsRemovedEventArgs) Handles DGV_ITEM_INFO.RowsRemoved
-        If DGV_ITEM_INFO.SelectedRows.Count = 0 Then
-            RECT_REMOVE_ITEM.Visible = False
-            LLBL_REMOVE_ITEM.Visible = False
-            RECT_EDIT_ITEM.Visible = False
-            LLBL_EDIT_ITEM.Visible = False
-        End If
-    End Sub
-
-    Private Sub DGV_INVENTORY_LIST_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_INVENTORY_LIST.CellClick
-        _ENABLE("Clear")
-        Dim dgv1 = CType(sender, DataGridView)
-        If DGV_INVENTORY_LIST.SelectedRows.Count > 0 Then
-            If e.RowIndex >= 0 Then
-                EditBool = True
-                'unit type
-                Me.TBLG3_UNITSTableAdapter.Fill(Me.DS_PROPERTYDB.TBLG3_UNITS)
-                'item brand
-                TblM4_INVENTORY_ITEMBRANDTableAdapter.Fill(DS_PROPERTYDB.tblM4_INVENTORY_ITEMBRAND)
-                'current date time
-                Me.SPM4_CURRENTDATETIMETableAdapter.Fill(Me.DS_PROPERTYDB.SPM4_CURRENTDATETIME)
-                'category
-                TblM4_INVENTORY_CATEGORYTableAdapter.Fill(DS_PROPERTYDB.tblM4_INVENTORY_CATEGORY)
-                TblM4_INVENTORY_SUB_CATEGORYTableAdapter.FillByCAT_CODE(DS_PROPERTYDB.tblM4_INVENTORY_SUB_CATEGORY, CB_INVENTORY_CATEGORY.SelectedValue)
-
-                '  TblM4_INVENTORY_ITEMSTableAdapter.FillByItemCode(DS_PROPERTYDB.tblM4_INVENTORY_ITEMS, dgv1.Rows(e.RowIndex).Cells(1).Value)
-                Dim dt As DateTime = dgv1.Rows(e.RowIndex).Cells(12).Value.ToString()
-                'DGV_ITEM_INFO.Rows.Add(dt.ToString("MMM dd, yyyy"), 'date acquisition
-                '                       dgv1.Rows(e.RowIndex).Cells(0).Value, 'category
-                '                       dgv1.Rows(e.RowIndex).Cells(2).Value, 'sub category
-                '                        dgv1.Rows(e.RowIndex).Cells(4).Value, 'brand
-                '                        dgv1.Rows(e.RowIndex).Cells(6).Value.ToString(), ' serial
-                '                        dgv1.Rows(e.RowIndex).Cells(8).Value.ToString(), ' unit type
-                '                        dgv1.Rows(e.RowIndex).Cells(9).Value.ToString(), ' quantity
-                '                        dgv1.Rows(e.RowIndex).Cells(10).Value.ToString(), 'unit cost
-                '                        dgv1.Rows(e.RowIndex).Cells(11).Value.ToString(), 'total cost
-                '                        dgv1.Rows(e.RowIndex).Cells(7).Value.ToString(), ' item description
-                '                        dgv1.Rows(e.RowIndex).Cells(3).Value.ToString(), ' sc_no
-                '                        dgv1.Rows(e.RowIndex).Cells(5).Value.ToString(),
-                '                        dgv1.Rows(e.RowIndex).Cells(1).Value) ' brand
-                ITEMCODE = dgv1.Rows(e.RowIndex).Cells(1).Value
-                CB_INVENTORY_CATEGORY.SelectedIndex = CB_INVENTORY_CATEGORY.FindStringExact(dgv1.Rows(e.RowIndex).Cells(0).Value)
-                ITEMCODE = dgv1.Rows(e.RowIndex).Cells(1).Value
-                CB_INVENTORY_SUBCATEGORY.SelectedValue = dgv1.Rows(e.RowIndex).Cells(3).Value
-                CB_INVENTORY_BRAND_NAME.SelectedValue = dgv1.Rows(e.RowIndex).Cells(5).Value
-                WTXT_INVENTORY_SERIAL_NO.Text = dgv1.Rows(e.RowIndex).Cells(6).Value.ToString()
-                WTXT_INVENTORY_ITEM_DESCRIPTION.Text = dgv1.Rows(e.RowIndex).Cells(7).Value
-                CB_INVENTORY_UNIT_TYPE.SelectedIndex = CB_INVENTORY_UNIT_TYPE.FindStringExact(dgv1.Rows(e.RowIndex).Cells(8).Value.ToString())
-                WTXT_INVENTORY_QUANTITY.Text = dgv1.Rows(e.RowIndex).Cells(9).Value.ToString()
-                WTXT_INVENTORY_UNITCOST.Text = dgv1.Rows(e.RowIndex).Cells(10).Value.ToString()
-                WTXT_INVENTORY_TOTAL_COST.Text = dgv1.Rows(e.RowIndex).Cells(11).Value.ToString()
-                WTXT_INVENTORY_UNITCOST.Text = TXTSETTO_0(WTXT_INVENTORY_UNITCOST, True)
-                WTXT_INVENTORY_TOTAL_COST.Text = TXTSETTO_0(WTXT_INVENTORY_TOTAL_COST, True)
-                WTXT_INVENTORY_DATE_OF_ACQUISITION.Text = dt.ToString("MM dd, yyyy")
-                'TblM4_INVENTORY_ITEMS_PROPERTYTableAdapter.FillByItemCode(DS_PROPERTYDB.tblM4_INVENTORY_ITEMS_PROPERTY, ITEMCODE)
-                'Me.TblV1_HRISDIVISIONTableAdapter.Fill(Me.DS_TABLES.tblV1_HRISDIVISION)
-                'If TblM4_INVENTORY_ITEMS_PROPERTYDataGridView.Rows.Count > 1 Then
-                '    Me.TblM4_INVENTORY_ACQUISITION_VALUETableAdapter.Fill(Me.DS_PROPERTYDB.tblM4_INVENTORY_ACQUISITION_VALUE)
-
-
-                '    Me.TblM4_INVENTORY_ACQUISITION_ITEM_USAGETableAdapter.Fill(Me.DS_PROPERTYDB.tblM4_INVENTORY_ACQUISITION_ITEM_USAGE)
-                '    ' CB_ACQUISITION_VALUE
-                '    CB_DIVISION_UNIT.SelectedValue = TblM4_INVENTORY_ITEMS_PROPERTYDataGridView.Rows(0).Cells(2).Value.ToString
-                '    WTXT_CUSTODIAN_NAME.Text = TblV1_HRISEMPLOYEEDATATableAdapter.SQ_GETFULLNAME(TblM4_INVENTORY_ITEMS_PROPERTYDataGridView.Rows(0).Cells(3).Value.ToString)
-                '    WTXT_PROPERTY_USER.Text = TblV1_HRISEMPLOYEEDATATableAdapter.SQ_GETFULLNAME(TblM4_INVENTORY_ITEMS_PROPERTYDataGridView.Rows(0).Cells(4).Value.ToString)
-                '    ACCOUNTABLE_OFFICER = TblM4_INVENTORY_ITEMS_PROPERTYDataGridView.Rows(0).Cells(3).Value.ToString
-                '    PROPERTY_USER = TblM4_INVENTORY_ITEMS_PROPERTYDataGridView.Rows(0).Cells(4).Value.ToString
-                '    'CB_ACQUISITION_VALUE.SelectedValue = TblM4_INVENTORY_ITEMS_PROPERTYDataGridView.Rows(0).Cells(5).Value.ToString
-                '    'CB_ITEM_USAGE.SelectedValue = TblM4_INVENTORY_ITEMS_PROPERTYDataGridView.Rows(0).Cells(6).Value.ToString
-                '    'If CB_ITEM_USAGE.Text = "Consumables" Then
-                '    '    If TblM4_INVENTORY_ITEMS_PROPERTYDataGridView.Rows(0).Cells(7).Value.ToString = 0 Then
-                '    '        RBT_DEPLETED.Checked = True
-                '    '    ElseIf TblM4_INVENTORY_ITEMS_PROPERTYDataGridView.Rows(0).Cells(7).Value.ToString = 1 Then
-                '    '        RBT_PERPARTS.Checked = True
-                '    '    Else
-                '    '        RBT_PERPARTS.Checked = False
-                '    '        RBT_DEPLETED.Checked = False
-                '    '    End If
-                '    'End If
-                '    'If TblM4_INVENTORY_ITEMS_PROPERTYDataGridView.Rows(0).Cells(8).Value = 0 Then
-                '    '    RBT_PURCHASED.Checked = True
-                '    'Else
-                '    '    RBT_DONATED.Checked = True
-                '    'End If
-                'End If
-            Else
-                EditBool = False
-            End If
-        End If
-    End Sub
-#End Region
-
-#Region "Key EVENT"
-    Private Sub WTXT_INVENTORY_SEARCH_KeyDown(sender As Object, e As KeyEventArgs) Handles WTXT_INVENTORY_SEARCH.KeyDown
+#Region "KEY DOWN"
+    Private Sub WTXT_INV_SEARCH_KeyDown(sender As Object, e As KeyEventArgs) Handles WTXT_INV_SEARCH.KeyDown
         If e.KeyCode = Keys.Enter Then
             If WTXT_INVENTORY_SEARCH.Text.Length > 0 Then
-                PB_INVENTORY_CLEAR_SEARCH.BringToFront()
+                PB_INV_CLEAR.Visible = True
             Else
-                PB_INVENTORY_SEARCH.BringToFront()
+                PB_INV_CLEAR.Visible = False
             End If
-            SPM4_INVENTORYDGVLISTTableAdapter.Fill(DS_PROPERTYDB.SPM4_INVENTORYDGVLIST, WTXT_INVENTORY_SEARCH.Text, "ITE")
-            LLBL_RECORDSFOUND.Text = DGV_INVENTORY_LIST.Rows.Count
+            VWM4_INV_ITEMS_LISTTableAdapter.FillBySEARCH(DS_VIEWS.VWM4_INV_ITEMS_LIST, WTXT_INV_SEARCH.Text)
+            LLBL_TOT_REC.Text = DGV_ITEM_LIST.Rows.Count
+
         End If
     End Sub
 
-    Private Sub WTXT_INVENTORY_QUANTITY_KeyPress(sender As Object, e As KeyPressEventArgs) Handles WTXT_INVENTORY_QUANTITY.KeyPress, WTXT_INVENTORY_UNITCOST.KeyPress
+    Private Sub WTXT_INVENTORY_QUANTITY_KeyPress(sender As Object, e As KeyPressEventArgs) Handles WTXT_INVENTORY_QUANTITY.KeyPress, WTXT_INVENTORY_UNITCOST.KeyPress, WTXT_QTY_LOT.KeyPress
         If TypeOf sender Is TextBox Then
             TXTGLOBAL = DirectCast(sender, TextBox)
         End If
@@ -792,7 +816,30 @@ Public Class FRM_INVENTORY_ENCODING
             If e.KeyChar = Chr(8) Then e.Handled = False 'allow Backspace
         End If
     End Sub
+
+    Private Sub WTXT_INVENTORY_SEARCH_TextChanged(sender As Object, e As EventArgs) Handles WTXT_INVENTORY_SEARCH.TextChanged
+        If WTXT_INVENTORY_SEARCH.Text.Length > 0 Then
+            PB_INVENTORY_CLEAR_SEARCH.Visible = True
+        Else
+            PB_INVENTORY_CLEAR_SEARCH.Visible = False
+        End If
+    End Sub
+
+
+
+
+
+
 #End Region
 
+#Region "ROW EVENT"
+    Private Sub DGV_ITEM_DETAILS_RowsAdded(sender As Object, e As DataGridViewRowsAddedEventArgs) Handles DGV_ITEM_DETAILS.RowsAdded
+        LLBL_ITEM_DET_COUNT.Text = DGV_ITEM_DETAILS.Rows.Count
+    End Sub
+
+    Private Sub DGV_ITEM_DETAILS_RowsRemoved(sender As Object, e As DataGridViewRowsRemovedEventArgs) Handles DGV_ITEM_DETAILS.RowsRemoved
+        LLBL_ITEM_DET_COUNT.Text = DGV_ITEM_DETAILS.Rows.Count
+    End Sub
+#End Region
 
 End Class

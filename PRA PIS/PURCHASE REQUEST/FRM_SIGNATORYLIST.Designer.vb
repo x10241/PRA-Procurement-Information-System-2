@@ -23,34 +23,38 @@ Partial Class FRM_SIGNATORYLIST
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PBICONSEARCH = New System.Windows.Forms.PictureBox()
         Me.Label39 = New System.Windows.Forms.Label()
         Me.PNL = New System.Windows.Forms.Panel()
         Me.BTN_CLOSE = New System.Windows.Forms.Button()
-        Me.WTXT_SEARCHSIGNATORY = New PRA_PIS.WatermarkTextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.GB_PRLIST = New System.Windows.Forms.GroupBox()
         Me.VWG3_PRIMARY_SIGNATORYDataGridView = New System.Windows.Forms.DataGridView()
-        Me.FullnameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.SIGPOSITIONDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.SIG_NO = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TBLG3SIGNATORY1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DS_PROPERTYDB = New PRA_PIS.DS_PROPERTYDB()
+        Me.SIGDATEEMPIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FULLNAMEDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.POSPOSITIONDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EMPLNAMEDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EMPFNAMEDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EMPMNAMEDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.POSNODataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PDSTITLEDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SIGSTATUSDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DATEENCODEDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SPM4_SIGNATORY_LISTBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DS_STOREDPROC = New PRA_PIS.DS_STOREDPROC()
+        Me.WTXT_SEARCHSIGNATORY = New PRA_PIS.WatermarkTextBox()
         Me.ShapeContainer2 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
         Me.RECT_PRSEARCH = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
-        Me.VWG3_PRIMARY_SIGNATORYBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.VWG3_PRIMARY_SIGNATORYTableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.VWG3_PRIMARY_SIGNATORYTableAdapter()
+        Me.DS_PROPERTYDB = New PRA_PIS.DS_PROPERTYDB()
         Me.TableAdapterManager = New PRA_PIS.DS_PROPERTYDBTableAdapters.TableAdapterManager()
-        Me.TBLG3_SIGNATORY1TableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.TBLG3_SIGNATORY1TableAdapter()
+        Me.SPM4_SIGNATORY_LISTTableAdapter = New PRA_PIS.DS_STOREDPROCTableAdapters.SPM4_SIGNATORY_LISTTableAdapter()
         CType(Me.PBICONSEARCH, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PNL.SuspendLayout()
         Me.GB_PRLIST.SuspendLayout()
         CType(Me.VWG3_PRIMARY_SIGNATORYDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TBLG3SIGNATORY1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SPM4_SIGNATORY_LISTBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DS_STOREDPROC, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DS_PROPERTYDB, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.VWG3_PRIMARY_SIGNATORYBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PBICONSEARCH
@@ -102,19 +106,6 @@ Partial Class FRM_SIGNATORYLIST
         Me.BTN_CLOSE.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.BTN_CLOSE.UseVisualStyleBackColor = True
         '
-        'WTXT_SEARCHSIGNATORY
-        '
-        Me.WTXT_SEARCHSIGNATORY.BackColor = System.Drawing.SystemColors.Window
-        Me.WTXT_SEARCHSIGNATORY.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.WTXT_SEARCHSIGNATORY.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.WTXT_SEARCHSIGNATORY.ForeColor = System.Drawing.Color.Black
-        Me.WTXT_SEARCHSIGNATORY.Location = New System.Drawing.Point(16, 25)
-        Me.WTXT_SEARCHSIGNATORY.Name = "WTXT_SEARCHSIGNATORY"
-        Me.WTXT_SEARCHSIGNATORY.Size = New System.Drawing.Size(595, 26)
-        Me.WTXT_SEARCHSIGNATORY.TabIndex = 0
-        Me.WTXT_SEARCHSIGNATORY.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.WTXT_SEARCHSIGNATORY.Watermark = "Search Name"
-        '
         'Label6
         '
         Me.Label6.AutoSize = True
@@ -138,7 +129,7 @@ Partial Class FRM_SIGNATORYLIST
         Me.GB_PRLIST.ForeColor = System.Drawing.SystemColors.ControlDarkDark
         Me.GB_PRLIST.Location = New System.Drawing.Point(4, 36)
         Me.GB_PRLIST.Name = "GB_PRLIST"
-        Me.GB_PRLIST.Size = New System.Drawing.Size(662, 583)
+        Me.GB_PRLIST.Size = New System.Drawing.Size(663, 583)
         Me.GB_PRLIST.TabIndex = 1405
         Me.GB_PRLIST.TabStop = False
         '
@@ -146,67 +137,122 @@ Partial Class FRM_SIGNATORYLIST
         '
         Me.VWG3_PRIMARY_SIGNATORYDataGridView.AllowUserToAddRows = False
         Me.VWG3_PRIMARY_SIGNATORYDataGridView.AllowUserToDeleteRows = False
+        Me.VWG3_PRIMARY_SIGNATORYDataGridView.AllowUserToResizeRows = False
         Me.VWG3_PRIMARY_SIGNATORYDataGridView.AutoGenerateColumns = False
         Me.VWG3_PRIMARY_SIGNATORYDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.VWG3_PRIMARY_SIGNATORYDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.VWG3_PRIMARY_SIGNATORYDataGridView.BackgroundColor = System.Drawing.Color.White
         Me.VWG3_PRIMARY_SIGNATORYDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.VWG3_PRIMARY_SIGNATORYDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.FullnameDataGridViewTextBoxColumn, Me.SIGPOSITIONDataGridViewTextBoxColumn, Me.SIG_NO})
-        Me.VWG3_PRIMARY_SIGNATORYDataGridView.DataSource = Me.TBLG3SIGNATORY1BindingSource
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.VWG3_PRIMARY_SIGNATORYDataGridView.DefaultCellStyle = DataGridViewCellStyle2
+        Me.VWG3_PRIMARY_SIGNATORYDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.SIGDATEEMPIDDataGridViewTextBoxColumn, Me.FULLNAMEDataGridViewTextBoxColumn, Me.POSPOSITIONDataGridViewTextBoxColumn, Me.EMPLNAMEDataGridViewTextBoxColumn, Me.EMPFNAMEDataGridViewTextBoxColumn, Me.EMPMNAMEDataGridViewTextBoxColumn, Me.POSNODataGridViewTextBoxColumn, Me.PDSTITLEDataGridViewTextBoxColumn, Me.SIGSTATUSDataGridViewTextBoxColumn, Me.DATEENCODEDataGridViewTextBoxColumn})
+        Me.VWG3_PRIMARY_SIGNATORYDataGridView.DataSource = Me.SPM4_SIGNATORY_LISTBindingSource
         Me.VWG3_PRIMARY_SIGNATORYDataGridView.Location = New System.Drawing.Point(6, 61)
         Me.VWG3_PRIMARY_SIGNATORYDataGridView.Name = "VWG3_PRIMARY_SIGNATORYDataGridView"
         Me.VWG3_PRIMARY_SIGNATORYDataGridView.ReadOnly = True
         Me.VWG3_PRIMARY_SIGNATORYDataGridView.RowHeadersVisible = False
         Me.VWG3_PRIMARY_SIGNATORYDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.VWG3_PRIMARY_SIGNATORYDataGridView.Size = New System.Drawing.Size(642, 504)
+        Me.VWG3_PRIMARY_SIGNATORYDataGridView.Size = New System.Drawing.Size(650, 504)
         Me.VWG3_PRIMARY_SIGNATORYDataGridView.TabIndex = 1407
         '
-        'FullnameDataGridViewTextBoxColumn
+        'SIGDATEEMPIDDataGridViewTextBoxColumn
         '
-        Me.FullnameDataGridViewTextBoxColumn.DataPropertyName = "fullname"
-        Me.FullnameDataGridViewTextBoxColumn.HeaderText = "Fullname"
-        Me.FullnameDataGridViewTextBoxColumn.Name = "FullnameDataGridViewTextBoxColumn"
-        Me.FullnameDataGridViewTextBoxColumn.ReadOnly = True
+        Me.SIGDATEEMPIDDataGridViewTextBoxColumn.DataPropertyName = "SIG_DATE_EMP_ID"
+        Me.SIGDATEEMPIDDataGridViewTextBoxColumn.HeaderText = "SIG_DATE_EMP_ID"
+        Me.SIGDATEEMPIDDataGridViewTextBoxColumn.Name = "SIGDATEEMPIDDataGridViewTextBoxColumn"
+        Me.SIGDATEEMPIDDataGridViewTextBoxColumn.ReadOnly = True
+        Me.SIGDATEEMPIDDataGridViewTextBoxColumn.Visible = False
         '
-        'SIGPOSITIONDataGridViewTextBoxColumn
+        'FULLNAMEDataGridViewTextBoxColumn
         '
-        Me.SIGPOSITIONDataGridViewTextBoxColumn.DataPropertyName = "SIG_POSITION"
-        Me.SIGPOSITIONDataGridViewTextBoxColumn.HeaderText = "Position"
-        Me.SIGPOSITIONDataGridViewTextBoxColumn.Name = "SIGPOSITIONDataGridViewTextBoxColumn"
-        Me.SIGPOSITIONDataGridViewTextBoxColumn.ReadOnly = True
+        Me.FULLNAMEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.FULLNAMEDataGridViewTextBoxColumn.DataPropertyName = "FULLNAME"
+        Me.FULLNAMEDataGridViewTextBoxColumn.HeaderText = "Fullname"
+        Me.FULLNAMEDataGridViewTextBoxColumn.Name = "FULLNAMEDataGridViewTextBoxColumn"
+        Me.FULLNAMEDataGridViewTextBoxColumn.ReadOnly = True
         '
-        'SIG_NO
+        'POSPOSITIONDataGridViewTextBoxColumn
         '
-        Me.SIG_NO.DataPropertyName = "SIG_NO"
-        Me.SIG_NO.HeaderText = "SIG_NO"
-        Me.SIG_NO.Name = "SIG_NO"
-        Me.SIG_NO.ReadOnly = True
-        Me.SIG_NO.Visible = False
+        Me.POSPOSITIONDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.POSPOSITIONDataGridViewTextBoxColumn.DataPropertyName = "POS_POSITION"
+        Me.POSPOSITIONDataGridViewTextBoxColumn.HeaderText = "Position"
+        Me.POSPOSITIONDataGridViewTextBoxColumn.Name = "POSPOSITIONDataGridViewTextBoxColumn"
+        Me.POSPOSITIONDataGridViewTextBoxColumn.ReadOnly = True
         '
-        'TBLG3SIGNATORY1BindingSource
+        'EMPLNAMEDataGridViewTextBoxColumn
         '
-        Me.TBLG3SIGNATORY1BindingSource.DataMember = "TBLG3_SIGNATORY1"
-        Me.TBLG3SIGNATORY1BindingSource.DataSource = Me.DS_PROPERTYDB
+        Me.EMPLNAMEDataGridViewTextBoxColumn.DataPropertyName = "EMP_LNAME"
+        Me.EMPLNAMEDataGridViewTextBoxColumn.HeaderText = "EMP_LNAME"
+        Me.EMPLNAMEDataGridViewTextBoxColumn.Name = "EMPLNAMEDataGridViewTextBoxColumn"
+        Me.EMPLNAMEDataGridViewTextBoxColumn.ReadOnly = True
+        Me.EMPLNAMEDataGridViewTextBoxColumn.Visible = False
         '
-        'DS_PROPERTYDB
+        'EMPFNAMEDataGridViewTextBoxColumn
         '
-        Me.DS_PROPERTYDB.DataSetName = "DS_PROPERTYDB"
-        Me.DS_PROPERTYDB.EnforceConstraints = False
-        Me.DS_PROPERTYDB.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        Me.EMPFNAMEDataGridViewTextBoxColumn.DataPropertyName = "EMP_FNAME"
+        Me.EMPFNAMEDataGridViewTextBoxColumn.HeaderText = "EMP_FNAME"
+        Me.EMPFNAMEDataGridViewTextBoxColumn.Name = "EMPFNAMEDataGridViewTextBoxColumn"
+        Me.EMPFNAMEDataGridViewTextBoxColumn.ReadOnly = True
+        Me.EMPFNAMEDataGridViewTextBoxColumn.Visible = False
+        '
+        'EMPMNAMEDataGridViewTextBoxColumn
+        '
+        Me.EMPMNAMEDataGridViewTextBoxColumn.DataPropertyName = "EMP_MNAME"
+        Me.EMPMNAMEDataGridViewTextBoxColumn.HeaderText = "EMP_MNAME"
+        Me.EMPMNAMEDataGridViewTextBoxColumn.Name = "EMPMNAMEDataGridViewTextBoxColumn"
+        Me.EMPMNAMEDataGridViewTextBoxColumn.ReadOnly = True
+        Me.EMPMNAMEDataGridViewTextBoxColumn.Visible = False
+        '
+        'POSNODataGridViewTextBoxColumn
+        '
+        Me.POSNODataGridViewTextBoxColumn.DataPropertyName = "POS_NO"
+        Me.POSNODataGridViewTextBoxColumn.HeaderText = "POS_NO"
+        Me.POSNODataGridViewTextBoxColumn.Name = "POSNODataGridViewTextBoxColumn"
+        Me.POSNODataGridViewTextBoxColumn.ReadOnly = True
+        Me.POSNODataGridViewTextBoxColumn.Visible = False
+        '
+        'PDSTITLEDataGridViewTextBoxColumn
+        '
+        Me.PDSTITLEDataGridViewTextBoxColumn.DataPropertyName = "PDS_TITLE"
+        Me.PDSTITLEDataGridViewTextBoxColumn.HeaderText = "PDS_TITLE"
+        Me.PDSTITLEDataGridViewTextBoxColumn.Name = "PDSTITLEDataGridViewTextBoxColumn"
+        Me.PDSTITLEDataGridViewTextBoxColumn.ReadOnly = True
+        Me.PDSTITLEDataGridViewTextBoxColumn.Visible = False
+        '
+        'SIGSTATUSDataGridViewTextBoxColumn
+        '
+        Me.SIGSTATUSDataGridViewTextBoxColumn.DataPropertyName = "SIG_STATUS"
+        Me.SIGSTATUSDataGridViewTextBoxColumn.HeaderText = "SIG_STATUS"
+        Me.SIGSTATUSDataGridViewTextBoxColumn.Name = "SIGSTATUSDataGridViewTextBoxColumn"
+        Me.SIGSTATUSDataGridViewTextBoxColumn.ReadOnly = True
+        Me.SIGSTATUSDataGridViewTextBoxColumn.Visible = False
+        '
+        'DATEENCODEDataGridViewTextBoxColumn
+        '
+        Me.DATEENCODEDataGridViewTextBoxColumn.DataPropertyName = "DATEENCODE"
+        Me.DATEENCODEDataGridViewTextBoxColumn.HeaderText = "DATEENCODE"
+        Me.DATEENCODEDataGridViewTextBoxColumn.Name = "DATEENCODEDataGridViewTextBoxColumn"
+        Me.DATEENCODEDataGridViewTextBoxColumn.ReadOnly = True
+        Me.DATEENCODEDataGridViewTextBoxColumn.Visible = False
+        '
+        'SPM4_SIGNATORY_LISTBindingSource
+        '
+        Me.SPM4_SIGNATORY_LISTBindingSource.DataMember = "SPM4_SIGNATORY_LIST"
+        Me.SPM4_SIGNATORY_LISTBindingSource.DataSource = Me.DS_STOREDPROC
+        '
+        'DS_STOREDPROC
+        '
+        Me.DS_STOREDPROC.DataSetName = "DS_STOREDPROC"
+        Me.DS_STOREDPROC.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'WTXT_SEARCHSIGNATORY
+        '
+        Me.WTXT_SEARCHSIGNATORY.BackColor = System.Drawing.SystemColors.Window
+        Me.WTXT_SEARCHSIGNATORY.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.WTXT_SEARCHSIGNATORY.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.WTXT_SEARCHSIGNATORY.ForeColor = System.Drawing.Color.Black
+        Me.WTXT_SEARCHSIGNATORY.Location = New System.Drawing.Point(16, 25)
+        Me.WTXT_SEARCHSIGNATORY.Name = "WTXT_SEARCHSIGNATORY"
+        Me.WTXT_SEARCHSIGNATORY.Size = New System.Drawing.Size(595, 26)
+        Me.WTXT_SEARCHSIGNATORY.TabIndex = 0
+        Me.WTXT_SEARCHSIGNATORY.Watermark = "Search Name"
         '
         'ShapeContainer2
         '
@@ -214,27 +260,23 @@ Partial Class FRM_SIGNATORYLIST
         Me.ShapeContainer2.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer2.Name = "ShapeContainer2"
         Me.ShapeContainer2.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RECT_PRSEARCH})
-        Me.ShapeContainer2.Size = New System.Drawing.Size(656, 561)
+        Me.ShapeContainer2.Size = New System.Drawing.Size(657, 561)
         Me.ShapeContainer2.TabIndex = 5
         Me.ShapeContainer2.TabStop = False
         '
         'RECT_PRSEARCH
         '
-        Me.RECT_PRSEARCH.BorderColor = System.Drawing.Color.LightSeaGreen
-        Me.RECT_PRSEARCH.BorderWidth = 2
+        Me.RECT_PRSEARCH.BorderColor = System.Drawing.Color.DimGray
         Me.RECT_PRSEARCH.CornerRadius = 15
         Me.RECT_PRSEARCH.Location = New System.Drawing.Point(1, 2)
         Me.RECT_PRSEARCH.Name = "RECT_PRSEARCH"
-        Me.RECT_PRSEARCH.Size = New System.Drawing.Size(644, 33)
+        Me.RECT_PRSEARCH.Size = New System.Drawing.Size(649, 33)
         '
-        'VWG3_PRIMARY_SIGNATORYBindingSource
+        'DS_PROPERTYDB
         '
-        Me.VWG3_PRIMARY_SIGNATORYBindingSource.DataMember = "VWG3_PRIMARY_SIGNATORY"
-        Me.VWG3_PRIMARY_SIGNATORYBindingSource.DataSource = Me.DS_PROPERTYDB
-        '
-        'VWG3_PRIMARY_SIGNATORYTableAdapter
-        '
-        Me.VWG3_PRIMARY_SIGNATORYTableAdapter.ClearBeforeFill = True
+        Me.DS_PROPERTYDB.DataSetName = "DS_PROPERTYDB"
+        Me.DS_PROPERTYDB.EnforceConstraints = False
+        Me.DS_PROPERTYDB.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'TableAdapterManager
         '
@@ -254,18 +296,37 @@ Partial Class FRM_SIGNATORYLIST
         Me.TableAdapterManager.TBLG3_SIGNATORYTableAdapter = Nothing
         Me.TableAdapterManager.TBLG3_UNITSTableAdapter = Nothing
         Me.TableAdapterManager.tblM4_CATEGORY1TableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_DIST_MAINTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_DR_ITEMSTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_ITEMS_COLOR_MAINTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_ITEMS_COLORTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_ITEMS_LENG_MAINTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_ITEMS_LENGTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_ITEMS_NAME_MAINTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_ITEMS_NAMETableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_ITEMS_OTHERS_MAINTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_ITEMS_OTHERSTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_ITEMS_SIZE_MAINTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_ITEMS_SIZETableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_ITEMS_STK_CTRLTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_ITEMSTableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_INVENTORY_ACCOUNTABLE_OFFICERTableAdapter = Nothing
         Me.TableAdapterManager.tblM4_INVENTORY_ACQUISITION_ITEM_USAGETableAdapter = Nothing
         Me.TableAdapterManager.tblM4_INVENTORY_ACQUISITION_VALUETableAdapter = Nothing
         Me.TableAdapterManager.tblM4_INVENTORY_ASSIGN_PERSONTableAdapter = Nothing
         Me.TableAdapterManager.tblM4_INVENTORY_CATEGORY1TableAdapter = Nothing
         Me.TableAdapterManager.tblM4_INVENTORY_CATEGORYTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INVENTORY_ITEM_REQUISITIONTableAdapter = Nothing
         Me.TableAdapterManager.tblM4_INVENTORY_ITEMBRAND1TableAdapter = Nothing
         Me.TableAdapterManager.tblM4_INVENTORY_ITEMBRANDTableAdapter = Nothing
         Me.TableAdapterManager.tblM4_INVENTORY_ITEMS_DEFLOCATIONTableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_INVENTORY_ITEMS_DISTRIBUTIONTableAdapter = Nothing
         Me.TableAdapterManager.tblM4_INVENTORY_ITEMS_LOCATIONTableAdapter = Nothing
         Me.TableAdapterManager.tblM4_INVENTORY_ITEMS_PROPERTYTableAdapter = Nothing
         Me.TableAdapterManager.tblM4_INVENTORY_ITEMSTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INVENTORY_REQUISITIONTableAdapter = Nothing
         Me.TableAdapterManager.tblM4_INVENTORY_SUB_CATEGORYTableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_INVENTORY_TYPETableAdapter = Nothing
         Me.TableAdapterManager.tblM4_ITEMBRAND1TableAdapter = Nothing
         Me.TableAdapterManager.tblM4_PURCHASEREQUEST_ACCEPTEDTableAdapter = Nothing
         Me.TableAdapterManager.tblM4_PURCHASEREQUEST_CANCELEDTableAdapter = Nothing
@@ -277,9 +338,9 @@ Partial Class FRM_SIGNATORYLIST
         Me.TableAdapterManager.tblM4_PURCHASEREQUESTTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = PRA_PIS.DS_PROPERTYDBTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
-        'TBLG3_SIGNATORY1TableAdapter
+        'SPM4_SIGNATORY_LISTTableAdapter
         '
-        Me.TBLG3_SIGNATORY1TableAdapter.ClearBeforeFill = True
+        Me.SPM4_SIGNATORY_LISTTableAdapter.ClearBeforeFill = True
         '
         'FRM_SIGNATORYLIST
         '
@@ -300,9 +361,9 @@ Partial Class FRM_SIGNATORYLIST
         Me.GB_PRLIST.ResumeLayout(False)
         Me.GB_PRLIST.PerformLayout()
         CType(Me.VWG3_PRIMARY_SIGNATORYDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TBLG3SIGNATORY1BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SPM4_SIGNATORY_LISTBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DS_STOREDPROC, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DS_PROPERTYDB, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.VWG3_PRIMARY_SIGNATORYBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -318,13 +379,19 @@ Partial Class FRM_SIGNATORYLIST
     Friend WithEvents ShapeContainer2 As PowerPacks.ShapeContainer
     Friend WithEvents RECT_PRSEARCH As PowerPacks.RectangleShape
     Friend WithEvents DS_PROPERTYDB As DS_PROPERTYDB
-    Friend WithEvents VWG3_PRIMARY_SIGNATORYBindingSource As BindingSource
-    Friend WithEvents VWG3_PRIMARY_SIGNATORYTableAdapter As DS_PROPERTYDBTableAdapters.VWG3_PRIMARY_SIGNATORYTableAdapter
     Friend WithEvents TableAdapterManager As DS_PROPERTYDBTableAdapters.TableAdapterManager
     Friend WithEvents VWG3_PRIMARY_SIGNATORYDataGridView As DataGridView
-    Friend WithEvents TBLG3SIGNATORY1BindingSource As BindingSource
-    Friend WithEvents TBLG3_SIGNATORY1TableAdapter As DS_PROPERTYDBTableAdapters.TBLG3_SIGNATORY1TableAdapter
-    Friend WithEvents FullnameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents SIGPOSITIONDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents SIG_NO As DataGridViewTextBoxColumn
+    Friend WithEvents DS_STOREDPROC As DS_STOREDPROC
+    Friend WithEvents SPM4_SIGNATORY_LISTBindingSource As BindingSource
+    Friend WithEvents SPM4_SIGNATORY_LISTTableAdapter As DS_STOREDPROCTableAdapters.SPM4_SIGNATORY_LISTTableAdapter
+    Friend WithEvents SIGDATEEMPIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents FULLNAMEDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents POSPOSITIONDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents EMPLNAMEDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents EMPFNAMEDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents EMPMNAMEDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents POSNODataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents PDSTITLEDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents SIGSTATUSDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents DATEENCODEDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class
