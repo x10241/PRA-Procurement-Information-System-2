@@ -1,4 +1,4 @@
-﻿Public Class FRM_PREVIEW
+﻿Public Class FRM_PMD_PREVIEW
 
     Public Sub BS_DATA_TRANSFER_STICKERPREVIEW_DATA(ByVal BSMAIN As BindingSource)
         Try
@@ -27,18 +27,21 @@
             RPTDOC_PURCHASEREQUEST.SetDataSource(DS_STOREDPROC.SPM4_ITEMS_IN_LOCATION.DataSet)
             CRV_PREVIEW.ReportSource = RPTDOC_PURCHASEREQUEST
         ElseIf printPreview = "StickerTag" Then
-
             DS_STOREDPROC.StickerPreview.Rows.Clear()
             If stickerType = 1 Then
                 rptDoc = New RPT_STICKER_TAG3x2
             ElseIf stickerType = 2 Then
                 rptDoc = New RPT_STICKER_TAG4x3
             End If
-            SPM4_PRINTSTICKERTableAdapter.Fill(DS_STOREDPROC.SPM4_PRINTSTICKER, QRTEXT)
+A:
+            Try
+                SPM4_PRINTSTICKERTableAdapter.Fill(DS_STOREDPROC.SPM4_PRINTSTICKER, QRTEXT)
+            Catch ex As Exception
+                GoTo A
+            End Try
             BS_DATA_TRANSFER_STICKERPREVIEW_DATA(SPM4_PRINTSTICKERBindingSource)
             rptDoc.SetDataSource(DS_STOREDPROC.StickerPreview.DataSet)
             CRV_PREVIEW.ReportSource = rptDoc
-
         ElseIf printPreview = "AssignItem" Then
             rptDoc = New RPT_ITEMS_ASSIGN
             SPM4_ASSIGN_ITEMSTableAdapter.Fill(DS_STOREDPROC.SPM4_ASSIGN_ITEMS, FRM_ASSIGN_ITEMS.WTXT_SEARCH_ASS_ITEM.Text)
@@ -56,7 +59,13 @@
         If printPreview = "" Then
 
         ElseIf printPreview = "StickerTag" Then
-            SPM4_PRINTSTICKERTableAdapter.Fill(DS_STOREDPROC.SPM4_PRINTSTICKER, QRTEXT)
+B:
+            Try
+                SPM4_PRINTSTICKERTableAdapter.Fill(DS_STOREDPROC.SPM4_PRINTSTICKER, QRTEXT)
+            Catch ex As Exception
+                GoTo B
+            End Try
+
             BS_DATA_TRANSFER_STICKERPREVIEW_DATA(SPM4_PRINTSTICKERBindingSource)
         ElseIf printPreview = "AssignItem" Then
             rptDoc = New RPT_ITEMS_ASSIGN
@@ -66,8 +75,22 @@
                 .SetParameterValue(0, Trim(FRM_ASSIGN_ITEMS.WTXT_SEARCH_ASS_ITEM.Text))
             End With
             CRV_PREVIEW.ReportSource = rptDoc
+        ElseIf printPreview = "RACKTAG" Then
+            ' DS_STOREDPROC.StickerPreview.Rows.Clear()
+            If stickerType = 1 Then
+                rptDoc = New RPT_STICKER3x1
+            ElseIf stickerType = 2 Then
+                rptDoc = New RPT_STICKER4X2
+            End If
+
         End If
     End Sub
+
+#Region "REPORT"
+    Sub LOAD_REP()
+
+    End Sub
+#End Region
 
 
 End Class

@@ -113,7 +113,7 @@
             Try
                 Dim PrinterName As String = PrintDocument.PrinterSettings.PrinterName
                 rptDoc.PrintOptions.PrinterName = PrinterName
-                rptDoc.PrintToPrinter(1, False, 0, 0)
+                rptDoc.PrintToPrinter(1, False, PrintDialog.PrinterSettings.FromPage, PrintDialog.PrinterSettings.ToPage)
                 'If REPRINT = False Then
                 '    TblM4_PURCHASEREQUESTTableAdapter.IQ_PURCHASE_REQUEST(PRNO_GEN, Trim(PR_DATEREQUESTED), Trim(PR_APPCODE), Trim(PR_PURPOSE), 4, Trim(PR_REQUESTEDBY), Trim(PR_REQUESTEDBYPOSITION), Trim(PR_APPROVEDBY), Trim(PR_APPROVEDBYPOSITION), Trim(PR_CERTIFIEDBY), Trim(PR_CERTIFIEDBYPOSITION), Trim(PR_NOTEDBY), Trim(PR_NOTEDBYPOSITION), Trim(EMP_NO), Trim(PR_DEPARTMENT), Trim(PR_DIVISION), ISDOLLARS)
                 '    For Each row As DataGridViewRow In dgv.Rows

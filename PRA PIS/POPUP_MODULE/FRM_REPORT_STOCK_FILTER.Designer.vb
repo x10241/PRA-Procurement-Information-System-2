@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FRM_REPORT_STOCK_FILTER
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class FRM_REPORT_STOCK_FILTER
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.PNL = New System.Windows.Forms.Panel()
@@ -29,32 +29,41 @@ Partial Class FRM_REPORT_STOCK_FILTER
         Me.BTN_Minimize = New System.Windows.Forms.Button()
         Me.BTN_CLOSE = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.WTXT_POSITION = New PRA_PIS.WatermarkTextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.CB_SORT_BY = New System.Windows.Forms.ComboBox()
+        Me.CB_ITEM_ORDER = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.CB_MONTH = New System.Windows.Forms.ComboBox()
+        Me.SPM4ITEMSTOCKMASTERLISTRPTDT1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DS_STOREDPROC = New PRA_PIS.DS_STOREDPROC()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
-        Me.CB_UNIT_TYPE = New System.Windows.Forms.ComboBox()
+        Me.CB_YEAR = New System.Windows.Forms.ComboBox()
+        Me.SPM4ITEMSTOCKMASTERLISTRPTDTBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.WTXT_APPROVED_BY = New PRA_PIS.WatermarkTextBox()
         Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
+        Me.RectangleShape4 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RectangleShape3 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RectangleShape2 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RectangleShape1 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RectangleShape8 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RECT_COUNT_BY = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
-        Me.SPM4_PDS_LISTBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.SPM4_PDS_LISTTableAdapter = New PRA_PIS.DS_PRAJO_DATABASETableAdapters.SPM4_PDS_LISTTableAdapter()
         Me.TableAdapterManager = New PRA_PIS.DS_VIEWSTableAdapters.TableAdapterManager()
-        Me.DS_STOREDPROC = New PRA_PIS.DS_STOREDPROC()
         Me.DS_PRAJO_DATABASE = New PRA_PIS.DS_PRAJO_DATABASE()
         Me.BTN_VIEW_REPORT = New System.Windows.Forms.Button()
+        Me.SPM4_PDS_LISTTableAdapter = New PRA_PIS.DS_PRAJO_DATABASETableAdapters.SPM4_PDS_LISTTableAdapter()
+        Me.SPM4_PDS_LISTBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SPM4_ITEM_STOCKMASTERLIST_RPT_DTTableAdapter = New PRA_PIS.DS_STOREDPROCTableAdapters.SPM4_ITEM_STOCKMASTERLIST_RPT_DTTableAdapter()
+        Me.SPM4_ITEM_STOCKMASTERLIST_RPT_DT1TableAdapter = New PRA_PIS.DS_STOREDPROCTableAdapters.SPM4_ITEM_STOCKMASTERLIST_RPT_DT1TableAdapter()
         Me.PNL.SuspendLayout()
         Me.Panel1.SuspendLayout()
-        CType(Me.SPM4_PDS_LISTBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SPM4ITEMSTOCKMASTERLISTRPTDT1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DS_STOREDPROC, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SPM4ITEMSTOCKMASTERLISTRPTDTBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DS_PRAJO_DATABASE, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SPM4_PDS_LISTBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PNL
@@ -133,46 +142,78 @@ Partial Class FRM_REPORT_STOCK_FILTER
         'Panel1
         '
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel1.Controls.Add(Me.ComboBox3)
-        Me.Panel1.Controls.Add(Me.ComboBox2)
+        Me.Panel1.Controls.Add(Me.WTXT_POSITION)
+        Me.Panel1.Controls.Add(Me.Label3)
+        Me.Panel1.Controls.Add(Me.CB_SORT_BY)
+        Me.Panel1.Controls.Add(Me.CB_ITEM_ORDER)
         Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Controls.Add(Me.ComboBox1)
+        Me.Panel1.Controls.Add(Me.CB_MONTH)
         Me.Panel1.Controls.Add(Me.Label8)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.Label15)
-        Me.Panel1.Controls.Add(Me.CB_UNIT_TYPE)
+        Me.Panel1.Controls.Add(Me.CB_YEAR)
         Me.Panel1.Controls.Add(Me.WTXT_APPROVED_BY)
         Me.Panel1.Controls.Add(Me.ShapeContainer1)
         Me.Panel1.Location = New System.Drawing.Point(4, 51)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(408, 144)
+        Me.Panel1.Size = New System.Drawing.Size(408, 182)
         Me.Panel1.TabIndex = 1463
         '
-        'ComboBox3
+        'WTXT_POSITION
         '
-        Me.ComboBox3.DisplayMember = "UN_DESCRIPTION"
-        Me.ComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Items.AddRange(New Object() {"Ascending", "Descending"})
-        Me.ComboBox3.Location = New System.Drawing.Point(211, 65)
-        Me.ComboBox3.Name = "ComboBox3"
-        Me.ComboBox3.Size = New System.Drawing.Size(180, 21)
-        Me.ComboBox3.TabIndex = 1548
-        Me.ComboBox3.ValueMember = "UN_NO"
+        Me.WTXT_POSITION.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.WTXT_POSITION.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
+        Me.WTXT_POSITION.BackColor = System.Drawing.Color.White
+        Me.WTXT_POSITION.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.WTXT_POSITION.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.WTXT_POSITION.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.WTXT_POSITION.ForeColor = System.Drawing.Color.Black
+        Me.WTXT_POSITION.Location = New System.Drawing.Point(12, 148)
+        Me.WTXT_POSITION.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.WTXT_POSITION.MaxLength = 300
+        Me.WTXT_POSITION.Name = "WTXT_POSITION"
+        Me.WTXT_POSITION.ReadOnly = True
+        Me.WTXT_POSITION.Size = New System.Drawing.Size(381, 19)
+        Me.WTXT_POSITION.TabIndex = 1536
+        Me.WTXT_POSITION.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.WTXT_POSITION.Watermark = ""
         '
-        'ComboBox2
+        'Label3
         '
-        Me.ComboBox2.DisplayMember = "UN_DESCRIPTION"
-        Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Items.AddRange(New Object() {"Item description", "Remaining stock"})
-        Me.ComboBox2.Location = New System.Drawing.Point(13, 64)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(185, 21)
-        Me.ComboBox2.TabIndex = 1545
-        Me.ComboBox2.ValueMember = "UN_NO"
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.DimGray
+        Me.Label3.Location = New System.Drawing.Point(17, 134)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(62, 17)
+        Me.Label3.TabIndex = 1549
+        Me.Label3.Text = "Position:"
+        '
+        'CB_SORT_BY
+        '
+        Me.CB_SORT_BY.DisplayMember = "UN_DESCRIPTION"
+        Me.CB_SORT_BY.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CB_SORT_BY.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CB_SORT_BY.FormattingEnabled = True
+        Me.CB_SORT_BY.Items.AddRange(New Object() {"Ascending", "Descending"})
+        Me.CB_SORT_BY.Location = New System.Drawing.Point(211, 65)
+        Me.CB_SORT_BY.Name = "CB_SORT_BY"
+        Me.CB_SORT_BY.Size = New System.Drawing.Size(180, 21)
+        Me.CB_SORT_BY.TabIndex = 1548
+        Me.CB_SORT_BY.ValueMember = "UN_NO"
+        '
+        'CB_ITEM_ORDER
+        '
+        Me.CB_ITEM_ORDER.DisplayMember = "UN_DESCRIPTION"
+        Me.CB_ITEM_ORDER.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CB_ITEM_ORDER.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CB_ITEM_ORDER.FormattingEnabled = True
+        Me.CB_ITEM_ORDER.Items.AddRange(New Object() {"Item description", "Remaining stock"})
+        Me.CB_ITEM_ORDER.Location = New System.Drawing.Point(13, 64)
+        Me.CB_ITEM_ORDER.Name = "CB_ITEM_ORDER"
+        Me.CB_ITEM_ORDER.Size = New System.Drawing.Size(185, 21)
+        Me.CB_ITEM_ORDER.TabIndex = 1545
+        Me.CB_ITEM_ORDER.ValueMember = "UN_NO"
         '
         'Label2
         '
@@ -185,17 +226,28 @@ Partial Class FRM_REPORT_STOCK_FILTER
         Me.Label2.TabIndex = 1548
         Me.Label2.Text = "Order by"
         '
-        'ComboBox1
+        'CB_MONTH
         '
-        Me.ComboBox1.DisplayMember = "UN_DESCRIPTION"
-        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(211, 21)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(180, 21)
-        Me.ComboBox1.TabIndex = 1547
-        Me.ComboBox1.ValueMember = "UN_NO"
+        Me.CB_MONTH.DataSource = Me.SPM4ITEMSTOCKMASTERLISTRPTDT1BindingSource
+        Me.CB_MONTH.DisplayMember = "COL"
+        Me.CB_MONTH.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CB_MONTH.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CB_MONTH.FormattingEnabled = True
+        Me.CB_MONTH.Location = New System.Drawing.Point(211, 21)
+        Me.CB_MONTH.Name = "CB_MONTH"
+        Me.CB_MONTH.Size = New System.Drawing.Size(180, 21)
+        Me.CB_MONTH.TabIndex = 1547
+        Me.CB_MONTH.ValueMember = "YR_CODE"
+        '
+        'SPM4ITEMSTOCKMASTERLISTRPTDT1BindingSource
+        '
+        Me.SPM4ITEMSTOCKMASTERLISTRPTDT1BindingSource.DataMember = "SPM4_ITEM_STOCKMASTERLIST_RPT_DT1"
+        Me.SPM4ITEMSTOCKMASTERLISTRPTDT1BindingSource.DataSource = Me.DS_STOREDPROC
+        '
+        'DS_STOREDPROC
+        '
+        Me.DS_STOREDPROC.DataSetName = "DS_STOREDPROC"
+        Me.DS_STOREDPROC.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'Label8
         '
@@ -230,17 +282,23 @@ Partial Class FRM_REPORT_STOCK_FILTER
         Me.Label15.TabIndex = 1545
         Me.Label15.Text = "Year"
         '
-        'CB_UNIT_TYPE
+        'CB_YEAR
         '
-        Me.CB_UNIT_TYPE.DisplayMember = "UN_DESCRIPTION"
-        Me.CB_UNIT_TYPE.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.CB_UNIT_TYPE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CB_UNIT_TYPE.FormattingEnabled = True
-        Me.CB_UNIT_TYPE.Location = New System.Drawing.Point(13, 21)
-        Me.CB_UNIT_TYPE.Name = "CB_UNIT_TYPE"
-        Me.CB_UNIT_TYPE.Size = New System.Drawing.Size(185, 21)
-        Me.CB_UNIT_TYPE.TabIndex = 1544
-        Me.CB_UNIT_TYPE.ValueMember = "UN_NO"
+        Me.CB_YEAR.DataSource = Me.SPM4ITEMSTOCKMASTERLISTRPTDTBindingSource
+        Me.CB_YEAR.DisplayMember = "COL"
+        Me.CB_YEAR.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CB_YEAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CB_YEAR.FormattingEnabled = True
+        Me.CB_YEAR.Location = New System.Drawing.Point(13, 21)
+        Me.CB_YEAR.Name = "CB_YEAR"
+        Me.CB_YEAR.Size = New System.Drawing.Size(185, 21)
+        Me.CB_YEAR.TabIndex = 1544
+        Me.CB_YEAR.ValueMember = "YR_CODE"
+        '
+        'SPM4ITEMSTOCKMASTERLISTRPTDTBindingSource
+        '
+        Me.SPM4ITEMSTOCKMASTERLISTRPTDTBindingSource.DataMember = "SPM4_ITEM_STOCKMASTERLIST_RPT_DT"
+        Me.SPM4ITEMSTOCKMASTERLISTRPTDTBindingSource.DataSource = Me.DS_STOREDPROC
         '
         'WTXT_APPROVED_BY
         '
@@ -251,12 +309,13 @@ Partial Class FRM_REPORT_STOCK_FILTER
         Me.WTXT_APPROVED_BY.Cursor = System.Windows.Forms.Cursors.Hand
         Me.WTXT_APPROVED_BY.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.WTXT_APPROVED_BY.ForeColor = System.Drawing.Color.Black
-        Me.WTXT_APPROVED_BY.Location = New System.Drawing.Point(13, 108)
+        Me.WTXT_APPROVED_BY.Location = New System.Drawing.Point(12, 109)
         Me.WTXT_APPROVED_BY.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.WTXT_APPROVED_BY.MaxLength = 300
         Me.WTXT_APPROVED_BY.Name = "WTXT_APPROVED_BY"
         Me.WTXT_APPROVED_BY.Size = New System.Drawing.Size(381, 19)
         Me.WTXT_APPROVED_BY.TabIndex = 1535
+        Me.WTXT_APPROVED_BY.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.WTXT_APPROVED_BY.Watermark = ""
         '
         'ShapeContainer1
@@ -264,10 +323,18 @@ Partial Class FRM_REPORT_STOCK_FILTER
         Me.ShapeContainer1.Location = New System.Drawing.Point(0, 0)
         Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer1.Name = "ShapeContainer1"
-        Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape3, Me.RectangleShape2, Me.RectangleShape1, Me.RectangleShape8, Me.RECT_COUNT_BY})
-        Me.ShapeContainer1.Size = New System.Drawing.Size(406, 142)
+        Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape4, Me.RectangleShape3, Me.RectangleShape2, Me.RectangleShape1, Me.RectangleShape8, Me.RECT_COUNT_BY})
+        Me.ShapeContainer1.Size = New System.Drawing.Size(406, 180)
         Me.ShapeContainer1.TabIndex = 1537
         Me.ShapeContainer1.TabStop = False
+        '
+        'RectangleShape4
+        '
+        Me.RectangleShape4.BorderColor = System.Drawing.Color.Gray
+        Me.RectangleShape4.CornerRadius = 5
+        Me.RectangleShape4.Location = New System.Drawing.Point(8, 142)
+        Me.RectangleShape4.Name = "RectangleShape4"
+        Me.RectangleShape4.Size = New System.Drawing.Size(388, 28)
         '
         'RectangleShape3
         '
@@ -309,24 +376,11 @@ Partial Class FRM_REPORT_STOCK_FILTER
         Me.RECT_COUNT_BY.Name = "RECT_COUNT_BY"
         Me.RECT_COUNT_BY.Size = New System.Drawing.Size(388, 28)
         '
-        'SPM4_PDS_LISTBindingSource
-        '
-        Me.SPM4_PDS_LISTBindingSource.DataMember = "SPM4_PDS_LIST"
-        '
-        'SPM4_PDS_LISTTableAdapter
-        '
-        Me.SPM4_PDS_LISTTableAdapter.ClearBeforeFill = True
-        '
         'TableAdapterManager
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.Connection = Nothing
         Me.TableAdapterManager.UpdateOrder = PRA_PIS.DS_VIEWSTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        '
-        'DS_STOREDPROC
-        '
-        Me.DS_STOREDPROC.DataSetName = "DS_STOREDPROC"
-        Me.DS_STOREDPROC.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'DS_PRAJO_DATABASE
         '
@@ -344,7 +398,7 @@ Partial Class FRM_REPORT_STOCK_FILTER
         Me.BTN_VIEW_REPORT.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTN_VIEW_REPORT.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTN_VIEW_REPORT.Image = Global.PRA_PIS.My.Resources.Resources.outline_assignment_black_18dp
-        Me.BTN_VIEW_REPORT.Location = New System.Drawing.Point(0, 198)
+        Me.BTN_VIEW_REPORT.Location = New System.Drawing.Point(0, 239)
         Me.BTN_VIEW_REPORT.Name = "BTN_VIEW_REPORT"
         Me.BTN_VIEW_REPORT.Size = New System.Drawing.Size(417, 47)
         Me.BTN_VIEW_REPORT.TabIndex = 1464
@@ -353,25 +407,45 @@ Partial Class FRM_REPORT_STOCK_FILTER
         Me.BTN_VIEW_REPORT.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.BTN_VIEW_REPORT.UseVisualStyleBackColor = False
         '
+        'SPM4_PDS_LISTTableAdapter
+        '
+        Me.SPM4_PDS_LISTTableAdapter.ClearBeforeFill = True
+        '
+        'SPM4_PDS_LISTBindingSource
+        '
+        Me.SPM4_PDS_LISTBindingSource.DataMember = "SPM4_PDS_LIST"
+        Me.SPM4_PDS_LISTBindingSource.DataSource = Me.DS_PRAJO_DATABASE
+        '
+        'SPM4_ITEM_STOCKMASTERLIST_RPT_DTTableAdapter
+        '
+        Me.SPM4_ITEM_STOCKMASTERLIST_RPT_DTTableAdapter.ClearBeforeFill = True
+        '
+        'SPM4_ITEM_STOCKMASTERLIST_RPT_DT1TableAdapter
+        '
+        Me.SPM4_ITEM_STOCKMASTERLIST_RPT_DT1TableAdapter.ClearBeforeFill = True
+        '
         'FRM_REPORT_STOCK_FILTER
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(417, 245)
+        Me.ClientSize = New System.Drawing.Size(417, 286)
         Me.Controls.Add(Me.BTN_VIEW_REPORT)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.PNL)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "FRM_REPORT_STOCK_FILTER"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FRM_REPORT_STOCK_FILTER"
         Me.PNL.ResumeLayout(False)
         Me.PNL.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.SPM4_PDS_LISTBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SPM4ITEMSTOCKMASTERLISTRPTDT1BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DS_STOREDPROC, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SPM4ITEMSTOCKMASTERLISTRPTDTBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DS_PRAJO_DATABASE, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SPM4_PDS_LISTBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -386,21 +460,28 @@ Partial Class FRM_REPORT_STOCK_FILTER
     Friend WithEvents WTXT_APPROVED_BY As WatermarkTextBox
     Friend WithEvents ShapeContainer1 As PowerPacks.ShapeContainer
     Friend WithEvents RECT_COUNT_BY As PowerPacks.RectangleShape
-    Friend WithEvents CB_UNIT_TYPE As ComboBox
+    Friend WithEvents CB_YEAR As ComboBox
     Friend WithEvents RectangleShape8 As PowerPacks.RectangleShape
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents CB_MONTH As ComboBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label15 As Label
     Friend WithEvents RectangleShape1 As PowerPacks.RectangleShape
     Friend WithEvents Label2 As Label
-    Friend WithEvents ComboBox2 As ComboBox
+    Friend WithEvents CB_ITEM_ORDER As ComboBox
     Friend WithEvents RectangleShape2 As PowerPacks.RectangleShape
-    Friend WithEvents SPM4_PDS_LISTBindingSource As BindingSource
-    Friend WithEvents SPM4_PDS_LISTTableAdapter As DS_PRAJO_DATABASETableAdapters.SPM4_PDS_LISTTableAdapter
     Friend WithEvents TableAdapterManager As DS_VIEWSTableAdapters.TableAdapterManager
     Friend WithEvents DS_STOREDPROC As DS_STOREDPROC
     Friend WithEvents DS_PRAJO_DATABASE As DS_PRAJO_DATABASE
     Friend WithEvents BTN_VIEW_REPORT As Button
-    Friend WithEvents ComboBox3 As ComboBox
+    Friend WithEvents CB_SORT_BY As ComboBox
     Friend WithEvents RectangleShape3 As PowerPacks.RectangleShape
+    Friend WithEvents Label3 As Label
+    Friend WithEvents RectangleShape4 As PowerPacks.RectangleShape
+    Friend WithEvents WTXT_POSITION As WatermarkTextBox
+    Friend WithEvents SPM4_PDS_LISTTableAdapter As DS_PRAJO_DATABASETableAdapters.SPM4_PDS_LISTTableAdapter
+    Friend WithEvents SPM4_PDS_LISTBindingSource As BindingSource
+    Friend WithEvents SPM4ITEMSTOCKMASTERLISTRPTDTBindingSource As BindingSource
+    Friend WithEvents SPM4_ITEM_STOCKMASTERLIST_RPT_DTTableAdapter As DS_STOREDPROCTableAdapters.SPM4_ITEM_STOCKMASTERLIST_RPT_DTTableAdapter
+    Friend WithEvents SPM4ITEMSTOCKMASTERLISTRPTDT1BindingSource As BindingSource
+    Friend WithEvents SPM4_ITEM_STOCKMASTERLIST_RPT_DT1TableAdapter As DS_STOREDPROCTableAdapters.SPM4_ITEM_STOCKMASTERLIST_RPT_DT1TableAdapter
 End Class

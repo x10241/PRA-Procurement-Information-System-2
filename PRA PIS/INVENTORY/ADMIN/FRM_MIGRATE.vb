@@ -15,6 +15,7 @@ Public Class FRM_MIGRATE
         SPM4_CURRENTDATETIMETableAdapter.Fill(DS_STOREDPROC.SPM4_CURRENTDATETIME)
         PNL_1.Visible = True
         BTN_PREVIOUS.Visible = False
+        Me.TBLM4_INV_ITEMS_PCOUNT_MAINTableAdapter.FillByDATE_DIV_CODE(Me.DS_PROPERTYDB.TBLM4_INV_ITEMS_PCOUNT_MAIN, CDate(WTXT_DATE_FROM.Text), CDate(WTXT_DATE_TO.Text), "AP")
     End Sub
 #End Region
 
@@ -81,6 +82,7 @@ Public Class FRM_MIGRATE
                             PC_LIST.Add(row.Cells(5).Value)
                         End If
                     Next
+
                     If PC_LIST.Count = 0 Then
                         NotificationManager.Show(Me, "Please select at least one sources!", Color.Red, 3000)
                         Exit Sub
@@ -191,7 +193,6 @@ Public Class FRM_MIGRATE
 #End Region
 
 #Region "CELL EVENT"
-
     Private Sub DGV_PC_LIST_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_PC_LIST.CellDoubleClick
         Dim cell As DataGridViewCheckBoxCell = DGV_PC_LIST.Rows(e.RowIndex).Cells(6)
         If cell.Value Then

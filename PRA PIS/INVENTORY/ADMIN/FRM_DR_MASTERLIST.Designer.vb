@@ -32,11 +32,11 @@ Partial Class FRM_DR_MASTERLIST
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.SPM4_ITEM_DR_LISTTableAdapter = New PRA_PIS.DS_STOREDPROCTableAdapters.SPM4_ITEM_DR_LISTTableAdapter()
-        Me.LLBL_STOCK_VIEW_REPORT = New System.Windows.Forms.LinkLabel()
+        Me.LLBL_GEN_REP_DR_ML = New System.Windows.Forms.LinkLabel()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.PB_STOCK_VIEW_REPORT = New System.Windows.Forms.PictureBox()
+        Me.PB_GEN_REP_DR_ML = New System.Windows.Forms.PictureBox()
         Me.ShapeContainer2 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
-        Me.RECT_STOCK_VIEW_REPORT = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.RECT_GEN_REP_DR_ML = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.DS_STOREDPROC = New PRA_PIS.DS_STOREDPROC()
         Me.SPM4_ITEM_DR_LISTBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.CREATEDBYDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -52,8 +52,11 @@ Partial Class FRM_DR_MASTERLIST
         Me.PB_ITEM_STOCK_SEARCH = New System.Windows.Forms.PictureBox()
         Me.PB_DR_CLEAR_SEARCH = New System.Windows.Forms.PictureBox()
         Me.WTXT_DR_SEARCH = New PRA_PIS.WatermarkTextBox()
-        Me.DGV_STOCK_LIST = New System.Windows.Forms.DataGridView()
+        Me.DGV_DR_ML = New System.Windows.Forms.DataGridView()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.GBOX_SETTINGS = New System.Windows.Forms.GroupBox()
+        Me.LLBL_RECORDSFOUND = New System.Windows.Forms.LinkLabel()
+        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
         Me.RECT_ITEM_STOCK = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.BTN_INVENTORY_CLOSE = New System.Windows.Forms.Button()
@@ -64,13 +67,14 @@ Partial Class FRM_DR_MASTERLIST
         Me.DS_VIEWS = New PRA_PIS.DS_VIEWS()
         Me.TableAdapterManager = New PRA_PIS.DS_VIEWSTableAdapters.TableAdapterManager()
         Me.Panel2.SuspendLayout()
-        CType(Me.PB_STOCK_VIEW_REPORT, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PB_GEN_REP_DR_ML, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DS_STOREDPROC, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SPM4_ITEM_DR_LISTBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PB_ITEM_STOCK_SEARCH, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PB_DR_CLEAR_SEARCH, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DGV_STOCK_LIST, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DGV_DR_ML, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
+        Me.GBOX_SETTINGS.SuspendLayout()
         Me.PNL.SuspendLayout()
         CType(Me.DS_VIEWS, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -79,65 +83,65 @@ Partial Class FRM_DR_MASTERLIST
         '
         Me.SPM4_ITEM_DR_LISTTableAdapter.ClearBeforeFill = True
         '
-        'LLBL_STOCK_VIEW_REPORT
+        'LLBL_GEN_REP_DR_ML
         '
-        Me.LLBL_STOCK_VIEW_REPORT.AutoSize = True
-        Me.LLBL_STOCK_VIEW_REPORT.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.LLBL_STOCK_VIEW_REPORT.Font = New System.Drawing.Font("Century Gothic", 12.75!, System.Drawing.FontStyle.Bold)
-        Me.LLBL_STOCK_VIEW_REPORT.ForeColor = System.Drawing.Color.DimGray
-        Me.LLBL_STOCK_VIEW_REPORT.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
-        Me.LLBL_STOCK_VIEW_REPORT.LinkColor = System.Drawing.Color.DimGray
-        Me.LLBL_STOCK_VIEW_REPORT.Location = New System.Drawing.Point(878, 19)
-        Me.LLBL_STOCK_VIEW_REPORT.Name = "LLBL_STOCK_VIEW_REPORT"
-        Me.LLBL_STOCK_VIEW_REPORT.Size = New System.Drawing.Size(158, 19)
-        Me.LLBL_STOCK_VIEW_REPORT.TabIndex = 1461
-        Me.LLBL_STOCK_VIEW_REPORT.TabStop = True
-        Me.LLBL_STOCK_VIEW_REPORT.Text = "GENERATE REPORT"
+        Me.LLBL_GEN_REP_DR_ML.AutoSize = True
+        Me.LLBL_GEN_REP_DR_ML.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.LLBL_GEN_REP_DR_ML.Font = New System.Drawing.Font("Century Gothic", 12.75!, System.Drawing.FontStyle.Bold)
+        Me.LLBL_GEN_REP_DR_ML.ForeColor = System.Drawing.Color.DimGray
+        Me.LLBL_GEN_REP_DR_ML.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
+        Me.LLBL_GEN_REP_DR_ML.LinkColor = System.Drawing.Color.DimGray
+        Me.LLBL_GEN_REP_DR_ML.Location = New System.Drawing.Point(878, 19)
+        Me.LLBL_GEN_REP_DR_ML.Name = "LLBL_GEN_REP_DR_ML"
+        Me.LLBL_GEN_REP_DR_ML.Size = New System.Drawing.Size(158, 19)
+        Me.LLBL_GEN_REP_DR_ML.TabIndex = 1461
+        Me.LLBL_GEN_REP_DR_ML.TabStop = True
+        Me.LLBL_GEN_REP_DR_ML.Text = "GENERATE REPORT"
         '
         'Panel2
         '
-        Me.Panel2.Controls.Add(Me.LLBL_STOCK_VIEW_REPORT)
-        Me.Panel2.Controls.Add(Me.PB_STOCK_VIEW_REPORT)
+        Me.Panel2.Controls.Add(Me.LLBL_GEN_REP_DR_ML)
+        Me.Panel2.Controls.Add(Me.PB_GEN_REP_DR_ML)
         Me.Panel2.Controls.Add(Me.ShapeContainer2)
         Me.Panel2.Location = New System.Drawing.Point(4, 57)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(1058, 55)
         Me.Panel2.TabIndex = 1415
         '
-        'PB_STOCK_VIEW_REPORT
+        'PB_GEN_REP_DR_ML
         '
-        Me.PB_STOCK_VIEW_REPORT.BackgroundImage = CType(resources.GetObject("PB_STOCK_VIEW_REPORT.BackgroundImage"), System.Drawing.Image)
-        Me.PB_STOCK_VIEW_REPORT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PB_STOCK_VIEW_REPORT.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PB_STOCK_VIEW_REPORT.InitialImage = Nothing
-        Me.PB_STOCK_VIEW_REPORT.Location = New System.Drawing.Point(840, 12)
-        Me.PB_STOCK_VIEW_REPORT.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.PB_STOCK_VIEW_REPORT.Name = "PB_STOCK_VIEW_REPORT"
-        Me.PB_STOCK_VIEW_REPORT.Size = New System.Drawing.Size(37, 34)
-        Me.PB_STOCK_VIEW_REPORT.TabIndex = 1462
-        Me.PB_STOCK_VIEW_REPORT.TabStop = False
+        Me.PB_GEN_REP_DR_ML.BackgroundImage = CType(resources.GetObject("PB_GEN_REP_DR_ML.BackgroundImage"), System.Drawing.Image)
+        Me.PB_GEN_REP_DR_ML.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PB_GEN_REP_DR_ML.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PB_GEN_REP_DR_ML.InitialImage = Nothing
+        Me.PB_GEN_REP_DR_ML.Location = New System.Drawing.Point(840, 12)
+        Me.PB_GEN_REP_DR_ML.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.PB_GEN_REP_DR_ML.Name = "PB_GEN_REP_DR_ML"
+        Me.PB_GEN_REP_DR_ML.Size = New System.Drawing.Size(37, 34)
+        Me.PB_GEN_REP_DR_ML.TabIndex = 1462
+        Me.PB_GEN_REP_DR_ML.TabStop = False
         '
         'ShapeContainer2
         '
         Me.ShapeContainer2.Location = New System.Drawing.Point(0, 0)
         Me.ShapeContainer2.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer2.Name = "ShapeContainer2"
-        Me.ShapeContainer2.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RECT_STOCK_VIEW_REPORT})
+        Me.ShapeContainer2.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RECT_GEN_REP_DR_ML})
         Me.ShapeContainer2.Size = New System.Drawing.Size(1058, 55)
         Me.ShapeContainer2.TabIndex = 0
         Me.ShapeContainer2.TabStop = False
         '
-        'RECT_STOCK_VIEW_REPORT
+        'RECT_GEN_REP_DR_ML
         '
-        Me.RECT_STOCK_VIEW_REPORT.BorderColor = System.Drawing.Color.DimGray
-        Me.RECT_STOCK_VIEW_REPORT.BorderWidth = 2
-        Me.RECT_STOCK_VIEW_REPORT.CornerRadius = 19
-        Me.RECT_STOCK_VIEW_REPORT.Cursor = System.Windows.Forms.Cursors.Arrow
-        Me.RECT_STOCK_VIEW_REPORT.FillColor = System.Drawing.SystemColors.HighlightText
-        Me.RECT_STOCK_VIEW_REPORT.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
-        Me.RECT_STOCK_VIEW_REPORT.Location = New System.Drawing.Point(824, 8)
-        Me.RECT_STOCK_VIEW_REPORT.Name = "RECT_STOCK_VIEW_REPORT"
-        Me.RECT_STOCK_VIEW_REPORT.Size = New System.Drawing.Size(221, 40)
+        Me.RECT_GEN_REP_DR_ML.BorderColor = System.Drawing.Color.DimGray
+        Me.RECT_GEN_REP_DR_ML.BorderWidth = 2
+        Me.RECT_GEN_REP_DR_ML.CornerRadius = 19
+        Me.RECT_GEN_REP_DR_ML.Cursor = System.Windows.Forms.Cursors.Arrow
+        Me.RECT_GEN_REP_DR_ML.FillColor = System.Drawing.SystemColors.HighlightText
+        Me.RECT_GEN_REP_DR_ML.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
+        Me.RECT_GEN_REP_DR_ML.Location = New System.Drawing.Point(824, 8)
+        Me.RECT_GEN_REP_DR_ML.Name = "RECT_GEN_REP_DR_ML"
+        Me.RECT_GEN_REP_DR_ML.Size = New System.Drawing.Size(221, 40)
         '
         'DS_STOREDPROC
         '
@@ -279,14 +283,14 @@ Partial Class FRM_DR_MASTERLIST
         Me.WTXT_DR_SEARCH.TabIndex = 1442
         Me.WTXT_DR_SEARCH.Watermark = "Search Item Description, DR NO."
         '
-        'DGV_STOCK_LIST
+        'DGV_DR_ML
         '
-        Me.DGV_STOCK_LIST.AllowUserToAddRows = False
-        Me.DGV_STOCK_LIST.AllowUserToDeleteRows = False
-        Me.DGV_STOCK_LIST.AllowUserToResizeColumns = False
-        Me.DGV_STOCK_LIST.AllowUserToResizeRows = False
-        Me.DGV_STOCK_LIST.AutoGenerateColumns = False
-        Me.DGV_STOCK_LIST.BackgroundColor = System.Drawing.Color.White
+        Me.DGV_DR_ML.AllowUserToAddRows = False
+        Me.DGV_DR_ML.AllowUserToDeleteRows = False
+        Me.DGV_DR_ML.AllowUserToResizeColumns = False
+        Me.DGV_DR_ML.AllowUserToResizeRows = False
+        Me.DGV_DR_ML.AutoGenerateColumns = False
+        Me.DGV_DR_ML.BackgroundColor = System.Drawing.Color.White
         DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle4.BackColor = System.Drawing.Color.Transparent
         DataGridViewCellStyle4.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -294,10 +298,10 @@ Partial Class FRM_DR_MASTERLIST
         DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGV_STOCK_LIST.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
-        Me.DGV_STOCK_LIST.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV_STOCK_LIST.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DRIDDataGridViewTextBoxColumn, Me.DRNODataGridViewTextBoxColumn, Me.ITEMCODEDataGridViewTextBoxColumn, Me.FULLDESCDataGridViewTextBoxColumn, Me.ITEMQUANTITYDataGridViewTextBoxColumn, Me.ITEMUNITDataGridViewTextBoxColumn, Me.ITEMUNITCOSTDataGridViewTextBoxColumn, Me.ITEMTOTALCOSTDataGridViewTextBoxColumn, Me.CREATEDDATEDataGridViewTextBoxColumn, Me.CREATEDBYDataGridViewTextBoxColumn})
-        Me.DGV_STOCK_LIST.DataSource = Me.SPM4_ITEM_DR_LISTBindingSource
+        Me.DGV_DR_ML.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
+        Me.DGV_DR_ML.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGV_DR_ML.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DRIDDataGridViewTextBoxColumn, Me.DRNODataGridViewTextBoxColumn, Me.ITEMCODEDataGridViewTextBoxColumn, Me.FULLDESCDataGridViewTextBoxColumn, Me.ITEMQUANTITYDataGridViewTextBoxColumn, Me.ITEMUNITDataGridViewTextBoxColumn, Me.ITEMUNITCOSTDataGridViewTextBoxColumn, Me.ITEMTOTALCOSTDataGridViewTextBoxColumn, Me.CREATEDDATEDataGridViewTextBoxColumn, Me.CREATEDBYDataGridViewTextBoxColumn})
+        Me.DGV_DR_ML.DataSource = Me.SPM4_ITEM_DR_LISTBindingSource
         DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window
         DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -305,12 +309,12 @@ Partial Class FRM_DR_MASTERLIST
         DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark
         DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DGV_STOCK_LIST.DefaultCellStyle = DataGridViewCellStyle5
-        Me.DGV_STOCK_LIST.Location = New System.Drawing.Point(5, 55)
-        Me.DGV_STOCK_LIST.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.DGV_STOCK_LIST.MultiSelect = False
-        Me.DGV_STOCK_LIST.Name = "DGV_STOCK_LIST"
-        Me.DGV_STOCK_LIST.ReadOnly = True
+        Me.DGV_DR_ML.DefaultCellStyle = DataGridViewCellStyle5
+        Me.DGV_DR_ML.Location = New System.Drawing.Point(5, 55)
+        Me.DGV_DR_ML.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.DGV_DR_ML.MultiSelect = False
+        Me.DGV_DR_ML.Name = "DGV_DR_ML"
+        Me.DGV_DR_ML.ReadOnly = True
         DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle6.BackColor = System.Drawing.Color.LightSkyBlue
         DataGridViewCellStyle6.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -318,26 +322,67 @@ Partial Class FRM_DR_MASTERLIST
         DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGV_STOCK_LIST.RowHeadersDefaultCellStyle = DataGridViewCellStyle6
-        Me.DGV_STOCK_LIST.RowHeadersVisible = False
+        Me.DGV_DR_ML.RowHeadersDefaultCellStyle = DataGridViewCellStyle6
+        Me.DGV_DR_ML.RowHeadersVisible = False
         DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Gray
-        Me.DGV_STOCK_LIST.RowsDefaultCellStyle = DataGridViewCellStyle7
-        Me.DGV_STOCK_LIST.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGV_STOCK_LIST.Size = New System.Drawing.Size(1048, 606)
-        Me.DGV_STOCK_LIST.TabIndex = 0
+        Me.DGV_DR_ML.RowsDefaultCellStyle = DataGridViewCellStyle7
+        Me.DGV_DR_ML.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DGV_DR_ML.Size = New System.Drawing.Size(1048, 538)
+        Me.DGV_DR_ML.TabIndex = 0
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.GBOX_SETTINGS)
         Me.Panel1.Controls.Add(Me.PB_ITEM_STOCK_SEARCH)
         Me.Panel1.Controls.Add(Me.PB_DR_CLEAR_SEARCH)
         Me.Panel1.Controls.Add(Me.WTXT_DR_SEARCH)
-        Me.Panel1.Controls.Add(Me.DGV_STOCK_LIST)
+        Me.Panel1.Controls.Add(Me.DGV_DR_ML)
         Me.Panel1.Controls.Add(Me.ShapeContainer1)
         Me.Panel1.Location = New System.Drawing.Point(4, 116)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1058, 668)
         Me.Panel1.TabIndex = 1414
+        '
+        'GBOX_SETTINGS
+        '
+        Me.GBOX_SETTINGS.Controls.Add(Me.LLBL_RECORDSFOUND)
+        Me.GBOX_SETTINGS.Controls.Add(Me.LinkLabel1)
+        Me.GBOX_SETTINGS.Location = New System.Drawing.Point(6, 596)
+        Me.GBOX_SETTINGS.Name = "GBOX_SETTINGS"
+        Me.GBOX_SETTINGS.Size = New System.Drawing.Size(313, 50)
+        Me.GBOX_SETTINGS.TabIndex = 1444
+        Me.GBOX_SETTINGS.TabStop = False
+        '
+        'LLBL_RECORDSFOUND
+        '
+        Me.LLBL_RECORDSFOUND.AutoSize = True
+        Me.LLBL_RECORDSFOUND.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.LLBL_RECORDSFOUND.Font = New System.Drawing.Font("Century Gothic", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LLBL_RECORDSFOUND.ForeColor = System.Drawing.Color.DimGray
+        Me.LLBL_RECORDSFOUND.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
+        Me.LLBL_RECORDSFOUND.LinkColor = System.Drawing.Color.DimGray
+        Me.LLBL_RECORDSFOUND.Location = New System.Drawing.Point(265, 19)
+        Me.LLBL_RECORDSFOUND.Name = "LLBL_RECORDSFOUND"
+        Me.LLBL_RECORDSFOUND.Size = New System.Drawing.Size(19, 19)
+        Me.LLBL_RECORDSFOUND.TabIndex = 1441
+        Me.LLBL_RECORDSFOUND.TabStop = True
+        Me.LLBL_RECORDSFOUND.Text = "0"
+        '
+        'LinkLabel1
+        '
+        Me.LinkLabel1.AutoSize = True
+        Me.LinkLabel1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.LinkLabel1.Font = New System.Drawing.Font("Century Gothic", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinkLabel1.ForeColor = System.Drawing.Color.DimGray
+        Me.LinkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
+        Me.LinkLabel1.LinkColor = System.Drawing.Color.DimGray
+        Me.LinkLabel1.Location = New System.Drawing.Point(7, 19)
+        Me.LinkLabel1.Name = "LinkLabel1"
+        Me.LinkLabel1.Size = New System.Drawing.Size(238, 19)
+        Me.LinkLabel1.TabIndex = 1440
+        Me.LinkLabel1.TabStop = True
+        Me.LinkLabel1.Text = "Total No. of Records Found :"
         '
         'ShapeContainer1
         '
@@ -460,14 +505,16 @@ Partial Class FRM_DR_MASTERLIST
         Me.Text = "FRM_DR_MASTERLIST"
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
-        CType(Me.PB_STOCK_VIEW_REPORT, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PB_GEN_REP_DR_ML, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DS_STOREDPROC, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SPM4_ITEM_DR_LISTBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PB_ITEM_STOCK_SEARCH, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PB_DR_CLEAR_SEARCH, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DGV_STOCK_LIST, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DGV_DR_ML, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        Me.GBOX_SETTINGS.ResumeLayout(False)
+        Me.GBOX_SETTINGS.PerformLayout()
         Me.PNL.ResumeLayout(False)
         Me.PNL.PerformLayout()
         CType(Me.DS_VIEWS, System.ComponentModel.ISupportInitialize).EndInit()
@@ -476,11 +523,11 @@ Partial Class FRM_DR_MASTERLIST
     End Sub
 
     Friend WithEvents SPM4_ITEM_DR_LISTTableAdapter As DS_STOREDPROCTableAdapters.SPM4_ITEM_DR_LISTTableAdapter
-    Friend WithEvents LLBL_STOCK_VIEW_REPORT As LinkLabel
+    Friend WithEvents LLBL_GEN_REP_DR_ML As LinkLabel
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents PB_STOCK_VIEW_REPORT As PictureBox
+    Friend WithEvents PB_GEN_REP_DR_ML As PictureBox
     Friend WithEvents ShapeContainer2 As PowerPacks.ShapeContainer
-    Friend WithEvents RECT_STOCK_VIEW_REPORT As PowerPacks.RectangleShape
+    Friend WithEvents RECT_GEN_REP_DR_ML As PowerPacks.RectangleShape
     Friend WithEvents DS_STOREDPROC As DS_STOREDPROC
     Friend WithEvents SPM4_ITEM_DR_LISTBindingSource As BindingSource
     Friend WithEvents CREATEDBYDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
@@ -496,7 +543,7 @@ Partial Class FRM_DR_MASTERLIST
     Friend WithEvents PB_ITEM_STOCK_SEARCH As PictureBox
     Friend WithEvents PB_DR_CLEAR_SEARCH As PictureBox
     Friend WithEvents WTXT_DR_SEARCH As WatermarkTextBox
-    Friend WithEvents DGV_STOCK_LIST As DataGridView
+    Friend WithEvents DGV_DR_ML As DataGridView
     Friend WithEvents Panel1 As Panel
     Friend WithEvents ShapeContainer1 As PowerPacks.ShapeContainer
     Friend WithEvents RECT_ITEM_STOCK As PowerPacks.RectangleShape
@@ -507,4 +554,7 @@ Partial Class FRM_DR_MASTERLIST
     Friend WithEvents PNL As Panel
     Friend WithEvents DS_VIEWS As DS_VIEWS
     Friend WithEvents TableAdapterManager As DS_VIEWSTableAdapters.TableAdapterManager
+    Friend WithEvents GBOX_SETTINGS As GroupBox
+    Friend WithEvents LLBL_RECORDSFOUND As LinkLabel
+    Friend WithEvents LinkLabel1 As LinkLabel
 End Class

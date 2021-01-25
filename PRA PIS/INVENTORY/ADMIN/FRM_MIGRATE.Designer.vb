@@ -39,9 +39,11 @@ Partial Class FRM_MIGRATE
         Me.PNL_DATES = New System.Windows.Forms.Panel()
         Me.BTN_DATE_FROM = New System.Windows.Forms.Button()
         Me.BTN_DATE_TO = New System.Windows.Forms.Button()
+        Me.WTXT_DATE_TO = New PRA_PIS.WatermarkTextBox()
         Me.SPM4_CURRENTDATETIMEBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DS_STOREDPROC = New PRA_PIS.DS_STOREDPROC()
         Me.Label9 = New System.Windows.Forms.Label()
+        Me.WTXT_DATE_FROM = New PRA_PIS.WatermarkTextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
         Me.RectangleShape4 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
@@ -59,7 +61,15 @@ Partial Class FRM_MIGRATE
         Me.Label2 = New System.Windows.Forms.Label()
         Me.PNL_1 = New System.Windows.Forms.Panel()
         Me.DGV_PC_LIST = New System.Windows.Forms.DataGridView()
+        Me.PCOMREASDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PCOMCHKBYDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PCOMNOTEDBYDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PCOMDATEDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PCOMREMARKSDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PCOMIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column1 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.TBLM4INVITEMSPCOUNTMAINBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DS_PROPERTYDB = New PRA_PIS.DS_PROPERTYDB()
         Me.BTN_PREVIOUS = New System.Windows.Forms.Button()
         Me.BTN_NEXT = New System.Windows.Forms.Button()
         Me.PNL_3 = New System.Windows.Forms.Panel()
@@ -101,16 +111,6 @@ Partial Class FRM_MIGRATE
         Me.TIM_LOAD = New System.Windows.Forms.Timer(Me.components)
         Me.SPM4_PHY_C_CODETableAdapter = New PRA_PIS.DS_STOREDPROCTableAdapters.SPM4_PHY_C_CODETableAdapter()
         Me.SPM4_PHY_C_CODEBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.WTXT_DATE_TO = New PRA_PIS.WatermarkTextBox()
-        Me.WTXT_DATE_FROM = New PRA_PIS.WatermarkTextBox()
-        Me.PCOMREASDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PCOMCHKBYDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PCOMNOTEDBYDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PCOMDATEDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PCOMREMARKSDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PCOMIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TBLM4INVITEMSPCOUNTMAINBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DS_PROPERTYDB = New PRA_PIS.DS_PROPERTYDB()
         Me.TBLM4_INV_ITEMS_PCOUNT_MAINTableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.TBLM4_INV_ITEMS_PCOUNT_MAINTableAdapter()
         Me.TBLM4_INV_DR_ITEMSTableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.TBLM4_INV_DR_ITEMSTableAdapter()
         Me.TBLM4_INV_DR_ITEMSBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -130,6 +130,8 @@ Partial Class FRM_MIGRATE
         CType(Me.PB_1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PNL_1.SuspendLayout()
         CType(Me.DGV_PC_LIST, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TBLM4INVITEMSPCOUNTMAINBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DS_PROPERTYDB, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PNL_3.SuspendLayout()
         Me.PNL_2_1.SuspendLayout()
         Me.PNL_SAVED.SuspendLayout()
@@ -141,8 +143,6 @@ Partial Class FRM_MIGRATE
         CType(Me.DGV_PC_ITEM_DETAILS, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SPM4_PC_DETAILS_ITEM_CODEBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SPM4_PHY_C_CODEBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TBLM4INVITEMSPCOUNTMAINBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DS_PROPERTYDB, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TBLM4_INV_DR_ITEMSBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TBLM4_INV_ITEMS_MIGRATEBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -269,6 +269,21 @@ Partial Class FRM_MIGRATE
         Me.BTN_DATE_TO.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
         Me.BTN_DATE_TO.UseVisualStyleBackColor = False
         '
+        'WTXT_DATE_TO
+        '
+        Me.WTXT_DATE_TO.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.WTXT_DATE_TO.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.WTXT_DATE_TO.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SPM4_CURRENTDATETIMEBindingSource, "datenowFormatted", True))
+        Me.WTXT_DATE_TO.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.WTXT_DATE_TO.ForeColor = System.Drawing.Color.Black
+        Me.WTXT_DATE_TO.Location = New System.Drawing.Point(170, 17)
+        Me.WTXT_DATE_TO.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.WTXT_DATE_TO.MaxLength = 300
+        Me.WTXT_DATE_TO.Name = "WTXT_DATE_TO"
+        Me.WTXT_DATE_TO.Size = New System.Drawing.Size(128, 24)
+        Me.WTXT_DATE_TO.TabIndex = 1524
+        Me.WTXT_DATE_TO.Watermark = "MM/DD/YYYY"
+        '
         'SPM4_CURRENTDATETIMEBindingSource
         '
         Me.SPM4_CURRENTDATETIMEBindingSource.DataMember = "SPM4_CURRENTDATETIME"
@@ -290,6 +305,21 @@ Partial Class FRM_MIGRATE
         Me.Label9.Size = New System.Drawing.Size(25, 16)
         Me.Label9.TabIndex = 1540
         Me.Label9.Text = "TO"
+        '
+        'WTXT_DATE_FROM
+        '
+        Me.WTXT_DATE_FROM.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.WTXT_DATE_FROM.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.WTXT_DATE_FROM.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SPM4_CURRENTDATETIMEBindingSource, "datenowFormatted", True))
+        Me.WTXT_DATE_FROM.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.WTXT_DATE_FROM.ForeColor = System.Drawing.Color.Black
+        Me.WTXT_DATE_FROM.Location = New System.Drawing.Point(8, 17)
+        Me.WTXT_DATE_FROM.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.WTXT_DATE_FROM.MaxLength = 300
+        Me.WTXT_DATE_FROM.Name = "WTXT_DATE_FROM"
+        Me.WTXT_DATE_FROM.Size = New System.Drawing.Size(124, 24)
+        Me.WTXT_DATE_FROM.TabIndex = 1523
+        Me.WTXT_DATE_FROM.Watermark = "MM/DD/YYYY"
         '
         'Label4
         '
@@ -503,6 +533,56 @@ Partial Class FRM_MIGRATE
         Me.DGV_PC_LIST.Size = New System.Drawing.Size(947, 338)
         Me.DGV_PC_LIST.TabIndex = 1543
         '
+        'PCOMREASDataGridViewTextBoxColumn
+        '
+        Me.PCOMREASDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.PCOMREASDataGridViewTextBoxColumn.DataPropertyName = "PCOM_REAS"
+        Me.PCOMREASDataGridViewTextBoxColumn.HeaderText = "Reason"
+        Me.PCOMREASDataGridViewTextBoxColumn.Name = "PCOMREASDataGridViewTextBoxColumn"
+        Me.PCOMREASDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'PCOMCHKBYDataGridViewTextBoxColumn
+        '
+        Me.PCOMCHKBYDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.PCOMCHKBYDataGridViewTextBoxColumn.DataPropertyName = "PCOM_CHK_BY"
+        Me.PCOMCHKBYDataGridViewTextBoxColumn.HeaderText = "Check by"
+        Me.PCOMCHKBYDataGridViewTextBoxColumn.Name = "PCOMCHKBYDataGridViewTextBoxColumn"
+        Me.PCOMCHKBYDataGridViewTextBoxColumn.ReadOnly = True
+        Me.PCOMCHKBYDataGridViewTextBoxColumn.Width = 150
+        '
+        'PCOMNOTEDBYDataGridViewTextBoxColumn
+        '
+        Me.PCOMNOTEDBYDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.PCOMNOTEDBYDataGridViewTextBoxColumn.DataPropertyName = "PCOM_NOTED_BY"
+        Me.PCOMNOTEDBYDataGridViewTextBoxColumn.HeaderText = "Noted by"
+        Me.PCOMNOTEDBYDataGridViewTextBoxColumn.Name = "PCOMNOTEDBYDataGridViewTextBoxColumn"
+        Me.PCOMNOTEDBYDataGridViewTextBoxColumn.ReadOnly = True
+        Me.PCOMNOTEDBYDataGridViewTextBoxColumn.Width = 150
+        '
+        'PCOMDATEDataGridViewTextBoxColumn
+        '
+        Me.PCOMDATEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.PCOMDATEDataGridViewTextBoxColumn.DataPropertyName = "PCOM_DATE"
+        Me.PCOMDATEDataGridViewTextBoxColumn.HeaderText = "Date Encoded"
+        Me.PCOMDATEDataGridViewTextBoxColumn.Name = "PCOMDATEDataGridViewTextBoxColumn"
+        Me.PCOMDATEDataGridViewTextBoxColumn.ReadOnly = True
+        Me.PCOMDATEDataGridViewTextBoxColumn.Width = 130
+        '
+        'PCOMREMARKSDataGridViewTextBoxColumn
+        '
+        Me.PCOMREMARKSDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.PCOMREMARKSDataGridViewTextBoxColumn.DataPropertyName = "PCOM_REMARKS"
+        Me.PCOMREMARKSDataGridViewTextBoxColumn.HeaderText = "Remarks"
+        Me.PCOMREMARKSDataGridViewTextBoxColumn.Name = "PCOMREMARKSDataGridViewTextBoxColumn"
+        Me.PCOMREMARKSDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'PCOMIDDataGridViewTextBoxColumn
+        '
+        Me.PCOMIDDataGridViewTextBoxColumn.DataPropertyName = "PCOM_ID"
+        Me.PCOMIDDataGridViewTextBoxColumn.HeaderText = "PCOM_ID"
+        Me.PCOMIDDataGridViewTextBoxColumn.Name = "PCOMIDDataGridViewTextBoxColumn"
+        Me.PCOMIDDataGridViewTextBoxColumn.Visible = False
+        '
         'Column1
         '
         Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
@@ -513,6 +593,17 @@ Partial Class FRM_MIGRATE
         Me.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
         Me.Column1.TrueValue = "1"
         Me.Column1.Width = 40
+        '
+        'TBLM4INVITEMSPCOUNTMAINBindingSource
+        '
+        Me.TBLM4INVITEMSPCOUNTMAINBindingSource.DataMember = "TBLM4_INV_ITEMS_PCOUNT_MAIN"
+        Me.TBLM4INVITEMSPCOUNTMAINBindingSource.DataSource = Me.DS_PROPERTYDB
+        '
+        'DS_PROPERTYDB
+        '
+        Me.DS_PROPERTYDB.DataSetName = "DS_PROPERTYDB"
+        Me.DS_PROPERTYDB.EnforceConstraints = False
+        Me.DS_PROPERTYDB.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'BTN_PREVIOUS
         '
@@ -940,97 +1031,6 @@ Partial Class FRM_MIGRATE
         Me.SPM4_PHY_C_CODEBindingSource.DataMember = "SPM4_PHY_C_CODE"
         Me.SPM4_PHY_C_CODEBindingSource.DataSource = Me.DS_STOREDPROC
         '
-        'WTXT_DATE_TO
-        '
-        Me.WTXT_DATE_TO.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.WTXT_DATE_TO.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.WTXT_DATE_TO.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SPM4_CURRENTDATETIMEBindingSource, "datenowFormatted", True))
-        Me.WTXT_DATE_TO.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.WTXT_DATE_TO.ForeColor = System.Drawing.Color.Black
-        Me.WTXT_DATE_TO.Location = New System.Drawing.Point(170, 17)
-        Me.WTXT_DATE_TO.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.WTXT_DATE_TO.MaxLength = 300
-        Me.WTXT_DATE_TO.Name = "WTXT_DATE_TO"
-        Me.WTXT_DATE_TO.Size = New System.Drawing.Size(128, 24)
-        Me.WTXT_DATE_TO.TabIndex = 1524
-        Me.WTXT_DATE_TO.Watermark = "MM/DD/YYYY"
-        '
-        'WTXT_DATE_FROM
-        '
-        Me.WTXT_DATE_FROM.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.WTXT_DATE_FROM.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.WTXT_DATE_FROM.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SPM4_CURRENTDATETIMEBindingSource, "datenowFormatted", True))
-        Me.WTXT_DATE_FROM.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.WTXT_DATE_FROM.ForeColor = System.Drawing.Color.Black
-        Me.WTXT_DATE_FROM.Location = New System.Drawing.Point(8, 17)
-        Me.WTXT_DATE_FROM.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.WTXT_DATE_FROM.MaxLength = 300
-        Me.WTXT_DATE_FROM.Name = "WTXT_DATE_FROM"
-        Me.WTXT_DATE_FROM.Size = New System.Drawing.Size(124, 24)
-        Me.WTXT_DATE_FROM.TabIndex = 1523
-        Me.WTXT_DATE_FROM.Watermark = "MM/DD/YYYY"
-        '
-        'PCOMREASDataGridViewTextBoxColumn
-        '
-        Me.PCOMREASDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.PCOMREASDataGridViewTextBoxColumn.DataPropertyName = "PCOM_REAS"
-        Me.PCOMREASDataGridViewTextBoxColumn.HeaderText = "Reason"
-        Me.PCOMREASDataGridViewTextBoxColumn.Name = "PCOMREASDataGridViewTextBoxColumn"
-        Me.PCOMREASDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'PCOMCHKBYDataGridViewTextBoxColumn
-        '
-        Me.PCOMCHKBYDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.PCOMCHKBYDataGridViewTextBoxColumn.DataPropertyName = "PCOM_CHK_BY"
-        Me.PCOMCHKBYDataGridViewTextBoxColumn.HeaderText = "Check by"
-        Me.PCOMCHKBYDataGridViewTextBoxColumn.Name = "PCOMCHKBYDataGridViewTextBoxColumn"
-        Me.PCOMCHKBYDataGridViewTextBoxColumn.ReadOnly = True
-        Me.PCOMCHKBYDataGridViewTextBoxColumn.Width = 150
-        '
-        'PCOMNOTEDBYDataGridViewTextBoxColumn
-        '
-        Me.PCOMNOTEDBYDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.PCOMNOTEDBYDataGridViewTextBoxColumn.DataPropertyName = "PCOM_NOTED_BY"
-        Me.PCOMNOTEDBYDataGridViewTextBoxColumn.HeaderText = "Noted by"
-        Me.PCOMNOTEDBYDataGridViewTextBoxColumn.Name = "PCOMNOTEDBYDataGridViewTextBoxColumn"
-        Me.PCOMNOTEDBYDataGridViewTextBoxColumn.ReadOnly = True
-        Me.PCOMNOTEDBYDataGridViewTextBoxColumn.Width = 150
-        '
-        'PCOMDATEDataGridViewTextBoxColumn
-        '
-        Me.PCOMDATEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.PCOMDATEDataGridViewTextBoxColumn.DataPropertyName = "PCOM_DATE"
-        Me.PCOMDATEDataGridViewTextBoxColumn.HeaderText = "Date Encoded"
-        Me.PCOMDATEDataGridViewTextBoxColumn.Name = "PCOMDATEDataGridViewTextBoxColumn"
-        Me.PCOMDATEDataGridViewTextBoxColumn.ReadOnly = True
-        Me.PCOMDATEDataGridViewTextBoxColumn.Width = 130
-        '
-        'PCOMREMARKSDataGridViewTextBoxColumn
-        '
-        Me.PCOMREMARKSDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.PCOMREMARKSDataGridViewTextBoxColumn.DataPropertyName = "PCOM_REMARKS"
-        Me.PCOMREMARKSDataGridViewTextBoxColumn.HeaderText = "Remarks"
-        Me.PCOMREMARKSDataGridViewTextBoxColumn.Name = "PCOMREMARKSDataGridViewTextBoxColumn"
-        Me.PCOMREMARKSDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'PCOMIDDataGridViewTextBoxColumn
-        '
-        Me.PCOMIDDataGridViewTextBoxColumn.DataPropertyName = "PCOM_ID"
-        Me.PCOMIDDataGridViewTextBoxColumn.HeaderText = "PCOM_ID"
-        Me.PCOMIDDataGridViewTextBoxColumn.Name = "PCOMIDDataGridViewTextBoxColumn"
-        Me.PCOMIDDataGridViewTextBoxColumn.Visible = False
-        '
-        'TBLM4INVITEMSPCOUNTMAINBindingSource
-        '
-        Me.TBLM4INVITEMSPCOUNTMAINBindingSource.DataMember = "TBLM4_INV_ITEMS_PCOUNT_MAIN"
-        Me.TBLM4INVITEMSPCOUNTMAINBindingSource.DataSource = Me.DS_PROPERTYDB
-        '
-        'DS_PROPERTYDB
-        '
-        Me.DS_PROPERTYDB.DataSetName = "DS_PROPERTYDB"
-        Me.DS_PROPERTYDB.EnforceConstraints = False
-        Me.DS_PROPERTYDB.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'TBLM4_INV_ITEMS_PCOUNT_MAINTableAdapter
         '
         Me.TBLM4_INV_ITEMS_PCOUNT_MAINTableAdapter.ClearBeforeFill = True
@@ -1094,6 +1094,8 @@ Partial Class FRM_MIGRATE
         CType(Me.PB_1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PNL_1.ResumeLayout(False)
         CType(Me.DGV_PC_LIST, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TBLM4INVITEMSPCOUNTMAINBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DS_PROPERTYDB, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PNL_3.ResumeLayout(False)
         Me.PNL_2_1.ResumeLayout(False)
         Me.PNL_SAVED.ResumeLayout(False)
@@ -1108,8 +1110,6 @@ Partial Class FRM_MIGRATE
         CType(Me.DGV_PC_ITEM_DETAILS, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SPM4_PC_DETAILS_ITEM_CODEBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SPM4_PHY_C_CODEBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TBLM4INVITEMSPCOUNTMAINBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DS_PROPERTYDB, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TBLM4_INV_DR_ITEMSBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TBLM4_INV_ITEMS_MIGRATEBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

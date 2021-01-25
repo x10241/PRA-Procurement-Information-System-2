@@ -30,6 +30,14 @@ Partial Class FRM_SIGNATORYLIST
         Me.Label6 = New System.Windows.Forms.Label()
         Me.GB_PRLIST = New System.Windows.Forms.GroupBox()
         Me.VWG3_PRIMARY_SIGNATORYDataGridView = New System.Windows.Forms.DataGridView()
+        Me.SPM4_SIGNATORY_LISTBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DS_STOREDPROC = New PRA_PIS.DS_STOREDPROC()
+        Me.WTXT_SEARCHSIGNATORY = New PRA_PIS.WatermarkTextBox()
+        Me.ShapeContainer2 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
+        Me.RECT_PRSEARCH = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.DS_PROPERTYDB = New PRA_PIS.DS_PROPERTYDB()
+        Me.TableAdapterManager = New PRA_PIS.DS_PROPERTYDBTableAdapters.TableAdapterManager()
+        Me.SPM4_SIGNATORY_LISTTableAdapter = New PRA_PIS.DS_STOREDPROCTableAdapters.SPM4_SIGNATORY_LISTTableAdapter()
         Me.SIGDATEEMPIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FULLNAMEDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.POSPOSITIONDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -40,14 +48,6 @@ Partial Class FRM_SIGNATORYLIST
         Me.PDSTITLEDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SIGSTATUSDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DATEENCODEDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.SPM4_SIGNATORY_LISTBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DS_STOREDPROC = New PRA_PIS.DS_STOREDPROC()
-        Me.WTXT_SEARCHSIGNATORY = New PRA_PIS.WatermarkTextBox()
-        Me.ShapeContainer2 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
-        Me.RECT_PRSEARCH = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
-        Me.DS_PROPERTYDB = New PRA_PIS.DS_PROPERTYDB()
-        Me.TableAdapterManager = New PRA_PIS.DS_PROPERTYDBTableAdapters.TableAdapterManager()
-        Me.SPM4_SIGNATORY_LISTTableAdapter = New PRA_PIS.DS_STOREDPROCTableAdapters.SPM4_SIGNATORY_LISTTableAdapter()
         CType(Me.PBICONSEARCH, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PNL.SuspendLayout()
         Me.GB_PRLIST.SuspendLayout()
@@ -152,10 +152,129 @@ Partial Class FRM_SIGNATORYLIST
         Me.VWG3_PRIMARY_SIGNATORYDataGridView.Size = New System.Drawing.Size(650, 504)
         Me.VWG3_PRIMARY_SIGNATORYDataGridView.TabIndex = 1407
         '
+        'SPM4_SIGNATORY_LISTBindingSource
+        '
+        Me.SPM4_SIGNATORY_LISTBindingSource.DataMember = "SPM4_SIGNATORY_LIST"
+        Me.SPM4_SIGNATORY_LISTBindingSource.DataSource = Me.DS_STOREDPROC
+        '
+        'DS_STOREDPROC
+        '
+        Me.DS_STOREDPROC.DataSetName = "DS_STOREDPROC"
+        Me.DS_STOREDPROC.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'WTXT_SEARCHSIGNATORY
+        '
+        Me.WTXT_SEARCHSIGNATORY.BackColor = System.Drawing.SystemColors.Window
+        Me.WTXT_SEARCHSIGNATORY.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.WTXT_SEARCHSIGNATORY.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.WTXT_SEARCHSIGNATORY.ForeColor = System.Drawing.Color.Black
+        Me.WTXT_SEARCHSIGNATORY.Location = New System.Drawing.Point(16, 25)
+        Me.WTXT_SEARCHSIGNATORY.Name = "WTXT_SEARCHSIGNATORY"
+        Me.WTXT_SEARCHSIGNATORY.Size = New System.Drawing.Size(595, 26)
+        Me.WTXT_SEARCHSIGNATORY.TabIndex = 0
+        Me.WTXT_SEARCHSIGNATORY.Watermark = "Search Name"
+        '
+        'ShapeContainer2
+        '
+        Me.ShapeContainer2.Location = New System.Drawing.Point(3, 19)
+        Me.ShapeContainer2.Margin = New System.Windows.Forms.Padding(0)
+        Me.ShapeContainer2.Name = "ShapeContainer2"
+        Me.ShapeContainer2.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RECT_PRSEARCH})
+        Me.ShapeContainer2.Size = New System.Drawing.Size(657, 561)
+        Me.ShapeContainer2.TabIndex = 5
+        Me.ShapeContainer2.TabStop = False
+        '
+        'RECT_PRSEARCH
+        '
+        Me.RECT_PRSEARCH.BorderColor = System.Drawing.Color.DimGray
+        Me.RECT_PRSEARCH.CornerRadius = 15
+        Me.RECT_PRSEARCH.Location = New System.Drawing.Point(1, 2)
+        Me.RECT_PRSEARCH.Name = "RECT_PRSEARCH"
+        Me.RECT_PRSEARCH.Size = New System.Drawing.Size(649, 33)
+        '
+        'DS_PROPERTYDB
+        '
+        Me.DS_PROPERTYDB.DataSetName = "DS_PROPERTYDB"
+        Me.DS_PROPERTYDB.EnforceConstraints = False
+        Me.DS_PROPERTYDB.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.Connection = Nothing
+        Me.TableAdapterManager.TBLG3_COMPANY_INFOTableAdapter = Nothing
+        Me.TableAdapterManager.TBLG3_DELIVER_RECEIPT_DETAILSTableAdapter = Nothing
+        Me.TableAdapterManager.TBLG3_DELIVERY_RECEIPTTableAdapter = Nothing
+        Me.TableAdapterManager.TBLG3_INVOICE_DETAILSTableAdapter = Nothing
+        Me.TableAdapterManager.TBLG3_INVOICETableAdapter = Nothing
+        Me.TableAdapterManager.TBLG3_PRIMARY_SIGNATORYTableAdapter = Nothing
+        Me.TableAdapterManager.TBLG3_REG_BUSTableAdapter = Nothing
+        Me.TableAdapterManager.TBLG3_REG_DVTableAdapter = Nothing
+        Me.TableAdapterManager.TBLG3_REG_PARTICULARTableAdapter = Nothing
+        Me.TableAdapterManager.TBLG3_SIGNATORY_TYPETableAdapter = Nothing
+        Me.TableAdapterManager.TBLG3_SIGNATORY1TableAdapter = Nothing
+        Me.TableAdapterManager.TBLG3_SIGNATORYTableAdapter = Nothing
+        Me.TableAdapterManager.TBLG3_UNITSTableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_CATEGORY1TableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_DIST_MAINTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_DR_ITEMSTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_ITEMS_COLOR_MAINTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_ITEMS_COLORTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_ITEMS_IMGTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_ITEMS_LENG_MAINTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_ITEMS_LENGTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_ITEMS_MIGRATETableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_ITEMS_NAME_MAINTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_ITEMS_NAMETableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_ITEMS_OTHERS_MAINTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_ITEMS_OTHERSTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_ITEMS_PCOU_SETUPTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_ITEMS_PCOUNT_MAINTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_ITEMS_PCOUNTTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_ITEMS_SIZE_MAINTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_ITEMS_SIZETableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_ITEMS_STK_CTRLTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_ITEMSTableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_INVENTORY_ACCOUNTABLE_OFFICERTableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_INVENTORY_ACQUISITION_ITEM_USAGETableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_INVENTORY_ACQUISITION_VALUETableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_INVENTORY_ASSIGN_PERSONTableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_INVENTORY_CATEGORY1TableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_INVENTORY_CATEGORYTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INVENTORY_ITEM_REQUISITIONTableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_INVENTORY_ITEMBRAND1TableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_INVENTORY_ITEMBRANDTableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_INVENTORY_ITEMS_DEFLOCATIONTableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_INVENTORY_ITEMS_DISTRIBUTIONTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INVENTORY_ITEMS_DRTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INVENTORY_ITEMS_INVTableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_INVENTORY_ITEMS_LOCATIONTableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_INVENTORY_ITEMS_PROPERTYTableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_INVENTORY_ITEMSTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INVENTORY_PACK_MAINTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INVENTORY_PACKTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INVENTORY_REQUISITIONTableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_INVENTORY_SUB_CATEGORYTableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_INVENTORY_TYPETableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_ITEMBRAND1TableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_PURCHASEREQUEST_ACCEPTEDTableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_PURCHASEREQUEST_CANCELEDTableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_PURCHASEREQUEST_CATEGORYTableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_PURCHASEREQUEST_ITEMTableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_PURCHASEREQUEST_POSTEDTableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_PURCHASEREQUEST_PROVIDERTableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_PURCHASEREQUEST_REVISIONTableAdapter = Nothing
+        Me.TableAdapterManager.tblM4_PURCHASEREQUESTTableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = PRA_PIS.DS_PROPERTYDBTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
+        'SPM4_SIGNATORY_LISTTableAdapter
+        '
+        Me.SPM4_SIGNATORY_LISTTableAdapter.ClearBeforeFill = True
+        '
         'SIGDATEEMPIDDataGridViewTextBoxColumn
         '
         Me.SIGDATEEMPIDDataGridViewTextBoxColumn.DataPropertyName = "SIG_DATE_EMP_ID"
-        Me.SIGDATEEMPIDDataGridViewTextBoxColumn.HeaderText = "SIG_DATE_EMP_ID"
+        Me.SIGDATEEMPIDDataGridViewTextBoxColumn.HeaderText = "Emp No."
         Me.SIGDATEEMPIDDataGridViewTextBoxColumn.Name = "SIGDATEEMPIDDataGridViewTextBoxColumn"
         Me.SIGDATEEMPIDDataGridViewTextBoxColumn.ReadOnly = True
         Me.SIGDATEEMPIDDataGridViewTextBoxColumn.Visible = False
@@ -231,116 +350,6 @@ Partial Class FRM_SIGNATORYLIST
         Me.DATEENCODEDataGridViewTextBoxColumn.Name = "DATEENCODEDataGridViewTextBoxColumn"
         Me.DATEENCODEDataGridViewTextBoxColumn.ReadOnly = True
         Me.DATEENCODEDataGridViewTextBoxColumn.Visible = False
-        '
-        'SPM4_SIGNATORY_LISTBindingSource
-        '
-        Me.SPM4_SIGNATORY_LISTBindingSource.DataMember = "SPM4_SIGNATORY_LIST"
-        Me.SPM4_SIGNATORY_LISTBindingSource.DataSource = Me.DS_STOREDPROC
-        '
-        'DS_STOREDPROC
-        '
-        Me.DS_STOREDPROC.DataSetName = "DS_STOREDPROC"
-        Me.DS_STOREDPROC.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'WTXT_SEARCHSIGNATORY
-        '
-        Me.WTXT_SEARCHSIGNATORY.BackColor = System.Drawing.SystemColors.Window
-        Me.WTXT_SEARCHSIGNATORY.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.WTXT_SEARCHSIGNATORY.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.WTXT_SEARCHSIGNATORY.ForeColor = System.Drawing.Color.Black
-        Me.WTXT_SEARCHSIGNATORY.Location = New System.Drawing.Point(16, 25)
-        Me.WTXT_SEARCHSIGNATORY.Name = "WTXT_SEARCHSIGNATORY"
-        Me.WTXT_SEARCHSIGNATORY.Size = New System.Drawing.Size(595, 26)
-        Me.WTXT_SEARCHSIGNATORY.TabIndex = 0
-        Me.WTXT_SEARCHSIGNATORY.Watermark = "Search Name"
-        '
-        'ShapeContainer2
-        '
-        Me.ShapeContainer2.Location = New System.Drawing.Point(3, 19)
-        Me.ShapeContainer2.Margin = New System.Windows.Forms.Padding(0)
-        Me.ShapeContainer2.Name = "ShapeContainer2"
-        Me.ShapeContainer2.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RECT_PRSEARCH})
-        Me.ShapeContainer2.Size = New System.Drawing.Size(657, 561)
-        Me.ShapeContainer2.TabIndex = 5
-        Me.ShapeContainer2.TabStop = False
-        '
-        'RECT_PRSEARCH
-        '
-        Me.RECT_PRSEARCH.BorderColor = System.Drawing.Color.DimGray
-        Me.RECT_PRSEARCH.CornerRadius = 15
-        Me.RECT_PRSEARCH.Location = New System.Drawing.Point(1, 2)
-        Me.RECT_PRSEARCH.Name = "RECT_PRSEARCH"
-        Me.RECT_PRSEARCH.Size = New System.Drawing.Size(649, 33)
-        '
-        'DS_PROPERTYDB
-        '
-        Me.DS_PROPERTYDB.DataSetName = "DS_PROPERTYDB"
-        Me.DS_PROPERTYDB.EnforceConstraints = False
-        Me.DS_PROPERTYDB.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'TableAdapterManager
-        '
-        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.Connection = Nothing
-        Me.TableAdapterManager.TBLG3_COMPANY_INFOTableAdapter = Nothing
-        Me.TableAdapterManager.TBLG3_DELIVER_RECEIPT_DETAILSTableAdapter = Nothing
-        Me.TableAdapterManager.TBLG3_DELIVERY_RECEIPTTableAdapter = Nothing
-        Me.TableAdapterManager.TBLG3_INVOICE_DETAILSTableAdapter = Nothing
-        Me.TableAdapterManager.TBLG3_INVOICETableAdapter = Nothing
-        Me.TableAdapterManager.TBLG3_PRIMARY_SIGNATORYTableAdapter = Nothing
-        Me.TableAdapterManager.TBLG3_REG_BUSTableAdapter = Nothing
-        Me.TableAdapterManager.TBLG3_REG_DVTableAdapter = Nothing
-        Me.TableAdapterManager.TBLG3_REG_PARTICULARTableAdapter = Nothing
-        Me.TableAdapterManager.TBLG3_SIGNATORY_TYPETableAdapter = Nothing
-        Me.TableAdapterManager.TBLG3_SIGNATORY1TableAdapter = Nothing
-        Me.TableAdapterManager.TBLG3_SIGNATORYTableAdapter = Nothing
-        Me.TableAdapterManager.TBLG3_UNITSTableAdapter = Nothing
-        Me.TableAdapterManager.tblM4_CATEGORY1TableAdapter = Nothing
-        Me.TableAdapterManager.TBLM4_INV_DIST_MAINTableAdapter = Nothing
-        Me.TableAdapterManager.TBLM4_INV_DR_ITEMSTableAdapter = Nothing
-        Me.TableAdapterManager.TBLM4_INV_ITEMS_COLOR_MAINTableAdapter = Nothing
-        Me.TableAdapterManager.TBLM4_INV_ITEMS_COLORTableAdapter = Nothing
-        Me.TableAdapterManager.TBLM4_INV_ITEMS_LENG_MAINTableAdapter = Nothing
-        Me.TableAdapterManager.TBLM4_INV_ITEMS_LENGTableAdapter = Nothing
-        Me.TableAdapterManager.TBLM4_INV_ITEMS_NAME_MAINTableAdapter = Nothing
-        Me.TableAdapterManager.TBLM4_INV_ITEMS_NAMETableAdapter = Nothing
-        Me.TableAdapterManager.TBLM4_INV_ITEMS_OTHERS_MAINTableAdapter = Nothing
-        Me.TableAdapterManager.TBLM4_INV_ITEMS_OTHERSTableAdapter = Nothing
-        Me.TableAdapterManager.TBLM4_INV_ITEMS_SIZE_MAINTableAdapter = Nothing
-        Me.TableAdapterManager.TBLM4_INV_ITEMS_SIZETableAdapter = Nothing
-        Me.TableAdapterManager.TBLM4_INV_ITEMS_STK_CTRLTableAdapter = Nothing
-        Me.TableAdapterManager.TBLM4_INV_ITEMSTableAdapter = Nothing
-        Me.TableAdapterManager.tblM4_INVENTORY_ACCOUNTABLE_OFFICERTableAdapter = Nothing
-        Me.TableAdapterManager.tblM4_INVENTORY_ACQUISITION_ITEM_USAGETableAdapter = Nothing
-        Me.TableAdapterManager.tblM4_INVENTORY_ACQUISITION_VALUETableAdapter = Nothing
-        Me.TableAdapterManager.tblM4_INVENTORY_ASSIGN_PERSONTableAdapter = Nothing
-        Me.TableAdapterManager.tblM4_INVENTORY_CATEGORY1TableAdapter = Nothing
-        Me.TableAdapterManager.tblM4_INVENTORY_CATEGORYTableAdapter = Nothing
-        Me.TableAdapterManager.TBLM4_INVENTORY_ITEM_REQUISITIONTableAdapter = Nothing
-        Me.TableAdapterManager.tblM4_INVENTORY_ITEMBRAND1TableAdapter = Nothing
-        Me.TableAdapterManager.tblM4_INVENTORY_ITEMBRANDTableAdapter = Nothing
-        Me.TableAdapterManager.tblM4_INVENTORY_ITEMS_DEFLOCATIONTableAdapter = Nothing
-        Me.TableAdapterManager.tblM4_INVENTORY_ITEMS_DISTRIBUTIONTableAdapter = Nothing
-        Me.TableAdapterManager.tblM4_INVENTORY_ITEMS_LOCATIONTableAdapter = Nothing
-        Me.TableAdapterManager.tblM4_INVENTORY_ITEMS_PROPERTYTableAdapter = Nothing
-        Me.TableAdapterManager.tblM4_INVENTORY_ITEMSTableAdapter = Nothing
-        Me.TableAdapterManager.TBLM4_INVENTORY_REQUISITIONTableAdapter = Nothing
-        Me.TableAdapterManager.tblM4_INVENTORY_SUB_CATEGORYTableAdapter = Nothing
-        Me.TableAdapterManager.tblM4_INVENTORY_TYPETableAdapter = Nothing
-        Me.TableAdapterManager.tblM4_ITEMBRAND1TableAdapter = Nothing
-        Me.TableAdapterManager.tblM4_PURCHASEREQUEST_ACCEPTEDTableAdapter = Nothing
-        Me.TableAdapterManager.tblM4_PURCHASEREQUEST_CANCELEDTableAdapter = Nothing
-        Me.TableAdapterManager.tblM4_PURCHASEREQUEST_CATEGORYTableAdapter = Nothing
-        Me.TableAdapterManager.tblM4_PURCHASEREQUEST_ITEMTableAdapter = Nothing
-        Me.TableAdapterManager.tblM4_PURCHASEREQUEST_POSTEDTableAdapter = Nothing
-        Me.TableAdapterManager.tblM4_PURCHASEREQUEST_PROVIDERTableAdapter = Nothing
-        Me.TableAdapterManager.tblM4_PURCHASEREQUEST_REVISIONTableAdapter = Nothing
-        Me.TableAdapterManager.tblM4_PURCHASEREQUESTTableAdapter = Nothing
-        Me.TableAdapterManager.UpdateOrder = PRA_PIS.DS_PROPERTYDBTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        '
-        'SPM4_SIGNATORY_LISTTableAdapter
-        '
-        Me.SPM4_SIGNATORY_LISTTableAdapter.ClearBeforeFill = True
         '
         'FRM_SIGNATORYLIST
         '

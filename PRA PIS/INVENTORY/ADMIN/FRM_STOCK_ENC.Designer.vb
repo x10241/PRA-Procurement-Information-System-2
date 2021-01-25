@@ -24,14 +24,16 @@ Partial Class FRM_STOCK_ENC
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FRM_STOCK_ENC))
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PNL = New System.Windows.Forms.Panel()
         Me.BTN_ITEM_STOCK_ENC_CLOSE = New System.Windows.Forms.Button()
         Me.LBLSETTINGSHEAD = New System.Windows.Forms.Label()
@@ -158,12 +160,12 @@ Partial Class FRM_STOCK_ENC
         Me.TBLM4_INV_DR_ITEMSBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.VWM4_ITEM_LISTBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.VWM4_ITEM_LISTTableAdapter = New PRA_PIS.DS_VIEWSTableAdapters.VWM4_ITEM_LISTTableAdapter()
-        Me.SPM4_ITEM_STOCKMASTERLISTTableAdapter = New PRA_PIS.DS_STOREDPROCTableAdapters.SPM4_ITEM_STOCKMASTERLISTTableAdapter()
         Me.SPM4_ITEM_STOCKS_LEGENDBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SPM4_ITEM_STOCKS_LEGENDTableAdapter = New PRA_PIS.DS_STOREDPROCTableAdapters.SPM4_ITEM_STOCKS_LEGENDTableAdapter()
         Me.TableAdapterManager1 = New PRA_PIS.DS_STOREDPROCTableAdapters.TableAdapterManager()
         Me.SPM4_PHY_C_CODETableAdapter = New PRA_PIS.DS_STOREDPROCTableAdapters.SPM4_PHY_C_CODETableAdapter()
         Me.SPM4_PHY_C_CODEBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SPM4_ITEM_STOCKMASTERLISTTableAdapter = New PRA_PIS.DS_STOREDPROCTableAdapters.SPM4_ITEM_STOCKMASTERLISTTableAdapter()
         Me.ITEM_STATUS = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ITEMCODEDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ITEMDESCDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -602,14 +604,14 @@ Partial Class FRM_STOCK_ENC
         Me.DGV_STOCK_LIST.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGV_STOCK_LIST.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ITEM_STATUS, Me.ITEMCODEDataGridViewTextBoxColumn, Me.ITEMDESCDataGridViewTextBoxColumn, Me.TOTALSTOCKDataGridViewTextBoxColumn, Me.ITEMUNITDataGridViewTextBoxColumn, Me.APPQTYDataGridViewTextBoxColumn, Me.REMSTOCKDataGridViewTextBoxColumn, Me.ITEM_MIN_QTY, Me.ITEM_MAX_QTY})
         Me.DGV_STOCK_LIST.DataSource = Me.SPM4ITEMSTOCKMASTERLISTBindingSource
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DGV_STOCK_LIST.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGV_STOCK_LIST.DefaultCellStyle = DataGridViewCellStyle8
         Me.DGV_STOCK_LIST.Location = New System.Drawing.Point(2, 49)
         Me.DGV_STOCK_LIST.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.DGV_STOCK_LIST.MultiSelect = False
@@ -907,8 +909,8 @@ Partial Class FRM_STOCK_ENC
         Me.DGV_ITEM_STOCK_DETAILS.Name = "DGV_ITEM_STOCK_DETAILS"
         Me.DGV_ITEM_STOCK_DETAILS.ReadOnly = True
         Me.DGV_ITEM_STOCK_DETAILS.RowHeadersVisible = False
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.DarkGray
-        Me.DGV_ITEM_STOCK_DETAILS.RowsDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.DarkGray
+        Me.DGV_ITEM_STOCK_DETAILS.RowsDefaultCellStyle = DataGridViewCellStyle9
         Me.DGV_ITEM_STOCK_DETAILS.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DGV_ITEM_STOCK_DETAILS.Size = New System.Drawing.Size(962, 348)
         Me.DGV_ITEM_STOCK_DETAILS.TabIndex = 1
@@ -1100,8 +1102,8 @@ Partial Class FRM_STOCK_ENC
         Me.DGV_DR_PARTICULARS.Name = "DGV_DR_PARTICULARS"
         Me.DGV_DR_PARTICULARS.ReadOnly = True
         Me.DGV_DR_PARTICULARS.RowHeadersVisible = False
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.DarkGray
-        Me.DGV_DR_PARTICULARS.RowsDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.DarkGray
+        Me.DGV_DR_PARTICULARS.RowsDefaultCellStyle = DataGridViewCellStyle10
         Me.DGV_DR_PARTICULARS.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DGV_DR_PARTICULARS.Size = New System.Drawing.Size(962, 108)
         Me.DGV_DR_PARTICULARS.TabIndex = 1
@@ -1649,10 +1651,6 @@ Partial Class FRM_STOCK_ENC
         '
         Me.VWM4_ITEM_LISTTableAdapter.ClearBeforeFill = True
         '
-        'SPM4_ITEM_STOCKMASTERLISTTableAdapter
-        '
-        Me.SPM4_ITEM_STOCKMASTERLISTTableAdapter.ClearBeforeFill = True
-        '
         'SPM4_ITEM_STOCKS_LEGENDBindingSource
         '
         Me.SPM4_ITEM_STOCKS_LEGENDBindingSource.DataMember = "SPM4_ITEM_STOCKS_LEGEND"
@@ -1677,6 +1675,10 @@ Partial Class FRM_STOCK_ENC
         '
         Me.SPM4_PHY_C_CODEBindingSource.DataMember = "SPM4_PHY_C_CODE"
         Me.SPM4_PHY_C_CODEBindingSource.DataSource = Me.DS_STOREDPROC
+        '
+        'SPM4_ITEM_STOCKMASTERLISTTableAdapter
+        '
+        Me.SPM4_ITEM_STOCKMASTERLISTTableAdapter.ClearBeforeFill = True
         '
         'ITEM_STATUS
         '
@@ -1741,6 +1743,8 @@ Partial Class FRM_STOCK_ENC
         '
         Me.REMSTOCKDataGridViewTextBoxColumn.DataPropertyName = "REM_STOCK"
         DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle5.Format = "N0"
+        DataGridViewCellStyle5.NullValue = "0"
         Me.REMSTOCKDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle5
         Me.REMSTOCKDataGridViewTextBoxColumn.HeaderText = "No. of stocks"
         Me.REMSTOCKDataGridViewTextBoxColumn.Name = "REMSTOCKDataGridViewTextBoxColumn"
@@ -1749,6 +1753,8 @@ Partial Class FRM_STOCK_ENC
         'ITEM_MIN_QTY
         '
         Me.ITEM_MIN_QTY.DataPropertyName = "ITEM_MIN_QTY"
+        DataGridViewCellStyle6.NullValue = "0"
+        Me.ITEM_MIN_QTY.DefaultCellStyle = DataGridViewCellStyle6
         Me.ITEM_MIN_QTY.HeaderText = "ITEM_MIN_QTY"
         Me.ITEM_MIN_QTY.Name = "ITEM_MIN_QTY"
         Me.ITEM_MIN_QTY.ReadOnly = True
@@ -1757,6 +1763,8 @@ Partial Class FRM_STOCK_ENC
         'ITEM_MAX_QTY
         '
         Me.ITEM_MAX_QTY.DataPropertyName = "ITEM_MAX_QTY"
+        DataGridViewCellStyle7.NullValue = "0"
+        Me.ITEM_MAX_QTY.DefaultCellStyle = DataGridViewCellStyle7
         Me.ITEM_MAX_QTY.HeaderText = "ITEM_MAX_QTY"
         Me.ITEM_MAX_QTY.Name = "ITEM_MAX_QTY"
         Me.ITEM_MAX_QTY.ReadOnly = True
@@ -1949,14 +1957,14 @@ Partial Class FRM_STOCK_ENC
     Friend WithEvents RECT_STK_CTRL_SETUP As PowerPacks.RectangleShape
     Friend WithEvents LLBL_STKCTRL_SETUP As LinkLabel
     Friend WithEvents PB_STK_CTRL_SETUP As PictureBox
-    Friend WithEvents SPM4ITEMSTOCKMASTERLISTBindingSource As BindingSource
     Friend WithEvents DS_STOREDPROC As DS_STOREDPROC
-    Friend WithEvents SPM4_ITEM_STOCKMASTERLISTTableAdapter As DS_STOREDPROCTableAdapters.SPM4_ITEM_STOCKMASTERLISTTableAdapter
     Friend WithEvents SPM4_ITEM_STOCKS_LEGENDBindingSource As BindingSource
     Friend WithEvents SPM4_ITEM_STOCKS_LEGENDTableAdapter As DS_STOREDPROCTableAdapters.SPM4_ITEM_STOCKS_LEGENDTableAdapter
     Friend WithEvents TableAdapterManager1 As DS_STOREDPROCTableAdapters.TableAdapterManager
     Friend WithEvents SPM4_PHY_C_CODETableAdapter As DS_STOREDPROCTableAdapters.SPM4_PHY_C_CODETableAdapter
     Friend WithEvents SPM4_PHY_C_CODEBindingSource As BindingSource
+    Friend WithEvents SPM4ITEMSTOCKMASTERLISTBindingSource As BindingSource
+    Friend WithEvents SPM4_ITEM_STOCKMASTERLISTTableAdapter As DS_STOREDPROCTableAdapters.SPM4_ITEM_STOCKMASTERLISTTableAdapter
     Friend WithEvents ITEM_STATUS As DataGridViewTextBoxColumn
     Friend WithEvents ITEMCODEDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ITEMDESCDataGridViewTextBoxColumn As DataGridViewTextBoxColumn

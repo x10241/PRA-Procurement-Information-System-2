@@ -1,12 +1,11 @@
 ﻿Public Class FRM_EMPLOYEE_LIST
     Private Sub FRM_EMPLOYEE_LIST_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.EmployeeInfoTableAdapter.FillBySearch(Me.DS_TABLES.EmployeeInfo, WTXT_SEARCHEMPLOYEE.Text)
+        Me.DT_PDS_LISTTableAdapter.FillByACTIVE(Me.DS_PRAJO_DATABASE.DT_PDS_LIST, WTXT_SEARCHEMPLOYEE.Text)
     End Sub
 
     Private Sub WTXT_SEARCHEMPLOYEE_TextChanged(sender As Object, e As EventArgs) Handles WTXT_SEARCHEMPLOYEE.TextChanged
-        Me.EmployeeInfoTableAdapter.FillBySearch(Me.DS_TABLES.EmployeeInfo, WTXT_SEARCHEMPLOYEE.Text)
+        Me.DT_PDS_LISTTableAdapter.FillByACTIVE(Me.DS_PRAJO_DATABASE.DT_PDS_LIST, WTXT_SEARCHEMPLOYEE.Text)
     End Sub
-
 
     Private Sub BTN_CLOSE_Click(sender As Object, e As EventArgs) Handles BTN_CLOSE.Click
         Me.Close()

@@ -16,7 +16,6 @@
 #Region "CLICK"
     Private Sub BTN_NEW_LOCATION_Click(sender As Object, e As EventArgs) Handles BTN_SELECTION_CLOSE.Click,
                                                                                     BTN_LOC_SAVE.Click,
-                                                                                    CHK_SHOW_ALL_ITEMS.Click,
                                                                                     BTN_ONE_PLUS.Click,
                                                                                     BTN_ONE_MINUS.Click,
                                                                                     BTN_ALL_PLUS.Click,
@@ -161,6 +160,7 @@
         End If
     End Sub
 #End Region
+
     Private Sub CB_LOC_DEFAULT_LOC_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CB_LOC_DEFAULT_LOC.SelectedIndexChanged
         If CB_LOC_DEFAULT_LOC.SelectedIndex >= 0 Then
             DGV_ITEMS_LOCATION.SelectAll()
@@ -175,11 +175,11 @@
 
 #Region "FILTER SEARCH"
     Private Sub WTXT_LIST_ITEM_SEARCH_TextChanged(sender As Object, e As EventArgs) Handles WTXT_LIST_ITEM_SEARCH.TextChanged
-        ItemsLocationDataGridViewBindingSource.Filter = "ItemCode Like '%" + WTXT_LIST_ITEM_SEARCH.Text + "%'"
+        ItemsLocationDataGridViewBindingSource.Filter = "ItemCode Like '%" + WTXT_LIST_ITEM_SEARCH.Text + "%'" + " OR Category Like '%" + WTXT_LIST_ITEM_SEARCH.Text + "%'" + " OR SubCategory Like '%" + WTXT_LIST_ITEM_SEARCH.Text + "%'" + " OR Brand Like '%" + WTXT_LIST_ITEM_SEARCH.Text + "%'" + " OR SerialNo Like '%" + WTXT_LIST_ITEM_SEARCH.Text + "%'" + " OR ItemDescription Like '%" + WTXT_LIST_ITEM_SEARCH.Text + "%'"
     End Sub
 
     Private Sub WTXT_LIST_PREFERRED_ITEMS_TextChanged(sender As Object, e As EventArgs) Handles WTXT_LIST_PREFERRED_ITEMS.TextChanged
-        AssignItemsLocationDataGridViewBindingSource.Filter = "ItemCode Like '%" + WTXT_LIST_PREFERRED_ITEMS.Text + "%'"
+        AssignItemsLocationDataGridViewBindingSource.Filter = "ItemCode Like '%" + WTXT_LIST_PREFERRED_ITEMS.Text + "%'" + " OR Category Like '%" + WTXT_LIST_ITEM_SEARCH.Text + "%'" + " OR SubCategory Like '%" + WTXT_LIST_ITEM_SEARCH.Text + "%'" + " OR Brand Like '%" + WTXT_LIST_ITEM_SEARCH.Text + "%'" + " OR SerialNo Like '%" + WTXT_LIST_ITEM_SEARCH.Text + "%'" + " OR ItemDescription Like '%" + WTXT_LIST_ITEM_SEARCH.Text + "%'"
     End Sub
 #End Region
 

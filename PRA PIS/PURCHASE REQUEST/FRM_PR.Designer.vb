@@ -24,19 +24,19 @@ Partial Class FRM_PR
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FRM_PR))
-        Dim DataGridViewCellStyle40 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle41 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle42 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle43 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle44 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle45 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle46 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle47 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle48 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle49 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle50 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle51 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle52 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle19 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle21 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle22 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle23 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle24 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle25 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle26 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PNL_PR_LIST = New System.Windows.Forms.Panel()
         Me.PNL_BUTTONS = New System.Windows.Forms.Panel()
         Me.LLBL_PRNEW = New System.Windows.Forms.LinkLabel()
@@ -49,6 +49,7 @@ Partial Class FRM_PR
         Me.LinkLabel6 = New System.Windows.Forms.LinkLabel()
         Me.PB_ITEM_STOCK_SEARCH = New System.Windows.Forms.PictureBox()
         Me.PB_PR_CLEAR_SEARCH = New System.Windows.Forms.PictureBox()
+        Me.WTXT_PR_SEARCH = New PRA_PIS.WatermarkTextBox()
         Me.DGV_PR_LIST = New System.Windows.Forms.DataGridView()
         Me.PRPRNODataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PRDATEREQUESTEDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -149,12 +150,18 @@ Partial Class FRM_PR
         Me.TblV1_HRISDIVISIONBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TblV1_HRISDEPARTMENTBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.GB_PRINFO = New System.Windows.Forms.GroupBox()
+        Me.WTXT_PRDIV = New PRA_PIS.WatermarkTextBox()
         Me.V1VWUSERACCEMPLOYEEBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.WTXT_PRDEPARTMENT = New PRA_PIS.WatermarkTextBox()
         Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
         Me.RBTN_PESO = New System.Windows.Forms.RadioButton()
         Me.RBTN_DOLLARS = New System.Windows.Forms.RadioButton()
         Me.Label10 = New System.Windows.Forms.Label()
+        Me.WTXT_SUBMITTEDBY = New PRA_PIS.WatermarkTextBox()
         Me.Label9 = New System.Windows.Forms.Label()
+        Me.WTXT_PURPOSE = New PRA_PIS.WatermarkTextBox()
+        Me.WTXT_APPCODE = New PRA_PIS.WatermarkTextBox()
+        Me.WTXT_REQUESTEDDATE = New PRA_PIS.WatermarkTextBox()
         Me.SPM4CURRENTDATETIMEBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -227,6 +234,14 @@ Partial Class FRM_PR
         Me.PB_SIG_SAVEDEFAULT = New System.Windows.Forms.PictureBox()
         Me.LLBL_SIG_SAVEDEFAULT = New System.Windows.Forms.LinkLabel()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.WTXT_SIGNREQUESTEDNAME = New PRA_PIS.WatermarkTextBox()
+        Me.WTXT_SIGNREQUESTEDPOSITION = New PRA_PIS.WatermarkTextBox()
+        Me.WTXT_SIGNAPPROVENAME = New PRA_PIS.WatermarkTextBox()
+        Me.WTXT_SIGNAPPROVEPOSITION = New PRA_PIS.WatermarkTextBox()
+        Me.WTXT_SIGNCERTIFIEDNAME = New PRA_PIS.WatermarkTextBox()
+        Me.WTXT_SIGNCERTIFIEDPOSITION = New PRA_PIS.WatermarkTextBox()
+        Me.WTXT_SIGNNOTEDPOSITION = New PRA_PIS.WatermarkTextBox()
+        Me.WTXT_SIGNNOTEDNAME = New PRA_PIS.WatermarkTextBox()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
@@ -298,22 +313,7 @@ Partial Class FRM_PR
         Me.SPM4_UQ_IQ_SIGNATORYBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SPM4_UQ_IQ_SIGNATORYTableAdapter = New PRA_PIS.DS_STOREDPROCTableAdapters.SPM4_UQ_IQ_SIGNATORYTableAdapter()
         Me.SPM4_PR_LISTTableAdapter = New PRA_PIS.DS_STOREDPROCTableAdapters.SPM4_PR_LISTTableAdapter()
-        Me.WTXT_SIGNREQUESTEDNAME = New PRA_PIS.WatermarkTextBox()
-        Me.WTXT_SIGNREQUESTEDPOSITION = New PRA_PIS.WatermarkTextBox()
-        Me.WTXT_SIGNAPPROVENAME = New PRA_PIS.WatermarkTextBox()
-        Me.WTXT_SIGNAPPROVEPOSITION = New PRA_PIS.WatermarkTextBox()
-        Me.WTXT_SIGNCERTIFIEDNAME = New PRA_PIS.WatermarkTextBox()
-        Me.WTXT_SIGNCERTIFIEDPOSITION = New PRA_PIS.WatermarkTextBox()
-        Me.WTXT_SIGNNOTEDPOSITION = New PRA_PIS.WatermarkTextBox()
-        Me.WTXT_SIGNNOTEDNAME = New PRA_PIS.WatermarkTextBox()
-        Me.WTXT_PRDIV = New PRA_PIS.WatermarkTextBox()
-        Me.WTXT_PRDEPARTMENT = New PRA_PIS.WatermarkTextBox()
-        Me.WTXT_SUBMITTEDBY = New PRA_PIS.WatermarkTextBox()
-        Me.WTXT_PURPOSE = New PRA_PIS.WatermarkTextBox()
-        Me.WTXT_APPCODE = New PRA_PIS.WatermarkTextBox()
-        Me.WTXT_REQUESTEDDATE = New PRA_PIS.WatermarkTextBox()
         Me.wtxt_date = New PRA_PIS.WatermarkTextBox()
-        Me.WTXT_PR_SEARCH = New PRA_PIS.WatermarkTextBox()
         Me.PNL_PR_LIST.SuspendLayout()
         Me.PNL_BUTTONS.SuspendLayout()
         CType(Me.PB_PRICONNEW, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -545,6 +545,19 @@ Partial Class FRM_PR
         Me.PB_PR_CLEAR_SEARCH.TabStop = False
         Me.PB_PR_CLEAR_SEARCH.Visible = False
         '
+        'WTXT_PR_SEARCH
+        '
+        Me.WTXT_PR_SEARCH.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.WTXT_PR_SEARCH.Font = New System.Drawing.Font("Century Gothic", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.WTXT_PR_SEARCH.ForeColor = System.Drawing.Color.Black
+        Me.WTXT_PR_SEARCH.Location = New System.Drawing.Point(59, 15)
+        Me.WTXT_PR_SEARCH.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.WTXT_PR_SEARCH.MaxLength = 300
+        Me.WTXT_PR_SEARCH.Name = "WTXT_PR_SEARCH"
+        Me.WTXT_PR_SEARCH.Size = New System.Drawing.Size(957, 25)
+        Me.WTXT_PR_SEARCH.TabIndex = 1442
+        Me.WTXT_PR_SEARCH.Watermark = "Search purpose, purchase request No."
+        '
         'DGV_PR_LIST
         '
         Me.DGV_PR_LIST.AllowUserToAddRows = False
@@ -553,41 +566,41 @@ Partial Class FRM_PR
         Me.DGV_PR_LIST.AllowUserToResizeRows = False
         Me.DGV_PR_LIST.AutoGenerateColumns = False
         Me.DGV_PR_LIST.BackgroundColor = System.Drawing.Color.White
-        DataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle40.BackColor = System.Drawing.Color.Transparent
-        DataGridViewCellStyle40.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle40.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle40.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle40.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle40.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGV_PR_LIST.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle40
+        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle14.BackColor = System.Drawing.Color.Transparent
+        DataGridViewCellStyle14.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGV_PR_LIST.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle14
         Me.DGV_PR_LIST.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGV_PR_LIST.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.PRPRNODataGridViewTextBoxColumn, Me.PRDATEREQUESTEDDataGridViewTextBoxColumn, Me.PRAPPCODEDataGridViewTextBoxColumn, Me.PRI_ITEMDESCRIPTION, Me.PRPURPOSEDataGridViewTextBoxColumn, Me.PRSTATUSDataGridViewTextBoxColumn, Me.PRREQUESTEDBYDataGridViewTextBoxColumn, Me.PRREQUESTEDBYPOSITIONDataGridViewTextBoxColumn, Me.PRAPPROVEDBYDataGridViewTextBoxColumn, Me.PRAPPROVEDBYPOSITIONDataGridViewTextBoxColumn, Me.PRCERTIFIEDBYDataGridViewTextBoxColumn, Me.PRCERTIFIEDBYPOSITIONDataGridViewTextBoxColumn, Me.PRNOTEDBYDataGridViewTextBoxColumn, Me.PRNOTEDBYPOSITIONDataGridViewTextBoxColumn, Me.PRSUBMITTEDBYDataGridViewTextBoxColumn, Me.PRDEPARTMENTDataGridViewTextBoxColumn, Me.PRDIVISIONDataGridViewTextBoxColumn, Me.CREATEDDATEDataGridViewTextBoxColumn, Me.PRUPDATEDBYDataGridViewTextBoxColumn, Me.PRISDOLLARDataGridViewCheckBoxColumn, Me.FULLNAME, Me.BTNVIEWDETAILS, Me.BTNEDIT, Me.BTN_PRINT})
         Me.DGV_PR_LIST.DataSource = Me.SPM4_PR_LISTBindingSource
-        DataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle41.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle41.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle41.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle41.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark
-        DataGridViewCellStyle41.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle41.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DGV_PR_LIST.DefaultCellStyle = DataGridViewCellStyle41
+        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle15.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark
+        DataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGV_PR_LIST.DefaultCellStyle = DataGridViewCellStyle15
         Me.DGV_PR_LIST.Location = New System.Drawing.Point(5, 55)
         Me.DGV_PR_LIST.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.DGV_PR_LIST.MultiSelect = False
         Me.DGV_PR_LIST.Name = "DGV_PR_LIST"
         Me.DGV_PR_LIST.ReadOnly = True
-        DataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle42.BackColor = System.Drawing.Color.LightSkyBlue
-        DataGridViewCellStyle42.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle42.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle42.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle42.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle42.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGV_PR_LIST.RowHeadersDefaultCellStyle = DataGridViewCellStyle42
+        DataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle16.BackColor = System.Drawing.Color.LightSkyBlue
+        DataGridViewCellStyle16.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGV_PR_LIST.RowHeadersDefaultCellStyle = DataGridViewCellStyle16
         Me.DGV_PR_LIST.RowHeadersVisible = False
-        DataGridViewCellStyle43.SelectionBackColor = System.Drawing.Color.Gray
-        Me.DGV_PR_LIST.RowsDefaultCellStyle = DataGridViewCellStyle43
+        DataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.Gray
+        Me.DGV_PR_LIST.RowsDefaultCellStyle = DataGridViewCellStyle17
         Me.DGV_PR_LIST.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DGV_PR_LIST.Size = New System.Drawing.Size(1072, 437)
         Me.DGV_PR_LIST.TabIndex = 0
@@ -1466,19 +1479,19 @@ Partial Class FRM_PR
         '
         Me.DGV_PR_ITEMLIST.AllowUserToAddRows = False
         Me.DGV_PR_ITEMLIST.AllowUserToDeleteRows = False
-        DataGridViewCellStyle44.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DGV_PR_ITEMLIST.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle44
+        DataGridViewCellStyle18.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DGV_PR_ITEMLIST.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle18
         Me.DGV_PR_ITEMLIST.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGV_PR_ITEMLIST.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders
         Me.DGV_PR_ITEMLIST.BackgroundColor = System.Drawing.Color.White
-        DataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle45.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle45.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle45.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle45.SelectionBackColor = System.Drawing.Color.DimGray
-        DataGridViewCellStyle45.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle45.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGV_PR_ITEMLIST.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle45
+        DataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle19.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.DimGray
+        DataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGV_PR_ITEMLIST.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle19
         Me.DGV_PR_ITEMLIST.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGV_PR_ITEMLIST.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.PRIITEMDESCRIPTIONDataGridViewTextBoxColumn, Me.PRQUANTITYDataGridViewTextBoxColumn, Me.PRUNITISSUEDataGridViewTextBoxColumn, Me.PRSTOCKNODataGridViewTextBoxColumn, Me.PRESTIMATEDUNITCOSTDataGridViewTextBoxColumn, Me.PRESTIMATEDCOSTDataGridViewTextBoxColumn, Me.EDIT, Me.DELETE})
         Me.DGV_PR_ITEMLIST.Location = New System.Drawing.Point(7, 65)
@@ -1527,9 +1540,9 @@ Partial Class FRM_PR
         'PRESTIMATEDUNITCOSTDataGridViewTextBoxColumn
         '
         Me.PRESTIMATEDUNITCOSTDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        DataGridViewCellStyle46.Format = "N2"
-        DataGridViewCellStyle46.NullValue = "0"
-        Me.PRESTIMATEDUNITCOSTDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle46
+        DataGridViewCellStyle20.Format = "N2"
+        DataGridViewCellStyle20.NullValue = "0"
+        Me.PRESTIMATEDUNITCOSTDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle20
         Me.PRESTIMATEDUNITCOSTDataGridViewTextBoxColumn.HeaderText = "Estimated Unit Cost"
         Me.PRESTIMATEDUNITCOSTDataGridViewTextBoxColumn.MaxInputLength = 13
         Me.PRESTIMATEDUNITCOSTDataGridViewTextBoxColumn.Name = "PRESTIMATEDUNITCOSTDataGridViewTextBoxColumn"
@@ -1539,9 +1552,9 @@ Partial Class FRM_PR
         'PRESTIMATEDCOSTDataGridViewTextBoxColumn
         '
         Me.PRESTIMATEDCOSTDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        DataGridViewCellStyle47.Format = "N2"
-        DataGridViewCellStyle47.NullValue = "0"
-        Me.PRESTIMATEDCOSTDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle47
+        DataGridViewCellStyle21.Format = "N2"
+        DataGridViewCellStyle21.NullValue = "0"
+        Me.PRESTIMATEDCOSTDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle21
         Me.PRESTIMATEDCOSTDataGridViewTextBoxColumn.HeaderText = "Estimated Cost"
         Me.PRESTIMATEDCOSTDataGridViewTextBoxColumn.MaxInputLength = 13
         Me.PRESTIMATEDCOSTDataGridViewTextBoxColumn.Name = "PRESTIMATEDCOSTDataGridViewTextBoxColumn"
@@ -1639,10 +1652,40 @@ Partial Class FRM_PR
         Me.GB_PRINFO.TabIndex = 1
         Me.GB_PRINFO.TabStop = False
         '
+        'WTXT_PRDIV
+        '
+        Me.WTXT_PRDIV.BackColor = System.Drawing.Color.White
+        Me.WTXT_PRDIV.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.WTXT_PRDIV.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.V1VWUSERACCEMPLOYEEBindingSource, "HDIV_DIVISION", True))
+        Me.WTXT_PRDIV.Font = New System.Drawing.Font("Century Gothic", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.WTXT_PRDIV.Location = New System.Drawing.Point(354, 75)
+        Me.WTXT_PRDIV.MaxLength = 50
+        Me.WTXT_PRDIV.Name = "WTXT_PRDIV"
+        Me.WTXT_PRDIV.ReadOnly = True
+        Me.WTXT_PRDIV.Size = New System.Drawing.Size(347, 21)
+        Me.WTXT_PRDIV.TabIndex = 1453
+        Me.WTXT_PRDIV.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.WTXT_PRDIV.Watermark = Nothing
+        '
         'V1VWUSERACCEMPLOYEEBindingSource
         '
         Me.V1VWUSERACCEMPLOYEEBindingSource.DataMember = "V1VW_USERACCEMPLOYEE"
         Me.V1VWUSERACCEMPLOYEEBindingSource.DataSource = Me.DS_VIEWS
+        '
+        'WTXT_PRDEPARTMENT
+        '
+        Me.WTXT_PRDEPARTMENT.BackColor = System.Drawing.Color.White
+        Me.WTXT_PRDEPARTMENT.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.WTXT_PRDEPARTMENT.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.V1VWUSERACCEMPLOYEEBindingSource, "HDPT_DEPARTMENT", True))
+        Me.WTXT_PRDEPARTMENT.Font = New System.Drawing.Font("Century Gothic", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.WTXT_PRDEPARTMENT.Location = New System.Drawing.Point(12, 75)
+        Me.WTXT_PRDEPARTMENT.MaxLength = 50
+        Me.WTXT_PRDEPARTMENT.Name = "WTXT_PRDEPARTMENT"
+        Me.WTXT_PRDEPARTMENT.ReadOnly = True
+        Me.WTXT_PRDEPARTMENT.Size = New System.Drawing.Size(330, 21)
+        Me.WTXT_PRDEPARTMENT.TabIndex = 1452
+        Me.WTXT_PRDEPARTMENT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.WTXT_PRDEPARTMENT.Watermark = Nothing
         '
         'LinkLabel2
         '
@@ -1663,6 +1706,7 @@ Partial Class FRM_PR
         'RBTN_PESO
         '
         Me.RBTN_PESO.AutoSize = True
+        Me.RBTN_PESO.Checked = True
         Me.RBTN_PESO.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RBTN_PESO.Location = New System.Drawing.Point(220, 31)
         Me.RBTN_PESO.Name = "RBTN_PESO"
@@ -1675,13 +1719,11 @@ Partial Class FRM_PR
         'RBTN_DOLLARS
         '
         Me.RBTN_DOLLARS.AutoSize = True
-        Me.RBTN_DOLLARS.Checked = True
         Me.RBTN_DOLLARS.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RBTN_DOLLARS.Location = New System.Drawing.Point(139, 31)
         Me.RBTN_DOLLARS.Name = "RBTN_DOLLARS"
         Me.RBTN_DOLLARS.Size = New System.Drawing.Size(71, 20)
         Me.RBTN_DOLLARS.TabIndex = 1449
-        Me.RBTN_DOLLARS.TabStop = True
         Me.RBTN_DOLLARS.Text = "Dollars"
         Me.RBTN_DOLLARS.UseVisualStyleBackColor = True
         '
@@ -1695,6 +1737,20 @@ Partial Class FRM_PR
         Me.Label10.TabIndex = 1431
         Me.Label10.Text = "*"
         '
+        'WTXT_SUBMITTEDBY
+        '
+        Me.WTXT_SUBMITTEDBY.BackColor = System.Drawing.Color.White
+        Me.WTXT_SUBMITTEDBY.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.WTXT_SUBMITTEDBY.Font = New System.Drawing.Font("Century Gothic", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.WTXT_SUBMITTEDBY.Location = New System.Drawing.Point(421, 30)
+        Me.WTXT_SUBMITTEDBY.MaxLength = 50
+        Me.WTXT_SUBMITTEDBY.Name = "WTXT_SUBMITTEDBY"
+        Me.WTXT_SUBMITTEDBY.ReadOnly = True
+        Me.WTXT_SUBMITTEDBY.Size = New System.Drawing.Size(281, 21)
+        Me.WTXT_SUBMITTEDBY.TabIndex = 1417
+        Me.WTXT_SUBMITTEDBY.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.WTXT_SUBMITTEDBY.Watermark = Nothing
+        '
         'Label9
         '
         Me.Label9.AutoSize = True
@@ -1705,6 +1761,43 @@ Partial Class FRM_PR
         Me.Label9.Size = New System.Drawing.Size(95, 16)
         Me.Label9.TabIndex = 1405
         Me.Label9.Text = "SUBMITTED BY"
+        '
+        'WTXT_PURPOSE
+        '
+        Me.WTXT_PURPOSE.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.WTXT_PURPOSE.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.WTXT_PURPOSE.Location = New System.Drawing.Point(14, 119)
+        Me.WTXT_PURPOSE.MaxLength = 300
+        Me.WTXT_PURPOSE.Multiline = True
+        Me.WTXT_PURPOSE.Name = "WTXT_PURPOSE"
+        Me.WTXT_PURPOSE.Size = New System.Drawing.Size(688, 44)
+        Me.WTXT_PURPOSE.TabIndex = 1417
+        Me.WTXT_PURPOSE.Watermark = Nothing
+        '
+        'WTXT_APPCODE
+        '
+        Me.WTXT_APPCODE.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.WTXT_APPCODE.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.WTXT_APPCODE.Location = New System.Drawing.Point(13, 32)
+        Me.WTXT_APPCODE.MaxLength = 15
+        Me.WTXT_APPCODE.Name = "WTXT_APPCODE"
+        Me.WTXT_APPCODE.Size = New System.Drawing.Size(113, 19)
+        Me.WTXT_APPCODE.TabIndex = 1427
+        Me.WTXT_APPCODE.Watermark = Nothing
+        '
+        'WTXT_REQUESTEDDATE
+        '
+        Me.WTXT_REQUESTEDDATE.BackColor = System.Drawing.Color.White
+        Me.WTXT_REQUESTEDDATE.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.WTXT_REQUESTEDDATE.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SPM4CURRENTDATETIMEBindingSource, "datenowFormatted", True))
+        Me.WTXT_REQUESTEDDATE.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.WTXT_REQUESTEDDATE.Location = New System.Drawing.Point(285, 31)
+        Me.WTXT_REQUESTEDDATE.Name = "WTXT_REQUESTEDDATE"
+        Me.WTXT_REQUESTEDDATE.ReadOnly = True
+        Me.WTXT_REQUESTEDDATE.Size = New System.Drawing.Size(125, 19)
+        Me.WTXT_REQUESTEDDATE.TabIndex = 1417
+        Me.WTXT_REQUESTEDDATE.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.WTXT_REQUESTEDDATE.Watermark = Nothing
         '
         'SPM4CURRENTDATETIMEBindingSource
         '
@@ -2006,8 +2099,8 @@ Partial Class FRM_PR
         Me.DGV_SCANNED_IMG.Name = "DGV_SCANNED_IMG"
         Me.DGV_SCANNED_IMG.ReadOnly = True
         Me.DGV_SCANNED_IMG.RowHeadersVisible = False
-        DataGridViewCellStyle48.Padding = New System.Windows.Forms.Padding(5)
-        Me.DGV_SCANNED_IMG.RowsDefaultCellStyle = DataGridViewCellStyle48
+        DataGridViewCellStyle22.Padding = New System.Windows.Forms.Padding(5)
+        Me.DGV_SCANNED_IMG.RowsDefaultCellStyle = DataGridViewCellStyle22
         Me.DGV_SCANNED_IMG.RowTemplate.Height = 461
         Me.DGV_SCANNED_IMG.Size = New System.Drawing.Size(45, 0)
         Me.DGV_SCANNED_IMG.TabIndex = 1427
@@ -2408,6 +2501,110 @@ Partial Class FRM_PR
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(501, 443)
         Me.Panel2.TabIndex = 1436
+        '
+        'WTXT_SIGNREQUESTEDNAME
+        '
+        Me.WTXT_SIGNREQUESTEDNAME.BackColor = System.Drawing.Color.White
+        Me.WTXT_SIGNREQUESTEDNAME.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.WTXT_SIGNREQUESTEDNAME.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.WTXT_SIGNREQUESTEDNAME.Location = New System.Drawing.Point(24, 46)
+        Me.WTXT_SIGNREQUESTEDNAME.Name = "WTXT_SIGNREQUESTEDNAME"
+        Me.WTXT_SIGNREQUESTEDNAME.ReadOnly = True
+        Me.WTXT_SIGNREQUESTEDNAME.Size = New System.Drawing.Size(450, 21)
+        Me.WTXT_SIGNREQUESTEDNAME.TabIndex = 1427
+        Me.WTXT_SIGNREQUESTEDNAME.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.WTXT_SIGNREQUESTEDNAME.Watermark = Nothing
+        '
+        'WTXT_SIGNREQUESTEDPOSITION
+        '
+        Me.WTXT_SIGNREQUESTEDPOSITION.BackColor = System.Drawing.Color.White
+        Me.WTXT_SIGNREQUESTEDPOSITION.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.WTXT_SIGNREQUESTEDPOSITION.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.WTXT_SIGNREQUESTEDPOSITION.Location = New System.Drawing.Point(24, 88)
+        Me.WTXT_SIGNREQUESTEDPOSITION.Name = "WTXT_SIGNREQUESTEDPOSITION"
+        Me.WTXT_SIGNREQUESTEDPOSITION.ReadOnly = True
+        Me.WTXT_SIGNREQUESTEDPOSITION.Size = New System.Drawing.Size(450, 21)
+        Me.WTXT_SIGNREQUESTEDPOSITION.TabIndex = 1428
+        Me.WTXT_SIGNREQUESTEDPOSITION.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.WTXT_SIGNREQUESTEDPOSITION.Watermark = Nothing
+        '
+        'WTXT_SIGNAPPROVENAME
+        '
+        Me.WTXT_SIGNAPPROVENAME.BackColor = System.Drawing.Color.White
+        Me.WTXT_SIGNAPPROVENAME.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.WTXT_SIGNAPPROVENAME.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.WTXT_SIGNAPPROVENAME.Location = New System.Drawing.Point(24, 145)
+        Me.WTXT_SIGNAPPROVENAME.Name = "WTXT_SIGNAPPROVENAME"
+        Me.WTXT_SIGNAPPROVENAME.ReadOnly = True
+        Me.WTXT_SIGNAPPROVENAME.Size = New System.Drawing.Size(450, 21)
+        Me.WTXT_SIGNAPPROVENAME.TabIndex = 1429
+        Me.WTXT_SIGNAPPROVENAME.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.WTXT_SIGNAPPROVENAME.Watermark = Nothing
+        '
+        'WTXT_SIGNAPPROVEPOSITION
+        '
+        Me.WTXT_SIGNAPPROVEPOSITION.BackColor = System.Drawing.Color.White
+        Me.WTXT_SIGNAPPROVEPOSITION.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.WTXT_SIGNAPPROVEPOSITION.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.WTXT_SIGNAPPROVEPOSITION.Location = New System.Drawing.Point(24, 190)
+        Me.WTXT_SIGNAPPROVEPOSITION.Name = "WTXT_SIGNAPPROVEPOSITION"
+        Me.WTXT_SIGNAPPROVEPOSITION.ReadOnly = True
+        Me.WTXT_SIGNAPPROVEPOSITION.Size = New System.Drawing.Size(450, 21)
+        Me.WTXT_SIGNAPPROVEPOSITION.TabIndex = 1430
+        Me.WTXT_SIGNAPPROVEPOSITION.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.WTXT_SIGNAPPROVEPOSITION.Watermark = Nothing
+        '
+        'WTXT_SIGNCERTIFIEDNAME
+        '
+        Me.WTXT_SIGNCERTIFIEDNAME.BackColor = System.Drawing.Color.White
+        Me.WTXT_SIGNCERTIFIEDNAME.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.WTXT_SIGNCERTIFIEDNAME.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.WTXT_SIGNCERTIFIEDNAME.Location = New System.Drawing.Point(24, 249)
+        Me.WTXT_SIGNCERTIFIEDNAME.Name = "WTXT_SIGNCERTIFIEDNAME"
+        Me.WTXT_SIGNCERTIFIEDNAME.ReadOnly = True
+        Me.WTXT_SIGNCERTIFIEDNAME.Size = New System.Drawing.Size(450, 21)
+        Me.WTXT_SIGNCERTIFIEDNAME.TabIndex = 1431
+        Me.WTXT_SIGNCERTIFIEDNAME.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.WTXT_SIGNCERTIFIEDNAME.Watermark = Nothing
+        '
+        'WTXT_SIGNCERTIFIEDPOSITION
+        '
+        Me.WTXT_SIGNCERTIFIEDPOSITION.BackColor = System.Drawing.Color.White
+        Me.WTXT_SIGNCERTIFIEDPOSITION.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.WTXT_SIGNCERTIFIEDPOSITION.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.WTXT_SIGNCERTIFIEDPOSITION.Location = New System.Drawing.Point(25, 295)
+        Me.WTXT_SIGNCERTIFIEDPOSITION.Name = "WTXT_SIGNCERTIFIEDPOSITION"
+        Me.WTXT_SIGNCERTIFIEDPOSITION.ReadOnly = True
+        Me.WTXT_SIGNCERTIFIEDPOSITION.Size = New System.Drawing.Size(450, 21)
+        Me.WTXT_SIGNCERTIFIEDPOSITION.TabIndex = 1432
+        Me.WTXT_SIGNCERTIFIEDPOSITION.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.WTXT_SIGNCERTIFIEDPOSITION.Watermark = Nothing
+        '
+        'WTXT_SIGNNOTEDPOSITION
+        '
+        Me.WTXT_SIGNNOTEDPOSITION.BackColor = System.Drawing.Color.White
+        Me.WTXT_SIGNNOTEDPOSITION.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.WTXT_SIGNNOTEDPOSITION.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.WTXT_SIGNNOTEDPOSITION.Location = New System.Drawing.Point(24, 402)
+        Me.WTXT_SIGNNOTEDPOSITION.Name = "WTXT_SIGNNOTEDPOSITION"
+        Me.WTXT_SIGNNOTEDPOSITION.ReadOnly = True
+        Me.WTXT_SIGNNOTEDPOSITION.Size = New System.Drawing.Size(450, 21)
+        Me.WTXT_SIGNNOTEDPOSITION.TabIndex = 1434
+        Me.WTXT_SIGNNOTEDPOSITION.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.WTXT_SIGNNOTEDPOSITION.Watermark = Nothing
+        '
+        'WTXT_SIGNNOTEDNAME
+        '
+        Me.WTXT_SIGNNOTEDNAME.BackColor = System.Drawing.Color.White
+        Me.WTXT_SIGNNOTEDNAME.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.WTXT_SIGNNOTEDNAME.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.WTXT_SIGNNOTEDNAME.Location = New System.Drawing.Point(24, 359)
+        Me.WTXT_SIGNNOTEDNAME.Name = "WTXT_SIGNNOTEDNAME"
+        Me.WTXT_SIGNNOTEDNAME.ReadOnly = True
+        Me.WTXT_SIGNNOTEDNAME.Size = New System.Drawing.Size(450, 21)
+        Me.WTXT_SIGNNOTEDNAME.TabIndex = 1433
+        Me.WTXT_SIGNNOTEDNAME.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.WTXT_SIGNNOTEDNAME.Watermark = Nothing
         '
         'Label24
         '
@@ -2867,39 +3064,39 @@ Partial Class FRM_PR
         Me.DGV_PR_STATUS_LIST.AllowUserToResizeColumns = False
         Me.DGV_PR_STATUS_LIST.AllowUserToResizeRows = False
         Me.DGV_PR_STATUS_LIST.BackgroundColor = System.Drawing.Color.White
-        DataGridViewCellStyle49.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle49.BackColor = System.Drawing.Color.Transparent
-        DataGridViewCellStyle49.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle49.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle49.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle49.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle49.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGV_PR_STATUS_LIST.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle49
+        DataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle23.BackColor = System.Drawing.Color.Transparent
+        DataGridViewCellStyle23.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGV_PR_STATUS_LIST.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle23
         Me.DGV_PR_STATUS_LIST.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle50.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle50.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle50.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle50.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle50.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark
-        DataGridViewCellStyle50.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle50.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DGV_PR_STATUS_LIST.DefaultCellStyle = DataGridViewCellStyle50
+        DataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle24.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark
+        DataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGV_PR_STATUS_LIST.DefaultCellStyle = DataGridViewCellStyle24
         Me.DGV_PR_STATUS_LIST.Location = New System.Drawing.Point(3, 30)
         Me.DGV_PR_STATUS_LIST.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.DGV_PR_STATUS_LIST.MultiSelect = False
         Me.DGV_PR_STATUS_LIST.Name = "DGV_PR_STATUS_LIST"
         Me.DGV_PR_STATUS_LIST.ReadOnly = True
-        DataGridViewCellStyle51.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle51.BackColor = System.Drawing.Color.LightSkyBlue
-        DataGridViewCellStyle51.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle51.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle51.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle51.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle51.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGV_PR_STATUS_LIST.RowHeadersDefaultCellStyle = DataGridViewCellStyle51
+        DataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle25.BackColor = System.Drawing.Color.LightSkyBlue
+        DataGridViewCellStyle25.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle25.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGV_PR_STATUS_LIST.RowHeadersDefaultCellStyle = DataGridViewCellStyle25
         Me.DGV_PR_STATUS_LIST.RowHeadersVisible = False
-        DataGridViewCellStyle52.SelectionBackColor = System.Drawing.Color.Gray
-        Me.DGV_PR_STATUS_LIST.RowsDefaultCellStyle = DataGridViewCellStyle52
+        DataGridViewCellStyle26.SelectionBackColor = System.Drawing.Color.Gray
+        Me.DGV_PR_STATUS_LIST.RowsDefaultCellStyle = DataGridViewCellStyle26
         Me.DGV_PR_STATUS_LIST.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DGV_PR_STATUS_LIST.Size = New System.Drawing.Size(454, 606)
         Me.DGV_PR_STATUS_LIST.TabIndex = 1440
@@ -3080,6 +3277,8 @@ Partial Class FRM_PR
         Me.TableAdapterManager.tblM4_INVENTORY_ITEMS_LOCATIONTableAdapter = Nothing
         Me.TableAdapterManager.tblM4_INVENTORY_ITEMS_PROPERTYTableAdapter = Nothing
         Me.TableAdapterManager.tblM4_INVENTORY_ITEMSTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INVENTORY_PACK_MAINTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INVENTORY_PACKTableAdapter = Nothing
         Me.TableAdapterManager.TBLM4_INVENTORY_REQUISITIONTableAdapter = Nothing
         Me.TableAdapterManager.tblM4_INVENTORY_SUB_CATEGORYTableAdapter = Nothing
         Me.TableAdapterManager.tblM4_INVENTORY_TYPETableAdapter = Nothing
@@ -3150,191 +3349,6 @@ Partial Class FRM_PR
         '
         Me.SPM4_PR_LISTTableAdapter.ClearBeforeFill = True
         '
-        'WTXT_SIGNREQUESTEDNAME
-        '
-        Me.WTXT_SIGNREQUESTEDNAME.BackColor = System.Drawing.Color.White
-        Me.WTXT_SIGNREQUESTEDNAME.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.WTXT_SIGNREQUESTEDNAME.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.WTXT_SIGNREQUESTEDNAME.Location = New System.Drawing.Point(24, 46)
-        Me.WTXT_SIGNREQUESTEDNAME.Name = "WTXT_SIGNREQUESTEDNAME"
-        Me.WTXT_SIGNREQUESTEDNAME.ReadOnly = True
-        Me.WTXT_SIGNREQUESTEDNAME.Size = New System.Drawing.Size(450, 21)
-        Me.WTXT_SIGNREQUESTEDNAME.TabIndex = 1427
-        Me.WTXT_SIGNREQUESTEDNAME.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.WTXT_SIGNREQUESTEDNAME.Watermark = Nothing
-        '
-        'WTXT_SIGNREQUESTEDPOSITION
-        '
-        Me.WTXT_SIGNREQUESTEDPOSITION.BackColor = System.Drawing.Color.White
-        Me.WTXT_SIGNREQUESTEDPOSITION.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.WTXT_SIGNREQUESTEDPOSITION.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.WTXT_SIGNREQUESTEDPOSITION.Location = New System.Drawing.Point(24, 88)
-        Me.WTXT_SIGNREQUESTEDPOSITION.Name = "WTXT_SIGNREQUESTEDPOSITION"
-        Me.WTXT_SIGNREQUESTEDPOSITION.ReadOnly = True
-        Me.WTXT_SIGNREQUESTEDPOSITION.Size = New System.Drawing.Size(450, 21)
-        Me.WTXT_SIGNREQUESTEDPOSITION.TabIndex = 1428
-        Me.WTXT_SIGNREQUESTEDPOSITION.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.WTXT_SIGNREQUESTEDPOSITION.Watermark = Nothing
-        '
-        'WTXT_SIGNAPPROVENAME
-        '
-        Me.WTXT_SIGNAPPROVENAME.BackColor = System.Drawing.Color.White
-        Me.WTXT_SIGNAPPROVENAME.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.WTXT_SIGNAPPROVENAME.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.WTXT_SIGNAPPROVENAME.Location = New System.Drawing.Point(24, 145)
-        Me.WTXT_SIGNAPPROVENAME.Name = "WTXT_SIGNAPPROVENAME"
-        Me.WTXT_SIGNAPPROVENAME.ReadOnly = True
-        Me.WTXT_SIGNAPPROVENAME.Size = New System.Drawing.Size(450, 21)
-        Me.WTXT_SIGNAPPROVENAME.TabIndex = 1429
-        Me.WTXT_SIGNAPPROVENAME.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.WTXT_SIGNAPPROVENAME.Watermark = Nothing
-        '
-        'WTXT_SIGNAPPROVEPOSITION
-        '
-        Me.WTXT_SIGNAPPROVEPOSITION.BackColor = System.Drawing.Color.White
-        Me.WTXT_SIGNAPPROVEPOSITION.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.WTXT_SIGNAPPROVEPOSITION.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.WTXT_SIGNAPPROVEPOSITION.Location = New System.Drawing.Point(24, 190)
-        Me.WTXT_SIGNAPPROVEPOSITION.Name = "WTXT_SIGNAPPROVEPOSITION"
-        Me.WTXT_SIGNAPPROVEPOSITION.ReadOnly = True
-        Me.WTXT_SIGNAPPROVEPOSITION.Size = New System.Drawing.Size(450, 21)
-        Me.WTXT_SIGNAPPROVEPOSITION.TabIndex = 1430
-        Me.WTXT_SIGNAPPROVEPOSITION.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.WTXT_SIGNAPPROVEPOSITION.Watermark = Nothing
-        '
-        'WTXT_SIGNCERTIFIEDNAME
-        '
-        Me.WTXT_SIGNCERTIFIEDNAME.BackColor = System.Drawing.Color.White
-        Me.WTXT_SIGNCERTIFIEDNAME.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.WTXT_SIGNCERTIFIEDNAME.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.WTXT_SIGNCERTIFIEDNAME.Location = New System.Drawing.Point(24, 249)
-        Me.WTXT_SIGNCERTIFIEDNAME.Name = "WTXT_SIGNCERTIFIEDNAME"
-        Me.WTXT_SIGNCERTIFIEDNAME.ReadOnly = True
-        Me.WTXT_SIGNCERTIFIEDNAME.Size = New System.Drawing.Size(450, 21)
-        Me.WTXT_SIGNCERTIFIEDNAME.TabIndex = 1431
-        Me.WTXT_SIGNCERTIFIEDNAME.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.WTXT_SIGNCERTIFIEDNAME.Watermark = Nothing
-        '
-        'WTXT_SIGNCERTIFIEDPOSITION
-        '
-        Me.WTXT_SIGNCERTIFIEDPOSITION.BackColor = System.Drawing.Color.White
-        Me.WTXT_SIGNCERTIFIEDPOSITION.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.WTXT_SIGNCERTIFIEDPOSITION.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.WTXT_SIGNCERTIFIEDPOSITION.Location = New System.Drawing.Point(25, 295)
-        Me.WTXT_SIGNCERTIFIEDPOSITION.Name = "WTXT_SIGNCERTIFIEDPOSITION"
-        Me.WTXT_SIGNCERTIFIEDPOSITION.ReadOnly = True
-        Me.WTXT_SIGNCERTIFIEDPOSITION.Size = New System.Drawing.Size(450, 21)
-        Me.WTXT_SIGNCERTIFIEDPOSITION.TabIndex = 1432
-        Me.WTXT_SIGNCERTIFIEDPOSITION.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.WTXT_SIGNCERTIFIEDPOSITION.Watermark = Nothing
-        '
-        'WTXT_SIGNNOTEDPOSITION
-        '
-        Me.WTXT_SIGNNOTEDPOSITION.BackColor = System.Drawing.Color.White
-        Me.WTXT_SIGNNOTEDPOSITION.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.WTXT_SIGNNOTEDPOSITION.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.WTXT_SIGNNOTEDPOSITION.Location = New System.Drawing.Point(24, 402)
-        Me.WTXT_SIGNNOTEDPOSITION.Name = "WTXT_SIGNNOTEDPOSITION"
-        Me.WTXT_SIGNNOTEDPOSITION.ReadOnly = True
-        Me.WTXT_SIGNNOTEDPOSITION.Size = New System.Drawing.Size(450, 21)
-        Me.WTXT_SIGNNOTEDPOSITION.TabIndex = 1434
-        Me.WTXT_SIGNNOTEDPOSITION.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.WTXT_SIGNNOTEDPOSITION.Watermark = Nothing
-        '
-        'WTXT_SIGNNOTEDNAME
-        '
-        Me.WTXT_SIGNNOTEDNAME.BackColor = System.Drawing.Color.White
-        Me.WTXT_SIGNNOTEDNAME.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.WTXT_SIGNNOTEDNAME.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.WTXT_SIGNNOTEDNAME.Location = New System.Drawing.Point(24, 359)
-        Me.WTXT_SIGNNOTEDNAME.Name = "WTXT_SIGNNOTEDNAME"
-        Me.WTXT_SIGNNOTEDNAME.ReadOnly = True
-        Me.WTXT_SIGNNOTEDNAME.Size = New System.Drawing.Size(450, 21)
-        Me.WTXT_SIGNNOTEDNAME.TabIndex = 1433
-        Me.WTXT_SIGNNOTEDNAME.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.WTXT_SIGNNOTEDNAME.Watermark = Nothing
-        '
-        'WTXT_PRDIV
-        '
-        Me.WTXT_PRDIV.BackColor = System.Drawing.Color.White
-        Me.WTXT_PRDIV.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.WTXT_PRDIV.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.V1VWUSERACCEMPLOYEEBindingSource, "HDIV_DIVISION", True))
-        Me.WTXT_PRDIV.Font = New System.Drawing.Font("Century Gothic", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.WTXT_PRDIV.Location = New System.Drawing.Point(354, 75)
-        Me.WTXT_PRDIV.MaxLength = 50
-        Me.WTXT_PRDIV.Name = "WTXT_PRDIV"
-        Me.WTXT_PRDIV.ReadOnly = True
-        Me.WTXT_PRDIV.Size = New System.Drawing.Size(347, 21)
-        Me.WTXT_PRDIV.TabIndex = 1453
-        Me.WTXT_PRDIV.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.WTXT_PRDIV.Watermark = Nothing
-        '
-        'WTXT_PRDEPARTMENT
-        '
-        Me.WTXT_PRDEPARTMENT.BackColor = System.Drawing.Color.White
-        Me.WTXT_PRDEPARTMENT.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.WTXT_PRDEPARTMENT.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.V1VWUSERACCEMPLOYEEBindingSource, "HDPT_DEPARTMENT", True))
-        Me.WTXT_PRDEPARTMENT.Font = New System.Drawing.Font("Century Gothic", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.WTXT_PRDEPARTMENT.Location = New System.Drawing.Point(12, 75)
-        Me.WTXT_PRDEPARTMENT.MaxLength = 50
-        Me.WTXT_PRDEPARTMENT.Name = "WTXT_PRDEPARTMENT"
-        Me.WTXT_PRDEPARTMENT.ReadOnly = True
-        Me.WTXT_PRDEPARTMENT.Size = New System.Drawing.Size(330, 21)
-        Me.WTXT_PRDEPARTMENT.TabIndex = 1452
-        Me.WTXT_PRDEPARTMENT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.WTXT_PRDEPARTMENT.Watermark = Nothing
-        '
-        'WTXT_SUBMITTEDBY
-        '
-        Me.WTXT_SUBMITTEDBY.BackColor = System.Drawing.Color.White
-        Me.WTXT_SUBMITTEDBY.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.WTXT_SUBMITTEDBY.Font = New System.Drawing.Font("Century Gothic", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.WTXT_SUBMITTEDBY.Location = New System.Drawing.Point(421, 30)
-        Me.WTXT_SUBMITTEDBY.MaxLength = 50
-        Me.WTXT_SUBMITTEDBY.Name = "WTXT_SUBMITTEDBY"
-        Me.WTXT_SUBMITTEDBY.ReadOnly = True
-        Me.WTXT_SUBMITTEDBY.Size = New System.Drawing.Size(281, 21)
-        Me.WTXT_SUBMITTEDBY.TabIndex = 1417
-        Me.WTXT_SUBMITTEDBY.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.WTXT_SUBMITTEDBY.Watermark = Nothing
-        '
-        'WTXT_PURPOSE
-        '
-        Me.WTXT_PURPOSE.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.WTXT_PURPOSE.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.WTXT_PURPOSE.Location = New System.Drawing.Point(14, 119)
-        Me.WTXT_PURPOSE.MaxLength = 300
-        Me.WTXT_PURPOSE.Multiline = True
-        Me.WTXT_PURPOSE.Name = "WTXT_PURPOSE"
-        Me.WTXT_PURPOSE.Size = New System.Drawing.Size(688, 44)
-        Me.WTXT_PURPOSE.TabIndex = 1417
-        Me.WTXT_PURPOSE.Watermark = Nothing
-        '
-        'WTXT_APPCODE
-        '
-        Me.WTXT_APPCODE.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.WTXT_APPCODE.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.WTXT_APPCODE.Location = New System.Drawing.Point(13, 32)
-        Me.WTXT_APPCODE.MaxLength = 15
-        Me.WTXT_APPCODE.Name = "WTXT_APPCODE"
-        Me.WTXT_APPCODE.Size = New System.Drawing.Size(113, 19)
-        Me.WTXT_APPCODE.TabIndex = 1427
-        Me.WTXT_APPCODE.Watermark = Nothing
-        '
-        'WTXT_REQUESTEDDATE
-        '
-        Me.WTXT_REQUESTEDDATE.BackColor = System.Drawing.Color.White
-        Me.WTXT_REQUESTEDDATE.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.WTXT_REQUESTEDDATE.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SPM4CURRENTDATETIMEBindingSource, "datenowFormatted", True))
-        Me.WTXT_REQUESTEDDATE.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.WTXT_REQUESTEDDATE.Location = New System.Drawing.Point(285, 31)
-        Me.WTXT_REQUESTEDDATE.Name = "WTXT_REQUESTEDDATE"
-        Me.WTXT_REQUESTEDDATE.ReadOnly = True
-        Me.WTXT_REQUESTEDDATE.Size = New System.Drawing.Size(125, 19)
-        Me.WTXT_REQUESTEDDATE.TabIndex = 1417
-        Me.WTXT_REQUESTEDDATE.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.WTXT_REQUESTEDDATE.Watermark = Nothing
-        '
         'wtxt_date
         '
         Me.wtxt_date.BorderStyle = System.Windows.Forms.BorderStyle.None
@@ -3344,19 +3358,6 @@ Partial Class FRM_PR
         Me.wtxt_date.Size = New System.Drawing.Size(109, 21)
         Me.wtxt_date.TabIndex = 1432
         Me.wtxt_date.Watermark = Nothing
-        '
-        'WTXT_PR_SEARCH
-        '
-        Me.WTXT_PR_SEARCH.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.WTXT_PR_SEARCH.Font = New System.Drawing.Font("Century Gothic", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.WTXT_PR_SEARCH.ForeColor = System.Drawing.Color.Black
-        Me.WTXT_PR_SEARCH.Location = New System.Drawing.Point(59, 15)
-        Me.WTXT_PR_SEARCH.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.WTXT_PR_SEARCH.MaxLength = 300
-        Me.WTXT_PR_SEARCH.Name = "WTXT_PR_SEARCH"
-        Me.WTXT_PR_SEARCH.Size = New System.Drawing.Size(957, 25)
-        Me.WTXT_PR_SEARCH.TabIndex = 1442
-        Me.WTXT_PR_SEARCH.Watermark = "Search purpose, purchase request No."
         '
         'FRM_PR
         '

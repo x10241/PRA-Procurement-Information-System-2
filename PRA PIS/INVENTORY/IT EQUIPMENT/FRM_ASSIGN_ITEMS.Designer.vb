@@ -69,6 +69,8 @@ Partial Class FRM_ASSIGN_ITEMS
         Me.RECT_PRCANCELEDIT = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.VWM4_ITEM_ASSTableAdapter = New PRA_PIS.DS_VIEWSTableAdapters.VWM4_ITEM_ASSTableAdapter()
         Me.TableAdapterManager = New PRA_PIS.DS_VIEWSTableAdapters.TableAdapterManager()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.RectangleShape2 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.PNL.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -156,6 +158,7 @@ Partial Class FRM_ASSIGN_ITEMS
         'Panel1
         '
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.BTN_ASSIGN_ITEM)
         Me.Panel1.Controls.Add(Me.BTN_GENERATE_REPORT)
         Me.Panel1.Controls.Add(Me.ShapeContainer2)
@@ -193,7 +196,7 @@ Partial Class FRM_ASSIGN_ITEMS
         Me.BTN_GENERATE_REPORT.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTN_GENERATE_REPORT.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold)
         Me.BTN_GENERATE_REPORT.Image = CType(resources.GetObject("BTN_GENERATE_REPORT.Image"), System.Drawing.Image)
-        Me.BTN_GENERATE_REPORT.Location = New System.Drawing.Point(136, 6)
+        Me.BTN_GENERATE_REPORT.Location = New System.Drawing.Point(980, 8)
         Me.BTN_GENERATE_REPORT.Name = "BTN_GENERATE_REPORT"
         Me.BTN_GENERATE_REPORT.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.BTN_GENERATE_REPORT.Size = New System.Drawing.Size(128, 41)
@@ -208,7 +211,7 @@ Partial Class FRM_ASSIGN_ITEMS
         Me.ShapeContainer2.Location = New System.Drawing.Point(0, 0)
         Me.ShapeContainer2.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer2.Name = "ShapeContainer2"
-        Me.ShapeContainer2.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape1, Me.RECT_INVENTORY_CANCEL})
+        Me.ShapeContainer2.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape2, Me.RectangleShape1, Me.RECT_INVENTORY_CANCEL})
         Me.ShapeContainer2.Size = New System.Drawing.Size(1115, 56)
         Me.ShapeContainer2.TabIndex = 1470
         Me.ShapeContainer2.TabStop = False
@@ -221,9 +224,9 @@ Partial Class FRM_ASSIGN_ITEMS
         Me.RectangleShape1.Cursor = System.Windows.Forms.Cursors.Arrow
         Me.RectangleShape1.FillColor = System.Drawing.SystemColors.HighlightText
         Me.RectangleShape1.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
-        Me.RectangleShape1.Location = New System.Drawing.Point(12, 4)
+        Me.RectangleShape1.Location = New System.Drawing.Point(12, 3)
         Me.RectangleShape1.Name = "RectangleShape1"
-        Me.RectangleShape1.Size = New System.Drawing.Size(117, 44)
+        Me.RectangleShape1.Size = New System.Drawing.Size(117, 45)
         '
         'RECT_INVENTORY_CANCEL
         '
@@ -233,7 +236,7 @@ Partial Class FRM_ASSIGN_ITEMS
         Me.RECT_INVENTORY_CANCEL.Cursor = System.Windows.Forms.Cursors.Arrow
         Me.RECT_INVENTORY_CANCEL.FillColor = System.Drawing.SystemColors.HighlightText
         Me.RECT_INVENTORY_CANCEL.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
-        Me.RECT_INVENTORY_CANCEL.Location = New System.Drawing.Point(134, 4)
+        Me.RECT_INVENTORY_CANCEL.Location = New System.Drawing.Point(978, 6)
         Me.RECT_INVENTORY_CANCEL.Name = "RECT_INVENTORY_CANCEL"
         Me.RECT_INVENTORY_CANCEL.Size = New System.Drawing.Size(131, 44)
         '
@@ -533,6 +536,37 @@ Partial Class FRM_ASSIGN_ITEMS
         Me.TableAdapterManager.Connection = Nothing
         Me.TableAdapterManager.UpdateOrder = PRA_PIS.DS_VIEWSTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.White
+        Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.LightSeaGreen
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Button1.Image = Global.PRA_PIS.My.Resources.Resources.outline_low_priority_black_18dp
+        Me.Button1.Location = New System.Drawing.Point(139, 5)
+        Me.Button1.Name = "Button1"
+        Me.Button1.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Button1.Size = New System.Drawing.Size(122, 41)
+        Me.Button1.TabIndex = 1474
+        Me.Button1.Text = "RE-ASSIGN ITEM"
+        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'RectangleShape2
+        '
+        Me.RectangleShape2.BorderColor = System.Drawing.Color.LightSeaGreen
+        Me.RectangleShape2.BorderWidth = 2
+        Me.RectangleShape2.CornerRadius = 5
+        Me.RectangleShape2.Cursor = System.Windows.Forms.Cursors.Arrow
+        Me.RectangleShape2.FillColor = System.Drawing.SystemColors.HighlightText
+        Me.RectangleShape2.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
+        Me.RectangleShape2.Location = New System.Drawing.Point(137, 3)
+        Me.RectangleShape2.Name = "RectangleShape2"
+        Me.RectangleShape2.Size = New System.Drawing.Size(124, 44)
+        '
         'FRM_ASSIGN_ITEMS
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
@@ -606,4 +640,6 @@ Partial Class FRM_ASSIGN_ITEMS
     Friend WithEvents DATEASSIGNEDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents Expr2DataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents BTN_REASSIGN As DataGridViewButtonColumn
+    Friend WithEvents Button1 As Button
+    Friend WithEvents RectangleShape2 As PowerPacks.RectangleShape
 End Class

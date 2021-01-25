@@ -23,15 +23,15 @@ Partial Class FRM_PCOUNT
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle19 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FRM_PCOUNT))
-        Dim DataGridViewCellStyle21 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle22 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle23 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle24 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PNL = New System.Windows.Forms.Panel()
         Me.BTN_PHY_CLOSE = New System.Windows.Forms.Button()
         Me.LBLSETTINGSHEAD = New System.Windows.Forms.Label()
@@ -50,8 +50,8 @@ Partial Class FRM_PCOUNT
         Me.VWM4_PCM_LISTBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DS_VIEWS = New PRA_PIS.DS_VIEWS()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.LLBL_MIGRATE = New System.Windows.Forms.LinkLabel()
-        Me.PB_MIGRATE = New System.Windows.Forms.PictureBox()
+        Me.LLBL_PC_SETUP = New System.Windows.Forms.LinkLabel()
+        Me.PB_PC_SETUP = New System.Windows.Forms.PictureBox()
         Me.PNL_DATES = New System.Windows.Forms.Panel()
         Me.BTN_DATE_TO = New System.Windows.Forms.Button()
         Me.WTXT_DATE_TO = New PRA_PIS.WatermarkTextBox()
@@ -69,6 +69,10 @@ Partial Class FRM_PCOUNT
         Me.PNL_DGV = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.PNL_PHY_DETAILS = New System.Windows.Forms.Panel()
+        Me.WTXT_PCSETUP_CODE = New PRA_PIS.WatermarkTextBox()
+        Me.TBLM4_INV_ITEMS_PCOU_SETUPBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DS_PROPERTYDB = New PRA_PIS.DS_PROPERTYDB()
+        Me.Label19 = New System.Windows.Forms.Label()
         Me.PictureBox6 = New System.Windows.Forms.PictureBox()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
@@ -103,6 +107,7 @@ Partial Class FRM_PCOUNT
         Me.LLBL_RECORDSFOUND = New System.Windows.Forms.LinkLabel()
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.ShapeContainer2 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
+        Me.RectangleShape9 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RECT_PHY_CANCEL = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RectangleShape6 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RECT_PHY_NOTED_BY = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
@@ -112,13 +117,12 @@ Partial Class FRM_PCOUNT
         Me.RECT_PHY_DATE_ENCODED = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RECT_PHY_REASON = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.ShapeContainer5 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
-        Me.RECT_MIGRATE = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.RECT_PC_SETUP = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RECT_NEW_PHY_C = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.PNL_ITEM_DETAILS_ENC = New System.Windows.Forms.Panel()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.CB_UNIT_TYPE = New System.Windows.Forms.ComboBox()
         Me.TBLG3UNITSBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DS_PROPERTYDB = New PRA_PIS.DS_PROPERTYDB()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.WTXT_TOTAL_COST = New PRA_PIS.WatermarkTextBox()
@@ -182,12 +186,15 @@ Partial Class FRM_PCOUNT
         Me.SPM4_ITEM_MIGRATEBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SPM4_ITEM_MIGRATETableAdapter = New PRA_PIS.DS_STOREDPROCTableAdapters.SPM4_ITEM_MIGRATETableAdapter()
         Me.TBLG3_UNITSTableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.TBLG3_UNITSTableAdapter()
+        Me.TBLM4_INV_ITEMS_PCOU_SETUPTableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.TBLM4_INV_ITEMS_PCOU_SETUPTableAdapter()
+        Me.TBLM4_INV_STOCKSTableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.TBLM4_INV_STOCKSTableAdapter()
+        Me.TBLM4_INV_STOCKSBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PNL.SuspendLayout()
         CType(Me.DGV_PCOUNT_LIST, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.VWM4_PCM_LISTBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DS_VIEWS, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
-        CType(Me.PB_MIGRATE, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PB_PC_SETUP, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PNL_DATES.SuspendLayout()
         CType(Me.SPM4CURRENTDATETIMEBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DS_STOREDPROC, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -195,6 +202,8 @@ Partial Class FRM_PCOUNT
         Me.PNL_DGV.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.PNL_PHY_DETAILS.SuspendLayout()
+        CType(Me.TBLM4_INV_ITEMS_PCOU_SETUPBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DS_PROPERTYDB, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -205,7 +214,6 @@ Partial Class FRM_PCOUNT
         Me.PNL_ITEM_DETAILS_ENC.SuspendLayout()
         Me.Panel7.SuspendLayout()
         CType(Me.TBLG3UNITSBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DS_PROPERTYDB, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DS_PRAJO_DATABASE, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -219,6 +227,7 @@ Partial Class FRM_PCOUNT
         CType(Me.TBLM4_INV_ITEMS_PCOUNT_MAINBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TBLM4_INV_ITEMS_MIGRATEBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SPM4_ITEM_MIGRATEBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TBLM4_INV_STOCKSBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PNL
@@ -239,6 +248,7 @@ Partial Class FRM_PCOUNT
         '
         Me.BTN_PHY_CLOSE.BackgroundImage = Global.PRA_PIS.My.Resources.Resources.close_icon_white
         Me.BTN_PHY_CLOSE.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BTN_PHY_CLOSE.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BTN_PHY_CLOSE.FlatAppearance.BorderColor = System.Drawing.Color.Teal
         Me.BTN_PHY_CLOSE.FlatAppearance.BorderSize = 3
         Me.BTN_PHY_CLOSE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -302,42 +312,42 @@ Partial Class FRM_PCOUNT
         Me.DGV_PCOUNT_LIST.AllowUserToResizeRows = False
         Me.DGV_PCOUNT_LIST.AutoGenerateColumns = False
         Me.DGV_PCOUNT_LIST.BackgroundColor = System.Drawing.Color.White
-        DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle17.BackColor = System.Drawing.Color.Transparent
-        DataGridViewCellStyle17.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGV_PCOUNT_LIST.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle17
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Transparent
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGV_PCOUNT_LIST.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DGV_PCOUNT_LIST.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGV_PCOUNT_LIST.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DATEENCODEDDataGridViewTextBoxColumn, Me.PCOMREASDataGridViewTextBoxColumn, Me.PCOMIDDataGridViewTextBoxColumn, Me.PCOMCHKBYDataGridViewTextBoxColumn, Me.PCOMNOTEDBYDataGridViewTextBoxColumn, Me.PCOMREMARKSDataGridViewTextBoxColumn, Me.PCOMDATEDataGridViewTextBoxColumn, Me.Print, Me.Migrate})
         Me.DGV_PCOUNT_LIST.Cursor = System.Windows.Forms.Cursors.Hand
         Me.DGV_PCOUNT_LIST.DataSource = Me.VWM4_PCM_LISTBindingSource
-        DataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle18.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark
-        DataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DGV_PCOUNT_LIST.DefaultCellStyle = DataGridViewCellStyle18
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGV_PCOUNT_LIST.DefaultCellStyle = DataGridViewCellStyle2
         Me.DGV_PCOUNT_LIST.Location = New System.Drawing.Point(2, 4)
         Me.DGV_PCOUNT_LIST.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.DGV_PCOUNT_LIST.MultiSelect = False
         Me.DGV_PCOUNT_LIST.Name = "DGV_PCOUNT_LIST"
         Me.DGV_PCOUNT_LIST.ReadOnly = True
-        DataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle19.BackColor = System.Drawing.Color.LightSkyBlue
-        DataGridViewCellStyle19.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGV_PCOUNT_LIST.RowHeadersDefaultCellStyle = DataGridViewCellStyle19
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.LightSkyBlue
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGV_PCOUNT_LIST.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.DGV_PCOUNT_LIST.RowHeadersVisible = False
-        DataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.Gray
-        Me.DGV_PCOUNT_LIST.RowsDefaultCellStyle = DataGridViewCellStyle20
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Gray
+        Me.DGV_PCOUNT_LIST.RowsDefaultCellStyle = DataGridViewCellStyle4
         Me.DGV_PCOUNT_LIST.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DGV_PCOUNT_LIST.Size = New System.Drawing.Size(262, 542)
         Me.DGV_PCOUNT_LIST.TabIndex = 0
@@ -433,8 +443,8 @@ Partial Class FRM_PCOUNT
         '
         'Panel1
         '
-        Me.Panel1.Controls.Add(Me.LLBL_MIGRATE)
-        Me.Panel1.Controls.Add(Me.PB_MIGRATE)
+        Me.Panel1.Controls.Add(Me.LLBL_PC_SETUP)
+        Me.Panel1.Controls.Add(Me.PB_PC_SETUP)
         Me.Panel1.Controls.Add(Me.PNL_DATES)
         Me.Panel1.Controls.Add(Me.LLBL_NEW_PHY_C)
         Me.Panel1.Controls.Add(Me.PB_NEW_PHY_C)
@@ -447,34 +457,34 @@ Partial Class FRM_PCOUNT
         Me.Panel1.Size = New System.Drawing.Size(1080, 607)
         Me.Panel1.TabIndex = 1418
         '
-        'LLBL_MIGRATE
+        'LLBL_PC_SETUP
         '
-        Me.LLBL_MIGRATE.AutoSize = True
-        Me.LLBL_MIGRATE.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.LLBL_MIGRATE.Font = New System.Drawing.Font("Century Gothic", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LLBL_MIGRATE.ForeColor = System.Drawing.Color.DimGray
-        Me.LLBL_MIGRATE.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
-        Me.LLBL_MIGRATE.LinkColor = System.Drawing.Color.DimGray
-        Me.LLBL_MIGRATE.Location = New System.Drawing.Point(984, 18)
-        Me.LLBL_MIGRATE.Name = "LLBL_MIGRATE"
-        Me.LLBL_MIGRATE.Size = New System.Drawing.Size(82, 19)
-        Me.LLBL_MIGRATE.TabIndex = 1543
-        Me.LLBL_MIGRATE.TabStop = True
-        Me.LLBL_MIGRATE.Text = "MIGRATE"
+        Me.LLBL_PC_SETUP.AutoSize = True
+        Me.LLBL_PC_SETUP.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.LLBL_PC_SETUP.Font = New System.Drawing.Font("Century Gothic", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LLBL_PC_SETUP.ForeColor = System.Drawing.Color.DimGray
+        Me.LLBL_PC_SETUP.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
+        Me.LLBL_PC_SETUP.LinkColor = System.Drawing.Color.DimGray
+        Me.LLBL_PC_SETUP.Location = New System.Drawing.Point(937, 18)
+        Me.LLBL_PC_SETUP.Name = "LLBL_PC_SETUP"
+        Me.LLBL_PC_SETUP.Size = New System.Drawing.Size(131, 19)
+        Me.LLBL_PC_SETUP.TabIndex = 1543
+        Me.LLBL_PC_SETUP.TabStop = True
+        Me.LLBL_PC_SETUP.Text = "P.COUNT SETUP"
         '
-        'PB_MIGRATE
+        'PB_PC_SETUP
         '
-        Me.PB_MIGRATE.BackgroundImage = Global.PRA_PIS.My.Resources.Resources._323_3233189_plm_migration_data_source_icon_png_clipart
-        Me.PB_MIGRATE.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PB_MIGRATE.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PB_MIGRATE.InitialImage = Nothing
-        Me.PB_MIGRATE.Location = New System.Drawing.Point(947, 11)
-        Me.PB_MIGRATE.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.PB_MIGRATE.Name = "PB_MIGRATE"
-        Me.PB_MIGRATE.Size = New System.Drawing.Size(37, 34)
-        Me.PB_MIGRATE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PB_MIGRATE.TabIndex = 1544
-        Me.PB_MIGRATE.TabStop = False
+        Me.PB_PC_SETUP.BackgroundImage = Global.PRA_PIS.My.Resources.Resources.outline_settings_black_18dp
+        Me.PB_PC_SETUP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PB_PC_SETUP.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PB_PC_SETUP.InitialImage = Nothing
+        Me.PB_PC_SETUP.Location = New System.Drawing.Point(900, 11)
+        Me.PB_PC_SETUP.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.PB_PC_SETUP.Name = "PB_PC_SETUP"
+        Me.PB_PC_SETUP.Size = New System.Drawing.Size(37, 34)
+        Me.PB_PC_SETUP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PB_PC_SETUP.TabIndex = 1544
+        Me.PB_PC_SETUP.TabStop = False
         '
         'PNL_DATES
         '
@@ -671,6 +681,8 @@ Partial Class FRM_PCOUNT
         '
         'PNL_PHY_DETAILS
         '
+        Me.PNL_PHY_DETAILS.Controls.Add(Me.WTXT_PCSETUP_CODE)
+        Me.PNL_PHY_DETAILS.Controls.Add(Me.Label19)
         Me.PNL_PHY_DETAILS.Controls.Add(Me.PictureBox6)
         Me.PNL_PHY_DETAILS.Controls.Add(Me.PictureBox5)
         Me.PNL_PHY_DETAILS.Controls.Add(Me.PictureBox4)
@@ -698,6 +710,42 @@ Partial Class FRM_PCOUNT
         Me.PNL_PHY_DETAILS.Name = "PNL_PHY_DETAILS"
         Me.PNL_PHY_DETAILS.Size = New System.Drawing.Size(796, 545)
         Me.PNL_PHY_DETAILS.TabIndex = 0
+        '
+        'WTXT_PCSETUP_CODE
+        '
+        Me.WTXT_PCSETUP_CODE.BackColor = System.Drawing.Color.White
+        Me.WTXT_PCSETUP_CODE.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.WTXT_PCSETUP_CODE.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.TBLM4_INV_ITEMS_PCOU_SETUPBindingSource, "PCSE_ID", True))
+        Me.WTXT_PCSETUP_CODE.Font = New System.Drawing.Font("Century Gothic", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.WTXT_PCSETUP_CODE.Location = New System.Drawing.Point(19, 41)
+        Me.WTXT_PCSETUP_CODE.Name = "WTXT_PCSETUP_CODE"
+        Me.WTXT_PCSETUP_CODE.ReadOnly = True
+        Me.WTXT_PCSETUP_CODE.Size = New System.Drawing.Size(119, 21)
+        Me.WTXT_PCSETUP_CODE.TabIndex = 1538
+        Me.WTXT_PCSETUP_CODE.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.WTXT_PCSETUP_CODE.Watermark = ""
+        '
+        'TBLM4_INV_ITEMS_PCOU_SETUPBindingSource
+        '
+        Me.TBLM4_INV_ITEMS_PCOU_SETUPBindingSource.DataMember = "TBLM4_INV_ITEMS_PCOU_SETUP"
+        Me.TBLM4_INV_ITEMS_PCOU_SETUPBindingSource.DataSource = Me.DS_PROPERTYDB
+        '
+        'DS_PROPERTYDB
+        '
+        Me.DS_PROPERTYDB.DataSetName = "DS_PROPERTYDB"
+        Me.DS_PROPERTYDB.EnforceConstraints = False
+        Me.DS_PROPERTYDB.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.ForeColor = System.Drawing.Color.DimGray
+        Me.Label19.Location = New System.Drawing.Point(21, 26)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(45, 17)
+        Me.Label19.TabIndex = 1539
+        Me.Label19.Text = "Code"
         '
         'PictureBox6
         '
@@ -900,7 +948,7 @@ Partial Class FRM_PCOUNT
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.DimGray
-        Me.Label10.Location = New System.Drawing.Point(21, 26)
+        Me.Label10.Location = New System.Drawing.Point(151, 26)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(173, 17)
         Me.Label10.TabIndex = 1538
@@ -911,9 +959,9 @@ Partial Class FRM_PCOUNT
         Me.WTXT_PHY_REASON.BackColor = System.Drawing.Color.White
         Me.WTXT_PHY_REASON.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.WTXT_PHY_REASON.Font = New System.Drawing.Font("Century Gothic", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.WTXT_PHY_REASON.Location = New System.Drawing.Point(18, 42)
+        Me.WTXT_PHY_REASON.Location = New System.Drawing.Point(154, 42)
         Me.WTXT_PHY_REASON.Name = "WTXT_PHY_REASON"
-        Me.WTXT_PHY_REASON.Size = New System.Drawing.Size(574, 21)
+        Me.WTXT_PHY_REASON.Size = New System.Drawing.Size(438, 21)
         Me.WTXT_PHY_REASON.TabIndex = 1537
         Me.WTXT_PHY_REASON.Watermark = ""
         '
@@ -924,40 +972,40 @@ Partial Class FRM_PCOUNT
         Me.DGV_ITEM_PCOUNT.AllowUserToResizeColumns = False
         Me.DGV_ITEM_PCOUNT.AllowUserToResizeRows = False
         Me.DGV_ITEM_PCOUNT.BackgroundColor = System.Drawing.Color.White
-        DataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle21.BackColor = System.Drawing.Color.Transparent
-        DataGridViewCellStyle21.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGV_ITEM_PCOUNT.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle21
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.Transparent
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGV_ITEM_PCOUNT.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.DGV_ITEM_PCOUNT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGV_ITEM_PCOUNT.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ITEM_CODE, Me.ITM_DESC, Me.PCOU_STK, Me.unitcost, Me.totalcost, Me.unittype, Me.PCOU_REMARKS, Me.PCOU_BY, Me.ACTIONEDIT, Me.ACTIONREMOVE})
-        DataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle22.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark
-        DataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DGV_ITEM_PCOUNT.DefaultCellStyle = DataGridViewCellStyle22
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGV_ITEM_PCOUNT.DefaultCellStyle = DataGridViewCellStyle6
         Me.DGV_ITEM_PCOUNT.Location = New System.Drawing.Point(7, 155)
         Me.DGV_ITEM_PCOUNT.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.DGV_ITEM_PCOUNT.MultiSelect = False
         Me.DGV_ITEM_PCOUNT.Name = "DGV_ITEM_PCOUNT"
         Me.DGV_ITEM_PCOUNT.ReadOnly = True
-        DataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle23.BackColor = System.Drawing.Color.LightSkyBlue
-        DataGridViewCellStyle23.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGV_ITEM_PCOUNT.RowHeadersDefaultCellStyle = DataGridViewCellStyle23
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.LightSkyBlue
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGV_ITEM_PCOUNT.RowHeadersDefaultCellStyle = DataGridViewCellStyle7
         Me.DGV_ITEM_PCOUNT.RowHeadersVisible = False
-        DataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.Gray
-        Me.DGV_ITEM_PCOUNT.RowsDefaultCellStyle = DataGridViewCellStyle24
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Gray
+        Me.DGV_ITEM_PCOUNT.RowsDefaultCellStyle = DataGridViewCellStyle8
         Me.DGV_ITEM_PCOUNT.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DGV_ITEM_PCOUNT.Size = New System.Drawing.Size(782, 288)
         Me.DGV_ITEM_PCOUNT.TabIndex = 1440
@@ -1087,10 +1135,18 @@ Partial Class FRM_PCOUNT
         Me.ShapeContainer2.Location = New System.Drawing.Point(0, 0)
         Me.ShapeContainer2.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer2.Name = "ShapeContainer2"
-        Me.ShapeContainer2.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RECT_PHY_CANCEL, Me.RectangleShape6, Me.RECT_PHY_NOTED_BY, Me.RECT_PHY_CHK_BY, Me.RECT_PHY_SAVE, Me.RECT_PHY_REMARKS, Me.RECT_PHY_DATE_ENCODED, Me.RECT_PHY_REASON})
+        Me.ShapeContainer2.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape9, Me.RECT_PHY_CANCEL, Me.RectangleShape6, Me.RECT_PHY_NOTED_BY, Me.RECT_PHY_CHK_BY, Me.RECT_PHY_SAVE, Me.RECT_PHY_REMARKS, Me.RECT_PHY_DATE_ENCODED, Me.RECT_PHY_REASON})
         Me.ShapeContainer2.Size = New System.Drawing.Size(796, 545)
         Me.ShapeContainer2.TabIndex = 1444
         Me.ShapeContainer2.TabStop = False
+        '
+        'RectangleShape9
+        '
+        Me.RectangleShape9.BorderColor = System.Drawing.Color.Gray
+        Me.RectangleShape9.CornerRadius = 5
+        Me.RectangleShape9.Location = New System.Drawing.Point(13, 35)
+        Me.RectangleShape9.Name = "RectangleShape9"
+        Me.RectangleShape9.Size = New System.Drawing.Size(129, 32)
         '
         'RECT_PHY_CANCEL
         '
@@ -1164,31 +1220,31 @@ Partial Class FRM_PCOUNT
         '
         Me.RECT_PHY_REASON.BorderColor = System.Drawing.Color.Gray
         Me.RECT_PHY_REASON.CornerRadius = 5
-        Me.RECT_PHY_REASON.Location = New System.Drawing.Point(13, 35)
+        Me.RECT_PHY_REASON.Location = New System.Drawing.Point(145, 35)
         Me.RECT_PHY_REASON.Name = "RECT_PHY_REASON"
-        Me.RECT_PHY_REASON.Size = New System.Drawing.Size(611, 32)
+        Me.RECT_PHY_REASON.Size = New System.Drawing.Size(479, 32)
         '
         'ShapeContainer5
         '
         Me.ShapeContainer5.Location = New System.Drawing.Point(0, 0)
         Me.ShapeContainer5.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer5.Name = "ShapeContainer5"
-        Me.ShapeContainer5.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RECT_MIGRATE, Me.RECT_NEW_PHY_C})
+        Me.ShapeContainer5.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RECT_PC_SETUP, Me.RECT_NEW_PHY_C})
         Me.ShapeContainer5.Size = New System.Drawing.Size(1080, 607)
         Me.ShapeContainer5.TabIndex = 1528
         Me.ShapeContainer5.TabStop = False
         '
-        'RECT_MIGRATE
+        'RECT_PC_SETUP
         '
-        Me.RECT_MIGRATE.BorderColor = System.Drawing.Color.DimGray
-        Me.RECT_MIGRATE.BorderWidth = 2
-        Me.RECT_MIGRATE.CornerRadius = 19
-        Me.RECT_MIGRATE.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.RECT_MIGRATE.FillColor = System.Drawing.SystemColors.HighlightText
-        Me.RECT_MIGRATE.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
-        Me.RECT_MIGRATE.Location = New System.Drawing.Point(930, 7)
-        Me.RECT_MIGRATE.Name = "RECT_MIGRATE"
-        Me.RECT_MIGRATE.Size = New System.Drawing.Size(143, 40)
+        Me.RECT_PC_SETUP.BorderColor = System.Drawing.Color.DimGray
+        Me.RECT_PC_SETUP.BorderWidth = 2
+        Me.RECT_PC_SETUP.CornerRadius = 19
+        Me.RECT_PC_SETUP.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.RECT_PC_SETUP.FillColor = System.Drawing.SystemColors.HighlightText
+        Me.RECT_PC_SETUP.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
+        Me.RECT_PC_SETUP.Location = New System.Drawing.Point(888, 7)
+        Me.RECT_PC_SETUP.Name = "RECT_PC_SETUP"
+        Me.RECT_PC_SETUP.Size = New System.Drawing.Size(185, 40)
         '
         'RECT_NEW_PHY_C
         '
@@ -1260,12 +1316,6 @@ Partial Class FRM_PCOUNT
         '
         Me.TBLG3UNITSBindingSource.DataMember = "TBLG3_UNITS"
         Me.TBLG3UNITSBindingSource.DataSource = Me.DS_PROPERTYDB
-        '
-        'DS_PROPERTYDB
-        '
-        Me.DS_PROPERTYDB.DataSetName = "DS_PROPERTYDB"
-        Me.DS_PROPERTYDB.EnforceConstraints = False
-        Me.DS_PROPERTYDB.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'Label18
         '
@@ -1814,6 +1864,19 @@ Partial Class FRM_PCOUNT
         '
         Me.TBLG3_UNITSTableAdapter.ClearBeforeFill = True
         '
+        'TBLM4_INV_ITEMS_PCOU_SETUPTableAdapter
+        '
+        Me.TBLM4_INV_ITEMS_PCOU_SETUPTableAdapter.ClearBeforeFill = True
+        '
+        'TBLM4_INV_STOCKSTableAdapter
+        '
+        Me.TBLM4_INV_STOCKSTableAdapter.ClearBeforeFill = True
+        '
+        'TBLM4_INV_STOCKSBindingSource
+        '
+        Me.TBLM4_INV_STOCKSBindingSource.DataMember = "TBLM4_INV_STOCKS"
+        Me.TBLM4_INV_STOCKSBindingSource.DataSource = Me.DS_PROPERTYDB
+        '
         'FRM_PCOUNT
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1837,7 +1900,7 @@ Partial Class FRM_PCOUNT
         CType(Me.DS_VIEWS, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.PB_MIGRATE, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PB_PC_SETUP, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PNL_DATES.ResumeLayout(False)
         Me.PNL_DATES.PerformLayout()
         CType(Me.SPM4CURRENTDATETIMEBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1847,6 +1910,8 @@ Partial Class FRM_PCOUNT
         Me.Panel2.ResumeLayout(False)
         Me.PNL_PHY_DETAILS.ResumeLayout(False)
         Me.PNL_PHY_DETAILS.PerformLayout()
+        CType(Me.TBLM4_INV_ITEMS_PCOU_SETUPBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DS_PROPERTYDB, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1859,7 +1924,6 @@ Partial Class FRM_PCOUNT
         Me.Panel7.ResumeLayout(False)
         Me.Panel7.PerformLayout()
         CType(Me.TBLG3UNITSBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DS_PROPERTYDB, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DS_PRAJO_DATABASE, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1873,6 +1937,7 @@ Partial Class FRM_PCOUNT
         CType(Me.TBLM4_INV_ITEMS_PCOUNT_MAINBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TBLM4_INV_ITEMS_MIGRATEBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SPM4_ITEM_MIGRATEBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TBLM4_INV_STOCKSBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -2024,7 +2089,14 @@ Partial Class FRM_PCOUNT
     Friend WithEvents PCOU_BY As DataGridViewTextBoxColumn
     Friend WithEvents ACTIONEDIT As DataGridViewButtonColumn
     Friend WithEvents ACTIONREMOVE As DataGridViewButtonColumn
-    Friend WithEvents LLBL_MIGRATE As LinkLabel
-    Friend WithEvents PB_MIGRATE As PictureBox
-    Friend WithEvents RECT_MIGRATE As PowerPacks.RectangleShape
+    Friend WithEvents LLBL_PC_SETUP As LinkLabel
+    Friend WithEvents PB_PC_SETUP As PictureBox
+    Friend WithEvents RECT_PC_SETUP As PowerPacks.RectangleShape
+    Friend WithEvents TBLM4_INV_ITEMS_PCOU_SETUPTableAdapter As DS_PROPERTYDBTableAdapters.TBLM4_INV_ITEMS_PCOU_SETUPTableAdapter
+    Friend WithEvents TBLM4_INV_ITEMS_PCOU_SETUPBindingSource As BindingSource
+    Friend WithEvents WTXT_PCSETUP_CODE As WatermarkTextBox
+    Friend WithEvents Label19 As Label
+    Friend WithEvents RectangleShape9 As PowerPacks.RectangleShape
+    Friend WithEvents TBLM4_INV_STOCKSTableAdapter As DS_PROPERTYDBTableAdapters.TBLM4_INV_STOCKSTableAdapter
+    Friend WithEvents TBLM4_INV_STOCKSBindingSource As BindingSource
 End Class

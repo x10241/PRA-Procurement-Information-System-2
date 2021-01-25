@@ -113,5 +113,10 @@
     End Sub
 #End Region
 
+    Private Sub FRM_LOGIN_HandleCreated(sender As Object, e As EventArgs) Handles Me.HandleCreated
+        LBL_VERSION.Text = "VERSION (" & My.Settings.APP_VER2 & ")"
+    End Sub
+
+
 
 End Class

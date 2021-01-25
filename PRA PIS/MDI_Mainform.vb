@@ -281,7 +281,7 @@ Public Class MDI_Mainform
 #End Region
 
     Private Sub MDI_Mainform_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        LBL_RIMSHEADER.Text = My.Settings.APPVER
+
         TMR_MDIMAIN.Start()
     End Sub
 
@@ -309,4 +309,9 @@ Public Class MDI_Mainform
             Me.Close()
         End Try
     End Sub
+
+    Private Sub FRM_MDI_MAINFORMHandleCreated(sender As Object, e As EventArgs) Handles Me.HandleCreated
+        LBL_RIMSHEADER.Text = My.Settings.APPVER
+    End Sub
+
 End Class

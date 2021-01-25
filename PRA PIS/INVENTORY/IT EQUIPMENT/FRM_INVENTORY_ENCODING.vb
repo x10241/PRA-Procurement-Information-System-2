@@ -44,20 +44,20 @@ Public Class FRM_INVENTORY_ENCODING
         Me.WindowState = FormWindowState.Minimized
     End Sub
 
-    Private Sub Form1_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles PNL.MouseDown
+    Private Sub Form1_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles PNL.MouseDown, GRP_ITEMINFO_PER_LOT.MouseDown, PNL_LOT_PACK.MouseDown
         drag = True
         mousex = Cursor.Position.X - Me.Left
         mousey = Cursor.Position.Y - Me.Top
     End Sub
 
-    Private Sub Form1_MouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles PNL.MouseMove
+    Private Sub Form1_MouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles PNL.MouseMove, GRP_ITEMINFO_PER_LOT.MouseMove, PNL_LOT_PACK.MouseMove
         If drag Then
             Top = Cursor.Position.Y - mousey
             Left = Cursor.Position.X - mousex
         End If
     End Sub
 
-    Private Sub Form1_MouseUp(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles PNL.MouseUp
+    Private Sub Form1_MouseUp(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles PNL.MouseUp, GRP_ITEMINFO_PER_LOT.MouseUp, PNL_LOT_PACK.MouseUp
         drag = False
     End Sub
 #End Region
@@ -203,7 +203,7 @@ Public Class FRM_INVENTORY_ENCODING
                 'category
                 TblM4_INVENTORY_CATEGORYTableAdapter.FillByINV_CODE(DS_PROPERTYDB.tblM4_INVENTORY_CATEGORY, 0, DIVISION_NO)
                 If CB_INVENTORY_CATEGORY.Items.Count > 0 Then
-                    Me.TblM4_INVENTORY_SUB_CATEGORYTableAdapter.FillByCAT_CODE(Me.DS_PROPERTYDB.tblM4_INVENTORY_SUB_CATEGORY, CInt(If(IsDBNull(CB_INVENTORY_CATEGORY.SelectedValue), 0, CB_INVENTORY_CATEGORY.SelectedValue)))
+                    Me.TblM4_INVENTORY_SUB_CATEGORYTableAdapter.FillByCAT_CODE(Me.DS_PROPERTYDB.tblM4_INVENTORY_SUB_CATEGORY, CInt(If(IsDBNull(CB_INVENTORY_CATEGORY.SelectedValue), 0, CB_INVENTORY_CATEGORY.SelectedValue)), DIVISION_NO)
                 End If
                 Me.TblM4_INVENTORY_ACQUISITION_VALUETableAdapter.Fill(Me.DS_PROPERTYDB.tblM4_INVENTORY_ACQUISITION_VALUE)
                 Me.TblV1_HRISDIVISIONTableAdapter.Fill(Me.DS_TABLES.tblV1_HRISDIVISION)
@@ -368,6 +368,7 @@ Public Class FRM_INVENTORY_ENCODING
                                          WTXT_INVENTORY_ITEM_DESCRIPTION.Text,
                                          WTXT_INVENTORY_DOA.Text)
                 End If
+                NotificationManager.Show(Me, "Item added!", Color.Green, 1000)
 
 #End Region
 
@@ -579,13 +580,13 @@ Public Class FRM_INVENTORY_ENCODING
                         TBLM4_INVENTORY_ITEMS_INVTableAdapter.IQ_ITEMS_INV(ITEMCODE, WTXT_INV_NO.Text, EMP_NO)
                     End If
                 Next
-                VWM4_INV_ITEMS_LISTTableAdapter.FillBySEARCH(DS_VIEWS.VWM4_INV_ITEMS_LIST, WTXT_INV_SEARCH.Text)
             End If
             _ENABLE("Clear")
             UCPROCTim.Enabled = True
             slideFlaG = False
-            LLBL_TOT_REC.Text = DGV_INVENTORY_LIST.Rows.Count
             DGV_INVENTORY_LIST.ClearSelection()
+            VWM4_INV_ITEMS_LISTTableAdapter.FillBySEARCH(DS_VIEWS.VWM4_INV_ITEMS_LIST, WTXT_INV_SEARCH.Text)
+            LLBL_TOT_REC.Text = DGV_ITEM_LIST.Rows.Count
             NotificationManager.Show(Me, "Successfully Saved.", Color.Green, 3000)
         Catch ex As Exception
             NotificationManager.Show(Me, ex.Message, Color.Red, 3000)
@@ -598,7 +599,7 @@ Public Class FRM_INVENTORY_ENCODING
 #Region "Combobox Index Changed"
     Private Sub CB_INVENTORY_CATEGORY_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CB_INVENTORY_CATEGORY.SelectedIndexChanged
         If CB_INVENTORY_CATEGORY.Items.Count > 0 Then
-            Me.TblM4_INVENTORY_SUB_CATEGORYTableAdapter.FillByCAT_CODE(Me.DS_PROPERTYDB.tblM4_INVENTORY_SUB_CATEGORY, CInt(If(IsDBNull(CB_INVENTORY_CATEGORY.SelectedValue), 0, CB_INVENTORY_CATEGORY.SelectedValue)))
+            Me.TblM4_INVENTORY_SUB_CATEGORYTableAdapter.FillByCAT_CODE(Me.DS_PROPERTYDB.tblM4_INVENTORY_SUB_CATEGORY, CInt(If(IsDBNull(CB_INVENTORY_CATEGORY.SelectedValue), 0, CB_INVENTORY_CATEGORY.SelectedValue)), DIVISION_NO)
         End If
     End Sub
 #End Region
@@ -715,9 +716,9 @@ Public Class FRM_INVENTORY_ENCODING
             FRM_ADDITIONAL_CATEGORIZATION.GRP_SUB_CATEGORY.Visible = True
             FRM_ADDITIONAL_CATEGORIZATION.ShowDialog()
             If ISLOT Then
-                Me.TblM4_INVENTORY_SUB_CATEGORYTableAdapter.FillByCAT_CODE(DS_PROPERTYDB.tblM4_INVENTORY_SUB_CATEGORY, CInt(CB_CAT_LOT.SelectedValue))
+                Me.TblM4_INVENTORY_SUB_CATEGORYTableAdapter.FillByCAT_CODE(DS_PROPERTYDB.tblM4_INVENTORY_SUB_CATEGORY, CInt(CB_CAT_LOT.SelectedValue), DIVISION_NO)
             Else
-                Me.TblM4_INVENTORY_SUB_CATEGORYTableAdapter.FillByCAT_CODE(DS_PROPERTYDB.tblM4_INVENTORY_SUB_CATEGORY, CInt(CB_INVENTORY_CATEGORY.SelectedValue))
+                Me.TblM4_INVENTORY_SUB_CATEGORYTableAdapter.FillByCAT_CODE(DS_PROPERTYDB.tblM4_INVENTORY_SUB_CATEGORY, CInt(CB_INVENTORY_CATEGORY.SelectedValue), DIVISION_NO)
             End If
 
         ElseIf btn Is BTN_ADD_BRAND_PROVIDER Or btn Is BTN_ADD_BRAND_PROVIDER_LOT Then

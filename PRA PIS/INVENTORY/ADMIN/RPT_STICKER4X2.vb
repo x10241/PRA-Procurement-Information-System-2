@@ -18,7 +18,7 @@ Imports System
 Imports System.ComponentModel
 
 
-Public Class RPT_ABSTRACT_OF_QUOTATION
+Public Class RPT_STICKER4X2
     Inherits ReportClass
     
     Public Sub New()
@@ -27,7 +27,7 @@ Public Class RPT_ABSTRACT_OF_QUOTATION
     
     Public Overrides Property ResourceName() As String
         Get
-            Return "RPT_ABSTRACT_OF_QUOTATION.rpt"
+            Return "RPT_STICKER4X2.rpt"
         End Get
         Set
             'Do nothing
@@ -45,7 +45,7 @@ Public Class RPT_ABSTRACT_OF_QUOTATION
     
     Public Overrides Property FullResourceName() As String
         Get
-            Return "PRA_PIS.RPT_ABSTRACT_OF_QUOTATION.rpt"
+            Return "PRA_PIS.RPT_STICKER4X2.rpt"
         End Get
         Set
             'Do nothing
@@ -91,18 +91,10 @@ Public Class RPT_ABSTRACT_OF_QUOTATION
             Return Me.ReportDefinition.Sections(4)
         End Get
     End Property
-    
-    <Browsable(false),  _
-     DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)>  _
-    Public ReadOnly Property Parameter_PropertyNo() As CrystalDecisions.[Shared].IParameterField
-        Get
-            Return Me.DataDefinition.ParameterFields(0)
-        End Get
-    End Property
 End Class
 
 <System.Drawing.ToolboxBitmapAttribute(GetType(CrystalDecisions.[Shared].ExportOptions), "report.bmp")>  _
-Public Class CachedRPT_ABSTRACT_OF_QUOTATION
+Public Class CachedRPT_STICKER4X2
     Inherits Component
     Implements ICachedReport
     
@@ -144,7 +136,7 @@ Public Class CachedRPT_ABSTRACT_OF_QUOTATION
     End Property
     
     Public Overridable Function CreateReport() As CrystalDecisions.CrystalReports.Engine.ReportDocument Implements CrystalDecisions.ReportSource.ICachedReport.CreateReport
-        Dim rpt As RPT_ABSTRACT_OF_QUOTATION = New RPT_ABSTRACT_OF_QUOTATION()
+        Dim rpt As RPT_STICKER4X2 = New RPT_STICKER4X2()
         rpt.Site = Me.Site
         Return rpt
     End Function

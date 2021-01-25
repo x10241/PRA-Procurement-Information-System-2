@@ -197,8 +197,25 @@ Partial Class FRM_ITEM_REQ
         Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.VWG3_PRIMARY_SIGNATORYBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.APNL_SIGNATORIES = New System.Windows.Forms.Panel()
+        Me.APNL_AP = New System.Windows.Forms.Panel()
+        Me.Label38 = New System.Windows.Forms.Label()
+        Me.WTXT_AP_ISS_POS = New PRA_PIS.WatermarkTextBox()
+        Me.BTN_SAVE_AUTH = New System.Windows.Forms.Button()
+        Me.Label35 = New System.Windows.Forms.Label()
+        Me.Label36 = New System.Windows.Forms.Label()
+        Me.WTXT_AP_ISS_NAME = New PRA_PIS.WatermarkTextBox()
+        Me.WTXT_AP_AUTH_POS = New PRA_PIS.WatermarkTextBox()
+        Me.WTXT_AP_AUTH_NAME = New PRA_PIS.WatermarkTextBox()
+        Me.Label39 = New System.Windows.Forms.Label()
+        Me.Label41 = New System.Windows.Forms.Label()
+        Me.Label42 = New System.Windows.Forms.Label()
+        Me.ShapeContainer9 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
+        Me.RectangleShape32 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.RectangleShape33 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.RectangleShape34 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.RectangleShape35 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.WTXT_REQ_POSITION = New PRA_PIS.WatermarkTextBox()
-        Me.WTXT_REQUESTED_BY = New PRA_PIS.WatermarkTextBox()
+        Me.WTXT_REQ_NAME = New PRA_PIS.WatermarkTextBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label19 = New System.Windows.Forms.Label()
@@ -341,6 +358,7 @@ Partial Class FRM_ITEM_REQ
         CType(Me.VWG3_PRIMARY_SIGNATORYDataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.VWG3_PRIMARY_SIGNATORYBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.APNL_SIGNATORIES.SuspendLayout()
+        Me.APNL_AP.SuspendLayout()
         CType(Me.PB_SET_DEFAULT, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SPM4EMPLSIGNLISTBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TBLG3_PRIMARY_SIGNATORYBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -2153,8 +2171,9 @@ Partial Class FRM_ITEM_REQ
         'APNL_SIGNATORIES
         '
         Me.APNL_SIGNATORIES.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.APNL_SIGNATORIES.Controls.Add(Me.APNL_AP)
         Me.APNL_SIGNATORIES.Controls.Add(Me.WTXT_REQ_POSITION)
-        Me.APNL_SIGNATORIES.Controls.Add(Me.WTXT_REQUESTED_BY)
+        Me.APNL_SIGNATORIES.Controls.Add(Me.WTXT_REQ_NAME)
         Me.APNL_SIGNATORIES.Controls.Add(Me.Label13)
         Me.APNL_SIGNATORIES.Controls.Add(Me.Label14)
         Me.APNL_SIGNATORIES.Controls.Add(Me.Label19)
@@ -2182,6 +2201,209 @@ Partial Class FRM_ITEM_REQ
         Me.APNL_SIGNATORIES.Size = New System.Drawing.Size(390, 546)
         Me.APNL_SIGNATORIES.TabIndex = 1532
         '
+        'APNL_AP
+        '
+        Me.APNL_AP.Controls.Add(Me.Label38)
+        Me.APNL_AP.Controls.Add(Me.WTXT_AP_ISS_POS)
+        Me.APNL_AP.Controls.Add(Me.BTN_SAVE_AUTH)
+        Me.APNL_AP.Controls.Add(Me.Label35)
+        Me.APNL_AP.Controls.Add(Me.Label36)
+        Me.APNL_AP.Controls.Add(Me.WTXT_AP_ISS_NAME)
+        Me.APNL_AP.Controls.Add(Me.WTXT_AP_AUTH_POS)
+        Me.APNL_AP.Controls.Add(Me.WTXT_AP_AUTH_NAME)
+        Me.APNL_AP.Controls.Add(Me.Label39)
+        Me.APNL_AP.Controls.Add(Me.Label41)
+        Me.APNL_AP.Controls.Add(Me.Label42)
+        Me.APNL_AP.Controls.Add(Me.ShapeContainer9)
+        Me.APNL_AP.Location = New System.Drawing.Point(0, 31)
+        Me.APNL_AP.Name = "APNL_AP"
+        Me.APNL_AP.Size = New System.Drawing.Size(388, 514)
+        Me.APNL_AP.TabIndex = 1550
+        '
+        'Label38
+        '
+        Me.Label38.AutoSize = True
+        Me.Label38.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label38.ForeColor = System.Drawing.Color.DimGray
+        Me.Label38.Location = New System.Drawing.Point(22, 226)
+        Me.Label38.Name = "Label38"
+        Me.Label38.Size = New System.Drawing.Size(58, 17)
+        Me.Label38.TabIndex = 1544
+        Me.Label38.Text = "Position"
+        '
+        'WTXT_AP_ISS_POS
+        '
+        Me.WTXT_AP_ISS_POS.BackColor = System.Drawing.Color.White
+        Me.WTXT_AP_ISS_POS.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.WTXT_AP_ISS_POS.Font = New System.Drawing.Font("Century Gothic", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.WTXT_AP_ISS_POS.Location = New System.Drawing.Point(17, 237)
+        Me.WTXT_AP_ISS_POS.Multiline = True
+        Me.WTXT_AP_ISS_POS.Name = "WTXT_AP_ISS_POS"
+        Me.WTXT_AP_ISS_POS.ReadOnly = True
+        Me.WTXT_AP_ISS_POS.Size = New System.Drawing.Size(352, 24)
+        Me.WTXT_AP_ISS_POS.TabIndex = 1548
+        Me.WTXT_AP_ISS_POS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.WTXT_AP_ISS_POS.Watermark = ""
+        '
+        'BTN_SAVE_AUTH
+        '
+        Me.BTN_SAVE_AUTH.BackColor = System.Drawing.Color.DodgerBlue
+        Me.BTN_SAVE_AUTH.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BTN_SAVE_AUTH.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BTN_SAVE_AUTH.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue
+        Me.BTN_SAVE_AUTH.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.BTN_SAVE_AUTH.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RoyalBlue
+        Me.BTN_SAVE_AUTH.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BTN_SAVE_AUTH.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTN_SAVE_AUTH.ForeColor = System.Drawing.Color.White
+        Me.BTN_SAVE_AUTH.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BTN_SAVE_AUTH.Location = New System.Drawing.Point(14, 123)
+        Me.BTN_SAVE_AUTH.Name = "BTN_SAVE_AUTH"
+        Me.BTN_SAVE_AUTH.Size = New System.Drawing.Size(363, 30)
+        Me.BTN_SAVE_AUTH.TabIndex = 1555
+        Me.BTN_SAVE_AUTH.Text = "Save Authorized/Requested"
+        Me.BTN_SAVE_AUTH.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.BTN_SAVE_AUTH.UseVisualStyleBackColor = False
+        '
+        'Label35
+        '
+        Me.Label35.AutoSize = True
+        Me.Label35.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label35.ForeColor = System.Drawing.Color.DimGray
+        Me.Label35.Location = New System.Drawing.Point(22, 181)
+        Me.Label35.Name = "Label35"
+        Me.Label35.Size = New System.Drawing.Size(48, 17)
+        Me.Label35.TabIndex = 1554
+        Me.Label35.Text = "Name"
+        '
+        'Label36
+        '
+        Me.Label36.AutoSize = True
+        Me.Label36.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label36.ForeColor = System.Drawing.Color.DimGray
+        Me.Label36.Location = New System.Drawing.Point(20, 28)
+        Me.Label36.Name = "Label36"
+        Me.Label36.Size = New System.Drawing.Size(48, 17)
+        Me.Label36.TabIndex = 1553
+        Me.Label36.Text = "Name"
+        '
+        'WTXT_AP_ISS_NAME
+        '
+        Me.WTXT_AP_ISS_NAME.BackColor = System.Drawing.Color.White
+        Me.WTXT_AP_ISS_NAME.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.WTXT_AP_ISS_NAME.Font = New System.Drawing.Font("Century Gothic", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.WTXT_AP_ISS_NAME.Location = New System.Drawing.Point(17, 196)
+        Me.WTXT_AP_ISS_NAME.Multiline = True
+        Me.WTXT_AP_ISS_NAME.Name = "WTXT_AP_ISS_NAME"
+        Me.WTXT_AP_ISS_NAME.ReadOnly = True
+        Me.WTXT_AP_ISS_NAME.Size = New System.Drawing.Size(352, 24)
+        Me.WTXT_AP_ISS_NAME.TabIndex = 1551
+        Me.WTXT_AP_ISS_NAME.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.WTXT_AP_ISS_NAME.Watermark = ""
+        '
+        'WTXT_AP_AUTH_POS
+        '
+        Me.WTXT_AP_AUTH_POS.BackColor = System.Drawing.Color.White
+        Me.WTXT_AP_AUTH_POS.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.WTXT_AP_AUTH_POS.Font = New System.Drawing.Font("Century Gothic", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.WTXT_AP_AUTH_POS.Location = New System.Drawing.Point(17, 91)
+        Me.WTXT_AP_AUTH_POS.Multiline = True
+        Me.WTXT_AP_AUTH_POS.Name = "WTXT_AP_AUTH_POS"
+        Me.WTXT_AP_AUTH_POS.ReadOnly = True
+        Me.WTXT_AP_AUTH_POS.Size = New System.Drawing.Size(352, 24)
+        Me.WTXT_AP_AUTH_POS.TabIndex = 1550
+        Me.WTXT_AP_AUTH_POS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.WTXT_AP_AUTH_POS.Watermark = ""
+        '
+        'WTXT_AP_AUTH_NAME
+        '
+        Me.WTXT_AP_AUTH_NAME.BackColor = System.Drawing.Color.White
+        Me.WTXT_AP_AUTH_NAME.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.WTXT_AP_AUTH_NAME.Font = New System.Drawing.Font("Century Gothic", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.WTXT_AP_AUTH_NAME.Location = New System.Drawing.Point(17, 43)
+        Me.WTXT_AP_AUTH_NAME.Multiline = True
+        Me.WTXT_AP_AUTH_NAME.Name = "WTXT_AP_AUTH_NAME"
+        Me.WTXT_AP_AUTH_NAME.ReadOnly = True
+        Me.WTXT_AP_AUTH_NAME.Size = New System.Drawing.Size(352, 24)
+        Me.WTXT_AP_AUTH_NAME.TabIndex = 1549
+        Me.WTXT_AP_AUTH_NAME.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.WTXT_AP_AUTH_NAME.Watermark = ""
+        '
+        'Label39
+        '
+        Me.Label39.AutoSize = True
+        Me.Label39.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label39.ForeColor = System.Drawing.Color.DimGray
+        Me.Label39.Location = New System.Drawing.Point(20, 78)
+        Me.Label39.Name = "Label39"
+        Me.Label39.Size = New System.Drawing.Size(58, 17)
+        Me.Label39.TabIndex = 1542
+        Me.Label39.Text = "Position"
+        '
+        'Label41
+        '
+        Me.Label41.AutoSize = True
+        Me.Label41.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label41.ForeColor = System.Drawing.Color.DimGray
+        Me.Label41.Location = New System.Drawing.Point(6, 163)
+        Me.Label41.Name = "Label41"
+        Me.Label41.Size = New System.Drawing.Size(74, 16)
+        Me.Label41.TabIndex = 1537
+        Me.Label41.Text = "Issued by:"
+        '
+        'Label42
+        '
+        Me.Label42.AutoSize = True
+        Me.Label42.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label42.ForeColor = System.Drawing.Color.DimGray
+        Me.Label42.Location = New System.Drawing.Point(6, 5)
+        Me.Label42.Name = "Label42"
+        Me.Label42.Size = New System.Drawing.Size(177, 16)
+        Me.Label42.TabIndex = 1536
+        Me.Label42.Text = "Authorized/Requested by:"
+        '
+        'ShapeContainer9
+        '
+        Me.ShapeContainer9.Location = New System.Drawing.Point(0, 0)
+        Me.ShapeContainer9.Margin = New System.Windows.Forms.Padding(0)
+        Me.ShapeContainer9.Name = "ShapeContainer9"
+        Me.ShapeContainer9.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape32, Me.RectangleShape33, Me.RectangleShape34, Me.RectangleShape35})
+        Me.ShapeContainer9.Size = New System.Drawing.Size(388, 514)
+        Me.ShapeContainer9.TabIndex = 0
+        Me.ShapeContainer9.TabStop = False
+        '
+        'RectangleShape32
+        '
+        Me.RectangleShape32.BorderColor = System.Drawing.Color.Gray
+        Me.RectangleShape32.CornerRadius = 5
+        Me.RectangleShape32.Location = New System.Drawing.Point(13, 233)
+        Me.RectangleShape32.Name = "RectangleShape18"
+        Me.RectangleShape32.Size = New System.Drawing.Size(361, 32)
+        '
+        'RectangleShape33
+        '
+        Me.RectangleShape33.BorderColor = System.Drawing.Color.Gray
+        Me.RectangleShape33.CornerRadius = 5
+        Me.RectangleShape33.Location = New System.Drawing.Point(13, 191)
+        Me.RectangleShape33.Name = "RectangleShape17"
+        Me.RectangleShape33.Size = New System.Drawing.Size(361, 33)
+        '
+        'RectangleShape34
+        '
+        Me.RectangleShape34.BorderColor = System.Drawing.Color.Gray
+        Me.RectangleShape34.CornerRadius = 5
+        Me.RectangleShape34.Location = New System.Drawing.Point(14, 84)
+        Me.RectangleShape34.Name = "RectangleShape16"
+        Me.RectangleShape34.Size = New System.Drawing.Size(361, 33)
+        '
+        'RectangleShape35
+        '
+        Me.RectangleShape35.BorderColor = System.Drawing.Color.Gray
+        Me.RectangleShape35.CornerRadius = 5
+        Me.RectangleShape35.Location = New System.Drawing.Point(14, 37)
+        Me.RectangleShape35.Name = "RectangleShape13"
+        Me.RectangleShape35.Size = New System.Drawing.Size(361, 33)
+        '
         'WTXT_REQ_POSITION
         '
         Me.WTXT_REQ_POSITION.BorderStyle = System.Windows.Forms.BorderStyle.None
@@ -2194,24 +2416,24 @@ Partial Class FRM_ITEM_REQ
         Me.WTXT_REQ_POSITION.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.WTXT_REQ_POSITION.Watermark = ""
         '
-        'WTXT_REQUESTED_BY
+        'WTXT_REQ_NAME
         '
-        Me.WTXT_REQUESTED_BY.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.WTXT_REQUESTED_BY.Font = New System.Drawing.Font("Century Gothic", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.WTXT_REQUESTED_BY.Location = New System.Drawing.Point(23, 66)
-        Me.WTXT_REQUESTED_BY.Multiline = True
-        Me.WTXT_REQUESTED_BY.Name = "WTXT_REQUESTED_BY"
-        Me.WTXT_REQUESTED_BY.Size = New System.Drawing.Size(352, 24)
-        Me.WTXT_REQUESTED_BY.TabIndex = 1560
-        Me.WTXT_REQUESTED_BY.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.WTXT_REQUESTED_BY.Watermark = ""
+        Me.WTXT_REQ_NAME.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.WTXT_REQ_NAME.Font = New System.Drawing.Font("Century Gothic", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.WTXT_REQ_NAME.Location = New System.Drawing.Point(23, 66)
+        Me.WTXT_REQ_NAME.Multiline = True
+        Me.WTXT_REQ_NAME.Name = "WTXT_REQ_NAME"
+        Me.WTXT_REQ_NAME.Size = New System.Drawing.Size(352, 24)
+        Me.WTXT_REQ_NAME.TabIndex = 1560
+        Me.WTXT_REQ_NAME.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.WTXT_REQ_NAME.Watermark = ""
         '
         'Label13
         '
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label13.ForeColor = System.Drawing.Color.DimGray
-        Me.Label13.Location = New System.Drawing.Point(42, 51)
+        Me.Label13.Location = New System.Drawing.Point(30, 51)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(48, 17)
         Me.Label13.TabIndex = 1559
@@ -2222,7 +2444,7 @@ Partial Class FRM_ITEM_REQ
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label14.ForeColor = System.Drawing.Color.DimGray
-        Me.Label14.Location = New System.Drawing.Point(42, 98)
+        Me.Label14.Location = New System.Drawing.Point(30, 98)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(58, 17)
         Me.Label14.TabIndex = 1558
@@ -2244,7 +2466,7 @@ Partial Class FRM_ITEM_REQ
         Me.Label25.AutoSize = True
         Me.Label25.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label25.ForeColor = System.Drawing.Color.DimGray
-        Me.Label25.Location = New System.Drawing.Point(41, 395)
+        Me.Label25.Location = New System.Drawing.Point(29, 395)
         Me.Label25.Name = "Label25"
         Me.Label25.Size = New System.Drawing.Size(48, 17)
         Me.Label25.TabIndex = 1556
@@ -2266,7 +2488,7 @@ Partial Class FRM_ITEM_REQ
         Me.Label24.AutoSize = True
         Me.Label24.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label24.ForeColor = System.Drawing.Color.DimGray
-        Me.Label24.Location = New System.Drawing.Point(41, 286)
+        Me.Label24.Location = New System.Drawing.Point(29, 286)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(48, 17)
         Me.Label24.TabIndex = 1554
@@ -2277,7 +2499,7 @@ Partial Class FRM_ITEM_REQ
         Me.Label23.AutoSize = True
         Me.Label23.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label23.ForeColor = System.Drawing.Color.DimGray
-        Me.Label23.Location = New System.Drawing.Point(41, 174)
+        Me.Label23.Location = New System.Drawing.Point(29, 174)
         Me.Label23.Name = "Label23"
         Me.Label23.Size = New System.Drawing.Size(48, 17)
         Me.Label23.TabIndex = 1553
@@ -2360,7 +2582,7 @@ Partial Class FRM_ITEM_REQ
         Me.Label22.AutoSize = True
         Me.Label22.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label22.ForeColor = System.Drawing.Color.DimGray
-        Me.Label22.Location = New System.Drawing.Point(41, 436)
+        Me.Label22.Location = New System.Drawing.Point(29, 436)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(58, 17)
         Me.Label22.TabIndex = 1546
@@ -2371,7 +2593,7 @@ Partial Class FRM_ITEM_REQ
         Me.Label20.AutoSize = True
         Me.Label20.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label20.ForeColor = System.Drawing.Color.DimGray
-        Me.Label20.Location = New System.Drawing.Point(41, 328)
+        Me.Label20.Location = New System.Drawing.Point(29, 328)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(58, 17)
         Me.Label20.TabIndex = 1544
@@ -2382,7 +2604,7 @@ Partial Class FRM_ITEM_REQ
         Me.Label18.AutoSize = True
         Me.Label18.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label18.ForeColor = System.Drawing.Color.DimGray
-        Me.Label18.Location = New System.Drawing.Point(41, 221)
+        Me.Label18.Location = New System.Drawing.Point(29, 221)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(58, 17)
         Me.Label18.TabIndex = 1542
@@ -2629,6 +2851,7 @@ Partial Class FRM_ITEM_REQ
         Me.TableAdapterManager.TBLM4_INV_ITEMS_NAMETableAdapter = Nothing
         Me.TableAdapterManager.TBLM4_INV_ITEMS_OTHERS_MAINTableAdapter = Nothing
         Me.TableAdapterManager.TBLM4_INV_ITEMS_OTHERSTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_ITEMS_PCOU_SETUPTableAdapter = Nothing
         Me.TableAdapterManager.TBLM4_INV_ITEMS_PCOUNT_MAINTableAdapter = Nothing
         Me.TableAdapterManager.TBLM4_INV_ITEMS_PCOUNTTableAdapter = Nothing
         Me.TableAdapterManager.TBLM4_INV_ITEMS_SIZE_MAINTableAdapter = Nothing
@@ -2651,6 +2874,8 @@ Partial Class FRM_ITEM_REQ
         Me.TableAdapterManager.tblM4_INVENTORY_ITEMS_LOCATIONTableAdapter = Nothing
         Me.TableAdapterManager.tblM4_INVENTORY_ITEMS_PROPERTYTableAdapter = Nothing
         Me.TableAdapterManager.tblM4_INVENTORY_ITEMSTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INVENTORY_PACK_MAINTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INVENTORY_PACKTableAdapter = Nothing
         Me.TableAdapterManager.TBLM4_INVENTORY_REQUISITIONTableAdapter = Nothing
         Me.TableAdapterManager.tblM4_INVENTORY_SUB_CATEGORYTableAdapter = Nothing
         Me.TableAdapterManager.tblM4_INVENTORY_TYPETableAdapter = Me.TblM4_INVENTORY_TYPETableAdapter
@@ -3249,6 +3474,8 @@ Partial Class FRM_ITEM_REQ
         CType(Me.VWG3_PRIMARY_SIGNATORYBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.APNL_SIGNATORIES.ResumeLayout(False)
         Me.APNL_SIGNATORIES.PerformLayout()
+        Me.APNL_AP.ResumeLayout(False)
+        Me.APNL_AP.PerformLayout()
         CType(Me.PB_SET_DEFAULT, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SPM4EMPLSIGNLISTBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TBLG3_PRIMARY_SIGNATORYBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
@@ -3453,7 +3680,7 @@ Partial Class FRM_ITEM_REQ
     Friend WithEvents VWM4_ITEM_REQ_DESCTableAdapter As DS_VIEWSTableAdapters.VWM4_ITEM_REQ_DESCTableAdapter
     Friend WithEvents VWM4_ITEM_REQ_DESCBindingSource As BindingSource
     Friend WithEvents WTXT_REQ_POSITION As WatermarkTextBox
-    Friend WithEvents WTXT_REQUESTED_BY As WatermarkTextBox
+    Friend WithEvents WTXT_REQ_NAME As WatermarkTextBox
     Friend WithEvents Label13 As Label
     Friend WithEvents Label14 As Label
     Friend WithEvents Label19 As Label
@@ -3549,4 +3776,21 @@ Partial Class FRM_ITEM_REQ
     Friend WithEvents RECT_SAVE As PowerPacks.RectangleShape
     Friend WithEvents SPM4_ITEM_REQ_CODEBindingSource As BindingSource
     Friend WithEvents SPM4_ITEM_REQ_CODETableAdapter As DS_STOREDPROCTableAdapters.SPM4_ITEM_REQ_CODETableAdapter
+    Friend WithEvents APNL_AP As Panel
+    Friend WithEvents Label35 As Label
+    Friend WithEvents Label36 As Label
+    Friend WithEvents WTXT_AP_ISS_POS As WatermarkTextBox
+    Friend WithEvents WTXT_AP_ISS_NAME As WatermarkTextBox
+    Friend WithEvents WTXT_AP_AUTH_POS As WatermarkTextBox
+    Friend WithEvents WTXT_AP_AUTH_NAME As WatermarkTextBox
+    Friend WithEvents Label38 As Label
+    Friend WithEvents Label39 As Label
+    Friend WithEvents Label41 As Label
+    Friend WithEvents Label42 As Label
+    Friend WithEvents ShapeContainer9 As PowerPacks.ShapeContainer
+    Friend WithEvents RectangleShape32 As PowerPacks.RectangleShape
+    Friend WithEvents RectangleShape33 As PowerPacks.RectangleShape
+    Friend WithEvents RectangleShape34 As PowerPacks.RectangleShape
+    Friend WithEvents RectangleShape35 As PowerPacks.RectangleShape
+    Friend WithEvents BTN_SAVE_AUTH As Button
 End Class

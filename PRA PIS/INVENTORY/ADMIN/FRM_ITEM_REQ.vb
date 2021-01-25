@@ -121,11 +121,12 @@ Public Class FRM_ITEM_REQ
                                                                                                 RECT_ADD_ITEM.Click,
                                                                                                 BTN_ITEM_REQ_ENC_CANCEL.Click,
                                                                                                 BTN_ADD_ITEM.Click,
-                                                                                                WTXT_REQUESTED_BY.Click,
+                                                                                                WTXT_REQ_NAME.Click,
                                                                                                 PB_REQUISITION_CLEAR_SEARCH.Click,
                                                                                                 RECT_SAVE.Click,
                                                                                                 LLBL_SAVE.Click,
-                                                                                                PB_SAVE.Click
+                                                                                                PB_SAVE.Click,
+                                                                                                BTN_SAVE_AUTH.Click
 
 
 
@@ -163,6 +164,8 @@ Public Class FRM_ITEM_REQ
             ElseIf llbl Is LLBL_NEW_REQUISITION Or pb Is PB_NEW_REQUISITION Or rect Is RECT_NEW_REQUISITION Then
                 GRP_ITEMINFO.Visible = True
                 isNew = True
+                REPRINT = False
+                ISITE = False
                 Me.TblM4_INVENTORY_TYPETableAdapter.FillBY_NOT_ITQUIPMENT(Me.DS_PROPERTYDB.tblM4_INVENTORY_TYPE)
                 UCPROCTim.Enabled = True
                 slideFlaG = True
@@ -178,6 +181,33 @@ Public Class FRM_ITEM_REQ
                 ElseIf CB_REQUISITION_TYPE.SelectedValue = 1 Or CB_REQUISITION_TYPE.SelectedValue = 2 Then
                     FILTERTYPE = "AD"
                 End If
+                If FILTERTYPE = "AP" Then
+                    RECT_FOR_THE_PERIOD.Visible = False
+                    LLBL_FOR_THE_PERIOD.Visible = False
+                    WTXT_FOR_THE_PERIOD.Visible = False
+                    WTXT_FOR_THE_PERIOD.Clear()
+                    RECT_DATE_NEEDED.Visible = False
+                    LLBL_DATE_NEEDED.Visible = False
+                    WTXT_DATE_NEEDED.Visible = False
+                ElseIf FILTERTYPE = "AD" Then
+                    RECT_FOR_THE_PERIOD.Visible = True
+                    LLBL_FOR_THE_PERIOD.Visible = True
+                    WTXT_FOR_THE_PERIOD.Visible = True
+                    RECT_DATE_NEEDED.Visible = True
+                    LLBL_DATE_NEEDED.Visible = True
+                    WTXT_DATE_NEEDED.Visible = True
+                    SPM4_CURRENTDATETIMETableAdapter.Fill(DS_STOREDPROC.SPM4_CURRENTDATETIME)
+                End If
+                Me.VWM4_ITEM_LISTTableAdapter.FillByITEM_DESC(Me.DS_VIEWS.VWM4_ITEM_LIST, "", FILTERTYPE)
+                Dim suggestions As New AutoCompleteStringCollection()
+                If VWM4_ITEM_LISTBindingSource.Count > 0 Then
+                    For x = 0 To VWM4_ITEM_LISTBindingSource.Count - 1
+                        suggestions.Add(CStr(If(IsDBNull(CType(VWM4_ITEM_LISTBindingSource.List(x), DataRowView).Item(17)), "", CType(VWM4_ITEM_LISTBindingSource.List(x), DataRowView).Item(17))))
+                    Next
+                    WTXT_ITEM_DESCRIPTION.AutoCompleteCustomSource = suggestions
+                End If
+                GET_PRI_SIGNATORY()
+                APNL_AP.Visible = False
                 GET_PRI_SIGNATORY()
 #End Region
 
@@ -252,33 +282,7 @@ Public Class FRM_ITEM_REQ
 
 #Region "PRINT PREVIEW"
             ElseIf llbl Is LLBL_PRINT_PREVIEW Or pb Is PB_PRINT_PREVIEW Or rect Is RECT_PRINT_PREVIEW Then
-                ISITE = False
-                R_CB_REQUISITION_TYPE = CB_REQUISITION_TYPE.Text
-                R_PURPOSE = WTXT_PURPOSE.Text
-                R_FOR_THE_PERIOD = WTXT_FOR_THE_PERIOD.Text
-                R_DATE_NEEDED = WTXT_DATE_NEEDED.Text
-                R_REQU_NAME = SYS_FULLNAME_FML
-                R_REQU_POSI = EMP_POSITION
-                R_AUTHORIZEDNAME = WTXT_AUTHORIZEDNAME.Text
-                R_AUTH_POSITION = WTXT_AUTH_POSITION.Text
-                R_APPR_NAME = WTXT_APPR_NAME.Text
-                R_APPR_POSI = WTXT_APPR_POSI.Text
-                R_ISSU_NAME = WTXT_ISSU_NAME.Text
-                R_ISSU_POSI = WTXT_ISSU_POSI.Text
-                R_DATE = TXT_DATENOW.Text
-                dgv = DGV_ITEM_LIST
-                If isNew = False Then
-                    printPreview = 0
-                Else
-                    printPreview = 1
-                End If
-                '  If isNew Then
-
-                '   Else
-                '
-                'End If
-
-                FRM_INVENTORY_REPORT_PRINT_PREVIEW.ShowDialog()
+                PRINT_PREVIEW()
 #End Region
 
 #Region "SAVE"
@@ -306,10 +310,16 @@ Public Class FRM_ITEM_REQ
                     End If
 
                     If MsgBox("Do you want to print?", vbYesNo, "Confirm") = vbYes Then
-                        printPreview = 1
-                        FRM_INVENTORY_REPORT_PRINT_PREVIEW.Text = "PRINT"
+                        ''  printPreview = 1
+                        'FRM_INVENTORY_REPORT_PRINT_PREVIEW.Text = "PRINT"
+                        'FRM_INVENTORY_REPORT_PRINT_PREVIEW.ShowDialog()
+                        FRM_INVENTORY_REPORT_PRINT_PREVIEW.BTN_INVENTORY_GENERATE_REPORT.Visible = True
+                        FRM_INVENTORY_REPORT_PRINT_PREVIEW.BTN_INVENTORY_GENERATE_REPORT.Text = "PRINT"
                         FRM_INVENTORY_REPORT_PRINT_PREVIEW.ShowDialog()
                     End If
+
+
+
 
                     UCPROCTim.Enabled = True
                     slideFlaG = False
@@ -334,7 +344,7 @@ Public Class FRM_ITEM_REQ
 #End Region
 
 #Region "WHEN SIGNATORY NAME CLICK"
-            ElseIf TXTGLOBAL Is WTXT_AUTHORIZEDNAME Or TXTGLOBAL Is WTXT_APPR_NAME Or TXTGLOBAL Is WTXT_ISSU_NAME Or TXTGLOBAL Is WTXT_REQUESTED_BY Then
+            ElseIf TXTGLOBAL Is WTXT_AUTHORIZEDNAME Or TXTGLOBAL Is WTXT_APPR_NAME Or TXTGLOBAL Is WTXT_ISSU_NAME Or TXTGLOBAL Is WTXT_REQ_NAME Then
                 If CType(sender, TextBox).Name = "WTXT_AUTHORIZEDNAME" Then
                     TXTGLOBAL = WTXT_AUTHORIZEDNAME
                     POSITION = WTXT_AUTH_POSITION
@@ -348,7 +358,7 @@ Public Class FRM_ITEM_REQ
                     POSITION = WTXT_ISSU_POSI
                     TXTSIGNO = WTXT_ISSU_ID
                 ElseIf CType(sender, TextBox).Name = "WTXT_REQUESTED_BY" Then
-                    TXTGLOBAL = WTXT_REQUESTED_BY
+                    TXTGLOBAL = WTXT_REQ_NAME
                     POSITION = WTXT_REQ_POSITION
                     TXTSIGNO = WTXT_REQ_ID
                 End If
@@ -397,10 +407,62 @@ Public Class FRM_ITEM_REQ
                 WTXT_REQUISITION_SEARCH.Clear()
 #End Region
 
+#Region "SAVE AUTH"
+            ElseIf btn Is BTN_SAVE_AUTH Then
+                _SAVE_SIGNATORY()
+#End Region
+
             End If
         Catch ex As Exception
             ERRLOG.WriteToErrorLog(ex.Message, ex.StackTrace, "CLICK")
         End Try
+    End Sub
+#End Region
+
+#Region "PREVIEW"
+    Sub PRINT_PREVIEW()
+        'ISITE = False
+        R_CB_REQUISITION_TYPE = CB_REQUISITION_TYPE.Text
+        R_PURPOSE = WTXT_PURPOSE.Text
+        R_FOR_THE_PERIOD = WTXT_FOR_THE_PERIOD.Text
+        R_DATE_NEEDED = WTXT_DATE_NEEDED.Text
+
+        If FILTERTYPE = "AD" Then
+            R_REQU_NAME = WTXT_REQ_NAME.Text
+            R_REQU_POSI = WTXT_REQ_POSITION.Text
+            R_AUTHORIZEDNAME = WTXT_AUTHORIZEDNAME.Text
+            R_AUTH_POSITION = WTXT_AUTH_POSITION.Text
+            R_APPR_NAME = WTXT_APPR_NAME.Text
+            R_APPR_POSI = WTXT_APPR_POSI.Text
+            R_ISSU_NAME = WTXT_ISSU_NAME.Text
+            R_ISSU_POSI = WTXT_ISSU_POSI.Text
+        Else
+            R_REQU_NAME = SYS_FULLNAME_FML
+            R_REQU_POSI = EMP_POSITION
+            R_AUTHORIZEDNAME = WTXT_AP_AUTH_NAME.Text
+            R_AUTH_POSITION = WTXT_AP_AUTH_POS.Text
+            R_APPR_NAME = ""
+            R_APPR_POSI = ""
+            R_ISSU_NAME = WTXT_AP_ISS_NAME.Text
+            R_ISSU_POSI = WTXT_AP_ISS_POS.Text
+        End If
+
+
+        R_DATE = TXT_DATENOW.Text
+        dgv = DGV_ITEM_LIST
+
+        If REPRINT Then
+            If isNew = False Then
+                FRM_INVENTORY_REPORT_PRINT_PREVIEW.BTN_INVENTORY_GENERATE_REPORT.Visible = False
+            Else
+                FRM_INVENTORY_REPORT_PRINT_PREVIEW.BTN_INVENTORY_GENERATE_REPORT.Visible = True
+            End If
+        Else
+            REQ_CODE = SPM4_ITEM_REQ_CODETableAdapter.SPM4_ITEM_REQ_CODE(DIVISION_NO)
+            FRM_INVENTORY_REPORT_PRINT_PREVIEW.BTN_INVENTORY_GENERATE_REPORT.Visible = False
+        End If
+
+        FRM_INVENTORY_REPORT_PRINT_PREVIEW.ShowDialog()
     End Sub
 #End Region
 
@@ -444,6 +506,8 @@ Public Class FRM_ITEM_REQ
             WTXT_ITEM_DESCRIPTION.AutoCompleteCustomSource = suggestions
         End If
         LLBL_RECORDSFOUND.Text = DGV_REQUISITION_LIST.Rows.Count
+        ISITE = False
+        REPRINT = True
     End Sub
 #End Region
 
@@ -460,25 +524,60 @@ Public Class FRM_ITEM_REQ
             SPM4_USER_SIGNATORYTableAdapter.FillByEMPID_FORM_CODE(DS_STOREDPROC.SPM4_USER_SIGNATORY, EMP_NO, FORM_CODE)
             Dim cnt As Integer = SPM4_USER_SIGNATORYBindingSource.Count - 1
             For i = 0 To cnt
-                If BS(SPM4_USER_SIGNATORYBindingSource, i, 10) = "Requested by:" Then
-                    WTXT_REQUESTED_BY.Text = Trim(BS(SPM4_USER_SIGNATORYBindingSource, i, 3))
-                    WTXT_REQ_POSITION.Text = Trim(BS(SPM4_USER_SIGNATORYBindingSource, i, 4))
-                    WTXT_REQ_ID.Text = Trim(BS(SPM4_USER_SIGNATORYBindingSource, i, 2))
-                ElseIf BS(SPM4_USER_SIGNATORYBindingSource, i, 10) = "Authorized by:" Then
-                    WTXT_AUTHORIZEDNAME.Text = Trim(BS(SPM4_USER_SIGNATORYBindingSource, i, 3))
-                    WTXT_AUTH_POSITION.Text = Trim(BS(SPM4_USER_SIGNATORYBindingSource, i, 4))
-                    WTXT_AUTH_ID.Text = Trim(BS(SPM4_USER_SIGNATORYBindingSource, i, 2))
-                ElseIf BS(SPM4_USER_SIGNATORYBindingSource, i, 10) = "Approved by:" Then
-                    WTXT_APPR_NAME.Text = Trim(BS(SPM4_USER_SIGNATORYBindingSource, i, 3))
-                    WTXT_APPR_POSI.Text = Trim(BS(SPM4_USER_SIGNATORYBindingSource, i, 4))
-                    WTXT_APPR_ID.Text = Trim(BS(SPM4_USER_SIGNATORYBindingSource, i, 2))
-                ElseIf BS(SPM4_USER_SIGNATORYBindingSource, i, 10) = "Issued by:" Then
-                    WTXT_ISSU_NAME.Text = Trim(BS(SPM4_USER_SIGNATORYBindingSource, i, 3))
-                    WTXT_ISSU_POSI.Text = Trim(BS(SPM4_USER_SIGNATORYBindingSource, i, 4))
-                    WTXT_ISSU_ID.Text = Trim(BS(SPM4_USER_SIGNATORYBindingSource, i, 2))
-                ElseIf BS(SPM4_USER_SIGNATORYBindingSource, i, 10) = "Received by:" Then
+                If FILTERTYPE = "AP" Then
+                    'If BS(SPM4_USER_SIGNATORYBindingSource, i, 10) = "Requested by:" Then
+                    '    WTXT_AP_REQ_NAME.Text = Trim(BS(SPM4_USER_SIGNATORYBindingSource, i, 3))
+                    '    WTXT_AP_REQ_POS.Text = Trim(BS(SPM4_USER_SIGNATORYBindingSource, i, 4))
+                    '    WTXT_REQ_ID.Text = Trim(BS(SPM4_USER_SIGNATORYBindingSource, i, 2))
+                    'Else
 
+                    'WTXT_AP_REQ_NAME.Text = SYS_FULLNAME_FML
+                    'WTXT_AP_REQ_POS.Text = EMP_POSITION
+                    'WTXT_AP_ISS_NAME.Text = SYS_FULLNAME_FML
+                    'WTXT_AP_ISS_POS.Text = EMP_POSITION
+
+                    If BS(SPM4_USER_SIGNATORYBindingSource, i, 10) = "Authorized by:" Then
+                        WTXT_AP_AUTH_NAME.Text = Trim(BS(SPM4_USER_SIGNATORYBindingSource, i, 3))
+                        WTXT_AP_AUTH_POS.Text = Trim(BS(SPM4_USER_SIGNATORYBindingSource, i, 4))
+                        WTXT_AUTH_ID.Text = Trim(BS(SPM4_USER_SIGNATORYBindingSource, i, 2))
+                        'ElseIf BS(SPM4_USER_SIGNATORYBindingSource, i, 10) = "Issued by:" Then
+                        '    WTXT_AP_ISS_NAME.Text = Trim(BS(SPM4_USER_SIGNATORYBindingSource, i, 3))
+                        '    WTXT_AP_ISS_POS.Text = Trim(BS(SPM4_USER_SIGNATORYBindingSource, i, 4))
+                        '    WTXT_ISSU_ID.Text = Trim(BS(SPM4_USER_SIGNATORYBindingSource, i, 2))
+                    End If
+
+
+                Else
+                    'If BS(SPM4_USER_SIGNATORYBindingSource, i, 10) = "Requested by:" Then
+                    '    WTXT_REQ_NAME.Text = Trim(BS(SPM4_USER_SIGNATORYBindingSource, i, 3))
+                    '    WTXT_REQ_POSITION.Text = Trim(BS(SPM4_USER_SIGNATORYBindingSource, i, 4))
+                    '    WTXT_REQ_ID.Text = Trim(BS(SPM4_USER_SIGNATORYBindingSource, i, 2))
+                    'Else
+                    'WTXT_REQ_NAME.Text = SYS_FULLNAME_FML
+                    'WTXT_REQ_POSITION.Text = EMP_POSITION
+
+                    'WTXT_ISSU_NAME.Text = SYS_FULLNAME_FML
+                    'WTXT_ISSU_POSI.Text = EMP_POSITION
+
+                    If BS(SPM4_USER_SIGNATORYBindingSource, i, 10) = "Authorized by:" Then
+                        WTXT_AUTHORIZEDNAME.Text = Trim(BS(SPM4_USER_SIGNATORYBindingSource, i, 3))
+                        WTXT_AUTH_POSITION.Text = Trim(BS(SPM4_USER_SIGNATORYBindingSource, i, 4))
+                        WTXT_AUTH_ID.Text = Trim(BS(SPM4_USER_SIGNATORYBindingSource, i, 2))
+                    ElseIf BS(SPM4_USER_SIGNATORYBindingSource, i, 10) = "Approved by:" Then
+                        WTXT_APPR_NAME.Text = Trim(BS(SPM4_USER_SIGNATORYBindingSource, i, 3))
+                        WTXT_APPR_POSI.Text = Trim(BS(SPM4_USER_SIGNATORYBindingSource, i, 4))
+                        WTXT_APPR_ID.Text = Trim(BS(SPM4_USER_SIGNATORYBindingSource, i, 2))
+                    ElseIf BS(SPM4_USER_SIGNATORYBindingSource, i, 10) = "Issued by:" Then
+                        WTXT_ISSU_NAME.Text = Trim(BS(SPM4_USER_SIGNATORYBindingSource, i, 3))
+                        WTXT_ISSU_POSI.Text = Trim(BS(SPM4_USER_SIGNATORYBindingSource, i, 4))
+                        WTXT_ISSU_ID.Text = Trim(BS(SPM4_USER_SIGNATORYBindingSource, i, 2))
+                    ElseIf BS(SPM4_USER_SIGNATORYBindingSource, i, 10) = "Requested by:" Then
+                        WTXT_REQ_NAME.Text = Trim(BS(SPM4_USER_SIGNATORYBindingSource, i, 3))
+                        WTXT_REQ_POSITION.Text = Trim(BS(SPM4_USER_SIGNATORYBindingSource, i, 4))
+                        WTXT_REQ_ID.Text = Trim(BS(SPM4_USER_SIGNATORYBindingSource, i, 2))
+                    End If
                 End If
+
             Next
             'wtxt_re.Text = Trim(BS(SPM4_USER_SIGNATORYBindingSource, 4, 3))
             'WTXT_SIGNNOTEDPOSITION.Text = Trim(BS(SPM4_USER_SIGNATORYBindingSource, 4, 4))
@@ -491,7 +590,7 @@ Public Class FRM_ITEM_REQ
 
 #Region "CLEAR SIGNATORY"
     Sub _CLEAR_SIGNATORY()
-        WTXT_REQUESTED_BY.Clear()
+        WTXT_REQ_NAME.Clear()
         WTXT_REQ_POSITION.Clear()
         WTXT_REQ_ID.Clear()
         WTXT_AUTHORIZEDNAME.Clear()
@@ -511,21 +610,22 @@ Public Class FRM_ITEM_REQ
         Try
 
             If FILTERTYPE = "AP" Then
-                If REQFIELDVALIDATION(WTXT_REQ_ID) = False Then
-                    SPM4_UQ_IQ_SIGNATORYTableAdapter.SPM4_UQ_IQ_SIGNATORY(1021, EMP_NO, If(WTXT_REQ_ID.Text = String.Empty, 0, WTXT_REQ_ID.Text))
-                End If
+                'If REQFIELDVALIDATION(WTXT_REQ_ID) = False Then
+                '    SPM4_UQ_IQ_SIGNATORYTableAdapter.SPM4_UQ_IQ_SIGNATORY(1021, EMP_NO, If(WTXT_REQ_ID.Text = String.Empty, 0, WTXT_REQ_ID.Text))
+                'End If
 
                 If REQFIELDVALIDATION(WTXT_AUTH_ID) = False Then
                     SPM4_UQ_IQ_SIGNATORYTableAdapter.SPM4_UQ_IQ_SIGNATORY(1022, EMP_NO, If(WTXT_AUTH_ID.Text = String.Empty, 0, WTXT_AUTH_ID.Text))
                 End If
 
-                If REQFIELDVALIDATION(WTXT_APPR_ID) = False Then
-                    SPM4_UQ_IQ_SIGNATORYTableAdapter.SPM4_UQ_IQ_SIGNATORY(1023, EMP_NO, If(WTXT_APPR_ID.Text = String.Empty, 0, WTXT_APPR_ID.Text))
-                End If
+                'If REQFIELDVALIDATION(WTXT_APPR_ID) = False Then
+                '    SPM4_UQ_IQ_SIGNATORYTableAdapter.SPM4_UQ_IQ_SIGNATORY(1023, EMP_NO, If(WTXT_APPR_ID.Text = String.Empty, 0, WTXT_APPR_ID.Text))
+                'End If
 
-                If REQFIELDVALIDATION(WTXT_ISSU_ID) = False Then
-                    SPM4_UQ_IQ_SIGNATORYTableAdapter.SPM4_UQ_IQ_SIGNATORY(1024, EMP_NO, If(WTXT_ISSU_ID.Text = String.Empty, 0, WTXT_ISSU_ID.Text))
-                End If
+                'If REQFIELDVALIDATION(WTXT_ISSU_ID) = False Then
+                '    SPM4_UQ_IQ_SIGNATORYTableAdapter.SPM4_UQ_IQ_SIGNATORY(1024, EMP_NO, If(WTXT_ISSU_ID.Text = String.Empty, 0, WTXT_ISSU_ID.Text))
+                'End If
+                NotificationManager.Show(Me, "Successfully Saved.", Color.Green, 6000)
             Else
                 If REQFIELDVALIDATION(WTXT_REQ_ID) = False Then
                     SPM4_UQ_IQ_SIGNATORYTableAdapter.SPM4_UQ_IQ_SIGNATORY(21, EMP_NO, If(WTXT_REQ_ID.Text = String.Empty, 0, WTXT_REQ_ID.Text))
@@ -607,7 +707,9 @@ Public Class FRM_ITEM_REQ
 
             If e.ColumnIndex = 16 Then
                 isNew = True
-                LLBL_NEW_REQUISITION_LinkClicked(LLBL_PRINT_PREVIEW, e)
+                PRINT_PREVIEW()
+                REPRINT = True
+                ISITE = False
             ElseIf e.ColumnIndex = 17 Then
                 isNew = False
                 UCPROCTim.Enabled = True
@@ -666,8 +768,10 @@ Public Class FRM_ITEM_REQ
             FILTERTYPE = Nothing
             If CB_REQUISITION_TYPE.SelectedValue = 3 Then
                 FILTERTYPE = "AP"
+                APNL_AP.Visible = True
             ElseIf CB_REQUISITION_TYPE.SelectedValue = 1 Or CB_REQUISITION_TYPE.SelectedValue = 2 Then
                 FILTERTYPE = "AD"
+                APNL_AP.Visible = False
             End If
             If FILTERTYPE = "AP" Then
                 RECT_FOR_THE_PERIOD.Visible = False
@@ -704,6 +808,37 @@ Public Class FRM_ITEM_REQ
         Else
             PB_REQUISITION_CLEAR_SEARCH.Visible = False
         End If
+    End Sub
+
+#End Region
+
+#Region "AP CLICK"
+    Private Sub WTXT_AP_REQ_NAME_Click(sender As Object, e As EventArgs) Handles WTXT_AP_ISS_NAME.Click, WTXT_AP_AUTH_NAME.Click
+
+
+        TXTGLOBAL = Nothing
+
+        If TypeOf sender Is TextBox Then
+            TXTGLOBAL = CType(sender, TextBox)
+        End If
+
+        IS_OFF = False
+
+        If CType(sender, TextBox).Name = "WTXT_AP_AUTH_NAME" Then
+            TXTGLOBAL = WTXT_AP_AUTH_NAME
+            POSITION = WTXT_AP_AUTH_POS
+            TXTSIGNO = WTXT_AUTH_ID
+            IS_OFF = True
+        End If
+
+        If IS_OFF Then
+            FRM_SIGNATORYLIST.ShowDialog()
+        Else
+            TXTPOSITION = WTXT_AP_ISS_POS
+            TXTGLOBAL = WTXT_AP_ISS_NAME
+            FRM_PDS_LIST.ShowDialog()
+        End If
+
     End Sub
 #End Region
 

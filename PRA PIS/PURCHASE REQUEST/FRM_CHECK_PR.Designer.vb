@@ -77,7 +77,16 @@ Partial Class FRM_CHECK_PR
         Me.RectangleShape4 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RECT_PRSEARCH = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.DGV_PRLIST = New System.Windows.Forms.DataGridView()
-        Me.SPM4PURCHASELISTBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.StatusOfOngoingPRDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PRSTATUSDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PRPRNODataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DescriptionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DateCreatedDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btnViewDetails = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.btnUpdateStatus = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.PRPRNO1DataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.MAXDATEDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SPM4PMDPRLISTBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DS_STOREDPROC = New PRA_PIS.DS_STOREDPROC()
         Me.DS_PROPERTYDB = New PRA_PIS.DS_PROPERTYDB()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
@@ -140,22 +149,15 @@ Partial Class FRM_CHECK_PR
         Me.TblM4_PURCHASEREQUEST_REVISIONTableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.tblM4_PURCHASEREQUEST_REVISIONTableAdapter()
         Me.WTXT_SEARCHLIST_PR = New PRA_PIS.WatermarkTextBox()
         Me.SPM4_PURCHASELISTBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SPM4PURCHASELISTBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SPM4_PURCHASELISTTableAdapter = New PRA_PIS.DS_STOREDPROCTableAdapters.SPM4_PURCHASELISTTableAdapter()
-        Me.StatusOfOngoingPRDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PRSTATUSDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PRPRNODataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DescriptionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DateCreatedDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.btnViewDetails = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.btnUpdateStatus = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.PRPRNO1DataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.MAXDATEDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SPM4_PMDPRLISTTableAdapter = New PRA_PIS.DS_STOREDPROCTableAdapters.SPM4_PMDPRLISTTableAdapter()
         Me.PNL.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DGV_PR_ITEMLIST, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DGV_PRLIST, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.SPM4PURCHASELISTBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SPM4PMDPRLISTBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DS_STOREDPROC, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DS_PROPERTYDB, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox4.SuspendLayout()
@@ -171,6 +173,7 @@ Partial Class FRM_CHECK_PR
         CType(Me.PB_VALIDATE_PR, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SPM4_PURCHASELISTBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SPM4PURCHASELISTBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PNL
@@ -744,7 +747,7 @@ Partial Class FRM_CHECK_PR
         Me.DGV_PRLIST.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.DGV_PRLIST.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGV_PRLIST.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.StatusOfOngoingPRDataGridViewTextBoxColumn, Me.PRSTATUSDataGridViewTextBoxColumn, Me.PRPRNODataGridViewTextBoxColumn, Me.DescriptionDataGridViewTextBoxColumn, Me.DateCreatedDataGridViewTextBoxColumn, Me.btnViewDetails, Me.btnUpdateStatus, Me.PRPRNO1DataGridViewTextBoxColumn, Me.MAXDATEDataGridViewTextBoxColumn})
-        Me.DGV_PRLIST.DataSource = Me.SPM4PURCHASELISTBindingSource
+        Me.DGV_PRLIST.DataSource = Me.SPM4PMDPRLISTBindingSource
         DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window
         DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -762,10 +765,111 @@ Partial Class FRM_CHECK_PR
         Me.DGV_PRLIST.Size = New System.Drawing.Size(892, 452)
         Me.DGV_PRLIST.TabIndex = 1414
         '
-        'SPM4PURCHASELISTBindingSource
+        'StatusOfOngoingPRDataGridViewTextBoxColumn
         '
-        Me.SPM4PURCHASELISTBindingSource.DataMember = "SPM4_PURCHASELIST"
-        Me.SPM4PURCHASELISTBindingSource.DataSource = Me.DS_STOREDPROC
+        Me.StatusOfOngoingPRDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.StatusOfOngoingPRDataGridViewTextBoxColumn.DataPropertyName = "Status of Ongoing PR"
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Transparent
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Transparent
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Transparent
+        Me.StatusOfOngoingPRDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle3
+        Me.StatusOfOngoingPRDataGridViewTextBoxColumn.HeaderText = ""
+        Me.StatusOfOngoingPRDataGridViewTextBoxColumn.Name = "StatusOfOngoingPRDataGridViewTextBoxColumn"
+        Me.StatusOfOngoingPRDataGridViewTextBoxColumn.ReadOnly = True
+        Me.StatusOfOngoingPRDataGridViewTextBoxColumn.Width = 25
+        '
+        'PRSTATUSDataGridViewTextBoxColumn
+        '
+        Me.PRSTATUSDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.PRSTATUSDataGridViewTextBoxColumn.DataPropertyName = "PR_STATUS"
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Transparent
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Transparent
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Transparent
+        Me.PRSTATUSDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle4
+        Me.PRSTATUSDataGridViewTextBoxColumn.FillWeight = 385.8268!
+        Me.PRSTATUSDataGridViewTextBoxColumn.HeaderText = ""
+        Me.PRSTATUSDataGridViewTextBoxColumn.Name = "PRSTATUSDataGridViewTextBoxColumn"
+        Me.PRSTATUSDataGridViewTextBoxColumn.ReadOnly = True
+        Me.PRSTATUSDataGridViewTextBoxColumn.Width = 25
+        '
+        'PRPRNODataGridViewTextBoxColumn
+        '
+        Me.PRPRNODataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.PRPRNODataGridViewTextBoxColumn.DataPropertyName = "PR_PRNO"
+        Me.PRPRNODataGridViewTextBoxColumn.FillWeight = 52.3622!
+        Me.PRPRNODataGridViewTextBoxColumn.HeaderText = "PR No."
+        Me.PRPRNODataGridViewTextBoxColumn.Name = "PRPRNODataGridViewTextBoxColumn"
+        Me.PRPRNODataGridViewTextBoxColumn.ReadOnly = True
+        Me.PRPRNODataGridViewTextBoxColumn.Width = 140
+        '
+        'DescriptionDataGridViewTextBoxColumn
+        '
+        Me.DescriptionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DescriptionDataGridViewTextBoxColumn.DataPropertyName = "Description"
+        Me.DescriptionDataGridViewTextBoxColumn.FillWeight = 52.3622!
+        Me.DescriptionDataGridViewTextBoxColumn.HeaderText = "Description"
+        Me.DescriptionDataGridViewTextBoxColumn.Name = "DescriptionDataGridViewTextBoxColumn"
+        Me.DescriptionDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'DateCreatedDataGridViewTextBoxColumn
+        '
+        Me.DateCreatedDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.DateCreatedDataGridViewTextBoxColumn.DataPropertyName = "DateCreated"
+        Me.DateCreatedDataGridViewTextBoxColumn.FillWeight = 52.3622!
+        Me.DateCreatedDataGridViewTextBoxColumn.HeaderText = "Date Created"
+        Me.DateCreatedDataGridViewTextBoxColumn.Name = "DateCreatedDataGridViewTextBoxColumn"
+        Me.DateCreatedDataGridViewTextBoxColumn.ReadOnly = True
+        Me.DateCreatedDataGridViewTextBoxColumn.Width = 150
+        '
+        'btnViewDetails
+        '
+        Me.btnViewDetails.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnViewDetails.DefaultCellStyle = DataGridViewCellStyle5
+        Me.btnViewDetails.FillWeight = 52.3622!
+        Me.btnViewDetails.HeaderText = ""
+        Me.btnViewDetails.Name = "btnViewDetails"
+        Me.btnViewDetails.ReadOnly = True
+        Me.btnViewDetails.Text = "View Details"
+        Me.btnViewDetails.UseColumnTextForButtonValue = True
+        Me.btnViewDetails.Width = 110
+        '
+        'btnUpdateStatus
+        '
+        Me.btnUpdateStatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnUpdateStatus.DefaultCellStyle = DataGridViewCellStyle6
+        Me.btnUpdateStatus.FillWeight = 52.3622!
+        Me.btnUpdateStatus.HeaderText = ""
+        Me.btnUpdateStatus.Name = "btnUpdateStatus"
+        Me.btnUpdateStatus.ReadOnly = True
+        Me.btnUpdateStatus.Text = "Update Status"
+        Me.btnUpdateStatus.UseColumnTextForButtonValue = True
+        Me.btnUpdateStatus.Width = 110
+        '
+        'PRPRNO1DataGridViewTextBoxColumn
+        '
+        Me.PRPRNO1DataGridViewTextBoxColumn.DataPropertyName = "PR_PRNO1"
+        Me.PRPRNO1DataGridViewTextBoxColumn.HeaderText = "PR_PRNO1"
+        Me.PRPRNO1DataGridViewTextBoxColumn.Name = "PRPRNO1DataGridViewTextBoxColumn"
+        Me.PRPRNO1DataGridViewTextBoxColumn.ReadOnly = True
+        Me.PRPRNO1DataGridViewTextBoxColumn.Visible = False
+        '
+        'MAXDATEDataGridViewTextBoxColumn
+        '
+        Me.MAXDATEDataGridViewTextBoxColumn.DataPropertyName = "MAXDATE"
+        Me.MAXDATEDataGridViewTextBoxColumn.FillWeight = 52.3622!
+        Me.MAXDATEDataGridViewTextBoxColumn.HeaderText = "MAXDATE"
+        Me.MAXDATEDataGridViewTextBoxColumn.Name = "MAXDATEDataGridViewTextBoxColumn"
+        Me.MAXDATEDataGridViewTextBoxColumn.ReadOnly = True
+        Me.MAXDATEDataGridViewTextBoxColumn.Visible = False
+        '
+        'SPM4PMDPRLISTBindingSource
+        '
+        Me.SPM4PMDPRLISTBindingSource.DataMember = "SPM4_PMDPRLIST"
+        Me.SPM4PMDPRLISTBindingSource.DataSource = Me.DS_STOREDPROC
         '
         'DS_STOREDPROC
         '
@@ -1448,117 +1552,24 @@ Partial Class FRM_CHECK_PR
         Me.WTXT_SEARCHLIST_PR.Name = "WTXT_SEARCHLIST_PR"
         Me.WTXT_SEARCHLIST_PR.Size = New System.Drawing.Size(796, 31)
         Me.WTXT_SEARCHLIST_PR.TabIndex = 1410
-        Me.WTXT_SEARCHLIST_PR.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.WTXT_SEARCHLIST_PR.Watermark = "Search PR No."
+        Me.WTXT_SEARCHLIST_PR.Watermark = "Search PR No./Description"
         '
         'SPM4_PURCHASELISTBindingSource
         '
         Me.SPM4_PURCHASELISTBindingSource.DataMember = "SPM4_PURCHASELIST"
         '
+        'SPM4PURCHASELISTBindingSource
+        '
+        Me.SPM4PURCHASELISTBindingSource.DataMember = "SPM4_PURCHASELIST"
+        Me.SPM4PURCHASELISTBindingSource.DataSource = Me.DS_STOREDPROC
+        '
         'SPM4_PURCHASELISTTableAdapter
         '
         Me.SPM4_PURCHASELISTTableAdapter.ClearBeforeFill = True
         '
-        'StatusOfOngoingPRDataGridViewTextBoxColumn
+        'SPM4_PMDPRLISTTableAdapter
         '
-        Me.StatusOfOngoingPRDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.StatusOfOngoingPRDataGridViewTextBoxColumn.DataPropertyName = "Status of Ongoing PR"
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Transparent
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Transparent
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Transparent
-        Me.StatusOfOngoingPRDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle3
-        Me.StatusOfOngoingPRDataGridViewTextBoxColumn.HeaderText = ""
-        Me.StatusOfOngoingPRDataGridViewTextBoxColumn.Name = "StatusOfOngoingPRDataGridViewTextBoxColumn"
-        Me.StatusOfOngoingPRDataGridViewTextBoxColumn.ReadOnly = True
-        Me.StatusOfOngoingPRDataGridViewTextBoxColumn.Width = 25
-        '
-        'PRSTATUSDataGridViewTextBoxColumn
-        '
-        Me.PRSTATUSDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.PRSTATUSDataGridViewTextBoxColumn.DataPropertyName = "PR_STATUS"
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Transparent
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Transparent
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Transparent
-        Me.PRSTATUSDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle4
-        Me.PRSTATUSDataGridViewTextBoxColumn.FillWeight = 385.8268!
-        Me.PRSTATUSDataGridViewTextBoxColumn.HeaderText = ""
-        Me.PRSTATUSDataGridViewTextBoxColumn.Name = "PRSTATUSDataGridViewTextBoxColumn"
-        Me.PRSTATUSDataGridViewTextBoxColumn.ReadOnly = True
-        Me.PRSTATUSDataGridViewTextBoxColumn.Width = 25
-        '
-        'PRPRNODataGridViewTextBoxColumn
-        '
-        Me.PRPRNODataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.PRPRNODataGridViewTextBoxColumn.DataPropertyName = "PR_PRNO"
-        Me.PRPRNODataGridViewTextBoxColumn.FillWeight = 52.3622!
-        Me.PRPRNODataGridViewTextBoxColumn.HeaderText = "PR No."
-        Me.PRPRNODataGridViewTextBoxColumn.Name = "PRPRNODataGridViewTextBoxColumn"
-        Me.PRPRNODataGridViewTextBoxColumn.ReadOnly = True
-        Me.PRPRNODataGridViewTextBoxColumn.Width = 140
-        '
-        'DescriptionDataGridViewTextBoxColumn
-        '
-        Me.DescriptionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.DescriptionDataGridViewTextBoxColumn.DataPropertyName = "Description"
-        Me.DescriptionDataGridViewTextBoxColumn.FillWeight = 52.3622!
-        Me.DescriptionDataGridViewTextBoxColumn.HeaderText = "Description"
-        Me.DescriptionDataGridViewTextBoxColumn.Name = "DescriptionDataGridViewTextBoxColumn"
-        Me.DescriptionDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'DateCreatedDataGridViewTextBoxColumn
-        '
-        Me.DateCreatedDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.DateCreatedDataGridViewTextBoxColumn.DataPropertyName = "DateCreated"
-        Me.DateCreatedDataGridViewTextBoxColumn.FillWeight = 52.3622!
-        Me.DateCreatedDataGridViewTextBoxColumn.HeaderText = "Date Created"
-        Me.DateCreatedDataGridViewTextBoxColumn.Name = "DateCreatedDataGridViewTextBoxColumn"
-        Me.DateCreatedDataGridViewTextBoxColumn.ReadOnly = True
-        Me.DateCreatedDataGridViewTextBoxColumn.Width = 150
-        '
-        'btnViewDetails
-        '
-        Me.btnViewDetails.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnViewDetails.DefaultCellStyle = DataGridViewCellStyle5
-        Me.btnViewDetails.FillWeight = 52.3622!
-        Me.btnViewDetails.HeaderText = ""
-        Me.btnViewDetails.Name = "btnViewDetails"
-        Me.btnViewDetails.ReadOnly = True
-        Me.btnViewDetails.Text = "View Details"
-        Me.btnViewDetails.UseColumnTextForButtonValue = True
-        Me.btnViewDetails.Width = 110
-        '
-        'btnUpdateStatus
-        '
-        Me.btnUpdateStatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnUpdateStatus.DefaultCellStyle = DataGridViewCellStyle6
-        Me.btnUpdateStatus.FillWeight = 52.3622!
-        Me.btnUpdateStatus.HeaderText = ""
-        Me.btnUpdateStatus.Name = "btnUpdateStatus"
-        Me.btnUpdateStatus.ReadOnly = True
-        Me.btnUpdateStatus.Text = "Update Status"
-        Me.btnUpdateStatus.UseColumnTextForButtonValue = True
-        Me.btnUpdateStatus.Width = 110
-        '
-        'PRPRNO1DataGridViewTextBoxColumn
-        '
-        Me.PRPRNO1DataGridViewTextBoxColumn.DataPropertyName = "PR_PRNO1"
-        Me.PRPRNO1DataGridViewTextBoxColumn.HeaderText = "PR_PRNO1"
-        Me.PRPRNO1DataGridViewTextBoxColumn.Name = "PRPRNO1DataGridViewTextBoxColumn"
-        Me.PRPRNO1DataGridViewTextBoxColumn.ReadOnly = True
-        Me.PRPRNO1DataGridViewTextBoxColumn.Visible = False
-        '
-        'MAXDATEDataGridViewTextBoxColumn
-        '
-        Me.MAXDATEDataGridViewTextBoxColumn.DataPropertyName = "MAXDATE"
-        Me.MAXDATEDataGridViewTextBoxColumn.FillWeight = 52.3622!
-        Me.MAXDATEDataGridViewTextBoxColumn.HeaderText = "MAXDATE"
-        Me.MAXDATEDataGridViewTextBoxColumn.Name = "MAXDATEDataGridViewTextBoxColumn"
-        Me.MAXDATEDataGridViewTextBoxColumn.ReadOnly = True
-        Me.MAXDATEDataGridViewTextBoxColumn.Visible = False
+        Me.SPM4_PMDPRLISTTableAdapter.ClearBeforeFill = True
         '
         'FRM_CHECK_PR
         '
@@ -1592,7 +1603,7 @@ Partial Class FRM_CHECK_PR
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.DGV_PRLIST, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.SPM4PURCHASELISTBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SPM4PMDPRLISTBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DS_STOREDPROC, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DS_PROPERTYDB, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox4.ResumeLayout(False)
@@ -1613,6 +1624,7 @@ Partial Class FRM_CHECK_PR
         CType(Me.PB_VALIDATE_PR, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SPM4_PURCHASELISTBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SPM4PURCHASELISTBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1738,4 +1750,6 @@ Partial Class FRM_CHECK_PR
     Friend WithEvents btnUpdateStatus As DataGridViewButtonColumn
     Friend WithEvents PRPRNO1DataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents MAXDATEDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents SPM4PMDPRLISTBindingSource As BindingSource
+    Friend WithEvents SPM4_PMDPRLISTTableAdapter As DS_STOREDPROCTableAdapters.SPM4_PMDPRLISTTableAdapter
 End Class

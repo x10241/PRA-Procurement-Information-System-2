@@ -4,7 +4,7 @@
         'SUBCATEGORY
         If GRP_SUB_CATEGORY.Visible = True Then
             ID = SpM4_ITEM_SUB_CATEGORY_CODE_GENERATORTableAdapter.SPM4_ITEM_SUB_CATEGORY_CODE_GENERATOR
-            TblM4_INVENTORY_SUB_CATEGORYTableAdapter.IQ_INVENTORY_SUB_CATEGORY(Trim(CStr(CB_GRP_SUB_CAT_NAME.SelectedValue)), Trim(WTXT_GRP_SUB_SUBCAT_NAME.Text), 1, EMP_NO, ID)
+            TblM4_INVENTORY_SUB_CATEGORYTableAdapter.IQ_INVENTORY_SUB_CATEGORY(Trim(CStr(CB_GRP_SUB_CAT_NAME.SelectedValue)), Trim(WTXT_GRP_SUB_SUBCAT_NAME.Text), 1, EMP_NO, ID, DIVISION_NO)
             INV_DEF_SUB_CAT = Trim(WTXT_GRP_SUB_SUBCAT_NAME.Text)
             'BRAND
         ElseIf GRP_BRAND.Visible = True Then
@@ -65,7 +65,7 @@
         TblM4_INVENTORY_CATEGORYTableAdapter.FillByINV_CODE(DS_PROPERTYDB.tblM4_INVENTORY_CATEGORY, CODEHOLDER, DIVISION_NO)
         If CB_INV_CAT.Items.Count > 0 Then
             Try
-                Me.TblM4_INVENTORY_SUB_CATEGORYTableAdapter.FillByCAT_CODE(Me.DS_PROPERTYDB.tblM4_INVENTORY_SUB_CATEGORY, CInt(If(IsDBNull(CB_INV_CAT.SelectedValue), 0, CB_INV_CAT.SelectedValue)))
+                Me.TblM4_INVENTORY_SUB_CATEGORYTableAdapter.FillByCAT_CODE(Me.DS_PROPERTYDB.tblM4_INVENTORY_SUB_CATEGORY, CInt(If(IsDBNull(CB_INV_CAT.SelectedValue), 0, CB_INV_CAT.SelectedValue)), DIVISION_NO)
             Catch ex As Exception
                 ERRLOG.WriteToErrorLog(ex.Message, ex.StackTrace, "ITEM_CATEGORIZATION: CATEGORY SELECTED INDEX CHANGED")
             End Try
@@ -75,7 +75,7 @@
     Private Sub CB_INV_CAT_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CB_INV_CAT.SelectedIndexChanged
         If CB_INV_CAT.Items.Count > 0 Then
             Try
-                Me.TblM4_INVENTORY_SUB_CATEGORYTableAdapter.FillByCAT_CODE(Me.DS_PROPERTYDB.tblM4_INVENTORY_SUB_CATEGORY, CInt(If(IsDBNull(CB_INV_CAT.SelectedValue), 0, CB_INV_CAT.SelectedValue)))
+                Me.TblM4_INVENTORY_SUB_CATEGORYTableAdapter.FillByCAT_CODE(Me.DS_PROPERTYDB.tblM4_INVENTORY_SUB_CATEGORY, CInt(If(IsDBNull(CB_INV_CAT.SelectedValue), 0, CB_INV_CAT.SelectedValue)), DIVISION_NO)
             Catch ex As Exception
                 ERRLOG.WriteToErrorLog(ex.Message, ex.StackTrace, "ITEM_CATEGORIZATION: CATEGORY SELECTED INDEX CHANGED")
             End Try

@@ -24,7 +24,7 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PNL = New System.Windows.Forms.Panel()
         Me.BTN_INVENTORY_MINIMIZE = New System.Windows.Forms.Button()
         Me.BTN_INVENTORY_CLOSE = New System.Windows.Forms.Button()
@@ -113,17 +113,18 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
         Me.btnEdit = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.IMG_PATH = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.VWM4_ITEM_LISTBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
-        Me.RectangleShape5 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.RECT_INVENTORY_VIEW_REPORT = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RECT_PRCANCELEDIT = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RECT_INVENTORY_NEW_SAVE = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.ShapeContainer3 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
         Me.RECT_INVENTORY_EDIT = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RECT_STOCKS = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RECT_ITEM_DISTRIBUTION = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
-        Me.RECT_INVENTORY_CANCEL = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.RECT_STICK_LAB = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.LLBL_INVENTORY_NEW = New System.Windows.Forms.LinkLabel()
         Me.PB_INVENTORY_NEW = New System.Windows.Forms.PictureBox()
         Me.LLBL_INVENTORY_EDIT = New System.Windows.Forms.LinkLabel()
@@ -227,7 +228,7 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
         Me.RECT_EDIT_ITEM = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RECT_REMOVE_ITEM = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RectangleShape13 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
-        Me.LLBL_INVENOTYR_ASSIGN = New System.Windows.Forms.LinkLabel()
+        Me.LLBL_STICK_LAB = New System.Windows.Forms.LinkLabel()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
         Me.GroupBox7 = New System.Windows.Forms.GroupBox()
@@ -252,7 +253,7 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
         Me.ShapeContainer10 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
         Me.RectangleShape31 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RectangleShape32 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PB_STICK_LAB = New System.Windows.Forms.PictureBox()
         Me.LLBL_ITEM_DISTRIBUTION = New System.Windows.Forms.LinkLabel()
         Me.PB_ITEM_DISTRIBUTION = New System.Windows.Forms.PictureBox()
         Me.TblM4_INVENTORY_CATEGORYTableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.tblM4_INVENTORY_CATEGORYTableAdapter()
@@ -332,7 +333,7 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
         Me.GroupBox6.SuspendLayout()
         Me.GroupBox7.SuspendLayout()
         Me.Panel2.SuspendLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PB_STICK_LAB, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PB_ITEM_DISTRIBUTION, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SPM4_ITEM_CODE_GENERATORBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DS_STOREDPROC, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1151,16 +1152,16 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
         Me.DGV_INV_ITEM_LIST.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGV_INV_ITEM_LIST.BackgroundColor = System.Drawing.Color.White
         Me.DGV_INV_ITEM_LIST.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV_INV_ITEM_LIST.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.ITEMCODEDataGridViewTextBoxColumn, Me.CATCODEDataGridViewTextBoxColumn, Me.CATNAMEDataGridViewTextBoxColumn, Me.SCNODataGridViewTextBoxColumn, Me.SCSUBCATEGORYNAMEDataGridViewTextBoxColumn, Me.ITBRNODataGridViewTextBoxColumn, Me.ITBRNAMEDataGridViewTextBoxColumn, Me.FULLDESC, Me.ITEMSERIALNODataGridViewTextBoxColumn, Me.COLRNUMDataGridViewTextBoxColumn, Me.COLRNAMEDataGridViewTextBoxColumn, Me.ISACTIVEDataGridViewCheckBoxColumn, Me.SIZENUMDataGridViewTextBoxColumn, Me.SIZENAMEDataGridViewTextBoxColumn, Me.ITEMCREATEDDATEDataGridViewTextBoxColumn, Me.CREATEDBYDataGridViewTextBoxColumn, Me.ISACTIVESIZEDataGridViewCheckBoxColumn, Me.LENG_NUM, Me.OTHER_NUM, Me.ITM_NAME_NUM, Me.ITM_NAME, Me.NAME_IS_ACTIVE, Me.btnEdit, Me.IMG_PATH, Me.Column2})
+        Me.DGV_INV_ITEM_LIST.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.ITEMCODEDataGridViewTextBoxColumn, Me.CATCODEDataGridViewTextBoxColumn, Me.CATNAMEDataGridViewTextBoxColumn, Me.SCNODataGridViewTextBoxColumn, Me.SCSUBCATEGORYNAMEDataGridViewTextBoxColumn, Me.ITBRNODataGridViewTextBoxColumn, Me.ITBRNAMEDataGridViewTextBoxColumn, Me.FULLDESC, Me.ITEMSERIALNODataGridViewTextBoxColumn, Me.COLRNUMDataGridViewTextBoxColumn, Me.COLRNAMEDataGridViewTextBoxColumn, Me.ISACTIVEDataGridViewCheckBoxColumn, Me.SIZENUMDataGridViewTextBoxColumn, Me.SIZENAMEDataGridViewTextBoxColumn, Me.ITEMCREATEDDATEDataGridViewTextBoxColumn, Me.CREATEDBYDataGridViewTextBoxColumn, Me.ISACTIVESIZEDataGridViewCheckBoxColumn, Me.LENG_NUM, Me.OTHER_NUM, Me.ITM_NAME_NUM, Me.ITM_NAME, Me.NAME_IS_ACTIVE, Me.btnEdit, Me.IMG_PATH, Me.Column2, Me.DataGridViewTextBoxColumn1})
         Me.DGV_INV_ITEM_LIST.DataSource = Me.VWM4_ITEM_LISTBindingSource
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DGV_INV_ITEM_LIST.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGV_INV_ITEM_LIST.DefaultCellStyle = DataGridViewCellStyle2
         Me.DGV_INV_ITEM_LIST.Location = New System.Drawing.Point(6, 64)
         Me.DGV_INV_ITEM_LIST.MultiSelect = False
         Me.DGV_INV_ITEM_LIST.Name = "DGV_INV_ITEM_LIST"
@@ -1385,6 +1386,14 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
         Me.Column2.UseColumnTextForButtonValue = True
         Me.Column2.Width = 90
         '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "IMG_PATH"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "IMG_PATH"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        Me.DataGridViewTextBoxColumn1.Visible = False
+        '
         'VWM4_ITEM_LISTBindingSource
         '
         Me.VWM4_ITEM_LISTBindingSource.DataMember = "VWM4_ITEM_LIST"
@@ -1406,22 +1415,22 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
         Me.ShapeContainer1.Location = New System.Drawing.Point(3, 18)
         Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer1.Name = "ShapeContainer1"
-        Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape5, Me.RECT_PRCANCELEDIT})
+        Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RECT_INVENTORY_VIEW_REPORT, Me.RECT_PRCANCELEDIT})
         Me.ShapeContainer1.Size = New System.Drawing.Size(1068, 520)
         Me.ShapeContainer1.TabIndex = 1439
         Me.ShapeContainer1.TabStop = False
         '
-        'RectangleShape5
+        'RECT_INVENTORY_VIEW_REPORT
         '
-        Me.RectangleShape5.BorderColor = System.Drawing.Color.DimGray
-        Me.RectangleShape5.BorderWidth = 2
-        Me.RectangleShape5.CornerRadius = 19
-        Me.RectangleShape5.Cursor = System.Windows.Forms.Cursors.Arrow
-        Me.RectangleShape5.FillColor = System.Drawing.SystemColors.HighlightText
-        Me.RectangleShape5.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
-        Me.RectangleShape5.Location = New System.Drawing.Point(893, 477)
-        Me.RectangleShape5.Name = "RectangleShape5"
-        Me.RectangleShape5.Size = New System.Drawing.Size(170, 39)
+        Me.RECT_INVENTORY_VIEW_REPORT.BorderColor = System.Drawing.Color.DimGray
+        Me.RECT_INVENTORY_VIEW_REPORT.BorderWidth = 2
+        Me.RECT_INVENTORY_VIEW_REPORT.CornerRadius = 19
+        Me.RECT_INVENTORY_VIEW_REPORT.Cursor = System.Windows.Forms.Cursors.Arrow
+        Me.RECT_INVENTORY_VIEW_REPORT.FillColor = System.Drawing.SystemColors.HighlightText
+        Me.RECT_INVENTORY_VIEW_REPORT.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
+        Me.RECT_INVENTORY_VIEW_REPORT.Location = New System.Drawing.Point(893, 477)
+        Me.RECT_INVENTORY_VIEW_REPORT.Name = "RECT_INVENTORY_VIEW_REPORT"
+        Me.RECT_INVENTORY_VIEW_REPORT.Size = New System.Drawing.Size(170, 39)
         '
         'RECT_PRCANCELEDIT
         '
@@ -1493,17 +1502,17 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
         Me.RECT_ITEM_DISTRIBUTION.Name = "RECT_ITEM_DISTRIBUTION"
         Me.RECT_ITEM_DISTRIBUTION.Size = New System.Drawing.Size(207, 39)
         '
-        'RECT_INVENTORY_CANCEL
+        'RECT_STICK_LAB
         '
-        Me.RECT_INVENTORY_CANCEL.BorderColor = System.Drawing.Color.DimGray
-        Me.RECT_INVENTORY_CANCEL.BorderWidth = 2
-        Me.RECT_INVENTORY_CANCEL.CornerRadius = 19
-        Me.RECT_INVENTORY_CANCEL.Cursor = System.Windows.Forms.Cursors.Arrow
-        Me.RECT_INVENTORY_CANCEL.FillColor = System.Drawing.SystemColors.HighlightText
-        Me.RECT_INVENTORY_CANCEL.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
-        Me.RECT_INVENTORY_CANCEL.Location = New System.Drawing.Point(913, 5)
-        Me.RECT_INVENTORY_CANCEL.Name = "RECT_INVENTORY_CANCEL"
-        Me.RECT_INVENTORY_CANCEL.Size = New System.Drawing.Size(169, 39)
+        Me.RECT_STICK_LAB.BorderColor = System.Drawing.Color.DimGray
+        Me.RECT_STICK_LAB.BorderWidth = 2
+        Me.RECT_STICK_LAB.CornerRadius = 19
+        Me.RECT_STICK_LAB.Cursor = System.Windows.Forms.Cursors.Arrow
+        Me.RECT_STICK_LAB.FillColor = System.Drawing.SystemColors.HighlightText
+        Me.RECT_STICK_LAB.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
+        Me.RECT_STICK_LAB.Location = New System.Drawing.Point(913, 5)
+        Me.RECT_STICK_LAB.Name = "RECT_STICK_LAB"
+        Me.RECT_STICK_LAB.Size = New System.Drawing.Size(144, 39)
         '
         'LLBL_INVENTORY_NEW
         '
@@ -2719,20 +2728,20 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
         Me.RectangleShape13.Name = "RectangleShape13"
         Me.RectangleShape13.Size = New System.Drawing.Size(99, 31)
         '
-        'LLBL_INVENOTYR_ASSIGN
+        'LLBL_STICK_LAB
         '
-        Me.LLBL_INVENOTYR_ASSIGN.AutoSize = True
-        Me.LLBL_INVENOTYR_ASSIGN.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.LLBL_INVENOTYR_ASSIGN.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LLBL_INVENOTYR_ASSIGN.ForeColor = System.Drawing.Color.DimGray
-        Me.LLBL_INVENOTYR_ASSIGN.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
-        Me.LLBL_INVENOTYR_ASSIGN.LinkColor = System.Drawing.Color.DimGray
-        Me.LLBL_INVENOTYR_ASSIGN.Location = New System.Drawing.Point(955, 17)
-        Me.LLBL_INVENOTYR_ASSIGN.Name = "LLBL_INVENOTYR_ASSIGN"
-        Me.LLBL_INVENOTYR_ASSIGN.Size = New System.Drawing.Size(123, 16)
-        Me.LLBL_INVENOTYR_ASSIGN.TabIndex = 1456
-        Me.LLBL_INVENOTYR_ASSIGN.TabStop = True
-        Me.LLBL_INVENOTYR_ASSIGN.Text = "CATEGORIZATION"
+        Me.LLBL_STICK_LAB.AutoSize = True
+        Me.LLBL_STICK_LAB.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.LLBL_STICK_LAB.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LLBL_STICK_LAB.ForeColor = System.Drawing.Color.DimGray
+        Me.LLBL_STICK_LAB.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
+        Me.LLBL_STICK_LAB.LinkColor = System.Drawing.Color.DimGray
+        Me.LLBL_STICK_LAB.Location = New System.Drawing.Point(955, 17)
+        Me.LLBL_STICK_LAB.Name = "LLBL_STICK_LAB"
+        Me.LLBL_STICK_LAB.Size = New System.Drawing.Size(99, 16)
+        Me.LLBL_STICK_LAB.TabIndex = 1456
+        Me.LLBL_STICK_LAB.TabStop = True
+        Me.LLBL_STICK_LAB.Text = "STICKER LABEL"
         '
         'Panel1
         '
@@ -3020,17 +3029,17 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
         Me.RectangleShape32.Name = "RectangleShape3"
         Me.RectangleShape32.Size = New System.Drawing.Size(105, 49)
         '
-        'PictureBox2
+        'PB_STICK_LAB
         '
-        Me.PictureBox2.BackgroundImage = Global.PRA_PIS.My.Resources.Resources.outline_settings_black_18dp
-        Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox2.InitialImage = Nothing
-        Me.PictureBox2.Location = New System.Drawing.Point(923, 11)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(32, 28)
-        Me.PictureBox2.TabIndex = 1459
-        Me.PictureBox2.TabStop = False
+        Me.PB_STICK_LAB.BackgroundImage = Global.PRA_PIS.My.Resources.Resources.outline_local_offer_black_18dp
+        Me.PB_STICK_LAB.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PB_STICK_LAB.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PB_STICK_LAB.InitialImage = Nothing
+        Me.PB_STICK_LAB.Location = New System.Drawing.Point(923, 11)
+        Me.PB_STICK_LAB.Name = "PB_STICK_LAB"
+        Me.PB_STICK_LAB.Size = New System.Drawing.Size(32, 28)
+        Me.PB_STICK_LAB.TabIndex = 1459
+        Me.PB_STICK_LAB.TabStop = False
         '
         'LLBL_ITEM_DISTRIBUTION
         '
@@ -3227,13 +3236,13 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
         Me.Panel3.Controls.Add(Me.LLBL_PCOUNT)
         Me.Panel3.Controls.Add(Me.PB_PCOUNT)
         Me.Panel3.Controls.Add(Me.PB_IIL)
-        Me.Panel3.Controls.Add(Me.LLBL_INVENOTYR_ASSIGN)
+        Me.Panel3.Controls.Add(Me.LLBL_STICK_LAB)
         Me.Panel3.Controls.Add(Me.LLBL_IIL)
         Me.Panel3.Controls.Add(Me.LLBL_INVENTORY_NEW)
         Me.Panel3.Controls.Add(Me.PB_DR_LIST)
         Me.Panel3.Controls.Add(Me.PB_INVENTORY_NEW)
         Me.Panel3.Controls.Add(Me.LLBL_DR_LIST)
-        Me.Panel3.Controls.Add(Me.PictureBox2)
+        Me.Panel3.Controls.Add(Me.PB_STICK_LAB)
         Me.Panel3.Controls.Add(Me.PB_ITEM_DISTRIBUTION)
         Me.Panel3.Controls.Add(Me.LLBL_STOCKS)
         Me.Panel3.Controls.Add(Me.LLBL_ITEM_DISTRIBUTION)
@@ -3332,7 +3341,7 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
         Me.ShapeContainer8.Location = New System.Drawing.Point(0, 0)
         Me.ShapeContainer8.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer8.Name = "ShapeContainer8"
-        Me.ShapeContainer8.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RECT_PCOUNT, Me.RECT_IIL, Me.RECT_DR_LIST, Me.RECT_STOCKS, Me.RECT_ITEM_DISTRIBUTION, Me.RECT_INVENTORY_CANCEL, Me.RECT_INVENTORY_NEW_SAVE})
+        Me.ShapeContainer8.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RECT_PCOUNT, Me.RECT_IIL, Me.RECT_DR_LIST, Me.RECT_STOCKS, Me.RECT_ITEM_DISTRIBUTION, Me.RECT_STICK_LAB, Me.RECT_INVENTORY_NEW_SAVE})
         Me.ShapeContainer8.Size = New System.Drawing.Size(1090, 51)
         Me.ShapeContainer8.TabIndex = 0
         Me.ShapeContainer8.TabStop = False
@@ -3430,7 +3439,7 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
         Me.GroupBox7.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PB_STICK_LAB, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PB_ITEM_DISTRIBUTION, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SPM4_ITEM_CODE_GENERATORBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DS_STOREDPROC, System.ComponentModel.ISupportInitialize).EndInit()
@@ -3509,7 +3518,7 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
     Friend WithEvents RECT_INVENTORY_EDIT As PowerPacks.RectangleShape
     Friend WithEvents PB_INVENTORY_VIEW_REPORT As PictureBox
     Friend WithEvents LLBL_INVENTORY_VIEW_REPORT As LinkLabel
-    Friend WithEvents RECT_INVENTORY_CANCEL As PowerPacks.RectangleShape
+    Friend WithEvents RECT_STICK_LAB As PowerPacks.RectangleShape
     'Friend WithEvents TblM4_ITEMSTableAdapter As DS_PROPERTYDBTableAdapters.tblM4_ITEMSTableAdapter
     Friend WithEvents Label12 As Label
     Friend WithEvents APNL_ITEMINFO As Panel
@@ -3526,7 +3535,7 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
     Friend WithEvents BTN_ADD_SUBCATEGORY As Button
     Friend WithEvents BTN_INVENTORY_MINIMIZE As Button
     Friend WithEvents BTN_INVENTORY_CLOSE As Button
-    Friend WithEvents LLBL_INVENOTYR_ASSIGN As LinkLabel
+    Friend WithEvents LLBL_STICK_LAB As LinkLabel
     Friend WithEvents ITEMPROPERTYNODataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ITEMUNITCOSTDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ITEMTOTALCOSTDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
@@ -3600,7 +3609,7 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
     Friend WithEvents item_code As DataGridViewTextBoxColumn
     Friend WithEvents ShapeContainer7 As PowerPacks.ShapeContainer
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents PB_STICK_LAB As PictureBox
     Friend WithEvents RECT_ITEM_DISTRIBUTION As PowerPacks.RectangleShape
     Friend WithEvents LLBL_ITEM_DISTRIBUTION As LinkLabel
     Friend WithEvents PB_ITEM_DISTRIBUTION As PictureBox
@@ -3608,7 +3617,7 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
     Friend WithEvents RectangleShape9 As PowerPacks.RectangleShape
     Friend WithEvents CB_SUPPLY_TYPE As ComboBox
     Friend WithEvents DS_VIEWS As DS_VIEWS
-    Friend WithEvents RectangleShape5 As PowerPacks.RectangleShape
+    Friend WithEvents RECT_INVENTORY_VIEW_REPORT As PowerPacks.RectangleShape
     Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents LinkLabel2 As LinkLabel
     Friend WithEvents LinkLabel3 As LinkLabel
@@ -3732,4 +3741,5 @@ Partial Class FRM_INVENTORY_ENCODING_ADMIN
     Friend WithEvents btnEdit As DataGridViewButtonColumn
     Friend WithEvents IMG_PATH As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewButtonColumn
+    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
 End Class

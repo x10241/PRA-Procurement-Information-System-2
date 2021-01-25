@@ -415,85 +415,6 @@ WHERE        (REQ_NO = @REQ_NO)</CommandText>
               </DbSource>
             </Sources>
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VWM4_ITEM_ASSTableAdapter" GeneratorDataComponentClassName="VWM4_ITEM_ASSTableAdapter" Name="VWM4_ITEM_ASS" UserDataComponentName="VWM4_ITEM_ASSTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="PRA_PROPERTYDBConnectionString (MySettings)" DbObjectName="PRA_PROPERTYDB.dbo.VWM4_ITEM_ASS" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="Fill" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        VWM4_ITEM_ASS.*
-FROM            VWM4_ITEM_ASS</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="ITEM_CODE" DataSetColumn="ITEM_CODE" />
-              <Mapping SourceColumn="ITEM_SERIAL_NO" DataSetColumn="ITEM_SERIAL_NO" />
-              <Mapping SourceColumn="ITEM_DESCRIPTION" DataSetColumn="ITEM_DESCRIPTION" />
-              <Mapping SourceColumn="ITEM_UNIT" DataSetColumn="ITEM_UNIT" />
-              <Mapping SourceColumn="ITEM_UNIT_COST" DataSetColumn="ITEM_UNIT_COST" />
-              <Mapping SourceColumn="ITEM_QUANTITY" DataSetColumn="ITEM_QUANTITY" />
-              <Mapping SourceColumn="ITEM_DATE_AQUISITION" DataSetColumn="ITEM_DATE_AQUISITION" />
-              <Mapping SourceColumn="ITEM_CREATED_DATE" DataSetColumn="ITEM_CREATED_DATE" />
-              <Mapping SourceColumn="FULLNAME" DataSetColumn="FULLNAME" />
-              <Mapping SourceColumn="EMP_NO" DataSetColumn="EMP_NO" />
-              <Mapping SourceColumn="ACCO_ORIGINATED" DataSetColumn="ACCO_ORIGINATED" />
-              <Mapping SourceColumn="ACCO_REMARKS" DataSetColumn="ACCO_REMARKS" />
-              <Mapping SourceColumn="ACCO_ASSIGNED_BY" DataSetColumn="ACCO_ASSIGNED_BY" />
-              <Mapping SourceColumn="DATE_APPOINTED" DataSetColumn="DATE_APPOINTED" />
-              <Mapping SourceColumn="DATE_CREATED" DataSetColumn="DATE_CREATED" />
-              <Mapping SourceColumn="Expr1" DataSetColumn="Expr1" />
-              <Mapping SourceColumn="ASSI_ORIGINATED" DataSetColumn="ASSI_ORIGINATED" />
-              <Mapping SourceColumn="REMARKS" DataSetColumn="REMARKS" />
-              <Mapping SourceColumn="ASSI_ASSIGNED_BY" DataSetColumn="ASSI_ASSIGNED_BY" />
-              <Mapping SourceColumn="DATE_ASSIGNED" DataSetColumn="DATE_ASSIGNED" />
-              <Mapping SourceColumn="Expr2" DataSetColumn="Expr2" />
-            </Mappings>
-            <Sources>
-              <DbSource ConnectionRef="PRA_PROPERTYDBConnectionString (MySettings)" DbObjectName="PRA_PROPERTYDB.dbo.VWM4_ITEM_ASS" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByIN_tblM4_INVENTORY_ACCOUNTABLE_OFFICER" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByIN_tblM4_INVENTORY_ACCOUNTABLE_OFFICER" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillByIN_tblM4_INVENTORY_ACCOUNTABLE_OFFICER">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        ITEM_CODE, ITEM_SERIAL_NO, ITEM_DESCRIPTION, ITEM_UNIT, ITEM_UNIT_COST, ITEM_QUANTITY, ITEM_DATE_AQUISITION, ITEM_CREATED_DATE, FULLNAME, EMP_NO, ACCO_ORIGINATED, ACCO_REMARKS, 
-                         ACCO_ASSIGNED_BY, DATE_APPOINTED, DATE_CREATED, Expr1, ASSI_ORIGINATED, REMARKS, ASSI_ASSIGNED_BY, DATE_ASSIGNED, Expr2
-FROM            VWM4_ITEM_ASS
-WHERE        (ITEM_CODE NOT IN
-                             (SELECT        ITEM_CODE
-                               FROM            tblM4_INVENTORY_ACCOUNTABLE_OFFICER))</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-              <DbSource ConnectionRef="PRA_PROPERTYDBConnectionString (MySettings)" DbObjectName="PRA_PROPERTYDB.dbo.VWM4_ITEM_ASS" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByIN_tblM4_INVENTORY_ASSIGN_PERSON" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByIN_tblM4_INVENTORY_ASSIGN_PERSON" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillByIN_tblM4_INVENTORY_ASSIGN_PERSON">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        ITEM_CODE, ITEM_SERIAL_NO, ITEM_DESCRIPTION, ITEM_UNIT, ITEM_UNIT_COST, ITEM_QUANTITY, ITEM_DATE_AQUISITION, ITEM_CREATED_DATE, FULLNAME, EMP_NO, ACCO_ORIGINATED, ACCO_REMARKS, 
-                         ACCO_ASSIGNED_BY, DATE_APPOINTED, DATE_CREATED, Expr1, ASSI_ORIGINATED, REMARKS, ASSI_ASSIGNED_BY, DATE_ASSIGNED, Expr2
-FROM            VWM4_ITEM_ASS
-WHERE        (ITEM_CODE NOT IN
-                             (SELECT        ITEM_CODE
-                               FROM            tblM4_INVENTORY_ASSIGN_PERSON))</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-              <DbSource ConnectionRef="PRA_PROPERTYDBConnectionString (MySettings)" DbObjectName="PRA_PROPERTYDB.dbo.VWM4_ITEM_ASS" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByITEM_CODE" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByITEM_CODE" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="FillByITEM_CODE">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        VWM4_ITEM_ASS.*
-FROM            VWM4_ITEM_ASS
-WHERE        (ITEM_CODE IN
-                             (SELECT        ITEM_CODE
-                               FROM            tblM4_INVENTORY_ACCOUNTABLE_OFFICER)) OR
-                         (ITEM_CODE IN
-                             (SELECT        ITEM_CODE
-                               FROM            tblM4_INVENTORY_ASSIGN_PERSON))</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </Sources>
-          </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VWM4_ITEM_ASS_IDGVTableAdapter" GeneratorDataComponentClassName="VWM4_ITEM_ASS_IDGVTableAdapter" Name="VWM4_ITEM_ASS_IDGV" UserDataComponentName="VWM4_ITEM_ASS_IDGVTableAdapter">
             <MainSource>
               <DbSource ConnectionRef="PRA_PROPERTYDBConnectionString (MySettings)" DbObjectName="PRA_PROPERTYDB.dbo.VWM4_ITEM_ASS" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="Fill" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
@@ -934,6 +855,129 @@ FROM            VWM4_INV_ITEMS_LIST</CommandText>
               </DbSource>
             </Sources>
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VWM4_PCM_DETAILSTableAdapter" GeneratorDataComponentClassName="VWM4_PCM_DETAILSTableAdapter" Name="VWM4_PCM_DETAILS" UserDataComponentName="VWM4_PCM_DETAILSTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="PRA_PROPERTYDBConnectionString (MySettings)" DbObjectName="PRA_PROPERTYDB.dbo.VWM4_PCM_DETAILS" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="Fill" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        VWM4_PCM_DETAILS.*
+FROM            VWM4_PCM_DETAILS</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="PCOM_ID" DataSetColumn="PCOM_ID" />
+              <Mapping SourceColumn="PCOM_REAS" DataSetColumn="PCOM_REAS" />
+              <Mapping SourceColumn="PCOM_CHK_BY" DataSetColumn="PCOM_CHK_BY" />
+              <Mapping SourceColumn="PCOM_NOTED_BY" DataSetColumn="PCOM_NOTED_BY" />
+              <Mapping SourceColumn="PCOM_DATE" DataSetColumn="PCOM_DATE" />
+              <Mapping SourceColumn="PCOM_REMARKS" DataSetColumn="PCOM_REMARKS" />
+              <Mapping SourceColumn="PCOM_DIV_CODE" DataSetColumn="PCOM_DIV_CODE" />
+              <Mapping SourceColumn="ITEM_CODE" DataSetColumn="ITEM_CODE" />
+              <Mapping SourceColumn="PCOU_STK" DataSetColumn="PCOU_STK" />
+              <Mapping SourceColumn="PCOU_REMARKS" DataSetColumn="PCOU_REMARKS" />
+              <Mapping SourceColumn="PCOU_BY" DataSetColumn="PCOU_BY" />
+              <Mapping SourceColumn="PCOU_UNIT_COST" DataSetColumn="PCOU_UNIT_COST" />
+              <Mapping SourceColumn="PCOU_TOTAL_COST" DataSetColumn="PCOU_TOTAL_COST" />
+              <Mapping SourceColumn="PCOU_UNIT_TYPE" DataSetColumn="PCOU_UNIT_TYPE" />
+              <Mapping SourceColumn="ITEM_ALIAS" DataSetColumn="ITEM_ALIAS" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="PRA_PROPERTYDBConnectionString (MySettings)" DbObjectName="PRA_PROPERTYDB.dbo.VWM4_PCM_DETAILS" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByPCOM_ID" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByPCOM_ID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillByPCOM_ID">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        PCOM_ID, PCOM_REAS, PCOM_CHK_BY, PCOM_NOTED_BY, PCOM_DATE, PCOM_REMARKS, PCOM_DIV_CODE, ITEM_CODE, PCOU_STK, PCOU_REMARKS, PCOU_BY, PCOU_UNIT_COST, PCOU_TOTAL_COST, 
+                         PCOU_UNIT_TYPE, ITEM_ALIAS
+FROM            VWM4_PCM_DETAILS
+WHERE        (PCOM_ID = @PCOM_ID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="PCOM_ID" ColumnName="PCOM_ID" DataSourceName="PRA_PROPERTYDB.dbo.VWM4_PCM_DETAILS" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@PCOM_ID" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="PCOM_ID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VWM4_ITEM_ASSTableAdapter" GeneratorDataComponentClassName="VWM4_ITEM_ASSTableAdapter" Name="VWM4_ITEM_ASS" UserDataComponentName="VWM4_ITEM_ASSTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="PRA_PROPERTYDBConnectionString (MySettings)" DbObjectName="PRA_PROPERTYDB.dbo.VWM4_ITEM_ASS" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="Fill" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        VWM4_ITEM_ASS.*
+FROM            VWM4_ITEM_ASS</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ITEM_CODE" DataSetColumn="ITEM_CODE" />
+              <Mapping SourceColumn="ITEM_SERIAL_NO" DataSetColumn="ITEM_SERIAL_NO" />
+              <Mapping SourceColumn="ITEM_DESCRIPTION" DataSetColumn="ITEM_DESCRIPTION" />
+              <Mapping SourceColumn="ITEM_UNIT" DataSetColumn="ITEM_UNIT" />
+              <Mapping SourceColumn="ITEM_UNIT_COST" DataSetColumn="ITEM_UNIT_COST" />
+              <Mapping SourceColumn="ITEM_QUANTITY" DataSetColumn="ITEM_QUANTITY" />
+              <Mapping SourceColumn="ITEM_DATE_AQUISITION" DataSetColumn="ITEM_DATE_AQUISITION" />
+              <Mapping SourceColumn="ITEM_CREATED_DATE" DataSetColumn="ITEM_CREATED_DATE" />
+              <Mapping SourceColumn="FULLNAME" DataSetColumn="FULLNAME" />
+              <Mapping SourceColumn="EMP_NO" DataSetColumn="EMP_NO" />
+              <Mapping SourceColumn="ACCO_ORIGINATED" DataSetColumn="ACCO_ORIGINATED" />
+              <Mapping SourceColumn="ACCO_REMARKS" DataSetColumn="ACCO_REMARKS" />
+              <Mapping SourceColumn="ACCO_ASSIGNED_BY" DataSetColumn="ACCO_ASSIGNED_BY" />
+              <Mapping SourceColumn="DATE_APPOINTED" DataSetColumn="DATE_APPOINTED" />
+              <Mapping SourceColumn="ASSI_ORIGINATED" DataSetColumn="ASSI_ORIGINATED" />
+              <Mapping SourceColumn="REMARKS" DataSetColumn="REMARKS" />
+              <Mapping SourceColumn="ASSI_ASSIGNED_BY" DataSetColumn="ASSI_ASSIGNED_BY" />
+              <Mapping SourceColumn="DATE_ASSIGNED" DataSetColumn="DATE_ASSIGNED" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="PRA_PROPERTYDBConnectionString (MySettings)" DbObjectName="PRA_PROPERTYDB.dbo.VWM4_ITEM_ASS" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByEMP_NO" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByEMP_NO" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="FillByEMP_NO">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        ITEM_CODE, ITEM_SERIAL_NO, ITEM_DESCRIPTION, ITEM_UNIT, ITEM_UNIT_COST, ITEM_QUANTITY, ITEM_DATE_AQUISITION, ITEM_CREATED_DATE, FULLNAME, EMP_NO, ACCO_ORIGINATED, ACCO_REMARKS, 
+                         ACCO_ASSIGNED_BY, DATE_APPOINTED, ASSI_ORIGINATED, REMARKS, ASSI_ASSIGNED_BY, DATE_ASSIGNED
+FROM            VWM4_ITEM_ASS
+WHERE        (EMP_NO = @EMP_NO)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="EMP_NO" ColumnName="EMP_NO" DataSourceName="PRA_PROPERTYDB.dbo.VWM4_ITEM_ASS" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@EMP_NO" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="EMP_NO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="PRA_PROPERTYDBConnectionString (MySettings)" DbObjectName="PRA_PROPERTYDB.dbo.VWM4_ITEM_ASS" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByIN_tblM4_INVENTORY_ACCOUNTABLE_OFFICER" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByIN_tblM4_INVENTORY_ACCOUNTABLE_OFFICER" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillByIN_tblM4_INVENTORY_ACCOUNTABLE_OFFICER">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        VWM4_ITEM_ASS.*
+FROM            VWM4_ITEM_ASS
+WHERE (ITEM_CODE NOT IN (SELECT ITEM_CODE FROM tblM4_INVENTORY_ACCOUNTABLE_OFFICER))</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="PRA_PROPERTYDBConnectionString (MySettings)" DbObjectName="PRA_PROPERTYDB.dbo.VWM4_ITEM_ASS" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByIN_tblM4_INVENTORY_ASSIGN_PERSON" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByIN_tblM4_INVENTORY_ASSIGN_PERSON" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillByIN_tblM4_INVENTORY_ASSIGN_PERSON">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        VWM4_ITEM_ASS.*
+FROM            VWM4_ITEM_ASS
+WHERE (ITEM_CODE NOT IN (SELECT ITEM_CODE FROM tblM4_INVENTORY_ASSIGN_PERSON))</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="PRA_PROPERTYDBConnectionString (MySettings)" DbObjectName="PRA_PROPERTYDB.dbo.VWM4_ITEM_ASS" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByITEM_CODE" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByITEM_CODE" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="FillByITEM_CODE">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        VWM4_ITEM_ASS.*
+FROM            VWM4_ITEM_ASS
+WHERE (ITEM_CODE IN (SELECT ITEM_CODE FROM tblM4_INVENTORY_ACCOUNTABLE_OFFICER)) OR (ITEM_CODE IN (SELECT ITEM_CODE FROM tblM4_INVENTORY_ASSIGN_PERSON))</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -942,7 +986,7 @@ FROM            VWM4_INV_ITEMS_LIST</CommandText>
   <xs:element name="DS_VIEWS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DS_VIEWS" msprop:Generator_UserDSName="DS_VIEWS">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="V1VW_USERACCESSMAIN" msprop:Generator_TableClassName="V1VW_USERACCESSMAINDataTable" msprop:Generator_TableVarName="tableV1VW_USERACCESSMAIN" msprop:Generator_RowChangedName="V1VW_USERACCESSMAINRowChanged" msprop:Generator_TablePropName="V1VW_USERACCESSMAIN" msprop:Generator_RowDeletingName="V1VW_USERACCESSMAINRowDeleting" msprop:Generator_RowChangingName="V1VW_USERACCESSMAINRowChanging" msprop:Generator_RowEvHandlerName="V1VW_USERACCESSMAINRowChangeEventHandler" msprop:Generator_RowDeletedName="V1VW_USERACCESSMAINRowDeleted" msprop:Generator_RowClassName="V1VW_USERACCESSMAINRow" msprop:Generator_UserTableName="V1VW_USERACCESSMAIN" msprop:Generator_RowEvArgName="V1VW_USERACCESSMAINRowChangeEvent">
+        <xs:element name="V1VW_USERACCESSMAIN" msprop:Generator_TableClassName="V1VW_USERACCESSMAINDataTable" msprop:Generator_TableVarName="tableV1VW_USERACCESSMAIN" msprop:Generator_TablePropName="V1VW_USERACCESSMAIN" msprop:Generator_RowDeletingName="V1VW_USERACCESSMAINRowDeleting" msprop:Generator_RowChangingName="V1VW_USERACCESSMAINRowChanging" msprop:Generator_RowEvHandlerName="V1VW_USERACCESSMAINRowChangeEventHandler" msprop:Generator_RowDeletedName="V1VW_USERACCESSMAINRowDeleted" msprop:Generator_UserTableName="V1VW_USERACCESSMAIN" msprop:Generator_RowChangedName="V1VW_USERACCESSMAINRowChanged" msprop:Generator_RowEvArgName="V1VW_USERACCESSMAINRowChangeEvent" msprop:Generator_RowClassName="V1VW_USERACCESSMAINRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="UAC_USERNAME" msprop:Generator_ColumnVarNameInTable="columnUAC_USERNAME" msprop:Generator_ColumnPropNameInRow="UAC_USERNAME" msprop:Generator_ColumnPropNameInTable="UAC_USERNAMEColumn" msprop:Generator_UserColumnName="UAC_USERNAME">
@@ -978,7 +1022,7 @@ FROM            VWM4_INV_ITEMS_LIST</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="V1VW_USERACCESSSUB" msprop:Generator_TableClassName="V1VW_USERACCESSSUBDataTable" msprop:Generator_TableVarName="tableV1VW_USERACCESSSUB" msprop:Generator_RowChangedName="V1VW_USERACCESSSUBRowChanged" msprop:Generator_TablePropName="V1VW_USERACCESSSUB" msprop:Generator_RowDeletingName="V1VW_USERACCESSSUBRowDeleting" msprop:Generator_RowChangingName="V1VW_USERACCESSSUBRowChanging" msprop:Generator_RowEvHandlerName="V1VW_USERACCESSSUBRowChangeEventHandler" msprop:Generator_RowDeletedName="V1VW_USERACCESSSUBRowDeleted" msprop:Generator_RowClassName="V1VW_USERACCESSSUBRow" msprop:Generator_UserTableName="V1VW_USERACCESSSUB" msprop:Generator_RowEvArgName="V1VW_USERACCESSSUBRowChangeEvent">
+        <xs:element name="V1VW_USERACCESSSUB" msprop:Generator_TableClassName="V1VW_USERACCESSSUBDataTable" msprop:Generator_TableVarName="tableV1VW_USERACCESSSUB" msprop:Generator_TablePropName="V1VW_USERACCESSSUB" msprop:Generator_RowDeletingName="V1VW_USERACCESSSUBRowDeleting" msprop:Generator_RowChangingName="V1VW_USERACCESSSUBRowChanging" msprop:Generator_RowEvHandlerName="V1VW_USERACCESSSUBRowChangeEventHandler" msprop:Generator_RowDeletedName="V1VW_USERACCESSSUBRowDeleted" msprop:Generator_UserTableName="V1VW_USERACCESSSUB" msprop:Generator_RowChangedName="V1VW_USERACCESSSUBRowChanged" msprop:Generator_RowEvArgName="V1VW_USERACCESSSUBRowChangeEvent" msprop:Generator_RowClassName="V1VW_USERACCESSSUBRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="UAC_USERNAME" msprop:Generator_ColumnVarNameInTable="columnUAC_USERNAME" msprop:Generator_ColumnPropNameInRow="UAC_USERNAME" msprop:Generator_ColumnPropNameInTable="UAC_USERNAMEColumn" msprop:Generator_UserColumnName="UAC_USERNAME">
@@ -1015,7 +1059,7 @@ FROM            VWM4_INV_ITEMS_LIST</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="VWM4_ITEMS_CATEGORY_SUB_CATEGORY" msprop:Generator_TableClassName="VWM4_ITEMS_CATEGORY_SUB_CATEGORYDataTable" msprop:Generator_TableVarName="tableVWM4_ITEMS_CATEGORY_SUB_CATEGORY" msprop:Generator_RowChangedName="VWM4_ITEMS_CATEGORY_SUB_CATEGORYRowChanged" msprop:Generator_TablePropName="VWM4_ITEMS_CATEGORY_SUB_CATEGORY" msprop:Generator_RowDeletingName="VWM4_ITEMS_CATEGORY_SUB_CATEGORYRowDeleting" msprop:Generator_RowChangingName="VWM4_ITEMS_CATEGORY_SUB_CATEGORYRowChanging" msprop:Generator_RowEvHandlerName="VWM4_ITEMS_CATEGORY_SUB_CATEGORYRowChangeEventHandler" msprop:Generator_RowDeletedName="VWM4_ITEMS_CATEGORY_SUB_CATEGORYRowDeleted" msprop:Generator_RowClassName="VWM4_ITEMS_CATEGORY_SUB_CATEGORYRow" msprop:Generator_UserTableName="VWM4_ITEMS_CATEGORY_SUB_CATEGORY" msprop:Generator_RowEvArgName="VWM4_ITEMS_CATEGORY_SUB_CATEGORYRowChangeEvent">
+        <xs:element name="VWM4_ITEMS_CATEGORY_SUB_CATEGORY" msprop:Generator_TableClassName="VWM4_ITEMS_CATEGORY_SUB_CATEGORYDataTable" msprop:Generator_TableVarName="tableVWM4_ITEMS_CATEGORY_SUB_CATEGORY" msprop:Generator_TablePropName="VWM4_ITEMS_CATEGORY_SUB_CATEGORY" msprop:Generator_RowDeletingName="VWM4_ITEMS_CATEGORY_SUB_CATEGORYRowDeleting" msprop:Generator_RowChangingName="VWM4_ITEMS_CATEGORY_SUB_CATEGORYRowChanging" msprop:Generator_RowEvHandlerName="VWM4_ITEMS_CATEGORY_SUB_CATEGORYRowChangeEventHandler" msprop:Generator_RowDeletedName="VWM4_ITEMS_CATEGORY_SUB_CATEGORYRowDeleted" msprop:Generator_UserTableName="VWM4_ITEMS_CATEGORY_SUB_CATEGORY" msprop:Generator_RowChangedName="VWM4_ITEMS_CATEGORY_SUB_CATEGORYRowChanged" msprop:Generator_RowEvArgName="VWM4_ITEMS_CATEGORY_SUB_CATEGORYRowChangeEvent" msprop:Generator_RowClassName="VWM4_ITEMS_CATEGORY_SUB_CATEGORYRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="SC_NO" msprop:Generator_ColumnVarNameInTable="columnSC_NO" msprop:Generator_ColumnPropNameInRow="SC_NO" msprop:Generator_ColumnPropNameInTable="SC_NOColumn" msprop:Generator_UserColumnName="SC_NO">
@@ -1069,7 +1113,7 @@ FROM            VWM4_INV_ITEMS_LIST</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="V1VW_USERACCEMPLOYEE" msprop:Generator_TableClassName="V1VW_USERACCEMPLOYEEDataTable" msprop:Generator_TableVarName="tableV1VW_USERACCEMPLOYEE" msprop:Generator_TablePropName="V1VW_USERACCEMPLOYEE" msprop:Generator_RowDeletingName="V1VW_USERACCEMPLOYEERowDeleting" msprop:Generator_RowChangingName="V1VW_USERACCEMPLOYEERowChanging" msprop:Generator_RowEvHandlerName="V1VW_USERACCEMPLOYEERowChangeEventHandler" msprop:Generator_RowDeletedName="V1VW_USERACCEMPLOYEERowDeleted" msprop:Generator_UserTableName="V1VW_USERACCEMPLOYEE" msprop:Generator_RowChangedName="V1VW_USERACCEMPLOYEERowChanged" msprop:Generator_RowEvArgName="V1VW_USERACCEMPLOYEERowChangeEvent" msprop:Generator_RowClassName="V1VW_USERACCEMPLOYEERow">
+        <xs:element name="V1VW_USERACCEMPLOYEE" msprop:Generator_TableClassName="V1VW_USERACCEMPLOYEEDataTable" msprop:Generator_TableVarName="tableV1VW_USERACCEMPLOYEE" msprop:Generator_RowChangedName="V1VW_USERACCEMPLOYEERowChanged" msprop:Generator_TablePropName="V1VW_USERACCEMPLOYEE" msprop:Generator_RowDeletingName="V1VW_USERACCEMPLOYEERowDeleting" msprop:Generator_RowChangingName="V1VW_USERACCEMPLOYEERowChanging" msprop:Generator_RowEvHandlerName="V1VW_USERACCEMPLOYEERowChangeEventHandler" msprop:Generator_RowDeletedName="V1VW_USERACCEMPLOYEERowDeleted" msprop:Generator_RowClassName="V1VW_USERACCEMPLOYEERow" msprop:Generator_UserTableName="V1VW_USERACCEMPLOYEE" msprop:Generator_RowEvArgName="V1VW_USERACCEMPLOYEERowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="UAC_USERNAME" msprop:Generator_ColumnVarNameInTable="columnUAC_USERNAME" msprop:Generator_ColumnPropNameInRow="UAC_USERNAME" msprop:Generator_ColumnPropNameInTable="UAC_USERNAMEColumn" msprop:Generator_UserColumnName="UAC_USERNAME">
@@ -1139,7 +1183,7 @@ FROM            VWM4_INV_ITEMS_LIST</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="VWM4_ITEM_REQ_BY" msprop:Generator_TableClassName="VWM4_ITEM_REQ_BYDataTable" msprop:Generator_TableVarName="tableVWM4_ITEM_REQ_BY" msprop:Generator_TablePropName="VWM4_ITEM_REQ_BY" msprop:Generator_RowDeletingName="VWM4_ITEM_REQ_BYRowDeleting" msprop:Generator_RowChangingName="VWM4_ITEM_REQ_BYRowChanging" msprop:Generator_RowEvHandlerName="VWM4_ITEM_REQ_BYRowChangeEventHandler" msprop:Generator_RowDeletedName="VWM4_ITEM_REQ_BYRowDeleted" msprop:Generator_UserTableName="VWM4_ITEM_REQ_BY" msprop:Generator_RowChangedName="VWM4_ITEM_REQ_BYRowChanged" msprop:Generator_RowEvArgName="VWM4_ITEM_REQ_BYRowChangeEvent" msprop:Generator_RowClassName="VWM4_ITEM_REQ_BYRow">
+        <xs:element name="VWM4_ITEM_REQ_BY" msprop:Generator_TableClassName="VWM4_ITEM_REQ_BYDataTable" msprop:Generator_TableVarName="tableVWM4_ITEM_REQ_BY" msprop:Generator_RowChangedName="VWM4_ITEM_REQ_BYRowChanged" msprop:Generator_TablePropName="VWM4_ITEM_REQ_BY" msprop:Generator_RowDeletingName="VWM4_ITEM_REQ_BYRowDeleting" msprop:Generator_RowChangingName="VWM4_ITEM_REQ_BYRowChanging" msprop:Generator_RowEvHandlerName="VWM4_ITEM_REQ_BYRowChangeEventHandler" msprop:Generator_RowDeletedName="VWM4_ITEM_REQ_BYRowDeleted" msprop:Generator_RowClassName="VWM4_ITEM_REQ_BYRow" msprop:Generator_UserTableName="VWM4_ITEM_REQ_BY" msprop:Generator_RowEvArgName="VWM4_ITEM_REQ_BYRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="REQ_NO" msprop:Generator_ColumnVarNameInTable="columnREQ_NO" msprop:Generator_ColumnPropNameInRow="REQ_NO" msprop:Generator_ColumnPropNameInTable="REQ_NOColumn" msprop:Generator_UserColumnName="REQ_NO">
@@ -1257,7 +1301,7 @@ FROM            VWM4_INV_ITEMS_LIST</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="VWM4_ITEM_REQ_DESC" msprop:Generator_TableClassName="VWM4_ITEM_REQ_DESCDataTable" msprop:Generator_TableVarName="tableVWM4_ITEM_REQ_DESC" msprop:Generator_RowChangedName="VWM4_ITEM_REQ_DESCRowChanged" msprop:Generator_TablePropName="VWM4_ITEM_REQ_DESC" msprop:Generator_RowDeletingName="VWM4_ITEM_REQ_DESCRowDeleting" msprop:Generator_RowChangingName="VWM4_ITEM_REQ_DESCRowChanging" msprop:Generator_RowEvHandlerName="VWM4_ITEM_REQ_DESCRowChangeEventHandler" msprop:Generator_RowDeletedName="VWM4_ITEM_REQ_DESCRowDeleted" msprop:Generator_RowClassName="VWM4_ITEM_REQ_DESCRow" msprop:Generator_UserTableName="VWM4_ITEM_REQ_DESC" msprop:Generator_RowEvArgName="VWM4_ITEM_REQ_DESCRowChangeEvent">
+        <xs:element name="VWM4_ITEM_REQ_DESC" msprop:Generator_TableClassName="VWM4_ITEM_REQ_DESCDataTable" msprop:Generator_TableVarName="tableVWM4_ITEM_REQ_DESC" msprop:Generator_TablePropName="VWM4_ITEM_REQ_DESC" msprop:Generator_RowDeletingName="VWM4_ITEM_REQ_DESCRowDeleting" msprop:Generator_RowChangingName="VWM4_ITEM_REQ_DESCRowChanging" msprop:Generator_RowEvHandlerName="VWM4_ITEM_REQ_DESCRowChangeEventHandler" msprop:Generator_RowDeletedName="VWM4_ITEM_REQ_DESCRowDeleted" msprop:Generator_UserTableName="VWM4_ITEM_REQ_DESC" msprop:Generator_RowChangedName="VWM4_ITEM_REQ_DESCRowChanged" msprop:Generator_RowEvArgName="VWM4_ITEM_REQ_DESCRowChangeEvent" msprop:Generator_RowClassName="VWM4_ITEM_REQ_DESCRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="REQ_NO" msprop:Generator_ColumnVarNameInTable="columnREQ_NO" msprop:Generator_ColumnPropNameInRow="REQ_NO" msprop:Generator_ColumnPropNameInTable="REQ_NOColumn" msprop:Generator_UserColumnName="REQ_NO">
@@ -1299,7 +1343,7 @@ FROM            VWM4_INV_ITEMS_LIST</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="VWG3_DR_LIST" msprop:Generator_TableClassName="VWG3_DR_LISTDataTable" msprop:Generator_TableVarName="tableVWG3_DR_LIST" msprop:Generator_RowChangedName="VWG3_DR_LISTRowChanged" msprop:Generator_TablePropName="VWG3_DR_LIST" msprop:Generator_RowDeletingName="VWG3_DR_LISTRowDeleting" msprop:Generator_RowChangingName="VWG3_DR_LISTRowChanging" msprop:Generator_RowEvHandlerName="VWG3_DR_LISTRowChangeEventHandler" msprop:Generator_RowDeletedName="VWG3_DR_LISTRowDeleted" msprop:Generator_RowClassName="VWG3_DR_LISTRow" msprop:Generator_UserTableName="VWG3_DR_LIST" msprop:Generator_RowEvArgName="VWG3_DR_LISTRowChangeEvent">
+        <xs:element name="VWG3_DR_LIST" msprop:Generator_TableClassName="VWG3_DR_LISTDataTable" msprop:Generator_TableVarName="tableVWG3_DR_LIST" msprop:Generator_TablePropName="VWG3_DR_LIST" msprop:Generator_RowDeletingName="VWG3_DR_LISTRowDeleting" msprop:Generator_RowChangingName="VWG3_DR_LISTRowChanging" msprop:Generator_RowEvHandlerName="VWG3_DR_LISTRowChangeEventHandler" msprop:Generator_RowDeletedName="VWG3_DR_LISTRowDeleted" msprop:Generator_UserTableName="VWG3_DR_LIST" msprop:Generator_RowChangedName="VWG3_DR_LISTRowChanged" msprop:Generator_RowEvArgName="VWG3_DR_LISTRowChangeEvent" msprop:Generator_RowClassName="VWG3_DR_LISTRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="DR_ID" msprop:Generator_ColumnVarNameInTable="columnDR_ID" msprop:Generator_ColumnPropNameInRow="DR_ID" msprop:Generator_ColumnPropNameInTable="DR_IDColumn" msprop:Generator_UserColumnName="DR_ID">
@@ -1416,7 +1460,7 @@ FROM            VWM4_INV_ITEMS_LIST</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="VWM4_REQUISITION" msprop:Generator_TableClassName="VWM4_REQUISITIONDataTable" msprop:Generator_TableVarName="tableVWM4_REQUISITION" msprop:Generator_RowChangedName="VWM4_REQUISITIONRowChanged" msprop:Generator_TablePropName="VWM4_REQUISITION" msprop:Generator_RowDeletingName="VWM4_REQUISITIONRowDeleting" msprop:Generator_RowChangingName="VWM4_REQUISITIONRowChanging" msprop:Generator_RowEvHandlerName="VWM4_REQUISITIONRowChangeEventHandler" msprop:Generator_RowDeletedName="VWM4_REQUISITIONRowDeleted" msprop:Generator_RowClassName="VWM4_REQUISITIONRow" msprop:Generator_UserTableName="VWM4_REQUISITION" msprop:Generator_RowEvArgName="VWM4_REQUISITIONRowChangeEvent">
+        <xs:element name="VWM4_REQUISITION" msprop:Generator_TableClassName="VWM4_REQUISITIONDataTable" msprop:Generator_TableVarName="tableVWM4_REQUISITION" msprop:Generator_TablePropName="VWM4_REQUISITION" msprop:Generator_RowDeletingName="VWM4_REQUISITIONRowDeleting" msprop:Generator_RowChangingName="VWM4_REQUISITIONRowChanging" msprop:Generator_RowEvHandlerName="VWM4_REQUISITIONRowChangeEventHandler" msprop:Generator_RowDeletedName="VWM4_REQUISITIONRowDeleted" msprop:Generator_UserTableName="VWM4_REQUISITION" msprop:Generator_RowChangedName="VWM4_REQUISITIONRowChanged" msprop:Generator_RowEvArgName="VWM4_REQUISITIONRowChangeEvent" msprop:Generator_RowClassName="VWM4_REQUISITIONRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="FULLDESC" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFULLDESC" msprop:Generator_ColumnPropNameInRow="FULLDESC" msprop:Generator_ColumnPropNameInTable="FULLDESCColumn" msprop:Generator_UserColumnName="FULLDESC" minOccurs="0">
@@ -1544,112 +1588,7 @@ FROM            VWM4_INV_ITEMS_LIST</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="VWM4_ITEM_ASS" msprop:Generator_TableClassName="VWM4_ITEM_ASSDataTable" msprop:Generator_TableVarName="tableVWM4_ITEM_ASS" msprop:Generator_TablePropName="VWM4_ITEM_ASS" msprop:Generator_RowDeletingName="VWM4_ITEM_ASSRowDeleting" msprop:Generator_RowChangingName="VWM4_ITEM_ASSRowChanging" msprop:Generator_RowEvHandlerName="VWM4_ITEM_ASSRowChangeEventHandler" msprop:Generator_RowDeletedName="VWM4_ITEM_ASSRowDeleted" msprop:Generator_UserTableName="VWM4_ITEM_ASS" msprop:Generator_RowChangedName="VWM4_ITEM_ASSRowChanged" msprop:Generator_RowEvArgName="VWM4_ITEM_ASSRowChangeEvent" msprop:Generator_RowClassName="VWM4_ITEM_ASSRow">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="ITEM_CODE" msprop:Generator_ColumnVarNameInTable="columnITEM_CODE" msprop:Generator_ColumnPropNameInRow="ITEM_CODE" msprop:Generator_ColumnPropNameInTable="ITEM_CODEColumn" msprop:Generator_UserColumnName="ITEM_CODE">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="ITEM_SERIAL_NO" msprop:Generator_ColumnVarNameInTable="columnITEM_SERIAL_NO" msprop:Generator_ColumnPropNameInRow="ITEM_SERIAL_NO" msprop:Generator_ColumnPropNameInTable="ITEM_SERIAL_NOColumn" msprop:Generator_UserColumnName="ITEM_SERIAL_NO" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="40" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="ITEM_DESCRIPTION" msprop:Generator_ColumnVarNameInTable="columnITEM_DESCRIPTION" msprop:Generator_ColumnPropNameInRow="ITEM_DESCRIPTION" msprop:Generator_ColumnPropNameInTable="ITEM_DESCRIPTIONColumn" msprop:Generator_UserColumnName="ITEM_DESCRIPTION">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="100" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="ITEM_UNIT" msprop:Generator_ColumnVarNameInTable="columnITEM_UNIT" msprop:Generator_ColumnPropNameInRow="ITEM_UNIT" msprop:Generator_ColumnPropNameInTable="ITEM_UNITColumn" msprop:Generator_UserColumnName="ITEM_UNIT">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="10" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="ITEM_UNIT_COST" msprop:Generator_ColumnVarNameInTable="columnITEM_UNIT_COST" msprop:Generator_ColumnPropNameInRow="ITEM_UNIT_COST" msprop:Generator_ColumnPropNameInTable="ITEM_UNIT_COSTColumn" msprop:Generator_UserColumnName="ITEM_UNIT_COST" type="xs:decimal" />
-              <xs:element name="ITEM_QUANTITY" msprop:Generator_ColumnVarNameInTable="columnITEM_QUANTITY" msprop:Generator_ColumnPropNameInRow="ITEM_QUANTITY" msprop:Generator_ColumnPropNameInTable="ITEM_QUANTITYColumn" msprop:Generator_UserColumnName="ITEM_QUANTITY" type="xs:int" />
-              <xs:element name="ITEM_DATE_AQUISITION" msprop:Generator_ColumnVarNameInTable="columnITEM_DATE_AQUISITION" msprop:Generator_ColumnPropNameInRow="ITEM_DATE_AQUISITION" msprop:Generator_ColumnPropNameInTable="ITEM_DATE_AQUISITIONColumn" msprop:Generator_UserColumnName="ITEM_DATE_AQUISITION" type="xs:dateTime" />
-              <xs:element name="ITEM_CREATED_DATE" msprop:Generator_ColumnVarNameInTable="columnITEM_CREATED_DATE" msprop:Generator_ColumnPropNameInRow="ITEM_CREATED_DATE" msprop:Generator_ColumnPropNameInTable="ITEM_CREATED_DATEColumn" msprop:Generator_UserColumnName="ITEM_CREATED_DATE" type="xs:dateTime" />
-              <xs:element name="FULLNAME" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFULLNAME" msprop:Generator_ColumnPropNameInRow="FULLNAME" msprop:Generator_ColumnPropNameInTable="FULLNAMEColumn" msprop:Generator_UserColumnName="FULLNAME" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="1000" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="EMP_NO" msprop:Generator_ColumnVarNameInTable="columnEMP_NO" msprop:Generator_ColumnPropNameInRow="EMP_NO" msprop:Generator_ColumnPropNameInTable="EMP_NOColumn" msprop:Generator_UserColumnName="EMP_NO" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="ACCO_ORIGINATED" msprop:Generator_ColumnVarNameInTable="columnACCO_ORIGINATED" msprop:Generator_ColumnPropNameInRow="ACCO_ORIGINATED" msprop:Generator_ColumnPropNameInTable="ACCO_ORIGINATEDColumn" msprop:Generator_UserColumnName="ACCO_ORIGINATED" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="ACCO_REMARKS" msprop:Generator_ColumnVarNameInTable="columnACCO_REMARKS" msprop:Generator_ColumnPropNameInRow="ACCO_REMARKS" msprop:Generator_ColumnPropNameInTable="ACCO_REMARKSColumn" msprop:Generator_UserColumnName="ACCO_REMARKS" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="100" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="ACCO_ASSIGNED_BY" msprop:Generator_ColumnVarNameInTable="columnACCO_ASSIGNED_BY" msprop:Generator_ColumnPropNameInRow="ACCO_ASSIGNED_BY" msprop:Generator_ColumnPropNameInTable="ACCO_ASSIGNED_BYColumn" msprop:Generator_UserColumnName="ACCO_ASSIGNED_BY" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="DATE_APPOINTED" msprop:Generator_ColumnVarNameInTable="columnDATE_APPOINTED" msprop:Generator_ColumnPropNameInRow="DATE_APPOINTED" msprop:Generator_ColumnPropNameInTable="DATE_APPOINTEDColumn" msprop:Generator_UserColumnName="DATE_APPOINTED" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="DATE_CREATED" msprop:Generator_ColumnVarNameInTable="columnDATE_CREATED" msprop:Generator_ColumnPropNameInRow="DATE_CREATED" msprop:Generator_ColumnPropNameInTable="DATE_CREATEDColumn" msprop:Generator_UserColumnName="DATE_CREATED" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="Expr1" msprop:Generator_ColumnVarNameInTable="columnExpr1" msprop:Generator_ColumnPropNameInRow="Expr1" msprop:Generator_ColumnPropNameInTable="Expr1Column" msprop:Generator_UserColumnName="Expr1" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="ASSI_ORIGINATED" msprop:Generator_ColumnVarNameInTable="columnASSI_ORIGINATED" msprop:Generator_ColumnPropNameInRow="ASSI_ORIGINATED" msprop:Generator_ColumnPropNameInTable="ASSI_ORIGINATEDColumn" msprop:Generator_UserColumnName="ASSI_ORIGINATED" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="REMARKS" msprop:Generator_ColumnVarNameInTable="columnREMARKS" msprop:Generator_ColumnPropNameInRow="REMARKS" msprop:Generator_ColumnPropNameInTable="REMARKSColumn" msprop:Generator_UserColumnName="REMARKS" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="100" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="ASSI_ASSIGNED_BY" msprop:Generator_ColumnVarNameInTable="columnASSI_ASSIGNED_BY" msprop:Generator_ColumnPropNameInRow="ASSI_ASSIGNED_BY" msprop:Generator_ColumnPropNameInTable="ASSI_ASSIGNED_BYColumn" msprop:Generator_UserColumnName="ASSI_ASSIGNED_BY" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="DATE_ASSIGNED" msprop:Generator_ColumnVarNameInTable="columnDATE_ASSIGNED" msprop:Generator_ColumnPropNameInRow="DATE_ASSIGNED" msprop:Generator_ColumnPropNameInTable="DATE_ASSIGNEDColumn" msprop:Generator_UserColumnName="DATE_ASSIGNED" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="Expr2" msprop:Generator_ColumnVarNameInTable="columnExpr2" msprop:Generator_ColumnPropNameInRow="Expr2" msprop:Generator_ColumnPropNameInTable="Expr2Column" msprop:Generator_UserColumnName="Expr2" type="xs:dateTime" minOccurs="0" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="VWM4_ITEM_ASS_IDGV" msprop:Generator_TableClassName="VWM4_ITEM_ASS_IDGVDataTable" msprop:Generator_TableVarName="tableVWM4_ITEM_ASS_IDGV" msprop:Generator_RowChangedName="VWM4_ITEM_ASS_IDGVRowChanged" msprop:Generator_TablePropName="VWM4_ITEM_ASS_IDGV" msprop:Generator_RowDeletingName="VWM4_ITEM_ASS_IDGVRowDeleting" msprop:Generator_RowChangingName="VWM4_ITEM_ASS_IDGVRowChanging" msprop:Generator_RowEvHandlerName="VWM4_ITEM_ASS_IDGVRowChangeEventHandler" msprop:Generator_RowDeletedName="VWM4_ITEM_ASS_IDGVRowDeleted" msprop:Generator_RowClassName="VWM4_ITEM_ASS_IDGVRow" msprop:Generator_UserTableName="VWM4_ITEM_ASS_IDGV" msprop:Generator_RowEvArgName="VWM4_ITEM_ASS_IDGVRowChangeEvent">
+        <xs:element name="VWM4_ITEM_ASS_IDGV" msprop:Generator_TableClassName="VWM4_ITEM_ASS_IDGVDataTable" msprop:Generator_TableVarName="tableVWM4_ITEM_ASS_IDGV" msprop:Generator_TablePropName="VWM4_ITEM_ASS_IDGV" msprop:Generator_RowDeletingName="VWM4_ITEM_ASS_IDGVRowDeleting" msprop:Generator_RowChangingName="VWM4_ITEM_ASS_IDGVRowChanging" msprop:Generator_RowEvHandlerName="VWM4_ITEM_ASS_IDGVRowChangeEventHandler" msprop:Generator_RowDeletedName="VWM4_ITEM_ASS_IDGVRowDeleted" msprop:Generator_UserTableName="VWM4_ITEM_ASS_IDGV" msprop:Generator_RowChangedName="VWM4_ITEM_ASS_IDGVRowChanged" msprop:Generator_RowEvArgName="VWM4_ITEM_ASS_IDGVRowChangeEvent" msprop:Generator_RowClassName="VWM4_ITEM_ASS_IDGVRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ITEM_CODE" msprop:Generator_ColumnVarNameInTable="columnITEM_CODE" msprop:Generator_ColumnPropNameInRow="ITEM_CODE" msprop:Generator_ColumnPropNameInTable="ITEM_CODEColumn" msprop:Generator_UserColumnName="ITEM_CODE">
@@ -1686,7 +1625,7 @@ FROM            VWM4_INV_ITEMS_LIST</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="VWM4_ITEM_LIST" msprop:Generator_TableClassName="VWM4_ITEM_LISTDataTable" msprop:Generator_TableVarName="tableVWM4_ITEM_LIST" msprop:Generator_RowChangedName="VWM4_ITEM_LISTRowChanged" msprop:Generator_TablePropName="VWM4_ITEM_LIST" msprop:Generator_RowDeletingName="VWM4_ITEM_LISTRowDeleting" msprop:Generator_RowChangingName="VWM4_ITEM_LISTRowChanging" msprop:Generator_RowEvHandlerName="VWM4_ITEM_LISTRowChangeEventHandler" msprop:Generator_RowDeletedName="VWM4_ITEM_LISTRowDeleted" msprop:Generator_RowClassName="VWM4_ITEM_LISTRow" msprop:Generator_UserTableName="VWM4_ITEM_LIST" msprop:Generator_RowEvArgName="VWM4_ITEM_LISTRowChangeEvent">
+        <xs:element name="VWM4_ITEM_LIST" msprop:Generator_TableClassName="VWM4_ITEM_LISTDataTable" msprop:Generator_TableVarName="tableVWM4_ITEM_LIST" msprop:Generator_TablePropName="VWM4_ITEM_LIST" msprop:Generator_RowDeletingName="VWM4_ITEM_LISTRowDeleting" msprop:Generator_RowChangingName="VWM4_ITEM_LISTRowChanging" msprop:Generator_RowEvHandlerName="VWM4_ITEM_LISTRowChangeEventHandler" msprop:Generator_RowDeletedName="VWM4_ITEM_LISTRowDeleted" msprop:Generator_UserTableName="VWM4_ITEM_LIST" msprop:Generator_RowChangedName="VWM4_ITEM_LISTRowChanged" msprop:Generator_RowEvArgName="VWM4_ITEM_LISTRowChangeEvent" msprop:Generator_RowClassName="VWM4_ITEM_LISTRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ITEM_CODE" msprop:Generator_ColumnVarNameInTable="columnITEM_CODE" msprop:Generator_ColumnPropNameInRow="ITEM_CODE" msprop:Generator_ColumnPropNameInTable="ITEM_CODEColumn" msprop:Generator_UserColumnName="ITEM_CODE">
@@ -1811,7 +1750,7 @@ FROM            VWM4_INV_ITEMS_LIST</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="VWM4_PR_LIST" msprop:Generator_TableClassName="VWM4_PR_LISTDataTable" msprop:Generator_TableVarName="tableVWM4_PR_LIST" msprop:Generator_RowChangedName="VWM4_PR_LISTRowChanged" msprop:Generator_TablePropName="VWM4_PR_LIST" msprop:Generator_RowDeletingName="VWM4_PR_LISTRowDeleting" msprop:Generator_RowChangingName="VWM4_PR_LISTRowChanging" msprop:Generator_RowEvHandlerName="VWM4_PR_LISTRowChangeEventHandler" msprop:Generator_RowDeletedName="VWM4_PR_LISTRowDeleted" msprop:Generator_RowClassName="VWM4_PR_LISTRow" msprop:Generator_UserTableName="VWM4_PR_LIST" msprop:Generator_RowEvArgName="VWM4_PR_LISTRowChangeEvent">
+        <xs:element name="VWM4_PR_LIST" msprop:Generator_TableClassName="VWM4_PR_LISTDataTable" msprop:Generator_TableVarName="tableVWM4_PR_LIST" msprop:Generator_TablePropName="VWM4_PR_LIST" msprop:Generator_RowDeletingName="VWM4_PR_LISTRowDeleting" msprop:Generator_RowChangingName="VWM4_PR_LISTRowChanging" msprop:Generator_RowEvHandlerName="VWM4_PR_LISTRowChangeEventHandler" msprop:Generator_RowDeletedName="VWM4_PR_LISTRowDeleted" msprop:Generator_UserTableName="VWM4_PR_LIST" msprop:Generator_RowChangedName="VWM4_PR_LISTRowChanged" msprop:Generator_RowEvArgName="VWM4_PR_LISTRowChangeEvent" msprop:Generator_RowClassName="VWM4_PR_LISTRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="PR_PRNO" msprop:Generator_ColumnVarNameInTable="columnPR_PRNO" msprop:Generator_ColumnPropNameInRow="PR_PRNO" msprop:Generator_ColumnPropNameInTable="PR_PRNOColumn" msprop:Generator_UserColumnName="PR_PRNO">
@@ -1970,7 +1909,7 @@ FROM            VWM4_INV_ITEMS_LIST</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="VWM4_PCM_LIST" msprop:Generator_TableClassName="VWM4_PCM_LISTDataTable" msprop:Generator_TableVarName="tableVWM4_PCM_LIST" msprop:Generator_RowChangedName="VWM4_PCM_LISTRowChanged" msprop:Generator_TablePropName="VWM4_PCM_LIST" msprop:Generator_RowDeletingName="VWM4_PCM_LISTRowDeleting" msprop:Generator_RowChangingName="VWM4_PCM_LISTRowChanging" msprop:Generator_RowEvHandlerName="VWM4_PCM_LISTRowChangeEventHandler" msprop:Generator_RowDeletedName="VWM4_PCM_LISTRowDeleted" msprop:Generator_RowClassName="VWM4_PCM_LISTRow" msprop:Generator_UserTableName="VWM4_PCM_LIST" msprop:Generator_RowEvArgName="VWM4_PCM_LISTRowChangeEvent">
+        <xs:element name="VWM4_PCM_LIST" msprop:Generator_TableClassName="VWM4_PCM_LISTDataTable" msprop:Generator_TableVarName="tableVWM4_PCM_LIST" msprop:Generator_TablePropName="VWM4_PCM_LIST" msprop:Generator_RowDeletingName="VWM4_PCM_LISTRowDeleting" msprop:Generator_RowChangingName="VWM4_PCM_LISTRowChanging" msprop:Generator_RowEvHandlerName="VWM4_PCM_LISTRowChangeEventHandler" msprop:Generator_RowDeletedName="VWM4_PCM_LISTRowDeleted" msprop:Generator_UserTableName="VWM4_PCM_LIST" msprop:Generator_RowChangedName="VWM4_PCM_LISTRowChanged" msprop:Generator_RowEvArgName="VWM4_PCM_LISTRowChangeEvent" msprop:Generator_RowClassName="VWM4_PCM_LISTRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="PCOM_ID" msprop:Generator_ColumnVarNameInTable="columnPCOM_ID" msprop:Generator_ColumnPropNameInRow="PCOM_ID" msprop:Generator_ColumnPropNameInTable="PCOM_IDColumn" msprop:Generator_UserColumnName="PCOM_ID">
@@ -2019,7 +1958,7 @@ FROM            VWM4_INV_ITEMS_LIST</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="VWM4_INV_ITEM_DR_LIST" msprop:Generator_TableClassName="VWM4_INV_ITEM_DR_LISTDataTable" msprop:Generator_TableVarName="tableVWM4_INV_ITEM_DR_LIST" msprop:Generator_TablePropName="VWM4_INV_ITEM_DR_LIST" msprop:Generator_RowDeletingName="VWM4_INV_ITEM_DR_LISTRowDeleting" msprop:Generator_RowChangingName="VWM4_INV_ITEM_DR_LISTRowChanging" msprop:Generator_RowEvHandlerName="VWM4_INV_ITEM_DR_LISTRowChangeEventHandler" msprop:Generator_RowDeletedName="VWM4_INV_ITEM_DR_LISTRowDeleted" msprop:Generator_UserTableName="VWM4_INV_ITEM_DR_LIST" msprop:Generator_RowChangedName="VWM4_INV_ITEM_DR_LISTRowChanged" msprop:Generator_RowEvArgName="VWM4_INV_ITEM_DR_LISTRowChangeEvent" msprop:Generator_RowClassName="VWM4_INV_ITEM_DR_LISTRow">
+        <xs:element name="VWM4_INV_ITEM_DR_LIST" msprop:Generator_TableClassName="VWM4_INV_ITEM_DR_LISTDataTable" msprop:Generator_TableVarName="tableVWM4_INV_ITEM_DR_LIST" msprop:Generator_RowChangedName="VWM4_INV_ITEM_DR_LISTRowChanged" msprop:Generator_TablePropName="VWM4_INV_ITEM_DR_LIST" msprop:Generator_RowDeletingName="VWM4_INV_ITEM_DR_LISTRowDeleting" msprop:Generator_RowChangingName="VWM4_INV_ITEM_DR_LISTRowChanging" msprop:Generator_RowEvHandlerName="VWM4_INV_ITEM_DR_LISTRowChangeEventHandler" msprop:Generator_RowDeletedName="VWM4_INV_ITEM_DR_LISTRowDeleted" msprop:Generator_RowClassName="VWM4_INV_ITEM_DR_LISTRow" msprop:Generator_UserTableName="VWM4_INV_ITEM_DR_LIST" msprop:Generator_RowEvArgName="VWM4_INV_ITEM_DR_LISTRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="DR_ID" msprop:Generator_ColumnVarNameInTable="columnDR_ID" msprop:Generator_ColumnPropNameInRow="DR_ID" msprop:Generator_ColumnPropNameInTable="DR_IDColumn" msprop:Generator_UserColumnName="DR_ID">
@@ -2074,7 +2013,7 @@ FROM            VWM4_INV_ITEMS_LIST</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="VWM4_INV_ITEM_LIST_DR" msprop:Generator_TableClassName="VWM4_INV_ITEM_LIST_DRDataTable" msprop:Generator_TableVarName="tableVWM4_INV_ITEM_LIST_DR" msprop:Generator_TablePropName="VWM4_INV_ITEM_LIST_DR" msprop:Generator_RowDeletingName="VWM4_INV_ITEM_LIST_DRRowDeleting" msprop:Generator_RowChangingName="VWM4_INV_ITEM_LIST_DRRowChanging" msprop:Generator_RowEvHandlerName="VWM4_INV_ITEM_LIST_DRRowChangeEventHandler" msprop:Generator_RowDeletedName="VWM4_INV_ITEM_LIST_DRRowDeleted" msprop:Generator_UserTableName="VWM4_INV_ITEM_LIST_DR" msprop:Generator_RowChangedName="VWM4_INV_ITEM_LIST_DRRowChanged" msprop:Generator_RowEvArgName="VWM4_INV_ITEM_LIST_DRRowChangeEvent" msprop:Generator_RowClassName="VWM4_INV_ITEM_LIST_DRRow">
+        <xs:element name="VWM4_INV_ITEM_LIST_DR" msprop:Generator_TableClassName="VWM4_INV_ITEM_LIST_DRDataTable" msprop:Generator_TableVarName="tableVWM4_INV_ITEM_LIST_DR" msprop:Generator_RowChangedName="VWM4_INV_ITEM_LIST_DRRowChanged" msprop:Generator_TablePropName="VWM4_INV_ITEM_LIST_DR" msprop:Generator_RowDeletingName="VWM4_INV_ITEM_LIST_DRRowDeleting" msprop:Generator_RowChangingName="VWM4_INV_ITEM_LIST_DRRowChanging" msprop:Generator_RowEvHandlerName="VWM4_INV_ITEM_LIST_DRRowChangeEventHandler" msprop:Generator_RowDeletedName="VWM4_INV_ITEM_LIST_DRRowDeleted" msprop:Generator_RowClassName="VWM4_INV_ITEM_LIST_DRRow" msprop:Generator_UserTableName="VWM4_INV_ITEM_LIST_DR" msprop:Generator_RowEvArgName="VWM4_INV_ITEM_LIST_DRRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="DR_ID" msprop:Generator_ColumnVarNameInTable="columnDR_ID" msprop:Generator_ColumnPropNameInRow="DR_ID" msprop:Generator_ColumnPropNameInTable="DR_IDColumn" msprop:Generator_UserColumnName="DR_ID" minOccurs="0">
@@ -2200,7 +2139,7 @@ FROM            VWM4_INV_ITEMS_LIST</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="VWG3_INVOICE_LIST" msprop:Generator_TableClassName="VWG3_INVOICE_LISTDataTable" msprop:Generator_TableVarName="tableVWG3_INVOICE_LIST" msprop:Generator_RowChangedName="VWG3_INVOICE_LISTRowChanged" msprop:Generator_TablePropName="VWG3_INVOICE_LIST" msprop:Generator_RowDeletingName="VWG3_INVOICE_LISTRowDeleting" msprop:Generator_RowChangingName="VWG3_INVOICE_LISTRowChanging" msprop:Generator_RowEvHandlerName="VWG3_INVOICE_LISTRowChangeEventHandler" msprop:Generator_RowDeletedName="VWG3_INVOICE_LISTRowDeleted" msprop:Generator_RowClassName="VWG3_INVOICE_LISTRow" msprop:Generator_UserTableName="VWG3_INVOICE_LIST" msprop:Generator_RowEvArgName="VWG3_INVOICE_LISTRowChangeEvent">
+        <xs:element name="VWG3_INVOICE_LIST" msprop:Generator_TableClassName="VWG3_INVOICE_LISTDataTable" msprop:Generator_TableVarName="tableVWG3_INVOICE_LIST" msprop:Generator_TablePropName="VWG3_INVOICE_LIST" msprop:Generator_RowDeletingName="VWG3_INVOICE_LISTRowDeleting" msprop:Generator_RowChangingName="VWG3_INVOICE_LISTRowChanging" msprop:Generator_RowEvHandlerName="VWG3_INVOICE_LISTRowChangeEventHandler" msprop:Generator_RowDeletedName="VWG3_INVOICE_LISTRowDeleted" msprop:Generator_UserTableName="VWG3_INVOICE_LIST" msprop:Generator_RowChangedName="VWG3_INVOICE_LISTRowChanged" msprop:Generator_RowEvArgName="VWG3_INVOICE_LISTRowChangeEvent" msprop:Generator_RowClassName="VWG3_INVOICE_LISTRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="INV_ID" msprop:Generator_ColumnVarNameInTable="columnINV_ID" msprop:Generator_ColumnPropNameInRow="INV_ID" msprop:Generator_ColumnPropNameInTable="INV_IDColumn" msprop:Generator_UserColumnName="INV_ID">
@@ -2298,7 +2237,7 @@ FROM            VWM4_INV_ITEMS_LIST</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="VWM4_STOCK_LIST" msprop:Generator_TableClassName="VWM4_STOCK_LISTDataTable" msprop:Generator_TableVarName="tableVWM4_STOCK_LIST" msprop:Generator_TablePropName="VWM4_STOCK_LIST" msprop:Generator_RowDeletingName="VWM4_STOCK_LISTRowDeleting" msprop:Generator_RowChangingName="VWM4_STOCK_LISTRowChanging" msprop:Generator_RowEvHandlerName="VWM4_STOCK_LISTRowChangeEventHandler" msprop:Generator_RowDeletedName="VWM4_STOCK_LISTRowDeleted" msprop:Generator_UserTableName="VWM4_STOCK_LIST" msprop:Generator_RowChangedName="VWM4_STOCK_LISTRowChanged" msprop:Generator_RowEvArgName="VWM4_STOCK_LISTRowChangeEvent" msprop:Generator_RowClassName="VWM4_STOCK_LISTRow">
+        <xs:element name="VWM4_STOCK_LIST" msprop:Generator_TableClassName="VWM4_STOCK_LISTDataTable" msprop:Generator_TableVarName="tableVWM4_STOCK_LIST" msprop:Generator_RowChangedName="VWM4_STOCK_LISTRowChanged" msprop:Generator_TablePropName="VWM4_STOCK_LIST" msprop:Generator_RowDeletingName="VWM4_STOCK_LISTRowDeleting" msprop:Generator_RowChangingName="VWM4_STOCK_LISTRowChanging" msprop:Generator_RowEvHandlerName="VWM4_STOCK_LISTRowChangeEventHandler" msprop:Generator_RowDeletedName="VWM4_STOCK_LISTRowDeleted" msprop:Generator_RowClassName="VWM4_STOCK_LISTRow" msprop:Generator_UserTableName="VWM4_STOCK_LIST" msprop:Generator_RowEvArgName="VWM4_STOCK_LISTRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ITEM_CODE" msprop:Generator_ColumnVarNameInTable="columnITEM_CODE" msprop:Generator_ColumnPropNameInRow="ITEM_CODE" msprop:Generator_ColumnPropNameInTable="ITEM_CODEColumn" msprop:Generator_UserColumnName="ITEM_CODE">
@@ -2367,7 +2306,7 @@ FROM            VWM4_INV_ITEMS_LIST</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="VWM4_INV_ITEMS_LIST" msprop:Generator_TableClassName="VWM4_INV_ITEMS_LISTDataTable" msprop:Generator_TableVarName="tableVWM4_INV_ITEMS_LIST" msprop:Generator_RowChangedName="VWM4_INV_ITEMS_LISTRowChanged" msprop:Generator_TablePropName="VWM4_INV_ITEMS_LIST" msprop:Generator_RowDeletingName="VWM4_INV_ITEMS_LISTRowDeleting" msprop:Generator_RowChangingName="VWM4_INV_ITEMS_LISTRowChanging" msprop:Generator_RowEvHandlerName="VWM4_INV_ITEMS_LISTRowChangeEventHandler" msprop:Generator_RowDeletedName="VWM4_INV_ITEMS_LISTRowDeleted" msprop:Generator_RowClassName="VWM4_INV_ITEMS_LISTRow" msprop:Generator_UserTableName="VWM4_INV_ITEMS_LIST" msprop:Generator_RowEvArgName="VWM4_INV_ITEMS_LISTRowChangeEvent">
+        <xs:element name="VWM4_INV_ITEMS_LIST" msprop:Generator_TableClassName="VWM4_INV_ITEMS_LISTDataTable" msprop:Generator_TableVarName="tableVWM4_INV_ITEMS_LIST" msprop:Generator_TablePropName="VWM4_INV_ITEMS_LIST" msprop:Generator_RowDeletingName="VWM4_INV_ITEMS_LISTRowDeleting" msprop:Generator_RowChangingName="VWM4_INV_ITEMS_LISTRowChanging" msprop:Generator_RowEvHandlerName="VWM4_INV_ITEMS_LISTRowChangeEventHandler" msprop:Generator_RowDeletedName="VWM4_INV_ITEMS_LISTRowDeleted" msprop:Generator_UserTableName="VWM4_INV_ITEMS_LIST" msprop:Generator_RowChangedName="VWM4_INV_ITEMS_LISTRowChanged" msprop:Generator_RowEvArgName="VWM4_INV_ITEMS_LISTRowChangeEvent" msprop:Generator_RowClassName="VWM4_INV_ITEMS_LISTRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ITEM_CODE" msprop:Generator_ColumnVarNameInTable="columnITEM_CODE" msprop:Generator_ColumnPropNameInRow="ITEM_CODE" msprop:Generator_ColumnPropNameInTable="ITEM_CODEColumn" msprop:Generator_UserColumnName="ITEM_CODE">
@@ -2423,6 +2362,189 @@ FROM            VWM4_INV_ITEMS_LIST</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="VWM4_PCM_DETAILS" msprop:Generator_TableClassName="VWM4_PCM_DETAILSDataTable" msprop:Generator_TableVarName="tableVWM4_PCM_DETAILS" msprop:Generator_TablePropName="VWM4_PCM_DETAILS" msprop:Generator_RowDeletingName="VWM4_PCM_DETAILSRowDeleting" msprop:Generator_RowChangingName="VWM4_PCM_DETAILSRowChanging" msprop:Generator_RowEvHandlerName="VWM4_PCM_DETAILSRowChangeEventHandler" msprop:Generator_RowDeletedName="VWM4_PCM_DETAILSRowDeleted" msprop:Generator_UserTableName="VWM4_PCM_DETAILS" msprop:Generator_RowChangedName="VWM4_PCM_DETAILSRowChanged" msprop:Generator_RowEvArgName="VWM4_PCM_DETAILSRowChangeEvent" msprop:Generator_RowClassName="VWM4_PCM_DETAILSRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="PCOM_ID" msprop:Generator_ColumnVarNameInTable="columnPCOM_ID" msprop:Generator_ColumnPropNameInRow="PCOM_ID" msprop:Generator_ColumnPropNameInTable="PCOM_IDColumn" msprop:Generator_UserColumnName="PCOM_ID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PCOM_REAS" msprop:Generator_ColumnVarNameInTable="columnPCOM_REAS" msprop:Generator_ColumnPropNameInRow="PCOM_REAS" msprop:Generator_ColumnPropNameInTable="PCOM_REASColumn" msprop:Generator_UserColumnName="PCOM_REAS" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PCOM_CHK_BY" msprop:Generator_ColumnVarNameInTable="columnPCOM_CHK_BY" msprop:Generator_ColumnPropNameInRow="PCOM_CHK_BY" msprop:Generator_ColumnPropNameInTable="PCOM_CHK_BYColumn" msprop:Generator_UserColumnName="PCOM_CHK_BY" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PCOM_NOTED_BY" msprop:Generator_ColumnVarNameInTable="columnPCOM_NOTED_BY" msprop:Generator_ColumnPropNameInRow="PCOM_NOTED_BY" msprop:Generator_ColumnPropNameInTable="PCOM_NOTED_BYColumn" msprop:Generator_UserColumnName="PCOM_NOTED_BY" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PCOM_DATE" msprop:Generator_ColumnVarNameInTable="columnPCOM_DATE" msprop:Generator_ColumnPropNameInRow="PCOM_DATE" msprop:Generator_ColumnPropNameInTable="PCOM_DATEColumn" msprop:Generator_UserColumnName="PCOM_DATE" type="xs:dateTime" />
+              <xs:element name="PCOM_REMARKS" msprop:Generator_ColumnVarNameInTable="columnPCOM_REMARKS" msprop:Generator_ColumnPropNameInRow="PCOM_REMARKS" msprop:Generator_ColumnPropNameInTable="PCOM_REMARKSColumn" msprop:Generator_UserColumnName="PCOM_REMARKS" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PCOM_DIV_CODE" msprop:Generator_ColumnVarNameInTable="columnPCOM_DIV_CODE" msprop:Generator_ColumnPropNameInRow="PCOM_DIV_CODE" msprop:Generator_ColumnPropNameInTable="PCOM_DIV_CODEColumn" msprop:Generator_UserColumnName="PCOM_DIV_CODE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ITEM_CODE" msprop:Generator_ColumnVarNameInTable="columnITEM_CODE" msprop:Generator_ColumnPropNameInRow="ITEM_CODE" msprop:Generator_ColumnPropNameInTable="ITEM_CODEColumn" msprop:Generator_UserColumnName="ITEM_CODE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PCOU_STK" msprop:Generator_ColumnVarNameInTable="columnPCOU_STK" msprop:Generator_ColumnPropNameInRow="PCOU_STK" msprop:Generator_ColumnPropNameInTable="PCOU_STKColumn" msprop:Generator_UserColumnName="PCOU_STK" type="xs:int" minOccurs="0" />
+              <xs:element name="PCOU_REMARKS" msprop:Generator_ColumnVarNameInTable="columnPCOU_REMARKS" msprop:Generator_ColumnPropNameInRow="PCOU_REMARKS" msprop:Generator_ColumnPropNameInTable="PCOU_REMARKSColumn" msprop:Generator_UserColumnName="PCOU_REMARKS" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PCOU_BY" msprop:Generator_ColumnVarNameInTable="columnPCOU_BY" msprop:Generator_ColumnPropNameInRow="PCOU_BY" msprop:Generator_ColumnPropNameInTable="PCOU_BYColumn" msprop:Generator_UserColumnName="PCOU_BY" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PCOU_UNIT_COST" msprop:Generator_ColumnVarNameInTable="columnPCOU_UNIT_COST" msprop:Generator_ColumnPropNameInRow="PCOU_UNIT_COST" msprop:Generator_ColumnPropNameInTable="PCOU_UNIT_COSTColumn" msprop:Generator_UserColumnName="PCOU_UNIT_COST" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PCOU_TOTAL_COST" msprop:Generator_ColumnVarNameInTable="columnPCOU_TOTAL_COST" msprop:Generator_ColumnPropNameInRow="PCOU_TOTAL_COST" msprop:Generator_ColumnPropNameInTable="PCOU_TOTAL_COSTColumn" msprop:Generator_UserColumnName="PCOU_TOTAL_COST" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PCOU_UNIT_TYPE" msprop:Generator_ColumnVarNameInTable="columnPCOU_UNIT_TYPE" msprop:Generator_ColumnPropNameInRow="PCOU_UNIT_TYPE" msprop:Generator_ColumnPropNameInTable="PCOU_UNIT_TYPEColumn" msprop:Generator_UserColumnName="PCOU_UNIT_TYPE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ITEM_ALIAS" msprop:Generator_ColumnVarNameInTable="columnITEM_ALIAS" msprop:Generator_ColumnPropNameInRow="ITEM_ALIAS" msprop:Generator_ColumnPropNameInTable="ITEM_ALIASColumn" msprop:Generator_UserColumnName="ITEM_ALIAS" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="VWM4_ITEM_ASS" msprop:Generator_TableClassName="VWM4_ITEM_ASSDataTable" msprop:Generator_TableVarName="tableVWM4_ITEM_ASS" msprop:Generator_TablePropName="VWM4_ITEM_ASS" msprop:Generator_RowDeletingName="VWM4_ITEM_ASSRowDeleting" msprop:Generator_RowChangingName="VWM4_ITEM_ASSRowChanging" msprop:Generator_RowEvHandlerName="VWM4_ITEM_ASSRowChangeEventHandler" msprop:Generator_RowDeletedName="VWM4_ITEM_ASSRowDeleted" msprop:Generator_UserTableName="VWM4_ITEM_ASS" msprop:Generator_RowChangedName="VWM4_ITEM_ASSRowChanged" msprop:Generator_RowEvArgName="VWM4_ITEM_ASSRowChangeEvent" msprop:Generator_RowClassName="VWM4_ITEM_ASSRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ITEM_CODE" msprop:Generator_ColumnVarNameInTable="columnITEM_CODE" msprop:Generator_ColumnPropNameInRow="ITEM_CODE" msprop:Generator_ColumnPropNameInTable="ITEM_CODEColumn" msprop:Generator_UserColumnName="ITEM_CODE">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ITEM_SERIAL_NO" msprop:Generator_ColumnVarNameInTable="columnITEM_SERIAL_NO" msprop:Generator_ColumnPropNameInRow="ITEM_SERIAL_NO" msprop:Generator_ColumnPropNameInTable="ITEM_SERIAL_NOColumn" msprop:Generator_UserColumnName="ITEM_SERIAL_NO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ITEM_DESCRIPTION" msprop:Generator_ColumnVarNameInTable="columnITEM_DESCRIPTION" msprop:Generator_ColumnPropNameInRow="ITEM_DESCRIPTION" msprop:Generator_ColumnPropNameInTable="ITEM_DESCRIPTIONColumn" msprop:Generator_UserColumnName="ITEM_DESCRIPTION">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ITEM_UNIT" msprop:Generator_ColumnVarNameInTable="columnITEM_UNIT" msprop:Generator_ColumnPropNameInRow="ITEM_UNIT" msprop:Generator_ColumnPropNameInTable="ITEM_UNITColumn" msprop:Generator_UserColumnName="ITEM_UNIT">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ITEM_UNIT_COST" msprop:Generator_ColumnVarNameInTable="columnITEM_UNIT_COST" msprop:Generator_ColumnPropNameInRow="ITEM_UNIT_COST" msprop:Generator_ColumnPropNameInTable="ITEM_UNIT_COSTColumn" msprop:Generator_UserColumnName="ITEM_UNIT_COST" type="xs:decimal" />
+              <xs:element name="ITEM_QUANTITY" msprop:Generator_ColumnVarNameInTable="columnITEM_QUANTITY" msprop:Generator_ColumnPropNameInRow="ITEM_QUANTITY" msprop:Generator_ColumnPropNameInTable="ITEM_QUANTITYColumn" msprop:Generator_UserColumnName="ITEM_QUANTITY" type="xs:int" minOccurs="0" />
+              <xs:element name="ITEM_DATE_AQUISITION" msprop:Generator_ColumnVarNameInTable="columnITEM_DATE_AQUISITION" msprop:Generator_ColumnPropNameInRow="ITEM_DATE_AQUISITION" msprop:Generator_ColumnPropNameInTable="ITEM_DATE_AQUISITIONColumn" msprop:Generator_UserColumnName="ITEM_DATE_AQUISITION" type="xs:dateTime" />
+              <xs:element name="ITEM_CREATED_DATE" msprop:Generator_ColumnVarNameInTable="columnITEM_CREATED_DATE" msprop:Generator_ColumnPropNameInRow="ITEM_CREATED_DATE" msprop:Generator_ColumnPropNameInTable="ITEM_CREATED_DATEColumn" msprop:Generator_UserColumnName="ITEM_CREATED_DATE" type="xs:dateTime" />
+              <xs:element name="FULLNAME" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFULLNAME" msprop:Generator_ColumnPropNameInRow="FULLNAME" msprop:Generator_ColumnPropNameInTable="FULLNAMEColumn" msprop:Generator_UserColumnName="FULLNAME" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EMP_NO" msprop:Generator_ColumnVarNameInTable="columnEMP_NO" msprop:Generator_ColumnPropNameInRow="EMP_NO" msprop:Generator_ColumnPropNameInTable="EMP_NOColumn" msprop:Generator_UserColumnName="EMP_NO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ACCO_ORIGINATED" msprop:Generator_ColumnVarNameInTable="columnACCO_ORIGINATED" msprop:Generator_ColumnPropNameInRow="ACCO_ORIGINATED" msprop:Generator_ColumnPropNameInTable="ACCO_ORIGINATEDColumn" msprop:Generator_UserColumnName="ACCO_ORIGINATED" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ACCO_REMARKS" msprop:Generator_ColumnVarNameInTable="columnACCO_REMARKS" msprop:Generator_ColumnPropNameInRow="ACCO_REMARKS" msprop:Generator_ColumnPropNameInTable="ACCO_REMARKSColumn" msprop:Generator_UserColumnName="ACCO_REMARKS" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ACCO_ASSIGNED_BY" msprop:Generator_ColumnVarNameInTable="columnACCO_ASSIGNED_BY" msprop:Generator_ColumnPropNameInRow="ACCO_ASSIGNED_BY" msprop:Generator_ColumnPropNameInTable="ACCO_ASSIGNED_BYColumn" msprop:Generator_UserColumnName="ACCO_ASSIGNED_BY" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DATE_APPOINTED" msprop:Generator_ColumnVarNameInTable="columnDATE_APPOINTED" msprop:Generator_ColumnPropNameInRow="DATE_APPOINTED" msprop:Generator_ColumnPropNameInTable="DATE_APPOINTEDColumn" msprop:Generator_UserColumnName="DATE_APPOINTED" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ASSI_ORIGINATED" msprop:Generator_ColumnVarNameInTable="columnASSI_ORIGINATED" msprop:Generator_ColumnPropNameInRow="ASSI_ORIGINATED" msprop:Generator_ColumnPropNameInTable="ASSI_ORIGINATEDColumn" msprop:Generator_UserColumnName="ASSI_ORIGINATED" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="REMARKS" msprop:Generator_ColumnVarNameInTable="columnREMARKS" msprop:Generator_ColumnPropNameInRow="REMARKS" msprop:Generator_ColumnPropNameInTable="REMARKSColumn" msprop:Generator_UserColumnName="REMARKS" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ASSI_ASSIGNED_BY" msprop:Generator_ColumnVarNameInTable="columnASSI_ASSIGNED_BY" msprop:Generator_ColumnPropNameInRow="ASSI_ASSIGNED_BY" msprop:Generator_ColumnPropNameInTable="ASSI_ASSIGNED_BYColumn" msprop:Generator_UserColumnName="ASSI_ASSIGNED_BY" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DATE_ASSIGNED" msprop:Generator_ColumnVarNameInTable="columnDATE_ASSIGNED" msprop:Generator_ColumnPropNameInRow="DATE_ASSIGNED" msprop:Generator_ColumnPropNameInTable="DATE_ASSIGNEDColumn" msprop:Generator_UserColumnName="DATE_ASSIGNED" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -2462,6 +2584,10 @@ FROM            VWM4_INV_ITEMS_LIST</CommandText>
     </xs:unique>
     <xs:unique name="VWM4_INV_ITEMS_LIST_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:VWM4_INV_ITEMS_LIST" />
+      <xs:field xpath="mstns:ITEM_CODE" />
+    </xs:unique>
+    <xs:unique name="VWM4_ITEM_ASS_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:VWM4_ITEM_ASS" />
       <xs:field xpath="mstns:ITEM_CODE" />
     </xs:unique>
   </xs:element>

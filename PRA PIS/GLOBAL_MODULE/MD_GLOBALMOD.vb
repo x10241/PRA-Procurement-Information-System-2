@@ -21,6 +21,13 @@ Module MD_GLOBALMOD
     End Function
 #End Region
 
+#Region "REMOVE CHARACTER"
+    Function RemoveCharacter(ByVal stringToCleanUp, ByVal characterToRemove)
+        Return stringToCleanUp.Replace(characterToRemove, "")
+    End Function
+#End Region
+
+
 #Region "TEXT WITH COMMA"
     Public Function TXTSETTO_0(ByVal txt As TextBox, intdec As Boolean) As String
         Dim ttxt_0 As String = "0.00"
@@ -57,6 +64,19 @@ Module MD_GLOBALMOD
         pb.BackgroundImage.Save(psimg, ImageFormat.Jpeg)
         Dim pbbyte As Byte() = psimg.ToArray
         Return pbbyte
+    End Function
+
+    Public Function IMGPATHTOPBOX(ByVal path As String, ByVal pb As PictureBox)
+        'pb.Image = Image.FromFile()
+        Try
+            Using fs As New FileStream(path, FileMode.Open)
+                pb.Image = New Bitmap(Image.FromStream(fs))
+                Return pb
+            End Using
+        Catch ex As Exception
+            pb.Image = My.Resources._480px_No_image_available_svg
+            Return pb
+        End Try
     End Function
 
     Public Function BYTETOIMG(ByVal byt As Byte()) As Image
@@ -122,6 +142,20 @@ Module MD_GLOBALMOD
         Dim rand As New Random
         Dim sb As New StringBuilder
         For i As Integer = 1 To 6
+            Dim idx As Integer = rand.Next(0, 35)
+            sb.Append(characters.Substring(idx, 1))
+        Next
+        '   Return sb.ToString() + Today.Month.ToString() + Today.Year.ToString()
+        Return sb.ToString()
+    End Function
+
+
+
+    Public Function RandomGenCode(digits As Integer) As String
+        Dim characters As String = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        Dim rand As New Random
+        Dim sb As New StringBuilder
+        For i As Integer = 1 To digits
             Dim idx As Integer = rand.Next(0, 35)
             sb.Append(characters.Substring(idx, 1))
         Next
@@ -250,5 +284,6 @@ Module MD_GLOBALMOD
         Next
     End Sub
 #End Region
+
 
 End Module

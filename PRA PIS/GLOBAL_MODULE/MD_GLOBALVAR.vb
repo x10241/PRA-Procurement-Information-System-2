@@ -14,8 +14,10 @@ Module MD_GLOBALVAR
     Public TXTGLOBAL As TextBox
     Public TXTSIGNO As TextBox
     Public POSITION As TextBox
+    Public TXTPOSITION As TextBox
     Public llbl As LinkLabel
     Public dgv As DataGridView
+    Public dgv2 As DataGridView
     Public rect As RectangleShape
     Public RPTDOC_PURCHASEREQUEST As ReportDocument
     Public TRANSCHK_BOOL As Boolean
@@ -65,6 +67,7 @@ Module MD_GLOBALVAR
     Public USERDEPARTMENT As String
     Public USERDIVISION As String
     Public dt As DataTable
+    Public dt2 As DataTable
 
     'variable for purchase request
     Public PR_DATEREQUESTED As String
@@ -129,6 +132,14 @@ Module MD_GLOBALVAR
     Public IR_REPORTHEADER As String
     Public IR_ALLITEMS As Boolean
     Public IR_ASOFDATE As Date
+    Public IR_CHKBY As String
+    Public IR_CRTBY As String
+    Public IR_CHK_POS As String
+    Public IR_CRT_POS As String
+    Public IR_ISALLYR As Boolean
+    Public IR_YR As String
+    Public IR_ORDERBY As String
+    Public IR_ORDERTYPE As String
     Public ITEQUIPMENTBOOL As Boolean
     Public QUANTITYFORDISTRIBUTION As Integer
     Public CELLVALUEHOLDER As Integer
@@ -155,6 +166,7 @@ Module MD_GLOBALVAR
     Public R_ISSU_NAME As String
     Public R_ISSU_POSI As String
     Public R_DATE As String
+
     Public REQ_CODE As String
     Public EMP_POSITION As String
     Public REPRINT As Boolean
@@ -200,4 +212,14 @@ Module MD_GLOBALVAR
     Public ISLOT As Boolean
     Public INV_ENC_UNIT_COST As String
     Public INV_ENC_TOTAL_COST As String
+    Public STK_ORDERBY As String
+    Public STK_SORTBY As String
+    Public STK_MONTH As String
+    Public STK_YEAR As String
+    Public STK_APPBY As String
+    Public STK_POS As String
+    Public STK_ORDER_B As String
+    Public DR_SEARCH As String
+    Public II_SEARCH As String
+    Public IS_OFF As Boolean
 End Module

@@ -79,8 +79,9 @@
             ElseIf TypeOf sender Is TextBox Then
                 TXTDATE = CType(sender, TextBox)
             End If
-#Region "Generate Report"
+#Region "GENERATE REPORT"
             If btn Is BTN_INVENTORY_GENERATE_REPORT Then
+                _CLEAR()
                 'items only
                 If CB_REPORT_TYPE.SelectedIndex = 0 Then
                     If CB_FILTERBY.SelectedIndex = 0 Then
@@ -115,8 +116,6 @@
                         IR_KEYWORD = CB_SEARCH_BY.Text
                     End If
 
-
-
                     If CB_DATE_FILTER.SelectedIndex = 3 Then
                         IR_DATEFROM = WTXT_INVENTORY_REPORT_FROM.Text
                         IR_DATETO = WTXT_INVENTORY_REPORT_TO.Text
@@ -125,13 +124,45 @@
                         IR_DATETO = Today
                         IR_ASOFDATE = Today
                     End If
-                    SpM4_INVENTORY_REPORTTableAdapter.Fill(DS_STOREDPROC.SPM4_INVENTORY_REPORT, Trim(IR_CBFILTERBY), Trim(IR_CBDATEBY), Trim(IR_KEYWORD), Trim(IR_DATEFROM), Trim(IR_DATETO))
 
-                    If DS_STOREDPROC.SPM4_INVENTORY_REPORT.Count = 0 Then
-                        NotificationManager.Show(Me, "No data Found!", Color.Red, 3000)
+                    If CHK_ALL_YR.CheckState = CheckState.Checked Then
+                        IR_ISALLYR = True
                     Else
-                        FRM_INVENTORY_REPORT_PRINT_PREVIEW.ShowDialog()
+                        IR_ISALLYR = False
                     End If
+
+                    IR_ORDERBY = CB_ORDER_BY.Text
+                    IR_ORDERTYPE = CB_ORDER1.Text
+
+                    If CHK_ALL_YR.Checked = True Then
+                        IR_YR = Nothing
+                    Else
+                        IR_YR = CB_YEAR.Text
+                    End If
+
+                    Dim ctr As Integer = 0
+                    Try
+B:
+                        ctr = ctr + 1
+                        SpM4_INVENTORY_REPORTTableAdapter.Fill(DS_STOREDPROC.SPM4_INVENTORY_REPORT, Trim(IR_CBFILTERBY), Trim(IR_CBDATEBY), Trim(IR_KEYWORD), Trim(IR_DATEFROM), Trim(IR_DATETO), IR_ISALLYR, IR_YR, IR_ORDERBY, IR_ORDERTYPE)
+                        IR_CHKBY = WTXT_CHK_BY.Text
+                        IR_CRTBY = WTXT_CRT_BY.Text
+
+
+                        If DS_STOREDPROC.SPM4_INVENTORY_REPORT.Count = 0 Then
+                            NotificationManager.Show(Me, "No data Found!", Color.Red, 3000)
+                        Else
+                            FRM_INVENTORY_REPORT_PRINT_PREVIEW.ShowDialog()
+                        End If
+
+                    Catch ex As Exception
+                        If ctr = 5 Then
+                            NotificationManager.Show(Me, ex.Message, Color.Red, 3000)
+                        Else
+                            GoTo B
+                        End If
+
+                    End Try
 
                     'items in location
                 ElseIf CB_REPORT_TYPE.SelectedIndex = 1 Then
@@ -161,32 +192,63 @@
             End If
         Catch ex As Exception
             NotificationManager.Show(Me, ex.Message, Color.Red, 3000)
+
         End Try
 
 
     End Sub
 #End Region
 
+#Region "LOAD"
     Private Sub FRM_INVENTORY_PRINT_PREVIEW_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'DS_CUSTOM.DT_INVENTORY_ITM_YR' table. You can move, or remove it, as needed.
+        Me.DT_INVENTORY_ITM_YRTableAdapter.Fill(Me.DS_CUSTOM.DT_INVENTORY_ITM_YR)
         CB_REPORT_TYPE.SelectedIndex = 0
         CB_FILTERBY.SelectedIndex = 0
         CB_DATE_FILTER.SelectedIndex = 0
         CB_ASSIGN_BY.SelectedIndex = 0
+        CB_YEAR.SelectedIndex = 0
+        CB_ORDER1.SelectedIndex = 0
+        CB_ORDER_BY.SelectedIndex = 0
+
+A:
+        Try
+            Me.SPM4_PDS_LISTTableAdapter.FillBySEARCH(Me.DS_PRAJO_DATABASE.SPM4_PDS_LIST, "")
+#Region "APPROVED BY"
+            Dim USERsuggestions As New AutoCompleteStringCollection()
+            If SPM4_PDS_LISTBindingSource.Count > 0 Then
+                For x = 0 To SPM4_PDS_LISTBindingSource.Count - 1
+                    USERsuggestions.Add(CStr(If(IsDBNull(CType(SPM4_PDS_LISTBindingSource.List(x), DataRowView).Item(0)), "", CType(SPM4_PDS_LISTBindingSource.List(x), DataRowView).Item(0))))
+                Next
+                WTXT_CHK_BY.AutoCompleteCustomSource = USERsuggestions
+                WTXT_CRT_BY.AutoCompleteCustomSource = USERsuggestions
+            End If
+#End Region
+        Catch ex As Exception
+            GoTo A
+        End Try
     End Sub
+#End Region
+
+#Region "SELECTED INDEX CHANGED"
 
     Private Sub CB_DATE_FILTER_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CB_DATE_FILTER.SelectedIndexChanged
         If CB_DATE_FILTER.SelectedIndex = 3 Then
             PNL_CUSTOM_RANGE.Visible = True
+            PNL_YEAR.Visible = False
+        ElseIf CB_DATE_FILTER.SelectedIndex = 2 Then
+            PNL_CUSTOM_RANGE.Visible = False
+            PNL_YEAR.Visible = True
         Else
+            PNL_YEAR.Visible = False
             PNL_CUSTOM_RANGE.Visible = False
         End If
     End Sub
 
-
     Private Sub CB_FILTERBY_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CB_FILTERBY.SelectedIndexChanged
         'category
         If CB_FILTERBY.SelectedIndex = 0 Then
-            TblM4_INVENTORY_CATEGORYTableAdapter.FillByINV_CODE(DS_PROPERTYDB.tblM4_INVENTORY_CATEGORY, "ITE05002", DIVISION_NO)
+            TblM4_INVENTORY_CATEGORYTableAdapter.FillByINV_CODE(DS_PROPERTYDB.tblM4_INVENTORY_CATEGORY, "0", DIVISION_NO)
             With CB_SEARCH_BY
                 .DataSource = TblM4INVENTORYCATEGORYBindingSource
                 .ValueMember = "CAT_CODE"
@@ -195,7 +257,7 @@
             CHK_SEL_ALL_ITEMS.Text = CHKTEXT & "Category"
             'sub category
         ElseIf CB_FILTERBY.SelectedIndex = 1 Then
-            TblM4_INVENTORY_SUB_CATEGORYTableAdapter.Fill(DS_PROPERTYDB.tblM4_INVENTORY_SUB_CATEGORY)
+            TblM4_INVENTORY_SUB_CATEGORYTableAdapter.FillByDIV_CODE(DS_PROPERTYDB.tblM4_INVENTORY_SUB_CATEGORY, DIVISION_NO)
             With CB_SEARCH_BY
                 .DataSource = TblM4INVENTORYSUBCATEGORYBindingSource
                 .ValueMember = "SC_NO"
@@ -204,7 +266,7 @@
             CHK_SEL_ALL_ITEMS.Text = CHKTEXT & "Sub Category/Type"
             'brand
         ElseIf CB_FILTERBY.SelectedIndex = 2 Then
-            TblM4_INVENTORY_ITEMBRANDTableAdapter.FillByINVCODE(DS_PROPERTYDB.tblM4_INVENTORY_ITEMBRAND, "ITE05002")
+            TblM4_INVENTORY_ITEMBRANDTableAdapter.FillByINVCODE(DS_PROPERTYDB.tblM4_INVENTORY_ITEMBRAND, "0")
             With CB_SEARCH_BY
                 .DataSource = TblM4INVENTORYITEMBRANDBindingSource
                 .ValueMember = "ITBR_NO"
@@ -251,8 +313,46 @@
             PNL_ACCOUNTABLE_PERSON.BringToFront()
         End If
     End Sub
+#End Region
 
-    Private Sub CB_ASSIGN_SEARCH_BY_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CB_ASSIGN_SEARCH_BY.SelectedIndexChanged
-
+#Region "CLEAR"
+    Sub _CLEAR()
+        IR_CBFILTERBY = Nothing
+        IR_CBDATEBY = Nothing
+        IR_REPORTHEADER = Nothing
+        IR_ALLITEMS = Nothing
+        IR_KEYWORD = Nothing
+        IR_DATEFROM = Nothing
+        IR_DATETO = Nothing
+        IR_ASOFDATE = Nothing
+        IR_CHKBY = Nothing
+        IR_CRTBY = Nothing
+        'IR_CRT_POS = Nothing
+        'IR_CHK_POS = Nothing
     End Sub
+#End Region
+
+#Region "TEXT CHANGED"
+    Private Sub WTXT_CHK_BY_TextChanged(sender As Object, e As EventArgs) Handles WTXT_CHK_BY.TextChanged
+        SPM4_PDS_LISTBindingSource.Filter = "FULLNAME = '" & WTXT_CHK_BY.Text & "'"
+        IR_CHK_POS = BS_SINGLEROW(SPM4_PDS_LISTBindingSource, 47)
+    End Sub
+
+    Private Sub WTXT_CRT_BY_TextChanged(sender As Object, e As EventArgs) Handles WTXT_CRT_BY.TextChanged
+        SPM4_PDS_LISTBindingSource.Filter = "FULLNAME = '" & WTXT_CRT_BY.Text & "'"
+        IR_CRT_POS = BS_SINGLEROW(SPM4_PDS_LISTBindingSource, 47)
+    End Sub
+
+#End Region
+
+    Private Sub CHK_ALL_YR_CheckedChanged(sender As Object, e As EventArgs) Handles CHK_ALL_YR.CheckedChanged
+        If CHK_ALL_YR.Checked = True Then
+            CB_YEAR.Enabled = False
+            IR_ISALLYR = True
+        Else
+            CB_YEAR.Enabled = True
+            IR_ISALLYR = False
+        End If
+    End Sub
+
 End Class

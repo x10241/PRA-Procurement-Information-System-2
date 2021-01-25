@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class FRM_PRINT_PREVIEW
+Partial Class FRM_PMD_PRINT_PREVIEW
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -24,6 +24,7 @@ Partial Class FRM_PRINT_PREVIEW
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.CRV_PREVIEW = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
         Me.PrintDocument = New System.Drawing.Printing.PrintDocument()
         Me.BTN_GENERATE_REPORT = New System.Windows.Forms.Button()
@@ -41,23 +42,44 @@ Partial Class FRM_PRINT_PREVIEW
         Me.SPM4_ITEM_STOCKMASTERLISTBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SPM4_ITEM_STOCKMASTERLISTTableAdapter = New PRA_PIS.DS_STOREDPROCTableAdapters.SPM4_ITEM_STOCKMASTERLISTTableAdapter()
         Me.SPM4_CURRENTDATETIMETableAdapter = New PRA_PIS.DS_STOREDPROCTableAdapters.SPM4_CURRENTDATETIMETableAdapter()
-        Me.MONTHYEARLabel1 = New System.Windows.Forms.Label()
+        Me.SPM4_ITEM_STOCKMASTERLIST_RPTBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SPM4_ITEM_STOCKMASTERLIST_RPTTableAdapter = New PRA_PIS.DS_STOREDPROCTableAdapters.SPM4_ITEM_STOCKMASTERLIST_RPTTableAdapter()
+        Me.SPM4_ITEM_DR_LISTBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SPM4_ITEM_DR_LISTTableAdapter = New PRA_PIS.DS_STOREDPROCTableAdapters.SPM4_ITEM_DR_LISTTableAdapter()
+        Me.SPM4_ITEM_ISSUED_LISTBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SPM4_ITEM_ISSUED_LISTTableAdapter = New PRA_PIS.DS_STOREDPROCTableAdapters.SPM4_ITEM_ISSUED_LISTTableAdapter()
+        Me.DS_CUSTOM = New PRA_PIS.DS_CUSTOM()
         Me.Panel1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PBX_QRCODE, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PNL.SuspendLayout()
         CType(Me.SPM4_CURRENTDATETIMEBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DS_STOREDPROC, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SPM4_ITEM_STOCKMASTERLISTBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SPM4_ITEM_STOCKMASTERLIST_RPTBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SPM4_ITEM_DR_LISTBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SPM4_ITEM_ISSUED_LISTBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DS_CUSTOM, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Controls.Add(Me.CRV_PREVIEW)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(0, 47)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(524, 304)
+        Me.Panel1.Size = New System.Drawing.Size(392, 304)
         Me.Panel1.TabIndex = 1463
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Location = New System.Drawing.Point(3, 34)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(10, 10)
+        Me.PictureBox1.TabIndex = 1
+        Me.PictureBox1.TabStop = False
+        Me.PictureBox1.Visible = False
         '
         'CRV_PREVIEW
         '
@@ -77,7 +99,7 @@ Partial Class FRM_PRINT_PREVIEW
         Me.CRV_PREVIEW.ShowPrintButton = False
         Me.CRV_PREVIEW.ShowRefreshButton = False
         Me.CRV_PREVIEW.ShowTextSearchButton = False
-        Me.CRV_PREVIEW.Size = New System.Drawing.Size(524, 304)
+        Me.CRV_PREVIEW.Size = New System.Drawing.Size(392, 304)
         Me.CRV_PREVIEW.TabIndex = 0
         Me.CRV_PREVIEW.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None
         '
@@ -94,7 +116,7 @@ Partial Class FRM_PRINT_PREVIEW
         Me.BTN_GENERATE_REPORT.Image = Global.PRA_PIS.My.Resources.Resources.outline_print_black_18dp
         Me.BTN_GENERATE_REPORT.Location = New System.Drawing.Point(0, 351)
         Me.BTN_GENERATE_REPORT.Name = "BTN_GENERATE_REPORT"
-        Me.BTN_GENERATE_REPORT.Size = New System.Drawing.Size(524, 43)
+        Me.BTN_GENERATE_REPORT.Size = New System.Drawing.Size(392, 43)
         Me.BTN_GENERATE_REPORT.TabIndex = 1462
         Me.BTN_GENERATE_REPORT.Text = "PRINT REPORT"
         Me.BTN_GENERATE_REPORT.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -119,7 +141,7 @@ Partial Class FRM_PRINT_PREVIEW
         Me.BTN_INVENTORY_REPORT_MINIMIZE.FlatAppearance.BorderColor = System.Drawing.Color.Teal
         Me.BTN_INVENTORY_REPORT_MINIMIZE.FlatAppearance.BorderSize = 3
         Me.BTN_INVENTORY_REPORT_MINIMIZE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BTN_INVENTORY_REPORT_MINIMIZE.Location = New System.Drawing.Point(447, 9)
+        Me.BTN_INVENTORY_REPORT_MINIMIZE.Location = New System.Drawing.Point(315, 9)
         Me.BTN_INVENTORY_REPORT_MINIMIZE.Name = "BTN_INVENTORY_REPORT_MINIMIZE"
         Me.BTN_INVENTORY_REPORT_MINIMIZE.Size = New System.Drawing.Size(28, 28)
         Me.BTN_INVENTORY_REPORT_MINIMIZE.TabIndex = 12
@@ -134,7 +156,7 @@ Partial Class FRM_PRINT_PREVIEW
         Me.BTN_INVENTORY_REPORT_CLOSE.FlatAppearance.BorderColor = System.Drawing.Color.Teal
         Me.BTN_INVENTORY_REPORT_CLOSE.FlatAppearance.BorderSize = 3
         Me.BTN_INVENTORY_REPORT_CLOSE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BTN_INVENTORY_REPORT_CLOSE.Location = New System.Drawing.Point(481, 7)
+        Me.BTN_INVENTORY_REPORT_CLOSE.Location = New System.Drawing.Point(349, 7)
         Me.BTN_INVENTORY_REPORT_CLOSE.Name = "BTN_INVENTORY_REPORT_CLOSE"
         Me.BTN_INVENTORY_REPORT_CLOSE.Size = New System.Drawing.Size(30, 30)
         Me.BTN_INVENTORY_REPORT_CLOSE.TabIndex = 10
@@ -162,7 +184,7 @@ Partial Class FRM_PRINT_PREVIEW
         Me.BTN_Minimize.FlatAppearance.BorderColor = System.Drawing.Color.Teal
         Me.BTN_Minimize.FlatAppearance.BorderSize = 3
         Me.BTN_Minimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BTN_Minimize.Location = New System.Drawing.Point(-4562, 11)
+        Me.BTN_Minimize.Location = New System.Drawing.Point(-4694, 11)
         Me.BTN_Minimize.Margin = New System.Windows.Forms.Padding(5)
         Me.BTN_Minimize.Name = "BTN_Minimize"
         Me.BTN_Minimize.Size = New System.Drawing.Size(47, 45)
@@ -178,7 +200,7 @@ Partial Class FRM_PRINT_PREVIEW
         Me.BTN_CLOSE.FlatAppearance.BorderColor = System.Drawing.Color.Teal
         Me.BTN_CLOSE.FlatAppearance.BorderSize = 3
         Me.BTN_CLOSE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BTN_CLOSE.Location = New System.Drawing.Point(-4515, 10)
+        Me.BTN_CLOSE.Location = New System.Drawing.Point(-4647, 10)
         Me.BTN_CLOSE.Margin = New System.Windows.Forms.Padding(5)
         Me.BTN_CLOSE.Name = "BTN_CLOSE"
         Me.BTN_CLOSE.Size = New System.Drawing.Size(50, 48)
@@ -195,12 +217,11 @@ Partial Class FRM_PRINT_PREVIEW
         Me.PNL.Controls.Add(Me.LBLSETTINGSHEAD)
         Me.PNL.Controls.Add(Me.BTN_Minimize)
         Me.PNL.Controls.Add(Me.BTN_CLOSE)
-        Me.PNL.Controls.Add(Me.MONTHYEARLabel1)
         Me.PNL.Dock = System.Windows.Forms.DockStyle.Top
         Me.PNL.Location = New System.Drawing.Point(0, 0)
         Me.PNL.Margin = New System.Windows.Forms.Padding(5)
         Me.PNL.Name = "PNL"
-        Me.PNL.Size = New System.Drawing.Size(524, 47)
+        Me.PNL.Size = New System.Drawing.Size(392, 47)
         Me.PNL.TabIndex = 1461
         '
         'SPM4_CURRENTDATETIMEBindingSource
@@ -237,21 +258,44 @@ Partial Class FRM_PRINT_PREVIEW
         '
         Me.SPM4_CURRENTDATETIMETableAdapter.ClearBeforeFill = True
         '
-        'MONTHYEARLabel1
+        'SPM4_ITEM_STOCKMASTERLIST_RPTBindingSource
         '
-        Me.MONTHYEARLabel1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SPM4_CURRENTDATETIMEBindingSource, "MONTHYEAR", True))
-        Me.MONTHYEARLabel1.Location = New System.Drawing.Point(634, 9)
-        Me.MONTHYEARLabel1.Name = "MONTHYEARLabel1"
-        Me.MONTHYEARLabel1.Size = New System.Drawing.Size(100, 23)
-        Me.MONTHYEARLabel1.TabIndex = 14
-        Me.MONTHYEARLabel1.Text = "Label1"
+        Me.SPM4_ITEM_STOCKMASTERLIST_RPTBindingSource.DataMember = "SPM4_ITEM_STOCKMASTERLIST_RPT"
+        Me.SPM4_ITEM_STOCKMASTERLIST_RPTBindingSource.DataSource = Me.DS_STOREDPROC
+        '
+        'SPM4_ITEM_STOCKMASTERLIST_RPTTableAdapter
+        '
+        Me.SPM4_ITEM_STOCKMASTERLIST_RPTTableAdapter.ClearBeforeFill = True
+        '
+        'SPM4_ITEM_DR_LISTBindingSource
+        '
+        Me.SPM4_ITEM_DR_LISTBindingSource.DataMember = "SPM4_ITEM_DR_LIST"
+        Me.SPM4_ITEM_DR_LISTBindingSource.DataSource = Me.DS_STOREDPROC
+        '
+        'SPM4_ITEM_DR_LISTTableAdapter
+        '
+        Me.SPM4_ITEM_DR_LISTTableAdapter.ClearBeforeFill = True
+        '
+        'SPM4_ITEM_ISSUED_LISTBindingSource
+        '
+        Me.SPM4_ITEM_ISSUED_LISTBindingSource.DataMember = "SPM4_ITEM_ISSUED_LIST"
+        Me.SPM4_ITEM_ISSUED_LISTBindingSource.DataSource = Me.DS_STOREDPROC
+        '
+        'SPM4_ITEM_ISSUED_LISTTableAdapter
+        '
+        Me.SPM4_ITEM_ISSUED_LISTTableAdapter.ClearBeforeFill = True
+        '
+        'DS_CUSTOM
+        '
+        Me.DS_CUSTOM.DataSetName = "DS_CUSTOM"
+        Me.DS_CUSTOM.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'FRM_PRINT_PREVIEW
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(524, 394)
+        Me.ClientSize = New System.Drawing.Size(392, 394)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.BTN_GENERATE_REPORT)
         Me.Controls.Add(Me.PNL)
@@ -260,12 +304,17 @@ Partial Class FRM_PRINT_PREVIEW
         Me.Text = "FRM_PRINT_PREVIEW"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel1.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PBX_QRCODE, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PNL.ResumeLayout(False)
         Me.PNL.PerformLayout()
         CType(Me.SPM4_CURRENTDATETIMEBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DS_STOREDPROC, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SPM4_ITEM_STOCKMASTERLISTBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SPM4_ITEM_STOCKMASTERLIST_RPTBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SPM4_ITEM_DR_LISTBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SPM4_ITEM_ISSUED_LISTBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DS_CUSTOM, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -287,5 +336,12 @@ Partial Class FRM_PRINT_PREVIEW
     Friend WithEvents SPM4_ITEM_STOCKMASTERLISTTableAdapter As DS_STOREDPROCTableAdapters.SPM4_ITEM_STOCKMASTERLISTTableAdapter
     Friend WithEvents SPM4_CURRENTDATETIMEBindingSource As BindingSource
     Friend WithEvents SPM4_CURRENTDATETIMETableAdapter As DS_STOREDPROCTableAdapters.SPM4_CURRENTDATETIMETableAdapter
-    Friend WithEvents MONTHYEARLabel1 As Label
+    Friend WithEvents SPM4_ITEM_STOCKMASTERLIST_RPTBindingSource As BindingSource
+    Friend WithEvents SPM4_ITEM_STOCKMASTERLIST_RPTTableAdapter As DS_STOREDPROCTableAdapters.SPM4_ITEM_STOCKMASTERLIST_RPTTableAdapter
+    Friend WithEvents SPM4_ITEM_DR_LISTBindingSource As BindingSource
+    Friend WithEvents SPM4_ITEM_DR_LISTTableAdapter As DS_STOREDPROCTableAdapters.SPM4_ITEM_DR_LISTTableAdapter
+    Friend WithEvents SPM4_ITEM_ISSUED_LISTBindingSource As BindingSource
+    Friend WithEvents SPM4_ITEM_ISSUED_LISTTableAdapter As DS_STOREDPROCTableAdapters.SPM4_ITEM_ISSUED_LISTTableAdapter
+    Friend WithEvents DS_CUSTOM As DS_CUSTOM
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

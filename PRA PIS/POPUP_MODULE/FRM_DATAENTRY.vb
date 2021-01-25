@@ -122,7 +122,5 @@ Public Class FRM_DATAENTRY
         Me.Close()
     End Sub
 
-    Private Sub LLBL_APPSave_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LLBL_APPSave.LinkClicked
 
-    End Sub
 End Class

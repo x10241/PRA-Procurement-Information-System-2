@@ -5,38 +5,11 @@
     <Setting Name="PRADEV" Type="System.String" Scope="User">
       <Value Profile="(Default)">VON, VAN, MARK AND GENO</Value>
     </Setting>
-    <Setting Name="FILEPATH" Type="System.String" Scope="User">
-      <Value Profile="(Default)">\\192.168.1.8\Update Server\PIS PROGRAM\</Value>
-    </Setting>
-    <Setting Name="RIMSEXEBACKUPPATH" Type="System.String" Scope="User">
-      <Value Profile="(Default)">\\192.168.1.8\Update Server\RIMS PROGRAM\RIMSEXEBACKUP\RIMS.exe</Value>
-    </Setting>
-    <Setting Name="PRAMasterDBConnString" Type="(Connection string)" Scope="Application">
-      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=192.168.1.8\SQLPRA;Initial Catalog=PRAMASTERDATABASE;Persist Security Info=True;User ID=admin;Password=pr@@dm1n2017507
-&lt;/ConnectionString&gt;
-  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
-&lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=192.168.1.8\SQLPRA;Initial Catalog=PRAMASTERDATABASE;Persist Security Info=True;User ID=admin;Password=pr@@dm1n2017507
-</Value>
-    </Setting>
     <Setting Name="APPVER" Type="System.String" Scope="User">
-      <Value Profile="(Default)">P R O C U R E M E N T  I N F O R M A T I O N  S Y S T E M  ( V  1 . 0 0 2 2 5 ) </Value>
-    </Setting>
-    <Setting Name="PRA_PROPERTYDBConnectionString" Type="(Connection string)" Scope="Application">
-      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=192.168.1.8\SQLPRA;Initial Catalog=PRA_PROPERTYDB;Persist Security Info=True;User ID=admin;Password=pr@@dm1n2017507&lt;/ConnectionString&gt;
-  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
-&lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=192.168.1.8\SQLPRA;Initial Catalog=PRA_PROPERTYDB;Persist Security Info=True;User ID=admin;Password=pr@@dm1n2017507</Value>
+      <Value Profile="(Default)">PROCUREMENT INFORMATION SYSTEM</Value>
     </Setting>
     <Setting Name="PIS_DIR" Type="System.String" Scope="User">
       <Value Profile="(Default)">\\192.168.1.8\PRA Programs\PIS SCANNED FILES\</Value>
-    </Setting>
-    <Setting Name="PRA_BMSDBConnectionString" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Data Source=192.168.1.8\SQLPRA;Initial Catalog=PRA_BMSDB;Persist Security Info=True;User ID=admin;Password=pr@@dm1n2017507</Value>
     </Setting>
     <Setting Name="PIS_FILENAME_PR" Type="System.String" Scope="User">
       <Value Profile="(Default)">TOR (PIS) - PR</Value>
@@ -48,16 +21,37 @@
   &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</Value>
     </Setting>
+    <Setting Name="PIS_ITEM_DIR" Type="System.String" Scope="User">
+      <Value Profile="(Default)">\\192.168.1.8\PRA Programs\INVENTORY_IMG\</Value>
+    </Setting>
+    <Setting Name="APP_VER2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">1.38</Value>
+    </Setting>
+    <Setting Name="PRAMasterDBConnString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=192.168.55.17\SQLPRALOCAL;Initial Catalog=PRAMASTERDATABASE;Persist Security Info=True;User ID=sa;Password=pr@@dm1n2017507&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=192.168.55.17\SQLPRALOCAL;Initial Catalog=PRAMASTERDATABASE;Persist Security Info=True;User ID=sa;Password=pr@@dm1n2017507</Value>
+    </Setting>
+    <Setting Name="PRA_PROPERTYDBConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=192.168.55.17\SQLPRALOCAL;Initial Catalog=PRA_PROPERTYDB;Persist Security Info=True;User ID=sa;Password=pr@@dm1n2017507
+&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=192.168.55.17\SQLPRALOCAL;Initial Catalog=PRA_PROPERTYDB;Persist Security Info=True;User ID=sa;Password=pr@@dm1n2017507
+</Value>
+    </Setting>
     <Setting Name="PRAJO_DATABASEConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=192.168.1.8\SQLPRA;Initial Catalog=PRAJO_DATABASE;Persist Security Info=True;User ID=admin;Password=pr@@dm1n2017507&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;Data Source=192.168.55.17\SQLPRALOCAL;Initial Catalog=PRAJO_DATABASE;Persist Security Info=True;User ID=sa;Password=pr@@dm1n2017507&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=192.168.1.8\SQLPRA;Initial Catalog=PRAJO_DATABASE;Persist Security Info=True;User ID=admin;Password=pr@@dm1n2017507</Value>
-    </Setting>
-    <Setting Name="PIS_ITEM_DIR" Type="System.String" Scope="User">
-      <Value Profile="(Default)">\\192.168.1.8\PRA Programs\INVENTORY_IMG\</Value>
+      <Value Profile="(Default)">Data Source=192.168.55.17\SQLPRALOCAL;Initial Catalog=PRAJO_DATABASE;Persist Security Info=True;User ID=sa;Password=pr@@dm1n2017507</Value>
     </Setting>
   </Settings>
 </SettingsFile>

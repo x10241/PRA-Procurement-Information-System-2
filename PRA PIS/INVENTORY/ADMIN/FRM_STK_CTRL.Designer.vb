@@ -54,14 +54,6 @@ Partial Class FRM_STK_CTRL
         Me.WTXT_ITEM_STOCK_SEARCH = New PRA_PIS.WatermarkTextBox()
         Me.PB_ITEM_STOCK_CLEAR_SEARCH = New System.Windows.Forms.PictureBox()
         Me.DGV_STOCK_LIST = New System.Windows.Forms.DataGridView()
-        Me.ITEMCODEDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ITEMDESCDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TOTALSTOCKDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ITEMUNITDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.APPQTYDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.REMSTOCKDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ITEM_MIN_QTY = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ITEM_MAX_QTY = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.VWM4STOCKLISTBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DS_VIEWS = New PRA_PIS.DS_VIEWS()
         Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
@@ -79,6 +71,18 @@ Partial Class FRM_STK_CTRL
         Me.TBLM4_INV_ITEMS_STK_CTRLTableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.TBLM4_INV_ITEMS_STK_CTRLTableAdapter()
         Me.HDIVSCODEDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.VWM4_STOCK_LISTTableAdapter = New PRA_PIS.DS_VIEWSTableAdapters.VWM4_STOCK_LISTTableAdapter()
+        Me.DS_STOREDPROC = New PRA_PIS.DS_STOREDPROC()
+        Me.SPM4ITEMSTOCKMASTERLISTBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SPM4_ITEM_STOCKMASTERLISTTableAdapter = New PRA_PIS.DS_STOREDPROCTableAdapters.SPM4_ITEM_STOCKMASTERLISTTableAdapter()
+        Me.ITEMCODEDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ITEMALIASDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TOTALSTOCKDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ITEMUNITDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.APPQTYDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.REMSTOCKDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.HDIVSCODEDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ITEMMINQTYDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ITEMMAXQTYDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -92,6 +96,8 @@ Partial Class FRM_STK_CTRL
         Me.PNL.SuspendLayout()
         CType(Me.DS_PROPERTYDB, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TBLM4_INV_ITEMS_STK_CTRLBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DS_STOREDPROC, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SPM4ITEMSTOCKMASTERLISTBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -448,8 +454,8 @@ Partial Class FRM_STK_CTRL
         Me.DGV_STOCK_LIST.AutoGenerateColumns = False
         Me.DGV_STOCK_LIST.BackgroundColor = System.Drawing.Color.White
         Me.DGV_STOCK_LIST.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV_STOCK_LIST.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ITEMCODEDataGridViewTextBoxColumn, Me.ITEMDESCDataGridViewTextBoxColumn, Me.TOTALSTOCKDataGridViewTextBoxColumn, Me.ITEMUNITDataGridViewTextBoxColumn, Me.APPQTYDataGridViewTextBoxColumn, Me.REMSTOCKDataGridViewTextBoxColumn, Me.ITEM_MIN_QTY, Me.ITEM_MAX_QTY})
-        Me.DGV_STOCK_LIST.DataSource = Me.VWM4STOCKLISTBindingSource
+        Me.DGV_STOCK_LIST.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ITEMCODEDataGridViewTextBoxColumn, Me.ITEMALIASDataGridViewTextBoxColumn, Me.TOTALSTOCKDataGridViewTextBoxColumn, Me.ITEMUNITDataGridViewTextBoxColumn, Me.APPQTYDataGridViewTextBoxColumn, Me.REMSTOCKDataGridViewTextBoxColumn, Me.HDIVSCODEDataGridViewTextBoxColumn1, Me.ITEMMINQTYDataGridViewTextBoxColumn, Me.ITEMMAXQTYDataGridViewTextBoxColumn})
+        Me.DGV_STOCK_LIST.DataSource = Me.SPM4ITEMSTOCKMASTERLISTBindingSource
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -467,73 +473,6 @@ Partial Class FRM_STK_CTRL
         Me.DGV_STOCK_LIST.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DGV_STOCK_LIST.Size = New System.Drawing.Size(654, 256)
         Me.DGV_STOCK_LIST.TabIndex = 1
-        '
-        'ITEMCODEDataGridViewTextBoxColumn
-        '
-        Me.ITEMCODEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.ITEMCODEDataGridViewTextBoxColumn.DataPropertyName = "ITEM_CODE"
-        Me.ITEMCODEDataGridViewTextBoxColumn.HeaderText = "Item Code"
-        Me.ITEMCODEDataGridViewTextBoxColumn.Name = "ITEMCODEDataGridViewTextBoxColumn"
-        Me.ITEMCODEDataGridViewTextBoxColumn.ReadOnly = True
-        Me.ITEMCODEDataGridViewTextBoxColumn.Width = 140
-        '
-        'ITEMDESCDataGridViewTextBoxColumn
-        '
-        Me.ITEMDESCDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.ITEMDESCDataGridViewTextBoxColumn.DataPropertyName = "ITEM_DESC"
-        Me.ITEMDESCDataGridViewTextBoxColumn.HeaderText = "Item Description"
-        Me.ITEMDESCDataGridViewTextBoxColumn.Name = "ITEMDESCDataGridViewTextBoxColumn"
-        Me.ITEMDESCDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'TOTALSTOCKDataGridViewTextBoxColumn
-        '
-        Me.TOTALSTOCKDataGridViewTextBoxColumn.DataPropertyName = "TOTAL_STOCK"
-        Me.TOTALSTOCKDataGridViewTextBoxColumn.HeaderText = "TOTAL_STOCK"
-        Me.TOTALSTOCKDataGridViewTextBoxColumn.Name = "TOTALSTOCKDataGridViewTextBoxColumn"
-        Me.TOTALSTOCKDataGridViewTextBoxColumn.ReadOnly = True
-        Me.TOTALSTOCKDataGridViewTextBoxColumn.Visible = False
-        '
-        'ITEMUNITDataGridViewTextBoxColumn
-        '
-        Me.ITEMUNITDataGridViewTextBoxColumn.DataPropertyName = "ITEM_UNIT"
-        Me.ITEMUNITDataGridViewTextBoxColumn.HeaderText = "ITEM_UNIT"
-        Me.ITEMUNITDataGridViewTextBoxColumn.Name = "ITEMUNITDataGridViewTextBoxColumn"
-        Me.ITEMUNITDataGridViewTextBoxColumn.ReadOnly = True
-        Me.ITEMUNITDataGridViewTextBoxColumn.Visible = False
-        '
-        'APPQTYDataGridViewTextBoxColumn
-        '
-        Me.APPQTYDataGridViewTextBoxColumn.DataPropertyName = "APP_QTY"
-        Me.APPQTYDataGridViewTextBoxColumn.HeaderText = "APP_QTY"
-        Me.APPQTYDataGridViewTextBoxColumn.Name = "APPQTYDataGridViewTextBoxColumn"
-        Me.APPQTYDataGridViewTextBoxColumn.ReadOnly = True
-        Me.APPQTYDataGridViewTextBoxColumn.Visible = False
-        '
-        'REMSTOCKDataGridViewTextBoxColumn
-        '
-        Me.REMSTOCKDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.REMSTOCKDataGridViewTextBoxColumn.DataPropertyName = "REM_STOCK"
-        Me.REMSTOCKDataGridViewTextBoxColumn.HeaderText = "No. of stocks"
-        Me.REMSTOCKDataGridViewTextBoxColumn.Name = "REMSTOCKDataGridViewTextBoxColumn"
-        Me.REMSTOCKDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'ITEM_MIN_QTY
-        '
-        Me.ITEM_MIN_QTY.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.ITEM_MIN_QTY.DataPropertyName = "ITEM_MIN_QTY"
-        Me.ITEM_MIN_QTY.HeaderText = "Min. Qty"
-        Me.ITEM_MIN_QTY.Name = "ITEM_MIN_QTY"
-        Me.ITEM_MIN_QTY.ReadOnly = True
-        Me.ITEM_MIN_QTY.Width = 80
-        '
-        'ITEM_MAX_QTY
-        '
-        Me.ITEM_MAX_QTY.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.ITEM_MAX_QTY.DataPropertyName = "ITEM_MAX_QTY"
-        Me.ITEM_MAX_QTY.HeaderText = "Max. Qty"
-        Me.ITEM_MAX_QTY.Name = "ITEM_MAX_QTY"
-        Me.ITEM_MAX_QTY.ReadOnly = True
-        Me.ITEM_MAX_QTY.Width = 80
         '
         'VWM4STOCKLISTBindingSource
         '
@@ -694,6 +633,87 @@ Partial Class FRM_STK_CTRL
         '
         Me.VWM4_STOCK_LISTTableAdapter.ClearBeforeFill = True
         '
+        'DS_STOREDPROC
+        '
+        Me.DS_STOREDPROC.DataSetName = "DS_STOREDPROC"
+        Me.DS_STOREDPROC.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'SPM4ITEMSTOCKMASTERLISTBindingSource
+        '
+        Me.SPM4ITEMSTOCKMASTERLISTBindingSource.DataMember = "SPM4_ITEM_STOCKMASTERLIST"
+        Me.SPM4ITEMSTOCKMASTERLISTBindingSource.DataSource = Me.DS_STOREDPROC
+        '
+        'SPM4_ITEM_STOCKMASTERLISTTableAdapter
+        '
+        Me.SPM4_ITEM_STOCKMASTERLISTTableAdapter.ClearBeforeFill = True
+        '
+        'ITEMCODEDataGridViewTextBoxColumn
+        '
+        Me.ITEMCODEDataGridViewTextBoxColumn.DataPropertyName = "ITEM_CODE"
+        Me.ITEMCODEDataGridViewTextBoxColumn.HeaderText = "Item code"
+        Me.ITEMCODEDataGridViewTextBoxColumn.Name = "ITEMCODEDataGridViewTextBoxColumn"
+        Me.ITEMCODEDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'ITEMALIASDataGridViewTextBoxColumn
+        '
+        Me.ITEMALIASDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.ITEMALIASDataGridViewTextBoxColumn.DataPropertyName = "ITEM_ALIAS"
+        Me.ITEMALIASDataGridViewTextBoxColumn.HeaderText = "Item description"
+        Me.ITEMALIASDataGridViewTextBoxColumn.Name = "ITEMALIASDataGridViewTextBoxColumn"
+        Me.ITEMALIASDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'TOTALSTOCKDataGridViewTextBoxColumn
+        '
+        Me.TOTALSTOCKDataGridViewTextBoxColumn.DataPropertyName = "TOTAL_STOCK"
+        Me.TOTALSTOCKDataGridViewTextBoxColumn.HeaderText = "TOTAL_STOCK"
+        Me.TOTALSTOCKDataGridViewTextBoxColumn.Name = "TOTALSTOCKDataGridViewTextBoxColumn"
+        Me.TOTALSTOCKDataGridViewTextBoxColumn.ReadOnly = True
+        Me.TOTALSTOCKDataGridViewTextBoxColumn.Visible = False
+        '
+        'ITEMUNITDataGridViewTextBoxColumn
+        '
+        Me.ITEMUNITDataGridViewTextBoxColumn.DataPropertyName = "ITEM_UNIT"
+        Me.ITEMUNITDataGridViewTextBoxColumn.HeaderText = "Unit type"
+        Me.ITEMUNITDataGridViewTextBoxColumn.Name = "ITEMUNITDataGridViewTextBoxColumn"
+        Me.ITEMUNITDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'APPQTYDataGridViewTextBoxColumn
+        '
+        Me.APPQTYDataGridViewTextBoxColumn.DataPropertyName = "APP_QTY"
+        Me.APPQTYDataGridViewTextBoxColumn.HeaderText = "APP_QTY"
+        Me.APPQTYDataGridViewTextBoxColumn.Name = "APPQTYDataGridViewTextBoxColumn"
+        Me.APPQTYDataGridViewTextBoxColumn.ReadOnly = True
+        Me.APPQTYDataGridViewTextBoxColumn.Visible = False
+        '
+        'REMSTOCKDataGridViewTextBoxColumn
+        '
+        Me.REMSTOCKDataGridViewTextBoxColumn.DataPropertyName = "REM_STOCK"
+        Me.REMSTOCKDataGridViewTextBoxColumn.HeaderText = "No. of stocks"
+        Me.REMSTOCKDataGridViewTextBoxColumn.Name = "REMSTOCKDataGridViewTextBoxColumn"
+        Me.REMSTOCKDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'HDIVSCODEDataGridViewTextBoxColumn1
+        '
+        Me.HDIVSCODEDataGridViewTextBoxColumn1.DataPropertyName = "HDIVS_CODE"
+        Me.HDIVSCODEDataGridViewTextBoxColumn1.HeaderText = "HDIVS_CODE"
+        Me.HDIVSCODEDataGridViewTextBoxColumn1.Name = "HDIVSCODEDataGridViewTextBoxColumn1"
+        Me.HDIVSCODEDataGridViewTextBoxColumn1.ReadOnly = True
+        Me.HDIVSCODEDataGridViewTextBoxColumn1.Visible = False
+        '
+        'ITEMMINQTYDataGridViewTextBoxColumn
+        '
+        Me.ITEMMINQTYDataGridViewTextBoxColumn.DataPropertyName = "ITEM_MIN_QTY"
+        Me.ITEMMINQTYDataGridViewTextBoxColumn.HeaderText = "Min. quantity"
+        Me.ITEMMINQTYDataGridViewTextBoxColumn.Name = "ITEMMINQTYDataGridViewTextBoxColumn"
+        Me.ITEMMINQTYDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'ITEMMAXQTYDataGridViewTextBoxColumn
+        '
+        Me.ITEMMAXQTYDataGridViewTextBoxColumn.DataPropertyName = "ITEM_MAX_QTY"
+        Me.ITEMMAXQTYDataGridViewTextBoxColumn.HeaderText = "Max. quantity"
+        Me.ITEMMAXQTYDataGridViewTextBoxColumn.Name = "ITEMMAXQTYDataGridViewTextBoxColumn"
+        Me.ITEMMAXQTYDataGridViewTextBoxColumn.ReadOnly = True
+        '
         'FRM_STK_CTRL
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -725,6 +745,8 @@ Partial Class FRM_STK_CTRL
         Me.PNL.PerformLayout()
         CType(Me.DS_PROPERTYDB, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TBLM4_INV_ITEMS_STK_CTRLBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DS_STOREDPROC, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SPM4ITEMSTOCKMASTERLISTBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -774,13 +796,17 @@ Partial Class FRM_STK_CTRL
     Friend WithEvents TBLM4_INV_ITEMS_STK_CTRLTableAdapter As DS_PROPERTYDBTableAdapters.TBLM4_INV_ITEMS_STK_CTRLTableAdapter
     Friend WithEvents VWM4STOCKLISTBindingSource As BindingSource
     Friend WithEvents HDIVSCODEDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents VWM4_STOCK_LISTTableAdapter As DS_VIEWSTableAdapters.VWM4_STOCK_LISTTableAdapter
     Friend WithEvents ITEMCODEDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents ITEMDESCDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ITEMALIASDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents TOTALSTOCKDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ITEMUNITDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents APPQTYDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents REMSTOCKDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents ITEM_MIN_QTY As DataGridViewTextBoxColumn
-    Friend WithEvents ITEM_MAX_QTY As DataGridViewTextBoxColumn
-    Friend WithEvents VWM4_STOCK_LISTTableAdapter As DS_VIEWSTableAdapters.VWM4_STOCK_LISTTableAdapter
+    Friend WithEvents HDIVSCODEDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+    Friend WithEvents ITEMMINQTYDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ITEMMAXQTYDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents SPM4ITEMSTOCKMASTERLISTBindingSource As BindingSource
+    Friend WithEvents DS_STOREDPROC As DS_STOREDPROC
+    Friend WithEvents SPM4_ITEM_STOCKMASTERLISTTableAdapter As DS_STOREDPROCTableAdapters.SPM4_ITEM_STOCKMASTERLISTTableAdapter
 End Class

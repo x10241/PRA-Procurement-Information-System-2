@@ -109,9 +109,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\kodakscansdk.dll</HintPath>
     </Reference>
-    <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MaterialSkin.0.2.1\lib\MaterialSkin.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\Microsoft.VisualBasic.PowerPacks.dll</HintPath>
@@ -226,10 +223,25 @@
     <Compile Include="DATASETS\DS_VIEWS.vb">
       <DependentUpon>DS_VIEWS.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DATASETS\Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DATASETS\Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="INVENTORY\ADMIN\DS_PRAJO_DATABASE.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_PRAJO_DATABASE.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="INVENTORY\ADMIN\DS_PRAJO_DATABASE.vb">
+      <DependentUpon>DS_PRAJO_DATABASE.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="INVENTORY\ADMIN\FRM_RACK_STICKER.Designer.vb">
+      <DependentUpon>FRM_RACK_STICKER.vb</DependentUpon>
+    </Compile>
+    <Compile Include="INVENTORY\ADMIN\FRM_RACK_STICKER.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="INVENTORY\ADMIN\FRM_DR_LIST_DETAILS.Designer.vb">
       <DependentUpon>FRM_DR_LIST_DETAILS.vb</DependentUpon>
@@ -297,6 +309,12 @@
     <Compile Include="INVENTORY\ADMIN\FRM_PCOUNT.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="INVENTORY\ADMIN\FRM_PCOUNT_SETUP.Designer.vb">
+      <DependentUpon>FRM_PCOUNT_SETUP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="INVENTORY\ADMIN\FRM_PCOUNT_SETUP.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="INVENTORY\ADMIN\FRM_PRINT_PREVIEW.Designer.vb">
       <DependentUpon>FRM_PRINT_PREVIEW.vb</DependentUpon>
     </Compile>
@@ -327,6 +345,24 @@
     <Compile Include="INVENTORY\ADMIN\FRM_STOCK_ENC.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="INVENTORY\ADMIN\RPT_DRMASTERLIST.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPT_DRMASTERLIST.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="INVENTORY\ADMIN\RPT_ISSUEDMASTERLIST.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPT_ISSUEDMASTERLIST.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="INVENTORY\ADMIN\RPT_ITEM_LIST.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPT_ITEM_LIST.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="INVENTORY\ADMIN\RPT_MARKETING_SLIP.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -344,6 +380,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RPT_SLIP_DRAWING.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="INVENTORY\ADMIN\RPT_STICKER4X2.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPT_STICKER4X2.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="INVENTORY\ADMIN\RPT_STICKER3x1.vb">
+      <DependentUpon>RPT_STICKER3x1.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="INVENTORY\ADMIN\RPT_STOCKMASTERLIST.vb">
       <AutoGen>True</AutoGen>
@@ -405,6 +453,12 @@
     <Compile Include="INVENTORY\IT EQUIPMENT\FRM_PREVIEW.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="INVENTORY\IT EQUIPMENT\FRM_REASSIGN.Designer.vb">
+      <DependentUpon>FRM_REASSIGN.vb</DependentUpon>
+    </Compile>
+    <Compile Include="INVENTORY\IT EQUIPMENT\FRM_REASSIGN.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="INVENTORY\IT EQUIPMENT\FRM_SETTINGS.Designer.vb">
       <DependentUpon>FRM_SETTINGS.vb</DependentUpon>
     </Compile>
@@ -416,6 +470,12 @@
     </Compile>
     <Compile Include="INVENTORY\IT EQUIPMENT\FRM_STICKER_TAG.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INVENTORY\IT EQUIPMENT\RPT_ARE.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPT_ARE.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="INVENTORY\IT EQUIPMENT\RPT_RPCI_LIST.vb">
       <AutoGen>True</AutoGen>
@@ -458,7 +518,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="POPUP_MODULE\FRM_ADDITIONAL_CATEGORIZATION.Designer.vb">
+    <Compile Include="POPUP_MODULE\FRM_ADDITIONAL_CATEGORIZATION.designer.vb">
       <DependentUpon>FRM_ADDITIONAL_CATEGORIZATION.vb</DependentUpon>
     </Compile>
     <Compile Include="POPUP_MODULE\FRM_ADDITIONAL_CATEGORIZATION.vb">
@@ -568,6 +628,18 @@
     <Compile Include="PURCHASE REQUEST\FRM_EDITPR.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="PURCHASE REQUEST\FRM_FMD_PRINT_PREVIEW.Designer.vb">
+      <DependentUpon>FRM_FMD_PRINT_PREVIEW.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PURCHASE REQUEST\FRM_FMD_PRINT_PREVIEW.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PURCHASE REQUEST\FRM_PDS_LIST.Designer.vb">
+      <DependentUpon>FRM_PDS_LIST.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PURCHASE REQUEST\FRM_PDS_LIST.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="PURCHASE REQUEST\FRM_PR.Designer.vb">
       <DependentUpon>FRM_PR.vb</DependentUpon>
     </Compile>
@@ -591,12 +663,6 @@
     </Compile>
     <Compile Include="PURCHASE REQUEST\FRM_SIGNATORYLIST.vb">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PURCHASE REQUEST\RPT_ABSTRACT_OF_QUOTATION.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RPT_ABSTRACT_OF_QUOTATION.rpt</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="PURCHASE REQUEST\RPT_AOQ.vb">
       <AutoGen>True</AutoGen>
@@ -665,6 +731,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="DATASETS\Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INVENTORY\ADMIN\FRM_RACK_STICKER.resx">
+      <DependentUpon>FRM_RACK_STICKER.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="INVENTORY\ADMIN\FRM_DR_LIST_DETAILS.resx">
       <DependentUpon>FRM_DR_LIST_DETAILS.vb</DependentUpon>
     </EmbeddedResource>
@@ -698,6 +770,9 @@
     <EmbeddedResource Include="INVENTORY\ADMIN\FRM_PCOUNT.resx">
       <DependentUpon>FRM_PCOUNT.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="INVENTORY\ADMIN\FRM_PCOUNT_SETUP.resx">
+      <DependentUpon>FRM_PCOUNT_SETUP.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="INVENTORY\ADMIN\FRM_PRINT_PREVIEW.resx">
       <DependentUpon>FRM_PRINT_PREVIEW.vb</DependentUpon>
     </EmbeddedResource>
@@ -713,6 +788,18 @@
     <EmbeddedResource Include="INVENTORY\ADMIN\FRM_STOCK_ENC.resx">
       <DependentUpon>FRM_STOCK_ENC.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="INVENTORY\ADMIN\RPT_DRMASTERLIST.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPT_DRMASTERLIST.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INVENTORY\ADMIN\RPT_ISSUEDMASTERLIST.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPT_ISSUEDMASTERLIST.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INVENTORY\ADMIN\RPT_ITEM_LIST.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPT_ITEM_LIST.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="INVENTORY\ADMIN\RPT_MARKETING_SLIP.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RPT_MARKETING_SLIP.vb</LastGenOutput>
@@ -724,6 +811,14 @@
     <EmbeddedResource Include="INVENTORY\ADMIN\RPT_SLIP_DRAWING.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RPT_SLIP_DRAWING.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INVENTORY\ADMIN\RPT_STICKER4X2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPT_STICKER4X2.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INVENTORY\ADMIN\RPT_STICKER3x1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPT_STICKER3x1.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="INVENTORY\ADMIN\RPT_STOCKMASTERLIST.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -756,11 +851,18 @@
     <EmbeddedResource Include="INVENTORY\IT EQUIPMENT\FRM_PREVIEW.resx">
       <DependentUpon>FRM_PREVIEW.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="INVENTORY\IT EQUIPMENT\FRM_REASSIGN.resx">
+      <DependentUpon>FRM_REASSIGN.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="INVENTORY\IT EQUIPMENT\FRM_SETTINGS.resx">
       <DependentUpon>FRM_SETTINGS.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="INVENTORY\IT EQUIPMENT\FRM_STICKER_TAG.resx">
       <DependentUpon>FRM_STICKER_TAG.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INVENTORY\IT EQUIPMENT\RPT_ARE.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPT_ARE.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="INVENTORY\IT EQUIPMENT\RPT_RPCI_LIST.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -840,6 +942,12 @@
     <EmbeddedResource Include="PURCHASE REQUEST\FRM_EDITPR.resx">
       <DependentUpon>FRM_EDITPR.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PURCHASE REQUEST\FRM_FMD_PRINT_PREVIEW.resx">
+      <DependentUpon>FRM_FMD_PRINT_PREVIEW.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PURCHASE REQUEST\FRM_PDS_LIST.resx">
+      <DependentUpon>FRM_PDS_LIST.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PURCHASE REQUEST\FRM_PR.resx">
       <DependentUpon>FRM_PR.vb</DependentUpon>
     </EmbeddedResource>
@@ -851,10 +959,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PURCHASE REQUEST\FRM_SIGNATORYLIST.resx">
       <DependentUpon>FRM_SIGNATORYLIST.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PURCHASE REQUEST\RPT_ABSTRACT_OF_QUOTATION.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>RPT_ABSTRACT_OF_QUOTATION.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="PURCHASE REQUEST\RPT_AOQ.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -982,6 +1086,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="PRAicon.ico" />
+    <None Include="Resources\outline_local_offer_black_18dp.png" />
     <None Include="Resources\download.png" />
     <None Include="Resources\giphy.gif" />
     <None Include="Resources\round_done_black_18dp.png" />

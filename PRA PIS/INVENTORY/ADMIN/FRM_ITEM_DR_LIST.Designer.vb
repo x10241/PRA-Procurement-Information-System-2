@@ -39,6 +39,9 @@ Partial Class FRM_ITEM_DR_LIST
         Me.BTN_Minimize = New System.Windows.Forms.Button()
         Me.BTN_CLOSE = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.GBOX_SETTINGS = New System.Windows.Forms.GroupBox()
+        Me.LLBL_RECORDSFOUND = New System.Windows.Forms.LinkLabel()
+        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.PB_ITEM_STOCK_SEARCH = New System.Windows.Forms.PictureBox()
         Me.PB_DR_CLEAR_SEARCH = New System.Windows.Forms.PictureBox()
         Me.WTXT_DR_SEARCH = New PRA_PIS.WatermarkTextBox()
@@ -63,12 +66,10 @@ Partial Class FRM_ITEM_DR_LIST
         Me.ShapeContainer2 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
         Me.RECT_STOCK_VIEW_REPORT = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.SPM4_ITEM_DR_LISTTableAdapter = New PRA_PIS.DS_STOREDPROCTableAdapters.SPM4_ITEM_DR_LISTTableAdapter()
-        Me.GBOX_SETTINGS = New System.Windows.Forms.GroupBox()
-        Me.LLBL_RECORDSFOUND = New System.Windows.Forms.LinkLabel()
-        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         CType(Me.DS_VIEWS, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PNL.SuspendLayout()
         Me.Panel1.SuspendLayout()
+        Me.GBOX_SETTINGS.SuspendLayout()
         CType(Me.PB_ITEM_STOCK_SEARCH, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PB_DR_CLEAR_SEARCH, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DGV_STOCK_LIST, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -76,7 +77,6 @@ Partial Class FRM_ITEM_DR_LIST
         CType(Me.DS_STOREDPROC, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         CType(Me.PB_STOCK_VIEW_REPORT, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GBOX_SETTINGS.SuspendLayout()
         Me.SuspendLayout()
         '
         'TableAdapterManager
@@ -176,6 +176,46 @@ Partial Class FRM_ITEM_DR_LIST
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1058, 672)
         Me.Panel1.TabIndex = 1411
+        '
+        'GBOX_SETTINGS
+        '
+        Me.GBOX_SETTINGS.Controls.Add(Me.LLBL_RECORDSFOUND)
+        Me.GBOX_SETTINGS.Controls.Add(Me.LinkLabel1)
+        Me.GBOX_SETTINGS.Location = New System.Drawing.Point(5, 617)
+        Me.GBOX_SETTINGS.Name = "GBOX_SETTINGS"
+        Me.GBOX_SETTINGS.Size = New System.Drawing.Size(313, 50)
+        Me.GBOX_SETTINGS.TabIndex = 1439
+        Me.GBOX_SETTINGS.TabStop = False
+        '
+        'LLBL_RECORDSFOUND
+        '
+        Me.LLBL_RECORDSFOUND.AutoSize = True
+        Me.LLBL_RECORDSFOUND.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.LLBL_RECORDSFOUND.Font = New System.Drawing.Font("Century Gothic", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LLBL_RECORDSFOUND.ForeColor = System.Drawing.Color.DimGray
+        Me.LLBL_RECORDSFOUND.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
+        Me.LLBL_RECORDSFOUND.LinkColor = System.Drawing.Color.DimGray
+        Me.LLBL_RECORDSFOUND.Location = New System.Drawing.Point(265, 19)
+        Me.LLBL_RECORDSFOUND.Name = "LLBL_RECORDSFOUND"
+        Me.LLBL_RECORDSFOUND.Size = New System.Drawing.Size(19, 19)
+        Me.LLBL_RECORDSFOUND.TabIndex = 1441
+        Me.LLBL_RECORDSFOUND.TabStop = True
+        Me.LLBL_RECORDSFOUND.Text = "0"
+        '
+        'LinkLabel1
+        '
+        Me.LinkLabel1.AutoSize = True
+        Me.LinkLabel1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.LinkLabel1.Font = New System.Drawing.Font("Century Gothic", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinkLabel1.ForeColor = System.Drawing.Color.DimGray
+        Me.LinkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
+        Me.LinkLabel1.LinkColor = System.Drawing.Color.DimGray
+        Me.LinkLabel1.Location = New System.Drawing.Point(7, 19)
+        Me.LinkLabel1.Name = "LinkLabel1"
+        Me.LinkLabel1.Size = New System.Drawing.Size(238, 19)
+        Me.LinkLabel1.TabIndex = 1440
+        Me.LinkLabel1.TabStop = True
+        Me.LinkLabel1.Text = "Total No. of Records Found :"
         '
         'PB_ITEM_STOCK_SEARCH
         '
@@ -450,46 +490,6 @@ Partial Class FRM_ITEM_DR_LIST
         '
         Me.SPM4_ITEM_DR_LISTTableAdapter.ClearBeforeFill = True
         '
-        'GBOX_SETTINGS
-        '
-        Me.GBOX_SETTINGS.Controls.Add(Me.LLBL_RECORDSFOUND)
-        Me.GBOX_SETTINGS.Controls.Add(Me.LinkLabel1)
-        Me.GBOX_SETTINGS.Location = New System.Drawing.Point(5, 617)
-        Me.GBOX_SETTINGS.Name = "GBOX_SETTINGS"
-        Me.GBOX_SETTINGS.Size = New System.Drawing.Size(313, 50)
-        Me.GBOX_SETTINGS.TabIndex = 1439
-        Me.GBOX_SETTINGS.TabStop = False
-        '
-        'LLBL_RECORDSFOUND
-        '
-        Me.LLBL_RECORDSFOUND.AutoSize = True
-        Me.LLBL_RECORDSFOUND.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.LLBL_RECORDSFOUND.Font = New System.Drawing.Font("Century Gothic", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LLBL_RECORDSFOUND.ForeColor = System.Drawing.Color.DimGray
-        Me.LLBL_RECORDSFOUND.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
-        Me.LLBL_RECORDSFOUND.LinkColor = System.Drawing.Color.DimGray
-        Me.LLBL_RECORDSFOUND.Location = New System.Drawing.Point(265, 19)
-        Me.LLBL_RECORDSFOUND.Name = "LLBL_RECORDSFOUND"
-        Me.LLBL_RECORDSFOUND.Size = New System.Drawing.Size(19, 19)
-        Me.LLBL_RECORDSFOUND.TabIndex = 1441
-        Me.LLBL_RECORDSFOUND.TabStop = True
-        Me.LLBL_RECORDSFOUND.Text = "0"
-        '
-        'LinkLabel1
-        '
-        Me.LinkLabel1.AutoSize = True
-        Me.LinkLabel1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.LinkLabel1.Font = New System.Drawing.Font("Century Gothic", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LinkLabel1.ForeColor = System.Drawing.Color.DimGray
-        Me.LinkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
-        Me.LinkLabel1.LinkColor = System.Drawing.Color.DimGray
-        Me.LinkLabel1.Location = New System.Drawing.Point(7, 19)
-        Me.LinkLabel1.Name = "LinkLabel1"
-        Me.LinkLabel1.Size = New System.Drawing.Size(238, 19)
-        Me.LinkLabel1.TabIndex = 1440
-        Me.LinkLabel1.TabStop = True
-        Me.LinkLabel1.Text = "Total No. of Records Found :"
-        '
         'FRM_ITEM_DR_LIST
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -508,6 +508,8 @@ Partial Class FRM_ITEM_DR_LIST
         Me.PNL.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        Me.GBOX_SETTINGS.ResumeLayout(False)
+        Me.GBOX_SETTINGS.PerformLayout()
         CType(Me.PB_ITEM_STOCK_SEARCH, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PB_DR_CLEAR_SEARCH, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DGV_STOCK_LIST, System.ComponentModel.ISupportInitialize).EndInit()
@@ -516,8 +518,6 @@ Partial Class FRM_ITEM_DR_LIST
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         CType(Me.PB_STOCK_VIEW_REPORT, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GBOX_SETTINGS.ResumeLayout(False)
-        Me.GBOX_SETTINGS.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub

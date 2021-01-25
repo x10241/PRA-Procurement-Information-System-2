@@ -4,7 +4,8 @@ Public Class FRM_STK_CTRL
 
 #Region "LOAD"
     Private Sub FRM_STK_CTRL_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        VWM4_STOCK_LISTTableAdapter.FillByITEM_DESC(DS_VIEWS.VWM4_STOCK_LIST, WTXT_ITEM_STOCK_SEARCH.Text, DIVISION_NO)
+        '  VWM4_STOCK_LISTTableAdapter.FillByITEM_DESC(DS_VIEWS.VWM4_STOCK_LIST, WTXT_ITEM_STOCK_SEARCH.Text, DIVISION_NO)
+        SPM4_ITEM_STOCKMASTERLISTTableAdapter.FillByFILTER_SEARCH(DS_STOREDPROC.SPM4_ITEM_STOCKMASTERLIST, 0, WTXT_ITEM_STOCK_SEARCH.Text, DIVISION_NO)
     End Sub
 #End Region
 
@@ -13,8 +14,8 @@ Public Class FRM_STK_CTRL
         If e.RowIndex >= 0 Then
             WTXT_ITEM_CODE.Text = DGV_STOCK_LIST(0, e.RowIndex).Value
             WTXT_ITEM_DESC.Text = DGV_STOCK_LIST(1, e.RowIndex).Value
-            WTXT_MIN_QTY.Text = DGV_STOCK_LIST(6, e.RowIndex).Value
-            WTXT_MAX_QTY.Text = DGV_STOCK_LIST(7, e.RowIndex).Value
+            WTXT_MIN_QTY.Text = DGV_STOCK_LIST(7, e.RowIndex).Value
+            WTXT_MAX_QTY.Text = DGV_STOCK_LIST(8, e.RowIndex).Value
             WTXT_QTY_STOCKS.Text = DGV_STOCK_LIST(5, e.RowIndex).Value
         End If
     End Sub
@@ -23,7 +24,7 @@ Public Class FRM_STK_CTRL
 #Region "KEY EVENT"
     Private Sub WTXT_ITEM_STOCK_SEARCH_KeyDown(sender As Object, e As KeyEventArgs) Handles WTXT_ITEM_STOCK_SEARCH.KeyDown
         If e.KeyCode = Keys.Enter Then
-            VWM4_STOCK_LISTTableAdapter.FillByITEM_DESC(DS_VIEWS.VWM4_STOCK_LIST, WTXT_ITEM_STOCK_SEARCH.Text, DIVISION_NO)
+            SPM4_ITEM_STOCKMASTERLISTTableAdapter.FillByFILTER_SEARCH(DS_STOREDPROC.SPM4_ITEM_STOCKMASTERLIST, 0, WTXT_ITEM_STOCK_SEARCH.Text, DIVISION_NO)
         End If
     End Sub
 
@@ -77,7 +78,7 @@ Public Class FRM_STK_CTRL
 
         If llbl Is LLBL_SAVE_ITEM_DETAILS Or pb Is PB_SAVE_ITEM_DETAILS Or rect Is RECT_SAVE_ITEM_DETAILS Then
             _SAVE()
-            VWM4_STOCK_LISTTableAdapter.FillByITEM_DESC(DS_VIEWS.VWM4_STOCK_LIST, WTXT_ITEM_STOCK_SEARCH.Text, DIVISION_NO)
+            SPM4_ITEM_STOCKMASTERLISTTableAdapter.FillByFILTER_SEARCH(DS_STOREDPROC.SPM4_ITEM_STOCKMASTERLIST, 0, WTXT_ITEM_STOCK_SEARCH.Text, DIVISION_NO)
         ElseIf pb Is PB_ITEM_STOCK_CLEAR_SEARCH Then
             WTXT_ITEM_STOCK_SEARCH.Clear()
         ElseIf btn Is BTN_ITEM_STOCK_ENC_CLOSE Then
@@ -110,6 +111,13 @@ Public Class FRM_STK_CTRL
             PB_SAVE_ITEM_DETAILS.Enabled = False
             LLBL_SAVE_ITEM_DETAILS.Enabled = False
         End If
+    End Sub
+
+    Private Sub FRM_STK_CTRL_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        FRM_STOCK_ENC.LLBL_NORMAL.Text = FRM_STOCK_ENC.SPM4_ITEM_STOCKS_LEGENDTableAdapter.SPM4_ITEM_STOCKS_LEGEND(0, DIVISION_NO)
+        FRM_STOCK_ENC.LLBL_CRITICAL.Text = FRM_STOCK_ENC.SPM4_ITEM_STOCKS_LEGENDTableAdapter.SPM4_ITEM_STOCKS_LEGEND(1, DIVISION_NO)
+        FRM_STOCK_ENC.LLBL_OVER_STOCK.Text = FRM_STOCK_ENC.SPM4_ITEM_STOCKS_LEGENDTableAdapter.SPM4_ITEM_STOCKS_LEGEND(2, DIVISION_NO)
+        FRM_STOCK_ENC.LLBL_NOSTOCK.Text = FRM_STOCK_ENC.SPM4_ITEM_STOCKS_LEGENDTableAdapter.SPM4_ITEM_STOCKS_LEGEND(3, DIVISION_NO)
     End Sub
 
 

@@ -16,7 +16,7 @@
     Private Sub BTN_LOCATION_LIST_Click(sender As Object, e As EventArgs) Handles BTN_LOCATION_LIST.Click
         '  isPreviewClick = True
         printPreview = "ItemsInLocation"
-        FRM_PREVIEW.ShowDialog()
+        FRM_PMD_PREVIEW.ShowDialog()
     End Sub
 
     Private Sub WTXT_LIST_PREFERRED_ITEMS_TextChanged(sender As Object, e As EventArgs) Handles WTXT_LIST_PREFERRED_ITEMS.TextChanged

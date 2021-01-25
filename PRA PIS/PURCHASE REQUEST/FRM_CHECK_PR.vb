@@ -126,7 +126,7 @@ Public Class FRM_CHECK_PR
                 If MsgBox("Are you sure you want to accept this?" & vbCrLf & "You can't undo this action.", vbYesNo, "Please confirm the details in purchase request info.") = vbYes Then
                     PR_APPCODE = Trim(WTXT_APPCODE.Text)
                     FRM_PRACCEPT.ShowDialog()
-                    SPM4_PURCHASELISTTableAdapter.FillByPMD_LIST(DS_STOREDPROC.SPM4_PURCHASELIST, WTXT_SEARCHLIST_PR.Text, String.Empty, True)
+                    SPM4_PMDPRLISTTableAdapter.FillBySEARCH(DS_STOREDPROC.SPM4_PMDPRLIST, WTXT_SEARCHLIST_PR.Text)
                     LBL_TOTALNOOFPR.Text = DGV_PRLIST.Rows.Count
                 End If
             Else
@@ -143,7 +143,7 @@ Public Class FRM_CHECK_PR
                 PR_APPCODE = Trim(WTXT_APPCODE.Text)
                 FRM_PRCANCELED.ShowDialog()
                 WTXT_SEARCHPR.Clear()
-                SPM4_PURCHASELISTTableAdapter.FillByPMD_LIST(DS_STOREDPROC.SPM4_PURCHASELIST, WTXT_SEARCHLIST_PR.Text, String.Empty, True)
+                SPM4_PMDPRLISTTableAdapter.FillBySEARCH(DS_STOREDPROC.SPM4_PMDPRLIST, WTXT_SEARCHLIST_PR.Text)
                 LBL_TOTALNOOFPR.Text = DGV_PRLIST.Rows.Count
             End If
 #End Region
@@ -319,7 +319,7 @@ Public Class FRM_CHECK_PR
     Private Sub WTXT_SEARCHLIST_PR_KeyDown(sender As Object, e As KeyEventArgs) Handles WTXT_SEARCHLIST_PR.KeyDown
         If e.KeyCode = Keys.Enter Then
             WTXT_SEARCHPR.Clear()
-            SPM4_PURCHASELISTTableAdapter.FillByPMD_LIST(DS_STOREDPROC.SPM4_PURCHASELIST, WTXT_SEARCHLIST_PR.Text, String.Empty, True)
+            SPM4_PMDPRLISTTableAdapter.FillBySEARCH(DS_STOREDPROC.SPM4_PMDPRLIST, WTXT_SEARCHLIST_PR.Text)
             LBL_TOTALNOOFPR.Text = DGV_PRLIST.Rows.Count
         End If
     End Sub
@@ -329,7 +329,7 @@ Public Class FRM_CHECK_PR
 #Region "LOAD"
     Private Sub FRM_CHECK_PR_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         WTXT_SEARCHPR.Clear()
-        SPM4_PURCHASELISTTableAdapter.FillByPMD_LIST(DS_STOREDPROC.SPM4_PURCHASELIST, WTXT_SEARCHLIST_PR.Text, String.Empty, True)
+        SPM4_PMDPRLISTTableAdapter.FillBySEARCH(DS_STOREDPROC.SPM4_PMDPRLIST, WTXT_SEARCHLIST_PR.Text)
         LBL_TOTALNOOFPR.Text = DGV_PRLIST.Rows.Count
     End Sub
 #End Region
@@ -412,6 +412,8 @@ Public Class FRM_CHECK_PR
 #Region "View Details"
                 If TypeOf DGV_PRLIST.Columns(e.ColumnIndex) Is DataGridViewButtonColumn AndAlso
                   e.RowIndex >= 0 AndAlso e.ColumnIndex = 5 Then
+
+
 
 #End Region
 

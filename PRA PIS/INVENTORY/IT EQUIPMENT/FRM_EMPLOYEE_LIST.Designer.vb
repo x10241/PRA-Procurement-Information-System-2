@@ -23,33 +23,36 @@ Partial Class FRM_EMPLOYEE_LIST
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FRM_EMPLOYEE_LIST))
         Me.GB_PRLIST = New System.Windows.Forms.GroupBox()
+        Me.EmployeeInfoDataGridView = New System.Windows.Forms.DataGridView()
+        Me.EMPIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FULLNAMEDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.HDPTDEPARTMENTDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.HDIVDIVISIONDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DTPDSLISTBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DS_PRAJO_DATABASE = New PRA_PIS.DS_PRAJO_DATABASE()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.PBICONSEARCH = New System.Windows.Forms.PictureBox()
+        Me.WTXT_SEARCHEMPLOYEE = New PRA_PIS.WatermarkTextBox()
         Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
         Me.RECT_PRCANCELEDIT = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.DS_TABLES = New PRA_PIS.DS_TABLES()
         Me.BTN_CLOSE = New System.Windows.Forms.Button()
         Me.PNL = New System.Windows.Forms.Panel()
         Me.Label39 = New System.Windows.Forms.Label()
-        Me.DS_TABLES = New PRA_PIS.DS_TABLES()
-        Me.EmployeeInfoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.EmployeeInfoTableAdapter = New PRA_PIS.DS_TABLESTableAdapters.EmployeeInfoTableAdapter()
         Me.TableAdapterManager = New PRA_PIS.DS_TABLESTableAdapters.TableAdapterManager()
-        Me.EmployeeInfoDataGridView = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.WTXT_SEARCHEMPLOYEE = New PRA_PIS.WatermarkTextBox()
+        Me.DT_PDS_LISTTableAdapter = New PRA_PIS.DS_PRAJO_DATABASETableAdapters.DT_PDS_LISTTableAdapter()
         Me.GB_PRLIST.SuspendLayout()
+        CType(Me.EmployeeInfoDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DTPDSLISTBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DS_PRAJO_DATABASE, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PBICONSEARCH, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.PNL.SuspendLayout()
         CType(Me.DS_TABLES, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.EmployeeInfoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.EmployeeInfoDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PNL.SuspendLayout()
         Me.SuspendLayout()
         '
         'GB_PRLIST
@@ -69,6 +72,73 @@ Partial Class FRM_EMPLOYEE_LIST
         Me.GB_PRLIST.Size = New System.Drawing.Size(662, 583)
         Me.GB_PRLIST.TabIndex = 1407
         Me.GB_PRLIST.TabStop = False
+        '
+        'EmployeeInfoDataGridView
+        '
+        Me.EmployeeInfoDataGridView.AllowUserToAddRows = False
+        Me.EmployeeInfoDataGridView.AllowUserToDeleteRows = False
+        Me.EmployeeInfoDataGridView.AllowUserToResizeColumns = False
+        Me.EmployeeInfoDataGridView.AllowUserToResizeRows = False
+        Me.EmployeeInfoDataGridView.AutoGenerateColumns = False
+        Me.EmployeeInfoDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.EmployeeInfoDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.EmployeeInfoDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.EMPIDDataGridViewTextBoxColumn, Me.FULLNAMEDataGridViewTextBoxColumn, Me.HDPTDEPARTMENTDataGridViewTextBoxColumn, Me.HDIVDIVISIONDataGridViewTextBoxColumn})
+        Me.EmployeeInfoDataGridView.DataSource = Me.DTPDSLISTBindingSource
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.EmployeeInfoDataGridView.DefaultCellStyle = DataGridViewCellStyle1
+        Me.EmployeeInfoDataGridView.Location = New System.Drawing.Point(11, 64)
+        Me.EmployeeInfoDataGridView.Name = "EmployeeInfoDataGridView"
+        Me.EmployeeInfoDataGridView.ReadOnly = True
+        Me.EmployeeInfoDataGridView.RowHeadersVisible = False
+        Me.EmployeeInfoDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.EmployeeInfoDataGridView.Size = New System.Drawing.Size(637, 513)
+        Me.EmployeeInfoDataGridView.TabIndex = 0
+        '
+        'EMPIDDataGridViewTextBoxColumn
+        '
+        Me.EMPIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.EMPIDDataGridViewTextBoxColumn.DataPropertyName = "EMP_ID"
+        Me.EMPIDDataGridViewTextBoxColumn.HeaderText = "EMPLOYEE ID"
+        Me.EMPIDDataGridViewTextBoxColumn.Name = "EMPIDDataGridViewTextBoxColumn"
+        Me.EMPIDDataGridViewTextBoxColumn.ReadOnly = True
+        Me.EMPIDDataGridViewTextBoxColumn.Width = 120
+        '
+        'FULLNAMEDataGridViewTextBoxColumn
+        '
+        Me.FULLNAMEDataGridViewTextBoxColumn.DataPropertyName = "FULLNAME"
+        Me.FULLNAMEDataGridViewTextBoxColumn.HeaderText = "FULLNAME"
+        Me.FULLNAMEDataGridViewTextBoxColumn.Name = "FULLNAMEDataGridViewTextBoxColumn"
+        Me.FULLNAMEDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'HDPTDEPARTMENTDataGridViewTextBoxColumn
+        '
+        Me.HDPTDEPARTMENTDataGridViewTextBoxColumn.DataPropertyName = "HDPT_DEPARTMENT"
+        Me.HDPTDEPARTMENTDataGridViewTextBoxColumn.HeaderText = "DEPARTMENT"
+        Me.HDPTDEPARTMENTDataGridViewTextBoxColumn.Name = "HDPTDEPARTMENTDataGridViewTextBoxColumn"
+        Me.HDPTDEPARTMENTDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'HDIVDIVISIONDataGridViewTextBoxColumn
+        '
+        Me.HDIVDIVISIONDataGridViewTextBoxColumn.DataPropertyName = "HDIV_DIVISION"
+        Me.HDIVDIVISIONDataGridViewTextBoxColumn.HeaderText = "DIVISION"
+        Me.HDIVDIVISIONDataGridViewTextBoxColumn.Name = "HDIVDIVISIONDataGridViewTextBoxColumn"
+        Me.HDIVDIVISIONDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'DTPDSLISTBindingSource
+        '
+        Me.DTPDSLISTBindingSource.DataMember = "DT_PDS_LIST"
+        Me.DTPDSLISTBindingSource.DataSource = Me.DS_PRAJO_DATABASE
+        '
+        'DS_PRAJO_DATABASE
+        '
+        Me.DS_PRAJO_DATABASE.DataSetName = "DS_PRAJO_DATABASE"
+        Me.DS_PRAJO_DATABASE.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'PictureBox2
         '
@@ -105,6 +175,18 @@ Partial Class FRM_EMPLOYEE_LIST
         Me.PBICONSEARCH.TabIndex = 1408
         Me.PBICONSEARCH.TabStop = False
         '
+        'WTXT_SEARCHEMPLOYEE
+        '
+        Me.WTXT_SEARCHEMPLOYEE.BackColor = System.Drawing.SystemColors.Window
+        Me.WTXT_SEARCHEMPLOYEE.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.WTXT_SEARCHEMPLOYEE.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.WTXT_SEARCHEMPLOYEE.ForeColor = System.Drawing.Color.Black
+        Me.WTXT_SEARCHEMPLOYEE.Location = New System.Drawing.Point(52, 26)
+        Me.WTXT_SEARCHEMPLOYEE.Name = "WTXT_SEARCHEMPLOYEE"
+        Me.WTXT_SEARCHEMPLOYEE.Size = New System.Drawing.Size(559, 26)
+        Me.WTXT_SEARCHEMPLOYEE.TabIndex = 0
+        Me.WTXT_SEARCHEMPLOYEE.Watermark = "Search Name"
+        '
         'ShapeContainer1
         '
         Me.ShapeContainer1.AutoScroll = True
@@ -126,6 +208,11 @@ Partial Class FRM_EMPLOYEE_LIST
         Me.RECT_PRCANCELEDIT.Location = New System.Drawing.Point(7, 3)
         Me.RECT_PRCANCELEDIT.Name = "RECT_PRCANCELEDIT"
         Me.RECT_PRCANCELEDIT.Size = New System.Drawing.Size(640, 33)
+        '
+        'DS_TABLES
+        '
+        Me.DS_TABLES.DataSetName = "DS_TABLES"
+        Me.DS_TABLES.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'BTN_CLOSE
         '
@@ -164,20 +251,6 @@ Partial Class FRM_EMPLOYEE_LIST
         Me.Label39.TabIndex = 8
         Me.Label39.Text = "E M P L O Y E E  L I S T"
         '
-        'DS_TABLES
-        '
-        Me.DS_TABLES.DataSetName = "DS_TABLES"
-        Me.DS_TABLES.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'EmployeeInfoBindingSource
-        '
-        Me.EmployeeInfoBindingSource.DataMember = "EmployeeInfo"
-        Me.EmployeeInfoBindingSource.DataSource = Me.DS_TABLES
-        '
-        'EmployeeInfoTableAdapter
-        '
-        Me.EmployeeInfoTableAdapter.ClearBeforeFill = True
-        '
         'TableAdapterManager
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
@@ -193,65 +266,9 @@ Partial Class FRM_EMPLOYEE_LIST
         Me.TableAdapterManager.tblV2_UsersAccountTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = PRA_PIS.DS_TABLESTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
-        'EmployeeInfoDataGridView
+        'DT_PDS_LISTTableAdapter
         '
-        Me.EmployeeInfoDataGridView.AllowUserToAddRows = False
-        Me.EmployeeInfoDataGridView.AllowUserToDeleteRows = False
-        Me.EmployeeInfoDataGridView.AllowUserToResizeColumns = False
-        Me.EmployeeInfoDataGridView.AllowUserToResizeRows = False
-        Me.EmployeeInfoDataGridView.AutoGenerateColumns = False
-        Me.EmployeeInfoDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.EmployeeInfoDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.EmployeeInfoDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn2})
-        Me.EmployeeInfoDataGridView.DataSource = Me.EmployeeInfoBindingSource
-        Me.EmployeeInfoDataGridView.Location = New System.Drawing.Point(11, 64)
-        Me.EmployeeInfoDataGridView.Name = "EmployeeInfoDataGridView"
-        Me.EmployeeInfoDataGridView.ReadOnly = True
-        Me.EmployeeInfoDataGridView.RowHeadersVisible = False
-        Me.EmployeeInfoDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.EmployeeInfoDataGridView.Size = New System.Drawing.Size(637, 513)
-        Me.EmployeeInfoDataGridView.TabIndex = 0
-        '
-        'DataGridViewTextBoxColumn4
-        '
-        Me.DataGridViewTextBoxColumn4.DataPropertyName = "HRIS_EMPNO"
-        Me.DataGridViewTextBoxColumn4.HeaderText = "Employee No."
-        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        Me.DataGridViewTextBoxColumn4.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "FULLNAME"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "Fullname"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.DataPropertyName = "HDPT_DEPARTMENT"
-        Me.DataGridViewTextBoxColumn3.HeaderText = "Department"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        Me.DataGridViewTextBoxColumn3.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.DataPropertyName = "HDIV_DIVISION"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "Division"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        Me.DataGridViewTextBoxColumn2.ReadOnly = True
-        '
-        'WTXT_SEARCHEMPLOYEE
-        '
-        Me.WTXT_SEARCHEMPLOYEE.BackColor = System.Drawing.SystemColors.Window
-        Me.WTXT_SEARCHEMPLOYEE.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.WTXT_SEARCHEMPLOYEE.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.WTXT_SEARCHEMPLOYEE.ForeColor = System.Drawing.Color.Black
-        Me.WTXT_SEARCHEMPLOYEE.Location = New System.Drawing.Point(52, 26)
-        Me.WTXT_SEARCHEMPLOYEE.Name = "WTXT_SEARCHEMPLOYEE"
-        Me.WTXT_SEARCHEMPLOYEE.Size = New System.Drawing.Size(559, 26)
-        Me.WTXT_SEARCHEMPLOYEE.TabIndex = 0
-        Me.WTXT_SEARCHEMPLOYEE.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.WTXT_SEARCHEMPLOYEE.Watermark = "Search Name"
+        Me.DT_PDS_LISTTableAdapter.ClearBeforeFill = True
         '
         'FRM_EMPLOYEE_LIST
         '
@@ -268,13 +285,14 @@ Partial Class FRM_EMPLOYEE_LIST
         Me.Text = "FRM_EMPLOYEE_LIST"
         Me.GB_PRLIST.ResumeLayout(False)
         Me.GB_PRLIST.PerformLayout()
+        CType(Me.EmployeeInfoDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DTPDSLISTBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DS_PRAJO_DATABASE, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PBICONSEARCH, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DS_TABLES, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PNL.ResumeLayout(False)
         Me.PNL.PerformLayout()
-        CType(Me.DS_TABLES, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.EmployeeInfoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.EmployeeInfoDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -289,12 +307,13 @@ Partial Class FRM_EMPLOYEE_LIST
     Friend WithEvents RECT_PRCANCELEDIT As PowerPacks.RectangleShape
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents DS_TABLES As DS_TABLES
-    Friend WithEvents EmployeeInfoBindingSource As BindingSource
-    Friend WithEvents EmployeeInfoTableAdapter As DS_TABLESTableAdapters.EmployeeInfoTableAdapter
     Friend WithEvents TableAdapterManager As DS_TABLESTableAdapters.TableAdapterManager
     Friend WithEvents EmployeeInfoDataGridView As DataGridView
-    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+    Friend WithEvents DS_PRAJO_DATABASE As DS_PRAJO_DATABASE
+    Friend WithEvents DTPDSLISTBindingSource As BindingSource
+    Friend WithEvents DT_PDS_LISTTableAdapter As DS_PRAJO_DATABASETableAdapters.DT_PDS_LISTTableAdapter
+    Friend WithEvents EMPIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents FULLNAMEDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents HDPTDEPARTMENTDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents HDIVDIVISIONDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class

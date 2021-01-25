@@ -1,4 +1,11 @@
 ﻿Partial Class DS_PROPERTYDB
+    Partial Public Class DT_INV_ACC_OFFDataTable
+        Private Sub DT_INV_ACC_OFFDataTable_DT_INV_ACC_OFFRowChanging(sender As Object, e As DT_INV_ACC_OFFRowChangeEvent) Handles Me.DT_INV_ACC_OFFRowChanging
+
+        End Sub
+
+    End Class
+
     Partial Public Class TBLM4_INV_ITEMS_NAME_MAINDataTable
         Private Sub TBLM4_INV_ITEMS_NAME_MAINDataTable_ColumnChanging(sender As Object, e As DataColumnChangeEventArgs) Handles Me.ColumnChanging
             If (e.Column.ColumnName = Me.ITM_NAMEColumn.ColumnName) Then

@@ -59,30 +59,6 @@ Partial Class FRM_DGV_ENCODING
         Me.RECT_DGVQUANTITY = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RectangleShape1 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RECT_PRPRNO = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
-        Me.PNL_SELECT_PARTICULARS = New System.Windows.Forms.Panel()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.DGV_PARTICULAR_LIST = New System.Windows.Forms.DataGridView()
-        Me.supplierName = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.UnitCost = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.WTXT_PRO_CONTACT_NO = New PRA_PIS.WatermarkTextBox()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.WTXT_PRO_COMPSUPPLIERNAME = New PRA_PIS.WatermarkTextBox()
-        Me.WTXT_PRO_ITEMDESCRIPTION = New PRA_PIS.WatermarkTextBox()
-        Me.WTXT_PRO_QUANTITY = New PRA_PIS.WatermarkTextBox()
-        Me.WTXT_PRO_TOTALCOST = New PRA_PIS.WatermarkTextBox()
-        Me.WTXT_PRO_UNIT_COST = New PRA_PIS.WatermarkTextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.ShapeContainer2 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
-        Me.RectangleShape9 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
-        Me.RectangleShape8 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
-        Me.RectangleShape2 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
-        Me.RectangleShape4 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
-        Me.RectangleShape6 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
-        Me.RectangleShape7 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TBLG3UNITSBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DS_PROPERTYDB, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -91,8 +67,6 @@ Partial Class FRM_DGV_ENCODING
         CType(Me.TblV1_HRISDIVISIONBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PNL.SuspendLayout()
         Me.PNL_PARTICULARS.SuspendLayout()
-        Me.PNL_SELECT_PARTICULARS.SuspendLayout()
-        CType(Me.DGV_PARTICULAR_LIST, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BTN_SAVE
@@ -320,7 +294,7 @@ Partial Class FRM_DGV_ENCODING
         Me.BTN_Minimize.FlatAppearance.BorderColor = System.Drawing.Color.Teal
         Me.BTN_Minimize.FlatAppearance.BorderSize = 3
         Me.BTN_Minimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BTN_Minimize.Location = New System.Drawing.Point(-4072, 11)
+        Me.BTN_Minimize.Location = New System.Drawing.Point(-4068, 11)
         Me.BTN_Minimize.Margin = New System.Windows.Forms.Padding(5)
         Me.BTN_Minimize.Name = "BTN_Minimize"
         Me.BTN_Minimize.Size = New System.Drawing.Size(47, 45)
@@ -338,7 +312,7 @@ Partial Class FRM_DGV_ENCODING
         Me.PNL.Location = New System.Drawing.Point(0, 0)
         Me.PNL.Margin = New System.Windows.Forms.Padding(5)
         Me.PNL.Name = "PNL"
-        Me.PNL.Size = New System.Drawing.Size(433, 50)
+        Me.PNL.Size = New System.Drawing.Size(437, 50)
         Me.PNL.TabIndex = 1407
         '
         'BTN_CLOSE
@@ -349,7 +323,7 @@ Partial Class FRM_DGV_ENCODING
         Me.BTN_CLOSE.FlatAppearance.BorderColor = System.Drawing.Color.Teal
         Me.BTN_CLOSE.FlatAppearance.BorderSize = 3
         Me.BTN_CLOSE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BTN_CLOSE.Location = New System.Drawing.Point(-4025, 10)
+        Me.BTN_CLOSE.Location = New System.Drawing.Point(-4021, 10)
         Me.BTN_CLOSE.Margin = New System.Windows.Forms.Padding(5)
         Me.BTN_CLOSE.Name = "BTN_CLOSE"
         Me.BTN_CLOSE.Size = New System.Drawing.Size(50, 48)
@@ -448,260 +422,12 @@ Partial Class FRM_DGV_ENCODING
         Me.RECT_PRPRNO.Name = "RECT_PRPRNO"
         Me.RECT_PRPRNO.Size = New System.Drawing.Size(224, 32)
         '
-        'PNL_SELECT_PARTICULARS
-        '
-        Me.PNL_SELECT_PARTICULARS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PNL_SELECT_PARTICULARS.Controls.Add(Me.Label13)
-        Me.PNL_SELECT_PARTICULARS.Controls.Add(Me.DGV_PARTICULAR_LIST)
-        Me.PNL_SELECT_PARTICULARS.Controls.Add(Me.WTXT_PRO_CONTACT_NO)
-        Me.PNL_SELECT_PARTICULARS.Controls.Add(Me.Label12)
-        Me.PNL_SELECT_PARTICULARS.Controls.Add(Me.Label11)
-        Me.PNL_SELECT_PARTICULARS.Controls.Add(Me.WTXT_PRO_COMPSUPPLIERNAME)
-        Me.PNL_SELECT_PARTICULARS.Controls.Add(Me.WTXT_PRO_ITEMDESCRIPTION)
-        Me.PNL_SELECT_PARTICULARS.Controls.Add(Me.WTXT_PRO_QUANTITY)
-        Me.PNL_SELECT_PARTICULARS.Controls.Add(Me.WTXT_PRO_TOTALCOST)
-        Me.PNL_SELECT_PARTICULARS.Controls.Add(Me.WTXT_PRO_UNIT_COST)
-        Me.PNL_SELECT_PARTICULARS.Controls.Add(Me.Label7)
-        Me.PNL_SELECT_PARTICULARS.Controls.Add(Me.Label8)
-        Me.PNL_SELECT_PARTICULARS.Controls.Add(Me.Label9)
-        Me.PNL_SELECT_PARTICULARS.Controls.Add(Me.Label10)
-        Me.PNL_SELECT_PARTICULARS.Controls.Add(Me.ShapeContainer2)
-        Me.PNL_SELECT_PARTICULARS.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PNL_SELECT_PARTICULARS.Location = New System.Drawing.Point(450, 56)
-        Me.PNL_SELECT_PARTICULARS.Name = "PNL_SELECT_PARTICULARS"
-        Me.PNL_SELECT_PARTICULARS.Size = New System.Drawing.Size(418, 318)
-        Me.PNL_SELECT_PARTICULARS.TabIndex = 1408
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Century Gothic", 8.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(5, 2)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(100, 15)
-        Me.Label13.TabIndex = 1442
-        Me.Label13.Text = "Select Particulars"
-        '
-        'DGV_PARTICULAR_LIST
-        '
-        Me.DGV_PARTICULAR_LIST.AllowUserToAddRows = False
-        Me.DGV_PARTICULAR_LIST.AllowUserToDeleteRows = False
-        Me.DGV_PARTICULAR_LIST.BackgroundColor = System.Drawing.Color.WhiteSmoke
-        Me.DGV_PARTICULAR_LIST.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV_PARTICULAR_LIST.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.supplierName, Me.UnitCost})
-        Me.DGV_PARTICULAR_LIST.Location = New System.Drawing.Point(4, 20)
-        Me.DGV_PARTICULAR_LIST.Name = "DGV_PARTICULAR_LIST"
-        Me.DGV_PARTICULAR_LIST.ReadOnly = True
-        Me.DGV_PARTICULAR_LIST.RowHeadersVisible = False
-        Me.DGV_PARTICULAR_LIST.Size = New System.Drawing.Size(408, 85)
-        Me.DGV_PARTICULAR_LIST.TabIndex = 1441
-        '
-        'supplierName
-        '
-        Me.supplierName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.supplierName.HeaderText = "Particulars"
-        Me.supplierName.Name = "supplierName"
-        Me.supplierName.ReadOnly = True
-        '
-        'UnitCost
-        '
-        Me.UnitCost.HeaderText = "Unit Type"
-        Me.UnitCost.Name = "UnitCost"
-        Me.UnitCost.ReadOnly = True
-        '
-        'WTXT_PRO_CONTACT_NO
-        '
-        Me.WTXT_PRO_CONTACT_NO.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.WTXT_PRO_CONTACT_NO.Location = New System.Drawing.Point(13, 163)
-        Me.WTXT_PRO_CONTACT_NO.MaxLength = 10
-        Me.WTXT_PRO_CONTACT_NO.Name = "WTXT_PRO_CONTACT_NO"
-        Me.WTXT_PRO_CONTACT_NO.Size = New System.Drawing.Size(248, 14)
-        Me.WTXT_PRO_CONTACT_NO.TabIndex = 1410
-        Me.WTXT_PRO_CONTACT_NO.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.WTXT_PRO_CONTACT_NO.Watermark = Nothing
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(17, 145)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(71, 15)
-        Me.Label12.TabIndex = 1440
-        Me.Label12.Text = "Contact No."
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(17, 104)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(149, 15)
-        Me.Label11.TabIndex = 1439
-        Me.Label11.Text = "Company/Supplier's Name"
-        '
-        'WTXT_PRO_COMPSUPPLIERNAME
-        '
-        Me.WTXT_PRO_COMPSUPPLIERNAME.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.WTXT_PRO_COMPSUPPLIERNAME.Location = New System.Drawing.Point(13, 123)
-        Me.WTXT_PRO_COMPSUPPLIERNAME.MaxLength = 10
-        Me.WTXT_PRO_COMPSUPPLIERNAME.Name = "WTXT_PRO_COMPSUPPLIERNAME"
-        Me.WTXT_PRO_COMPSUPPLIERNAME.Size = New System.Drawing.Size(362, 14)
-        Me.WTXT_PRO_COMPSUPPLIERNAME.TabIndex = 1409
-        Me.WTXT_PRO_COMPSUPPLIERNAME.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.WTXT_PRO_COMPSUPPLIERNAME.Watermark = Nothing
-        '
-        'WTXT_PRO_ITEMDESCRIPTION
-        '
-        Me.WTXT_PRO_ITEMDESCRIPTION.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.WTXT_PRO_ITEMDESCRIPTION.Location = New System.Drawing.Point(13, 202)
-        Me.WTXT_PRO_ITEMDESCRIPTION.Multiline = True
-        Me.WTXT_PRO_ITEMDESCRIPTION.Name = "WTXT_PRO_ITEMDESCRIPTION"
-        Me.WTXT_PRO_ITEMDESCRIPTION.Size = New System.Drawing.Size(207, 105)
-        Me.WTXT_PRO_ITEMDESCRIPTION.TabIndex = 1409
-        Me.WTXT_PRO_ITEMDESCRIPTION.Watermark = Nothing
-        '
-        'WTXT_PRO_QUANTITY
-        '
-        Me.WTXT_PRO_QUANTITY.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.WTXT_PRO_QUANTITY.Location = New System.Drawing.Point(295, 199)
-        Me.WTXT_PRO_QUANTITY.MaxLength = 10
-        Me.WTXT_PRO_QUANTITY.Name = "WTXT_PRO_QUANTITY"
-        Me.WTXT_PRO_QUANTITY.Size = New System.Drawing.Size(111, 14)
-        Me.WTXT_PRO_QUANTITY.TabIndex = 3
-        Me.WTXT_PRO_QUANTITY.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.WTXT_PRO_QUANTITY.Watermark = Nothing
-        '
-        'WTXT_PRO_TOTALCOST
-        '
-        Me.WTXT_PRO_TOTALCOST.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.WTXT_PRO_TOTALCOST.Location = New System.Drawing.Point(295, 261)
-        Me.WTXT_PRO_TOTALCOST.MaxLength = 30
-        Me.WTXT_PRO_TOTALCOST.Name = "WTXT_PRO_TOTALCOST"
-        Me.WTXT_PRO_TOTALCOST.ReadOnly = True
-        Me.WTXT_PRO_TOTALCOST.Size = New System.Drawing.Size(111, 14)
-        Me.WTXT_PRO_TOTALCOST.TabIndex = 1438
-        Me.WTXT_PRO_TOTALCOST.Text = "0"
-        Me.WTXT_PRO_TOTALCOST.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        Me.WTXT_PRO_TOTALCOST.Watermark = Nothing
-        '
-        'WTXT_PRO_UNIT_COST
-        '
-        Me.WTXT_PRO_UNIT_COST.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.WTXT_PRO_UNIT_COST.Location = New System.Drawing.Point(295, 230)
-        Me.WTXT_PRO_UNIT_COST.MaxLength = 20
-        Me.WTXT_PRO_UNIT_COST.Name = "WTXT_PRO_UNIT_COST"
-        Me.WTXT_PRO_UNIT_COST.Size = New System.Drawing.Size(111, 14)
-        Me.WTXT_PRO_UNIT_COST.TabIndex = 4
-        Me.WTXT_PRO_UNIT_COST.Text = "0"
-        Me.WTXT_PRO_UNIT_COST.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        Me.WTXT_PRO_UNIT_COST.Watermark = Nothing
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(228, 259)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(58, 15)
-        Me.Label7.TabIndex = 1436
-        Me.Label7.Text = "Total Cost"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(228, 228)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(53, 15)
-        Me.Label8.TabIndex = 1435
-        Me.Label8.Text = "Unit Cost"
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(17, 184)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(92, 15)
-        Me.Label9.TabIndex = 1434
-        Me.Label9.Text = "Item Description"
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(228, 197)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(52, 15)
-        Me.Label10.TabIndex = 1433
-        Me.Label10.Text = "Quantity"
-        '
-        'ShapeContainer2
-        '
-        Me.ShapeContainer2.Location = New System.Drawing.Point(0, 0)
-        Me.ShapeContainer2.Margin = New System.Windows.Forms.Padding(0)
-        Me.ShapeContainer2.Name = "ShapeContainer2"
-        Me.ShapeContainer2.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape9, Me.RectangleShape8, Me.RectangleShape2, Me.RectangleShape4, Me.RectangleShape6, Me.RectangleShape7})
-        Me.ShapeContainer2.Size = New System.Drawing.Size(416, 316)
-        Me.ShapeContainer2.TabIndex = 1429
-        Me.ShapeContainer2.TabStop = False
-        '
-        'RectangleShape9
-        '
-        Me.RectangleShape9.BorderColor = System.Drawing.Color.LightSeaGreen
-        Me.RectangleShape9.BorderWidth = 2
-        Me.RectangleShape9.CornerRadius = 5
-        Me.RectangleShape9.Location = New System.Drawing.Point(8, 157)
-        Me.RectangleShape9.Name = "RectangleShape9"
-        Me.RectangleShape9.Size = New System.Drawing.Size(258, 25)
-        '
-        'RectangleShape8
-        '
-        Me.RectangleShape8.BorderColor = System.Drawing.Color.LightSeaGreen
-        Me.RectangleShape8.BorderWidth = 2
-        Me.RectangleShape8.CornerRadius = 5
-        Me.RectangleShape8.Location = New System.Drawing.Point(8, 117)
-        Me.RectangleShape8.Name = "RectangleShape8"
-        Me.RectangleShape8.Size = New System.Drawing.Size(372, 25)
-        '
-        'RectangleShape2
-        '
-        Me.RectangleShape2.BorderColor = System.Drawing.Color.LightSeaGreen
-        Me.RectangleShape2.BorderWidth = 2
-        Me.RectangleShape2.CornerRadius = 5
-        Me.RectangleShape2.Location = New System.Drawing.Point(8, 193)
-        Me.RectangleShape2.Name = "RectangleShape5"
-        Me.RectangleShape2.Size = New System.Drawing.Size(216, 118)
-        '
-        'RectangleShape4
-        '
-        Me.RectangleShape4.BorderColor = System.Drawing.Color.LightSeaGreen
-        Me.RectangleShape4.BorderWidth = 2
-        Me.RectangleShape4.CornerRadius = 5
-        Me.RectangleShape4.Location = New System.Drawing.Point(290, 225)
-        Me.RectangleShape4.Name = "RECT_DGESTIMATEDUNITCOST"
-        Me.RectangleShape4.Size = New System.Drawing.Size(120, 24)
-        '
-        'RectangleShape6
-        '
-        Me.RectangleShape6.BorderColor = System.Drawing.Color.LightSeaGreen
-        Me.RectangleShape6.BorderWidth = 2
-        Me.RectangleShape6.CornerRadius = 5
-        Me.RectangleShape6.Location = New System.Drawing.Point(290, 255)
-        Me.RectangleShape6.Name = "RectangleShape3"
-        Me.RectangleShape6.Size = New System.Drawing.Size(120, 24)
-        '
-        'RectangleShape7
-        '
-        Me.RectangleShape7.BorderColor = System.Drawing.Color.LightSeaGreen
-        Me.RectangleShape7.BorderWidth = 2
-        Me.RectangleShape7.CornerRadius = 5
-        Me.RectangleShape7.Location = New System.Drawing.Point(290, 194)
-        Me.RectangleShape7.Name = "RECT_DGVQUANTITY"
-        Me.RectangleShape7.Size = New System.Drawing.Size(120, 24)
-        '
         'FRM_DGV_ENCODING
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(433, 421)
-        Me.Controls.Add(Me.PNL_SELECT_PARTICULARS)
+        Me.ClientSize = New System.Drawing.Size(437, 425)
         Me.Controls.Add(Me.BTN_SAVE)
         Me.Controls.Add(Me.DGV_CLOSE)
         Me.Controls.Add(Me.PNL)
@@ -722,9 +448,6 @@ Partial Class FRM_DGV_ENCODING
         Me.PNL.PerformLayout()
         Me.PNL_PARTICULARS.ResumeLayout(False)
         Me.PNL_PARTICULARS.PerformLayout()
-        Me.PNL_SELECT_PARTICULARS.ResumeLayout(False)
-        Me.PNL_SELECT_PARTICULARS.PerformLayout()
-        CType(Me.DGV_PARTICULAR_LIST, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -765,28 +488,4 @@ Partial Class FRM_DGV_ENCODING
     Friend WithEvents RECT_DGVQUANTITY As PowerPacks.RectangleShape
     Friend WithEvents RectangleShape1 As PowerPacks.RectangleShape
     Friend WithEvents RECT_PRPRNO As PowerPacks.RectangleShape
-    Friend WithEvents PNL_SELECT_PARTICULARS As Panel
-    Friend WithEvents WTXT_PRO_QUANTITY As WatermarkTextBox
-    Friend WithEvents WTXT_PRO_TOTALCOST As WatermarkTextBox
-    Friend WithEvents WTXT_PRO_UNIT_COST As WatermarkTextBox
-    Friend WithEvents Label7 As Label
-    Friend WithEvents Label8 As Label
-    Friend WithEvents Label10 As Label
-    Friend WithEvents ShapeContainer2 As PowerPacks.ShapeContainer
-    Friend WithEvents RectangleShape4 As PowerPacks.RectangleShape
-    Friend WithEvents RectangleShape6 As PowerPacks.RectangleShape
-    Friend WithEvents RectangleShape7 As PowerPacks.RectangleShape
-    Friend WithEvents Label9 As Label
-    Friend WithEvents RectangleShape2 As PowerPacks.RectangleShape
-    Friend WithEvents WTXT_PRO_ITEMDESCRIPTION As WatermarkTextBox
-    Friend WithEvents Label11 As Label
-    Friend WithEvents WTXT_PRO_COMPSUPPLIERNAME As WatermarkTextBox
-    Friend WithEvents RectangleShape8 As PowerPacks.RectangleShape
-    Friend WithEvents WTXT_PRO_CONTACT_NO As WatermarkTextBox
-    Friend WithEvents Label12 As Label
-    Friend WithEvents RectangleShape9 As PowerPacks.RectangleShape
-    Friend WithEvents DGV_PARTICULAR_LIST As DataGridView
-    Friend WithEvents supplierName As DataGridViewTextBoxColumn
-    Friend WithEvents UnitCost As DataGridViewTextBoxColumn
-    Friend WithEvents Label13 As Label
 End Class

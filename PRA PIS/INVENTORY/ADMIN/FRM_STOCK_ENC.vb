@@ -198,9 +198,7 @@ Public Class FRM_STOCK_ENC
 
 #Region "LOAD"
     Private Sub FRM_STOCK_ENC_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the 'DS_STOREDPROC.SPM4_PHY_C_CODE' table. You can move, or remove it, as needed.
         Me.SPM4_PHY_C_CODETableAdapter.Fill(Me.DS_STOREDPROC.SPM4_PHY_C_CODE)
-        '   VWM4_STOCK_LISTTableAdapter.FillByITEM_DESC(DS_VIEWS.VWM4_STOCK_LIST, WTXT_ITEM_STOCK_SEARCH.Text, DIVISION_NO)
         SPM4_ITEM_STOCKMASTERLISTTableAdapter.FillByFILTER_SEARCH(DS_STOREDPROC.SPM4_ITEM_STOCKMASTERLIST, CB_FILTER_BY.SelectedIndex, WTXT_ITEM_STOCK_SEARCH.Text, DIVISION_NO)
         Me.TBLG3_UNITSTableAdapter.Fill(Me.DS_PROPERTYDB.TBLG3_UNITS)
         Dim suggestions As New AutoCompleteStringCollection()
@@ -216,6 +214,9 @@ Public Class FRM_STOCK_ENC
         LLBL_CRITICAL.Text = SPM4_ITEM_STOCKS_LEGENDTableAdapter.SPM4_ITEM_STOCKS_LEGEND(1, DIVISION_NO)
         LLBL_OVER_STOCK.Text = SPM4_ITEM_STOCKS_LEGENDTableAdapter.SPM4_ITEM_STOCKS_LEGEND(2, DIVISION_NO)
         LLBL_NOSTOCK.Text = SPM4_ITEM_STOCKS_LEGENDTableAdapter.SPM4_ITEM_STOCKS_LEGEND(3, DIVISION_NO)
+        DGV_STOCK_LIST.ClearSelection()
+        DGV_STOCK_LIST.CurrentCell = Nothing
+        DGV_STOCK_LIST.Columns(6).DefaultCellStyle.Format = "N2"
     End Sub
 #End Region
 
@@ -234,6 +235,10 @@ Public Class FRM_STOCK_ENC
             ' VWM4_STOCK_LISTTableAdapter.FillByITEM_DESC(DS_VIEWS.VWM4_STOCK_LIST, WTXT_ITEM_STOCK_SEARCH.Text)
             SPM4_ITEM_STOCKMASTERLISTTableAdapter.FillByFILTER_SEARCH(DS_STOREDPROC.SPM4_ITEM_STOCKMASTERLIST, CB_FILTER_BY.SelectedIndex, WTXT_ITEM_STOCK_SEARCH.Text, DIVISION_NO)
             LBL_TOTALNOOFREC.Text = DGV_STOCK_LIST.Rows.Count
+            LLBL_NORMAL.Text = SPM4_ITEM_STOCKS_LEGENDTableAdapter.SPM4_ITEM_STOCKS_LEGEND(0, DIVISION_NO)
+            LLBL_CRITICAL.Text = SPM4_ITEM_STOCKS_LEGENDTableAdapter.SPM4_ITEM_STOCKS_LEGEND(1, DIVISION_NO)
+            LLBL_OVER_STOCK.Text = SPM4_ITEM_STOCKS_LEGENDTableAdapter.SPM4_ITEM_STOCKS_LEGEND(2, DIVISION_NO)
+            LLBL_NOSTOCK.Text = SPM4_ITEM_STOCKS_LEGENDTableAdapter.SPM4_ITEM_STOCKS_LEGEND(3, DIVISION_NO)
         End If
     End Sub
 #End Region
@@ -351,6 +356,13 @@ Public Class FRM_STOCK_ENC
     Private Sub CB_FILTER_BY_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CB_FILTER_BY.SelectedIndexChanged
         SPM4_ITEM_STOCKMASTERLISTTableAdapter.FillByFILTER_SEARCH(DS_STOREDPROC.SPM4_ITEM_STOCKMASTERLIST, CB_FILTER_BY.SelectedIndex, WTXT_ITEM_STOCK_SEARCH.Text, DIVISION_NO)
         LBL_TOTALNOOFREC.Text = DGV_STOCK_LIST.Rows.Count
+        LLBL_NORMAL.Text = SPM4_ITEM_STOCKS_LEGENDTableAdapter.SPM4_ITEM_STOCKS_LEGEND(0, DIVISION_NO)
+        LLBL_CRITICAL.Text = SPM4_ITEM_STOCKS_LEGENDTableAdapter.SPM4_ITEM_STOCKS_LEGEND(1, DIVISION_NO)
+        LLBL_OVER_STOCK.Text = SPM4_ITEM_STOCKS_LEGENDTableAdapter.SPM4_ITEM_STOCKS_LEGEND(2, DIVISION_NO)
+        LLBL_NOSTOCK.Text = SPM4_ITEM_STOCKS_LEGENDTableAdapter.SPM4_ITEM_STOCKS_LEGEND(3, DIVISION_NO)
+        DGV_STOCK_LIST.ClearSelection()
+        DGV_STOCK_LIST.CurrentCell = Nothing
+
     End Sub
 #End Region
 
@@ -368,19 +380,21 @@ Public Class FRM_STOCK_ENC
 
 #Region "DGV"
     Private Sub DGV_STOCK_LIST_RowPrePaint(sender As Object, e As DataGridViewRowPrePaintEventArgs) Handles DGV_STOCK_LIST.RowPrePaint
-        'NO STOCK
-        If DGV_STOCK_LIST(6, e.RowIndex).Value = 0 Then
+        ' NO STOCK
+        If CInt(DGV_STOCK_LIST(6, e.RowIndex).Value) = 0 Then
             DGV_STOCK_LIST(0, e.RowIndex).Style.BackColor = Color.Blue
+
             'CRITICAL
-        ElseIf DGV_STOCK_LIST(6, e.RowIndex).Value < DGV_STOCK_LIST(7, e.RowIndex).Value Then
+        ElseIf CInt(DGV_STOCK_LIST(6, e.RowIndex).Value) < If(IsDBNull(DGV_STOCK_LIST(7, e.RowIndex).Value) = True, 0, DGV_STOCK_LIST(7, e.RowIndex).Value) Then
             DGV_STOCK_LIST(0, e.RowIndex).Style.BackColor = Color.Red
             'OVER STOCK
-        ElseIf DGV_STOCK_LIST(6, e.RowIndex).Value > DGV_STOCK_LIST(8, e.RowIndex).Value Then
+        ElseIf CInt(DGV_STOCK_LIST(6, e.RowIndex).Value) > If(IsDBNull(DGV_STOCK_LIST(8, e.RowIndex).Value) = True, 0, DGV_STOCK_LIST(8, e.RowIndex).Value) Then
             DGV_STOCK_LIST(0, e.RowIndex).Style.BackColor = Color.Green
             'NORMAL
         Else
             DGV_STOCK_LIST(0, e.RowIndex).Style.BackColor = Color.WhiteSmoke
         End If
+        DGV_STOCK_LIST.Columns(6).DefaultCellStyle.Format = "N0"
     End Sub
 
 

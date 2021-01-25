@@ -5,11 +5,11 @@
             LoadITQReport()
             BTN_INVENTORY_GENERATE_REPORT.Text = "PRINT REPORT"
         Else
-            If printPreview = 0 Then
-                BTN_INVENTORY_GENERATE_REPORT.Enabled = False
-            Else
-                BTN_INVENTORY_GENERATE_REPORT.Enabled = True
-            End If
+            'If printPreview = 0 Then
+            '    BTN_INVENTORY_GENERATE_REPORT.Enabled = False
+            'Else
+            '    BTN_INVENTORY_GENERATE_REPORT.Enabled = True
+            'End If
             LoadADMINReport()
 
             'If REPRINT Then
@@ -24,7 +24,7 @@
 
     Sub LoadITQReport()
         rptDoc = New RPT_INVENTORY_REPORT
-        SpM4_INVENTORY_REPORTTableAdapter.Fill(DS_STOREDPROC.SPM4_INVENTORY_REPORT, Trim(IR_CBFILTERBY), Trim(IR_CBDATEBY), Trim(IR_KEYWORD), Trim(IR_DATEFROM), Trim(IR_DATETO))
+        SpM4_INVENTORY_REPORTTableAdapter.Fill(DS_STOREDPROC.SPM4_INVENTORY_REPORT, Trim(IR_CBFILTERBY), Trim(IR_CBDATEBY), Trim(IR_KEYWORD), Trim(IR_DATEFROM), Trim(IR_DATETO), IR_ISALLYR, IR_YR, IR_ORDERBY, IR_ORDERTYPE)
         rptDoc.SetDataSource(DS_STOREDPROC.SPM4_INVENTORY_REPORT.DataSet)
         With rptDoc
             .SetParameterValue(0, Trim(IR_CBFILTERBY))
@@ -35,6 +35,12 @@
             .SetParameterValue(5, Trim(IR_REPORTHEADER))
             .SetParameterValue(6, Trim(IR_ASOFDATE))
             .SetParameterValue(7, Trim(IR_ALLITEMS))
+            .SetParameterValue(8, Trim(IR_CHKBY))
+            .SetParameterValue(9, Trim(IR_CRTBY))
+            .SetParameterValue(10, Trim(SYS_FULLNAME_FML))
+            .SetParameterValue(11, Trim(EMP_POSITION))
+            .SetParameterValue(12, Trim(IR_CHK_POS))
+            .SetParameterValue(13, Trim(IR_CRT_POS))
         End With
         CRV_INVENTORY_PREVIEW.ReportSource = rptDoc
         CRV_INVENTORY_PREVIEW.Zoom(1)
@@ -46,11 +52,9 @@
             rptDoc = Nothing
             DS_CUSTOM.DT_ITEM_REQUISITION.Clear()
             DS_CUSTOM.DT_REQUISITION.Clear()
-            If isNew Then
-                REQ_CODE = SPM4_ITEM_REQ_CODETableAdapter.SPM4_ITEM_REQ_CODE(DIVISION_NO)
-            End If
             PBX_QRCODE.BackgroundImage = QRCODEGenerator(REQ_CODE)
             DS_CUSTOM.DT_REQUISITION.Rows.Add(R_CB_REQUISITION_TYPE, R_PURPOSE, USER_DIVISION, EMP_NO, R_FOR_THE_PERIOD, R_DATE_NEEDED, R_REQU_NAME, R_REQU_POSI, R_AUTHORIZEDNAME, R_AUTH_POSITION, R_APPR_NAME, R_APPR_POSI, R_ISSU_NAME, R_ISSU_POSI, R_DATE, REQ_CODE, IMGTOBYTE(PBX_QRCODE))
+
             For Each row As DataGridViewRow In dgv.Rows
                 DS_CUSTOM.DT_ITEM_REQUISITION.Rows.Add(row.Cells(0).Value, row.Cells(1).Value, row.Cells(2).Value, row.Cells(3).Value)
             Next

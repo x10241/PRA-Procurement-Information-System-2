@@ -68,42 +68,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("\\192.168.1.8\Update Server\PIS PROGRAM\")>  _
-        Public Property FILEPATH() As String
-            Get
-                Return CType(Me("FILEPATH"),String)
-            End Get
-            Set
-                Me("FILEPATH") = value
-            End Set
-        End Property
-        
-        <Global.System.Configuration.UserScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("\\192.168.1.8\Update Server\RIMS PROGRAM\RIMSEXEBACKUP\RIMS.exe")>  _
-        Public Property RIMSEXEBACKUPPATH() As String
-            Get
-                Return CType(Me("RIMSEXEBACKUPPATH"),String)
-            End Get
-            Set
-                Me("RIMSEXEBACKUPPATH") = value
-            End Set
-        End Property
-        
-        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.1.8\SQLPRA;Initial Catalog=PRAMASTERDATABASE;Persist Security"& _ 
-            " Info=True;User ID=admin;Password=pr@@dm1n2017507"&Global.Microsoft.VisualBasic.ChrW(10))>  _
-        Public ReadOnly Property PRAMasterDBConnString() As String
-            Get
-                Return CType(Me("PRAMasterDBConnString"),String)
-            End Get
-        End Property
-        
-        <Global.System.Configuration.UserScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("P R O C U R E M E N T  I N F O R M A T I O N  S Y S T E M  ( V  1 . 0 0 2 2 5 ) ")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("PROCUREMENT INFORMATION SYSTEM")>  _
         Public Property APPVER() As String
             Get
                 Return CType(Me("APPVER"),String)
@@ -111,17 +76,6 @@ Namespace My
             Set
                 Me("APPVER") = value
             End Set
-        End Property
-        
-        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.1.8\SQLPRA;Initial Catalog=PRA_PROPERTYDB;Persist Security In"& _ 
-            "fo=True;User ID=admin;Password=pr@@dm1n2017507")>  _
-        Public ReadOnly Property PRA_PROPERTYDBConnectionString() As String
-            Get
-                Return CType(Me("PRA_PROPERTYDBConnectionString"),String)
-            End Get
         End Property
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
@@ -133,19 +87,6 @@ Namespace My
             End Get
             Set
                 Me("PIS_DIR") = value
-            End Set
-        End Property
-        
-        <Global.System.Configuration.UserScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.1.8\SQLPRA;Initial Catalog=PRA_BMSDB;Persist Security Info=Tr"& _ 
-            "ue;User ID=admin;Password=pr@@dm1n2017507")>  _
-        Public Property PRA_BMSDBConnectionString() As String
-            Get
-                Return CType(Me("PRA_BMSDBConnectionString"),String)
-            End Get
-            Set
-                Me("PRA_BMSDBConnectionString") = value
             End Set
         End Property
         
@@ -175,17 +116,6 @@ Namespace My
             End Get
         End Property
         
-        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.1.8\SQLPRA;Initial Catalog=PRAJO_DATABASE;Persist Security In"& _ 
-            "fo=True;User ID=admin;Password=pr@@dm1n2017507")>  _
-        Public ReadOnly Property PRAJO_DATABASEConnectionString() As String
-            Get
-                Return CType(Me("PRAJO_DATABASEConnectionString"),String)
-            End Get
-        End Property
-        
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.DefaultSettingValueAttribute("\\192.168.1.8\PRA Programs\INVENTORY_IMG\")>  _
@@ -196,6 +126,51 @@ Namespace My
             Set
                 Me("PIS_ITEM_DIR") = value
             End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("1.38")>  _
+        Public Property APP_VER2() As String
+            Get
+                Return CType(Me("APP_VER2"),String)
+            End Get
+            Set
+                Me("APP_VER2") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.55.17\SQLPRALOCAL;Initial Catalog=PRAMASTERDATABASE;Persist S"& _ 
+            "ecurity Info=True;User ID=sa;Password=pr@@dm1n2017507")>  _
+        Public ReadOnly Property PRAMasterDBConnString() As String
+            Get
+                Return CType(Me("PRAMasterDBConnString"),String)
+            End Get
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.55.17\SQLPRALOCAL;Initial Catalog=PRA_PROPERTYDB;Persist Secu"& _ 
+            "rity Info=True;User ID=sa;Password=pr@@dm1n2017507"&Global.Microsoft.VisualBasic.ChrW(10))>  _
+        Public ReadOnly Property PRA_PROPERTYDBConnectionString() As String
+            Get
+                Return CType(Me("PRA_PROPERTYDBConnectionString"),String)
+            End Get
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.55.17\SQLPRALOCAL;Initial Catalog=PRAJO_DATABASE;Persist Secu"& _ 
+            "rity Info=True;User ID=sa;Password=pr@@dm1n2017507")>  _
+        Public ReadOnly Property PRAJO_DATABASEConnectionString() As String
+            Get
+                Return CType(Me("PRAJO_DATABASEConnectionString"),String)
+            End Get
         End Property
     End Class
 End Namespace

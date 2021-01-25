@@ -23,7 +23,7 @@ Partial Class FRM_PRACCEPT
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.DGV_SCANNED_IMG = New System.Windows.Forms.DataGridView()
         Me.SCANNED_IMG = New System.Windows.Forms.DataGridViewImageColumn()
         Me.PNL = New System.Windows.Forms.Panel()
@@ -67,14 +67,14 @@ Partial Class FRM_PRACCEPT
         Me.DGV_SCANNED_IMG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGV_SCANNED_IMG.ColumnHeadersVisible = False
         Me.DGV_SCANNED_IMG.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.SCANNED_IMG})
-        Me.DGV_SCANNED_IMG.Location = New System.Drawing.Point(358, 560)
+        Me.DGV_SCANNED_IMG.Location = New System.Drawing.Point(376, 460)
         Me.DGV_SCANNED_IMG.Name = "DGV_SCANNED_IMG"
         Me.DGV_SCANNED_IMG.ReadOnly = True
         Me.DGV_SCANNED_IMG.RowHeadersVisible = False
-        DataGridViewCellStyle2.Padding = New System.Windows.Forms.Padding(5)
-        Me.DGV_SCANNED_IMG.RowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle1.Padding = New System.Windows.Forms.Padding(5)
+        Me.DGV_SCANNED_IMG.RowsDefaultCellStyle = DataGridViewCellStyle1
         Me.DGV_SCANNED_IMG.RowTemplate.Height = 461
-        Me.DGV_SCANNED_IMG.Size = New System.Drawing.Size(15, 0)
+        Me.DGV_SCANNED_IMG.Size = New System.Drawing.Size(101, 0)
         Me.DGV_SCANNED_IMG.TabIndex = 1427
         Me.DGV_SCANNED_IMG.Visible = False
         '
@@ -98,7 +98,7 @@ Partial Class FRM_PRACCEPT
         Me.PNL.Location = New System.Drawing.Point(0, 0)
         Me.PNL.Margin = New System.Windows.Forms.Padding(5)
         Me.PNL.Name = "PNL"
-        Me.PNL.Size = New System.Drawing.Size(341, 32)
+        Me.PNL.Size = New System.Drawing.Size(343, 32)
         Me.PNL.TabIndex = 1428
         '
         'BTN_PRMINIMIZE
@@ -110,7 +110,7 @@ Partial Class FRM_PRACCEPT
         Me.BTN_PRMINIMIZE.FlatAppearance.BorderColor = System.Drawing.Color.Teal
         Me.BTN_PRMINIMIZE.FlatAppearance.BorderSize = 3
         Me.BTN_PRMINIMIZE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BTN_PRMINIMIZE.Location = New System.Drawing.Point(1418, 8)
+        Me.BTN_PRMINIMIZE.Location = New System.Drawing.Point(1420, 8)
         Me.BTN_PRMINIMIZE.Name = "BTN_PRMINIMIZE"
         Me.BTN_PRMINIMIZE.Size = New System.Drawing.Size(28, 28)
         Me.BTN_PRMINIMIZE.TabIndex = 11
@@ -125,7 +125,7 @@ Partial Class FRM_PRACCEPT
         Me.BTN_PRCLOSE.FlatAppearance.BorderColor = System.Drawing.Color.Teal
         Me.BTN_PRCLOSE.FlatAppearance.BorderSize = 3
         Me.BTN_PRCLOSE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BTN_PRCLOSE.Location = New System.Drawing.Point(1453, 7)
+        Me.BTN_PRCLOSE.Location = New System.Drawing.Point(1455, 7)
         Me.BTN_PRCLOSE.Name = "BTN_PRCLOSE"
         Me.BTN_PRCLOSE.Size = New System.Drawing.Size(30, 30)
         Me.BTN_PRCLOSE.TabIndex = 10
@@ -153,7 +153,7 @@ Partial Class FRM_PRACCEPT
         Me.BTN_Minimize.FlatAppearance.BorderColor = System.Drawing.Color.Teal
         Me.BTN_Minimize.FlatAppearance.BorderSize = 3
         Me.BTN_Minimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BTN_Minimize.Location = New System.Drawing.Point(-3019, 11)
+        Me.BTN_Minimize.Location = New System.Drawing.Point(-3017, 11)
         Me.BTN_Minimize.Margin = New System.Windows.Forms.Padding(5)
         Me.BTN_Minimize.Name = "BTN_Minimize"
         Me.BTN_Minimize.Size = New System.Drawing.Size(47, 45)
@@ -169,7 +169,7 @@ Partial Class FRM_PRACCEPT
         Me.BTN_CLOSE.FlatAppearance.BorderColor = System.Drawing.Color.Teal
         Me.BTN_CLOSE.FlatAppearance.BorderSize = 3
         Me.BTN_CLOSE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BTN_CLOSE.Location = New System.Drawing.Point(-2972, 10)
+        Me.BTN_CLOSE.Location = New System.Drawing.Point(-2970, 10)
         Me.BTN_CLOSE.Margin = New System.Windows.Forms.Padding(5)
         Me.BTN_CLOSE.Name = "BTN_CLOSE"
         Me.BTN_CLOSE.Size = New System.Drawing.Size(50, 48)
@@ -261,7 +261,7 @@ Partial Class FRM_PRACCEPT
         Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer1.Name = "ShapeContainer1"
         Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape2, Me.RectangleShape4, Me.RectangleShape43})
-        Me.ShapeContainer1.Size = New System.Drawing.Size(341, 148)
+        Me.ShapeContainer1.Size = New System.Drawing.Size(343, 153)
         Me.ShapeContainer1.TabIndex = 1454
         Me.ShapeContainer1.TabStop = False
         '
@@ -344,7 +344,7 @@ Partial Class FRM_PRACCEPT
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(341, 148)
+        Me.ClientSize = New System.Drawing.Size(343, 153)
         Me.Controls.Add(Me.cbxSources)
         Me.Controls.Add(Me.Label46)
         Me.Controls.Add(Me.BTN_ACCEPT_SAVE)

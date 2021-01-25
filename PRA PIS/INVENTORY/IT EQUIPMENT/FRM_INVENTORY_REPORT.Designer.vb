@@ -29,6 +29,16 @@ Partial Class FRM_INVENTORY_REPORT
         Me.BTN_Minimize = New System.Windows.Forms.Button()
         Me.BTN_CLOSE = New System.Windows.Forms.Button()
         Me.APNL_INVENTORY_REPORT = New System.Windows.Forms.Panel()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.CB_ORDER1 = New System.Windows.Forms.ComboBox()
+        Me.CB_ORDER_BY = New System.Windows.Forms.ComboBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.WTXT_CHK_BY = New PRA_PIS.WatermarkTextBox()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.WTXT_CRT_BY = New PRA_PIS.WatermarkTextBox()
         Me.PNL_ACCOUNTABLE_PERSON = New System.Windows.Forms.Panel()
         Me.CHK_ASSIGN_ITEMS_BY = New System.Windows.Forms.CheckBox()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -40,6 +50,14 @@ Partial Class FRM_INVENTORY_REPORT
         Me.CB_REPORT_TYPE = New System.Windows.Forms.ComboBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.PNL_YEAR = New System.Windows.Forms.Panel()
+        Me.CHK_ALL_YR = New System.Windows.Forms.CheckBox()
+        Me.CB_YEAR = New System.Windows.Forms.ComboBox()
+        Me.DTINVENTORYITMYRBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DS_CUSTOM = New PRA_PIS.DS_CUSTOM()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.ShapeContainer3 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
+        Me.RectangleShape3 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.CB_DATE_FILTER = New System.Windows.Forms.ComboBox()
         Me.PNL_CUSTOM_RANGE = New System.Windows.Forms.Panel()
@@ -66,7 +84,6 @@ Partial Class FRM_INVENTORY_REPORT
         Me.SPM4INVENTORYREPORTBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TblM4_INVENTORY_CATEGORYTableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.tblM4_INVENTORY_CATEGORYTableAdapter()
         Me.DSPROPERTYDBBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.TblM4_INVENTORY_SUB_CATEGORYTableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.tblM4_INVENTORY_SUB_CATEGORYTableAdapter()
         Me.TblM4_INVENTORY_ITEMBRANDTableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.tblM4_INVENTORY_ITEMBRANDTableAdapter()
         Me.DS_STOREDPROC = New PRA_PIS.DS_STOREDPROC()
         Me.SpM4_INVENTORY_REPORTTableAdapter = New PRA_PIS.DS_STOREDPROCTableAdapters.SPM4_INVENTORY_REPORTTableAdapter()
@@ -79,13 +96,24 @@ Partial Class FRM_INVENTORY_REPORT
         Me.EmployeeInfoTableAdapter = New PRA_PIS.DS_TABLESTableAdapters.EmployeeInfoTableAdapter()
         Me.TblV1_HRISDIVISIONBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TblV1_HRISDIVISIONTableAdapter = New PRA_PIS.DS_TABLESTableAdapters.tblV1_HRISDIVISIONTableAdapter()
+        Me.TblM4_INVENTORY_SUB_CATEGORYTableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.tblM4_INVENTORY_SUB_CATEGORYTableAdapter()
+        Me.SPM4_PDS_LISTBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DS_PRAJO_DATABASE = New PRA_PIS.DS_PRAJO_DATABASE()
+        Me.SPM4_PDS_LISTTableAdapter = New PRA_PIS.DS_PRAJO_DATABASETableAdapters.SPM4_PDS_LISTTableAdapter()
+        Me.DT_INVENTORY_ITM_YRTableAdapter = New PRA_PIS.DS_CUSTOMTableAdapters.DT_INVENTORY_ITM_YRTableAdapter()
         Me.PNL.SuspendLayout()
         Me.APNL_INVENTORY_REPORT.SuspendLayout()
+        Me.Panel5.SuspendLayout()
+        Me.Panel1.SuspendLayout()
+        Me.Panel4.SuspendLayout()
         Me.PNL_ACCOUNTABLE_PERSON.SuspendLayout()
         CType(Me.EmployeeInfoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DS_TABLES, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
         Me.Panel2.SuspendLayout()
+        Me.PNL_YEAR.SuspendLayout()
+        CType(Me.DTINVENTORYITMYRBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DS_CUSTOM, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PNL_CUSTOM_RANGE.SuspendLayout()
         Me.PNL_ITEM_ONLY.SuspendLayout()
         CType(Me.TblM4INVENTORYITEMBRANDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -99,6 +127,8 @@ Partial Class FRM_INVENTORY_REPORT
         CType(Me.TblM4INVENTORYITEMSBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TblM4_INVENTORY_ITEMS2BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TblV1_HRISDIVISIONBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SPM4_PDS_LISTBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DS_PRAJO_DATABASE, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PNL
@@ -182,6 +212,8 @@ Partial Class FRM_INVENTORY_REPORT
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.APNL_INVENTORY_REPORT.BackColor = System.Drawing.Color.White
         Me.APNL_INVENTORY_REPORT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.APNL_INVENTORY_REPORT.Controls.Add(Me.Panel5)
+        Me.APNL_INVENTORY_REPORT.Controls.Add(Me.Panel1)
         Me.APNL_INVENTORY_REPORT.Controls.Add(Me.PNL_ACCOUNTABLE_PERSON)
         Me.APNL_INVENTORY_REPORT.Controls.Add(Me.Panel3)
         Me.APNL_INVENTORY_REPORT.Controls.Add(Me.Panel2)
@@ -191,8 +223,118 @@ Partial Class FRM_INVENTORY_REPORT
         Me.APNL_INVENTORY_REPORT.Controls.Add(Me.ShapeContainer1)
         Me.APNL_INVENTORY_REPORT.Location = New System.Drawing.Point(3, 51)
         Me.APNL_INVENTORY_REPORT.Name = "APNL_INVENTORY_REPORT"
-        Me.APNL_INVENTORY_REPORT.Size = New System.Drawing.Size(909, 212)
+        Me.APNL_INVENTORY_REPORT.Size = New System.Drawing.Size(909, 314)
         Me.APNL_INVENTORY_REPORT.TabIndex = 1456
+        '
+        'Panel5
+        '
+        Me.Panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel5.Controls.Add(Me.CB_ORDER1)
+        Me.Panel5.Controls.Add(Me.CB_ORDER_BY)
+        Me.Panel5.Controls.Add(Me.Label9)
+        Me.Panel5.Location = New System.Drawing.Point(0, 157)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(907, 49)
+        Me.Panel5.TabIndex = 1485
+        '
+        'CB_ORDER1
+        '
+        Me.CB_ORDER1.DisplayMember = "SC_NO"
+        Me.CB_ORDER1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CB_ORDER1.Font = New System.Drawing.Font("Century Gothic", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CB_ORDER1.FormattingEnabled = True
+        Me.CB_ORDER1.Items.AddRange(New Object() {"Ascending", "Descending"})
+        Me.CB_ORDER1.Location = New System.Drawing.Point(366, 11)
+        Me.CB_ORDER1.Name = "CB_ORDER1"
+        Me.CB_ORDER1.Size = New System.Drawing.Size(238, 29)
+        Me.CB_ORDER1.TabIndex = 1482
+        Me.CB_ORDER1.ValueMember = "SC_NO"
+        '
+        'CB_ORDER_BY
+        '
+        Me.CB_ORDER_BY.DisplayMember = "SC_NO"
+        Me.CB_ORDER_BY.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CB_ORDER_BY.Font = New System.Drawing.Font("Century Gothic", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CB_ORDER_BY.FormattingEnabled = True
+        Me.CB_ORDER_BY.Items.AddRange(New Object() {"Date of acquisition", "Unit cost", "Item description"})
+        Me.CB_ORDER_BY.Location = New System.Drawing.Point(122, 11)
+        Me.CB_ORDER_BY.Name = "CB_ORDER_BY"
+        Me.CB_ORDER_BY.Size = New System.Drawing.Size(238, 29)
+        Me.CB_ORDER_BY.TabIndex = 1480
+        Me.CB_ORDER_BY.ValueMember = "SC_NO"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.SystemColors.WindowFrame
+        Me.Label9.Location = New System.Drawing.Point(9, 16)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(78, 18)
+        Me.Label9.TabIndex = 1479
+        Me.Label9.Text = "Order by:"
+        '
+        'Panel1
+        '
+        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.Label7)
+        Me.Panel1.Controls.Add(Me.WTXT_CHK_BY)
+        Me.Panel1.Controls.Add(Me.Panel4)
+        Me.Panel1.Location = New System.Drawing.Point(0, 207)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(907, 49)
+        Me.Panel1.TabIndex = 1484
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.SystemColors.WindowFrame
+        Me.Label7.Location = New System.Drawing.Point(9, 16)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(105, 18)
+        Me.Label7.TabIndex = 1479
+        Me.Label7.Text = "Checked by:"
+        '
+        'WTXT_CHK_BY
+        '
+        Me.WTXT_CHK_BY.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.WTXT_CHK_BY.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
+        Me.WTXT_CHK_BY.Location = New System.Drawing.Point(122, 11)
+        Me.WTXT_CHK_BY.Name = "WTXT_CHK_BY"
+        Me.WTXT_CHK_BY.Size = New System.Drawing.Size(326, 27)
+        Me.WTXT_CHK_BY.TabIndex = 1477
+        Me.WTXT_CHK_BY.Watermark = Nothing
+        '
+        'Panel4
+        '
+        Me.Panel4.Controls.Add(Me.Label8)
+        Me.Panel4.Controls.Add(Me.WTXT_CRT_BY)
+        Me.Panel4.Location = New System.Drawing.Point(454, -3)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(452, 51)
+        Me.Panel4.TabIndex = 1476
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.SystemColors.WindowFrame
+        Me.Label8.Location = New System.Drawing.Point(9, 19)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(98, 18)
+        Me.Label8.TabIndex = 1479
+        Me.Label8.Text = "Certified by:"
+        '
+        'WTXT_CRT_BY
+        '
+        Me.WTXT_CRT_BY.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.WTXT_CRT_BY.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
+        Me.WTXT_CRT_BY.Location = New System.Drawing.Point(113, 14)
+        Me.WTXT_CRT_BY.Name = "WTXT_CRT_BY"
+        Me.WTXT_CRT_BY.Size = New System.Drawing.Size(331, 27)
+        Me.WTXT_CRT_BY.TabIndex = 1478
+        Me.WTXT_CRT_BY.Watermark = Nothing
         '
         'PNL_ACCOUNTABLE_PERSON
         '
@@ -300,6 +442,7 @@ Partial Class FRM_INVENTORY_REPORT
         'Panel2
         '
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel2.Controls.Add(Me.PNL_YEAR)
         Me.Panel2.Controls.Add(Me.Label3)
         Me.Panel2.Controls.Add(Me.CB_DATE_FILTER)
         Me.Panel2.Controls.Add(Me.PNL_CUSTOM_RANGE)
@@ -307,6 +450,80 @@ Partial Class FRM_INVENTORY_REPORT
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(907, 49)
         Me.Panel2.TabIndex = 1481
+        '
+        'PNL_YEAR
+        '
+        Me.PNL_YEAR.Controls.Add(Me.CHK_ALL_YR)
+        Me.PNL_YEAR.Controls.Add(Me.CB_YEAR)
+        Me.PNL_YEAR.Controls.Add(Me.Label10)
+        Me.PNL_YEAR.Controls.Add(Me.ShapeContainer3)
+        Me.PNL_YEAR.Location = New System.Drawing.Point(366, -1)
+        Me.PNL_YEAR.Name = "PNL_YEAR"
+        Me.PNL_YEAR.Size = New System.Drawing.Size(468, 48)
+        Me.PNL_YEAR.TabIndex = 1477
+        Me.PNL_YEAR.Visible = False
+        '
+        'CHK_ALL_YR
+        '
+        Me.CHK_ALL_YR.AutoSize = True
+        Me.CHK_ALL_YR.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CHK_ALL_YR.Location = New System.Drawing.Point(228, 15)
+        Me.CHK_ALL_YR.Name = "CHK_ALL_YR"
+        Me.CHK_ALL_YR.Size = New System.Drawing.Size(115, 20)
+        Me.CHK_ALL_YR.TabIndex = 1482
+        Me.CHK_ALL_YR.Text = "Select all year"
+        Me.CHK_ALL_YR.UseVisualStyleBackColor = True
+        '
+        'CB_YEAR
+        '
+        Me.CB_YEAR.BackColor = System.Drawing.Color.White
+        Me.CB_YEAR.DataSource = Me.DTINVENTORYITMYRBindingSource
+        Me.CB_YEAR.DisplayMember = "COL"
+        Me.CB_YEAR.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CB_YEAR.FormattingEnabled = True
+        Me.CB_YEAR.Location = New System.Drawing.Point(53, 10)
+        Me.CB_YEAR.Name = "CB_YEAR"
+        Me.CB_YEAR.Size = New System.Drawing.Size(168, 29)
+        Me.CB_YEAR.TabIndex = 1475
+        '
+        'DTINVENTORYITMYRBindingSource
+        '
+        Me.DTINVENTORYITMYRBindingSource.DataMember = "DT_INVENTORY_ITM_YR"
+        Me.DTINVENTORYITMYRBindingSource.DataSource = Me.DS_CUSTOM
+        '
+        'DS_CUSTOM
+        '
+        Me.DS_CUSTOM.DataSetName = "DS_CUSTOM"
+        Me.DS_CUSTOM.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.ForeColor = System.Drawing.Color.DimGray
+        Me.Label10.Location = New System.Drawing.Point(7, 16)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(38, 16)
+        Me.Label10.TabIndex = 1473
+        Me.Label10.Text = "Year"
+        '
+        'ShapeContainer3
+        '
+        Me.ShapeContainer3.Location = New System.Drawing.Point(0, 0)
+        Me.ShapeContainer3.Margin = New System.Windows.Forms.Padding(0)
+        Me.ShapeContainer3.Name = "ShapeContainer3"
+        Me.ShapeContainer3.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape3})
+        Me.ShapeContainer3.Size = New System.Drawing.Size(468, 48)
+        Me.ShapeContainer3.TabIndex = 1474
+        Me.ShapeContainer3.TabStop = False
+        '
+        'RectangleShape3
+        '
+        Me.RectangleShape3.BorderColor = System.Drawing.Color.DimGray
+        Me.RectangleShape3.CornerRadius = 5
+        Me.RectangleShape3.Location = New System.Drawing.Point(51, 7)
+        Me.RectangleShape3.Name = "RectangleShape5"
+        Me.RectangleShape3.Size = New System.Drawing.Size(172, 33)
         '
         'Label3
         '
@@ -363,7 +580,7 @@ Partial Class FRM_INVENTORY_REPORT
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.DimGray
-        Me.Label2.Location = New System.Drawing.Point(187, 16)
+        Me.Label2.Location = New System.Drawing.Point(188, 16)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(25, 16)
         Me.Label2.TabIndex = 1475
@@ -522,7 +739,7 @@ Partial Class FRM_INVENTORY_REPORT
         Me.BTN_INVENTORY_GENERATE_REPORT.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTN_INVENTORY_GENERATE_REPORT.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTN_INVENTORY_GENERATE_REPORT.Image = Global.PRA_PIS.My.Resources.Resources.outline_refresh_black_18dp
-        Me.BTN_INVENTORY_GENERATE_REPORT.Location = New System.Drawing.Point(4, 160)
+        Me.BTN_INVENTORY_GENERATE_REPORT.Location = New System.Drawing.Point(4, 262)
         Me.BTN_INVENTORY_GENERATE_REPORT.Name = "BTN_INVENTORY_GENERATE_REPORT"
         Me.BTN_INVENTORY_GENERATE_REPORT.Size = New System.Drawing.Size(900, 43)
         Me.BTN_INVENTORY_GENERATE_REPORT.TabIndex = 5
@@ -537,7 +754,7 @@ Partial Class FRM_INVENTORY_REPORT
         Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer1.Name = "ShapeContainer1"
         Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape1})
-        Me.ShapeContainer1.Size = New System.Drawing.Size(907, 210)
+        Me.ShapeContainer1.Size = New System.Drawing.Size(907, 312)
         Me.ShapeContainer1.TabIndex = 0
         Me.ShapeContainer1.TabStop = False
         '
@@ -546,9 +763,9 @@ Partial Class FRM_INVENTORY_REPORT
         Me.RectangleShape1.BorderColor = System.Drawing.Color.LightSeaGreen
         Me.RectangleShape1.BorderWidth = 2
         Me.RectangleShape1.CornerRadius = 5
-        Me.RectangleShape1.Location = New System.Drawing.Point(3, 159)
+        Me.RectangleShape1.Location = New System.Drawing.Point(3, 261)
         Me.RectangleShape1.Name = "RectangleShape1"
-        Me.RectangleShape1.Size = New System.Drawing.Size(900, 45)
+        Me.RectangleShape1.Size = New System.Drawing.Size(900, 44)
         '
         'SPM4_CURRENTDATETIMETableAdapter
         '
@@ -562,10 +779,6 @@ Partial Class FRM_INVENTORY_REPORT
         '
         Me.DSPROPERTYDBBindingSource.DataSource = Me.DS_PROPERTYDB
         Me.DSPROPERTYDBBindingSource.Position = 0
-        '
-        'TblM4_INVENTORY_SUB_CATEGORYTableAdapter
-        '
-        Me.TblM4_INVENTORY_SUB_CATEGORYTableAdapter.ClearBeforeFill = True
         '
         'TblM4_INVENTORY_ITEMBRANDTableAdapter
         '
@@ -621,12 +834,34 @@ Partial Class FRM_INVENTORY_REPORT
         '
         Me.TblV1_HRISDIVISIONTableAdapter.ClearBeforeFill = True
         '
+        'TblM4_INVENTORY_SUB_CATEGORYTableAdapter
+        '
+        Me.TblM4_INVENTORY_SUB_CATEGORYTableAdapter.ClearBeforeFill = True
+        '
+        'SPM4_PDS_LISTBindingSource
+        '
+        Me.SPM4_PDS_LISTBindingSource.DataMember = "SPM4_PDS_LIST"
+        Me.SPM4_PDS_LISTBindingSource.DataSource = Me.DS_PRAJO_DATABASE
+        '
+        'DS_PRAJO_DATABASE
+        '
+        Me.DS_PRAJO_DATABASE.DataSetName = "DS_PRAJO_DATABASE"
+        Me.DS_PRAJO_DATABASE.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'SPM4_PDS_LISTTableAdapter
+        '
+        Me.SPM4_PDS_LISTTableAdapter.ClearBeforeFill = True
+        '
+        'DT_INVENTORY_ITM_YRTableAdapter
+        '
+        Me.DT_INVENTORY_ITM_YRTableAdapter.ClearBeforeFill = True
+        '
         'FRM_INVENTORY_REPORT
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 21.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(915, 265)
+        Me.ClientSize = New System.Drawing.Size(915, 367)
         Me.Controls.Add(Me.PNL)
         Me.Controls.Add(Me.APNL_INVENTORY_REPORT)
         Me.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -640,6 +875,12 @@ Partial Class FRM_INVENTORY_REPORT
         Me.PNL.PerformLayout()
         Me.APNL_INVENTORY_REPORT.ResumeLayout(False)
         Me.APNL_INVENTORY_REPORT.PerformLayout()
+        Me.Panel5.ResumeLayout(False)
+        Me.Panel5.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        Me.Panel4.ResumeLayout(False)
+        Me.Panel4.PerformLayout()
         Me.PNL_ACCOUNTABLE_PERSON.ResumeLayout(False)
         Me.PNL_ACCOUNTABLE_PERSON.PerformLayout()
         CType(Me.EmployeeInfoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
@@ -648,6 +889,10 @@ Partial Class FRM_INVENTORY_REPORT
         Me.Panel3.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        Me.PNL_YEAR.ResumeLayout(False)
+        Me.PNL_YEAR.PerformLayout()
+        CType(Me.DTINVENTORYITMYRBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DS_CUSTOM, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PNL_CUSTOM_RANGE.ResumeLayout(False)
         Me.PNL_CUSTOM_RANGE.PerformLayout()
         Me.PNL_ITEM_ONLY.ResumeLayout(False)
@@ -663,6 +908,8 @@ Partial Class FRM_INVENTORY_REPORT
         CType(Me.TblM4INVENTORYITEMSBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TblM4_INVENTORY_ITEMS2BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TblV1_HRISDIVISIONBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SPM4_PDS_LISTBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DS_PRAJO_DATABASE, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -693,7 +940,6 @@ Partial Class FRM_INVENTORY_REPORT
     Friend WithEvents SPM4INVENTORYREPORTBindingSource As BindingSource
     Friend WithEvents DSPROPERTYDBBindingSource As BindingSource
     Friend WithEvents TblM4_INVENTORY_CATEGORYTableAdapter As DS_PROPERTYDBTableAdapters.tblM4_INVENTORY_CATEGORYTableAdapter
-    Friend WithEvents TblM4_INVENTORY_SUB_CATEGORYTableAdapter As DS_PROPERTYDBTableAdapters.tblM4_INVENTORY_SUB_CATEGORYTableAdapter
     Friend WithEvents TblM4_INVENTORY_ITEMBRANDTableAdapter As DS_PROPERTYDBTableAdapters.tblM4_INVENTORY_ITEMBRANDTableAdapter
     Friend WithEvents CB_DATE_FILTER As ComboBox
     Friend WithEvents Label1 As Label
@@ -729,4 +975,27 @@ Partial Class FRM_INVENTORY_REPORT
     Friend WithEvents TblV1_HRISDIVISIONBindingSource As BindingSource
     Friend WithEvents TblV1_HRISDIVISIONTableAdapter As DS_TABLESTableAdapters.tblV1_HRISDIVISIONTableAdapter
     Friend WithEvents EmployeeInfoBindingSource As BindingSource
+    Friend WithEvents TblM4_INVENTORY_SUB_CATEGORYTableAdapter As DS_PROPERTYDBTableAdapters.tblM4_INVENTORY_SUB_CATEGORYTableAdapter
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Panel4 As Panel
+    Friend WithEvents Label7 As Label
+    Friend WithEvents WTXT_CHK_BY As WatermarkTextBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents WTXT_CRT_BY As WatermarkTextBox
+    Friend WithEvents SPM4_PDS_LISTBindingSource As BindingSource
+    Friend WithEvents DS_PRAJO_DATABASE As DS_PRAJO_DATABASE
+    Friend WithEvents SPM4_PDS_LISTTableAdapter As DS_PRAJO_DATABASETableAdapters.SPM4_PDS_LISTTableAdapter
+    Friend WithEvents PNL_YEAR As Panel
+    Friend WithEvents CB_YEAR As ComboBox
+    Friend WithEvents Label10 As Label
+    Friend WithEvents ShapeContainer3 As PowerPacks.ShapeContainer
+    Friend WithEvents RectangleShape3 As PowerPacks.RectangleShape
+    Friend WithEvents DS_CUSTOM As DS_CUSTOM
+    Friend WithEvents DTINVENTORYITMYRBindingSource As BindingSource
+    Friend WithEvents DT_INVENTORY_ITM_YRTableAdapter As DS_CUSTOMTableAdapters.DT_INVENTORY_ITM_YRTableAdapter
+    Friend WithEvents CHK_ALL_YR As CheckBox
+    Friend WithEvents Panel5 As Panel
+    Friend WithEvents CB_ORDER1 As ComboBox
+    Friend WithEvents CB_ORDER_BY As ComboBox
+    Friend WithEvents Label9 As Label
 End Class

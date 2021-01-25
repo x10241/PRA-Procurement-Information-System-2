@@ -6,7 +6,27 @@
         <Connections>
           <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="PRA_PROPERTYDBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="PRA_PROPERTYDBConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.PRA_PIS.My.MySettings.GlobalReference.Default.PRA_PROPERTYDBConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
-        <Tables />
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DT_INVENTORY_ITM_YRTableAdapter" GeneratorDataComponentClassName="DT_INVENTORY_ITM_YRTableAdapter" Name="DT_INVENTORY_ITM_YR" UserDataComponentName="DT_INVENTORY_ITM_YRTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="PRA_PROPERTYDBConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="Fill" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        'Y' AS YR_CODE, CAST(YEAR(ITEM_DATE_AQUISITION) AS NVARCHAR(50)) AS COL
+FROM            tblM4_INVENTORY_ITEMS
+GROUP BY YEAR(ITEM_DATE_AQUISITION)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="YR_CODE" DataSetColumn="YR_CODE" />
+              <Mapping SourceColumn="COL" DataSetColumn="COL" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
         <Sources />
       </DataSource>
     </xs:appinfo>
@@ -141,7 +161,74 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="DT_ITEM_DESC" msprop:Generator_TableClassName="DT_ITEM_DESCDataTable" msprop:Generator_TableVarName="tableDT_ITEM_DESC" msprop:Generator_RowChangedName="DT_ITEM_DESCRowChanged" msprop:Generator_TablePropName="DT_ITEM_DESC" msprop:Generator_RowDeletingName="DT_ITEM_DESCRowDeleting" msprop:Generator_RowChangingName="DT_ITEM_DESCRowChanging" msprop:Generator_RowEvHandlerName="DT_ITEM_DESCRowChangeEventHandler" msprop:Generator_RowDeletedName="DT_ITEM_DESCRowDeleted" msprop:Generator_RowClassName="DT_ITEM_DESCRow" msprop:Generator_UserTableName="DT_ITEM_DESC" msprop:Generator_RowEvArgName="DT_ITEM_DESCRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ITEM_CODE" msprop:Generator_ColumnVarNameInTable="columnITEM_CODE" msprop:Generator_ColumnPropNameInRow="ITEM_CODE" msprop:Generator_ColumnPropNameInTable="ITEM_CODEColumn" msprop:Generator_UserColumnName="ITEM_CODE" type="xs:string" minOccurs="0" />
+              <xs:element name="ITEM_ALIAS" msprop:Generator_ColumnVarNameInTable="columnITEM_ALIAS" msprop:Generator_ColumnPropNameInRow="ITEM_ALIAS" msprop:Generator_ColumnPropNameInTable="ITEM_ALIASColumn" msprop:Generator_UserColumnName="ITEM_ALIAS" type="xs:string" minOccurs="0" />
+              <xs:element name="IMG_DESC" msprop:Generator_ColumnVarNameInTable="columnIMG_DESC" msprop:Generator_ColumnPropNameInRow="IMG_DESC" msprop:Generator_ColumnPropNameInTable="IMG_DESCColumn" msprop:Generator_UserColumnName="IMG_DESC" type="xs:base64Binary" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DT_INVENTORY_ITM_YR" msprop:Generator_TableClassName="DT_INVENTORY_ITM_YRDataTable" msprop:Generator_TableVarName="tableDT_INVENTORY_ITM_YR" msprop:Generator_TablePropName="DT_INVENTORY_ITM_YR" msprop:Generator_RowDeletingName="DT_INVENTORY_ITM_YRRowDeleting" msprop:Generator_RowChangingName="DT_INVENTORY_ITM_YRRowChanging" msprop:Generator_RowEvHandlerName="DT_INVENTORY_ITM_YRRowChangeEventHandler" msprop:Generator_RowDeletedName="DT_INVENTORY_ITM_YRRowDeleted" msprop:Generator_UserTableName="DT_INVENTORY_ITM_YR" msprop:Generator_RowChangedName="DT_INVENTORY_ITM_YRRowChanged" msprop:Generator_RowEvArgName="DT_INVENTORY_ITM_YRRowChangeEvent" msprop:Generator_RowClassName="DT_INVENTORY_ITM_YRRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="YR_CODE" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnYR_CODE" msprop:Generator_ColumnPropNameInRow="YR_CODE" msprop:Generator_ColumnPropNameInTable="YR_CODEColumn" msprop:Generator_UserColumnName="YR_CODE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="COL" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCOL" msprop:Generator_ColumnPropNameInRow="COL" msprop:Generator_ColumnPropNameInTable="COLColumn" msprop:Generator_UserColumnName="COL" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DT_BID_LIST" msprop:Generator_TableClassName="DT_BID_LISTDataTable" msprop:Generator_TableVarName="tableDT_BID_LIST" msprop:Generator_RowChangedName="DT_BID_LISTRowChanged" msprop:Generator_TablePropName="DT_BID_LIST" msprop:Generator_RowDeletingName="DT_BID_LISTRowDeleting" msprop:Generator_RowChangingName="DT_BID_LISTRowChanging" msprop:Generator_RowEvHandlerName="DT_BID_LISTRowChangeEventHandler" msprop:Generator_RowDeletedName="DT_BID_LISTRowDeleted" msprop:Generator_RowClassName="DT_BID_LISTRow" msprop:Generator_UserTableName="DT_BID_LIST" msprop:Generator_RowEvArgName="DT_BID_LISTRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TIN_NO" msprop:Generator_ColumnVarNameInTable="columnTIN_NO" msprop:Generator_ColumnPropNameInRow="TIN_NO" msprop:Generator_ColumnPropNameInTable="TIN_NOColumn" msprop:Generator_UserColumnName="TIN_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="SUPL_NAME" msprop:Generator_ColumnVarNameInTable="columnSUPL_NAME" msprop:Generator_ColumnPropNameInRow="SUPL_NAME" msprop:Generator_ColumnPropNameInTable="SUPL_NAMEColumn" msprop:Generator_UserColumnName="SUPL_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="CONT_NO" msprop:Generator_ColumnVarNameInTable="columnCONT_NO" msprop:Generator_ColumnPropNameInRow="CONT_NO" msprop:Generator_ColumnPropNameInTable="CONT_NOColumn" msprop:Generator_UserColumnName="CONT_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="FAX_NO" msprop:Generator_ColumnVarNameInTable="columnFAX_NO" msprop:Generator_ColumnPropNameInRow="FAX_NO" msprop:Generator_ColumnPropNameInTable="FAX_NOColumn" msprop:Generator_UserColumnName="FAX_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="EMAIL" msprop:Generator_ColumnVarNameInTable="columnEMAIL" msprop:Generator_ColumnPropNameInRow="EMAIL" msprop:Generator_ColumnPropNameInTable="EMAILColumn" msprop:Generator_UserColumnName="EMAIL" type="xs:string" minOccurs="0" />
+              <xs:element name="IS_LOW" msprop:Generator_ColumnVarNameInTable="columnIS_LOW" msprop:Generator_ColumnPropNameInRow="IS_LOW" msprop:Generator_ColumnPropNameInTable="IS_LOWColumn" msprop:Generator_UserColumnName="IS_LOW" type="xs:boolean" default="false" minOccurs="0" />
+              <xs:element name="BID_NO" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnBID_NO" msprop:Generator_ColumnPropNameInRow="BID_NO" msprop:Generator_ColumnPropNameInTable="BID_NOColumn" msprop:Generator_UserColumnName="BID_NO" type="xs:short" />
+              <xs:element name="DT_PART_LIST" msprop:Generator_TableClassName="DT_PART_LISTDataTable" msprop:Generator_TableVarName="tableDT_PART_LIST" msprop:Generator_RowChangedName="DT_PART_LISTRowChanged" msprop:Generator_TablePropName="DT_PART_LIST" msprop:Generator_RowDeletingName="DT_PART_LISTRowDeleting" msprop:Generator_RowChangingName="DT_PART_LISTRowChanging" msprop:Generator_RowEvHandlerName="DT_PART_LISTRowChangeEventHandler" msprop:Generator_RowDeletedName="DT_PART_LISTRowDeleted" msprop:Generator_RowClassName="DT_PART_LISTRow" msprop:Generator_UserTableName="DT_PART_LIST" msprop:Generator_RowEvArgName="DT_PART_LISTRowChangeEvent" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="PART" msprop:Generator_ColumnVarNameInTable="columnPART" msprop:Generator_ColumnPropNameInRow="PART" msprop:Generator_ColumnPropNameInTable="PARTColumn" msprop:Generator_UserColumnName="PART" type="xs:string" minOccurs="0" />
+                    <xs:element name="QTY" msprop:Generator_ColumnVarNameInTable="columnQTY" msprop:Generator_ColumnPropNameInRow="QTY" msprop:Generator_ColumnPropNameInTable="QTYColumn" msprop:Generator_UserColumnName="QTY" type="xs:string" minOccurs="0" />
+                    <xs:element name="UNIT" msprop:Generator_ColumnVarNameInTable="columnUNIT" msprop:Generator_ColumnPropNameInRow="UNIT" msprop:Generator_ColumnPropNameInTable="UNITColumn" msprop:Generator_UserColumnName="UNIT" type="xs:string" minOccurs="0" />
+                    <xs:element name="UNIT_COST" msprop:Generator_ColumnVarNameInTable="columnUNIT_COST" msprop:Generator_ColumnPropNameInRow="UNIT_COST" msprop:Generator_ColumnPropNameInTable="UNIT_COSTColumn" msprop:Generator_UserColumnName="UNIT_COST" type="xs:string" minOccurs="0" />
+                    <xs:element name="TOTAL_COST" msprop:Generator_ColumnVarNameInTable="columnTOTAL_COST" msprop:Generator_ColumnPropNameInRow="TOTAL_COST" msprop:Generator_ColumnPropNameInTable="TOTAL_COSTColumn" msprop:Generator_UserColumnName="TOTAL_COST" type="xs:string" minOccurs="0" />
+                    <xs:element name="BID_NO" msprop:Generator_ColumnVarNameInTable="columnBID_NO" msprop:Generator_ColumnPropNameInRow="BID_NO" msprop:Generator_ColumnPropNameInTable="BID_NOColumn" msprop:Generator_UserColumnName="BID_NO" type="xs:short" minOccurs="0" />
+                    <xs:element name="PART_LIST_NO" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnPART_LIST_NO" msprop:Generator_ColumnPropNameInRow="PART_LIST_NO" msprop:Generator_ColumnPropNameInTable="PART_LIST_NOColumn" msprop:Generator_UserColumnName="PART_LIST_NO" type="xs:int" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
+    <xs:unique name="DT_PART_LIST_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DT_PART_LIST" />
+      <xs:field xpath="mstns:PART_LIST_NO" />
+    </xs:unique>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DT_BID_LIST" />
+      <xs:field xpath="mstns:BID_NO" />
+    </xs:unique>
+    <xs:keyref name="DT_BID_LIST_DT_PART_LIST" refer="Constraint1" msdata:IsNested="true" msprop:rel_Generator_UserChildTable="DT_PART_LIST" msprop:rel_Generator_ChildPropName="GetDT_PART_LISTRows" msprop:rel_Generator_UserRelationName="DT_BID_LIST_DT_PART_LIST" msprop:rel_Generator_RelationVarName="relationDT_BID_LIST_DT_PART_LIST" msprop:rel_Generator_UserParentTable="DT_BID_LIST" msprop:rel_Generator_ParentPropName="DT_BID_LISTRow" msdata:AcceptRejectRule="Cascade" msdata:UpdateRule="SetDefault" msdata:DeleteRule="SetDefault">
+      <xs:selector xpath=".//mstns:DT_PART_LIST" />
+      <xs:field xpath="mstns:BID_NO" />
+    </xs:keyref>
   </xs:element>
 </xs:schema>

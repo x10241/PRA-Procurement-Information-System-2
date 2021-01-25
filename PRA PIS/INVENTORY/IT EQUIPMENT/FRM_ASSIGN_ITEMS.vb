@@ -1,7 +1,35 @@
 ﻿Public Class FRM_ASSIGN_ITEMS
+
+#Region "START ##### FORM DRAG AND DROP, MINIMIZE, CLOSE"
+    Dim drag As Boolean
+    Dim mousex As Integer
+    Dim mousey As Integer
+
+    Private Sub PNL_DoubleClick(sender As Object, e As EventArgs) Handles PNL.DoubleClick
+        Me.WindowState = FormWindowState.Minimized
+    End Sub
+
+    Private Sub Form1_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles PNL.MouseDown
+        drag = True
+        mousex = Cursor.Position.X - Me.Left
+        mousey = Cursor.Position.Y - Me.Top
+    End Sub
+
+    Private Sub Form1_MouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles PNL.MouseMove
+        If drag Then
+            Top = Cursor.Position.Y - mousey
+            Left = Cursor.Position.X - mousex
+        End If
+    End Sub
+
+    Private Sub Form1_MouseUp(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles PNL.MouseUp
+        drag = False
+    End Sub
+#End Region
+
     Private Sub BTN_GENERATE_REPORT_Click(sender As Object, e As EventArgs) Handles BTN_GENERATE_REPORT.Click
         printPreview = "AssignItem"
-        FRM_PREVIEW.ShowDialog()
+        FRM_PMD_PREVIEW.ShowDialog()
     End Sub
 
     Private Sub FRM_ASSIGN_ITEMS_Load(sender As Object, e As EventArgs) Handles MyBase.Load

@@ -35,6 +35,7 @@ Partial Class FRM_LOGIN
         Me.RECT_MAINRECT = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
         Me.PNL_MAINPANEL = New System.Windows.Forms.Panel()
+        Me.LBL_VERSION = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -160,6 +161,7 @@ Partial Class FRM_LOGIN
         'PNL_MAINPANEL
         '
         Me.PNL_MAINPANEL.BackColor = System.Drawing.Color.White
+        Me.PNL_MAINPANEL.Controls.Add(Me.LBL_VERSION)
         Me.PNL_MAINPANEL.Controls.Add(Me.BTNCLOSE)
         Me.PNL_MAINPANEL.Controls.Add(Me.BTNLOGIN)
         Me.PNL_MAINPANEL.Controls.Add(Me.Label1)
@@ -172,6 +174,16 @@ Partial Class FRM_LOGIN
         Me.PNL_MAINPANEL.Name = "PNL_MAINPANEL"
         Me.PNL_MAINPANEL.Size = New System.Drawing.Size(776, 426)
         Me.PNL_MAINPANEL.TabIndex = 3
+        '
+        'LBL_VERSION
+        '
+        Me.LBL_VERSION.AutoSize = True
+        Me.LBL_VERSION.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LBL_VERSION.Location = New System.Drawing.Point(693, 407)
+        Me.LBL_VERSION.Name = "LBL_VERSION"
+        Me.LBL_VERSION.Size = New System.Drawing.Size(80, 15)
+        Me.LBL_VERSION.TabIndex = 1450
+        Me.LBL_VERSION.Text = "VERSION (1.6)"
         '
         'Label1
         '
@@ -252,7 +264,6 @@ Partial Class FRM_LOGIN
         Me.TXT_PASSWORD.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.TXT_PASSWORD.Size = New System.Drawing.Size(437, 30)
         Me.TXT_PASSWORD.TabIndex = 1438
-        Me.TXT_PASSWORD.Text = "123123123"
         Me.TXT_PASSWORD.Watermark = "Password"
         '
         'ShapeContainer4
@@ -326,7 +337,6 @@ Partial Class FRM_LOGIN
         Me.TXT_USERNAME.Name = "TXT_USERNAME"
         Me.TXT_USERNAME.Size = New System.Drawing.Size(437, 30)
         Me.TXT_USERNAME.TabIndex = 1438
-        Me.TXT_USERNAME.Text = "x10241"
         Me.TXT_USERNAME.Watermark = "Username"
         '
         'ShapeContainer3
@@ -480,4 +490,5 @@ Partial Class FRM_LOGIN
     Friend WithEvents TableAdapterManager As DS_PRAJO_DATABASETableAdapters.TableAdapterManager
     Friend WithEvents SPM4_PDS_LISTTableAdapter As DS_PRAJO_DATABASETableAdapters.SPM4_PDS_LISTTableAdapter
     Friend WithEvents SPM4_PDS_LISTBindingSource As BindingSource
+    Friend WithEvents LBL_VERSION As Label
 End Class

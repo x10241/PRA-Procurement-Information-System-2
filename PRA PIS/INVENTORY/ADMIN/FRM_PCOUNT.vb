@@ -5,6 +5,7 @@ Public Class FRM_PCOUNT
     Public BOOLEDIT As Boolean = False
 
 #Region "CLICK"
+    Dim CODE As String
     Private Sub BTN_DATE_Click(sender As Object, e As EventArgs) Handles BTN_DATE_FROM.Click,
                                                                          BTN_DATE_TO.Click,
                                                                             BTN_ADD_ITEM.Click,
@@ -21,9 +22,9 @@ Public Class FRM_PCOUNT
                                                                             LLBL_PHY_SAVE.Click,
                                                                             PB_PHY_SAVE.Click,
                                                                             RECT_PHY_SAVE.Click,
-                                                                            RECT_MIGRATE.Click,
-                                                                            PB_MIGRATE.Click,
-                                                                            LLBL_MIGRATE.Click
+                                                                            RECT_PC_SETUP.Click,
+                                                                            PB_PC_SETUP.Click,
+                                                                            LLBL_PC_SETUP.Click
 
         Try
             Dim pb As PictureBox = Nothing
@@ -69,10 +70,11 @@ Public Class FRM_PCOUNT
                 PB_NEW_PHY_C.Enabled = False
                 RECT_NEW_PHY_C.Enabled = False
 
-                RECT_MIGRATE.Enabled = False
-                LLBL_MIGRATE.Enabled = False
-                PB_MIGRATE.Enabled = False
-
+                RECT_PC_SETUP.Enabled = False
+                LLBL_PC_SETUP.Enabled = False
+                PB_PC_SETUP.Enabled = False
+                WTXT_PCSETUP_CODE.Text = Me.TBLM4_INV_ITEMS_PCOU_SETUPTableAdapter.SQ_LATEST_CODE(DIVISION_NO)
+                '  TBLM4_INV_ITEMS_PCOU_SETUPTableAdapter.SQ_LATEST_CODE()
 #End Region
 
 #Region "ADD ITEM"
@@ -110,8 +112,8 @@ Public Class FRM_PCOUNT
 
 #Region "CLOSE FORM"
             ElseIf btn Is BTN_PHY_CLOSE Then
-                Me.Dispose()
                 Me.Close()
+                Me.Dispose()
 #End Region
 
 #Region "CANCEL ADD ITEM"
@@ -125,9 +127,9 @@ Public Class FRM_PCOUNT
                     LLBL_NEW_PHY_C.Enabled = True
                     PB_NEW_PHY_C.Enabled = True
                     RECT_NEW_PHY_C.Enabled = True
-                    RECT_MIGRATE.Enabled = True
-                    LLBL_MIGRATE.Enabled = True
-                    PB_MIGRATE.Enabled = True
+                    RECT_PC_SETUP.Enabled = True
+                    LLBL_PC_SETUP.Enabled = True
+                    PB_PC_SETUP.Enabled = True
                 End If
 #End Region
 
@@ -175,11 +177,14 @@ Public Class FRM_PCOUNT
                 If ISVALID Then
                     Try
                         Dim PCODE As String = SPM4_PHY_C_CODETableAdapter.SPM4_PHY_C_CODE
+
                         TBLM4_INV_ITEMS_PCOUNT_MAINTableAdapter.IQ_ITEM_PCOUNT_MAIN(Trim(PCODE), Trim(WTXT_PHY_REASON.Text), Trim(WTXT_PHY_CHK_BY.Text), Trim(WTXT_PHY_NOTED_BY.Text), Trim(WTXT_PHY_DATE_ENCODED.Text), Trim(WTXT_PHY_REMARKS.Text), DIVISION_NO)
                         For Each row As DataGridViewRow In DGV_ITEM_PCOUNT.Rows
                             '  TBLM4_INV_ITEMS_PCOUNTTableAdapter.IQ_ITEM_PCOUNT(PCODE, Trim(row.Cells(0).Value), IIf(Trim(row.Cells(2).Value).Length = 0, 0.00, Trim(row.Cells(2).Value)), Trim(row.Cells(6).Value), Trim(row.Cells(7).Value), IIf(Trim(row.Cells(3).Value).Length = 0, 0.00, Trim(row.Cells(3).Value)), IIf(Trim(row.Cells(4).Value).Length = 0, 0.00, Trim(row.Cells(4).Value)), Trim(row.Cells(5).Value))
-                            TBLM4_INV_ITEMS_PCOUNTTableAdapter.IQ_ITEM_PCOUNT(Trim(PCODE), Trim(row.Cells(0).Value), CInt(row.Cells(2).Value), row.Cells(6).Value, EMP_NO, CDec(row.Cells(3).Value), CDec(row.Cells(4).Value), row.Cells(5).Value)
+                            TBLM4_INV_ITEMS_PCOUNTTableAdapter.IQ_ITEM_PCOUNT(Trim(PCODE), Trim(row.Cells(0).Value), CInt(row.Cells(2).Value), row.Cells(6).Value, EMP_NO, CDec(row.Cells(3).Value), CDec(row.Cells(4).Value), row.Cells(5).Value, WTXT_PCSETUP_CODE.Text)
+                            TBLM4_INV_STOCKSTableAdapter.IQ_STOCK(Trim(row.Cells(0).Value), CInt(row.Cells(2).Value), row.Cells(5).Value, EMP_NO, WTXT_PCSETUP_CODE.Text, DIVISION_NO)
                         Next
+
                         _CLEAR_PHY_DETAILS()
                         PNL_PHY_DETAILS.Enabled = False
                         PNL_DATES.Enabled = True
@@ -189,9 +194,9 @@ Public Class FRM_PCOUNT
                         RECT_NEW_PHY_C.Enabled = True
                         NotificationManager.Show(Me, "Successfully saved.", Color.Green, 4000)
                         Me.VWM4_PCM_LISTTableAdapter.FillByPCBETW(Me.DS_VIEWS.VWM4_PCM_LIST, WTXT_DATE_FROM.Text, WTXT_DATE_TO.Text)
-                        RECT_MIGRATE.Enabled = True
-                        LLBL_MIGRATE.Enabled = True
-                        PB_MIGRATE.Enabled = True
+                        RECT_PC_SETUP.Enabled = True
+                        LLBL_PC_SETUP.Enabled = True
+                        PB_PC_SETUP.Enabled = True
 
                     Catch ex As Exception
                         ERRLOG.WriteToErrorLog(ex.Message, ex.StackTrace, "SAVE P. COUNT")
@@ -203,9 +208,10 @@ Public Class FRM_PCOUNT
 
 #End Region
 
-#Region "MIGRATE"
-            ElseIf RECT Is RECT_MIGRATE Or pb Is PB_MIGRATE Or llbl Is LLBL_MIGRATE Then
-                FRM_MIGRATE.ShowDialog()
+#Region "PCOUNT_SETUP"
+            ElseIf RECT Is RECT_PC_SETUP Or pb Is PB_PC_SETUP Or llbl Is LLBL_PC_SETUP Then
+                ' FRM_MIGRATE.ShowDialog()
+                FRM_PCOUNT_SETUP.ShowDialog()
 #End Region
 
             End If
@@ -218,6 +224,9 @@ Public Class FRM_PCOUNT
 
 #Region "LOAD"
     Private Sub FRM_PCOUNT_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'DS_PROPERTYDB.TBLM4_INV_STOCKS' table. You can move, or remove it, as needed.
+        Me.TBLM4_INV_STOCKSTableAdapter.Fill(Me.DS_PROPERTYDB.TBLM4_INV_STOCKS)
+
         Try
             'TODO: This line of code loads data into the 'DS_PROPERTYDB.TBLG3_UNITS' table. You can move, or remove it, as needed.
             Me.TBLG3_UNITSTableAdapter.Fill(Me.DS_PROPERTYDB.TBLG3_UNITS)
@@ -285,11 +294,13 @@ Public Class FRM_PCOUNT
         WTXT_ITEM_COUNT_BY.Clear()
         RECT_COUNT_BY.BorderColor = Color.Gray
         RECT_ITEM_DESCRIPTION.BorderColor = Color.Gray
+
     End Sub
 #End Region
 
 #Region "CLEAR PHY DETAILS"
     Sub _CLEAR_PHY_DETAILS()
+        WTXT_PCSETUP_CODE.Clear()
         WTXT_PHY_REASON.Clear()
         WTXT_PHY_REMARKS.Clear()
         WTXT_PHY_DATE_ENCODED.Clear()
@@ -302,6 +313,7 @@ Public Class FRM_PCOUNT
         RECT_PHY_CHK_BY.BorderColor = Color.Gray
         RECT_PHY_NOTED_BY.BorderColor = Color.Gray
         LLBL_RECORDSFOUND.Text = 0
+        WTXT_PCSETUP_CODE.Clear()
     End Sub
 #End Region
 

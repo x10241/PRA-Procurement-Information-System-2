@@ -2,6 +2,7 @@
 
 Public Class FRM_ASSIGN
     Dim LocalEmpNo As String
+
 #Region "START ##### FORM DRAG AND DROP, MINIMIZE, CLOSE"
     Dim drag As Boolean
     Dim mousex As Integer
@@ -28,6 +29,7 @@ Public Class FRM_ASSIGN
         drag = False
     End Sub
 #End Region
+
     Public trans As String
 
     Public Sub BS_DGV_ASSIGN(ByVal BSMAIN As BindingSource, BSTRANSFER As DataTable)
@@ -90,6 +92,25 @@ Public Class FRM_ASSIGN
 #Region "Save"
         ElseIf btn Is BTN_ASSIGN_SAVE Then
             ISVALID = True
+
+            If REQFIELDVALIDATION(WTXT_DATE_APPOINTED) = False Then
+                ISVALID = True
+            Else
+                ISVALID = False
+            End If
+
+            'If REQFIELDVALIDATION(WTXT_ASS_PERSON_NAME) = False Then
+            '    ISVALID = True
+            'Else
+            '    ISVALID = False
+            'End If
+
+            If REQFIELDVALIDATION(WTXT_ACC_EMP_NAME) = False Then
+                ISVALID = True
+            Else
+                ISVALID = False
+            End If
+
             'If REQFIELDVALIDATION(WTXT_ACC_EMP_NAME) Or REQFIELDVALIDATION(WTXT_ACC_EMP_DIVISION) Or REQFIELDVALIDATION(WTXT_ACC_EMP_DEPARTMENT) Or REQFIELDVALIDATION(WTXT_ACC_EMP_NO) Then
             '    ISVALID = False
             '    RECT_DEPARTMENT.BorderColor = Color.OrangeRed
@@ -108,10 +129,16 @@ Public Class FRM_ASSIGN
             'End If
 
             'If ISVALID Then
-            Save()
-            Close()
-            Dispose()
-            FRM_ASSIGN_ITEMS.VWM4_ITEM_ASSTableAdapter.FillByITEM_CODE(DS_VIEWS.VWM4_ITEM_ASS)
+
+            If ISVALID Then
+                Save()
+                Close()
+                Dispose()
+                FRM_ASSIGN_ITEMS.VWM4_ITEM_ASSTableAdapter.FillByITEM_CODE(DS_VIEWS.VWM4_ITEM_ASS)
+            Else
+
+            End If
+
             ' End If
 #End Region
 
@@ -119,6 +146,7 @@ Public Class FRM_ASSIGN
         ElseIf btn Is BTN_ONE_PLUS Then
             If TblM4_INVENTORY_ITEMS1DataGridView.Rows.Count > 0 Then
                 Try
+
                     DS_CUSTOM.AssignItemsDataGridView.Rows.Add(TblM4_INVENTORY_ITEMS1DataGridView(0, TblM4_INVENTORY_ITEMS1DataGridView.CurrentRow.Index).Value,
                                                          TblM4_INVENTORY_ITEMS1DataGridView(1, TblM4_INVENTORY_ITEMS1DataGridView.CurrentRow.Index).Value,
                                                          TblM4_INVENTORY_ITEMS1DataGridView(2, TblM4_INVENTORY_ITEMS1DataGridView.CurrentRow.Index).Value,
@@ -209,26 +237,29 @@ Public Class FRM_ASSIGN
     End Sub
 
     Sub Save()
-        For Each row As DataGridViewRow In DGV_ASSIGN_ITEMS.Rows
-            If REQFIELDVALIDATION(WTXT_ASS_PERSON_NAME) = False Then
-                TblM4_INVENTORY_ASSIGN_PERSONTableAdapter.IQ_ASSIGN_PERSON(row.Cells(0).Value, WTXT_ASS_PERSON_EMP_NO.Text, vbNull, WTXT_ASS_PERSON_REMARKS.Text, EMP_NO)
-            End If
-            If REQFIELDVALIDATION(WTXT_ACC_EMP_NAME) = False Then
+        Try
+            For Each row As DataGridViewRow In DGV_ASSIGN_ITEMS.Rows
                 TblM4_INVENTORY_ACCOUNTABLE_OFFICERTableAdapter.IQ_INV_ACC_OFF(row.Cells(0).Value, WTXT_ACC_EMP_NO.Text, vbNull, WTXT_ACC_REMARKS.Text, EMP_NO, WTXT_DATE_APPOINTED.Text)
-            End If
-        Next
+                If WTXT_ASS_PERSON_EMP_NO.Text.Length > 0 Then
+                    TblM4_INVENTORY_ASSIGN_PERSONTableAdapter.IQ_ASSIGN_PERSON(row.Cells(0).Value, WTXT_ASS_PERSON_EMP_NO.Text, vbNull, WTXT_ASS_PERSON_REMARKS.Text, EMP_NO)
+                End If
+            Next
+            'NotificationManager.Show(Me, "Successfully Save!", Color.Green, 1000)
+            MsgBox("Successfully save!")
+        Catch ex As Exception
+            NotificationManager.Show(Me, ex.Message, Color.Red, 3000)
+        End Try
+
         'End If
 
 
-
-        MessageBox.Show(Me, "Successfully Save!")
         'ElseIf trans = "ReAssign" Then
         '    Dim emp_originated As String
         '    For Each row As DataGridViewRow In DGV_ASSIGN_ITEMS.Rows
         '        emp_originated = TblM4_INVENTORY_ASSIGN_PERSONTableAdapter.SQ_ORIGINATED(row.Cells(0).Value)
         '        TblM4_INVENTORY_ASSIGN_PERSONTableAdapter.IQ_ASSIGN_PERSON(row.Cells(0).Value, WTXT_ACC_EMP_NO.Text, If(emp_originated = CStr(0), Nothing, emp_originated), WTXT_ACC_REMARKS.Text, EMP_NO)
         '    Next
-        '    NotificationManager.Show(Me, "Successfully Reassign!", Color.Green, 1000)
+        '    
         'End If
         '    enableDisable("")
         WTXT_SEARCH_ITEM_DETAIL.Clear()
@@ -238,16 +269,17 @@ Public Class FRM_ASSIGN
     End Sub
 
     Private Sub WTXT_SEARCH_ITEM_DETAIL_TextChanged(sender As Object, e As EventArgs) Handles WTXT_SEARCH_ITEM_DETAIL.TextChanged
-        ItemsDataGridViewBindingSource.Filter = "ItemCode Like '%" + WTXT_SEARCH_ITEM_DETAIL.Text + "%'"
+        ItemsDataGridViewBindingSource.Filter = "ItemCode Like '%" + WTXT_SEARCH_ITEM_DETAIL.Text + "%'" + " OR SerialNo Like '%" + WTXT_SEARCH_ITEM_DETAIL.Text + "%'" + " OR ItemDescription Like '%" + WTXT_SEARCH_ITEM_DETAIL.Text + "%'" + " OR UnitType Like '%" + WTXT_SEARCH_ITEM_DETAIL.Text + "%'" + " OR UnitCost Like '%" + WTXT_SEARCH_ITEM_DETAIL.Text + "%'" + " OR DateAcquisition Like '%" + WTXT_SEARCH_ITEM_DETAIL.Text + "%'"
         LLBL_ITEM_DETAILS_COUNT.Text = TblM4_INVENTORY_ITEMS1DataGridView.Rows.Count
         LLBL_ITEMS_ASSIGN_COUNT.Text = DGV_ASSIGN_ITEMS.Rows.Count
     End Sub
 
     Private Sub WTXT_SEARCH_ASSIGN_ITEM_TextChanged(sender As Object, e As EventArgs) Handles WTXT_SEARCH_ASSIGN_ITEM.TextChanged
-        AssignItemsDataGridViewBindingSource.Filter = "ItemCode LIKE '%" + WTXT_SEARCH_ASSIGN_ITEM.Text + "%'"
+        AssignItemsDataGridViewBindingSource.Filter = "ItemCode Like '%" + WTXT_SEARCH_ITEM_DETAIL.Text + "%'" + " OR SerialNo Like '%" + WTXT_SEARCH_ITEM_DETAIL.Text + "%'" + " OR ItemDescription Like '%" + WTXT_SEARCH_ITEM_DETAIL.Text + "%'" + " OR UnitType Like '%" + WTXT_SEARCH_ITEM_DETAIL.Text + "%'" + " OR UnitCost Like '%" + WTXT_SEARCH_ITEM_DETAIL.Text + "%'" + " OR DateAcquisition Like '%" + WTXT_SEARCH_ITEM_DETAIL.Text + "%'"
         LLBL_ITEM_DETAILS_COUNT.Text = TblM4_INVENTORY_ITEMS1DataGridView.Rows.Count
         LLBL_ITEMS_ASSIGN_COUNT.Text = DGV_ASSIGN_ITEMS.Rows.Count
     End Sub
+
     Sub enableDisable(trans As String)
         If trans = "New" Then
             GB_ITEMDETAILS.Enabled = True
@@ -270,14 +302,11 @@ Public Class FRM_ASSIGN
     End Sub
 
     Private Sub FRM_ASSIGN_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.SPM4_CURRENTDATETIMETableAdapter.Fill(Me.DS_STOREDPROC.SPM4_CURRENTDATETIME)
         Me.VWM4_ITEM_ASS_IDGVTableAdapter.FillByITEM_CODE(Me.DS_VIEWS.VWM4_ITEM_ASS_IDGV)
         BS_DGV_ASSIGN(VWM4_ITEM_ASS_IDGVBindingSource, DS_CUSTOM.ItemsDataGridView)
         LLBL_ITEM_DETAILS_COUNT.Text = TblM4_INVENTORY_ITEMS1DataGridView.Rows.Count
         LLBL_ITEMS_ASSIGN_COUNT.Text = DGV_ASSIGN_ITEMS.Rows.Count
-    End Sub
-
-    Private Sub GB_ITEMDETAILS_Enter(sender As Object, e As EventArgs) Handles GB_ITEMDETAILS.Enter
-
     End Sub
 
     Private Sub WTXT_DATE_APPOINTED_Click(sender As Object, e As EventArgs) Handles WTXT_DATE_APPOINTED.Click

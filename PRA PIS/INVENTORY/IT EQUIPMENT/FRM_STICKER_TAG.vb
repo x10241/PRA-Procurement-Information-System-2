@@ -1,12 +1,12 @@
 ﻿Imports System.ComponentModel
 Imports System.IO
 Imports Microsoft.VisualBasic.PowerPacks
-Imports Seagull
-Imports Seagull.BarTender.Print
-Imports Seagull.BarTender.Print.Database
-Imports Seagull.BarTender.PrintServer
-Imports Seagull.BarTender.PrintServer.Tasks
-Imports System.Threading
+'Imports Seagull
+'Imports Seagull.BarTender.Print
+'Imports Seagull.BarTender.Print.Database
+'Imports Seagull.BarTender.PrintServer
+'Imports Seagull.BarTender.PrintServer.Tasks
+'Imports System.Threading
 
 Public Class FRM_STICKER_TAG
 
@@ -62,7 +62,6 @@ Public Class FRM_STICKER_TAG
         isPreviewClick = False
         CB_TEMPLATE_SIZE.SelectedIndex = 0
     End Sub
-
 
     'Sub LoadPreview()
     '    Try
@@ -139,7 +138,6 @@ Public Class FRM_STICKER_TAG
 
     'End Sub
 
-
     Private Sub WTXT_INVENTORY_REPORT_FROM_Click(sender As Object, e As EventArgs) Handles BTN_INVENTORY_MINIMIZE.Click,
                                                                                             BTN_INVENTORY_CLOSE.Click,
                                                                                             BTN_STICKER_PREVIEW.Click
@@ -174,16 +172,28 @@ Public Class FRM_STICKER_TAG
             QRTEXT = WTXT_SEARCH_QRCODEDTAG.Text
             isPreviewClick = True
             printPreview = "StickerTag"
-            FRM_PREVIEW.ShowDialog()
+            FRM_PMD_PREVIEW.ShowDialog()
         End If
     End Sub
 
     Private Sub FRM_STICKER_TAG_Load(sender As Object, e As EventArgs) Handles Me.Load
-        SPM4_PRINTSTICKERTableAdapter.Fill(DS_STOREDPROC.SPM4_PRINTSTICKER, WTXT_SEARCH_QRCODEDTAG.Text)
+A:
+        Try
+            SPM4_PRINTSTICKERTableAdapter.Fill(DS_STOREDPROC.SPM4_PRINTSTICKER, WTXT_SEARCH_QRCODEDTAG.Text)
+        Catch ex As Exception
+            GoTo A
+        End Try
+
     End Sub
 
     Private Sub WTXT_SEARCH_QRCODEDTAG_TextChanged(sender As Object, e As EventArgs) Handles WTXT_SEARCH_QRCODEDTAG.TextChanged
-        SPM4_PRINTSTICKERTableAdapter.Fill(DS_STOREDPROC.SPM4_PRINTSTICKER, WTXT_SEARCH_QRCODEDTAG.Text)
+A:
+        Try
+            SPM4_PRINTSTICKERTableAdapter.Fill(DS_STOREDPROC.SPM4_PRINTSTICKER, WTXT_SEARCH_QRCODEDTAG.Text)
+        Catch ex As Exception
+            GoTo A
+        End Try
+
     End Sub
 
     Private Sub CB_TEMPLATE_SIZE_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CB_TEMPLATE_SIZE.SelectedIndexChanged

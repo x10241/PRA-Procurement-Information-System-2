@@ -67,8 +67,13 @@ Public Class FRM_PR
 
 #Region "LOAD"
     Private Sub FRM_PURCHASE_REQUEST_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+A:
+        Try
+            SPM4_PR_LISTTableAdapter.FillByDIV_SEARCH(DS_STOREDPROC.SPM4_PR_LIST, DIVISION_NO, WTXT_PR_SEARCH.Text)
+        Catch ex As Exception
+            GoTo A
+        End Try
 
-        SPM4_PR_LISTTableAdapter.FillByDIV_SEARCH(DS_STOREDPROC.SPM4_PR_LIST, DIVISION_NO, WTXT_PR_SEARCH.Text)
         LLBL_RECORDSFOUND.Text = DGV_PR_LIST.Rows.Count
         _DISABLE(True)
     End Sub
@@ -535,6 +540,7 @@ Public Class FRM_PR
             ISDOLLARS = False
         End If
         dgv = DGV_PR_ITEMLIST
+
         PR_DATEREQUESTED = WTXT_REQUESTEDDATE.Text
         PR_APPCODE = WTXT_APPCODE.Text
         PR_DEPARTMENT = WTXT_PRDEPARTMENT.Text
@@ -617,6 +623,7 @@ Public Class FRM_PR
         RECT_PRPURPOSE.BorderColor = Color.DimGray
         RECT_PRREQUESTEDDATE.BorderColor = Color.DimGray
         RECT_PRAPPCODE.BorderColor = Color.DimGray
+        dgv = Nothing
     End Sub
 
 #End Region

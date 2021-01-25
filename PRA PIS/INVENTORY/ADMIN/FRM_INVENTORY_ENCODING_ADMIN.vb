@@ -138,7 +138,9 @@ Public Class FRM_INVENTORY_ENCODING_ADMIN
                                                                                                 PB_INVENTORY_CLEAR_SEARCH.Click,
                                                                                                 PB_INVENTORY_SEARCH.Click,
                                                                                                 BTN_ADD_CATEGORY.Click,
-                                                                                                LLBL_INVENOTYR_ASSIGN.Click,
+                                                                                                LLBL_STICK_LAB.Click,
+                                                                                                PB_STICK_LAB.Click,
+                                                                                                RECT_STICK_LAB.Click,
                                                                                                 WTXT_INVENTORY_DATE_OF_ACQUISITION.Click,
                                                                                                 BTN_ADD_SUBCATEGORY.Click,
                                                                                                 BTN_ADD_BRAND_PROVIDER.Click,
@@ -154,7 +156,8 @@ Public Class FRM_INVENTORY_ENCODING_ADMIN
                                                                                                 RECT_IIL.Click,
                                                                                                 RECT_PCOUNT.Click,
                                                                                                 PB_PCOUNT.Click,
-                                                                                                LLBL_PCOUNT.Click
+                                                                                                LLBL_PCOUNT.Click,
+                                                                                                RECT_INVENTORY_VIEW_REPORT.Click
 
 
         Try
@@ -189,7 +192,7 @@ Public Class FRM_INVENTORY_ENCODING_ADMIN
                 Me.TBLM4_INV_ITEMS_OTHERS_MAINTableAdapter.Fill(Me.DS_PROPERTYDB.TBLM4_INV_ITEMS_OTHERS_MAIN)
                 Me.TBLM4_INV_ITEMS_LENG_MAINTableAdapter.Fill(Me.DS_PROPERTYDB.TBLM4_INV_ITEMS_LENG_MAIN)
                 If CB_INV_CAT.Items.Count > 0 Then
-                    Me.TblM4_INVENTORY_SUB_CATEGORYTableAdapter.FillByCAT_CODE(Me.DS_PROPERTYDB.tblM4_INVENTORY_SUB_CATEGORY, CInt(If(IsDBNull(CB_INV_CAT.SelectedValue), 0, CB_INV_CAT.SelectedValue)))
+                    Me.TblM4_INVENTORY_SUB_CATEGORYTableAdapter.FillByCAT_CODE(Me.DS_PROPERTYDB.tblM4_INVENTORY_SUB_CATEGORY, CInt(If(IsDBNull(CB_INV_CAT.SelectedValue), 0, CB_INV_CAT.SelectedValue)), DIVISION_NO)
                 End If
                 If CB_INV_SC.Items.Count > 0 Then
                     TBLM4_INV_ITEMS_NAME_MAINTableAdapter.FillBySC_CODE(DS_PROPERTYDB.TBLM4_INV_ITEMS_NAME_MAIN, CInt(If(IsDBNull(CB_INV_SC.SelectedValue), 0, CB_INV_SC.SelectedValue)))
@@ -234,9 +237,10 @@ Public Class FRM_INVENTORY_ENCODING_ADMIN
 #End Region
 
 #Region "REPORT"
-            ElseIf pb Is PB_INVENTORY_VIEW_REPORT Or llbl Is LLBL_INVENTORY_VIEW_REPORT Then
-                REPORT_TYPE = "ITEM_LIST"
-                FRM_PRINT_PREVIEW.ShowDialog()
+            ElseIf pb Is PB_INVENTORY_VIEW_REPORT Or llbl Is LLBL_INVENTORY_VIEW_REPORT Or rect Is RECT_INVENTORY_VIEW_REPORT Then
+                REP_TYPE = "ITEM_LIST"
+                dgv = DGV_INV_ITEM_LIST
+                FRM_PMD_PRINT_PREVIEW.ShowDialog()
 #End Region
 
 #Region "Minimize"
@@ -265,9 +269,9 @@ Public Class FRM_INVENTORY_ENCODING_ADMIN
                 LLBL_RECORDSFOUND.Text = DGV_INV_ITEM_LIST.Rows.Count
 #End Region
 
-#Region "Assign"
-            ElseIf llbl Is LLBL_INVENOTYR_ASSIGN Then
-                FRM_SELECTION.ShowDialog()
+#Region "STICKER TAG"
+            ElseIf llbl Is LLBL_STICK_LAB Or rect Is rect_STICK_LAB Then
+                FRM_RACK_STICKER.ShowDialog()
 #End Region
 
 #Region "SHOW STOCKS FORM"
@@ -523,7 +527,7 @@ Public Class FRM_INVENTORY_ENCODING_ADMIN
     Private Sub CB_INV_CAT_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CB_INV_CAT.SelectedIndexChanged
         If CB_INV_CAT.Items.Count > 0 Then
             Try
-                Me.TblM4_INVENTORY_SUB_CATEGORYTableAdapter.FillByCAT_CODE(Me.DS_PROPERTYDB.tblM4_INVENTORY_SUB_CATEGORY, CInt(If(IsDBNull(CB_INV_CAT.SelectedValue), 0, CB_INV_CAT.SelectedValue)))
+                Me.TblM4_INVENTORY_SUB_CATEGORYTableAdapter.FillByCAT_CODE(Me.DS_PROPERTYDB.tblM4_INVENTORY_SUB_CATEGORY, CInt(If(IsDBNull(CB_INV_CAT.SelectedValue), 0, CB_INV_CAT.SelectedValue)), DIVISION_NO)
                 If CB_INV_SC.Items.Count > 0 Then
                     Try
                         TBLM4_INV_ITEMS_NAME_MAINTableAdapter.FillBySC_CODE(DS_PROPERTYDB.TBLM4_INV_ITEMS_NAME_MAIN, CInt(If(IsDBNull(CB_INV_SC.SelectedValue), 0, CB_INV_SC.SelectedValue)))
@@ -712,7 +716,7 @@ Public Class FRM_INVENTORY_ENCODING_ADMIN
                     TBLM4_INV_ITEMS_NAME_MAINTableAdapter.Fill(DS_PROPERTYDB.TBLM4_INV_ITEMS_NAME_MAIN)
                     'load value of sub category IF CATEGORY CONTAINS VALUE
                     If CB_INV_CAT.Items.Count > 0 Then
-                        Me.TblM4_INVENTORY_SUB_CATEGORYTableAdapter.FillByCAT_CODE(Me.DS_PROPERTYDB.tblM4_INVENTORY_SUB_CATEGORY, CInt(If(IsDBNull(CB_INV_CAT.SelectedValue), 0, CB_INV_CAT.SelectedValue)))
+                        Me.TblM4_INVENTORY_SUB_CATEGORYTableAdapter.FillByCAT_CODE(Me.DS_PROPERTYDB.tblM4_INVENTORY_SUB_CATEGORY, CInt(If(IsDBNull(CB_INV_CAT.SelectedValue), 0, CB_INV_CAT.SelectedValue)), DIVISION_NO)
                         TBLM4_INV_ITEMS_NAME_MAINTableAdapter.FillBySC_CODE(DS_PROPERTYDB.TBLM4_INV_ITEMS_NAME_MAIN, CInt(If(IsDBNull(CB_INV_SC.SelectedValue), 0, CB_INV_SC.SelectedValue)))
 
                     End If
@@ -823,7 +827,7 @@ Public Class FRM_INVENTORY_ENCODING_ADMIN
             FRM_ADDITIONAL_CATEGORIZATION.GRP_SUB_CATEGORY.Visible = True
             FRM_ADDITIONAL_CATEGORIZATION.ShowDialog()
             Try
-                Me.TblM4_INVENTORY_SUB_CATEGORYTableAdapter.FillByCAT_CODE(Me.DS_PROPERTYDB.tblM4_INVENTORY_SUB_CATEGORY, CInt(If(IsDBNull(CB_INV_CAT.SelectedValue), 0, CB_INV_CAT.SelectedValue)))
+                Me.TblM4_INVENTORY_SUB_CATEGORYTableAdapter.FillByCAT_CODE(Me.DS_PROPERTYDB.tblM4_INVENTORY_SUB_CATEGORY, CInt(If(IsDBNull(CB_INV_CAT.SelectedValue), 0, CB_INV_CAT.SelectedValue)), DIVISION_NO)
                 CB_INV_SC.SelectedIndex = CB_INV_SC.FindStringExact(INV_DEF_SUB_CAT)
             Catch ex As Exception
                 ERRLOG.WriteToErrorLog(ex.Message, ex.StackTrace, "CATEGORY SELECTED INDEX CHANGED")
@@ -864,7 +868,7 @@ Public Class FRM_INVENTORY_ENCODING_ADMIN
             FRM_ADDITIONAL_CATEGORIZATION.ShowDialog()
 
             Try
-                Me.TblM4_INVENTORY_SUB_CATEGORYTableAdapter.FillByCAT_CODE(Me.DS_PROPERTYDB.tblM4_INVENTORY_SUB_CATEGORY, CInt(If(IsDBNull(CB_INV_CAT.SelectedValue), 0, CB_INV_CAT.SelectedValue)))
+                Me.TblM4_INVENTORY_SUB_CATEGORYTableAdapter.FillByCAT_CODE(Me.DS_PROPERTYDB.tblM4_INVENTORY_SUB_CATEGORY, CInt(If(IsDBNull(CB_INV_CAT.SelectedValue), 0, CB_INV_CAT.SelectedValue)), DIVISION_NO)
                 Me.TBLM4_INV_ITEMS_SIZE_MAINTableAdapter.Fill(Me.DS_PROPERTYDB.TBLM4_INV_ITEMS_SIZE_MAIN)
                 TBLM4_INV_ITEMS_NAME_MAINTableAdapter.Fill(DS_PROPERTYDB.TBLM4_INV_ITEMS_NAME_MAIN)
             Catch ex As Exception
@@ -881,14 +885,13 @@ Public Class FRM_INVENTORY_ENCODING_ADMIN
             PB_ITEM_IMAGE.Image = Image.FromFile(OpenFileDialog1.FileName)
             PB_ITEM_IMAGE.BackgroundImage = Nothing
         End If
+
+
+
     End Sub
 
 
 #End Region
 
 
-    Private Class WorkerParameters
-        Public Property InputDirectory As String
-        Public Property OutputFile As String
-    End Class
 End Class
