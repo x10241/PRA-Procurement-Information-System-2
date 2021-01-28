@@ -4503,7 +4503,6 @@ Partial Public Class DS_VIEWS
             Me.columnITEM_UNIT.AllowDBNull = false
             Me.columnITEM_UNIT.MaxLength = 10
             Me.columnITEM_UNIT_COST.AllowDBNull = false
-            Me.columnITEM_QUANTITY.AllowDBNull = false
             Me.columnITEM_DATE_AQUISITION.AllowDBNull = false
         End Sub
         
@@ -11969,7 +11968,11 @@ Partial Public Class DS_VIEWS
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Property ITEM_QUANTITY() As Integer
             Get
-                Return CType(Me(Me.tableVWM4_ITEM_ASS_IDGV.ITEM_QUANTITYColumn),Integer)
+                Try 
+                    Return CType(Me(Me.tableVWM4_ITEM_ASS_IDGV.ITEM_QUANTITYColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'ITEM_QUANTITY' in table 'VWM4_ITEM_ASS_IDGV' is DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tableVWM4_ITEM_ASS_IDGV.ITEM_QUANTITYColumn) = value
@@ -11997,6 +12000,18 @@ Partial Public Class DS_VIEWS
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub SetITEM_SERIAL_NONull()
             Me(Me.tableVWM4_ITEM_ASS_IDGV.ITEM_SERIAL_NOColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsITEM_QUANTITYNull() As Boolean
+            Return Me.IsNull(Me.tableVWM4_ITEM_ASS_IDGV.ITEM_QUANTITYColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetITEM_QUANTITYNull()
+            Me(Me.tableVWM4_ITEM_ASS_IDGV.ITEM_QUANTITYColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -18863,17 +18878,15 @@ Namespace DS_VIEWSTableAdapters
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT        ITEM_CODE, ITEM_SERIAL_NO, ITEM_DESCRIPTION, ITEM_UNIT, ITEM_UNIT_C"& _ 
-                "OST, ITEM_QUANTITY, ITEM_DATE_AQUISITION"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            VWM4_ITEM_ASS"
+                "OST, ITEM_QUANTITY, ITEM_DATE_AQUISITION"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            VWM4_ITEM_ASS_ALL"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
             Me._commandCollection(1).CommandText = "SELECT        ITEM_CODE, ITEM_SERIAL_NO, ITEM_DESCRIPTION, ITEM_UNIT, ITEM_UNIT_C"& _ 
-                "OST, ITEM_QUANTITY, ITEM_DATE_AQUISITION"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            VWM4_ITEM_ASS"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE  "& _ 
-                "      (ITEM_CODE NOT IN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                             (SELECT        ITEM_CODE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)& _ 
-                "                               FROM            tblM4_INVENTORY_ACCOUNTABLE_OFFIC"& _ 
-                "ER)) OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (ITEM_CODE NOT IN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                           "& _ 
-                "  (SELECT        ITEM_CODE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                               FROM            tblM4"& _ 
-                "_INVENTORY_ASSIGN_PERSON))"
+                "OST, ITEM_QUANTITY, ITEM_DATE_AQUISITION"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            VWM4_ITEM_ASS_ALL"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHE"& _ 
+                "RE        (ITEM_CODE NOT IN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                             (SELECT        ITEM_CO"& _ 
+                "DE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                               FROM            tblM4_INVENTORY_ACCOUNTABLE_O"& _ 
+                "FFICER))"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
         End Sub
         

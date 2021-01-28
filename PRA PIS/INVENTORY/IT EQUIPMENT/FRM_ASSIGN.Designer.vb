@@ -58,6 +58,8 @@ Partial Class FRM_ASSIGN
         Me.GB_REMARKS = New System.Windows.Forms.GroupBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.WTXT_DATE_APPOINTED = New PRA_PIS.WatermarkTextBox()
+        Me.SPM4CURRENTDATETIMEBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DS_STOREDPROC = New PRA_PIS.DS_STOREDPROC()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.WTXT_ACC_REMARKS = New PRA_PIS.WatermarkTextBox()
         Me.ShapeContainer3 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
@@ -119,8 +121,6 @@ Partial Class FRM_ASSIGN
         Me.TableAdapterManager = New PRA_PIS.DS_PROPERTYDBTableAdapters.TableAdapterManager()
         Me.TblM4_INVENTORY_ACCOUNTABLE_OFFICERBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TblM4_INVENTORY_ACCOUNTABLE_OFFICERTableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.tblM4_INVENTORY_ACCOUNTABLE_OFFICERTableAdapter()
-        Me.DS_STOREDPROC = New PRA_PIS.DS_STOREDPROC()
-        Me.SPM4CURRENTDATETIMEBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SPM4_CURRENTDATETIMETableAdapter = New PRA_PIS.DS_STOREDPROCTableAdapters.SPM4_CURRENTDATETIMETableAdapter()
         Me.PNL.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -128,6 +128,8 @@ Partial Class FRM_ASSIGN
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GB_REMARKS.SuspendLayout()
+        CType(Me.SPM4CURRENTDATETIMEBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DS_STOREDPROC, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GB_ITEMDETAILS.SuspendLayout()
         CType(Me.TblM4_INVENTORY_ITEMS1DataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ItemsDataGridViewBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -143,8 +145,6 @@ Partial Class FRM_ASSIGN
         CType(Me.VWM4_ITEM_ASS_IDGVBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DS_PROPERTYDB, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TblM4_INVENTORY_ACCOUNTABLE_OFFICERBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DS_STOREDPROC, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.SPM4CURRENTDATETIMEBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PNL
@@ -551,6 +551,16 @@ Partial Class FRM_ASSIGN
         Me.WTXT_DATE_APPOINTED.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.WTXT_DATE_APPOINTED.Watermark = "MM/DD/YYYY"
         '
+        'SPM4CURRENTDATETIMEBindingSource
+        '
+        Me.SPM4CURRENTDATETIMEBindingSource.DataMember = "SPM4_CURRENTDATETIME"
+        Me.SPM4CURRENTDATETIMEBindingSource.DataSource = Me.DS_STOREDPROC
+        '
+        'DS_STOREDPROC
+        '
+        Me.DS_STOREDPROC.DataSetName = "DS_STOREDPROC"
+        Me.DS_STOREDPROC.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
         'Label10
         '
         Me.Label10.AutoSize = True
@@ -708,7 +718,6 @@ Partial Class FRM_ASSIGN
         Me.WTXT_SEARCH_ASSIGN_ITEM.Name = "WTXT_SEARCH_ASSIGN_ITEM"
         Me.WTXT_SEARCH_ASSIGN_ITEM.Size = New System.Drawing.Size(420, 24)
         Me.WTXT_SEARCH_ASSIGN_ITEM.TabIndex = 1476
-        Me.WTXT_SEARCH_ASSIGN_ITEM.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.WTXT_SEARCH_ASSIGN_ITEM.Watermark = "Search Item Code, Serial No., Item Description"
         '
         'WTXT_SEARCH_ITEM_DETAIL
@@ -719,7 +728,6 @@ Partial Class FRM_ASSIGN
         Me.WTXT_SEARCH_ITEM_DETAIL.Name = "WTXT_SEARCH_ITEM_DETAIL"
         Me.WTXT_SEARCH_ITEM_DETAIL.Size = New System.Drawing.Size(420, 24)
         Me.WTXT_SEARCH_ITEM_DETAIL.TabIndex = 1475
-        Me.WTXT_SEARCH_ITEM_DETAIL.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.WTXT_SEARCH_ITEM_DETAIL.Watermark = "Search Item Code, Serial No., Item Description"
         '
         'BTN_ALL_PLUS
@@ -1140,12 +1148,14 @@ Partial Class FRM_ASSIGN
         Me.TableAdapterManager.TBLM4_INV_ITEMS_NAMETableAdapter = Nothing
         Me.TableAdapterManager.TBLM4_INV_ITEMS_OTHERS_MAINTableAdapter = Nothing
         Me.TableAdapterManager.TBLM4_INV_ITEMS_OTHERSTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_ITEMS_PCOU_SETUPTableAdapter = Nothing
         Me.TableAdapterManager.TBLM4_INV_ITEMS_PCOUNT_MAINTableAdapter = Nothing
         Me.TableAdapterManager.TBLM4_INV_ITEMS_PCOUNTTableAdapter = Nothing
         Me.TableAdapterManager.TBLM4_INV_ITEMS_SIZE_MAINTableAdapter = Nothing
         Me.TableAdapterManager.TBLM4_INV_ITEMS_SIZETableAdapter = Nothing
         Me.TableAdapterManager.TBLM4_INV_ITEMS_STK_CTRLTableAdapter = Nothing
         Me.TableAdapterManager.TBLM4_INV_ITEMSTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_STOCKSTableAdapter = Nothing
         Me.TableAdapterManager.tblM4_INVENTORY_ACCOUNTABLE_OFFICERTableAdapter = Nothing
         Me.TableAdapterManager.tblM4_INVENTORY_ACQUISITION_ITEM_USAGETableAdapter = Nothing
         Me.TableAdapterManager.tblM4_INVENTORY_ACQUISITION_VALUETableAdapter = Nothing
@@ -1175,6 +1185,7 @@ Partial Class FRM_ASSIGN
         Me.TableAdapterManager.tblM4_PURCHASEREQUEST_POSTEDTableAdapter = Nothing
         Me.TableAdapterManager.tblM4_PURCHASEREQUEST_PROVIDERTableAdapter = Nothing
         Me.TableAdapterManager.tblM4_PURCHASEREQUEST_REVISIONTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_PURCHASEREQUEST_SUP_CATTableAdapter = Nothing
         Me.TableAdapterManager.tblM4_PURCHASEREQUESTTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = PRA_PIS.DS_PROPERTYDBTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
@@ -1186,16 +1197,6 @@ Partial Class FRM_ASSIGN
         'TblM4_INVENTORY_ACCOUNTABLE_OFFICERTableAdapter
         '
         Me.TblM4_INVENTORY_ACCOUNTABLE_OFFICERTableAdapter.ClearBeforeFill = True
-        '
-        'DS_STOREDPROC
-        '
-        Me.DS_STOREDPROC.DataSetName = "DS_STOREDPROC"
-        Me.DS_STOREDPROC.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'SPM4CURRENTDATETIMEBindingSource
-        '
-        Me.SPM4CURRENTDATETIMEBindingSource.DataMember = "SPM4_CURRENTDATETIME"
-        Me.SPM4CURRENTDATETIMEBindingSource.DataSource = Me.DS_STOREDPROC
         '
         'SPM4_CURRENTDATETIMETableAdapter
         '
@@ -1225,6 +1226,8 @@ Partial Class FRM_ASSIGN
         Me.GroupBox1.PerformLayout()
         Me.GB_REMARKS.ResumeLayout(False)
         Me.GB_REMARKS.PerformLayout()
+        CType(Me.SPM4CURRENTDATETIMEBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DS_STOREDPROC, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GB_ITEMDETAILS.ResumeLayout(False)
         Me.GB_ITEMDETAILS.PerformLayout()
         CType(Me.TblM4_INVENTORY_ITEMS1DataGridView, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1242,8 +1245,6 @@ Partial Class FRM_ASSIGN
         CType(Me.VWM4_ITEM_ASS_IDGVBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DS_PROPERTYDB, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TblM4_INVENTORY_ACCOUNTABLE_OFFICERBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DS_STOREDPROC, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.SPM4CURRENTDATETIMEBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

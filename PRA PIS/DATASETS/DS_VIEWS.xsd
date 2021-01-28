@@ -417,11 +417,11 @@ WHERE        (REQ_NO = @REQ_NO)</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VWM4_ITEM_ASS_IDGVTableAdapter" GeneratorDataComponentClassName="VWM4_ITEM_ASS_IDGVTableAdapter" Name="VWM4_ITEM_ASS_IDGV" UserDataComponentName="VWM4_ITEM_ASS_IDGVTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="PRA_PROPERTYDBConnectionString (MySettings)" DbObjectName="PRA_PROPERTYDB.dbo.VWM4_ITEM_ASS" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="Fill" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="PRA_PROPERTYDBConnectionString (MySettings)" DbObjectName="PRA_PROPERTYDB.dbo.VWM4_ITEM_ASS_ALL" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="Fill" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        ITEM_CODE, ITEM_SERIAL_NO, ITEM_DESCRIPTION, ITEM_UNIT, ITEM_UNIT_COST, ITEM_QUANTITY, ITEM_DATE_AQUISITION
-FROM            VWM4_ITEM_ASS</CommandText>
+FROM            VWM4_ITEM_ASS_ALL</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -437,17 +437,14 @@ FROM            VWM4_ITEM_ASS</CommandText>
               <Mapping SourceColumn="ITEM_DATE_AQUISITION" DataSetColumn="ITEM_DATE_AQUISITION" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="PRA_PROPERTYDBConnectionString (MySettings)" DbObjectName="PRA_PROPERTYDB.dbo.VWM4_ITEM_ASS" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByITEM_CODE" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByITEM_CODE" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillByITEM_CODE">
+              <DbSource ConnectionRef="PRA_PROPERTYDBConnectionString (MySettings)" DbObjectName="PRA_PROPERTYDB.dbo.VWM4_ITEM_ASS_ALL" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByITEM_CODE" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByITEM_CODE" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillByITEM_CODE">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        ITEM_CODE, ITEM_SERIAL_NO, ITEM_DESCRIPTION, ITEM_UNIT, ITEM_UNIT_COST, ITEM_QUANTITY, ITEM_DATE_AQUISITION
-FROM            VWM4_ITEM_ASS
+FROM            VWM4_ITEM_ASS_ALL
 WHERE        (ITEM_CODE NOT IN
                              (SELECT        ITEM_CODE
-                               FROM            tblM4_INVENTORY_ACCOUNTABLE_OFFICER)) OR
-                         (ITEM_CODE NOT IN
-                             (SELECT        ITEM_CODE
-                               FROM            tblM4_INVENTORY_ASSIGN_PERSON))</CommandText>
+                               FROM            tblM4_INVENTORY_ACCOUNTABLE_OFFICER))</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -933,7 +930,7 @@ FROM            VWM4_ITEM_ASS</CommandText>
               <Mapping SourceColumn="DATE_ASSIGNED" DataSetColumn="DATE_ASSIGNED" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="PRA_PROPERTYDBConnectionString (MySettings)" DbObjectName="PRA_PROPERTYDB.dbo.VWM4_ITEM_ASS" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByEMP_NO" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByEMP_NO" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="FillByEMP_NO">
+              <DbSource ConnectionRef="PRA_PROPERTYDBConnectionString (MySettings)" DbObjectName="PRA_PROPERTYDB.dbo.VWM4_ITEM_ASS" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByEMP_NO" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByEMP_NO" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillByEMP_NO">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        ITEM_CODE, ITEM_SERIAL_NO, ITEM_DESCRIPTION, ITEM_UNIT, ITEM_UNIT_COST, ITEM_QUANTITY, ITEM_DATE_AQUISITION, ITEM_CREATED_DATE, FULLNAME, EMP_NO, ACCO_ORIGINATED, ACCO_REMARKS, 
@@ -946,7 +943,7 @@ WHERE        (EMP_NO = @EMP_NO)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="PRA_PROPERTYDBConnectionString (MySettings)" DbObjectName="PRA_PROPERTYDB.dbo.VWM4_ITEM_ASS" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByIN_tblM4_INVENTORY_ACCOUNTABLE_OFFICER" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByIN_tblM4_INVENTORY_ACCOUNTABLE_OFFICER" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillByIN_tblM4_INVENTORY_ACCOUNTABLE_OFFICER">
+              <DbSource ConnectionRef="PRA_PROPERTYDBConnectionString (MySettings)" DbObjectName="PRA_PROPERTYDB.dbo.VWM4_ITEM_ASS" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByIN_tblM4_INVENTORY_ACCOUNTABLE_OFFICER" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByIN_tblM4_INVENTORY_ACCOUNTABLE_OFFICER" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillByIN_tblM4_INVENTORY_ACCOUNTABLE_OFFICER">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        VWM4_ITEM_ASS.*
@@ -956,7 +953,7 @@ WHERE (ITEM_CODE NOT IN (SELECT ITEM_CODE FROM tblM4_INVENTORY_ACCOUNTABLE_OFFIC
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="PRA_PROPERTYDBConnectionString (MySettings)" DbObjectName="PRA_PROPERTYDB.dbo.VWM4_ITEM_ASS" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByIN_tblM4_INVENTORY_ASSIGN_PERSON" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByIN_tblM4_INVENTORY_ASSIGN_PERSON" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillByIN_tblM4_INVENTORY_ASSIGN_PERSON">
+              <DbSource ConnectionRef="PRA_PROPERTYDBConnectionString (MySettings)" DbObjectName="PRA_PROPERTYDB.dbo.VWM4_ITEM_ASS" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByIN_tblM4_INVENTORY_ASSIGN_PERSON" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByIN_tblM4_INVENTORY_ASSIGN_PERSON" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="FillByIN_tblM4_INVENTORY_ASSIGN_PERSON">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        VWM4_ITEM_ASS.*
@@ -966,7 +963,7 @@ WHERE (ITEM_CODE NOT IN (SELECT ITEM_CODE FROM tblM4_INVENTORY_ASSIGN_PERSON))</
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="PRA_PROPERTYDBConnectionString (MySettings)" DbObjectName="PRA_PROPERTYDB.dbo.VWM4_ITEM_ASS" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByITEM_CODE" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByITEM_CODE" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="FillByITEM_CODE">
+              <DbSource ConnectionRef="PRA_PROPERTYDBConnectionString (MySettings)" DbObjectName="PRA_PROPERTYDB.dbo.VWM4_ITEM_ASS" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByITEM_CODE" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByITEM_CODE" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="FillByITEM_CODE">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        VWM4_ITEM_ASS.*
@@ -986,7 +983,7 @@ WHERE (ITEM_CODE IN (SELECT ITEM_CODE FROM tblM4_INVENTORY_ACCOUNTABLE_OFFICER))
   <xs:element name="DS_VIEWS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DS_VIEWS" msprop:Generator_UserDSName="DS_VIEWS">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="V1VW_USERACCESSMAIN" msprop:Generator_TableClassName="V1VW_USERACCESSMAINDataTable" msprop:Generator_TableVarName="tableV1VW_USERACCESSMAIN" msprop:Generator_TablePropName="V1VW_USERACCESSMAIN" msprop:Generator_RowDeletingName="V1VW_USERACCESSMAINRowDeleting" msprop:Generator_RowChangingName="V1VW_USERACCESSMAINRowChanging" msprop:Generator_RowEvHandlerName="V1VW_USERACCESSMAINRowChangeEventHandler" msprop:Generator_RowDeletedName="V1VW_USERACCESSMAINRowDeleted" msprop:Generator_UserTableName="V1VW_USERACCESSMAIN" msprop:Generator_RowChangedName="V1VW_USERACCESSMAINRowChanged" msprop:Generator_RowEvArgName="V1VW_USERACCESSMAINRowChangeEvent" msprop:Generator_RowClassName="V1VW_USERACCESSMAINRow">
+        <xs:element name="V1VW_USERACCESSMAIN" msprop:Generator_TableClassName="V1VW_USERACCESSMAINDataTable" msprop:Generator_TableVarName="tableV1VW_USERACCESSMAIN" msprop:Generator_RowChangedName="V1VW_USERACCESSMAINRowChanged" msprop:Generator_TablePropName="V1VW_USERACCESSMAIN" msprop:Generator_RowDeletingName="V1VW_USERACCESSMAINRowDeleting" msprop:Generator_RowChangingName="V1VW_USERACCESSMAINRowChanging" msprop:Generator_RowEvHandlerName="V1VW_USERACCESSMAINRowChangeEventHandler" msprop:Generator_RowDeletedName="V1VW_USERACCESSMAINRowDeleted" msprop:Generator_RowClassName="V1VW_USERACCESSMAINRow" msprop:Generator_UserTableName="V1VW_USERACCESSMAIN" msprop:Generator_RowEvArgName="V1VW_USERACCESSMAINRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="UAC_USERNAME" msprop:Generator_ColumnVarNameInTable="columnUAC_USERNAME" msprop:Generator_ColumnPropNameInRow="UAC_USERNAME" msprop:Generator_ColumnPropNameInTable="UAC_USERNAMEColumn" msprop:Generator_UserColumnName="UAC_USERNAME">
@@ -1022,7 +1019,7 @@ WHERE (ITEM_CODE IN (SELECT ITEM_CODE FROM tblM4_INVENTORY_ACCOUNTABLE_OFFICER))
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="V1VW_USERACCESSSUB" msprop:Generator_TableClassName="V1VW_USERACCESSSUBDataTable" msprop:Generator_TableVarName="tableV1VW_USERACCESSSUB" msprop:Generator_TablePropName="V1VW_USERACCESSSUB" msprop:Generator_RowDeletingName="V1VW_USERACCESSSUBRowDeleting" msprop:Generator_RowChangingName="V1VW_USERACCESSSUBRowChanging" msprop:Generator_RowEvHandlerName="V1VW_USERACCESSSUBRowChangeEventHandler" msprop:Generator_RowDeletedName="V1VW_USERACCESSSUBRowDeleted" msprop:Generator_UserTableName="V1VW_USERACCESSSUB" msprop:Generator_RowChangedName="V1VW_USERACCESSSUBRowChanged" msprop:Generator_RowEvArgName="V1VW_USERACCESSSUBRowChangeEvent" msprop:Generator_RowClassName="V1VW_USERACCESSSUBRow">
+        <xs:element name="V1VW_USERACCESSSUB" msprop:Generator_TableClassName="V1VW_USERACCESSSUBDataTable" msprop:Generator_TableVarName="tableV1VW_USERACCESSSUB" msprop:Generator_RowChangedName="V1VW_USERACCESSSUBRowChanged" msprop:Generator_TablePropName="V1VW_USERACCESSSUB" msprop:Generator_RowDeletingName="V1VW_USERACCESSSUBRowDeleting" msprop:Generator_RowChangingName="V1VW_USERACCESSSUBRowChanging" msprop:Generator_RowEvHandlerName="V1VW_USERACCESSSUBRowChangeEventHandler" msprop:Generator_RowDeletedName="V1VW_USERACCESSSUBRowDeleted" msprop:Generator_RowClassName="V1VW_USERACCESSSUBRow" msprop:Generator_UserTableName="V1VW_USERACCESSSUB" msprop:Generator_RowEvArgName="V1VW_USERACCESSSUBRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="UAC_USERNAME" msprop:Generator_ColumnVarNameInTable="columnUAC_USERNAME" msprop:Generator_ColumnPropNameInRow="UAC_USERNAME" msprop:Generator_ColumnPropNameInTable="UAC_USERNAMEColumn" msprop:Generator_UserColumnName="UAC_USERNAME">
@@ -1059,7 +1056,7 @@ WHERE (ITEM_CODE IN (SELECT ITEM_CODE FROM tblM4_INVENTORY_ACCOUNTABLE_OFFICER))
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="VWM4_ITEMS_CATEGORY_SUB_CATEGORY" msprop:Generator_TableClassName="VWM4_ITEMS_CATEGORY_SUB_CATEGORYDataTable" msprop:Generator_TableVarName="tableVWM4_ITEMS_CATEGORY_SUB_CATEGORY" msprop:Generator_TablePropName="VWM4_ITEMS_CATEGORY_SUB_CATEGORY" msprop:Generator_RowDeletingName="VWM4_ITEMS_CATEGORY_SUB_CATEGORYRowDeleting" msprop:Generator_RowChangingName="VWM4_ITEMS_CATEGORY_SUB_CATEGORYRowChanging" msprop:Generator_RowEvHandlerName="VWM4_ITEMS_CATEGORY_SUB_CATEGORYRowChangeEventHandler" msprop:Generator_RowDeletedName="VWM4_ITEMS_CATEGORY_SUB_CATEGORYRowDeleted" msprop:Generator_UserTableName="VWM4_ITEMS_CATEGORY_SUB_CATEGORY" msprop:Generator_RowChangedName="VWM4_ITEMS_CATEGORY_SUB_CATEGORYRowChanged" msprop:Generator_RowEvArgName="VWM4_ITEMS_CATEGORY_SUB_CATEGORYRowChangeEvent" msprop:Generator_RowClassName="VWM4_ITEMS_CATEGORY_SUB_CATEGORYRow">
+        <xs:element name="VWM4_ITEMS_CATEGORY_SUB_CATEGORY" msprop:Generator_TableClassName="VWM4_ITEMS_CATEGORY_SUB_CATEGORYDataTable" msprop:Generator_TableVarName="tableVWM4_ITEMS_CATEGORY_SUB_CATEGORY" msprop:Generator_RowChangedName="VWM4_ITEMS_CATEGORY_SUB_CATEGORYRowChanged" msprop:Generator_TablePropName="VWM4_ITEMS_CATEGORY_SUB_CATEGORY" msprop:Generator_RowDeletingName="VWM4_ITEMS_CATEGORY_SUB_CATEGORYRowDeleting" msprop:Generator_RowChangingName="VWM4_ITEMS_CATEGORY_SUB_CATEGORYRowChanging" msprop:Generator_RowEvHandlerName="VWM4_ITEMS_CATEGORY_SUB_CATEGORYRowChangeEventHandler" msprop:Generator_RowDeletedName="VWM4_ITEMS_CATEGORY_SUB_CATEGORYRowDeleted" msprop:Generator_RowClassName="VWM4_ITEMS_CATEGORY_SUB_CATEGORYRow" msprop:Generator_UserTableName="VWM4_ITEMS_CATEGORY_SUB_CATEGORY" msprop:Generator_RowEvArgName="VWM4_ITEMS_CATEGORY_SUB_CATEGORYRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="SC_NO" msprop:Generator_ColumnVarNameInTable="columnSC_NO" msprop:Generator_ColumnPropNameInRow="SC_NO" msprop:Generator_ColumnPropNameInTable="SC_NOColumn" msprop:Generator_UserColumnName="SC_NO">
@@ -1113,7 +1110,7 @@ WHERE (ITEM_CODE IN (SELECT ITEM_CODE FROM tblM4_INVENTORY_ACCOUNTABLE_OFFICER))
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="V1VW_USERACCEMPLOYEE" msprop:Generator_TableClassName="V1VW_USERACCEMPLOYEEDataTable" msprop:Generator_TableVarName="tableV1VW_USERACCEMPLOYEE" msprop:Generator_RowChangedName="V1VW_USERACCEMPLOYEERowChanged" msprop:Generator_TablePropName="V1VW_USERACCEMPLOYEE" msprop:Generator_RowDeletingName="V1VW_USERACCEMPLOYEERowDeleting" msprop:Generator_RowChangingName="V1VW_USERACCEMPLOYEERowChanging" msprop:Generator_RowEvHandlerName="V1VW_USERACCEMPLOYEERowChangeEventHandler" msprop:Generator_RowDeletedName="V1VW_USERACCEMPLOYEERowDeleted" msprop:Generator_RowClassName="V1VW_USERACCEMPLOYEERow" msprop:Generator_UserTableName="V1VW_USERACCEMPLOYEE" msprop:Generator_RowEvArgName="V1VW_USERACCEMPLOYEERowChangeEvent">
+        <xs:element name="V1VW_USERACCEMPLOYEE" msprop:Generator_TableClassName="V1VW_USERACCEMPLOYEEDataTable" msprop:Generator_TableVarName="tableV1VW_USERACCEMPLOYEE" msprop:Generator_TablePropName="V1VW_USERACCEMPLOYEE" msprop:Generator_RowDeletingName="V1VW_USERACCEMPLOYEERowDeleting" msprop:Generator_RowChangingName="V1VW_USERACCEMPLOYEERowChanging" msprop:Generator_RowEvHandlerName="V1VW_USERACCEMPLOYEERowChangeEventHandler" msprop:Generator_RowDeletedName="V1VW_USERACCEMPLOYEERowDeleted" msprop:Generator_UserTableName="V1VW_USERACCEMPLOYEE" msprop:Generator_RowChangedName="V1VW_USERACCEMPLOYEERowChanged" msprop:Generator_RowEvArgName="V1VW_USERACCEMPLOYEERowChangeEvent" msprop:Generator_RowClassName="V1VW_USERACCEMPLOYEERow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="UAC_USERNAME" msprop:Generator_ColumnVarNameInTable="columnUAC_USERNAME" msprop:Generator_ColumnPropNameInRow="UAC_USERNAME" msprop:Generator_ColumnPropNameInTable="UAC_USERNAMEColumn" msprop:Generator_UserColumnName="UAC_USERNAME">
@@ -1183,7 +1180,7 @@ WHERE (ITEM_CODE IN (SELECT ITEM_CODE FROM tblM4_INVENTORY_ACCOUNTABLE_OFFICER))
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="VWM4_ITEM_REQ_BY" msprop:Generator_TableClassName="VWM4_ITEM_REQ_BYDataTable" msprop:Generator_TableVarName="tableVWM4_ITEM_REQ_BY" msprop:Generator_RowChangedName="VWM4_ITEM_REQ_BYRowChanged" msprop:Generator_TablePropName="VWM4_ITEM_REQ_BY" msprop:Generator_RowDeletingName="VWM4_ITEM_REQ_BYRowDeleting" msprop:Generator_RowChangingName="VWM4_ITEM_REQ_BYRowChanging" msprop:Generator_RowEvHandlerName="VWM4_ITEM_REQ_BYRowChangeEventHandler" msprop:Generator_RowDeletedName="VWM4_ITEM_REQ_BYRowDeleted" msprop:Generator_RowClassName="VWM4_ITEM_REQ_BYRow" msprop:Generator_UserTableName="VWM4_ITEM_REQ_BY" msprop:Generator_RowEvArgName="VWM4_ITEM_REQ_BYRowChangeEvent">
+        <xs:element name="VWM4_ITEM_REQ_BY" msprop:Generator_TableClassName="VWM4_ITEM_REQ_BYDataTable" msprop:Generator_TableVarName="tableVWM4_ITEM_REQ_BY" msprop:Generator_TablePropName="VWM4_ITEM_REQ_BY" msprop:Generator_RowDeletingName="VWM4_ITEM_REQ_BYRowDeleting" msprop:Generator_RowChangingName="VWM4_ITEM_REQ_BYRowChanging" msprop:Generator_RowEvHandlerName="VWM4_ITEM_REQ_BYRowChangeEventHandler" msprop:Generator_RowDeletedName="VWM4_ITEM_REQ_BYRowDeleted" msprop:Generator_UserTableName="VWM4_ITEM_REQ_BY" msprop:Generator_RowChangedName="VWM4_ITEM_REQ_BYRowChanged" msprop:Generator_RowEvArgName="VWM4_ITEM_REQ_BYRowChangeEvent" msprop:Generator_RowClassName="VWM4_ITEM_REQ_BYRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="REQ_NO" msprop:Generator_ColumnVarNameInTable="columnREQ_NO" msprop:Generator_ColumnPropNameInRow="REQ_NO" msprop:Generator_ColumnPropNameInTable="REQ_NOColumn" msprop:Generator_UserColumnName="REQ_NO">
@@ -1301,7 +1298,7 @@ WHERE (ITEM_CODE IN (SELECT ITEM_CODE FROM tblM4_INVENTORY_ACCOUNTABLE_OFFICER))
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="VWM4_ITEM_REQ_DESC" msprop:Generator_TableClassName="VWM4_ITEM_REQ_DESCDataTable" msprop:Generator_TableVarName="tableVWM4_ITEM_REQ_DESC" msprop:Generator_TablePropName="VWM4_ITEM_REQ_DESC" msprop:Generator_RowDeletingName="VWM4_ITEM_REQ_DESCRowDeleting" msprop:Generator_RowChangingName="VWM4_ITEM_REQ_DESCRowChanging" msprop:Generator_RowEvHandlerName="VWM4_ITEM_REQ_DESCRowChangeEventHandler" msprop:Generator_RowDeletedName="VWM4_ITEM_REQ_DESCRowDeleted" msprop:Generator_UserTableName="VWM4_ITEM_REQ_DESC" msprop:Generator_RowChangedName="VWM4_ITEM_REQ_DESCRowChanged" msprop:Generator_RowEvArgName="VWM4_ITEM_REQ_DESCRowChangeEvent" msprop:Generator_RowClassName="VWM4_ITEM_REQ_DESCRow">
+        <xs:element name="VWM4_ITEM_REQ_DESC" msprop:Generator_TableClassName="VWM4_ITEM_REQ_DESCDataTable" msprop:Generator_TableVarName="tableVWM4_ITEM_REQ_DESC" msprop:Generator_RowChangedName="VWM4_ITEM_REQ_DESCRowChanged" msprop:Generator_TablePropName="VWM4_ITEM_REQ_DESC" msprop:Generator_RowDeletingName="VWM4_ITEM_REQ_DESCRowDeleting" msprop:Generator_RowChangingName="VWM4_ITEM_REQ_DESCRowChanging" msprop:Generator_RowEvHandlerName="VWM4_ITEM_REQ_DESCRowChangeEventHandler" msprop:Generator_RowDeletedName="VWM4_ITEM_REQ_DESCRowDeleted" msprop:Generator_RowClassName="VWM4_ITEM_REQ_DESCRow" msprop:Generator_UserTableName="VWM4_ITEM_REQ_DESC" msprop:Generator_RowEvArgName="VWM4_ITEM_REQ_DESCRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="REQ_NO" msprop:Generator_ColumnVarNameInTable="columnREQ_NO" msprop:Generator_ColumnPropNameInRow="REQ_NO" msprop:Generator_ColumnPropNameInTable="REQ_NOColumn" msprop:Generator_UserColumnName="REQ_NO">
@@ -1343,7 +1340,7 @@ WHERE (ITEM_CODE IN (SELECT ITEM_CODE FROM tblM4_INVENTORY_ACCOUNTABLE_OFFICER))
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="VWG3_DR_LIST" msprop:Generator_TableClassName="VWG3_DR_LISTDataTable" msprop:Generator_TableVarName="tableVWG3_DR_LIST" msprop:Generator_TablePropName="VWG3_DR_LIST" msprop:Generator_RowDeletingName="VWG3_DR_LISTRowDeleting" msprop:Generator_RowChangingName="VWG3_DR_LISTRowChanging" msprop:Generator_RowEvHandlerName="VWG3_DR_LISTRowChangeEventHandler" msprop:Generator_RowDeletedName="VWG3_DR_LISTRowDeleted" msprop:Generator_UserTableName="VWG3_DR_LIST" msprop:Generator_RowChangedName="VWG3_DR_LISTRowChanged" msprop:Generator_RowEvArgName="VWG3_DR_LISTRowChangeEvent" msprop:Generator_RowClassName="VWG3_DR_LISTRow">
+        <xs:element name="VWG3_DR_LIST" msprop:Generator_TableClassName="VWG3_DR_LISTDataTable" msprop:Generator_TableVarName="tableVWG3_DR_LIST" msprop:Generator_RowChangedName="VWG3_DR_LISTRowChanged" msprop:Generator_TablePropName="VWG3_DR_LIST" msprop:Generator_RowDeletingName="VWG3_DR_LISTRowDeleting" msprop:Generator_RowChangingName="VWG3_DR_LISTRowChanging" msprop:Generator_RowEvHandlerName="VWG3_DR_LISTRowChangeEventHandler" msprop:Generator_RowDeletedName="VWG3_DR_LISTRowDeleted" msprop:Generator_RowClassName="VWG3_DR_LISTRow" msprop:Generator_UserTableName="VWG3_DR_LIST" msprop:Generator_RowEvArgName="VWG3_DR_LISTRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="DR_ID" msprop:Generator_ColumnVarNameInTable="columnDR_ID" msprop:Generator_ColumnPropNameInRow="DR_ID" msprop:Generator_ColumnPropNameInTable="DR_IDColumn" msprop:Generator_UserColumnName="DR_ID">
@@ -1460,7 +1457,7 @@ WHERE (ITEM_CODE IN (SELECT ITEM_CODE FROM tblM4_INVENTORY_ACCOUNTABLE_OFFICER))
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="VWM4_REQUISITION" msprop:Generator_TableClassName="VWM4_REQUISITIONDataTable" msprop:Generator_TableVarName="tableVWM4_REQUISITION" msprop:Generator_TablePropName="VWM4_REQUISITION" msprop:Generator_RowDeletingName="VWM4_REQUISITIONRowDeleting" msprop:Generator_RowChangingName="VWM4_REQUISITIONRowChanging" msprop:Generator_RowEvHandlerName="VWM4_REQUISITIONRowChangeEventHandler" msprop:Generator_RowDeletedName="VWM4_REQUISITIONRowDeleted" msprop:Generator_UserTableName="VWM4_REQUISITION" msprop:Generator_RowChangedName="VWM4_REQUISITIONRowChanged" msprop:Generator_RowEvArgName="VWM4_REQUISITIONRowChangeEvent" msprop:Generator_RowClassName="VWM4_REQUISITIONRow">
+        <xs:element name="VWM4_REQUISITION" msprop:Generator_TableClassName="VWM4_REQUISITIONDataTable" msprop:Generator_TableVarName="tableVWM4_REQUISITION" msprop:Generator_RowChangedName="VWM4_REQUISITIONRowChanged" msprop:Generator_TablePropName="VWM4_REQUISITION" msprop:Generator_RowDeletingName="VWM4_REQUISITIONRowDeleting" msprop:Generator_RowChangingName="VWM4_REQUISITIONRowChanging" msprop:Generator_RowEvHandlerName="VWM4_REQUISITIONRowChangeEventHandler" msprop:Generator_RowDeletedName="VWM4_REQUISITIONRowDeleted" msprop:Generator_RowClassName="VWM4_REQUISITIONRow" msprop:Generator_UserTableName="VWM4_REQUISITION" msprop:Generator_RowEvArgName="VWM4_REQUISITIONRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="FULLDESC" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFULLDESC" msprop:Generator_ColumnPropNameInRow="FULLDESC" msprop:Generator_ColumnPropNameInTable="FULLDESCColumn" msprop:Generator_UserColumnName="FULLDESC" minOccurs="0">
@@ -1588,7 +1585,7 @@ WHERE (ITEM_CODE IN (SELECT ITEM_CODE FROM tblM4_INVENTORY_ACCOUNTABLE_OFFICER))
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="VWM4_ITEM_ASS_IDGV" msprop:Generator_TableClassName="VWM4_ITEM_ASS_IDGVDataTable" msprop:Generator_TableVarName="tableVWM4_ITEM_ASS_IDGV" msprop:Generator_TablePropName="VWM4_ITEM_ASS_IDGV" msprop:Generator_RowDeletingName="VWM4_ITEM_ASS_IDGVRowDeleting" msprop:Generator_RowChangingName="VWM4_ITEM_ASS_IDGVRowChanging" msprop:Generator_RowEvHandlerName="VWM4_ITEM_ASS_IDGVRowChangeEventHandler" msprop:Generator_RowDeletedName="VWM4_ITEM_ASS_IDGVRowDeleted" msprop:Generator_UserTableName="VWM4_ITEM_ASS_IDGV" msprop:Generator_RowChangedName="VWM4_ITEM_ASS_IDGVRowChanged" msprop:Generator_RowEvArgName="VWM4_ITEM_ASS_IDGVRowChangeEvent" msprop:Generator_RowClassName="VWM4_ITEM_ASS_IDGVRow">
+        <xs:element name="VWM4_ITEM_ASS_IDGV" msprop:Generator_TableClassName="VWM4_ITEM_ASS_IDGVDataTable" msprop:Generator_TableVarName="tableVWM4_ITEM_ASS_IDGV" msprop:Generator_RowChangedName="VWM4_ITEM_ASS_IDGVRowChanged" msprop:Generator_TablePropName="VWM4_ITEM_ASS_IDGV" msprop:Generator_RowDeletingName="VWM4_ITEM_ASS_IDGVRowDeleting" msprop:Generator_RowChangingName="VWM4_ITEM_ASS_IDGVRowChanging" msprop:Generator_RowEvHandlerName="VWM4_ITEM_ASS_IDGVRowChangeEventHandler" msprop:Generator_RowDeletedName="VWM4_ITEM_ASS_IDGVRowDeleted" msprop:Generator_RowClassName="VWM4_ITEM_ASS_IDGVRow" msprop:Generator_UserTableName="VWM4_ITEM_ASS_IDGV" msprop:Generator_RowEvArgName="VWM4_ITEM_ASS_IDGVRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ITEM_CODE" msprop:Generator_ColumnVarNameInTable="columnITEM_CODE" msprop:Generator_ColumnPropNameInRow="ITEM_CODE" msprop:Generator_ColumnPropNameInTable="ITEM_CODEColumn" msprop:Generator_UserColumnName="ITEM_CODE">
@@ -1620,12 +1617,12 @@ WHERE (ITEM_CODE IN (SELECT ITEM_CODE FROM tblM4_INVENTORY_ACCOUNTABLE_OFFICER))
                 </xs:simpleType>
               </xs:element>
               <xs:element name="ITEM_UNIT_COST" msprop:Generator_ColumnVarNameInTable="columnITEM_UNIT_COST" msprop:Generator_ColumnPropNameInRow="ITEM_UNIT_COST" msprop:Generator_ColumnPropNameInTable="ITEM_UNIT_COSTColumn" msprop:Generator_UserColumnName="ITEM_UNIT_COST" type="xs:decimal" />
-              <xs:element name="ITEM_QUANTITY" msprop:Generator_ColumnVarNameInTable="columnITEM_QUANTITY" msprop:Generator_ColumnPropNameInRow="ITEM_QUANTITY" msprop:Generator_ColumnPropNameInTable="ITEM_QUANTITYColumn" msprop:Generator_UserColumnName="ITEM_QUANTITY" type="xs:int" />
+              <xs:element name="ITEM_QUANTITY" msprop:Generator_ColumnVarNameInTable="columnITEM_QUANTITY" msprop:Generator_ColumnPropNameInRow="ITEM_QUANTITY" msprop:Generator_ColumnPropNameInTable="ITEM_QUANTITYColumn" msprop:Generator_UserColumnName="ITEM_QUANTITY" type="xs:int" minOccurs="0" />
               <xs:element name="ITEM_DATE_AQUISITION" msprop:Generator_ColumnVarNameInTable="columnITEM_DATE_AQUISITION" msprop:Generator_ColumnPropNameInRow="ITEM_DATE_AQUISITION" msprop:Generator_ColumnPropNameInTable="ITEM_DATE_AQUISITIONColumn" msprop:Generator_UserColumnName="ITEM_DATE_AQUISITION" type="xs:dateTime" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="VWM4_ITEM_LIST" msprop:Generator_TableClassName="VWM4_ITEM_LISTDataTable" msprop:Generator_TableVarName="tableVWM4_ITEM_LIST" msprop:Generator_TablePropName="VWM4_ITEM_LIST" msprop:Generator_RowDeletingName="VWM4_ITEM_LISTRowDeleting" msprop:Generator_RowChangingName="VWM4_ITEM_LISTRowChanging" msprop:Generator_RowEvHandlerName="VWM4_ITEM_LISTRowChangeEventHandler" msprop:Generator_RowDeletedName="VWM4_ITEM_LISTRowDeleted" msprop:Generator_UserTableName="VWM4_ITEM_LIST" msprop:Generator_RowChangedName="VWM4_ITEM_LISTRowChanged" msprop:Generator_RowEvArgName="VWM4_ITEM_LISTRowChangeEvent" msprop:Generator_RowClassName="VWM4_ITEM_LISTRow">
+        <xs:element name="VWM4_ITEM_LIST" msprop:Generator_TableClassName="VWM4_ITEM_LISTDataTable" msprop:Generator_TableVarName="tableVWM4_ITEM_LIST" msprop:Generator_RowChangedName="VWM4_ITEM_LISTRowChanged" msprop:Generator_TablePropName="VWM4_ITEM_LIST" msprop:Generator_RowDeletingName="VWM4_ITEM_LISTRowDeleting" msprop:Generator_RowChangingName="VWM4_ITEM_LISTRowChanging" msprop:Generator_RowEvHandlerName="VWM4_ITEM_LISTRowChangeEventHandler" msprop:Generator_RowDeletedName="VWM4_ITEM_LISTRowDeleted" msprop:Generator_RowClassName="VWM4_ITEM_LISTRow" msprop:Generator_UserTableName="VWM4_ITEM_LIST" msprop:Generator_RowEvArgName="VWM4_ITEM_LISTRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ITEM_CODE" msprop:Generator_ColumnVarNameInTable="columnITEM_CODE" msprop:Generator_ColumnPropNameInRow="ITEM_CODE" msprop:Generator_ColumnPropNameInTable="ITEM_CODEColumn" msprop:Generator_UserColumnName="ITEM_CODE">
@@ -1750,7 +1747,7 @@ WHERE (ITEM_CODE IN (SELECT ITEM_CODE FROM tblM4_INVENTORY_ACCOUNTABLE_OFFICER))
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="VWM4_PR_LIST" msprop:Generator_TableClassName="VWM4_PR_LISTDataTable" msprop:Generator_TableVarName="tableVWM4_PR_LIST" msprop:Generator_TablePropName="VWM4_PR_LIST" msprop:Generator_RowDeletingName="VWM4_PR_LISTRowDeleting" msprop:Generator_RowChangingName="VWM4_PR_LISTRowChanging" msprop:Generator_RowEvHandlerName="VWM4_PR_LISTRowChangeEventHandler" msprop:Generator_RowDeletedName="VWM4_PR_LISTRowDeleted" msprop:Generator_UserTableName="VWM4_PR_LIST" msprop:Generator_RowChangedName="VWM4_PR_LISTRowChanged" msprop:Generator_RowEvArgName="VWM4_PR_LISTRowChangeEvent" msprop:Generator_RowClassName="VWM4_PR_LISTRow">
+        <xs:element name="VWM4_PR_LIST" msprop:Generator_TableClassName="VWM4_PR_LISTDataTable" msprop:Generator_TableVarName="tableVWM4_PR_LIST" msprop:Generator_RowChangedName="VWM4_PR_LISTRowChanged" msprop:Generator_TablePropName="VWM4_PR_LIST" msprop:Generator_RowDeletingName="VWM4_PR_LISTRowDeleting" msprop:Generator_RowChangingName="VWM4_PR_LISTRowChanging" msprop:Generator_RowEvHandlerName="VWM4_PR_LISTRowChangeEventHandler" msprop:Generator_RowDeletedName="VWM4_PR_LISTRowDeleted" msprop:Generator_RowClassName="VWM4_PR_LISTRow" msprop:Generator_UserTableName="VWM4_PR_LIST" msprop:Generator_RowEvArgName="VWM4_PR_LISTRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="PR_PRNO" msprop:Generator_ColumnVarNameInTable="columnPR_PRNO" msprop:Generator_ColumnPropNameInRow="PR_PRNO" msprop:Generator_ColumnPropNameInTable="PR_PRNOColumn" msprop:Generator_UserColumnName="PR_PRNO">
@@ -1909,7 +1906,7 @@ WHERE (ITEM_CODE IN (SELECT ITEM_CODE FROM tblM4_INVENTORY_ACCOUNTABLE_OFFICER))
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="VWM4_PCM_LIST" msprop:Generator_TableClassName="VWM4_PCM_LISTDataTable" msprop:Generator_TableVarName="tableVWM4_PCM_LIST" msprop:Generator_TablePropName="VWM4_PCM_LIST" msprop:Generator_RowDeletingName="VWM4_PCM_LISTRowDeleting" msprop:Generator_RowChangingName="VWM4_PCM_LISTRowChanging" msprop:Generator_RowEvHandlerName="VWM4_PCM_LISTRowChangeEventHandler" msprop:Generator_RowDeletedName="VWM4_PCM_LISTRowDeleted" msprop:Generator_UserTableName="VWM4_PCM_LIST" msprop:Generator_RowChangedName="VWM4_PCM_LISTRowChanged" msprop:Generator_RowEvArgName="VWM4_PCM_LISTRowChangeEvent" msprop:Generator_RowClassName="VWM4_PCM_LISTRow">
+        <xs:element name="VWM4_PCM_LIST" msprop:Generator_TableClassName="VWM4_PCM_LISTDataTable" msprop:Generator_TableVarName="tableVWM4_PCM_LIST" msprop:Generator_RowChangedName="VWM4_PCM_LISTRowChanged" msprop:Generator_TablePropName="VWM4_PCM_LIST" msprop:Generator_RowDeletingName="VWM4_PCM_LISTRowDeleting" msprop:Generator_RowChangingName="VWM4_PCM_LISTRowChanging" msprop:Generator_RowEvHandlerName="VWM4_PCM_LISTRowChangeEventHandler" msprop:Generator_RowDeletedName="VWM4_PCM_LISTRowDeleted" msprop:Generator_RowClassName="VWM4_PCM_LISTRow" msprop:Generator_UserTableName="VWM4_PCM_LIST" msprop:Generator_RowEvArgName="VWM4_PCM_LISTRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="PCOM_ID" msprop:Generator_ColumnVarNameInTable="columnPCOM_ID" msprop:Generator_ColumnPropNameInRow="PCOM_ID" msprop:Generator_ColumnPropNameInTable="PCOM_IDColumn" msprop:Generator_UserColumnName="PCOM_ID">
@@ -1958,7 +1955,7 @@ WHERE (ITEM_CODE IN (SELECT ITEM_CODE FROM tblM4_INVENTORY_ACCOUNTABLE_OFFICER))
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="VWM4_INV_ITEM_DR_LIST" msprop:Generator_TableClassName="VWM4_INV_ITEM_DR_LISTDataTable" msprop:Generator_TableVarName="tableVWM4_INV_ITEM_DR_LIST" msprop:Generator_RowChangedName="VWM4_INV_ITEM_DR_LISTRowChanged" msprop:Generator_TablePropName="VWM4_INV_ITEM_DR_LIST" msprop:Generator_RowDeletingName="VWM4_INV_ITEM_DR_LISTRowDeleting" msprop:Generator_RowChangingName="VWM4_INV_ITEM_DR_LISTRowChanging" msprop:Generator_RowEvHandlerName="VWM4_INV_ITEM_DR_LISTRowChangeEventHandler" msprop:Generator_RowDeletedName="VWM4_INV_ITEM_DR_LISTRowDeleted" msprop:Generator_RowClassName="VWM4_INV_ITEM_DR_LISTRow" msprop:Generator_UserTableName="VWM4_INV_ITEM_DR_LIST" msprop:Generator_RowEvArgName="VWM4_INV_ITEM_DR_LISTRowChangeEvent">
+        <xs:element name="VWM4_INV_ITEM_DR_LIST" msprop:Generator_TableClassName="VWM4_INV_ITEM_DR_LISTDataTable" msprop:Generator_TableVarName="tableVWM4_INV_ITEM_DR_LIST" msprop:Generator_TablePropName="VWM4_INV_ITEM_DR_LIST" msprop:Generator_RowDeletingName="VWM4_INV_ITEM_DR_LISTRowDeleting" msprop:Generator_RowChangingName="VWM4_INV_ITEM_DR_LISTRowChanging" msprop:Generator_RowEvHandlerName="VWM4_INV_ITEM_DR_LISTRowChangeEventHandler" msprop:Generator_RowDeletedName="VWM4_INV_ITEM_DR_LISTRowDeleted" msprop:Generator_UserTableName="VWM4_INV_ITEM_DR_LIST" msprop:Generator_RowChangedName="VWM4_INV_ITEM_DR_LISTRowChanged" msprop:Generator_RowEvArgName="VWM4_INV_ITEM_DR_LISTRowChangeEvent" msprop:Generator_RowClassName="VWM4_INV_ITEM_DR_LISTRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="DR_ID" msprop:Generator_ColumnVarNameInTable="columnDR_ID" msprop:Generator_ColumnPropNameInRow="DR_ID" msprop:Generator_ColumnPropNameInTable="DR_IDColumn" msprop:Generator_UserColumnName="DR_ID">
@@ -2013,7 +2010,7 @@ WHERE (ITEM_CODE IN (SELECT ITEM_CODE FROM tblM4_INVENTORY_ACCOUNTABLE_OFFICER))
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="VWM4_INV_ITEM_LIST_DR" msprop:Generator_TableClassName="VWM4_INV_ITEM_LIST_DRDataTable" msprop:Generator_TableVarName="tableVWM4_INV_ITEM_LIST_DR" msprop:Generator_RowChangedName="VWM4_INV_ITEM_LIST_DRRowChanged" msprop:Generator_TablePropName="VWM4_INV_ITEM_LIST_DR" msprop:Generator_RowDeletingName="VWM4_INV_ITEM_LIST_DRRowDeleting" msprop:Generator_RowChangingName="VWM4_INV_ITEM_LIST_DRRowChanging" msprop:Generator_RowEvHandlerName="VWM4_INV_ITEM_LIST_DRRowChangeEventHandler" msprop:Generator_RowDeletedName="VWM4_INV_ITEM_LIST_DRRowDeleted" msprop:Generator_RowClassName="VWM4_INV_ITEM_LIST_DRRow" msprop:Generator_UserTableName="VWM4_INV_ITEM_LIST_DR" msprop:Generator_RowEvArgName="VWM4_INV_ITEM_LIST_DRRowChangeEvent">
+        <xs:element name="VWM4_INV_ITEM_LIST_DR" msprop:Generator_TableClassName="VWM4_INV_ITEM_LIST_DRDataTable" msprop:Generator_TableVarName="tableVWM4_INV_ITEM_LIST_DR" msprop:Generator_TablePropName="VWM4_INV_ITEM_LIST_DR" msprop:Generator_RowDeletingName="VWM4_INV_ITEM_LIST_DRRowDeleting" msprop:Generator_RowChangingName="VWM4_INV_ITEM_LIST_DRRowChanging" msprop:Generator_RowEvHandlerName="VWM4_INV_ITEM_LIST_DRRowChangeEventHandler" msprop:Generator_RowDeletedName="VWM4_INV_ITEM_LIST_DRRowDeleted" msprop:Generator_UserTableName="VWM4_INV_ITEM_LIST_DR" msprop:Generator_RowChangedName="VWM4_INV_ITEM_LIST_DRRowChanged" msprop:Generator_RowEvArgName="VWM4_INV_ITEM_LIST_DRRowChangeEvent" msprop:Generator_RowClassName="VWM4_INV_ITEM_LIST_DRRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="DR_ID" msprop:Generator_ColumnVarNameInTable="columnDR_ID" msprop:Generator_ColumnPropNameInRow="DR_ID" msprop:Generator_ColumnPropNameInTable="DR_IDColumn" msprop:Generator_UserColumnName="DR_ID" minOccurs="0">
@@ -2139,7 +2136,7 @@ WHERE (ITEM_CODE IN (SELECT ITEM_CODE FROM tblM4_INVENTORY_ACCOUNTABLE_OFFICER))
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="VWG3_INVOICE_LIST" msprop:Generator_TableClassName="VWG3_INVOICE_LISTDataTable" msprop:Generator_TableVarName="tableVWG3_INVOICE_LIST" msprop:Generator_TablePropName="VWG3_INVOICE_LIST" msprop:Generator_RowDeletingName="VWG3_INVOICE_LISTRowDeleting" msprop:Generator_RowChangingName="VWG3_INVOICE_LISTRowChanging" msprop:Generator_RowEvHandlerName="VWG3_INVOICE_LISTRowChangeEventHandler" msprop:Generator_RowDeletedName="VWG3_INVOICE_LISTRowDeleted" msprop:Generator_UserTableName="VWG3_INVOICE_LIST" msprop:Generator_RowChangedName="VWG3_INVOICE_LISTRowChanged" msprop:Generator_RowEvArgName="VWG3_INVOICE_LISTRowChangeEvent" msprop:Generator_RowClassName="VWG3_INVOICE_LISTRow">
+        <xs:element name="VWG3_INVOICE_LIST" msprop:Generator_TableClassName="VWG3_INVOICE_LISTDataTable" msprop:Generator_TableVarName="tableVWG3_INVOICE_LIST" msprop:Generator_RowChangedName="VWG3_INVOICE_LISTRowChanged" msprop:Generator_TablePropName="VWG3_INVOICE_LIST" msprop:Generator_RowDeletingName="VWG3_INVOICE_LISTRowDeleting" msprop:Generator_RowChangingName="VWG3_INVOICE_LISTRowChanging" msprop:Generator_RowEvHandlerName="VWG3_INVOICE_LISTRowChangeEventHandler" msprop:Generator_RowDeletedName="VWG3_INVOICE_LISTRowDeleted" msprop:Generator_RowClassName="VWG3_INVOICE_LISTRow" msprop:Generator_UserTableName="VWG3_INVOICE_LIST" msprop:Generator_RowEvArgName="VWG3_INVOICE_LISTRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="INV_ID" msprop:Generator_ColumnVarNameInTable="columnINV_ID" msprop:Generator_ColumnPropNameInRow="INV_ID" msprop:Generator_ColumnPropNameInTable="INV_IDColumn" msprop:Generator_UserColumnName="INV_ID">
@@ -2237,7 +2234,7 @@ WHERE (ITEM_CODE IN (SELECT ITEM_CODE FROM tblM4_INVENTORY_ACCOUNTABLE_OFFICER))
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="VWM4_STOCK_LIST" msprop:Generator_TableClassName="VWM4_STOCK_LISTDataTable" msprop:Generator_TableVarName="tableVWM4_STOCK_LIST" msprop:Generator_RowChangedName="VWM4_STOCK_LISTRowChanged" msprop:Generator_TablePropName="VWM4_STOCK_LIST" msprop:Generator_RowDeletingName="VWM4_STOCK_LISTRowDeleting" msprop:Generator_RowChangingName="VWM4_STOCK_LISTRowChanging" msprop:Generator_RowEvHandlerName="VWM4_STOCK_LISTRowChangeEventHandler" msprop:Generator_RowDeletedName="VWM4_STOCK_LISTRowDeleted" msprop:Generator_RowClassName="VWM4_STOCK_LISTRow" msprop:Generator_UserTableName="VWM4_STOCK_LIST" msprop:Generator_RowEvArgName="VWM4_STOCK_LISTRowChangeEvent">
+        <xs:element name="VWM4_STOCK_LIST" msprop:Generator_TableClassName="VWM4_STOCK_LISTDataTable" msprop:Generator_TableVarName="tableVWM4_STOCK_LIST" msprop:Generator_TablePropName="VWM4_STOCK_LIST" msprop:Generator_RowDeletingName="VWM4_STOCK_LISTRowDeleting" msprop:Generator_RowChangingName="VWM4_STOCK_LISTRowChanging" msprop:Generator_RowEvHandlerName="VWM4_STOCK_LISTRowChangeEventHandler" msprop:Generator_RowDeletedName="VWM4_STOCK_LISTRowDeleted" msprop:Generator_UserTableName="VWM4_STOCK_LIST" msprop:Generator_RowChangedName="VWM4_STOCK_LISTRowChanged" msprop:Generator_RowEvArgName="VWM4_STOCK_LISTRowChangeEvent" msprop:Generator_RowClassName="VWM4_STOCK_LISTRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ITEM_CODE" msprop:Generator_ColumnVarNameInTable="columnITEM_CODE" msprop:Generator_ColumnPropNameInRow="ITEM_CODE" msprop:Generator_ColumnPropNameInTable="ITEM_CODEColumn" msprop:Generator_UserColumnName="ITEM_CODE">
@@ -2306,7 +2303,7 @@ WHERE (ITEM_CODE IN (SELECT ITEM_CODE FROM tblM4_INVENTORY_ACCOUNTABLE_OFFICER))
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="VWM4_INV_ITEMS_LIST" msprop:Generator_TableClassName="VWM4_INV_ITEMS_LISTDataTable" msprop:Generator_TableVarName="tableVWM4_INV_ITEMS_LIST" msprop:Generator_TablePropName="VWM4_INV_ITEMS_LIST" msprop:Generator_RowDeletingName="VWM4_INV_ITEMS_LISTRowDeleting" msprop:Generator_RowChangingName="VWM4_INV_ITEMS_LISTRowChanging" msprop:Generator_RowEvHandlerName="VWM4_INV_ITEMS_LISTRowChangeEventHandler" msprop:Generator_RowDeletedName="VWM4_INV_ITEMS_LISTRowDeleted" msprop:Generator_UserTableName="VWM4_INV_ITEMS_LIST" msprop:Generator_RowChangedName="VWM4_INV_ITEMS_LISTRowChanged" msprop:Generator_RowEvArgName="VWM4_INV_ITEMS_LISTRowChangeEvent" msprop:Generator_RowClassName="VWM4_INV_ITEMS_LISTRow">
+        <xs:element name="VWM4_INV_ITEMS_LIST" msprop:Generator_TableClassName="VWM4_INV_ITEMS_LISTDataTable" msprop:Generator_TableVarName="tableVWM4_INV_ITEMS_LIST" msprop:Generator_RowChangedName="VWM4_INV_ITEMS_LISTRowChanged" msprop:Generator_TablePropName="VWM4_INV_ITEMS_LIST" msprop:Generator_RowDeletingName="VWM4_INV_ITEMS_LISTRowDeleting" msprop:Generator_RowChangingName="VWM4_INV_ITEMS_LISTRowChanging" msprop:Generator_RowEvHandlerName="VWM4_INV_ITEMS_LISTRowChangeEventHandler" msprop:Generator_RowDeletedName="VWM4_INV_ITEMS_LISTRowDeleted" msprop:Generator_RowClassName="VWM4_INV_ITEMS_LISTRow" msprop:Generator_UserTableName="VWM4_INV_ITEMS_LIST" msprop:Generator_RowEvArgName="VWM4_INV_ITEMS_LISTRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ITEM_CODE" msprop:Generator_ColumnVarNameInTable="columnITEM_CODE" msprop:Generator_ColumnPropNameInRow="ITEM_CODE" msprop:Generator_ColumnPropNameInTable="ITEM_CODEColumn" msprop:Generator_UserColumnName="ITEM_CODE">
@@ -2362,7 +2359,7 @@ WHERE (ITEM_CODE IN (SELECT ITEM_CODE FROM tblM4_INVENTORY_ACCOUNTABLE_OFFICER))
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="VWM4_PCM_DETAILS" msprop:Generator_TableClassName="VWM4_PCM_DETAILSDataTable" msprop:Generator_TableVarName="tableVWM4_PCM_DETAILS" msprop:Generator_TablePropName="VWM4_PCM_DETAILS" msprop:Generator_RowDeletingName="VWM4_PCM_DETAILSRowDeleting" msprop:Generator_RowChangingName="VWM4_PCM_DETAILSRowChanging" msprop:Generator_RowEvHandlerName="VWM4_PCM_DETAILSRowChangeEventHandler" msprop:Generator_RowDeletedName="VWM4_PCM_DETAILSRowDeleted" msprop:Generator_UserTableName="VWM4_PCM_DETAILS" msprop:Generator_RowChangedName="VWM4_PCM_DETAILSRowChanged" msprop:Generator_RowEvArgName="VWM4_PCM_DETAILSRowChangeEvent" msprop:Generator_RowClassName="VWM4_PCM_DETAILSRow">
+        <xs:element name="VWM4_PCM_DETAILS" msprop:Generator_TableClassName="VWM4_PCM_DETAILSDataTable" msprop:Generator_TableVarName="tableVWM4_PCM_DETAILS" msprop:Generator_RowChangedName="VWM4_PCM_DETAILSRowChanged" msprop:Generator_TablePropName="VWM4_PCM_DETAILS" msprop:Generator_RowDeletingName="VWM4_PCM_DETAILSRowDeleting" msprop:Generator_RowChangingName="VWM4_PCM_DETAILSRowChanging" msprop:Generator_RowEvHandlerName="VWM4_PCM_DETAILSRowChangeEventHandler" msprop:Generator_RowDeletedName="VWM4_PCM_DETAILSRowDeleted" msprop:Generator_RowClassName="VWM4_PCM_DETAILSRow" msprop:Generator_UserTableName="VWM4_PCM_DETAILS" msprop:Generator_RowEvArgName="VWM4_PCM_DETAILSRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="PCOM_ID" msprop:Generator_ColumnVarNameInTable="columnPCOM_ID" msprop:Generator_ColumnPropNameInRow="PCOM_ID" msprop:Generator_ColumnPropNameInTable="PCOM_IDColumn" msprop:Generator_UserColumnName="PCOM_ID">
@@ -2449,7 +2446,7 @@ WHERE (ITEM_CODE IN (SELECT ITEM_CODE FROM tblM4_INVENTORY_ACCOUNTABLE_OFFICER))
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="VWM4_ITEM_ASS" msprop:Generator_TableClassName="VWM4_ITEM_ASSDataTable" msprop:Generator_TableVarName="tableVWM4_ITEM_ASS" msprop:Generator_TablePropName="VWM4_ITEM_ASS" msprop:Generator_RowDeletingName="VWM4_ITEM_ASSRowDeleting" msprop:Generator_RowChangingName="VWM4_ITEM_ASSRowChanging" msprop:Generator_RowEvHandlerName="VWM4_ITEM_ASSRowChangeEventHandler" msprop:Generator_RowDeletedName="VWM4_ITEM_ASSRowDeleted" msprop:Generator_UserTableName="VWM4_ITEM_ASS" msprop:Generator_RowChangedName="VWM4_ITEM_ASSRowChanged" msprop:Generator_RowEvArgName="VWM4_ITEM_ASSRowChangeEvent" msprop:Generator_RowClassName="VWM4_ITEM_ASSRow">
+        <xs:element name="VWM4_ITEM_ASS" msprop:Generator_TableClassName="VWM4_ITEM_ASSDataTable" msprop:Generator_TableVarName="tableVWM4_ITEM_ASS" msprop:Generator_RowChangedName="VWM4_ITEM_ASSRowChanged" msprop:Generator_TablePropName="VWM4_ITEM_ASS" msprop:Generator_RowDeletingName="VWM4_ITEM_ASSRowDeleting" msprop:Generator_RowChangingName="VWM4_ITEM_ASSRowChanging" msprop:Generator_RowEvHandlerName="VWM4_ITEM_ASSRowChangeEventHandler" msprop:Generator_RowDeletedName="VWM4_ITEM_ASSRowDeleted" msprop:Generator_RowClassName="VWM4_ITEM_ASSRow" msprop:Generator_UserTableName="VWM4_ITEM_ASS" msprop:Generator_RowEvArgName="VWM4_ITEM_ASSRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ITEM_CODE" msprop:Generator_ColumnVarNameInTable="columnITEM_CODE" msprop:Generator_ColumnPropNameInRow="ITEM_CODE" msprop:Generator_ColumnPropNameInTable="ITEM_CODEColumn" msprop:Generator_UserColumnName="ITEM_CODE">

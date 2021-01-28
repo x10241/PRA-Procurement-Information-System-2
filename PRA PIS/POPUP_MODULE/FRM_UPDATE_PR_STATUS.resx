@@ -543,7 +543,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;PNL.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="WTXT_POSTED_REMARKS.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 12.75pt</value>
@@ -774,7 +774,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;PNL_POSTED.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="BTN_PRS_CANCELED_PO.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -1196,7 +1196,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Panel2.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="BTN_PSR_SAVE.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>None</value>
@@ -1241,7 +1241,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;BTN_PSR_SAVE.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="BTN_PNL_PART_CANCEL.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 9.75pt</value>
@@ -2777,7 +2777,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;PNL_FOR_EVALUATION.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="WatermarkTextBox6.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 12.75pt</value>
@@ -3011,7 +3011,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Panel3.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="WatermarkTextBox8.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 12.75pt</value>
@@ -3245,7 +3245,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Panel4.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="WatermarkTextBox10.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 12.75pt</value>
@@ -3479,7 +3479,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Panel5.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="DataGridViewTextBoxColumn1.HeaderText" xml:space="preserve">
     <value>PR_PRNO</value>
@@ -3515,7 +3515,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;TblM4_PURCHASEREQUEST_POSTEDDataGridView.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <metadata name="TblM4_PURCHASEREQUEST_POSTEDTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -3566,11 +3566,647 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;BTN_PSR_CANCEL.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <metadata name="TBLM4_PURCHASEREQUEST_SUP_CATTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>1150, 56</value>
   </metadata>
+  <data name="Panel6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 110</value>
+  </data>
+  <data name="Panel6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>330, 256</value>
+  </data>
+  <data name="Panel6.TabIndex" type="System.Int32, mscorlib">
+    <value>1456</value>
+  </data>
+  <data name="&gt;&gt;Panel6.Name" xml:space="preserve">
+    <value>Panel6</value>
+  </data>
+  <data name="&gt;&gt;Panel6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Panel6.Parent" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="&gt;&gt;Panel6.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ComboBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>126, 80</value>
+  </data>
+  <data name="ComboBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 24</value>
+  </data>
+  <data name="ComboBox2.TabIndex" type="System.Int32, mscorlib">
+    <value>1455</value>
+  </data>
+  <data name="&gt;&gt;ComboBox2.Name" xml:space="preserve">
+    <value>ComboBox2</value>
+  </data>
+  <data name="&gt;&gt;ComboBox2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ComboBox2.Parent" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="&gt;&gt;ComboBox2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Label27.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label27.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 9.75pt, style=Bold, Italic</value>
+  </data>
+  <data name="Label27.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label27.Location" type="System.Drawing.Point, System.Drawing">
+    <value>27, 85</value>
+  </data>
+  <data name="Label27.Size" type="System.Drawing.Size, System.Drawing">
+    <value>99, 16</value>
+  </data>
+  <data name="Label27.TabIndex" type="System.Int32, mscorlib">
+    <value>1454</value>
+  </data>
+  <data name="Label27.Text" xml:space="preserve">
+    <value>Delivere days:</value>
+  </data>
+  <data name="&gt;&gt;Label27.Name" xml:space="preserve">
+    <value>Label27</value>
+  </data>
+  <data name="&gt;&gt;Label27.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label27.Parent" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="&gt;&gt;Label27.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="Label25.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label25.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 9.75pt, style=Bold, Italic</value>
+  </data>
+  <data name="Label25.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label25.Location" type="System.Drawing.Point, System.Drawing">
+    <value>277, 85</value>
+  </data>
+  <data name="Label25.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 16</value>
+  </data>
+  <data name="Label25.TabIndex" type="System.Int32, mscorlib">
+    <value>1453</value>
+  </data>
+  <data name="Label25.Text" xml:space="preserve">
+    <value>Term of payment:</value>
+  </data>
+  <data name="&gt;&gt;Label25.Name" xml:space="preserve">
+    <value>Label25</value>
+  </data>
+  <data name="&gt;&gt;Label25.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label25.Parent" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="&gt;&gt;Label25.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="Label31.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label31.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 9.75pt, style=Bold, Italic</value>
+  </data>
+  <data name="Label31.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label31.Location" type="System.Drawing.Point, System.Drawing">
+    <value>919, 315</value>
+  </data>
+  <data name="Label31.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 16</value>
+  </data>
+  <data name="Label31.TabIndex" type="System.Int32, mscorlib">
+    <value>1452</value>
+  </data>
+  <data name="&gt;&gt;Label31.Name" xml:space="preserve">
+    <value>Label31</value>
+  </data>
+  <data name="&gt;&gt;Label31.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label31.Parent" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="&gt;&gt;Label31.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="WatermarkTextBox15.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 9pt</value>
+  </data>
+  <data name="WatermarkTextBox15.Location" type="System.Drawing.Point, System.Drawing">
+    <value>436, 383</value>
+  </data>
+  <data name="WatermarkTextBox15.MaxLength" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <data name="WatermarkTextBox15.Size" type="System.Drawing.Size, System.Drawing">
+    <value>403, 15</value>
+  </data>
+  <data name="WatermarkTextBox15.TabIndex" type="System.Int32, mscorlib">
+    <value>1448</value>
+  </data>
+  <data name="&gt;&gt;WatermarkTextBox15.Name" xml:space="preserve">
+    <value>WatermarkTextBox15</value>
+  </data>
+  <data name="&gt;&gt;WatermarkTextBox15.Type" xml:space="preserve">
+    <value>PRA_PIS.WatermarkTextBox, PRA PIS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;WatermarkTextBox15.Parent" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="&gt;&gt;WatermarkTextBox15.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="Label34.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label34.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 9.75pt, style=Bold, Italic</value>
+  </data>
+  <data name="Label34.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label34.Location" type="System.Drawing.Point, System.Drawing">
+    <value>441, 367</value>
+  </data>
+  <data name="Label34.Size" type="System.Drawing.Size, System.Drawing">
+    <value>102, 16</value>
+  </data>
+  <data name="Label34.TabIndex" type="System.Int32, mscorlib">
+    <value>1449</value>
+  </data>
+  <data name="Label34.Text" xml:space="preserve">
+    <value>Approved by :</value>
+  </data>
+  <data name="&gt;&gt;Label34.Name" xml:space="preserve">
+    <value>Label34</value>
+  </data>
+  <data name="&gt;&gt;Label34.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label34.Parent" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="&gt;&gt;Label34.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="Label35.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label35.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 9.75pt, style=Bold, Italic</value>
+  </data>
+  <data name="Label35.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label35.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 367</value>
+  </data>
+  <data name="Label35.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 16</value>
+  </data>
+  <data name="Label35.TabIndex" type="System.Int32, mscorlib">
+    <value>1448</value>
+  </data>
+  <data name="Label35.Text" xml:space="preserve">
+    <value>Recommending Approval:</value>
+  </data>
+  <data name="&gt;&gt;Label35.Name" xml:space="preserve">
+    <value>Label35</value>
+  </data>
+  <data name="&gt;&gt;Label35.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label35.Parent" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="&gt;&gt;Label35.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="WatermarkTextBox16.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 9pt</value>
+  </data>
+  <data name="WatermarkTextBox16.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 383</value>
+  </data>
+  <data name="WatermarkTextBox16.MaxLength" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <data name="WatermarkTextBox16.Size" type="System.Drawing.Size, System.Drawing">
+    <value>407, 15</value>
+  </data>
+  <data name="WatermarkTextBox16.TabIndex" type="System.Int32, mscorlib">
+    <value>1447</value>
+  </data>
+  <data name="&gt;&gt;WatermarkTextBox16.Name" xml:space="preserve">
+    <value>WatermarkTextBox16</value>
+  </data>
+  <data name="&gt;&gt;WatermarkTextBox16.Type" xml:space="preserve">
+    <value>PRA_PIS.WatermarkTextBox, PRA PIS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;WatermarkTextBox16.Parent" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="&gt;&gt;WatermarkTextBox16.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="ComboBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>401, 80</value>
+  </data>
+  <data name="ComboBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>172, 24</value>
+  </data>
+  <data name="ComboBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>1446</value>
+  </data>
+  <data name="&gt;&gt;ComboBox1.Name" xml:space="preserve">
+    <value>ComboBox1</value>
+  </data>
+  <data name="&gt;&gt;ComboBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ComboBox1.Parent" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="&gt;&gt;ComboBox1.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <metadata name="DataGridViewTextBoxColumn15.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="DataGridViewTextBoxColumn15.HeaderText" xml:space="preserve">
+    <value>Particulars</value>
+  </data>
+  <metadata name="DataGridViewTextBoxColumn16.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="DataGridViewTextBoxColumn16.HeaderText" xml:space="preserve">
+    <value>Qty</value>
+  </data>
+  <data name="DataGridViewTextBoxColumn16.Width" type="System.Int32, mscorlib">
+    <value>80</value>
+  </data>
+  <metadata name="DataGridViewTextBoxColumn17.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="DataGridViewTextBoxColumn17.HeaderText" xml:space="preserve">
+    <value>Unit</value>
+  </data>
+  <data name="DataGridViewTextBoxColumn17.Width" type="System.Int32, mscorlib">
+    <value>70</value>
+  </data>
+  <metadata name="DataGridViewTextBoxColumn18.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="DataGridViewTextBoxColumn18.HeaderText" xml:space="preserve">
+    <value>Unit cost</value>
+  </data>
+  <metadata name="DataGridViewTextBoxColumn19.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="DataGridViewTextBoxColumn19.HeaderText" xml:space="preserve">
+    <value>Total cost</value>
+  </data>
+  <data name="DataGridViewTextBoxColumn20.HeaderText" xml:space="preserve">
+    <value>BID_NO</value>
+  </data>
+  <data name="DataGridViewTextBoxColumn20.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="DataGridViewTextBoxColumn21.HeaderText" xml:space="preserve">
+    <value>PART_LIST_NO</value>
+  </data>
+  <data name="DataGridViewTextBoxColumn21.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <metadata name="DataGridViewButtonColumn3.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="DataGridViewButtonColumn3.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DataGridViewButtonColumn3.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="DataGridViewButtonColumn3.Width" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <metadata name="DataGridViewButtonColumn4.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="DataGridViewButtonColumn4.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DataGridViewButtonColumn4.Width" type="System.Int32, mscorlib">
+    <value>70</value>
+  </data>
+  <data name="DataGridView2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>336, 110</value>
+  </data>
+  <data name="DataGridView2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>742, 256</value>
+  </data>
+  <data name="DataGridView2.TabIndex" type="System.Int32, mscorlib">
+    <value>1443</value>
+  </data>
+  <data name="&gt;&gt;DataGridView2.Name" xml:space="preserve">
+    <value>DataGridView2</value>
+  </data>
+  <data name="&gt;&gt;DataGridView2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DataGridView2.Parent" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="&gt;&gt;DataGridView2.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="Label37.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label37.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 9.75pt, style=Bold, Italic</value>
+  </data>
+  <data name="Label37.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label37.Location" type="System.Drawing.Point, System.Drawing">
+    <value>100, 342</value>
+  </data>
+  <data name="Label37.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 16</value>
+  </data>
+  <data name="Label37.TabIndex" type="System.Int32, mscorlib">
+    <value>1442</value>
+  </data>
+  <data name="&gt;&gt;Label37.Name" xml:space="preserve">
+    <value>Label37</value>
+  </data>
+  <data name="&gt;&gt;Label37.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label37.Parent" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="&gt;&gt;Label37.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="Button3.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 9.75pt</value>
+  </data>
+  <data name="Button3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Button3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>851, 377</value>
+  </data>
+  <data name="Button3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 27</value>
+  </data>
+  <data name="Button3.TabIndex" type="System.Int32, mscorlib">
+    <value>1441</value>
+  </data>
+  <data name="Button3.Text" xml:space="preserve">
+    <value>Preview</value>
+  </data>
+  <data name="&gt;&gt;Button3.Name" xml:space="preserve">
+    <value>Button3</value>
+  </data>
+  <data name="&gt;&gt;Button3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Button3.Parent" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="&gt;&gt;Button3.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="Label38.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label38.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 9.75pt</value>
+  </data>
+  <data name="Label38.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label38.Location" type="System.Drawing.Point, System.Drawing">
+    <value>797, 385</value>
+  </data>
+  <data name="Label38.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 17</value>
+  </data>
+  <data name="Label38.TabIndex" type="System.Int32, mscorlib">
+    <value>1440</value>
+  </data>
+  <data name="&gt;&gt;Label38.Name" xml:space="preserve">
+    <value>Label38</value>
+  </data>
+  <data name="&gt;&gt;Label38.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label38.Parent" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="&gt;&gt;Label38.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="Label42.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label42.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 14.25pt, style=Bold, Italic, Underline</value>
+  </data>
+  <data name="Label42.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label42.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 6</value>
+  </data>
+  <data name="Label42.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 23</value>
+  </data>
+  <data name="Label42.TabIndex" type="System.Int32, mscorlib">
+    <value>1429</value>
+  </data>
+  <data name="Label42.Text" xml:space="preserve">
+    <value>Purchase order</value>
+  </data>
+  <data name="&gt;&gt;Label42.Name" xml:space="preserve">
+    <value>Label42</value>
+  </data>
+  <data name="&gt;&gt;Label42.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label42.Parent" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="&gt;&gt;Label42.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="WatermarkTextBox18.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 11.25pt</value>
+  </data>
+  <data name="WatermarkTextBox18.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 53</value>
+  </data>
+  <data name="WatermarkTextBox18.MaxLength" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="WatermarkTextBox18.Size" type="System.Drawing.Size, System.Drawing">
+    <value>541, 19</value>
+  </data>
+  <data name="WatermarkTextBox18.TabIndex" type="System.Int32, mscorlib">
+    <value>1428</value>
+  </data>
+  <data name="&gt;&gt;WatermarkTextBox18.Name" xml:space="preserve">
+    <value>WatermarkTextBox18</value>
+  </data>
+  <data name="&gt;&gt;WatermarkTextBox18.Type" xml:space="preserve">
+    <value>PRA_PIS.WatermarkTextBox, PRA PIS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;WatermarkTextBox18.Parent" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="&gt;&gt;WatermarkTextBox18.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="Label43.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label43.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 9.75pt, style=Bold</value>
+  </data>
+  <data name="Label43.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label43.Location" type="System.Drawing.Point, System.Drawing">
+    <value>27, 38</value>
+  </data>
+  <data name="Label43.Size" type="System.Drawing.Size, System.Drawing">
+    <value>162, 16</value>
+  </data>
+  <data name="Label43.TabIndex" type="System.Int32, mscorlib">
+    <value>1341</value>
+  </data>
+  <data name="Label43.Text" xml:space="preserve">
+    <value>REQUISITIONING GROUP</value>
+  </data>
+  <data name="&gt;&gt;Label43.Name" xml:space="preserve">
+    <value>Label43</value>
+  </data>
+  <data name="&gt;&gt;Label43.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label43.Parent" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="&gt;&gt;Label43.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="ShapeContainer10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="ShapeContainer10.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="RectangleShape27.BorderColor" type="System.Drawing.Color, System.Drawing">
+    <value>DimGray</value>
+  </data>
+  <data name="RectangleShape27.CornerRadius" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="RectangleShape27.Location" type="System.Drawing.Point, System.Drawing">
+    <value>430, 377</value>
+  </data>
+  <data name="RectangleShape27.Size" type="System.Drawing.Size, System.Drawing">
+    <value>417, 25</value>
+  </data>
+  <data name="RectangleShape28.BorderColor" type="System.Drawing.Color, System.Drawing">
+    <value>DimGray</value>
+  </data>
+  <data name="RectangleShape28.CornerRadius" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="RectangleShape28.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 377</value>
+  </data>
+  <data name="RectangleShape28.Size" type="System.Drawing.Size, System.Drawing">
+    <value>424, 25</value>
+  </data>
+  <data name="RectangleShape30.BorderColor" type="System.Drawing.Color, System.Drawing">
+    <value>ButtonShadow</value>
+  </data>
+  <data name="RectangleShape30.CornerRadius" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="RectangleShape30.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 48</value>
+  </data>
+  <data name="RectangleShape30.Size" type="System.Drawing.Size, System.Drawing">
+    <value>560, 27</value>
+  </data>
+  <data name="ShapeContainer10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1094, 412</value>
+  </data>
+  <data name="ShapeContainer10.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;ShapeContainer10.Name" xml:space="preserve">
+    <value>ShapeContainer10</value>
+  </data>
+  <data name="&gt;&gt;ShapeContainer10.Type" xml:space="preserve">
+    <value>Microsoft.VisualBasic.PowerPacks.ShapeContainer, Microsoft.VisualBasic.PowerPacks, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;ShapeContainer10.Parent" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="&gt;&gt;ShapeContainer10.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="Panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>152, 52</value>
+  </data>
+  <data name="Panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1096, 414</value>
+  </data>
+  <data name="Panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>1443</value>
+  </data>
+  <data name="Panel1.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;Panel1.Name" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="&gt;&gt;Panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Panel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -3793,6 +4429,60 @@
   <data name="&gt;&gt;DTPARTLISTBindingSource.Type" xml:space="preserve">
     <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;BIDNODataGridViewTextBoxColumn1.Name" xml:space="preserve">
+    <value>BIDNODataGridViewTextBoxColumn1</value>
+  </data>
+  <data name="&gt;&gt;BIDNODataGridViewTextBoxColumn1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TIN_NO.Name" xml:space="preserve">
+    <value>TIN_NO</value>
+  </data>
+  <data name="&gt;&gt;TIN_NO.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;COMPANY_NAME.Name" xml:space="preserve">
+    <value>COMPANY_NAME</value>
+  </data>
+  <data name="&gt;&gt;COMPANY_NAME.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CONT_NO.Name" xml:space="preserve">
+    <value>CONT_NO</value>
+  </data>
+  <data name="&gt;&gt;CONT_NO.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;FAX_NO.Name" xml:space="preserve">
+    <value>FAX_NO</value>
+  </data>
+  <data name="&gt;&gt;FAX_NO.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EMAIL_ADD.Name" xml:space="preserve">
+    <value>EMAIL_ADD</value>
+  </data>
+  <data name="&gt;&gt;EMAIL_ADD.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IS_WIN.Name" xml:space="preserve">
+    <value>IS_WIN</value>
+  </data>
+  <data name="&gt;&gt;IS_WIN.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Column1.Name" xml:space="preserve">
+    <value>Column1</value>
+  </data>
+  <data name="&gt;&gt;Column1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewButtonColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Column2.Name" xml:space="preserve">
+    <value>Column2</value>
+  </data>
+  <data name="&gt;&gt;Column2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewButtonColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;DTBIDLISTBindingSource.Name" xml:space="preserve">
     <value>DTBIDLISTBindingSource</value>
   </data>
@@ -3919,59 +4609,77 @@
   <data name="&gt;&gt;TBLM4_PURCHASEREQUEST_SUP_CATTableAdapter.Type" xml:space="preserve">
     <value>PRA_PIS.DS_PROPERTYDBTableAdapters.TBLM4_PURCHASEREQUEST_SUP_CATTableAdapter, DATASETS.DS_PROPERTYDB.Designer.vb.dll, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;BIDNODataGridViewTextBoxColumn1.Name" xml:space="preserve">
-    <value>BIDNODataGridViewTextBoxColumn1</value>
+  <data name="&gt;&gt;DataGridViewTextBoxColumn15.Name" xml:space="preserve">
+    <value>DataGridViewTextBoxColumn15</value>
   </data>
-  <data name="&gt;&gt;BIDNODataGridViewTextBoxColumn1.Type" xml:space="preserve">
+  <data name="&gt;&gt;DataGridViewTextBoxColumn15.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;TIN_NO.Name" xml:space="preserve">
-    <value>TIN_NO</value>
+  <data name="&gt;&gt;DataGridViewTextBoxColumn16.Name" xml:space="preserve">
+    <value>DataGridViewTextBoxColumn16</value>
   </data>
-  <data name="&gt;&gt;TIN_NO.Type" xml:space="preserve">
+  <data name="&gt;&gt;DataGridViewTextBoxColumn16.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;COMPANY_NAME.Name" xml:space="preserve">
-    <value>COMPANY_NAME</value>
+  <data name="&gt;&gt;DataGridViewTextBoxColumn17.Name" xml:space="preserve">
+    <value>DataGridViewTextBoxColumn17</value>
   </data>
-  <data name="&gt;&gt;COMPANY_NAME.Type" xml:space="preserve">
+  <data name="&gt;&gt;DataGridViewTextBoxColumn17.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;CONT_NO.Name" xml:space="preserve">
-    <value>CONT_NO</value>
+  <data name="&gt;&gt;DataGridViewTextBoxColumn18.Name" xml:space="preserve">
+    <value>DataGridViewTextBoxColumn18</value>
   </data>
-  <data name="&gt;&gt;CONT_NO.Type" xml:space="preserve">
+  <data name="&gt;&gt;DataGridViewTextBoxColumn18.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;FAX_NO.Name" xml:space="preserve">
-    <value>FAX_NO</value>
+  <data name="&gt;&gt;DataGridViewTextBoxColumn19.Name" xml:space="preserve">
+    <value>DataGridViewTextBoxColumn19</value>
   </data>
-  <data name="&gt;&gt;FAX_NO.Type" xml:space="preserve">
+  <data name="&gt;&gt;DataGridViewTextBoxColumn19.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;EMAIL_ADD.Name" xml:space="preserve">
-    <value>EMAIL_ADD</value>
+  <data name="&gt;&gt;DataGridViewTextBoxColumn20.Name" xml:space="preserve">
+    <value>DataGridViewTextBoxColumn20</value>
   </data>
-  <data name="&gt;&gt;EMAIL_ADD.Type" xml:space="preserve">
+  <data name="&gt;&gt;DataGridViewTextBoxColumn20.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;IS_WIN.Name" xml:space="preserve">
-    <value>IS_WIN</value>
+  <data name="&gt;&gt;DataGridViewTextBoxColumn21.Name" xml:space="preserve">
+    <value>DataGridViewTextBoxColumn21</value>
   </data>
-  <data name="&gt;&gt;IS_WIN.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;DataGridViewTextBoxColumn21.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;Column1.Name" xml:space="preserve">
-    <value>Column1</value>
+  <data name="&gt;&gt;DataGridViewButtonColumn3.Name" xml:space="preserve">
+    <value>DataGridViewButtonColumn3</value>
   </data>
-  <data name="&gt;&gt;Column1.Type" xml:space="preserve">
+  <data name="&gt;&gt;DataGridViewButtonColumn3.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewButtonColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;Column2.Name" xml:space="preserve">
-    <value>Column2</value>
+  <data name="&gt;&gt;DataGridViewButtonColumn4.Name" xml:space="preserve">
+    <value>DataGridViewButtonColumn4</value>
   </data>
-  <data name="&gt;&gt;Column2.Type" xml:space="preserve">
+  <data name="&gt;&gt;DataGridViewButtonColumn4.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewButtonColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RectangleShape27.Name" xml:space="preserve">
+    <value>RectangleShape27</value>
+  </data>
+  <data name="&gt;&gt;RectangleShape27.Type" xml:space="preserve">
+    <value>Microsoft.VisualBasic.PowerPacks.RectangleShape, Microsoft.VisualBasic.PowerPacks, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;RectangleShape28.Name" xml:space="preserve">
+    <value>RectangleShape28</value>
+  </data>
+  <data name="&gt;&gt;RectangleShape28.Type" xml:space="preserve">
+    <value>Microsoft.VisualBasic.PowerPacks.RectangleShape, Microsoft.VisualBasic.PowerPacks, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;RectangleShape30.Name" xml:space="preserve">
+    <value>RectangleShape30</value>
+  </data>
+  <data name="&gt;&gt;RectangleShape30.Type" xml:space="preserve">
+    <value>Microsoft.VisualBasic.PowerPacks.RectangleShape, Microsoft.VisualBasic.PowerPacks, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>FRM_UPDATE_PR_STATUS</value>

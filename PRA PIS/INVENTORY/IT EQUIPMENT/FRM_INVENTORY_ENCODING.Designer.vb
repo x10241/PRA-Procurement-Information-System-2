@@ -1583,7 +1583,7 @@ Partial Class FRM_INVENTORY_ENCODING
         Me.RectangleShape5.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
         Me.RectangleShape5.Location = New System.Drawing.Point(922, 60)
         Me.RectangleShape5.Name = "RectangleShape5"
-        Me.RectangleShape5.Size = New System.Drawing.Size(162, 39)
+        Me.RectangleShape5.Size = New System.Drawing.Size(161, 39)
         '
         'RECT_INV_ASSIGN
         '
@@ -4407,12 +4407,14 @@ Partial Class FRM_INVENTORY_ENCODING
         Me.TableAdapterManager.TBLM4_INV_ITEMS_NAMETableAdapter = Nothing
         Me.TableAdapterManager.TBLM4_INV_ITEMS_OTHERS_MAINTableAdapter = Nothing
         Me.TableAdapterManager.TBLM4_INV_ITEMS_OTHERSTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_ITEMS_PCOU_SETUPTableAdapter = Nothing
         Me.TableAdapterManager.TBLM4_INV_ITEMS_PCOUNT_MAINTableAdapter = Nothing
         Me.TableAdapterManager.TBLM4_INV_ITEMS_PCOUNTTableAdapter = Nothing
         Me.TableAdapterManager.TBLM4_INV_ITEMS_SIZE_MAINTableAdapter = Nothing
         Me.TableAdapterManager.TBLM4_INV_ITEMS_SIZETableAdapter = Nothing
         Me.TableAdapterManager.TBLM4_INV_ITEMS_STK_CTRLTableAdapter = Nothing
         Me.TableAdapterManager.TBLM4_INV_ITEMSTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_INV_STOCKSTableAdapter = Nothing
         Me.TableAdapterManager.tblM4_INVENTORY_ACCOUNTABLE_OFFICERTableAdapter = Nothing
         Me.TableAdapterManager.tblM4_INVENTORY_ACQUISITION_ITEM_USAGETableAdapter = Me.TblM4_INVENTORY_ACQUISITION_ITEM_USAGETableAdapter
         Me.TableAdapterManager.tblM4_INVENTORY_ACQUISITION_VALUETableAdapter = Me.TblM4_INVENTORY_ACQUISITION_VALUETableAdapter
@@ -4442,6 +4444,7 @@ Partial Class FRM_INVENTORY_ENCODING
         Me.TableAdapterManager.tblM4_PURCHASEREQUEST_POSTEDTableAdapter = Nothing
         Me.TableAdapterManager.tblM4_PURCHASEREQUEST_PROVIDERTableAdapter = Nothing
         Me.TableAdapterManager.tblM4_PURCHASEREQUEST_REVISIONTableAdapter = Nothing
+        Me.TableAdapterManager.TBLM4_PURCHASEREQUEST_SUP_CATTableAdapter = Nothing
         Me.TableAdapterManager.tblM4_PURCHASEREQUESTTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = PRA_PIS.DS_PROPERTYDBTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '

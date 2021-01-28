@@ -31,9 +31,11 @@ Partial Class FRM_ASSIGN_ITEMS
         Me.BTN_Minimize = New System.Windows.Forms.Button()
         Me.BTN_CLOSE = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.BTN_ASSIGN_ITEM = New System.Windows.Forms.Button()
         Me.BTN_GENERATE_REPORT = New System.Windows.Forms.Button()
         Me.ShapeContainer2 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
+        Me.RectangleShape2 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RectangleShape1 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RECT_INVENTORY_CANCEL = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -55,13 +57,10 @@ Partial Class FRM_ASSIGN_ITEMS
         Me.ACCOREMARKSDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ACCOASSIGNEDBYDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DATEAPPOINTEDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DATECREATEDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Expr1DataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ASSIORIGINATEDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.REMARKSDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ASSIASSIGNEDBYDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DATEASSIGNEDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Expr2DataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.BTN_REASSIGN = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.VWM4_ITEM_ASSBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DS_VIEWS = New PRA_PIS.DS_VIEWS()
@@ -69,8 +68,9 @@ Partial Class FRM_ASSIGN_ITEMS
         Me.RECT_PRCANCELEDIT = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.VWM4_ITEM_ASSTableAdapter = New PRA_PIS.DS_VIEWSTableAdapters.VWM4_ITEM_ASSTableAdapter()
         Me.TableAdapterManager = New PRA_PIS.DS_VIEWSTableAdapters.TableAdapterManager()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.RectangleShape2 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.GroupBox7 = New System.Windows.Forms.GroupBox()
+        Me.LLBL_TOT_REC = New System.Windows.Forms.LinkLabel()
+        Me.LinkLabel7 = New System.Windows.Forms.LinkLabel()
         Me.PNL.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -79,6 +79,7 @@ Partial Class FRM_ASSIGN_ITEMS
         CType(Me.DGV_ASSIGN_ITEMS_LIST, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.VWM4_ITEM_ASSBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DS_VIEWS, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox7.SuspendLayout()
         Me.SuspendLayout()
         '
         'PNL
@@ -167,6 +168,25 @@ Partial Class FRM_ASSIGN_ITEMS
         Me.Panel1.Size = New System.Drawing.Size(1117, 58)
         Me.Panel1.TabIndex = 1473
         '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.White
+        Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.LightSeaGreen
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Button1.Image = Global.PRA_PIS.My.Resources.Resources.outline_low_priority_black_18dp
+        Me.Button1.Location = New System.Drawing.Point(139, 5)
+        Me.Button1.Name = "Button1"
+        Me.Button1.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Button1.Size = New System.Drawing.Size(122, 41)
+        Me.Button1.TabIndex = 1474
+        Me.Button1.Text = "RE-ASSIGN ITEM"
+        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Button1.UseVisualStyleBackColor = False
+        '
         'BTN_ASSIGN_ITEM
         '
         Me.BTN_ASSIGN_ITEM.BackColor = System.Drawing.Color.White
@@ -215,6 +235,18 @@ Partial Class FRM_ASSIGN_ITEMS
         Me.ShapeContainer2.Size = New System.Drawing.Size(1115, 56)
         Me.ShapeContainer2.TabIndex = 1470
         Me.ShapeContainer2.TabStop = False
+        '
+        'RectangleShape2
+        '
+        Me.RectangleShape2.BorderColor = System.Drawing.Color.LightSeaGreen
+        Me.RectangleShape2.BorderWidth = 2
+        Me.RectangleShape2.CornerRadius = 5
+        Me.RectangleShape2.Cursor = System.Windows.Forms.Cursors.Arrow
+        Me.RectangleShape2.FillColor = System.Drawing.SystemColors.HighlightText
+        Me.RectangleShape2.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
+        Me.RectangleShape2.Location = New System.Drawing.Point(137, 3)
+        Me.RectangleShape2.Name = "RectangleShape2"
+        Me.RectangleShape2.Size = New System.Drawing.Size(124, 44)
         '
         'RectangleShape1
         '
@@ -301,7 +333,7 @@ Partial Class FRM_ASSIGN_ITEMS
         Me.DGV_ASSIGN_ITEMS_LIST.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.DGV_ASSIGN_ITEMS_LIST.BackgroundColor = System.Drawing.Color.White
         Me.DGV_ASSIGN_ITEMS_LIST.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV_ASSIGN_ITEMS_LIST.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ITEMCODEDataGridViewTextBoxColumn, Me.ITEMSERIALNODataGridViewTextBoxColumn, Me.ITEMDESCRIPTIONDataGridViewTextBoxColumn, Me.ITEMUNITDataGridViewTextBoxColumn, Me.ITEMUNITCOSTDataGridViewTextBoxColumn, Me.ITEMQUANTITYDataGridViewTextBoxColumn, Me.ITEMDATEAQUISITIONDataGridViewTextBoxColumn, Me.ITEMCREATEDDATEDataGridViewTextBoxColumn, Me.FULLNAMEDataGridViewTextBoxColumn, Me.EMPNODataGridViewTextBoxColumn, Me.ACCOORIGINATEDDataGridViewTextBoxColumn, Me.ACCOREMARKSDataGridViewTextBoxColumn, Me.ACCOASSIGNEDBYDataGridViewTextBoxColumn, Me.DATEAPPOINTEDDataGridViewTextBoxColumn, Me.DATECREATEDDataGridViewTextBoxColumn, Me.Expr1DataGridViewTextBoxColumn, Me.ASSIORIGINATEDDataGridViewTextBoxColumn, Me.REMARKSDataGridViewTextBoxColumn, Me.ASSIASSIGNEDBYDataGridViewTextBoxColumn, Me.DATEASSIGNEDDataGridViewTextBoxColumn, Me.Expr2DataGridViewTextBoxColumn, Me.BTN_REASSIGN})
+        Me.DGV_ASSIGN_ITEMS_LIST.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ITEMCODEDataGridViewTextBoxColumn, Me.ITEMSERIALNODataGridViewTextBoxColumn, Me.ITEMDESCRIPTIONDataGridViewTextBoxColumn, Me.ITEMUNITDataGridViewTextBoxColumn, Me.ITEMUNITCOSTDataGridViewTextBoxColumn, Me.ITEMQUANTITYDataGridViewTextBoxColumn, Me.ITEMDATEAQUISITIONDataGridViewTextBoxColumn, Me.ITEMCREATEDDATEDataGridViewTextBoxColumn, Me.FULLNAMEDataGridViewTextBoxColumn, Me.EMPNODataGridViewTextBoxColumn, Me.ACCOORIGINATEDDataGridViewTextBoxColumn, Me.ACCOREMARKSDataGridViewTextBoxColumn, Me.ACCOASSIGNEDBYDataGridViewTextBoxColumn, Me.DATEAPPOINTEDDataGridViewTextBoxColumn, Me.ASSIORIGINATEDDataGridViewTextBoxColumn, Me.REMARKSDataGridViewTextBoxColumn, Me.ASSIASSIGNEDBYDataGridViewTextBoxColumn, Me.DATEASSIGNEDDataGridViewTextBoxColumn, Me.BTN_REASSIGN})
         Me.DGV_ASSIGN_ITEMS_LIST.DataSource = Me.VWM4_ITEM_ASSBindingSource
         Me.DGV_ASSIGN_ITEMS_LIST.Location = New System.Drawing.Point(3, 43)
         Me.DGV_ASSIGN_ITEMS_LIST.Name = "DGV_ASSIGN_ITEMS_LIST"
@@ -429,22 +461,6 @@ Partial Class FRM_ASSIGN_ITEMS
         Me.DATEAPPOINTEDDataGridViewTextBoxColumn.ReadOnly = True
         Me.DATEAPPOINTEDDataGridViewTextBoxColumn.Visible = False
         '
-        'DATECREATEDDataGridViewTextBoxColumn
-        '
-        Me.DATECREATEDDataGridViewTextBoxColumn.DataPropertyName = "DATE_CREATED"
-        Me.DATECREATEDDataGridViewTextBoxColumn.HeaderText = "DATE_CREATED"
-        Me.DATECREATEDDataGridViewTextBoxColumn.Name = "DATECREATEDDataGridViewTextBoxColumn"
-        Me.DATECREATEDDataGridViewTextBoxColumn.ReadOnly = True
-        Me.DATECREATEDDataGridViewTextBoxColumn.Visible = False
-        '
-        'Expr1DataGridViewTextBoxColumn
-        '
-        Me.Expr1DataGridViewTextBoxColumn.DataPropertyName = "Expr1"
-        Me.Expr1DataGridViewTextBoxColumn.HeaderText = "Expr1"
-        Me.Expr1DataGridViewTextBoxColumn.Name = "Expr1DataGridViewTextBoxColumn"
-        Me.Expr1DataGridViewTextBoxColumn.ReadOnly = True
-        Me.Expr1DataGridViewTextBoxColumn.Visible = False
-        '
         'ASSIORIGINATEDDataGridViewTextBoxColumn
         '
         Me.ASSIORIGINATEDDataGridViewTextBoxColumn.DataPropertyName = "ASSI_ORIGINATED"
@@ -476,14 +492,6 @@ Partial Class FRM_ASSIGN_ITEMS
         Me.DATEASSIGNEDDataGridViewTextBoxColumn.Name = "DATEASSIGNEDDataGridViewTextBoxColumn"
         Me.DATEASSIGNEDDataGridViewTextBoxColumn.ReadOnly = True
         Me.DATEASSIGNEDDataGridViewTextBoxColumn.Visible = False
-        '
-        'Expr2DataGridViewTextBoxColumn
-        '
-        Me.Expr2DataGridViewTextBoxColumn.DataPropertyName = "Expr2"
-        Me.Expr2DataGridViewTextBoxColumn.HeaderText = "Expr2"
-        Me.Expr2DataGridViewTextBoxColumn.Name = "Expr2DataGridViewTextBoxColumn"
-        Me.Expr2DataGridViewTextBoxColumn.ReadOnly = True
-        Me.Expr2DataGridViewTextBoxColumn.Visible = False
         '
         'BTN_REASSIGN
         '
@@ -536,43 +544,53 @@ Partial Class FRM_ASSIGN_ITEMS
         Me.TableAdapterManager.Connection = Nothing
         Me.TableAdapterManager.UpdateOrder = PRA_PIS.DS_VIEWSTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
-        'Button1
+        'GroupBox7
         '
-        Me.Button1.BackColor = System.Drawing.Color.White
-        Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.LightSeaGreen
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
-        Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.Button1.Image = Global.PRA_PIS.My.Resources.Resources.outline_low_priority_black_18dp
-        Me.Button1.Location = New System.Drawing.Point(139, 5)
-        Me.Button1.Name = "Button1"
-        Me.Button1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Button1.Size = New System.Drawing.Size(122, 41)
-        Me.Button1.TabIndex = 1474
-        Me.Button1.Text = "RE-ASSIGN ITEM"
-        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.GroupBox7.Controls.Add(Me.LLBL_TOT_REC)
+        Me.GroupBox7.Controls.Add(Me.LinkLabel7)
+        Me.GroupBox7.Location = New System.Drawing.Point(7, 553)
+        Me.GroupBox7.Name = "GroupBox7"
+        Me.GroupBox7.Size = New System.Drawing.Size(313, 50)
+        Me.GroupBox7.TabIndex = 1475
+        Me.GroupBox7.TabStop = False
         '
-        'RectangleShape2
+        'LLBL_TOT_REC
         '
-        Me.RectangleShape2.BorderColor = System.Drawing.Color.LightSeaGreen
-        Me.RectangleShape2.BorderWidth = 2
-        Me.RectangleShape2.CornerRadius = 5
-        Me.RectangleShape2.Cursor = System.Windows.Forms.Cursors.Arrow
-        Me.RectangleShape2.FillColor = System.Drawing.SystemColors.HighlightText
-        Me.RectangleShape2.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
-        Me.RectangleShape2.Location = New System.Drawing.Point(137, 3)
-        Me.RectangleShape2.Name = "RectangleShape2"
-        Me.RectangleShape2.Size = New System.Drawing.Size(124, 44)
+        Me.LLBL_TOT_REC.AutoSize = True
+        Me.LLBL_TOT_REC.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.LLBL_TOT_REC.Font = New System.Drawing.Font("Century Gothic", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LLBL_TOT_REC.ForeColor = System.Drawing.Color.DimGray
+        Me.LLBL_TOT_REC.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
+        Me.LLBL_TOT_REC.LinkColor = System.Drawing.Color.DimGray
+        Me.LLBL_TOT_REC.Location = New System.Drawing.Point(265, 19)
+        Me.LLBL_TOT_REC.Name = "LLBL_TOT_REC"
+        Me.LLBL_TOT_REC.Size = New System.Drawing.Size(19, 19)
+        Me.LLBL_TOT_REC.TabIndex = 1441
+        Me.LLBL_TOT_REC.TabStop = True
+        Me.LLBL_TOT_REC.Text = "0"
+        '
+        'LinkLabel7
+        '
+        Me.LinkLabel7.AutoSize = True
+        Me.LinkLabel7.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.LinkLabel7.Font = New System.Drawing.Font("Century Gothic", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinkLabel7.ForeColor = System.Drawing.Color.DimGray
+        Me.LinkLabel7.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
+        Me.LinkLabel7.LinkColor = System.Drawing.Color.DimGray
+        Me.LinkLabel7.Location = New System.Drawing.Point(7, 19)
+        Me.LinkLabel7.Name = "LinkLabel7"
+        Me.LinkLabel7.Size = New System.Drawing.Size(238, 19)
+        Me.LinkLabel7.TabIndex = 1440
+        Me.LinkLabel7.TabStop = True
+        Me.LinkLabel7.Text = "Total No. of Records Found :"
         '
         'FRM_ASSIGN_ITEMS
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1119, 554)
+        Me.ClientSize = New System.Drawing.Size(1119, 607)
+        Me.Controls.Add(Me.GroupBox7)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.PNL)
@@ -592,6 +610,8 @@ Partial Class FRM_ASSIGN_ITEMS
         CType(Me.DGV_ASSIGN_ITEMS_LIST, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.VWM4_ITEM_ASSBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DS_VIEWS, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox7.ResumeLayout(False)
+        Me.GroupBox7.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -642,4 +662,7 @@ Partial Class FRM_ASSIGN_ITEMS
     Friend WithEvents BTN_REASSIGN As DataGridViewButtonColumn
     Friend WithEvents Button1 As Button
     Friend WithEvents RectangleShape2 As PowerPacks.RectangleShape
+    Friend WithEvents GroupBox7 As GroupBox
+    Friend WithEvents LLBL_TOT_REC As LinkLabel
+    Friend WithEvents LinkLabel7 As LinkLabel
 End Class

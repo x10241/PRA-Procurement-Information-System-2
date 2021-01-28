@@ -143,8 +143,8 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.55.17\SQLPRALOCAL;Initial Catalog=PRAMASTERDATABASE;Persist S"& _ 
-            "ecurity Info=True;User ID=sa;Password=pr@@dm1n2017507")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=159.138.157.165;Initial Catalog=PRAMASTERDATABASE;Persist Security In"& _ 
+            "fo=True;User ID=sa;Password=br@@dW1u2019507_sa")>  _
         Public ReadOnly Property PRAMasterDBConnString() As String
             Get
                 Return CType(Me("PRAMasterDBConnString"),String)
@@ -154,8 +154,8 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.55.17\SQLPRALOCAL;Initial Catalog=PRA_PROPERTYDB;Persist Secu"& _ 
-            "rity Info=True;User ID=sa;Password=pr@@dm1n2017507"&Global.Microsoft.VisualBasic.ChrW(10))>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=159.138.157.165;Initial Catalog=PRA_PROPERTYDB;Persist Security Info="& _ 
+            "True;User ID=sa;Password=br@@dW1u2019507_sa")>  _
         Public ReadOnly Property PRA_PROPERTYDBConnectionString() As String
             Get
                 Return CType(Me("PRA_PROPERTYDBConnectionString"),String)
@@ -165,8 +165,8 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.55.17\SQLPRALOCAL;Initial Catalog=PRAJO_DATABASE;Persist Secu"& _ 
-            "rity Info=True;User ID=sa;Password=pr@@dm1n2017507")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=159.138.157.165;Initial Catalog=PRAJO_DATABASE;Persist Security Info="& _ 
+            "True;User ID=sa;Password=br@@dW1u2019507_sa")>  _
         Public ReadOnly Property PRAJO_DATABASEConnectionString() As String
             Get
                 Return CType(Me("PRAJO_DATABASEConnectionString"),String)

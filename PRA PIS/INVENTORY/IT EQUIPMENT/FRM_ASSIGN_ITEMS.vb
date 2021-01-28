@@ -34,6 +34,7 @@
 
     Private Sub FRM_ASSIGN_ITEMS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.VWM4_ITEM_ASSTableAdapter.FillByITEM_CODE(Me.DS_VIEWS.VWM4_ITEM_ASS)
+        LLBL_TOT_REC.Text = DGV_ASSIGN_ITEMS_LIST.Rows.Count
     End Sub
 
     Private Sub WTXT_LIST_PREFERRED_ITEMS_TextChanged(sender As Object, e As EventArgs) Handles WTXT_SEARCH_ASS_ITEM.TextChanged
@@ -41,6 +42,7 @@
                                             "ITEM_SERIAL_NO LIKE '%" + WTXT_SEARCH_ASS_ITEM.Text + "%'" + " OR " +
                                             "ITEM_DESCRIPTION LIKE '%" + WTXT_SEARCH_ASS_ITEM.Text + "%'" + " OR " +
                                             "FULLNAME LIKE '%" + WTXT_SEARCH_ASS_ITEM.Text + "%'"
+        LLBL_TOT_REC.Text = DGV_ASSIGN_ITEMS_LIST.Rows.Count
     End Sub
 
     Private Sub BTN_SELECTION_CLOSE_Click(sender As Object, e As EventArgs) Handles BTN_SELECTION_CLOSE.Click

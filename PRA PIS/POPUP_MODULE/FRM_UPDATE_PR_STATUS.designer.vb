@@ -35,6 +35,12 @@ Partial Class FRM_UPDATE_PR_STATUS
         Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PNL = New System.Windows.Forms.Panel()
         Me.BTN_PRS_CLOSE = New System.Windows.Forms.Button()
         Me.BTN_PRMINIMIZE = New System.Windows.Forms.Button()
@@ -125,6 +131,15 @@ Partial Class FRM_UPDATE_PR_STATUS
         Me.BTN_PREVIEW_AOQ = New System.Windows.Forms.Button()
         Me.LLBL_ = New System.Windows.Forms.Label()
         Me.DGV_BID_LIST = New System.Windows.Forms.DataGridView()
+        Me.BIDNODataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TIN_NO = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.COMPANY_NAME = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CONT_NO = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FAX_NO = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EMAIL_ADD = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.IS_WIN = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.Column1 = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.DTBIDLISTBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.LLBL_SUGGEST = New System.Windows.Forms.Label()
         Me.WTXT_REQUESTED_DATE = New PRA_PIS.WatermarkTextBox()
@@ -177,15 +192,37 @@ Partial Class FRM_UPDATE_PR_STATUS
         Me.TblM4_PURCHASEREQUEST_ITEMTableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.tblM4_PURCHASEREQUEST_ITEMTableAdapter()
         Me.BTN_PSR_CANCEL = New System.Windows.Forms.Button()
         Me.TBLM4_PURCHASEREQUEST_SUP_CATTableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.TBLM4_PURCHASEREQUEST_SUP_CATTableAdapter()
-        Me.BIDNODataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TIN_NO = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.COMPANY_NAME = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CONT_NO = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FAX_NO = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EMAIL_ADD = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.IS_WIN = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.Column1 = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label31 = New System.Windows.Forms.Label()
+        Me.WatermarkTextBox15 = New PRA_PIS.WatermarkTextBox()
+        Me.Label34 = New System.Windows.Forms.Label()
+        Me.Label35 = New System.Windows.Forms.Label()
+        Me.WatermarkTextBox16 = New PRA_PIS.WatermarkTextBox()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn15 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn16 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn17 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn18 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn19 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn20 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn21 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewButtonColumn3 = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.DataGridViewButtonColumn4 = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.Label37 = New System.Windows.Forms.Label()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Label38 = New System.Windows.Forms.Label()
+        Me.Label42 = New System.Windows.Forms.Label()
+        Me.WatermarkTextBox18 = New PRA_PIS.WatermarkTextBox()
+        Me.Label43 = New System.Windows.Forms.Label()
+        Me.ShapeContainer10 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
+        Me.RectangleShape27 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.RectangleShape28 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.RectangleShape30 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.Label25 = New System.Windows.Forms.Label()
+        Me.Label27 = New System.Windows.Forms.Label()
+        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.Panel6 = New System.Windows.Forms.Panel()
         Me.PNL.SuspendLayout()
         Me.PNL_POSTED.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -207,6 +244,8 @@ Partial Class FRM_UPDATE_PR_STATUS
         Me.Panel5.SuspendLayout()
         CType(Me.TblM4_PURCHASEREQUEST_POSTEDDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TblM4_PURCHASEREQUEST_POSTEDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
+        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PNL
@@ -980,6 +1019,78 @@ Partial Class FRM_UPDATE_PR_STATUS
         Me.DGV_BID_LIST.RowHeadersVisible = False
         Me.DGV_BID_LIST.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         '
+        'BIDNODataGridViewTextBoxColumn1
+        '
+        Me.BIDNODataGridViewTextBoxColumn1.DataPropertyName = "BID_NO"
+        resources.ApplyResources(Me.BIDNODataGridViewTextBoxColumn1, "BIDNODataGridViewTextBoxColumn1")
+        Me.BIDNODataGridViewTextBoxColumn1.Name = "BIDNODataGridViewTextBoxColumn1"
+        Me.BIDNODataGridViewTextBoxColumn1.ReadOnly = True
+        '
+        'TIN_NO
+        '
+        Me.TIN_NO.DataPropertyName = "TIN_NO"
+        resources.ApplyResources(Me.TIN_NO, "TIN_NO")
+        Me.TIN_NO.Name = "TIN_NO"
+        Me.TIN_NO.ReadOnly = True
+        '
+        'COMPANY_NAME
+        '
+        Me.COMPANY_NAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.COMPANY_NAME.DataPropertyName = "SUPL_NAME"
+        resources.ApplyResources(Me.COMPANY_NAME, "COMPANY_NAME")
+        Me.COMPANY_NAME.Name = "COMPANY_NAME"
+        Me.COMPANY_NAME.ReadOnly = True
+        '
+        'CONT_NO
+        '
+        Me.CONT_NO.DataPropertyName = "CONT_NO"
+        resources.ApplyResources(Me.CONT_NO, "CONT_NO")
+        Me.CONT_NO.Name = "CONT_NO"
+        Me.CONT_NO.ReadOnly = True
+        '
+        'FAX_NO
+        '
+        Me.FAX_NO.DataPropertyName = "FAX_NO"
+        resources.ApplyResources(Me.FAX_NO, "FAX_NO")
+        Me.FAX_NO.Name = "FAX_NO"
+        Me.FAX_NO.ReadOnly = True
+        '
+        'EMAIL_ADD
+        '
+        Me.EMAIL_ADD.DataPropertyName = "EMAIL"
+        resources.ApplyResources(Me.EMAIL_ADD, "EMAIL_ADD")
+        Me.EMAIL_ADD.Name = "EMAIL_ADD"
+        Me.EMAIL_ADD.ReadOnly = True
+        '
+        'IS_WIN
+        '
+        Me.IS_WIN.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.IS_WIN.DataPropertyName = "IS_LOW"
+        Me.IS_WIN.FalseValue = "False"
+        resources.ApplyResources(Me.IS_WIN, "IS_WIN")
+        Me.IS_WIN.IndeterminateValue = ""
+        Me.IS_WIN.Name = "IS_WIN"
+        Me.IS_WIN.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.IS_WIN.TrueValue = "True"
+        '
+        'Column1
+        '
+        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        resources.ApplyResources(Me.Column1, "Column1")
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Text = "Edit"
+        Me.Column1.UseColumnTextForButtonValue = True
+        '
+        'Column2
+        '
+        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        resources.ApplyResources(Me.Column2, "Column2")
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        Me.Column2.Text = "Remove"
+        Me.Column2.UseColumnTextForButtonValue = True
+        '
         'DTBIDLISTBindingSource
         '
         Me.DTBIDLISTBindingSource.DataMember = "DT_BID_LIST"
@@ -1378,83 +1489,281 @@ Partial Class FRM_UPDATE_PR_STATUS
         '
         Me.TBLM4_PURCHASEREQUEST_SUP_CATTableAdapter.ClearBeforeFill = True
         '
-        'BIDNODataGridViewTextBoxColumn1
+        'Panel1
         '
-        Me.BIDNODataGridViewTextBoxColumn1.DataPropertyName = "BID_NO"
-        resources.ApplyResources(Me.BIDNODataGridViewTextBoxColumn1, "BIDNODataGridViewTextBoxColumn1")
-        Me.BIDNODataGridViewTextBoxColumn1.Name = "BIDNODataGridViewTextBoxColumn1"
-        Me.BIDNODataGridViewTextBoxColumn1.ReadOnly = True
+        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.Panel6)
+        Me.Panel1.Controls.Add(Me.ComboBox2)
+        Me.Panel1.Controls.Add(Me.Label27)
+        Me.Panel1.Controls.Add(Me.Label25)
+        Me.Panel1.Controls.Add(Me.Label31)
+        Me.Panel1.Controls.Add(Me.WatermarkTextBox15)
+        Me.Panel1.Controls.Add(Me.Label34)
+        Me.Panel1.Controls.Add(Me.Label35)
+        Me.Panel1.Controls.Add(Me.WatermarkTextBox16)
+        Me.Panel1.Controls.Add(Me.ComboBox1)
+        Me.Panel1.Controls.Add(Me.DataGridView2)
+        Me.Panel1.Controls.Add(Me.Label37)
+        Me.Panel1.Controls.Add(Me.Button3)
+        Me.Panel1.Controls.Add(Me.Label38)
+        Me.Panel1.Controls.Add(Me.Label42)
+        Me.Panel1.Controls.Add(Me.WatermarkTextBox18)
+        Me.Panel1.Controls.Add(Me.Label43)
+        Me.Panel1.Controls.Add(Me.ShapeContainer10)
+        resources.ApplyResources(Me.Panel1, "Panel1")
+        Me.Panel1.Name = "Panel1"
         '
-        'TIN_NO
+        'Label31
         '
-        Me.TIN_NO.DataPropertyName = "TIN_NO"
-        resources.ApplyResources(Me.TIN_NO, "TIN_NO")
-        Me.TIN_NO.Name = "TIN_NO"
-        Me.TIN_NO.ReadOnly = True
+        resources.ApplyResources(Me.Label31, "Label31")
+        Me.Label31.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DTPARTLISTBS_MAX, "TOTAL_COST", True))
+        Me.Label31.ForeColor = System.Drawing.Color.Red
+        Me.Label31.Name = "Label31"
         '
-        'COMPANY_NAME
+        'WatermarkTextBox15
         '
-        Me.COMPANY_NAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.COMPANY_NAME.DataPropertyName = "SUPL_NAME"
-        resources.ApplyResources(Me.COMPANY_NAME, "COMPANY_NAME")
-        Me.COMPANY_NAME.Name = "COMPANY_NAME"
-        Me.COMPANY_NAME.ReadOnly = True
+        Me.WatermarkTextBox15.BorderStyle = System.Windows.Forms.BorderStyle.None
+        resources.ApplyResources(Me.WatermarkTextBox15, "WatermarkTextBox15")
+        Me.WatermarkTextBox15.Name = "WatermarkTextBox15"
+        Me.WatermarkTextBox15.Watermark = Nothing
         '
-        'CONT_NO
+        'Label34
         '
-        Me.CONT_NO.DataPropertyName = "CONT_NO"
-        resources.ApplyResources(Me.CONT_NO, "CONT_NO")
-        Me.CONT_NO.Name = "CONT_NO"
-        Me.CONT_NO.ReadOnly = True
+        resources.ApplyResources(Me.Label34, "Label34")
+        Me.Label34.ForeColor = System.Drawing.Color.Black
+        Me.Label34.Name = "Label34"
         '
-        'FAX_NO
+        'Label35
         '
-        Me.FAX_NO.DataPropertyName = "FAX_NO"
-        resources.ApplyResources(Me.FAX_NO, "FAX_NO")
-        Me.FAX_NO.Name = "FAX_NO"
-        Me.FAX_NO.ReadOnly = True
+        resources.ApplyResources(Me.Label35, "Label35")
+        Me.Label35.ForeColor = System.Drawing.Color.Black
+        Me.Label35.Name = "Label35"
         '
-        'EMAIL_ADD
+        'WatermarkTextBox16
         '
-        Me.EMAIL_ADD.DataPropertyName = "EMAIL"
-        resources.ApplyResources(Me.EMAIL_ADD, "EMAIL_ADD")
-        Me.EMAIL_ADD.Name = "EMAIL_ADD"
-        Me.EMAIL_ADD.ReadOnly = True
+        Me.WatermarkTextBox16.BorderStyle = System.Windows.Forms.BorderStyle.None
+        resources.ApplyResources(Me.WatermarkTextBox16, "WatermarkTextBox16")
+        Me.WatermarkTextBox16.Name = "WatermarkTextBox16"
+        Me.WatermarkTextBox16.Watermark = Nothing
         '
-        'IS_WIN
+        'ComboBox1
         '
-        Me.IS_WIN.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.IS_WIN.DataPropertyName = "IS_LOW"
-        Me.IS_WIN.FalseValue = "False"
-        resources.ApplyResources(Me.IS_WIN, "IS_WIN")
-        Me.IS_WIN.IndeterminateValue = ""
-        Me.IS_WIN.Name = "IS_WIN"
-        Me.IS_WIN.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.IS_WIN.TrueValue = "True"
+        Me.ComboBox1.DataSource = Me.TBLM4PURCHASEREQUESTSUPCATBindingSource
+        Me.ComboBox1.DisplayMember = "SUPB_NAME"
+        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox1.FormattingEnabled = True
+        resources.ApplyResources(Me.ComboBox1, "ComboBox1")
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.ValueMember = "SUPB_NO"
         '
-        'Column1
+        'DataGridView2
         '
-        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        resources.ApplyResources(Me.Column1, "Column1")
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        Me.Column1.Text = "Edit"
-        Me.Column1.UseColumnTextForButtonValue = True
+        Me.DataGridView2.AllowUserToAddRows = False
+        Me.DataGridView2.AllowUserToDeleteRows = False
+        Me.DataGridView2.AllowUserToResizeColumns = False
+        Me.DataGridView2.AllowUserToResizeRows = False
+        Me.DataGridView2.AutoGenerateColumns = False
+        Me.DataGridView2.BackgroundColor = System.Drawing.Color.White
+        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn15, Me.DataGridViewTextBoxColumn16, Me.DataGridViewTextBoxColumn17, Me.DataGridViewTextBoxColumn18, Me.DataGridViewTextBoxColumn19, Me.DataGridViewTextBoxColumn20, Me.DataGridViewTextBoxColumn21, Me.DataGridViewButtonColumn3, Me.DataGridViewButtonColumn4})
+        Me.DataGridView2.DataSource = Me.DTPARTLISTBindingSource
+        DataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle16.Font = New System.Drawing.Font("Century Gothic", 8.25!)
+        DataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.Gray
+        DataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView2.DefaultCellStyle = DataGridViewCellStyle16
+        resources.ApplyResources(Me.DataGridView2, "DataGridView2")
+        Me.DataGridView2.Name = "DataGridView2"
+        Me.DataGridView2.ReadOnly = True
+        DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle17.Font = New System.Drawing.Font("Century Gothic", 8.25!)
+        DataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.DarkGray
+        DataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView2.RowHeadersDefaultCellStyle = DataGridViewCellStyle17
+        Me.DataGridView2.RowHeadersVisible = False
+        Me.DataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         '
-        'Column2
+        'DataGridViewTextBoxColumn15
         '
-        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        resources.ApplyResources(Me.Column2, "Column2")
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        Me.Column2.Text = "Remove"
-        Me.Column2.UseColumnTextForButtonValue = True
+        Me.DataGridViewTextBoxColumn15.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DataGridViewTextBoxColumn15.DataPropertyName = "PART"
+        resources.ApplyResources(Me.DataGridViewTextBoxColumn15, "DataGridViewTextBoxColumn15")
+        Me.DataGridViewTextBoxColumn15.Name = "DataGridViewTextBoxColumn15"
+        Me.DataGridViewTextBoxColumn15.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn16
+        '
+        Me.DataGridViewTextBoxColumn16.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.DataGridViewTextBoxColumn16.DataPropertyName = "QTY"
+        DataGridViewCellStyle12.Format = "N0"
+        DataGridViewCellStyle12.NullValue = "0"
+        Me.DataGridViewTextBoxColumn16.DefaultCellStyle = DataGridViewCellStyle12
+        resources.ApplyResources(Me.DataGridViewTextBoxColumn16, "DataGridViewTextBoxColumn16")
+        Me.DataGridViewTextBoxColumn16.Name = "DataGridViewTextBoxColumn16"
+        Me.DataGridViewTextBoxColumn16.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn17
+        '
+        Me.DataGridViewTextBoxColumn17.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.DataGridViewTextBoxColumn17.DataPropertyName = "UNIT"
+        DataGridViewCellStyle13.Format = "N2"
+        DataGridViewCellStyle13.NullValue = "0"
+        Me.DataGridViewTextBoxColumn17.DefaultCellStyle = DataGridViewCellStyle13
+        resources.ApplyResources(Me.DataGridViewTextBoxColumn17, "DataGridViewTextBoxColumn17")
+        Me.DataGridViewTextBoxColumn17.Name = "DataGridViewTextBoxColumn17"
+        Me.DataGridViewTextBoxColumn17.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn18
+        '
+        Me.DataGridViewTextBoxColumn18.DataPropertyName = "UNIT_COST"
+        DataGridViewCellStyle14.Format = "N2"
+        DataGridViewCellStyle14.NullValue = "0"
+        Me.DataGridViewTextBoxColumn18.DefaultCellStyle = DataGridViewCellStyle14
+        resources.ApplyResources(Me.DataGridViewTextBoxColumn18, "DataGridViewTextBoxColumn18")
+        Me.DataGridViewTextBoxColumn18.Name = "DataGridViewTextBoxColumn18"
+        Me.DataGridViewTextBoxColumn18.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn19
+        '
+        Me.DataGridViewTextBoxColumn19.DataPropertyName = "TOTAL_COST"
+        DataGridViewCellStyle15.Format = "N2"
+        DataGridViewCellStyle15.NullValue = "0"
+        Me.DataGridViewTextBoxColumn19.DefaultCellStyle = DataGridViewCellStyle15
+        resources.ApplyResources(Me.DataGridViewTextBoxColumn19, "DataGridViewTextBoxColumn19")
+        Me.DataGridViewTextBoxColumn19.Name = "DataGridViewTextBoxColumn19"
+        Me.DataGridViewTextBoxColumn19.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn20
+        '
+        Me.DataGridViewTextBoxColumn20.DataPropertyName = "BID_NO"
+        resources.ApplyResources(Me.DataGridViewTextBoxColumn20, "DataGridViewTextBoxColumn20")
+        Me.DataGridViewTextBoxColumn20.Name = "DataGridViewTextBoxColumn20"
+        Me.DataGridViewTextBoxColumn20.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn21
+        '
+        Me.DataGridViewTextBoxColumn21.DataPropertyName = "PART_LIST_NO"
+        resources.ApplyResources(Me.DataGridViewTextBoxColumn21, "DataGridViewTextBoxColumn21")
+        Me.DataGridViewTextBoxColumn21.Name = "DataGridViewTextBoxColumn21"
+        Me.DataGridViewTextBoxColumn21.ReadOnly = True
+        '
+        'DataGridViewButtonColumn3
+        '
+        Me.DataGridViewButtonColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        resources.ApplyResources(Me.DataGridViewButtonColumn3, "DataGridViewButtonColumn3")
+        Me.DataGridViewButtonColumn3.Name = "DataGridViewButtonColumn3"
+        Me.DataGridViewButtonColumn3.ReadOnly = True
+        Me.DataGridViewButtonColumn3.Text = "Edit"
+        Me.DataGridViewButtonColumn3.UseColumnTextForButtonValue = True
+        '
+        'DataGridViewButtonColumn4
+        '
+        Me.DataGridViewButtonColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        resources.ApplyResources(Me.DataGridViewButtonColumn4, "DataGridViewButtonColumn4")
+        Me.DataGridViewButtonColumn4.Name = "DataGridViewButtonColumn4"
+        Me.DataGridViewButtonColumn4.ReadOnly = True
+        Me.DataGridViewButtonColumn4.Text = "Remove"
+        Me.DataGridViewButtonColumn4.UseColumnTextForButtonValue = True
+        '
+        'Label37
+        '
+        resources.ApplyResources(Me.Label37, "Label37")
+        Me.Label37.ForeColor = System.Drawing.Color.Red
+        Me.Label37.Name = "Label37"
+        '
+        'Button3
+        '
+        resources.ApplyResources(Me.Button3, "Button3")
+        Me.Button3.Name = "Button3"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'Label38
+        '
+        resources.ApplyResources(Me.Label38, "Label38")
+        Me.Label38.ForeColor = System.Drawing.Color.Black
+        Me.Label38.Name = "Label38"
+        '
+        'Label42
+        '
+        resources.ApplyResources(Me.Label42, "Label42")
+        Me.Label42.ForeColor = System.Drawing.Color.Black
+        Me.Label42.Name = "Label42"
+        '
+        'WatermarkTextBox18
+        '
+        Me.WatermarkTextBox18.BorderStyle = System.Windows.Forms.BorderStyle.None
+        resources.ApplyResources(Me.WatermarkTextBox18, "WatermarkTextBox18")
+        Me.WatermarkTextBox18.Name = "WatermarkTextBox18"
+        Me.WatermarkTextBox18.Watermark = Nothing
+        '
+        'Label43
+        '
+        resources.ApplyResources(Me.Label43, "Label43")
+        Me.Label43.ForeColor = System.Drawing.Color.Black
+        Me.Label43.Name = "Label43"
+        '
+        'ShapeContainer10
+        '
+        resources.ApplyResources(Me.ShapeContainer10, "ShapeContainer10")
+        Me.ShapeContainer10.Name = "ShapeContainer10"
+        Me.ShapeContainer10.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape27, Me.RectangleShape28, Me.RectangleShape30})
+        Me.ShapeContainer10.TabStop = False
+        '
+        'RectangleShape27
+        '
+        resources.ApplyResources(Me.RectangleShape27, "RectangleShape27")
+        Me.RectangleShape27.Name = "RectangleShape7"
+        '
+        'RectangleShape28
+        '
+        resources.ApplyResources(Me.RectangleShape28, "RectangleShape28")
+        Me.RectangleShape28.Name = "RectangleShape6"
+        '
+        'RectangleShape30
+        '
+        resources.ApplyResources(Me.RectangleShape30, "RectangleShape30")
+        Me.RectangleShape30.Name = "RectangleShape5"
+        '
+        'Label25
+        '
+        resources.ApplyResources(Me.Label25, "Label25")
+        Me.Label25.ForeColor = System.Drawing.Color.Black
+        Me.Label25.Name = "Label25"
+        '
+        'Label27
+        '
+        resources.ApplyResources(Me.Label27, "Label27")
+        Me.Label27.ForeColor = System.Drawing.Color.Black
+        Me.Label27.Name = "Label27"
+        '
+        'ComboBox2
+        '
+        Me.ComboBox2.DataSource = Me.TBLM4PURCHASEREQUESTSUPCATBindingSource
+        Me.ComboBox2.DisplayMember = "SUPB_NAME"
+        Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox2.FormattingEnabled = True
+        resources.ApplyResources(Me.ComboBox2, "ComboBox2")
+        Me.ComboBox2.Name = "ComboBox2"
+        Me.ComboBox2.ValueMember = "SUPB_NO"
+        '
+        'Panel6
+        '
+        Me.Panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        resources.ApplyResources(Me.Panel6, "Panel6")
+        Me.Panel6.Name = "Panel6"
         '
         'FRM_UPDATE_PR_STATUS
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.BTN_PSR_SAVE)
         Me.Controls.Add(Me.BTN_PSR_CANCEL)
         Me.Controls.Add(Me.TblM4_PURCHASEREQUEST_POSTEDDataGridView)
@@ -1496,6 +1805,9 @@ Partial Class FRM_UPDATE_PR_STATUS
         Me.Panel5.PerformLayout()
         CType(Me.TblM4_PURCHASEREQUEST_POSTEDDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TblM4_PURCHASEREQUEST_POSTEDBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1651,4 +1963,35 @@ Partial Class FRM_UPDATE_PR_STATUS
     Friend WithEvents IS_WIN As DataGridViewCheckBoxColumn
     Friend WithEvents Column1 As DataGridViewButtonColumn
     Friend WithEvents Column2 As DataGridViewButtonColumn
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Label31 As Label
+    Friend WithEvents WatermarkTextBox15 As WatermarkTextBox
+    Friend WithEvents Label34 As Label
+    Friend WithEvents Label35 As Label
+    Friend WithEvents WatermarkTextBox16 As WatermarkTextBox
+    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents DataGridView2 As DataGridView
+    Friend WithEvents DataGridViewTextBoxColumn15 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn16 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn17 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn18 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn19 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn20 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn21 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewButtonColumn3 As DataGridViewButtonColumn
+    Friend WithEvents DataGridViewButtonColumn4 As DataGridViewButtonColumn
+    Friend WithEvents Label37 As Label
+    Friend WithEvents Button3 As Button
+    Friend WithEvents Label38 As Label
+    Friend WithEvents Label42 As Label
+    Friend WithEvents WatermarkTextBox18 As WatermarkTextBox
+    Friend WithEvents Label43 As Label
+    Friend WithEvents ShapeContainer10 As PowerPacks.ShapeContainer
+    Friend WithEvents RectangleShape27 As PowerPacks.RectangleShape
+    Friend WithEvents RectangleShape28 As PowerPacks.RectangleShape
+    Friend WithEvents RectangleShape30 As PowerPacks.RectangleShape
+    Friend WithEvents Label25 As Label
+    Friend WithEvents ComboBox2 As ComboBox
+    Friend WithEvents Label27 As Label
+    Friend WithEvents Panel6 As Panel
 End Class

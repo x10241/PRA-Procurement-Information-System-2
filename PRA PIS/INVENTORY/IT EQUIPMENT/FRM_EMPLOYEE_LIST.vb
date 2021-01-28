@@ -15,7 +15,7 @@
         Dim row As New DataGridViewRow()
         row = EmployeeInfoDataGridView.Rows(e.RowIndex)
 
-        empfullname.Text = row.Cells(1).Value
+        empfullname.Text = Replace(Trim(row.Cells(1).Value), vbTab, "")
         department.Text = row.Cells(2).Value
         division.Text = row.Cells(3).Value
         If ACCOUNTABLE_CTR = True Then
