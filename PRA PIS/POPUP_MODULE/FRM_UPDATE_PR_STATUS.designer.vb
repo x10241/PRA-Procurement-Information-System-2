@@ -24,23 +24,23 @@ Partial Class FRM_UPDATE_PR_STATUS
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FRM_UPDATE_PR_STATUS))
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle37 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle35 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle36 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle42 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle43 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle38 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle39 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle40 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle41 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle44 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle45 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle50 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle51 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle46 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle47 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle48 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle49 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PNL = New System.Windows.Forms.Panel()
         Me.BTN_PRS_CLOSE = New System.Windows.Forms.Button()
         Me.BTN_PRMINIMIZE = New System.Windows.Forms.Button()
@@ -193,6 +193,10 @@ Partial Class FRM_UPDATE_PR_STATUS
         Me.BTN_PSR_CANCEL = New System.Windows.Forms.Button()
         Me.TBLM4_PURCHASEREQUEST_SUP_CATTableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.TBLM4_PURCHASEREQUEST_SUP_CATTableAdapter()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.Label27 = New System.Windows.Forms.Label()
+        Me.Label25 = New System.Windows.Forms.Label()
         Me.Label31 = New System.Windows.Forms.Label()
         Me.WatermarkTextBox15 = New PRA_PIS.WatermarkTextBox()
         Me.Label34 = New System.Windows.Forms.Label()
@@ -219,10 +223,6 @@ Partial Class FRM_UPDATE_PR_STATUS
         Me.RectangleShape27 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RectangleShape28 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RectangleShape30 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
-        Me.Label25 = New System.Windows.Forms.Label()
-        Me.Label27 = New System.Windows.Forms.Label()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-        Me.Panel6 = New System.Windows.Forms.Panel()
         Me.PNL.SuspendLayout()
         Me.PNL_POSTED.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -593,14 +593,14 @@ Partial Class FRM_UPDATE_PR_STATUS
         Me.DGV_ENC_PART_LIST.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGV_ENC_PART_LIST.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.PRIITEMDESCRIPTIONDataGridViewTextBoxColumn, Me.PRQUANTITYDataGridViewTextBoxColumn, Me.PRUNITISSUEDataGridViewTextBoxColumn, Me.PRSTOCKNODataGridViewTextBoxColumn, Me.PRESTIMATEDUNITCOSTDataGridViewTextBoxColumn, Me.PRESTIMATEDCOSTDataGridViewTextBoxColumn, Me.PRPRNODataGridViewTextBoxColumn, Me.PRIITEMNODataGridViewTextBoxColumn, Me.UNIT_AMOUNT, Me.TOTAL_PRICE})
         Me.DGV_ENC_PART_LIST.DataSource = Me.TblM4PURCHASEREQUESTITEMBindingSource
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Gray
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DGV_ENC_PART_LIST.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle37.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle37.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle37.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle37.SelectionBackColor = System.Drawing.Color.Gray
+        DataGridViewCellStyle37.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle37.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGV_ENC_PART_LIST.DefaultCellStyle = DataGridViewCellStyle37
         resources.ApplyResources(Me.DGV_ENC_PART_LIST, "DGV_ENC_PART_LIST")
         Me.DGV_ENC_PART_LIST.Name = "DGV_ENC_PART_LIST"
         Me.DGV_ENC_PART_LIST.RowHeadersVisible = False
@@ -670,18 +670,18 @@ Partial Class FRM_UPDATE_PR_STATUS
         '
         'UNIT_AMOUNT
         '
-        DataGridViewCellStyle1.Format = "N2"
-        DataGridViewCellStyle1.NullValue = "0"
-        Me.UNIT_AMOUNT.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle35.Format = "N2"
+        DataGridViewCellStyle35.NullValue = "0"
+        Me.UNIT_AMOUNT.DefaultCellStyle = DataGridViewCellStyle35
         resources.ApplyResources(Me.UNIT_AMOUNT, "UNIT_AMOUNT")
         Me.UNIT_AMOUNT.Name = "UNIT_AMOUNT"
         Me.UNIT_AMOUNT.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
         '
         'TOTAL_PRICE
         '
-        DataGridViewCellStyle2.Format = "N2"
-        DataGridViewCellStyle2.NullValue = "0"
-        Me.TOTAL_PRICE.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle36.Format = "N2"
+        DataGridViewCellStyle36.NullValue = "0"
+        Me.TOTAL_PRICE.DefaultCellStyle = DataGridViewCellStyle36
         resources.ApplyResources(Me.TOTAL_PRICE, "TOTAL_PRICE")
         Me.TOTAL_PRICE.Name = "TOTAL_PRICE"
         Me.TOTAL_PRICE.ReadOnly = True
@@ -860,25 +860,25 @@ Partial Class FRM_UPDATE_PR_STATUS
         Me.DGV_PART_LIST.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGV_PART_LIST.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column6, Me.Column3, Me.unit, Me.Column4, Me.Column5, Me.BIDNODataGridViewTextBoxColumn, Me.PARTLISTNODataGridViewTextBoxColumn, Me.DataGridViewButtonColumn1, Me.DataGridViewButtonColumn2})
         Me.DGV_PART_LIST.DataSource = Me.DTPARTLISTBindingSource
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Century Gothic", 8.25!)
-        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Gray
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DGV_PART_LIST.DefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle42.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle42.Font = New System.Drawing.Font("Century Gothic", 8.25!)
+        DataGridViewCellStyle42.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle42.SelectionBackColor = System.Drawing.Color.Gray
+        DataGridViewCellStyle42.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle42.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGV_PART_LIST.DefaultCellStyle = DataGridViewCellStyle42
         resources.ApplyResources(Me.DGV_PART_LIST, "DGV_PART_LIST")
         Me.DGV_PART_LIST.Name = "DGV_PART_LIST"
         Me.DGV_PART_LIST.ReadOnly = True
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle9.Font = New System.Drawing.Font("Century Gothic", 8.25!)
-        DataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.DarkGray
-        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGV_PART_LIST.RowHeadersDefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle43.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle43.Font = New System.Drawing.Font("Century Gothic", 8.25!)
+        DataGridViewCellStyle43.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle43.SelectionBackColor = System.Drawing.Color.DarkGray
+        DataGridViewCellStyle43.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle43.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGV_PART_LIST.RowHeadersDefaultCellStyle = DataGridViewCellStyle43
         Me.DGV_PART_LIST.RowHeadersVisible = False
         Me.DGV_PART_LIST.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         '
@@ -894,9 +894,9 @@ Partial Class FRM_UPDATE_PR_STATUS
         '
         Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
         Me.Column3.DataPropertyName = "QTY"
-        DataGridViewCellStyle4.Format = "N0"
-        DataGridViewCellStyle4.NullValue = "0"
-        Me.Column3.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle38.Format = "N0"
+        DataGridViewCellStyle38.NullValue = "0"
+        Me.Column3.DefaultCellStyle = DataGridViewCellStyle38
         resources.ApplyResources(Me.Column3, "Column3")
         Me.Column3.Name = "Column3"
         Me.Column3.ReadOnly = True
@@ -905,9 +905,9 @@ Partial Class FRM_UPDATE_PR_STATUS
         '
         Me.unit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
         Me.unit.DataPropertyName = "UNIT"
-        DataGridViewCellStyle5.Format = "N2"
-        DataGridViewCellStyle5.NullValue = "0"
-        Me.unit.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle39.Format = "N2"
+        DataGridViewCellStyle39.NullValue = "0"
+        Me.unit.DefaultCellStyle = DataGridViewCellStyle39
         resources.ApplyResources(Me.unit, "unit")
         Me.unit.Name = "unit"
         Me.unit.ReadOnly = True
@@ -915,9 +915,9 @@ Partial Class FRM_UPDATE_PR_STATUS
         'Column4
         '
         Me.Column4.DataPropertyName = "UNIT_COST"
-        DataGridViewCellStyle6.Format = "N2"
-        DataGridViewCellStyle6.NullValue = "0"
-        Me.Column4.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle40.Format = "N2"
+        DataGridViewCellStyle40.NullValue = "0"
+        Me.Column4.DefaultCellStyle = DataGridViewCellStyle40
         resources.ApplyResources(Me.Column4, "Column4")
         Me.Column4.Name = "Column4"
         Me.Column4.ReadOnly = True
@@ -925,9 +925,9 @@ Partial Class FRM_UPDATE_PR_STATUS
         'Column5
         '
         Me.Column5.DataPropertyName = "TOTAL_COST"
-        DataGridViewCellStyle7.Format = "N2"
-        DataGridViewCellStyle7.NullValue = "0"
-        Me.Column5.DefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle41.Format = "N2"
+        DataGridViewCellStyle41.NullValue = "0"
+        Me.Column5.DefaultCellStyle = DataGridViewCellStyle41
         resources.ApplyResources(Me.Column5, "Column5")
         Me.Column5.Name = "Column5"
         Me.Column5.ReadOnly = True
@@ -998,24 +998,24 @@ Partial Class FRM_UPDATE_PR_STATUS
         Me.DGV_BID_LIST.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGV_BID_LIST.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.BIDNODataGridViewTextBoxColumn1, Me.TIN_NO, Me.COMPANY_NAME, Me.CONT_NO, Me.FAX_NO, Me.EMAIL_ADD, Me.IS_WIN, Me.Column1, Me.Column2})
         Me.DGV_BID_LIST.DataSource = Me.DTBIDLISTBindingSource
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle10.Font = New System.Drawing.Font("Century Gothic", 8.25!)
-        DataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Gray
-        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DGV_BID_LIST.DefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle44.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle44.Font = New System.Drawing.Font("Century Gothic", 8.25!)
+        DataGridViewCellStyle44.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle44.SelectionBackColor = System.Drawing.Color.Gray
+        DataGridViewCellStyle44.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle44.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGV_BID_LIST.DefaultCellStyle = DataGridViewCellStyle44
         resources.ApplyResources(Me.DGV_BID_LIST, "DGV_BID_LIST")
         Me.DGV_BID_LIST.Name = "DGV_BID_LIST"
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle11.Font = New System.Drawing.Font("Century Gothic", 8.25!)
-        DataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.DarkGray
-        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGV_BID_LIST.RowHeadersDefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle45.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle45.Font = New System.Drawing.Font("Century Gothic", 8.25!)
+        DataGridViewCellStyle45.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle45.SelectionBackColor = System.Drawing.Color.DarkGray
+        DataGridViewCellStyle45.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle45.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGV_BID_LIST.RowHeadersDefaultCellStyle = DataGridViewCellStyle45
         Me.DGV_BID_LIST.RowHeadersVisible = False
         Me.DGV_BID_LIST.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         '
@@ -1513,6 +1513,34 @@ Partial Class FRM_UPDATE_PR_STATUS
         resources.ApplyResources(Me.Panel1, "Panel1")
         Me.Panel1.Name = "Panel1"
         '
+        'Panel6
+        '
+        Me.Panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        resources.ApplyResources(Me.Panel6, "Panel6")
+        Me.Panel6.Name = "Panel6"
+        '
+        'ComboBox2
+        '
+        Me.ComboBox2.DataSource = Me.TBLM4PURCHASEREQUESTSUPCATBindingSource
+        Me.ComboBox2.DisplayMember = "SUPB_NAME"
+        Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox2.FormattingEnabled = True
+        resources.ApplyResources(Me.ComboBox2, "ComboBox2")
+        Me.ComboBox2.Name = "ComboBox2"
+        Me.ComboBox2.ValueMember = "SUPB_NO"
+        '
+        'Label27
+        '
+        resources.ApplyResources(Me.Label27, "Label27")
+        Me.Label27.ForeColor = System.Drawing.Color.Black
+        Me.Label27.Name = "Label27"
+        '
+        'Label25
+        '
+        resources.ApplyResources(Me.Label25, "Label25")
+        Me.Label25.ForeColor = System.Drawing.Color.Black
+        Me.Label25.Name = "Label25"
+        '
         'Label31
         '
         resources.ApplyResources(Me.Label31, "Label31")
@@ -1567,25 +1595,25 @@ Partial Class FRM_UPDATE_PR_STATUS
         Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn15, Me.DataGridViewTextBoxColumn16, Me.DataGridViewTextBoxColumn17, Me.DataGridViewTextBoxColumn18, Me.DataGridViewTextBoxColumn19, Me.DataGridViewTextBoxColumn20, Me.DataGridViewTextBoxColumn21, Me.DataGridViewButtonColumn3, Me.DataGridViewButtonColumn4})
         Me.DataGridView2.DataSource = Me.DTPARTLISTBindingSource
-        DataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle16.Font = New System.Drawing.Font("Century Gothic", 8.25!)
-        DataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.Gray
-        DataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridView2.DefaultCellStyle = DataGridViewCellStyle16
+        DataGridViewCellStyle50.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle50.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle50.Font = New System.Drawing.Font("Century Gothic", 8.25!)
+        DataGridViewCellStyle50.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle50.SelectionBackColor = System.Drawing.Color.Gray
+        DataGridViewCellStyle50.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle50.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView2.DefaultCellStyle = DataGridViewCellStyle50
         resources.ApplyResources(Me.DataGridView2, "DataGridView2")
         Me.DataGridView2.Name = "DataGridView2"
         Me.DataGridView2.ReadOnly = True
-        DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle17.Font = New System.Drawing.Font("Century Gothic", 8.25!)
-        DataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.DarkGray
-        DataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView2.RowHeadersDefaultCellStyle = DataGridViewCellStyle17
+        DataGridViewCellStyle51.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle51.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle51.Font = New System.Drawing.Font("Century Gothic", 8.25!)
+        DataGridViewCellStyle51.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle51.SelectionBackColor = System.Drawing.Color.DarkGray
+        DataGridViewCellStyle51.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle51.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView2.RowHeadersDefaultCellStyle = DataGridViewCellStyle51
         Me.DataGridView2.RowHeadersVisible = False
         Me.DataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         '
@@ -1601,9 +1629,9 @@ Partial Class FRM_UPDATE_PR_STATUS
         '
         Me.DataGridViewTextBoxColumn16.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
         Me.DataGridViewTextBoxColumn16.DataPropertyName = "QTY"
-        DataGridViewCellStyle12.Format = "N0"
-        DataGridViewCellStyle12.NullValue = "0"
-        Me.DataGridViewTextBoxColumn16.DefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle46.Format = "N0"
+        DataGridViewCellStyle46.NullValue = "0"
+        Me.DataGridViewTextBoxColumn16.DefaultCellStyle = DataGridViewCellStyle46
         resources.ApplyResources(Me.DataGridViewTextBoxColumn16, "DataGridViewTextBoxColumn16")
         Me.DataGridViewTextBoxColumn16.Name = "DataGridViewTextBoxColumn16"
         Me.DataGridViewTextBoxColumn16.ReadOnly = True
@@ -1612,9 +1640,9 @@ Partial Class FRM_UPDATE_PR_STATUS
         '
         Me.DataGridViewTextBoxColumn17.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
         Me.DataGridViewTextBoxColumn17.DataPropertyName = "UNIT"
-        DataGridViewCellStyle13.Format = "N2"
-        DataGridViewCellStyle13.NullValue = "0"
-        Me.DataGridViewTextBoxColumn17.DefaultCellStyle = DataGridViewCellStyle13
+        DataGridViewCellStyle47.Format = "N2"
+        DataGridViewCellStyle47.NullValue = "0"
+        Me.DataGridViewTextBoxColumn17.DefaultCellStyle = DataGridViewCellStyle47
         resources.ApplyResources(Me.DataGridViewTextBoxColumn17, "DataGridViewTextBoxColumn17")
         Me.DataGridViewTextBoxColumn17.Name = "DataGridViewTextBoxColumn17"
         Me.DataGridViewTextBoxColumn17.ReadOnly = True
@@ -1622,9 +1650,9 @@ Partial Class FRM_UPDATE_PR_STATUS
         'DataGridViewTextBoxColumn18
         '
         Me.DataGridViewTextBoxColumn18.DataPropertyName = "UNIT_COST"
-        DataGridViewCellStyle14.Format = "N2"
-        DataGridViewCellStyle14.NullValue = "0"
-        Me.DataGridViewTextBoxColumn18.DefaultCellStyle = DataGridViewCellStyle14
+        DataGridViewCellStyle48.Format = "N2"
+        DataGridViewCellStyle48.NullValue = "0"
+        Me.DataGridViewTextBoxColumn18.DefaultCellStyle = DataGridViewCellStyle48
         resources.ApplyResources(Me.DataGridViewTextBoxColumn18, "DataGridViewTextBoxColumn18")
         Me.DataGridViewTextBoxColumn18.Name = "DataGridViewTextBoxColumn18"
         Me.DataGridViewTextBoxColumn18.ReadOnly = True
@@ -1632,9 +1660,9 @@ Partial Class FRM_UPDATE_PR_STATUS
         'DataGridViewTextBoxColumn19
         '
         Me.DataGridViewTextBoxColumn19.DataPropertyName = "TOTAL_COST"
-        DataGridViewCellStyle15.Format = "N2"
-        DataGridViewCellStyle15.NullValue = "0"
-        Me.DataGridViewTextBoxColumn19.DefaultCellStyle = DataGridViewCellStyle15
+        DataGridViewCellStyle49.Format = "N2"
+        DataGridViewCellStyle49.NullValue = "0"
+        Me.DataGridViewTextBoxColumn19.DefaultCellStyle = DataGridViewCellStyle49
         resources.ApplyResources(Me.DataGridViewTextBoxColumn19, "DataGridViewTextBoxColumn19")
         Me.DataGridViewTextBoxColumn19.Name = "DataGridViewTextBoxColumn19"
         Me.DataGridViewTextBoxColumn19.ReadOnly = True
@@ -1729,34 +1757,6 @@ Partial Class FRM_UPDATE_PR_STATUS
         '
         resources.ApplyResources(Me.RectangleShape30, "RectangleShape30")
         Me.RectangleShape30.Name = "RectangleShape5"
-        '
-        'Label25
-        '
-        resources.ApplyResources(Me.Label25, "Label25")
-        Me.Label25.ForeColor = System.Drawing.Color.Black
-        Me.Label25.Name = "Label25"
-        '
-        'Label27
-        '
-        resources.ApplyResources(Me.Label27, "Label27")
-        Me.Label27.ForeColor = System.Drawing.Color.Black
-        Me.Label27.Name = "Label27"
-        '
-        'ComboBox2
-        '
-        Me.ComboBox2.DataSource = Me.TBLM4PURCHASEREQUESTSUPCATBindingSource
-        Me.ComboBox2.DisplayMember = "SUPB_NAME"
-        Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox2.FormattingEnabled = True
-        resources.ApplyResources(Me.ComboBox2, "ComboBox2")
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.ValueMember = "SUPB_NO"
-        '
-        'Panel6
-        '
-        Me.Panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        resources.ApplyResources(Me.Panel6, "Panel6")
-        Me.Panel6.Name = "Panel6"
         '
         'FRM_UPDATE_PR_STATUS
         '

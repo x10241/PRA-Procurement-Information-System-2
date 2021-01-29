@@ -30,26 +30,26 @@
     <Setting Name="PRAMasterDBConnString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=159.138.157.165;Initial Catalog=PRAMASTERDATABASE;Persist Security Info=True;User ID=sa;Password=br@@dW1u2019507_sa&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;Data Source=192.168.55.17\SQLPRALOCAL;Initial Catalog=PRAMASTERDATABASE;Persist Security Info=True;User ID=sa;Password=pr@@dm1n2017507&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=159.138.157.165;Initial Catalog=PRAMASTERDATABASE;Persist Security Info=True;User ID=sa;Password=br@@dW1u2019507_sa</Value>
+      <Value Profile="(Default)">Data Source=192.168.55.17\SQLPRALOCAL;Initial Catalog=PRAMASTERDATABASE;Persist Security Info=True;User ID=sa;Password=pr@@dm1n2017507</Value>
     </Setting>
     <Setting Name="PRA_PROPERTYDBConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=159.138.157.165;Initial Catalog=PRA_PROPERTYDB;Persist Security Info=True;User ID=sa;Password=br@@dW1u2019507_sa&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;Data Source=192.168.55.17\SQLPRALOCAL;Initial Catalog=PRA_PROPERTYDB;Persist Security Info=True;User ID=sa;Password=pr@@dm1n2017507&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=159.138.157.165;Initial Catalog=PRA_PROPERTYDB;Persist Security Info=True;User ID=sa;Password=br@@dW1u2019507_sa</Value>
+      <Value Profile="(Default)">Data Source=192.168.55.17\SQLPRALOCAL;Initial Catalog=PRA_PROPERTYDB;Persist Security Info=True;User ID=sa;Password=pr@@dm1n2017507</Value>
     </Setting>
     <Setting Name="PRAJO_DATABASEConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=159.138.157.165;Initial Catalog=PRAJO_DATABASE;Persist Security Info=True;User ID=sa;Password=br@@dW1u2019507_sa&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;Data Source=192.168.55.17\SQLPRALOCAL;Initial Catalog=PRAJO_DATABASE;Persist Security Info=True;User ID=sa;Password=pr@@dm1n2017507&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=159.138.157.165;Initial Catalog=PRAJO_DATABASE;Persist Security Info=True;User ID=sa;Password=br@@dW1u2019507_sa</Value>
+      <Value Profile="(Default)">Data Source=192.168.55.17\SQLPRALOCAL;Initial Catalog=PRAJO_DATABASE;Persist Security Info=True;User ID=sa;Password=pr@@dm1n2017507</Value>
     </Setting>
   </Settings>
 </SettingsFile>

@@ -52,7 +52,9 @@
     Private Sub BTN_ASSIGN_ITEM_Click(sender As Object, e As EventArgs) Handles BTN_ASSIGN_ITEM.Click
         FRM_ASSIGN.ShowDialog()
         Me.VWM4_ITEM_ASSTableAdapter.FillByITEM_CODE(Me.DS_VIEWS.VWM4_ITEM_ASS)
+        LLBL_TOT_REC.Text = DGV_ASSIGN_ITEMS_LIST.Rows.Count
     End Sub
+
 
     Private Sub DGV_ASSIGN_ITEMS_LIST_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_ASSIGN_ITEMS_LIST.CellClick
         If e.RowIndex >= 0 Then

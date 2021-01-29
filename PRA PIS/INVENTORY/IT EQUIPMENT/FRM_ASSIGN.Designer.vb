@@ -120,8 +120,10 @@ Partial Class FRM_ASSIGN
         Me.TblM4_INVENTORY_ITEMSTableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.tblM4_INVENTORY_ITEMSTableAdapter()
         Me.TableAdapterManager = New PRA_PIS.DS_PROPERTYDBTableAdapters.TableAdapterManager()
         Me.TblM4_INVENTORY_ACCOUNTABLE_OFFICERBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.TblM4_INVENTORY_ACCOUNTABLE_OFFICERTableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.tblM4_INVENTORY_ACCOUNTABLE_OFFICERTableAdapter()
         Me.SPM4_CURRENTDATETIMETableAdapter = New PRA_PIS.DS_STOREDPROCTableAdapters.SPM4_CURRENTDATETIMETableAdapter()
+        Me.TblM4_INVENTORY_ACCOUNTABLE_OFFICERTableAdapter = New PRA_PIS.DS_PROPERTYDBTableAdapters.tblM4_INVENTORY_ACCOUNTABLE_OFFICERTableAdapter()
+        Me.SpM4_PHY_C_CODETableAdapter = New PRA_PIS.DS_STOREDPROCTableAdapters.SPM4_PHY_C_CODETableAdapter()
+        Me.Label14 = New System.Windows.Forms.Label()
         Me.PNL.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.PNL_BOTTOM.SuspendLayout()
@@ -939,6 +941,7 @@ Partial Class FRM_ASSIGN
         '
         'GB_ITEM_DETAILS
         '
+        Me.GB_ITEM_DETAILS.Controls.Add(Me.Label14)
         Me.GB_ITEM_DETAILS.Controls.Add(Me.Label4)
         Me.GB_ITEM_DETAILS.Controls.Add(Me.WTXT_ACC_EMP_DIVISION)
         Me.GB_ITEM_DETAILS.Controls.Add(Me.WTXT_ACC_EMP_DEPARTMENT)
@@ -1034,7 +1037,7 @@ Partial Class FRM_ASSIGN
         Me.WTXT_ACC_EMP_NAME.Location = New System.Drawing.Point(9, 34)
         Me.WTXT_ACC_EMP_NAME.Name = "WTXT_ACC_EMP_NAME"
         Me.WTXT_ACC_EMP_NAME.ReadOnly = True
-        Me.WTXT_ACC_EMP_NAME.Size = New System.Drawing.Size(361, 14)
+        Me.WTXT_ACC_EMP_NAME.Size = New System.Drawing.Size(347, 14)
         Me.WTXT_ACC_EMP_NAME.TabIndex = 0
         Me.WTXT_ACC_EMP_NAME.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.WTXT_ACC_EMP_NAME.Watermark = Nothing
@@ -1194,13 +1197,28 @@ Partial Class FRM_ASSIGN
         Me.TblM4_INVENTORY_ACCOUNTABLE_OFFICERBindingSource.DataSource = Me.DS_PROPERTYDB
         Me.TblM4_INVENTORY_ACCOUNTABLE_OFFICERBindingSource.Position = 0
         '
+        'SPM4_CURRENTDATETIMETableAdapter
+        '
+        Me.SPM4_CURRENTDATETIMETableAdapter.ClearBeforeFill = True
+        '
         'TblM4_INVENTORY_ACCOUNTABLE_OFFICERTableAdapter
         '
         Me.TblM4_INVENTORY_ACCOUNTABLE_OFFICERTableAdapter.ClearBeforeFill = True
         '
-        'SPM4_CURRENTDATETIMETableAdapter
+        'SpM4_PHY_C_CODETableAdapter
         '
-        Me.SPM4_CURRENTDATETIMETableAdapter.ClearBeforeFill = True
+        Me.SpM4_PHY_C_CODETableAdapter.ClearBeforeFill = True
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Font = New System.Drawing.Font("Century Gothic", 8.25!)
+        Me.Label14.ForeColor = System.Drawing.Color.Red
+        Me.Label14.Location = New System.Drawing.Point(362, 30)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(14, 16)
+        Me.Label14.TabIndex = 1486
+        Me.Label14.Text = "*"
         '
         'FRM_ASSIGN
         '
@@ -1326,7 +1344,6 @@ Partial Class FRM_ASSIGN
     Friend WithEvents WTXT_DATE_APPOINTED As WatermarkTextBox
     Friend WithEvents RectangleShape7 As PowerPacks.RectangleShape
     Friend WithEvents TblM4_INVENTORY_ACCOUNTABLE_OFFICERBindingSource As BindingSource
-    Friend WithEvents TblM4_INVENTORY_ACCOUNTABLE_OFFICERTableAdapter As DS_PROPERTYDBTableAdapters.tblM4_INVENTORY_ACCOUNTABLE_OFFICERTableAdapter
     Friend WithEvents LLBL_ITEMS_ASSIGN_COUNT As Label
     Friend WithEvents Label13 As Label
     Friend WithEvents LLBL_ITEM_DETAILS_COUNT As Label
@@ -1349,4 +1366,7 @@ Partial Class FRM_ASSIGN
     Friend WithEvents DS_STOREDPROC As DS_STOREDPROC
     Friend WithEvents SPM4CURRENTDATETIMEBindingSource As BindingSource
     Friend WithEvents SPM4_CURRENTDATETIMETableAdapter As DS_STOREDPROCTableAdapters.SPM4_CURRENTDATETIMETableAdapter
+    Friend WithEvents TblM4_INVENTORY_ACCOUNTABLE_OFFICERTableAdapter As DS_PROPERTYDBTableAdapters.tblM4_INVENTORY_ACCOUNTABLE_OFFICERTableAdapter
+    Friend WithEvents SpM4_PHY_C_CODETableAdapter As DS_STOREDPROCTableAdapters.SPM4_PHY_C_CODETableAdapter
+    Friend WithEvents Label14 As Label
 End Class

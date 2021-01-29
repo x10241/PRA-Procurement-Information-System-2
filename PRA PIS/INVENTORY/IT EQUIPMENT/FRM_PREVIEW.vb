@@ -50,6 +50,9 @@ A:
                 .SetParameterValue(0, Trim(FRM_ASSIGN_ITEMS.WTXT_SEARCH_ASS_ITEM.Text))
             End With
             CRV_PREVIEW.ReportSource = rptDoc
+        ElseIf printPreview = "ASSIGN" Then
+            rptDoc = New RPT_ARE
+
         End If
     End Sub
 

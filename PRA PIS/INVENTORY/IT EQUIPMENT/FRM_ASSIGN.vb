@@ -132,11 +132,13 @@ Public Class FRM_ASSIGN
 
             If ISVALID Then
                 Save()
+                printPreview = "ASSIGN"
+                FRM_PMD_PREVIEW.ShowDialog()
                 Close()
                 Dispose()
                 FRM_ASSIGN_ITEMS.VWM4_ITEM_ASSTableAdapter.FillByITEM_CODE(DS_VIEWS.VWM4_ITEM_ASS)
             Else
-
+                NotificationManager.Show(Me, "Please fill up required fields!", Color.Red, 3000)
             End If
 
             ' End If
@@ -238,21 +240,19 @@ Public Class FRM_ASSIGN
 
     Sub Save()
         Try
+            Dim CHOLD As String = SpM4_PHY_C_CODETableAdapter.SPM4_PHY_C_CODE()
             For Each row As DataGridViewRow In DGV_ASSIGN_ITEMS.Rows
-                TblM4_INVENTORY_ACCOUNTABLE_OFFICERTableAdapter.IQ_INV_ACC_OFF(row.Cells(0).Value, WTXT_ACC_EMP_NO.Text, vbNull, WTXT_ACC_REMARKS.Text, EMP_NO, WTXT_DATE_APPOINTED.Text)
+                TblM4_INVENTORY_ACCOUNTABLE_OFFICERTableAdapter.IQ_INV_ACC_OFF(CHOLD, row.Cells(0).Value, WTXT_ACC_EMP_NO.Text, 0, WTXT_ACC_REMARKS.Text, EMP_NO, WTXT_DATE_APPOINTED.Text)
                 If WTXT_ASS_PERSON_EMP_NO.Text.Length > 0 Then
-                    TblM4_INVENTORY_ASSIGN_PERSONTableAdapter.IQ_ASSIGN_PERSON(row.Cells(0).Value, WTXT_ASS_PERSON_EMP_NO.Text, vbNull, WTXT_ASS_PERSON_REMARKS.Text, EMP_NO)
+                    TblM4_INVENTORY_ASSIGN_PERSONTableAdapter.IQ_ASSIGN_PERSON(CHOLD, row.Cells(0).Value, WTXT_ASS_PERSON_EMP_NO.Text, 0, WTXT_ASS_PERSON_REMARKS.Text, EMP_NO)
                 End If
             Next
-            'NotificationManager.Show(Me, "Successfully Save!", Color.Green, 1000)
-            MsgBox("Successfully save!")
+            ' NotificationManager.Show(Me, "Successfully Save!", Color.Green, 1000)
+            MsgBox("Successfully Save!", vbInformation + vbOKOnly, "Confirmation")
         Catch ex As Exception
-            NotificationManager.Show(Me, ex.Message, Color.Red, 3000)
+            MsgBox(ex.Message)
         End Try
-
         'End If
-
-
         'ElseIf trans = "ReAssign" Then
         '    Dim emp_originated As String
         '    For Each row As DataGridViewRow In DGV_ASSIGN_ITEMS.Rows
@@ -261,7 +261,7 @@ Public Class FRM_ASSIGN
         '    Next
         '    
         'End If
-        '    enableDisable("")
+        'enableDisable("")
         WTXT_SEARCH_ITEM_DETAIL.Clear()
         WTXT_SEARCH_ASSIGN_ITEM.Clear()
         DS_CUSTOM.AssignItemsDataGridView.Rows.Clear()
